@@ -655,6 +655,24 @@ mission "Remnant: Learn Sign Follow Up"
 
 
 
+mission "Remnant: Human Tech Hint"
+	invisible
+	minor
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Technology Available: offered"
+		not "Remnant: Heavy Laser: offered"
+		not "Remnant: Plasma Cannon: offered"
+		not "Remnant: Catalytic Ramscoop: offered"
+		random < 20
+	on offer
+		conversation
+			``
+				decline
+
+
+
 mission "Remnant: Heavy Laser"
 	name "Retrieve Heavy Lasers for the Remnant"
 	description "A Remnant engineer on <planet> has offered to pay you <payment> in exchange for obtaining two heavy lasers for them to study."
@@ -663,10 +681,6 @@ mission "Remnant: Heavy Laser"
 		government "Remnant"
 	to offer
 		has "Remnant: Technology Available: offered"
-		not "Remnant: Catalytic Ramscoop: active"
-		not "Remnant: Catalytic Ramscoop: done"
-		not "Remnant: Plasma Cannons: active"
-		not "Remnant: Plasma Cannons: done"
 		random < 50
 	on offer
 		require "Heavy Laser"
@@ -689,10 +703,17 @@ mission "Remnant: Heavy Laser"
 	on complete
 		outfit "Heavy Laser" -2
 		payment 870000
-		log "People" "Tali" `As an engineering prefect, Tali is the foremost authority among the Remnant on salvaged technology and a senior leader in their reverse engineering program.`
 		conversation
 			`As you land on a pad adjacent to the research center, a group of researchers mount some kind of weapon on a platform aimed down a firing range. The researcher that asked you for the heavy lasers presses a button from behind a thick barrier to activate the weapon. A flash of light erupts from the muzzle as the target downrange is cut in half. The barrel of the weapon raises into the air and the researchers rush out onto the range with tools and devices to inspect the damage.`
 			`	The researcher approaches you while the heavy lasers are being unloaded from your ship. She's dusty, but appears pleased with the results of her experiments. "Captain <first>, I see you have the lasers as we agreed." You aren't sure if Remnant rub their hands in eagerness, but she looks ready to do so.`
+			branch tali
+				not "met Tali"
+			`	`
+				decline
+			
+			label tali
+			apply
+				set "met Tali"
 			`	She taps her comlink, and moments later another Remnant appears from the scaffolding around a nearby Starling. The researcher straightens up and switches to a more stately melody. "Captain <last>, this is Prefect Tali. She is our most experienced engineer for dealing with alien tech."`
 			`	Tali steps forward and makes what seems to be a kind of welcoming gesture. "Greetings Captain. We appreciate your help in acquiring these samples. It looks like we are far behind the rest of humanity in some respects. We have a lot of work to do if we are to catch up with them."`
 
@@ -706,10 +727,6 @@ mission "Remnant: Catalytic Ramscoop"
 		government "Remnant"
 	to offer
 		has "Remnant: Technology Available: offered"
-		not "Remnant: Plasma Cannons: active"
-		not "Remnant: Plasma Cannons: done"
-		not "Remnant: Heavy Laser: active"
-		not "Remnant: Heavy Laser: done"
 		random < 50
 	on offer
 		require "Catalytic Ramscoop"
@@ -741,9 +758,16 @@ mission "Remnant: Catalytic Ramscoop"
 	on complete
 		outfit "Catalytic Ramscoop" -2
 		payment 1390000
-		log "People" "Tali" `As an engineering prefect, Tali is the foremost authority among the Remnant on salvaged technology and a senior leader in their reverse engineering program.`
 		conversation
 			`You visit the local shipyard and eventually find the engineer busily repairing a damaged Starling. You inform her that you have brought a pair of catalytic ramscoops for her to study. She quickly tightens a couple more connectors and jumps down from her perch, gesturing at an assistant to transfer you the credits you were promised. "Thank you! Our maps of human space are old, and if they are still accurate, you traveled a very long way to bring these to us." Her chanting voice echoes off the Starling above you with an interesting resonance.`
+			branch tali
+				not "met Tali"
+			``
+				decline
+			
+			label tali
+			apply
+				set "met Tali"
 			`	"If we can unlock the secrets of these ramscoops, it will give our ships greater range as they search for a safer refuge." As she picks up the remote control for the small loading truck with the two ramscoops she trills at you over her shoulder. "Oh, my name is Tali. I'll let you know what I find."`
 
 
@@ -756,10 +780,6 @@ mission "Remnant: Plasma Cannons"
 		government "Remnant"
 	to offer
 		has "Remnant: Technology Available: offered"
-		not "Remnant: Catalytic Ramscoop: active"
-		not "Remnant: Catalytic Ramscoop: done"
-		not "Remnant: Heavy Laser: active"
-		not "Remnant: Heavy Laser: done"
 		random < 50
 	on offer
 		require "Plasma Cannon"
@@ -792,12 +812,30 @@ mission "Remnant: Plasma Cannons"
 	on complete
 		outfit "Plasma Cannon" -2
 		payment 1130000
-		log "People" "Tali" `As an engineering prefect, Tali is the foremost authority among the Remnant on salvaged technology and a senior leader in their reverse engineering program.`
 		conversation
 			`As the <ship> settles onto the pad closest to the research facility, you can see the weapons specialist checking over a large cannon on a platform beneath a nearby Albatross. When he sees you starting to unload the two plasma cannons, he snaps the casing closed and gestures to someone out of sight. Within moments both him and an empty flatbed are there to pick up the weapons.`
 			`	"Thank you for your help," he says. "Our Inhibitors provide us with something of a mobility advantage against the Korath, but they aren't particularly effective at disabling them. These plasma cannons will open new avenues of research for us." He pauses, then continues. "I also included a bonus for you. It is a 'finder's fee,' as we always appreciate new tech."`
+			branch tali
+				not "met Tali"
+			`	`
+				decline
+			
+			label tali
+			apply
+				set "met Tali"
 			`	The weapon technician finishes strapping down the plasma cannons and looks up to see another Remnant approaching. He gives the new Remnant a respectful dip of his head that almost seems like a bow before turning to you and chanting, "Ah, Captain <last>, have you met Tali? She is the engineering prefect here on Viminal. She asked me to let her know when or if you managed to procure the new tech for me."`
 			`	Tali steps forward to face you. "Well met, newcomer among the Remnant," she trills. "Fresh blood amongst us sets songs in motion that have long been in caesura. I have a few things to finish up right now, but I hope to work with you soon." She gives you a polite nod and heads back the way she came.`
+
+
+
+mission "remnant Tali log"
+	invisible
+	landing
+	to offer
+		has "met Tali"
+	on offer
+		log "People" "Tali" `As an engineering prefect, Tali is the foremost authority among the Remnant on salvaged technology and a senior leader in their reverse engineering program.`
+		fail
 
 
 
