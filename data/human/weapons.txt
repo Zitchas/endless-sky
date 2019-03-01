@@ -652,20 +652,20 @@ outfit "Meteor Missile Launcher"
 		"hit effect" "missile hit"
 		"inaccuracy" 5
 		"velocity" 11
-		"lifetime" 490
+		"lifetime" 240
 		"reload" 80
 		"firing energy" 1
 		"firing heat" 20
 		"acceleration" 1
 		"drag" .1
-		"turn" 1.35
-		"homing" 3
-		"infrared tracking" .8
+		"turn" 1.8
+		"homing" 1
+		"infrared tracking" .65
 		"shield damage" 260
 		"hull damage" 160
 		"hit force" 220
 		"missile strength" 6
-	description "The Meteor Missile is the cheapest and simplest homing weapon available in human space. Meteors are quickly destroyed by anti-missile systems, and their infrared tracking systems have trouble homing in on targets with low heat levels. Nevertheless, their large warheads can spell doom for poorly-defended targets when the missiles are fired in great numbers."
+	description "The Meteor Missile is the cheapest and simplest homing weapon available in human space. Like all infrared-guided missiles, its seeker only reliably tracks targets with high heat levels--the closer the better. Though the relatively short-ranged Meteor is quickly destroyed by anti-missile systems, its large warhead can spell doom for poorly-defended targets when fired in great numbers or from an agile launch platform at close range."
 
 effect "meteor fire"
 	sprite "effect/meteor fire"
@@ -728,7 +728,7 @@ outfit "Sidewinder Missile Launcher"
 		"hit force" 170
 		"missile strength" 12
 	description "The Sidewinder Missile is designed by Lovelace Labs, which is ironically also the designer of the Anti-Missile Turret. Rumors say that the two engineering teams at Lovelace who make the missiles and the anti-missiles are locked in furious competition with each other: the result has been generation after generation of smarter missiles and then smarter turrets to fend them off."
-	description "	Although not as powerful or cheap as the popular Meteor missiles, Sidewinders have several advantages, including their superior maneuverability, better tracking systems, and protective casings that make them much harder for anti-missile systems to destroy."
+	description "	Although not as powerful or cheap as the popular Meteor missiles, Sidewinders have several advantages, including longer range, superior maneuverability, better tracking systems, and protective casings that make them much harder for anti-missile systems to destroy."
 
 effect "sidewinder fire"
 	sprite "effect/sidewinder fire"
@@ -824,7 +824,7 @@ outfit "Torpedo Launcher"
 		"hit effect" "torpedo hit"
 		"die effect" "tiny explosion"
 		"inaccuracy" 5
-		"velocity" 6
+		"velocity" 7
 		"lifetime" 600
 		"reload" 150
 		"firing energy" 2
@@ -886,7 +886,7 @@ outfit "Typhoon Launcher"
 		"hit effect" "torpedo hit"
 		"die effect" "tiny explosion"
 		"inaccuracy" 5
-		"velocity" 5
+		"velocity" 6
 		"lifetime" 600
 		"reload" 120
 		"firing energy" 4

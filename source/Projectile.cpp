@@ -139,7 +139,7 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 	double turn = weapon->Turn();
 	double accel = weapon->Acceleration();
 	int homing = weapon->Homing();
-	if(target && homing && !Random::Int(60))
+	if(target && homing && !Random::Int(30))
 		CheckLock(*target);
 	if(target && homing && hasLock)
 	{
@@ -150,7 +150,6 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 		double trueVelocity = drag ? accel / drag : velocity.Length();
 		double stepsToReach = d.Length() / trueVelocity;
 		bool isFacingAway = d.Dot(angle.Unit()) < 0.;
-		
 		// At the highest homing level, compensate for target motion.
 		if(homing >= 4)
 		{
@@ -198,6 +197,15 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 					accel = 0.;
 			}
 		}
+	}
+	// If the weapon is homing, is radar-guided, has lost its lock, and the
+	// target has jamming, give a chance for the missile to turn in a random
+	// direction, in proportion to the strength of the jamming and the missile's
+	// tracking quality
+	else if(target && homing && weapon->RadarTracking() && target->Attributes().Get("radar jamming") > 0.0)
+	{
+		if(Random::Real() < (1 - (weapon->RadarTracking() * 2 / target->Attributes().Get("radar jamming"))) )
+			turn = Random::Real() - min(.5, turn);
 	}
 	// If a weapon is homing but has no target, do not turn it.
 	else if(homing)
@@ -287,12 +295,11 @@ shared_ptr<Ship> Projectile::TargetPtr() const
 
 void Projectile::CheckLock(const Ship &target)
 {
-	double base = hasLock ? 1. : .5;
+	double base = hasLock ? 1. : .0;
 	hasLock = false;
 	
-	// For each tracking type, calculate the probability that a lock will be
-	// lost in a given five-second period. Then, since this check is done every
-	// second, test against the fifth root of that probability.
+	// For each tracking type, calculate the probability twice every second that a
+	// lock will be lost
 	if(weapon->Tracking())
 		hasLock |= Check(weapon->Tracking(), base);
 	
@@ -300,22 +307,42 @@ void Projectile::CheckLock(const Ship &target)
 	if(weapon->OpticalTracking())
 	{
 		double weight = target.Mass() * target.Mass();
-		double probability = weapon->OpticalTracking() * weight / (200000. + weight);
+		double probability = weapon->OpticalTracking() * weight / (150000. + weight);
 		hasLock |= Check(probability, base);
 	}
 	
-	// Infrared tracking is 10% when heat is zero and 100% when heat is full.
+	// Infrared tracking is 5% when heat is zero and 100% when heat is full.
+	// When the missile is at under 1/3 of its maximum range, tracking is
+	// linearly increased by up to a factor of 3, representing the fact that the
+	// wavelengths of IR radiation are easier to distinguish at closer distances
 	if(weapon->InfraredTracking())
 	{
-		double probability = weapon->InfraredTracking() * min(1., target.Heat() + .1);
+		double distance = position.Distance(target.Position());
+		double shortRange = weapon->Range() * 0.33;
+		double multiplier = 1.0;
+		if(distance <= shortRange)
+			multiplier = (1 - (distance / shortRange)) * 2;
+		double probability = weapon->InfraredTracking() * min(1., target.Heat() * (1 + multiplier) + .05);
 		hasLock |= Check(probability, base);
 	}
 	
 	// Radar tracking depends on whether the target ship has jamming capabilities.
-	// Jamming of 1 is enough to increase your chance of dodging to 50%.
+	// The jamming effect attenuates with range, and that range is affected by
+	// the power of the jamming. Jamming of 2 will cause a sidewinder fired at
+	// medium range toward a maneuvering target to miss about 25% of the time.
+	// Jamming of 10 will increase that to about 60%.
 	if(weapon->RadarTracking())
 	{
-		double probability = weapon->RadarTracking() / (1. + target.Attributes().Get("radar jamming"));
+		double baseRadarJamming = target.IsDisabled() ? 0 : target.Attributes().Get("radar jamming");
+		double currentRadarJamming = baseRadarJamming;
+		if(baseRadarJamming > 0.0)
+		{
+			double distance = position.Distance(target.Position());
+			double jammingRange = 1000 + (baseRadarJamming * 100);
+			double rangeFraction = min(1.0, distance / jammingRange);
+			currentRadarJamming = (1 - rangeFraction) * baseRadarJamming;
+		}
+		double probability = weapon->RadarTracking() / (1. + currentRadarJamming);
 		hasLock |= Check(probability, base);
 	}
 }
