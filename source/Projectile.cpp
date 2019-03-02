@@ -199,10 +199,10 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 		}
 	}
 	// If the weapon is homing, is radar-guided, has lost its lock, and the
-	// target has jamming, give a chance for the missile to turn in a random
-	// direction, in proportion to the strength of the jamming and the missile's
-	// tracking quality
-	else if(target && homing && weapon->RadarTracking() && target->Attributes().Get("radar jamming") > 0.0)
+	// target has jamming, and the missile is within the jammer's jamming radius,
+	// give a chance for the missile to turn in a random direction, in proportion
+	// to the strength of the jamming and the missile's tracking quality
+	else if(target && homing && weapon->RadarTracking() && target->Attributes().Get("radar jamming") > 0.0 && double(position.Distance(target->Position()) >= 1000 + (sqrt(target->Attributes().Get("radar jamming")) * 100)))
 	{
 		if(Random::Real() < (1 - (weapon->RadarTracking() * 2 / target->Attributes().Get("radar jamming"))) )
 			turn = Random::Real() - min(.5, turn);
@@ -295,7 +295,7 @@ shared_ptr<Ship> Projectile::TargetPtr() const
 
 void Projectile::CheckLock(const Ship &target)
 {
-	double base = hasLock ? 1. : .0;
+	double base = hasLock ? 1. : .15;
 	hasLock = false;
 	
 	// For each tracking type, calculate the probability twice every second that a
@@ -329,8 +329,8 @@ void Projectile::CheckLock(const Ship &target)
 	// Radar tracking depends on whether the target ship has jamming capabilities.
 	// The jamming effect attenuates with range, and that range is affected by
 	// the power of the jamming. Jamming of 2 will cause a sidewinder fired at
-	// medium range toward a maneuvering target to miss about 25% of the time.
-	// Jamming of 10 will increase that to about 60%.
+	// least 1200 units away from a maneuvering target to miss about 25% of the
+	// time. Jamming of 10 will increase that to about 60%.
 	if(weapon->RadarTracking())
 	{
 		double baseRadarJamming = target.IsDisabled() ? 0 : target.Attributes().Get("radar jamming");
@@ -338,7 +338,7 @@ void Projectile::CheckLock(const Ship &target)
 		if(baseRadarJamming > 0.0)
 		{
 			double distance = position.Distance(target.Position());
-			double jammingRange = 1000 + (baseRadarJamming * 100);
+			double jammingRange = 1000 + (sqrt(baseRadarJamming) * 100);
 			double rangeFraction = min(1.0, distance / jammingRange);
 			currentRadarJamming = (1 - rangeFraction) * baseRadarJamming;
 		}
