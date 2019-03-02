@@ -202,7 +202,7 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 	// target has jamming, and the missile is within the jammer's jamming radius,
 	// give a chance for the missile to turn in a random direction, in proportion
 	// to the strength of the jamming and the missile's tracking quality
-	else if(target && homing && weapon->RadarTracking() && target->Attributes().Get("radar jamming") > 0.0 && double(position.Distance(target->Position()) >= 1000 + (sqrt(target->Attributes().Get("radar jamming")) * 100)))
+	else if(target && homing && weapon->RadarTracking() && target->Attributes().Get("radar jamming") > 0.0 && double(position.Distance(target->Position()) >= 500 + (sqrt(target->Attributes().Get("radar jamming")) * 500)))
 	{
 		if(Random::Real() < (1 - (weapon->RadarTracking() * 2 / target->Attributes().Get("radar jamming"))) )
 			turn = Random::Real() - min(.5, turn);
@@ -338,7 +338,7 @@ void Projectile::CheckLock(const Ship &target)
 		if(baseRadarJamming > 0.0)
 		{
 			double distance = position.Distance(target.Position());
-			double jammingRange = 1000 + (sqrt(baseRadarJamming) * 100);
+			double jammingRange = 500 + (sqrt(baseRadarJamming) * 500);
 			double rangeFraction = min(1.0, distance / jammingRange);
 			currentRadarJamming = (1 - rangeFraction) * baseRadarJamming;
 		}
