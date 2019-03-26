@@ -665,7 +665,7 @@ outfit "Meteor Missile Launcher"
 		"hull damage" 160
 		"hit force" 220
 		"missile strength" 6
-	description "The Meteor Missile is the cheapest and simplest homing weapon available in human space. Like all infrared-guided missiles, its seeker only reliably tracks targets with high heat levels - the closer the better. Though the relatively short-ranged Meteor is quickly destroyed by anti-missile systems, its large warhead can spell doom for poorly-defended targets when fired in great numbers or from an agile launch platform at close range."
+	description "The Meteor Missile is the cheapest and simplest homing weapon available in human space. Meteors are quickly destroyed by anti-missile systems, and their infrared tracking systems have trouble homing in on targets with low heat levels. Nevertheless, their large warheads can spell doom for poorly-defended targets when the missiles are fired in great numbers."
 
 effect "meteor fire"
 	sprite "effect/meteor fire"
@@ -728,7 +728,7 @@ outfit "Sidewinder Missile Launcher"
 		"hit force" 170
 		"missile strength" 12
 	description "The Sidewinder Missile is designed by Lovelace Labs, which is ironically also the designer of the Anti-Missile Turret. Rumors say that the two engineering teams at Lovelace who make the missiles and the anti-missiles are locked in furious competition with each other: the result has been generation after generation of smarter missiles and then smarter turrets to fend them off."
-	description "	Although not as powerful or cheap as the popular Meteor missiles, Sidewinders have several advantages, including longer range, superior maneuverability, better tracking systems, and protective casings that make them much harder for anti-missile systems to destroy."
+	description "	Although not as powerful or cheap as the popular Meteor missiles, Sidewinders have several advantages, including their superior maneuverability, better tracking systems, and protective casings that make them much harder for anti-missile systems to destroy."
 
 effect "sidewinder fire"
 	sprite "effect/sidewinder fire"
@@ -838,7 +838,7 @@ outfit "Torpedo Launcher"
 		"hull damage" 680
 		"hit force" 300
 		"missile strength" 30
-	description "Torpedo Launchers are the largest and most powerful homing weapons, often found on capital ships for fleet engagements. Fast ships can often simply outrun or dodge the Torpedoes they fire, making them generally effective only against large slow targets. However, very skillful pilots have been known to score hits on smaller ships, especially at close range."
+	description "Torpedoes are the most powerful homing weapon, but they move slowly enough that fast ships can simply outrun them, making them most useful against large targets or against small ships at times when they are too distracted to dodge. Torpedo launchers are also much larger than other missile systems, so they are most often found in capital ships."
 
 effect "torpedo fire"
 	sprite "effect/torpedo fire"
