@@ -52,7 +52,7 @@ outfit "Drak Draining Field"
 		"hit force" 60
 		"shield damage" 50
 		"ion damage" .5
-		"shield disruption" 50
+		"disruption damage" 50
 		"blast radius" 120
 	description "This device produces a field that drains energy from any ship within it."
 
