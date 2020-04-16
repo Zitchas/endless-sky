@@ -54,7 +54,7 @@ outfit "Drak Draining Field"
 		"ion damage" .5
 		"disruption damage" 50
 		"blast radius" 120
-	description "This device produces a field that drains energy from any ship within it."
+	description "This device produces a field that drains energy from any ship within it and severely disruptions shields."
 
 outfit "Drak Anti-Missile Field"
 	category "Turrets"
