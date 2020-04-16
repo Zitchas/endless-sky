@@ -43,7 +43,7 @@ outfit "Drak Draining Field"
 	"turret mounts" -1
 	weapon
 		"turret turn" 4.
-		"velocity" 400
+		"velocity" 480
 		"lifetime" 1
 		"reload" 1
 		"firing energy" 20
@@ -52,6 +52,8 @@ outfit "Drak Draining Field"
 		"hit force" 60
 		"shield damage" 50
 		"ion damage" .5
+		"shield disruption" 50
+		"blast radius" 120
 	description "This device produces a field that drains energy from any ship within it."
 
 outfit "Drak Anti-Missile Field"
@@ -94,6 +96,8 @@ outfit "Drak Turret"
 		"shield damage" 256
 		"hull damage" 256
 		"hit force" 120
+		"heat damage" 30000
+		"ion damage" 50000
 	description "This is a turret based cannon with significant range and accuracy."
 
 effect "drak bolt impact"
@@ -143,8 +147,6 @@ outfit "Drak Antimatter Fragment"
 		"inaccuracy" 1
 		"lifetime" 499
 		"hit force" 1000
-		"disruption damage" 300
-		"heat damage" 500
 		"shield damage" 5610
 		"hull damage" 5610
 		"blast radius" 100
