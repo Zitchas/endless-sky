@@ -339,8 +339,8 @@ shipyard "Remnant"
 	"Phoenix"
 	"Skua"
 
-shipyard "Remnant Gascraft"
-	"Gascraft"
+shipyard "Remnant Puffin"
+	"Puffin"
 
 outfitter "Remnant"
 	"Inhibitor Cannon"

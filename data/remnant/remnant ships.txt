@@ -202,51 +202,6 @@ ship "Albatross" "Albatross (Shield)"
 
 
 
-ship "Gascraft"
-	plural "Gascraft"
-	sprite "ship/gascraft"
-	thumbnail "thumbnail/gascraft"
-	attributes
-		category Transport
-		cost 530000
-		"shields" 800
-		"hull" 1500
-		"required crew" 1
-		"bunks" 2
-		"mass" 44
-		"drag" 1.27
-		"heat dissipation" 0.9
-		"fuel capacity" 700
-		"energy capacity" 150
-		"ramscoop" 0.5
-		"cargo space" 8
-		"outfit space" 80
-		"engine capacity" 26
-		"shield generation" 0.6
-		"shield energy" 0.4
-		"hull repair rate" 1.2
-		"hull energy" 0.9
-		"gaslining" 1
-		"outfit scan power" 24
-		"outfit scan speed" 1
-		"tactical scan power" 52
-		"atmosphere scan" 100
-	outfits
-		"Millennium Cell"
-		"Emergency Ramscoop"
-		"Quantum Key Stone"
-
-		"Anvil-Class Engine"
-		"Hyperdrive"
-
-	engine 0 30
-	leak "remnant leak sparkle" 20 2
-	explode "tiny explosion" 8
-	explode "small explosion" 7
-	description "Centuries ago, the Remnant built these ships in order to explore the upper atmosphere of nearby gas giants. The Archons took issue with the Remnant's research methods, and the studies were unable to be completed. The remaining gascraft have been gathering dust in storage for centuries while the Remnant wait to see if the anger of the Archons will subside."
-
-
-
 ship "Gull"
 	sprite "ship/gull"
 	thumbnail "thumbnail/gull"
@@ -643,6 +598,50 @@ ship "Petrel"
 
 
 
+ship "Puffin"
+	sprite "ship/puffin"
+	thumbnail "thumbnail/puffin"
+	attributes
+		category Transport
+		cost 530000
+		"shields" 800
+		"hull" 1500
+		"required crew" 1
+		"bunks" 2
+		"mass" 44
+		"drag" 1.27
+		"heat dissipation" 0.9
+		"fuel capacity" 700
+		"energy capacity" 150
+		"ramscoop" 0.5
+		"cargo space" 8
+		"outfit space" 80
+		"engine capacity" 26
+		"shield generation" 0.6
+		"shield energy" 0.4
+		"hull repair rate" 1.2
+		"hull energy" 0.9
+		"gaslining" 1
+		"outfit scan power" 24
+		"outfit scan speed" 1
+		"tactical scan power" 52
+		"atmosphere scan" 100
+	outfits
+		"Millennium Cell"
+		"Emergency Ramscoop"
+		"Quantum Key Stone"
+
+		"Anvil-Class Engine"
+		"Hyperdrive"
+
+	engine 0 30
+	leak "remnant leak sparkle" 20 2
+	explode "tiny explosion" 8
+	explode "small explosion" 7
+	description "Centuries ago, the Remnant built these ships in order to explore the upper atmosphere of nearby gas giants. The Archons took issue with the Remnant's research methods, and the studies were unable to be completed. The remaining Puffins have been gathering dust in storage for centuries while the Remnant wait to see if the anger of the Archons will subside."
+
+
+
 ship "Starling"
 	sprite "ship/starling"
 	thumbnail "thumbnail/starling"
@@ -844,6 +843,7 @@ ship "Tern"
 	explode "small explosion" 20
 	description "The Tern is a small, hardy drone developed to plunge into the atmosphere of nearby gas giants for collecting valuable resources. These thick-shelled craft are also surprisingly effective when pressed into service as screening ships when enemies intrude into Remnant space."
 	description "	Unlike most spacefaring nations, the Remnant do not have enough people to pilot fighter wings in waves likely to sustain significant casualties. As such, they frequently use these hardy drones to fulfill similar screening roles in their home systems, allowing manned craft to focus on more specialized tasks."
+
 
 
 ship "Vulture"
@@ -1392,3 +1392,4 @@ ship "Skua"
 	description "Upon hearing the news that the Korath Exiles had regained access to automata technology, the Remnant quickly realized that they would need a dedicated anti-swarm ship. Given tha the Albatross was overdue for an update, they decided to do so with an eye to creating an anti-fighter platform suited to close quarters combat."
 	description "Remnant expertise in material sciences definitely shows in the Skua: While the shields are at roughly the same level as the Albatross, the hull is three times more durable. Perhaps more importantly, however, is that it can now cloak. Drawing on preliminary studies of the Void Sprites, the Skua is has been significantly reinforced to allow for greater strengths in terms of both compression and tension. As a result, it can handle a greater variety of internal configurations as well as the pressures generated from submersion deep in gas giants."
 	description "	The cloaking technology is built into the Skua's hull; it cannot be removed or transferred to another ship."
+
