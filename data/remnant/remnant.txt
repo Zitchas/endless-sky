@@ -340,6 +340,7 @@ shipyard "Remnant"
 	"Skua"
 	"Puffin"
 	"Merganser"
+	"Heron"
 
 shipyard "Remnant Puffin"
 	"Puffin"
