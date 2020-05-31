@@ -26,17 +26,17 @@ formation "Delta (centered)"
 	symmetry longitudinal
 		rotational 120
 	line 2 0 3 330
-		spacing 2
+		spacing 0.5
 		repeat 3 1.732
-			increase 3
+			increase 1
 	line -1 -1.732 3 210
-		spacing 2
+		spacing 0.5
 		repeat 0 -3.464
-			increase 3
+			increase 1
 	line -1 1.732 3 90
-		spacing 2
+		spacing 0.5
 		repeat -3 1.732
-			increase 3
+			increase 1
 
 
 
@@ -143,19 +143,19 @@ formation "Hexagon"
 # A (hexagonal grid based) block of ships in front of the lead ship.
 formation "Block"
 	symmetry longitudinal
-	line 0 -6.928 2 180
-		spacing 3.464
-	line 1 -5.196 2 180
-		spacing 3.464
+	line 0 -3.464 2 180
+		spacing 1.732
+	line 1 -2.598 2 180
+		spacing 1.732
 		repeat 2 0
 	line -1 -5.196 2 180
-		spacing 3.464
+		spacing 1.732
 		repeat -2 0
-	line -2 -6.928 2 180
-		spacing 3.464
+	line -2 -2.598 2 180
+		spacing 1.732
 		repeat -2 0
-	line 2 -6.928 2 180
-		spacing 3.464
+	line 2 -3.464 2 180
+		spacing 1.732
 		repeat 2 0
 
 

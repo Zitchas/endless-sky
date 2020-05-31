@@ -338,6 +338,8 @@ shipyard "Remnant"
 	"Jaeger"
 	"Phoenix"
 	"Skua"
+	"Puffin"
+	"Merganser"
 
 shipyard "Remnant Puffin"
 	"Puffin"

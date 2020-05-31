@@ -1018,9 +1018,9 @@ ship "Peregrine"
 		"fuel capacity" 1100
 		"ramscoop" 2
 		"cargo space" 49
-		"outfit space" 592
+		"outfit space" 865
 		"weapon capacity" 220
-		"engine capacity" 171
+		"engine capacity" 208
 		"shield generation" 5.2
 		"shield energy" 4.6
 		"hull repair rate" 1.5
@@ -1038,7 +1038,6 @@ ship "Peregrine"
 			"hit force" 5100
 	outfits
 		"Inhibitor Cannon" 5
-		"Inhibitor Turret" 2
 		"Point Defense Turret"
 
 		"Aeon Cell" 2
@@ -1059,8 +1058,8 @@ ship "Peregrine"
 	gun 11 -105 "Inhibitor Cannon"
 	gun -17 -81.5 "Inhibitor Cannon"
 	gun 17 -81.5 "Inhibitor Cannon"
-	turret -29 30 "Inhibitor Turret"
-	turret 29 30 "Inhibitor Turret"
+	turret -29 30
+	turret 29 30
 	turret 0 -41 "Point Defense Turret"
 	engine -25 117
 	engine 0 116
@@ -1092,7 +1091,7 @@ ship "Condor"
 		"fuel capacity" 1100
 		"ramscoop" 3
 		"cargo space" 131
-		"outfit space" 427
+		"outfit space" 595
 		"weapon capacity" 147
 		"engine capacity" 190
 		"shield generation" 3.1
@@ -1114,9 +1113,8 @@ ship "Condor"
 		"Aeon Cell"
 		"Epoch Cell"
 		"Crystal Capacitor"
-		"Thermoelectric Cooler" 2
-		"Small Heat Shunt" 2
-		"Boarding Claws" 9
+		"Thermoelectric Cooler" 1
+		"Large Heat Shunt" 1
 		"Quantum Key Stone"
 
 		"Smelter-Class Thruster"
@@ -1132,10 +1130,10 @@ ship "Condor"
 	gun -13.5 -173
 	gun 0 -150.5
 	gun 13.5 -173
-	turret 0 -35
-	turret -5.5 29
-	turret 5.5 29
-	turret 0 120
+	turret 0 -35 "Remnant Flak Turret"
+	turret -5.5 29 "Remnant Flak Turret"
+	turret 5.5 29 "Remnant Flak Turret"
+	turret 0 120 "Point Defense Turret"
 	fighter -17.5 8
 	fighter 17.5 8
 	fighter -9.5 67
@@ -1269,7 +1267,7 @@ ship "Merganser"
 		"drag" .9
 		"heat dissipation" .9
 		"gaslining" 1
-		"outfit space" 180
+		"outfit space" 191
 		"shield generation" 2.8
 		"shield energy" 1.2
 		"hull repair rate" 1.8
