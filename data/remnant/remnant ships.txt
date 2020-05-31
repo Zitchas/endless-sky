@@ -410,6 +410,82 @@ ship "Ibis"
 
 
 
+ship "Jaeger"
+	plural "Jaegers"
+	sprite "ship/jaeger"
+	thumbnail "thumbnail/jaeger"
+	attributes
+		category "Medium Warship"
+		licenses
+			"Remnant"
+		cost 30250000
+		"shields" 34200
+		"hull" 22600
+		"required crew" 16
+		"bunks" 31
+		"cargo space" 99
+		"mass" 610
+		"drag" 8
+		"heat dissipation" 0.8
+		"fuel capacity" 1100
+		"ramscoop" 2.5
+		"outfit space" 721
+		"weapon capacity" 270
+		"engine capacity" 171
+		"shield generation" 5.2
+		"shield energy" 4.6
+		"hull repair rate" 1.5
+		"hull energy" 1.2
+		"cloak" .02
+		"cloaking energy" 4
+		"cloaking fuel" .1
+		"outfit scan power" 18
+		"outfit scan speed" 1
+		"tactical scan power" 39
+		weapon
+			"blast radius" 360
+			"shield damage" 3600
+			"hull damage" 1800
+			"hit force" 5400
+	outfits
+		"Inhibitor Cannon" 5
+		"Inhibitor Turret" 3
+		"Point Defense Turret" 2
+
+		"Aeon Cell"
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Thermoelectric Cooler" 2
+		"Quantum Key Stone"
+
+		"Smelter-Class Thruster"
+		"Smelter-Class Steering"
+		"Scram Drive"
+
+	engine 0 128.5
+	engine -28.5 138.5
+	engine 28.5 138.5
+	gun 0.5 -130 "Inhibitor Cannon"
+	gun -11 -146 "Inhibitor Cannon"
+	gun 11 -146 "Inhibitor Cannon"
+	gun -39 -37.5 "Inhibitor Cannon"
+	gun 39 -37.5 "Inhibitor Cannon"
+	turret -15 -37 "Point Defense Turret"
+	turret 15 -37 "Inhibitor Turret"
+	turret -35.5 70.5 "Inhibitor Turret"
+	turret 35.5 70.5 "Point Defense Turret"
+	turret 1 38 "Inhibitor Turret"
+	leak "remnant leak" 30 10
+	leak "remnant leak sparkle" 30 10
+	explode "small explosion" 30
+	explode "medium explosion" 60
+	explode "large explosion" 40
+	explode "huge explosion" 10
+	"final explode" "final explosion large" 1
+	description "Companions to the Peregrine, Jaeger follow in the wake of its lighter brethren's initial strikes to pin down targets. "
+
+
+
 ship "Pelican"
 	sprite "ship/pelican"
 	thumbnail "thumbnail/pelican"
@@ -928,29 +1004,29 @@ ship "Peregrine"
 		rewind
 	thumbnail "thumbnail/peregrine"
 	attributes
-		category "Medium Warship"
+		category "Light Warship"
 		licenses
-			"Remnant Capital"
+			"Remnant"
 		"cost" 35500000
-		"shields" 50200
-		"hull" 35700
-		"required crew" 23
-		"bunks" 42
-		"mass" 540
-		"drag" 7.7
-		"heat dissipation" 0.8
-		"fuel capacity" 1000
+		"shields" 35100
+		"hull" 22800
+		"required crew" 9
+		"bunks" 26
+		"mass" 290
+		"drag" 4
+		"heat dissipation" 0.9
+		"fuel capacity" 1100
 		"ramscoop" 2
-		"cargo space" 56
-		"outfit space" 796
-		"weapon capacity" 342
-		"engine capacity" 204
+		"cargo space" 49
+		"outfit space" 592
+		"weapon capacity" 220
+		"engine capacity" 171
 		"shield generation" 5.2
 		"shield energy" 4.6
 		"hull repair rate" 1.5
 		"hull energy" 1.2
 		"cloak" .05
-		"cloaking energy" 5
+		"cloaking energy" 4
 		"cloaking fuel" .1
 		"outfit scan power" 12
 		"outfit scan speed" 1
@@ -961,33 +1037,31 @@ ship "Peregrine"
 			"hull damage" 1700
 			"hit force" 5100
 	outfits
-		"Sunbeam" 2
-		"Thunderhead Launcher" 2
-		"Thunderhead Missile" 80
-		"Dual Sunbeam Turret" 2
-		"Wanderer Anti-Missile" 2
+		"Inhibitor Cannon" 5
+		"Inhibitor Turret" 2
+		"Point Defense Turret"
+
+		"Aeon Cell" 2
+		"Crystal Capacitor" 4
+		"Large Heat Shunt" 2
+		"Quantum Key Stone" 1
+		"Salvage Scanner" 1
+		"Emergency Ramscoop" 6
 		
-		"Blue Sun Reactor"
-		"Red Sun Reactor"
-		"Dark Storm Shielding"
-		"Bright Cloud Shielding"
-		"Wanderer Heat Sink"
-		"Wanderer Ramscoop"
+		"Bellows-Class Afterburner" 2
+		"Smelter-Class Thruster"
+		"Smelter-Class Steering" 2
+		"Jump Drive"
+		"Scram Drive"
 		
-		"Type 4 Radiant Thruster"
-		"Type 1 Radiant Thruster"
-		"Type 4 Radiant Steering"
-		"Type 3 Radiant Steering"
-		"Hyperdrive"
-		
-	gun 0 -133
-	gun -11 -105
-	gun 11 -105
-	gun -17 -81.5
-	gun 17 -81.5
-	turret -29 30
-	turret 29 30
-	turret 0 -41
+	gun 0 -133 "Inhibitor Cannon"
+	gun -11 -105 "Inhibitor Cannon"
+	gun 11 -105 "Inhibitor Cannon"
+	gun -17 -81.5 "Inhibitor Cannon"
+	gun 17 -81.5 "Inhibitor Cannon"
+	turret -29 30 "Inhibitor Turret"
+	turret 29 30 "Inhibitor Turret"
+	turret 0 -41 "Point Defense Turret"
 	engine -25 117
 	engine 0 116
 	engine 25 117
@@ -1008,26 +1082,26 @@ ship "Condor"
 		licenses
 			"Remnant Capital"
 		"cost" 15375000
-		"shields" 18000
-		"hull" 9500
-		"required crew" 25
-		"bunks" 250
-		"mass" 590
-		"drag" 7
+		"shields" 28800
+		"hull" 15500
+		"required crew" 19
+		"bunks" 300
+		"mass" 390
+		"drag" 5.1
 		"heat dissipation" .80
-		"fuel capacity" 1500
+		"fuel capacity" 1100
 		"ramscoop" 3
-		"cargo space" 83
-		"outfit space" 701
-		"weapon capacity" 256
-		"engine capacity" 200
+		"cargo space" 131
+		"outfit space" 427
+		"weapon capacity" 147
+		"engine capacity" 190
 		"shield generation" 3.1
 		"shield energy" 1.8
 		"hull repair rate" 2
 		"hull energy" 0.75
-		"outfit scan power" 12
+		"outfit scan power" 25
 		"outfit scan speed" 1
-		"tactical scan power" 26
+		"tactical scan power" 100
 		weapon
 			"blast radius" 140
 			"shield damage" 1400
@@ -1048,6 +1122,7 @@ ship "Condor"
 		"Smelter-Class Thruster"
 		"Smelter-Class Steering"
 		"Jump Drive"
+		"Scram Drive"
 		
 	engine -43.5 156
 	engine -24 149
@@ -1061,20 +1136,24 @@ ship "Condor"
 	turret -5.5 29
 	turret 5.5 29
 	turret 0 120
-	drone -17 5 over
-	drone 17 5 over
-	drone -44.5 -16.5 over
-	drone 44.5 -16.5 over
-	drone -67 7.5 over
-	drone 67 7.5 over
-	drone -22.5 65 over
-	drone 22.5 65 over
+	fighter -17.5 8
+	fighter 17.5 8
+	fighter -9.5 67
+	fighter 9.5 67
+	drone -41 -21.5 over
+	drone 41 -21.5 over
+	drone -50.5 -13 over
+	drone 50.5 -13 over
+	drone -66 7.5 over
+	drone 66 7.5 over
+	drone -21 -34.5 over
+	drone 21 -34.5 over
 	explode "small explosion" 10
 	explode "medium explosion" 30
 	explode "large explosion" 20
 	explode "huge explosion" 5
 	"final explode" "final explosion large"
-	description `The Condor is the Remnant's combat transport, and was  built to serve two purposes. The first is to carry soldiers and salage crew for boarding operations against the Korath. The second is to carry as many people as possible during evacuations under fire from Alphas, Korath, or other unknown threats. As a result of these mandates, the Condor is built to be tough, fast, and fit as many people as possible. Given its importance in keeping the Remnant safe during evactuations, it often carries a small squad of terns to cover its retreat and distract enemies from that which the Remnant value far more than material wealth.`
+	description `The Condor is the Remnant's combat transport, and was  built to serve two purposes. The first is to carry soldiers and salage crew for boarding operations against the Korath. The second is to carry as many people as possible during evacuations under fire from Alphas, Korath, or other unknown threats. As a result of these mandates, the Condor is built to be tough, fast, and fit as many people as possible. Given its importance in keeping the Remnant safe during evactuations, it usually carries a pair of petrels with a small squad of terns to cover its retreat and distract enemies from that which the Remnant value far more than material wealth.`
 
 
 
@@ -1171,26 +1250,26 @@ ship "Diomedea"
 
 
 
-ship "Jaeger"
-	sprite "ship/jaeger"
-	thumbnail "thumbnail/jaeger"
+ship "Merganser"
+	sprite "ship/merganser"
+	thumbnail "thumbnail/merganser"
 	attributes
 		category "Interceptor"
 		licenses
 			Remnant
 		"cost" 6830000
-		"shields" 4000
-		"hull" 4800
+		"shields" 3000
+		"hull" 5000
 		"required crew" 1
-		"bunks" 2
-		"cargo space" 23
+		"bunks" 3
+		"cargo space" 11
 		"fuel capacity" 500
 		"ramscoop" 1
-		"mass" 120
+		"mass" 50
 		"drag" .9
 		"heat dissipation" .9
 		"gaslining" 1
-		"outfit space" 200
+		"outfit space" 180
 		"shield generation" 2.8
 		"shield energy" 1.2
 		"hull repair rate" 1.8
@@ -1231,8 +1310,8 @@ ship "Jaeger"
 	engine 10 49
 	explode "tiny explosion" 30
 	explode "small explosion" 20
-	description "The Jaeger is a short range (for the Remnant) interceptor designed to patrol the upper atmosphere of gas giants and use their decisive speed advantage to conduct hit and run attacks on threats in nearby systems. While technically weaker than the Starlings, but it is a faster and cheaper alternative for providing covering fire in engagements near Remnant systems. Typically, the Remnant use Jaegers to ambush Korath ships with a barrage of nullifiers which pins the target ship in-system. They then harass it with their GASER cannons until heavier ships arrive to finish the work."
-	description "	The cloaking technology is built into the Jaeger's hull; it cannot be removed or transferred to another ship."
+	description "The Merganser is a short range (for the Remnant) interceptor designed to patrol the upper atmosphere of gas giants and use their decisive speed advantage to conduct hit and run attacks on threats in nearby systems. While technically weaker than the Starlings, but it is a faster and cheaper alternative for providing covering fire in engagements near Remnant systems. Typically, the Remnant use Mergansers to ambush Korath ships with a barrage of nullifiers which pins the target ship in-system. They then harass it with their GASER cannons until heavier ships arrive to finish the work."
+	description "	The cloaking technology is built into the Merganser's hull; it cannot be removed or transferred to another ship."
 
 
 
@@ -1323,19 +1402,19 @@ ship "Skua"
 		licenses
 			"Remnant Capital"
 		"cost" 45000000
-		"shields" 36200
-		"hull" 36600
-		"required crew" 34
-		"bunks" 65
-		"cargo space" 124
-		"mass" 630
-		"drag" 8.6
+		"shields" 39000
+		"hull" 26200
+		"required crew" 39
+		"bunks" 71
+		"cargo space" 121
+		"mass" 700
+		"drag" 8.5
 		"heat dissipation" 0.7
 		"fuel capacity" 1100
 		"ramscoop" 2.5
-		"outfit space" 688
-		"weapon capacity" 266
-		"engine capacity" 190
+		"outfit space" 701
+		"weapon capacity" 251
+		"engine capacity" 169
 		"shield generation" 6.2
 		"shield energy" 4.0
 		"hull repair rate" 3.5
