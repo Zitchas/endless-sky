@@ -137,6 +137,60 @@ effect "void sprite infant death"
 
 
 
+ship "Ember Waste Node"
+	noun "creature"
+	sprite "ship/ember waste node/ember waste node"
+		"frame rate" 5
+		rewind
+	thumbnail "thumbnail/ember waste node"
+	"never disabled"
+	attributes
+		category "Heavy Warship"
+		"hull" 19600
+		"shields" 5000
+		"required crew" 5
+		"bunks" 5
+		"mass" 1000
+		"drag" 8.2
+		"heat dissipation" 1
+		"fuel capacity" 250
+		"cargo space" 39
+		"outfit space" 0
+		"thrust" 80
+		"turn" 3500
+		"hull repair rate" 3
+		"energy capacity" 100
+		"energy generation" 1
+		"fuel capacity" 200
+		"ramscoop" 5
+		"shield generation" 5.2
+		"hull repair rate" 5.0
+		"cloak" .05
+		"quantum keystone" 1
+		"outfit scan power" 12
+		"outfit scan speed" 1
+		"tactical scan power" 50
+		"asteroid scan power" 50
+		"inscrutable" 1
+		"gaslining" 1
+		"jump speed" .3
+		"jump fuel" 10
+		"jump drive" 1
+	outfits
+		Mouthparts? 5
+	gun 3 -83.5 Mouthparts?
+	gun -3 -83.5 Mouthparts?
+	gun 9 -104 Mouthparts?
+	gun -9 -104 Mouthparts?
+	gun 0 -84 Mouthparts?
+	leak "blood" 40 40
+	explode "blood" 40
+	"final explode" "void sprite adult death"
+	description "This unusual creature, first spotted in Postverta, seem to have an affinity for void sprites and is usually found with them, albeit bearing only superficial resemblance to them. This 'Ember Waste Node,' as it is being called, demonstrates an ability to manipulate energy fields to create shield-like structures around itself. Most remarkably, however, is that it has been seen appearing and disappearing with an energy signature reminiscent of jump drives."
+	description "Although its ability to cloak is believed to be connected to its other energy manipulation abilities, the exact method is unknown."
+
+
+
 outfit Mouthparts?
 	category "Guns"
 	"gun ports" -1
@@ -194,3 +248,37 @@ fleet "Void Sprites"
 	variant
 		"Void Sprite"
 		"Void Sprite (Infant)" 3
+
+
+
+fleet "Ember Waste Node"
+	government "Ember Waste"
+	names "unknown entity"
+	cargo 0
+	personality
+		timid mining harvests mute
+	variant
+		"Ember Waste Node"
+
+
+
+phrase "unknown entity"
+	word
+		"Unknown"
+		"Strange"
+		"Novel"
+		"Unrecognized"
+		"Exotic"
+		"Unidentified"
+		"Unnamed"
+		"Nameless"
+		"Unresolved"
+	word
+		" "
+	word
+		"Entity"
+		"Creature"
+		"Being"
+		"Lifeform"
+		"Organism"
+		"Thing"
