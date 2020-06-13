@@ -8,20 +8,6 @@
 # WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 # PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-fleet "Small Tern"
-	government "Remnant"
-	names "remnant"
-	cargo 2
-	personality
-		heroic disables plunders appeasing
-	variant 30
-		"Tern"
-	variant 20
-		"Tern" 2
-	variant 10
-		"Tern" 3
-
-
 fleet "Small Remnant"
 	government "Remnant"
 	names "remnant"
@@ -61,6 +47,7 @@ fleet "Small Remnant"
 		"Ibis" 1
 		"Tern" 4
 		"Petrel" 2
+
 
 fleet "Large Remnant"
 	government "Remnant"
@@ -108,6 +95,21 @@ fleet "Large Remnant"
 		"Skua" 1
 		"Jaeger" 6
 		"Starling" 2
+	variant 6
+		"Albatross (Heavy)"
+		"Starling (Heavy)" 2
+	variant 3
+		"Albatross"
+		"Starling (Hunter)" 2
+	variant 3
+		"Albatross (Sniper)"
+		"Starling (Hunter)" 2
+	variant 2
+		"Albatross"
+		"Albatross (Sniper)"
+	variant 2
+		"Albatross (Heavy)"
+		"Albatross (Turret)"
 
 
 fleet "Remnant Transport"
@@ -330,7 +332,7 @@ shipyard "Remnant"
 	"Pelican"
 	"Petrel"
 	"Tern"
-	"Void Sprite Elder"
+	"Ember Waste Node"
 	"Vulture"
 	"Peregrine"
 	"Condor"
@@ -342,12 +344,12 @@ shipyard "Remnant"
 	"Merganser"
 	"Heron"
 
+
 shipyard "Remnant Puffin"
 	"Puffin"
 
 outfitter "Remnant"
 	"Inhibitor Cannon"
-	"Inhibitor Turret"
 	"Thrasher Cannon"
 	"Thrasher Turret"
 	"Point Defense Turret"
@@ -361,7 +363,6 @@ outfitter "Remnant"
 	"Emergency Ramscoop"
 	"Quantum Key Stone"
 	"Anvil-Class Engine"
-	"Bellows-Class Afterburner"
 	"Crucible-Class Thruster"
 	"Forge-Class Thruster"
 	"Smelter-Class Thruster"
@@ -380,26 +381,6 @@ outfitter "Remnant"
 	"Outfit Scanner"
 	"Tuning Rifle"
 	"Salvage Scanner"
-	"Nullifier Missile"
-	"Nullifier Missile Pod"
-	"Remnant Ramscoop"
-	"Ember Waste Ramscoop"
-	"Remnant Plasma Torch Cannon"
-	"Remnant Plasma Torch Turret"
-	"Remnant Flak Turret"
-	"Flak Turret"
-	"Void Rifle"
-	"Remnant Artillery"
-	"Crystal Cell"
-	"Crystal Grid"
-	"Remnant GASER Cannon"
-	"Remnant GASER Turret"
-	"Boarding Claws"
-	"Tactical Assault System"
-	"Personal Cloak System"
-	"Personal Cloaking Suit"
-	"Quantum Tear"
-	"Plasma Crystal Core"
 
 outfitter "Remnant Salvage"
 	"Generator (Furnace Class)"

@@ -703,6 +703,9 @@ ship "Penguin"
 		"reverse thrust" 16
 		"reverse thrusting energy" 2.5
 		"reverse thrusting heat" 2.0
+		"reverse flare sprite" "effect/remnant flare/small"
+			"frame rate" 5
+		"reverse flare sound" "plasma tiny"
 		weapon
 			"blast radius" 20
 			"shield damage" 260
@@ -719,6 +722,32 @@ ship "Penguin"
 		"Hyperdrive"
 	
 	engine 0 30
+	"reverse engine" -11 -17
+		zoom 0.25
+		angle 350
+	"reverse engine" 11 -17
+		zoom 0.25
+		angle 10
+	"steering engine" -11 -17
+		"zoom" 0.15
+		"angle" 90
+		under
+		right
+	"steering engine" 11 -17
+		"zoom" 0.15
+		"angle" 270
+		under
+		left
+	"steering engine" -11 17
+		"zoom" 0.15
+		"angle" 90
+		under
+		left
+	"steering engine" 11 17
+		"zoom" 0.15
+		"angle" 270
+		under
+		right
 	gun 0 -33
 	turret 0 5.5
 	leak "remnant leak sparkle" 30 2
@@ -726,9 +755,9 @@ ship "Penguin"
 	explode "small explosion" 7
 	description "Inspired by close contact with void sprites and the reinvigoration of xenobiology, the Penguin is a prototype designed to serve the dual roles of testing new starship technology while exploring hostile planets throughout the Ember Waste. One of this ship's distinguishing features is that it is truly alive and has a mind that approaches self-awareness."
 	description "	The cloaking technology is built into the Penguin's hull; it cannot be removed or transferred to another ship."
-
-
-
+	
+	
+	
 ship "Petrel"
 	sprite "ship/petrel"
 	thumbnail "thumbnail/petrel"
@@ -1581,4 +1610,3 @@ ship "Skua"
 	description "Upon hearing the news that the Korath Exiles had regained access to automata technology, the Remnant quickly realized that they would need a dedicated anti-swarm ship. Given tha the Albatross was overdue for an update, they decided to do so with an eye to creating an anti-fighter platform suited to close quarters combat."
 	description "Remnant expertise in material sciences definitely shows in the Skua: While the shields are at roughly the same level as the Albatross, the hull is three times more durable. Perhaps more importantly, however, is that it can now cloak. Drawing on preliminary studies of the Void Sprites, the Skua is has been significantly reinforced to allow for greater strengths in terms of both compression and tension. As a result, it can handle a greater variety of internal configurations as well as the pressures generated from submersion deep in gas giants."
 	description "	The cloaking technology is built into the Skua's hull; it cannot be removed or transferred to another ship."
-
