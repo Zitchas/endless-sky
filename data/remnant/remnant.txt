@@ -34,6 +34,37 @@ fleet "Small Remnant"
 		"Albatross (Turret)"
 	variant 1
 		"Albatross (Heavy)"
+	variant 5
+		"Jaeger" 1
+	variant 5
+		"Jaeger" 2
+	variant 5
+		"Skua" 1
+	variant 5
+		"Merganser" 3
+	variant 5
+		"Condor" 1
+	variant 5
+		"Vulture" 1
+	variant 5
+		"Merganser" 1
+	variant 5
+		"Merganser" 2
+	variant 5
+		"Merganser" 3
+	variant 5
+		"Peregrine" 1
+	variant 5
+		"Peregrine" 2
+	variant 5
+		"Starling" 3
+		"Jaeger" 1
+	variant 5
+		"Skua" 1
+	variant 5
+		"Ibis" 1
+		"Tern" 4
+		"Petrel" 2
 
 fleet "Large Remnant"
 	government "Remnant"
@@ -44,27 +75,51 @@ fleet "Large Remnant"
 	variant 6
 		"Albatross"
 		"Starling" 2
+		"Jaeger" 2
 	variant 6
 		"Albatross (Sniper)"
 		"Starling (Sniper)" 2
 	variant 6
 		"Albatross (Turret)"
 		"Starling (Thrasher)" 2
+		"Jaeger" 2
 	variant 6
 		"Albatross (Heavy)"
 		"Starling (Heavy)" 2
+		"Jaeger" 2
 	variant 3
 		"Albatross"
 		"Starling (Hunter)" 2
+		"Jaeger" 2
 	variant 3
 		"Albatross (Sniper)"
 		"Starling (Hunter)" 2
+		"Jaeger" 2
 	variant 2
 		"Albatross"
 		"Albatross (Sniper)"
+		"Jaeger" 4
 	variant 2
 		"Albatross (Heavy)"
 		"Albatross (Turret)"
+		"Jaeger" 3
+	variant 5
+		"Skua" 1
+		"Ibis" 2
+		"Tern" 8
+		"Petrel" 4
+	variant 5
+		"Skua" 1
+		"Jaeger" 6
+		"Starling" 2
+	variant 5
+		"Condor" 1
+		"Tern" 8
+		"Petrel" 4
+	variant 5
+		"Heron"
+		"Tern" 32
+		"Petrel" 4
 
 fleet "Remnant Transport"
 	government "Remnant"
@@ -286,6 +341,17 @@ shipyard "Remnant"
 	"Pelican"
 	"Petrel"
 	"Tern"
+	"Ember Waste Node"
+	"Condor"
+	"Diomedea"
+	"Heron"
+	"Jaeger"
+	"Peregrine"
+	"Phoenix"
+	"Puffin"
+	"Skua"
+	"Merganser"
+	"Vulture"
 
 shipyard "Remnant Puffin"
 	"Puffin"
@@ -323,6 +389,26 @@ outfitter "Remnant"
 	"Outfit Scanner"
 	"Tuning Rifle"
 	"Salvage Scanner"
+	"Nullifier Missile"
+	"Nullifier Missile Pod"
+	"Remnant Ramscoop"
+	"Ember Waste Ramscoop"
+	"Remnant Plasma Torch Cannon"
+	"Remnant Plasma Torch Turret"
+	"Remnant Flak Turret"
+	"Flak Turret"
+	"Void Rifle"
+	"Remnant Artillery"
+	"Crystal Cell"
+	"Crystal Grid"
+	"Remnant GASER Cannon"
+	"Remnant GASER Turret"
+	"Boarding Claws"
+	"Tactical Assault System"
+	"Personal Cloak System"
+	"Personal Cloaking Suit"
+	"Quantum Tear"
+	"Plasma Crystal Core"
 
 outfitter "Remnant Salvage"
 	"Generator (Furnace Class)"
