@@ -11,6 +11,47 @@
 # Weapons:
 
 
+outfit "Quantum Tear"
+	category "Secondary Weapons"
+	cost 150000000
+	thumbnail "outfit/quantum tear"
+	"mass" 100
+	"outfit space" -10
+	"weapon capacity" -10
+	"gun ports" -1
+	unplunderable 1
+	weapon
+		sprite "projectile/quantum tear"
+		icon "icon/flamethrower"
+		sound "final explosion small"
+		"die effect" "quantum tear fadeout"
+		# "hit effect" "quantum tear residue" 7
+		"hit effect" "quantum tear residue blue" 10
+		"fire effect" "blue sparks" 2
+		"hit effect" "quantum tear hit"
+		"hit effect" "large impact glow"
+		"fire effect" "large glow"
+		"burst count" 60
+		"burst reload" 1
+		"velocity" 125
+		"inaccuracy" 0
+		"safe"
+		"lifetime" 25
+		"reload" 2
+		"firing force" 50
+		"trigger radius" 150
+		"blast radius" 400
+		"firing energy" 500
+		"firing heat" 450
+		"firing fuel" 25
+		"shield damage" 5000
+		"hull damage" 5000
+		"slowing damage" 10
+		"hit force" 500
+	description "While their pursuit of the secrets of Jump Drives has yet to result in the successful manufacture of such a drive, it has led to many other advances. One such is the Quantum Tear. The Remnant look at you dubiously when you ask for an explanation as to how these work. When your eyes glaze over after the first sentence, they abbreviate the explantion to 'These weapons utilize a variant hyperspace manifold to create microtears in temporal substructures causing the rupture of their quantum state, resulting in the disruption of both internal and applied forces.'"
+	description "	These massive weapons require special hardpoints, and are built in such few number that the Remnant distribute them directly to the captains they trust with them. Due to the prodigious energy and fuel requirements, only the most massive of Remnant ships can support regular use of these weapons."
+
+
 
 outfit "Nullifier Missile"
 	plural "Nullifier Missiles"
