@@ -1,0 +1,125 @@
+person "Zitchas"
+	government "Author"
+	frequency 100
+	personality
+		mining harvests frugal unconstrained
+	phrase
+		phrase
+			"friendly author"
+	phrase
+		word
+			"May the Embers burn bright for you."
+			"Through shadows of wind and fire - we shall prevail."
+			"Have you ever watched the clouds drift in the skies of Nasqueron?"
+			"Don't mind me - I'm just testing out some stuff."
+			"Don't even try - I have the safeties disabled, so I'll go down fighting."
+			"Don't worry - they are just prototypes."
+
+	phrase
+		word
+			"If you ever need something to do: "
+			"A piece of advice: "
+			"If you like what we are doing: "
+			"If you don't like what we are doing: "
+			"If you want these ships: "
+		word
+			"Playtest pull requests."
+			"Leave informative comments."
+			"Leave approving reviews when you think it is ready."
+			"Write new missions."
+			"Fly on the latest nightly build."
+			"Always make a new branch if you are changing things."
+			"Never make changes on 'master'."
+			"Be sure to test commits."
+			"Commit early, and commit often."
+			"The wiki is full of useful information."
+	ship "Heron" "Shadow Wind"
+		"never disabled"
+
+ship "Prototype Condor"
+	sprite "ship/condor"
+	"never disabled"
+	attributes
+		category "Heavy Warship"
+		"cost" 44000000
+		"shields" 41000
+		"shield generation" 10
+		"hull" 27500
+		"hull repair rate" 10
+		"required crew" 189
+		"bunks" 240
+		"mass" 220
+		"drag" 15.1
+		"heat dissipation" .6
+		"fuel capacity" 625
+		"cargo space" 80
+		"outfit space" 2172
+		"weapon capacity" 851
+		"engine capacity" 499
+		"afterburner fuel" -.678
+		"afterburner heat" -30
+		"ramscoop" 6
+		weapon
+			"blast radius" 750
+			"shield damage" 7000
+			"hull damage" 3500
+			"heat damage" 24000
+			"ion damage" 24000
+			"disruption damage" 1200
+			"hit force" 30000
+	outfits
+		"Nuclear Missile"
+		"Korath Slicer" 4
+		"Korath Detainer" 4
+		"Finisher Pod" 2
+		"Finisher Torpedo" 200
+		"Korath Disruptor" 2
+		"Heliarch Repulsor" 2
+		"Point Defense Turret" 3
+		
+		"Blue Sun Reactor" 3
+		"Red Sun Reactor"
+		"Dark Storm Shielding" 3
+		"Large Repair Module" 4
+		"Large Heat Shunt" 2
+		"Asteroid Scanner"
+		"Large Radar Jammer"
+		"Tactical Scanner"
+		"Wanderer Ramscoop"
+		
+		"Afterburner"
+		`"Bufaer" Atomic Thruster`
+		"Ionic Afterburner" 5
+		"Type 4 Radiant Thruster"
+		"Type 4 Radiant Steering" 4
+		"Hyperdrive"
+		"Jump Drive"
+		
+	engine -46 67
+	engine 46 67
+	engine -17 105.5 .0
+	engine 17 105.5 .0
+	gun 0 -108 "Nuclear Missile"
+	gun -9 -99 "Korath Slicer"
+	gun 9 -99 "Korath Slicer"
+	gun -9 -99 "Korath Slicer"
+	gun 9 -99 "Korath Slicer"
+	gun -21 -61 "Korath Detainer"
+	gun 21 -61 "Korath Detainer"
+	gun -26.5 -53 "Korath Detainer"
+	gun 26.5 -53 "Korath Detainer"
+	gun -60 17 "Finisher Pod"
+	gun 60 17 "Finisher Pod"
+	turret 0 -91 "Point Defense Turret"
+	turret -19.5 -16 "Korath Disruptor"
+	turret 19.5 -16 "Korath Disruptor"
+	turret -60 17 "Heliarch Repulsor"
+	turret 60 17 "Heliarch Repulsor"
+	turret 0 29 "Point Defense Turret"
+	turret 0 89.5 "Point Defense Turret"
+	
+	explode "medium explosion" 24
+	explode "large explosion" 16
+	explode "small explosion" 40
+	explode "tiny explosion" 28
+	"final explode" "final explosion large" 1
