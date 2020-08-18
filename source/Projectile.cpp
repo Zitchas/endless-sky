@@ -198,11 +198,16 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 			}
 		}
 	}
-	// If the weapon is homing, is radar-guided, has lost its lock, and the
-	// target has jamming, and the missile is within the jammer's jamming radius,
-	// give a chance for the missile to turn in a random direction, in proportion
-	// to the strength of the jamming and the missile's tracking quality
-	else if(target && homing && weapon->RadarTracking() && target->Attributes().Get("radar jamming") > 0.0 && double(position.Distance(target->Position()) >= 500 + (sqrt(target->Attributes().Get("radar jamming")) * 500)))
+	// If the weapon is homing, is radar-guided, has lost its lock, the target
+	// has jamming, and the missile is within the jammer's jamming radius, give
+	// a chance for the missile to turn in a random direction, in proportion to
+	// the strength of the jamming and the missile's tracking quality
+	else if(target
+            && homing
+            && weapon->RadarTracking()
+            && target->Attributes().Get("radar jamming") > 0.0
+            && double(position.Distance(target->Position()) >= 500 + (sqrt(target->Attributes().Get("radar jamming")) * 500))
+           )
 	{
 		if(Random::Real() < (1 - (weapon->RadarTracking() * 2 / target->Attributes().Get("radar jamming"))) )
 			turn = Random::Real() - min(.5, turn);
@@ -322,7 +327,7 @@ void Projectile::CheckLock(const Ship &target)
 		double multiplier = 1.0;
 		if(distance <= shortRange)
 			multiplier = 2 - distance / shortRange;
-		double probability = weapon->InfraredTracking() * min(1., target.Heat() * (1 + multiplier) + .05);
+		double probability = weapon->InfraredTracking() * min(1., target.Heat() * multiplier + .05);
 		hasLock |= Check(probability, base);
 	}
 	
