@@ -198,18 +198,19 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 			}
 		}
 	}
-	// If the weapon is homing, is radar-guided, has lost its lock, the target
-	// has jamming, and the missile is within the jammer's jamming radius, give
-	// a chance for the missile to turn in a random direction, in proportion to
-	// the strength of the jamming and the missile's tracking quality
+	// If the weapon is homing, radar-guided, and has lost its lock, give it a
+	// chance to turn in a random direction ("go haywire") in proportion to the
+	// strength of the jamming and the distance to the jammer (jamming power
+	// attenuates with distance)
 	else if(target
-            && homing
-            && weapon->RadarTracking()
-            && target->Attributes().Get("radar jamming") > 0.0
-            && double(position.Distance(target->Position()) >= 500 + (sqrt(target->Attributes().Get("radar jamming")) * 500))
-           )
+		&& homing
+		&& weapon->RadarTracking()
+		&& target->Attributes().Get("radar jamming") > 0)
 	{
-		if(Random::Real() < (1 - (weapon->RadarTracking() * 2 / target->Attributes().Get("radar jamming"))) )
+		// 0 when just fired, 1 when striking the target
+		double closenessToTarget = 1 - (1 / (weapon->Range() / position.Distance(target->Position())));
+
+		if(Random::Real() < (closenessToTarget * ( 1 - (weapon->RadarTracking() / target->Attributes().Get("radar jamming")))) )
 			turn = Random::Real() - min(.5, turn);
 	}
 	// If a weapon is homing but has no target, do not turn it.
