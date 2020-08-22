@@ -198,19 +198,41 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 			}
 		}
 	}
-	// If the weapon is homing, radar-guided, and has lost its lock, give it a
-	// chance to turn in a random direction ("go haywire") in proportion to the
-	// strength of the jamming and the distance to the jammer (jamming power
-	// attenuates with distance)
-	else if(target
-		&& homing
-		&& weapon->RadarTracking()
-		&& target->Attributes().Get("radar jamming") > 0)
+	// Homing weapons that have lost their lock have a chance to get confused
+	// and turn in a random direction ("go haywire"). Each tracking method has
+	// a different haywire condition. Weapons with multiple tracking methods
+	// only go haywire if all of the tracking methods have gotten confused.
+	else if(target && homing)
 	{
-		// 0 when just fired, 1 when striking the target
-		double closenessToTarget = 1 - (1 / (weapon->Range() / position.Distance(target->Position())));
+		bool infraredConfused = true;
+		bool opticalConfused = true;
+		bool radarConfused = true;
 
-		if(Random::Real() < (closenessToTarget * ( 1 - (weapon->RadarTracking() / target->Attributes().Get("radar jamming")))) )
+		// Infrared: proportional to tracking quality
+		if (weapon->InfraredTracking())
+			infraredConfused = Random::Real() > weapon->InfraredTracking();
+
+		// Optical: proportional tracking quality
+		if (weapon->OpticalTracking())
+			opticalConfused = Random::Real() > weapon->OpticalTracking();
+
+		// Radar: If the target has no jamming, then proportional to tracking
+		// quality. If the target does have jamming, then it's proportional to
+		// tracking quality, the strength of target's jamming, and the distance
+		// to the target (jamming power attenuates with distance).
+		if (weapon->RadarTracking())
+		{
+			if (target->Attributes().Get("radar jamming") == 0)
+				radarConfused = Random::Real() > weapon->RadarTracking();
+			else
+			{
+				// Closeness to target; 0 when just fired, 1 when impacting
+				double closenessTotarget = 1 + weapon->RadarTracking() - (1 / (weapon->Range() / position.Distance(target->Position())));
+
+				radarConfused = Random::Real() < closenessTotarget * ( 1 - (weapon->RadarTracking() / target->Attributes().Get("radar jamming")));
+			}
+		}
+		if (infraredConfused && opticalConfused && radarConfused)
 			turn = Random::Real() - min(.5, turn);
 	}
 	// If a weapon is homing but has no target, do not turn it.
@@ -298,7 +320,10 @@ shared_ptr<Ship> Projectile::TargetPtr() const
 }
 
 
-
+// TODO: add more conditions in the future. For example maybe proximity to stars
+// and their brightness could could cause IR missiles to lose their locks more
+// often, and dense asteroid fields could do the same for radar and optically
+// guided missiles.
 void Projectile::CheckLock(const Ship &target)
 {
 	double base = hasLock ? 1. : .15;
