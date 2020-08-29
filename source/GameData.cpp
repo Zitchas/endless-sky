@@ -114,6 +114,8 @@ namespace {
 	map<string, string> plugins;
 	
 	SpriteQueue spriteQueue;
+	// Whether sprites and audio have finished loading at game startup.
+	bool initiallyLoaded = false;
 	
 	vector<string> sources;
 	map<const Sprite *, shared_ptr<ImageSet>> deferred;
@@ -311,7 +313,17 @@ void GameData::LoadShaders()
 
 double GameData::Progress()
 {
-	return min(spriteQueue.Progress(), Audio::Progress());
+	auto progress = min(spriteQueue.Progress(), Audio::GetProgress());
+	if(progress == 1.)
+		initiallyLoaded = true;
+	return progress;
+}
+
+
+
+bool GameData::IsLoaded()
+{
+	return initiallyLoaded;
 }
 
 
@@ -796,7 +808,7 @@ const News *GameData::PickNews(const Planet *planet)
 {
 	vector<const News *> matches;
 	for(const auto &it : news)
-		if(it.second.Matches(planet))
+		if(!it.second.IsEmpty() && it.second.Matches(planet))
 			matches.push_back(&it.second);
 	
 	return matches.empty() ? nullptr : matches[Random::Int(matches.size())];

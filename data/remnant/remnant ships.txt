@@ -88,7 +88,8 @@ ship "Albatross" "Albatross (Sniper)"
 		"Inhibitor Cannon" 5
 		"EMP Torpedo Bay" 2
 		"Point Defense Turret" 3
-		"EMP Torpedo" 18
+		"EMP Torpedo" 39
+		"EMP Torpedo Storage Bay" 3
 
 		"Aeon Cell"
 		"Epoch Cell"
@@ -102,7 +103,6 @@ ship "Albatross" "Albatross (Sniper)"
 		"Forge-Class Thruster"
 		"Crucible-Class Thruster"
 		"Smelter-Class Steering"
-		"Forge-Class Steering"
 		"Scram Drive"
 
 	gun "Inhibitor Cannon"
@@ -128,7 +128,9 @@ ship "Albatross" "Albatross (Turret)"
 		"Epoch Cell"
 		"Millennium Cell"
 		"Crystal Capacitor"
+		"Quantum Key Stone"
 		"Thermoelectric Cooler"
+		"Quantum Key Stone"
 		"Outfits Expansion" 2
 		"Tuning Rifle" 49
 
@@ -152,7 +154,9 @@ ship "Albatross" "Albatross (Heavy)"
 		"Epoch Cell"
 		"Millennium Cell"
 		"Crystal Capacitor" 2
+		"Quantum Key Stone"
 		"Thermoelectric Cooler" 2
+		"Quantum Key Stone"
 		"Outfits Expansion" 4
 		"Tuning Rifle" 65
 
@@ -182,7 +186,9 @@ ship "Albatross" "Albatross (Shield)"
 
 		"Aeon Cell"
 		"Millennium Cell"
+		"Quantum Key Stone"
 		"Thermoelectric Cooler" 1
+		"Quantum Key Stone"
 		"Outfits Expansion" 6
 		"Systems Core (Large)" 3
 		"Small Heat Shunt" 1
@@ -200,6 +206,30 @@ ship "Albatross" "Albatross (Shield)"
 	turret "Point Defense Turret"
 	turret "Point Defense Turret"
 
+ship "Albatross" "Albatross (Ember Shield)"
+	outfits
+		"Thrasher Turret" 2
+
+		"Aeon Cell"
+		"Millennium Cell"
+		"Crystal Capacitor" 2
+		"Quantum Key Stone"
+		"Emergency Ramscoop"
+		"Outfits Expansion" 6
+		"Systems Core (Large)" 4
+		"Large Heat Shunt"
+		
+		"Tuning Rifle" 47
+
+		"Crucible-Class Thruster"
+		"Crucible-Class Steering"
+		"Hyperdrive"
+
+	turret "Thrasher Turret"
+	turret "Thrasher Turret"
+	turret
+	turret
+	turret
 
 
 ship "Gull"
@@ -278,6 +308,7 @@ ship "Gull" "Gull (Sniper)"
 		"Epoch Cell"
 		"Millennium Cell"
 		"Crystal Capacitor"
+		"Quantum Key Stone"
 		"Salvage Scanner" 2
 		"Outfits Expansion"
 		"Tuning Rifle" 4
@@ -291,13 +322,16 @@ ship "Gull" "Gull (Support)"
 		"EMP Torpedo Bay"
 		"Inhibitor Cannon" 2
 		"Point Defense Turret"
-		"EMP Torpedo" 5
+		"EMP Torpedo" 16
+		"EMP Torpedo Storage Bay"
 
 		"Epoch Cell"
 		"Millennium Cell"
 		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
 		"Salvage Scanner" 2
-		"Outfits Expansion"
+		"Outfits Expansion" 2
 		"Tuning Rifle" 3
 
 		"Forge-Class Thruster"
@@ -310,6 +344,7 @@ ship "Gull" "Gull (Cargo)"
 
 		"Epoch Cell"
 		"Crystal Capacitor"
+		"Quantum Key Stone"
 		"Salvage Scanner"
 		"Tuning Rifle" 3
 
@@ -323,6 +358,7 @@ ship "Gull" "Gull (Bunks)"
 
 		"Epoch Cell"
 		"Crystal Capacitor"
+		"Quantum Key Stone"
 		"Salvage Scanner"
 		"Tuning Rifle" 3
 
@@ -663,6 +699,19 @@ ship "Pelican"
 	"final explode" "final explosion large" 1
 	description "The Pelican is closely based on the original semi-organic materials the Remnant found in the Ember Waste. While they are not technically alive, their internal mechanisms and method of construction bear such a close resemblance to living organisms that they are often considered as such. One key feature of this living resemblance is the innate sensory capabilities they possess, akin to sensor suites less advanced ships require for detailed scanning. These ships serve as the backbone of Remnant bulk salvage efforts, as well as their fast-logistics distribution network."
 
+ship "Pelican" "Pelican (Heavy Lift)"
+	outfits
+		"Small Heat Shunt" 2
+		"Cargo Expansion" 5
+		"Scram Drive"
+		"Smelter-Class Thruster"
+		"Crystal Capacitor" 2
+		"Quantum Key Stone"
+		"Smelter-Class Steering"
+		"Tuning Rifle" 15
+		"Emergency Ramscoop" 5
+		"Aeon Cell"
+
 
 
 ship "Penguin"
@@ -726,6 +775,90 @@ ship "Penguin"
 	explode "small explosion" 7
 	description "Inspired by close contact with void sprites and the reinvigoration of xenobiology, the Penguin is a prototype designed to serve the dual roles of testing new starship technology while exploring hostile planets throughout the Ember Waste. One of this ship's distinguishing features is that it is truly alive and has a mind that approaches self-awareness."
 	description "	The cloaking technology is built into the Penguin's hull; it cannot be removed or transferred to another ship."
+	
+	
+	
+ship "Peregrine"
+	sprite "ship/peregrine/peregrine"
+		"frame rate" 3 
+		"rewind"
+	thumbnail "thumbnail/peregrine"
+	attributes
+		category "Medium Warship"
+		licenses
+			"Remnant Capital"
+		"cost" 41627000
+		"shields" 15400
+		"hull" 8600
+		"required crew" 9
+		"bunks" 25
+		"mass" 350
+		"drag" 4.3
+		"heat dissipation" 0.85
+		"fuel capacity" 900
+		"ramscoop" 2.5
+		"cargo space" 49
+		"outfit space" 552
+		"weapon capacity" 220
+		"engine capacity" 171
+		"shield generation" 3.9
+		"shield energy" 3.0
+		"hull repair rate" 1.5
+		"hull energy" 0.90
+		"cloak" .03
+		"cloaking energy" 3
+		"cloaking fuel" .05
+		"outfit scan power" 18
+		"outfit scan speed" 1
+		"tactical scan power" 39
+		"remnant node" 3
+		weapon
+			"blast radius" 240
+			"shield damage" 2400
+			"hull damage" 1200
+			"hit force" 3000
+	outfits
+		"Thrasher Cannon" 4
+		"EMP Torpedo Bay" 1
+		"Point Defense Turret"
+		"Thrasher Turret"
+		"EMP Torpedo" 9
+		
+		"Aeon Cell"
+		"Crystal Capacitor" 2
+		"Thermoelectric Cooler" 2
+		"Small Heat Shunt"
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Tuning Rifle" 11
+		
+		"Bellows-Class Afterburner"
+		"Smelter-Class Thruster"
+		"Crucible-Class Thruster"
+		"Smelter-Class Steering"
+		"Scram Drive"
+		
+	gun 0 -133.5 "EMP Torpedo Bay"
+	gun -12.5 -105 "Thrasher Cannon"
+	gun 12.5 -105 "Thrasher Cannon"
+	gun -17.5 -83 "Thrasher Cannon"
+	gun 17.5 -83 "Thrasher Cannon"
+	turret 0 -44 "Point Defense Turret"
+	turret 0 21 "Thrasher Turret"
+	engine 0 120.5 1.5
+	engine -26 126 1.1
+	engine 25 123.5 1.1
+	leak "leak" 50 50
+	leak "flame" 50 80
+	leak "big leak" 90 30
+	explode "tiny explosion" 10
+	explode "small explosion" 25
+	explode "medium explosion" 25
+	explode "large explosion" 10
+	"final explode" "final explosion medium"
+	description "The Peregrine is the first warship designed by Taely using fresh insights garnered from recent experimentation as well as renewed studies of the void sprites. Encompassing over a century of development since the last generation of warships was built, it is the forerunner of a new breed of Remnant ships."
+	description "	The Peregrine was designed along the lines of old-earth's fast-attack cruisers. Drawing on inspiration from its namesake, famed for being the fastest self-propelled lifeform on Earth, it is designed to strike hard and fast. It closes quickly with enemies to unleash devastating barrages in the opening seconds of combat."
+	description "	The cloaking technology is built into the Peregrine's hull; it cannot be removed or transferred to another ship."
 
 
 
@@ -769,6 +902,7 @@ ship "Petrel"
 		
 		"Millennium Cell" 2
 		"Crystal Capacitor"
+		"Quantum Key Stone"
 		"Thermoelectric Cooler"
 		
 		"Anvil-Class Engine"
@@ -896,7 +1030,7 @@ ship "Starling"
 	explode "small explosion" 20
 	explode "medium explosion" 10
 	"final explode" "final explosion small" 1
-	description "One of the strangest and most useful things that the Remnant discovered in the abandoned worlds of the Ember Waste is alien cloaking technology. They designed their scout ships to be able to cloak when needed, in order to explore alien territory without being seen... or to escape in a hurry after stealing something particularly valuable from those aliens."
+	description "One of the strangest and most useful things that the Remnant have discovered in the abandoned worlds of the Ember Waste is alien cloaking technology. They have designed their scout ships to cloak when needed in order to explore alien territory without being seen... or to escape in a hurry after stealing something particularly valuable from those aliens."
 	description "	The cloaking technology is built into the Starling's hull; it cannot be removed or transferred to another ship."
 
 ship "Starling" "Starling (Heavy)"
@@ -907,6 +1041,7 @@ ship "Starling" "Starling (Heavy)"
 		"Epoch Cell"
 		"Millennium Cell"
 		"Crystal Capacitor"
+		"Quantum Key Stone"
 		"Tuning Rifle" 10
 
 		"Forge-Class Thruster"
@@ -917,12 +1052,14 @@ ship "Starling" "Starling (Sniper)"
 	outfits
 		"EMP Torpedo Bay"
 		"Inhibitor Cannon" 4
-		"EMP Torpedo" 9
+		"EMP Torpedo" 16
+		"EMP Torpedo Storage Bay"
 
 		"Epoch Cell"
 		"Crystal Capacitor"
-		"Emergency Ramscoop"
+		"Emergency Ramscoop" 2
 		"Quantum Key Stone"
+		"Outfits Expansion"
 		"Tuning Rifle" 9
 
 		"Forge-Class Thruster"
@@ -943,6 +1080,7 @@ ship "Starling" "Starling (Hunter)"
 		"Epoch Cell"
 		"Millennium Cell"
 		"Crystal Capacitor"
+		"Quantum Key Stone"
 		"Emergency Ramscoop"
 		"Tuning Rifle" 11
 
@@ -997,7 +1135,7 @@ ship "Tern"
 		"fuel capacity" 50
 		"energy capacity" 500
 		"ramscoop" 0.5
-		"outfit space" 75
+		"outfit space" 76
 		"weapon capacity" 16
 		"engine capacity" 26
 		"shield generation" 0.25
@@ -1019,6 +1157,7 @@ ship "Tern"
 		"Inhibitor Cannon"
 		
 		"Millennium Cell"
+		"Quantum Key Stone"
 		"Thermoelectric Cooler"
 		
 		"Anvil-Class Engine"
@@ -1107,81 +1246,6 @@ ship "Vulture"
 	explode "huge explosion" 30
 	"final explode" "final explosion large" 1
 	description "The Vulture is not a ship meant to be purchased in its current form. Eventually, this will be a Heavy Warship intended to be heavy tank complement to the Albatross, and a successor to it in terms of front-line survivability. Hence why it has fewer cannons, but more armor, shields, and space. Current stats are modeled after the Hurricane and Punisher. What stats it actually has will be determined by the state of the plot when it is added. In any event, it will be added via missions as a newly developped warship, much in the same way as the Dreadnought is in the FW campaign."
-
-
-
-ship "Peregrine"
-	sprite "ship/peregrine/peregrine"
-		"frame rate" 3
-		rewind
-	thumbnail "thumbnail/peregrine"
-	attributes
-		category "Light Warship"
-		licenses
-			"Remnant"
-		"cost" 35500000
-		"shields" 35100
-		"hull" 22800
-		"required crew" 9
-		"bunks" 26
-		"mass" 290
-		"drag" 4
-		"heat dissipation" 0.9
-		"fuel capacity" 1100
-		"ramscoop" 2
-		"cargo space" 49
-		"outfit space" 865
-		"weapon capacity" 220
-		"engine capacity" 208
-		"shield generation" 5.2
-		"shield energy" 4.6
-		"hull repair rate" 1.5
-		"hull energy" 1.2
-		"cloak" .05
-		"cloaking energy" 4
-		"cloaking fuel" .1
-		"outfit scan power" 12
-		"outfit scan speed" 1
-		"tactical scan power" 100
-		weapon
-			"blast radius" 340
-			"shield damage" 3400
-			"hull damage" 1700
-			"hit force" 5100
-	outfits
-		"Inhibitor Cannon" 5
-		"Point Defense Turret"
-
-		"Aeon Cell" 2
-		"Crystal Capacitor" 4
-		"Large Heat Shunt" 2
-		"Quantum Key Stone" 1
-		"Salvage Scanner" 1
-		"Emergency Ramscoop" 6
-		
-		"Bellows-Class Afterburner" 2
-		"Smelter-Class Thruster"
-		"Smelter-Class Steering" 2
-		"Jump Drive"
-		"Scram Drive"
-		
-	gun 0 -133 "Inhibitor Cannon"
-	gun -11 -105 "Inhibitor Cannon"
-	gun 11 -105 "Inhibitor Cannon"
-	gun -17 -81.5 "Inhibitor Cannon"
-	gun 17 -81.5 "Inhibitor Cannon"
-	turret -29 30
-	turret 29 30
-	turret 0 -41 "Point Defense Turret"
-	engine -25 117
-	engine 0 116
-	engine 25 117
-	explode "small explosion" 40
-	explode "medium explosion" 70
-	explode "large explosion" 50
-	explode "huge explosion" 20
-	"final explode" "final explosion large" 1
-	description "The Peregrine is the first fully living starship designed for war. While it is clearly not sapient and must rely on its pilot for larger battle-space tactics, its neural network has an exquisite understanding of close quarters maneuvers and dogfights. These ships were built and designed to be fast-attack cruisers utilizing their combined advantages of speed and stealth to confuse, isolate, and disable their enemies."
 
 
 
