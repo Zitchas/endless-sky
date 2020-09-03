@@ -248,7 +248,7 @@ outfit "Quantum Artillery"
 		"hit force" 110
 		"slowing damage" 1
 		"fuel damage" 50
-	description `With the advent of longer ranged weapons on Korath warships, it was determined that some sort of weapon was needed to fulfill the 'sniper' role in the Remnant fleets. The result was the creation of the Quantum Artillery - a cannon that utilizes deuterium fuel solidified into armor piercing shells designed to deliver a crippling nanomachine payload. These weapons are not particularly effective in terms of damage output, but they are very effective at crippling an enemy's ability to run or manouver.`
+	description `With the advent of longer ranged weapons on Korath warships, it was determined that some sort of weapon was needed to fulfill the 'sniper' role in the Remnant fleets. The result was the creation of the Quantum Artillery - a cannon that utilizes deuterium fuel solidified into armor piercing shells designed to deliver a payload designed to erase the target's fuel reserves. These weapons are not particularly effective in terms of damage output, but they are very effective at crippling an enemy's ability to run or manouver.`
 
 
 
@@ -1148,11 +1148,11 @@ outfit "Personal Cloak System"
 		"Remnant Capital"
 	cost 15000
 	thumbnail "outfit/personal cloak system"
-	"mass" 10
-	"outfit space" -10
-	"cloak suit space" 4
+	"mass" 3
+	"outfit space" -4
+	"cloak suit space" 10
 	"unplunderable" 1
-	description `These systems provide the behind-the-scenes technological wizardry that allows the personal cloaking suits to function. So long as the wearer of one of those suits is onboard a ship with this system installed, they will be able to appear and disappear at will. Unfortunately, the system only has the power to support 4 suits, and cannot project the cloaking field beyond the edge of the ship's shields.`
+	description `These systems provide the behind-the-scenes technological wizardry that allows the personal cloaking suits to function. So long as the wearer of one of those suits is onboard a ship with this system installed, they will be able to appear and disappear at will. Unfortunately, the system only has the power to support 10 suits, and cannot project the cloaking field beyond the edge of the ship's shields.`
 
 outfit "Personal Cloaking Suit"
 	category "Hand to Hand"
@@ -1160,7 +1160,7 @@ outfit "Personal Cloaking Suit"
 		"Remnant Capital"
 	cost 15000
 	thumbnail "outfit/personal cloaking suit"
-	"mass" 2
+	"mass" 0.1
 	"outfit space" 0
 	"capture defense" 8
 	"capture attack" 2
@@ -1175,8 +1175,8 @@ outfit "Tactical Assault System"
 		Remnant
 	cost 15000
 	thumbnail "outfit/tactical assault system"
-	"mass" 2
-	"outfit space" -2
+	"mass" 0.1
+	"outfit space" 0
 	"capture defense" 4.3
 	"unplunderable" 1
 	description `The Remnant use arrangements of hooks, ropes and pulleys to maneuver on the outside of ships while planet-side. These maneuver systems have been adapted to allow defening ship crews significantly better mobility on their ship, thus permitting counter-attacks from unexpected directions.`

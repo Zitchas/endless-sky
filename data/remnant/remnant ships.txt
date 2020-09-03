@@ -1570,7 +1570,7 @@ ship "Vulture Prototype"
 			"hull damage" 2000
 			"hit force" 6000
 	outfits
-		"Remnant Artillery" 6
+		"Quantum Artillery" 6
 		"Remnant Flak Turret" 6
 		"Point Defense Turret"
 
@@ -1589,12 +1589,12 @@ ship "Vulture Prototype"
 	engine -30 215
 	engine 30 215
 	engine 0 220
-	gun -68 5 "Remnant Artillery"
-	gun 68 5 "Remnant Artillery"
-	gun -85 21 "Remnant Artillery"
-	gun 85 21 "Remnant Artillery"
-	gun -62 32 "Remnant Artillery"
-	gun 62 32 "Remnant Artillery"
+	gun -68 5 "Quantum Artillery"
+	gun 68 5 "Quantum Artillery"
+	gun -85 21 "Quantum Artillery"
+	gun 85 21 "Quantum Artillery"
+	gun -62 32 "Quantum Artillery"
+	gun 62 32 "Quantum Artillery"
 	turret -27 -80 "Remnant Flak Turret"
 	turret 27 -80 "Remnant Flak Turret"
 	turret 0 -33 "Point Defense Turret"
