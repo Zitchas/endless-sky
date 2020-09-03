@@ -10,11 +10,11 @@
 
 person "Zitchas"
 	government "Author"
-	frequency 100
+	frequency 10000
 	personality
-		mining harvests unconstrained surveillance opportunistic
+		mining harvests unconstrained surveillance opportunistic staying
 	system
-		attributes "Ember Waste"
+		attributes "ember waste"
 	phrase
 		phrase
 			"friendly author"
@@ -57,7 +57,7 @@ person "Zitchas"
 			"'git fetch --all --prune && git merge upstream/master' used to be my friend, until people made branches with illegal characters in them."
 			"When making branch names, don't use any of these characters: \ / $ * : ; < > ? '' | "
 			
-	ship "Heron" "Shadow Wind"
+	ship "Heron Prototype" "Shadow Wind"
 		"never disabled"
 	ship "Condor Prototype" "Condor Prototype"
 		"never disabled"

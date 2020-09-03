@@ -251,7 +251,7 @@ ship "Condor Prototype"
 		"fuel capacity" 1100
 		"ramscoop" 3
 		"cargo space" 131
-		"outfit space" 595
+		"outfit space" 600
 		"weapon capacity" 147
 		"engine capacity" 190
 		"shield generation" 3.1
@@ -279,6 +279,7 @@ ship "Condor Prototype"
 
 		"Smelter-Class Thruster"
 		"Smelter-Class Steering"
+		"Hyperdrive"
 		"Jump Drive"
 		"Scram Drive"
 		
@@ -792,6 +793,8 @@ ship "Jaeger Prototype"
 
 		"Smelter-Class Thruster"
 		"Smelter-Class Steering"
+		"Hyperdrive"
+		"Jump Drive"
 		"Scram Drive"
 
 	engine 0 128.5
@@ -837,7 +840,7 @@ ship "Merganser Prototype"
 		"drag" .9
 		"heat dissipation" .9
 		"gaslining" 1
-		"outfit space" 199
+		"outfit space" 240
 		"shield generation" 2.8
 		"shield energy" 1.2
 		"hull repair rate" 1.8
@@ -869,6 +872,8 @@ ship "Merganser Prototype"
 		"Crucible-Class Thruster" 2
 		"Crucible-Class Steering"
 		"Bellows-Class Afterburner"
+		"Hyperdrive"
+		"Jump Drive"
 		"Scram Drive"
 		
 	gun 0 -48.5 "Nullifier Missile Pod"
@@ -1294,6 +1299,8 @@ ship "Skua Prototype"
 
 		"Smelter-Class Thruster"
 		"Smelter-Class Steering"
+		"Hyperdrive"
+		"Jump Drive"
 		"Scram Drive"
 
 	engine -28 155 .8
