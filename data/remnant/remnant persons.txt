@@ -1,20 +1,32 @@
+# Copyright (c) 2020 by Zitchas
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
 person "Zitchas"
 	government "Author"
 	frequency 100
 	personality
-		mining harvests frugal unconstrained
+		mining harvests unconstrained surveillance opportunistic
+	system
+		attributes "Ember Waste"
 	phrase
 		phrase
 			"friendly author"
 	phrase
 		word
 			"May the Embers burn bright for you."
+			"I am ash in the storm - watch how I soar."
 			"Through shadows of wind and fire - we shall prevail."
 			"Have you ever watched the clouds drift in the skies of Nasqueron?"
 			"Don't mind me - I'm just testing out some stuff."
 			"Don't even try - I have the safeties disabled, so I'll go down fighting."
 			"Don't worry - they are just prototypes."
-
 	phrase
 		word
 			"If you ever need something to do: "
@@ -33,93 +45,32 @@ person "Zitchas"
 			"Be sure to test commits."
 			"Commit early, and commit often."
 			"The wiki is full of useful information."
+			"Give us details about what you do or don't like, and why."
+			"Never, ever, make changes on 'master'."
+			"Remember to make a new branch before you start changing things."
+			"Work on a new branch. Keep your master even with the upstream master."
+			"Update your master on a regular basis, and try to keep your pull requests up to date too."
+			"Dream big, start small."
+			"New campaigns are great, but new mini-mission sets are awesome!"
+			"The errors.txt file can be very useful."
+			"'git fetch upstream' and 'git merge upstream/master' are my friends. That's how I update."
+			"'git fetch --all --prune && git merge upstream/master' used to be my friend, until people made branches with illegal characters in them."
+			"When making branch names, don't use any of these characters: \ / $ * : ; < > ? '' | "
+			
 	ship "Heron" "Shadow Wind"
 		"never disabled"
+	ship "Condor Prototype" "Condor Prototype"
+		"never disabled"
+	ship "Diomedea Prototype" "Diomedea Prototype"
+		"never disabled"
+	ship "Jaeger Prototype" "Jaeger Prototype"
+		"never disabled"
+	ship "Merganser Prototype" "Merganser Prototype"
+		"never disabled"
+	ship "Peregrine" "Peregrine Prototype"
+		"never disabled"
+	ship "Skua Prototype" "Skua Prototype"
+		"never disabled"
+	ship "Vulture Prototype" "Vulture Prototype"
+		"never disabled"
 
-ship "Prototype Condor"
-	sprite "ship/condor"
-	"never disabled"
-	attributes
-		category "Heavy Warship"
-		"cost" 44000000
-		"shields" 41000
-		"shield generation" 10
-		"hull" 27500
-		"hull repair rate" 10
-		"required crew" 189
-		"bunks" 240
-		"mass" 220
-		"drag" 15.1
-		"heat dissipation" .6
-		"fuel capacity" 625
-		"cargo space" 80
-		"outfit space" 2172
-		"weapon capacity" 851
-		"engine capacity" 499
-		"afterburner fuel" -.678
-		"afterburner heat" -30
-		"ramscoop" 6
-		weapon
-			"blast radius" 750
-			"shield damage" 7000
-			"hull damage" 3500
-			"heat damage" 24000
-			"ion damage" 24000
-			"disruption damage" 1200
-			"hit force" 30000
-	outfits
-		"Nuclear Missile"
-		"Korath Slicer" 4
-		"Korath Detainer" 4
-		"Finisher Pod" 2
-		"Finisher Torpedo" 200
-		"Korath Disruptor" 2
-		"Heliarch Repulsor" 2
-		"Point Defense Turret" 3
-		
-		"Blue Sun Reactor" 3
-		"Red Sun Reactor"
-		"Dark Storm Shielding" 3
-		"Large Repair Module" 4
-		"Large Heat Shunt" 2
-		"Asteroid Scanner"
-		"Large Radar Jammer"
-		"Tactical Scanner"
-		"Wanderer Ramscoop"
-		
-		"Afterburner"
-		`"Bufaer" Atomic Thruster`
-		"Ionic Afterburner" 5
-		"Type 4 Radiant Thruster"
-		"Type 4 Radiant Steering" 4
-		"Hyperdrive"
-		"Jump Drive"
-		
-	engine -46 67
-	engine 46 67
-	engine -17 105.5 .0
-	engine 17 105.5 .0
-	gun 0 -108 "Nuclear Missile"
-	gun -9 -99 "Korath Slicer"
-	gun 9 -99 "Korath Slicer"
-	gun -9 -99 "Korath Slicer"
-	gun 9 -99 "Korath Slicer"
-	gun -21 -61 "Korath Detainer"
-	gun 21 -61 "Korath Detainer"
-	gun -26.5 -53 "Korath Detainer"
-	gun 26.5 -53 "Korath Detainer"
-	gun -60 17 "Finisher Pod"
-	gun 60 17 "Finisher Pod"
-	turret 0 -91 "Point Defense Turret"
-	turret -19.5 -16 "Korath Disruptor"
-	turret 19.5 -16 "Korath Disruptor"
-	turret -60 17 "Heliarch Repulsor"
-	turret 60 17 "Heliarch Repulsor"
-	turret 0 29 "Point Defense Turret"
-	turret 0 89.5 "Point Defense Turret"
-	
-	explode "medium explosion" 24
-	explode "large explosion" 16
-	explode "small explosion" 40
-	explode "tiny explosion" 28
-	"final explode" "final explosion large" 1
