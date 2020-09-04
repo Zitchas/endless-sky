@@ -58,6 +58,8 @@ person "Zitchas"
 			"When making branch names, don't use any of these characters: \ / $ * : ; < > ? '' | ."
 			"If you need to track down an error and errors.txt doesn't cut it, try verbose logging with -d."
 			"Explore! There's a lot of interesting stuff hidden away out there!"
+			"While launched with -d, you can remap the fast-forward to have access to both accelerated and slowed flow of time!"
+			"While launched with -d, you can pause the game using the backtick (`) key!"
 			
 	ship "Heron Prototype" "Shadow Wind"
 		"never disabled"
