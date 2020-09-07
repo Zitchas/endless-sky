@@ -321,8 +321,8 @@ ship "Condor Prototype"
 
 
 
-ship "Diomedea Prototype"
-	sprite "ship/diomedea"
+ship "Cormorant Prototype"
+	sprite "ship/cormorant"
 	thumbnail "thumbnail/condor"
 	attributes
 		category "Transport"
@@ -411,7 +411,7 @@ ship "Diomedea Prototype"
 	explode "large explosion" 20
 	explode "huge explosion" 5
 	"final explode" "final explosion large"
-	description `The Diomedea is the remnant's final hope - A generation ship capable of carrying thousands of survivors in a desperate flight to establish a new life somewhere else. Most of necessity will be in suspended animation, but it can support over a thousand active cew. These massive ships incorporate the latest of all remnant technology and are fully alive with a degree of sapience that puts them on equal terms with their crew. They are not servants of the remnant, they are one of them."`
+	description `The Cormorant is the remnant's final hope - A generation ship capable of carrying thousands of survivors in a desperate flight to establish a new life somewhere else. Most of necessity will be in suspended animation, but it can support over a thousand active cew. These massive ships incorporate the latest of all Remnant technology and are fully alive with a degree of sapience that puts them on equal terms with their crew. They are not servants of the Remnant, they are one of them."`
 
 
 
