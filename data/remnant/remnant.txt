@@ -420,8 +420,8 @@ phrase "friendly remnant"
 		"last month"
 		"last year"
 	word
-		"."
-		"!"
+		". "
+		"! "
 	word
 		"Luckily"
 		"Fortunately"
