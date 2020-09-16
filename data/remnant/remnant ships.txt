@@ -258,6 +258,11 @@ ship "Condor Prototype"
 		"shield energy" 1.8
 		"hull repair rate" 2
 		"hull energy" 0.75
+		"cloak" .05
+		"cloaking energy" 3
+		"cloaking fuel" .05
+		"gaslining" 1
+		"atmosphere scan" 100
 		"outfit scan power" 25
 		"outfit scan speed" 1
 		"tactical scan power" 100
@@ -346,6 +351,10 @@ ship "Cormorant Prototype"
 		"shield energy" 1.8
 		"hull repair rate" 4
 		"hull energy" 0.75
+		"cloak" .05
+		"cloaking energy" 3
+		"cloaking fuel" .05
+		"gaslining" 1
 		"atmosphere scan" 100
 		"outfit scan power" 25
 		"outfit scan speed" 1
@@ -576,6 +585,11 @@ ship "Heron Prototype"
 		"shield energy" 1.8
 		"hull repair rate" 15
 		"hull energy" 0.75
+		"cloak" .05
+		"cloaking energy" 3
+		"cloaking fuel" .05
+		"gaslining" 1
+		"atmosphere scan" 100
 		"outfit scan power" 175
 		"outfit scan speed" 1
 		"tactical scan power" 350
@@ -769,9 +783,11 @@ ship "Jaeger Prototype"
 		"shield energy" 4.6
 		"hull repair rate" 1.5
 		"hull energy" 1.2
-		"cloak" .02
-		"cloaking energy" 4
-		"cloaking fuel" .1
+		"cloak" .05
+		"cloaking energy" 3
+		"cloaking fuel" .05
+		"gaslining" 1
+		"atmosphere scan" 100
 		"outfit scan power" 18
 		"outfit scan speed" 1
 		"tactical scan power" 39
@@ -839,15 +855,15 @@ ship "Merganser Prototype"
 		"mass" 50
 		"drag" .9
 		"heat dissipation" .9
-		"gaslining" 1
 		"outfit space" 240
 		"shield generation" 2.8
 		"shield energy" 1.2
 		"hull repair rate" 1.8
 		"hull energy" 0.6
-		"cloak" .02
-		"cloaking energy" 5
-		"cloaking fuel" .1
+		"cloak" .05
+		"cloaking energy" 3
+		"cloaking fuel" .05
+		"gaslining" 1
 		"atmosphere scan" 100
 		"outfit scan power" 12
 		"outfit scan speed" 1
@@ -1092,6 +1108,7 @@ ship "Peregrine"
 		"cloak" .03
 		"cloaking energy" 3
 		"cloaking fuel" .05
+		"atmosphere scan" 100
 		"outfit scan power" 18
 		"outfit scan speed" 1
 		"tactical scan power" 39
@@ -1274,10 +1291,11 @@ ship "Skua Prototype"
 		"shield energy" 4.0
 		"hull repair rate" 3.5
 		"hull energy" 1.0
-		"gaslining" 1
-		"cloak" .03
+		"cloak" .05
 		"cloaking energy" 3
 		"cloaking fuel" .05
+		"gaslining" 1
+		"atmosphere scan" 100
 		"outfit scan power" 23
 		"outfit scan speed" 1
 		"tactical scan power" 47
@@ -1565,9 +1583,11 @@ ship "Vulture Prototype"
 		"shield energy" 4.6
 		"hull repair rate" 1.5
 		"hull energy" 1.2
-		"cloak" .03
-		"cloaking energy" 5
-		"cloaking fuel" .1
+		"cloak" .05
+		"cloaking energy" 3
+		"cloaking fuel" .05
+		"gaslining" 1
+		"atmosphere scan" 100
 		"outfit scan power" 12
 		"outfit scan speed" 1
 		"tactical scan power" 100
