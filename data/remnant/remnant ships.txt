@@ -266,6 +266,10 @@ ship "Condor Prototype"
 		"outfit scan power" 25
 		"outfit scan speed" 1
 		"tactical scan power" 100
+		"ion resistance" 0.2
+		"slowing resistance" 2
+		"heat protection" 1
+		"remnant node" 5
 		weapon
 			"blast radius" 140
 			"shield damage" 1400
@@ -359,6 +363,10 @@ ship "Cormorant Prototype"
 		"outfit scan power" 25
 		"outfit scan speed" 1
 		"tactical scan power" 101
+		"ion resistance" 0.3
+		"slowing resistance" 3
+		"heat protection" 1.5
+		"remnant node" 9
 		weapon
 			"blast radius" 540
 			"shield damage" 8400
@@ -593,6 +601,10 @@ ship "Heron Prototype"
 		"outfit scan power" 175
 		"outfit scan speed" 1
 		"tactical scan power" 350
+		"ion resistance" 0.3
+		"slowing resistance" 3
+		"heat protection" 1.5
+		"remnant node" 11
 		weapon
 			"blast radius" 140
 			"shield damage" 1400
@@ -791,6 +803,10 @@ ship "Jaeger Prototype"
 		"outfit scan power" 18
 		"outfit scan speed" 1
 		"tactical scan power" 39
+		"ion resistance" 0.2
+		"slowing resistance" 2
+		"heat protection" 1
+		"remnant node" 5
 		weapon
 			"blast radius" 360
 			"shield damage" 3600
@@ -868,8 +884,12 @@ ship "Merganser Prototype"
 		"outfit scan power" 12
 		"outfit scan speed" 1
 		"tactical scan power" 26
+		"ion resistance" 0.1
+		"slowing resistance" 1
+		"heat protection" 0.5
 		"weapon capacity" 85
 		"engine capacity" 70
+		"remnant node" 1
 		weapon
 			"blast radius" 10
 			"shield damage" 100
@@ -1112,6 +1132,9 @@ ship "Peregrine"
 		"outfit scan power" 18
 		"outfit scan speed" 1
 		"tactical scan power" 39
+		"ion resistance" 0.1
+		"slowing resistance" 1
+		"heat protection" 0.5
 		"remnant node" 3
 		weapon
 			"blast radius" 240
@@ -1299,6 +1322,10 @@ ship "Skua Prototype"
 		"outfit scan power" 23
 		"outfit scan speed" 1
 		"tactical scan power" 47
+		"ion resistance" 0.2
+		"slowing resistance" 2
+		"heat protection" 1
+		"remnant node" 5
 		weapon
 			"blast radius" 360
 			"shield damage" 3600
@@ -1591,6 +1618,10 @@ ship "Vulture Prototype"
 		"outfit scan power" 12
 		"outfit scan speed" 1
 		"tactical scan power" 100
+		"ion resistance" 0.3
+		"slowing resistance" 3
+		"heat protection" 1.5
+		"remnant node" 7
 		weapon
 			"blast radius" 400
 			"shield damage" 4000
