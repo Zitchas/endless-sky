@@ -241,14 +241,14 @@ ship "Condor Prototype"
 		licenses
 			"Remnant Capital"
 		"cost" 15375000
-		"shields" 28800
-		"hull" 15500
+		"shields" 18800
+		"hull" 36400
 		"required crew" 19
 		"bunks" 300
 		"mass" 390
 		"drag" 5.1
 		"heat dissipation" .80
-		"fuel capacity" 1100
+		"fuel capacity" 1300
 		"ramscoop" 3
 		"cargo space" 131
 		"outfit space" 600
@@ -338,8 +338,8 @@ ship "Cormorant Prototype"
 		licenses
 			"Remnant Capital"
 		"cost" 55375000
-		"shields" 78000
-		"hull" 40000
+		"shields" 40000
+		"hull" 78400
 		"required crew" 250
 		"bunks" 1500
 		"mass" 1590
@@ -1303,13 +1303,13 @@ ship "Skua Prototype"
 		"bunks" 71
 		"cargo space" 121
 		"mass" 700
-		"drag" 8.5
-		"heat dissipation" 0.7
-		"fuel capacity" 1100
+		"drag" 8.2
+		"heat dissipation" 0.75
+		"fuel capacity" 1300
 		"ramscoop" 2.5
 		"outfit space" 701
 		"weapon capacity" 251
-		"engine capacity" 169
+		"engine capacity" 173
 		"shield generation" 6.2
 		"shield energy" 4.0
 		"hull repair rate" 3.5
@@ -1592,23 +1592,23 @@ ship "Vulture Prototype"
 		category "Heavy Warship"
 		licenses
 			"Remnant Capital"
-		"cost" 39100000
+		"cost" 62100000
 		"shields" 60400
-		"hull" 50500
+		"hull" 85400
 		"required crew" 46
 		"bunks" 95
 		"mass" 1100
-		"drag" 8.9
-		"heat dissipation" 0.85
+		"drag" 6.0
+		"heat dissipation" 0.90
 		"fuel capacity" 1500
 		"ramscoop" 3
 		"cargo space" 98
-		"outfit space" 960
+		"outfit space" 1030
 		"weapon capacity" 428
-		"engine capacity" 200
+		"engine capacity" 240
 		"shield generation" 5.2
 		"shield energy" 4.6
-		"hull repair rate" 1.5
+		"hull repair rate" 7.5
 		"hull energy" 1.2
 		"cloak" .05
 		"cloaking energy" 3
