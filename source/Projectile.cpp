@@ -227,8 +227,11 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 			else
 			{
 				// Closeness to target; 0 when just fired, 1 when impacting
-				double closenessTotarget = 1 + weapon->RadarTracking() - (1 / (weapon->Range() / position.Distance(target->Position())));
-
+				double closenessTotarget = 0;
+				if (position.Distance(target->Position()) == 0.0)
+					closenessTotarget = 1;
+				else
+					closenessTotarget= 1 + weapon->RadarTracking() - (1 / (weapon->Range() / position.Distance(target->Position())));
 				radarConfused = Random::Real() < closenessTotarget * ( 1 - (weapon->RadarTracking() / target->Attributes().Get("radar jamming")));
 			}
 		}
