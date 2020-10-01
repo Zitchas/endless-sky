@@ -616,7 +616,10 @@ bool Mission::HasSpace(const PlayerInfo &player) const
 		&& passengers <= player.Cargo().BunksFree() + extraCrew);
 }
 
-
+int Mission::BunkQty(const PlayerInfo &player) const
+{
+	return player.Cargo().BunksFree();
+}	
 
 // Check if this mission's cargo can fit entirely on the referenced ship.
 bool Mission::HasSpace(const Ship &ship) const
