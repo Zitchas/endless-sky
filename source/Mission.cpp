@@ -141,7 +141,7 @@ void Mission::Load(const DataNode &node)
 		}
 		else if(child.Token(0) == "passengers" && child.Size() >= 2)
 		{
-			passengers = BunkQty(player);//child.Value(1);
+			passengers = child.Value(1);
 			if(child.Size() >= 3)
 				passengerLimit = child.Value(2);
 			if(child.Size() >= 4)
@@ -616,10 +616,7 @@ bool Mission::HasSpace(const PlayerInfo &player) const
 		&& passengers <= player.Cargo().BunksFree() + extraCrew);
 }
 
-int Mission::BunkQty(const PlayerInfo &player) const
-{
-	return player.Cargo().BunksFree();
-}	
+
 
 // Check if this mission's cargo can fit entirely on the referenced ship.
 bool Mission::HasSpace(const Ship &ship) const
