@@ -48,7 +48,7 @@ public:
 	Mission(const DataNode &node);
 	
 	// Load a mission, either from the game data or from a saved game.
-	void Load(const DataNode &node);
+	void Load(const DataNode &node, const PlayerInfo &player);
 	// Save a mission. It is safe to assume that any mission that is being saved
 	// is already "instantiated," so only a subset of the data must be saved.
 	void Save(DataWriter &out, const std::string &tag = "mission") const;
