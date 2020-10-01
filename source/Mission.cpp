@@ -141,7 +141,7 @@ void Mission::Load(const DataNode &node)
 		}
 		else if(child.Token(0) == "passengers" && child.Size() >= 2)
 		{
-			passengers = child.Value(1);
+			passengers = BunkQty(player);//child.Value(1);
 			if(child.Size() >= 3)
 				passengerLimit = child.Value(2);
 			if(child.Size() >= 4)
