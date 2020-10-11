@@ -569,7 +569,8 @@ void PlayerInfoPanel::DrawFleet(const Rectangle &bounds)
 	table.AddColumn(610, Table::RIGHT);
 	table.AddColumn(670, Table::RIGHT);
 	table.AddColumn(730, Table::RIGHT);
-	table.SetUnderline(0, 730);
+	table.AddColumn(790, Table::RIGHT);	
+	table.SetUnderline(0, 790);
 	table.DrawAt(bounds.TopLeft() + Point(10., 8.));
 	
 	// Header row.
@@ -582,6 +583,7 @@ void PlayerInfoPanel::DrawFleet(const Rectangle &bounds)
 	table.Draw("hull");
 	table.Draw("fuel");
 	table.Draw("crew");
+	table.Draw("cargo");	
 	table.DrawGap(5);
 	
 	// Loop through all the player's ships.
@@ -631,6 +633,10 @@ void PlayerInfoPanel::DrawFleet(const Rectangle &bounds)
 			crewCount = min(crewCount, ship.RequiredCrew());
 		string crew = (ship.IsParked() ? "Parked" : to_string(crewCount));
 		table.Draw(crew);
+
+		string cargo = to_string(static_cast<int>(
+			ship.Cargo().Used()));
+		table.Draw(cargo);
 		
 		++index;
 	}
