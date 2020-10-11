@@ -496,7 +496,7 @@ void ShipInfoPanel::DrawCargo(const Rectangle &bounds)
 	Color bright = *GameData::Colors().Get("bright");
 	Color backColor = *GameData::Colors().Get("faint");
 	const Ship &ship = **shipIt;
-
+	bool parkedCargo = (*shipIt)->IsParked();
 	// Cargo list.
 	const CargoHold &cargo = (player.Cargo().Used() ? player.Cargo() : ship.Cargo());
 	Table table;
