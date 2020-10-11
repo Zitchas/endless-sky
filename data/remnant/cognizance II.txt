@@ -26,7 +26,7 @@ mission "Remnant: Cognizance 20"
 				`	"Deffinitely."`
 				`	"Maybe later."`
 					goto maybelater
-			`	A few commands on your commlink later, and recordings your ship automatically made from its sensors while in flight pop up on a second projector that someone sets up. Several others pull up their commlinks and start skimming over the attached sensor logs. Almost immediatley one waves to get everyone's attention.`
+			`	A few commands on your commlink later, and recordings your ship automatically made from its sensors while in flight pop up on a second projector that someone sets up. Several others pull up their commlinks and start skimming over the attached sensor logs. Almost immediately one waves to get everyone's attention.`
 			`	"Captain, was there anything unusual when you arrived there?"`
 			choice
 				`	"Yes, sensors reported life signs."`
@@ -50,8 +50,8 @@ mission "Remnant: Cognizance 20"
 				`	"That makes sense."`
 					goto missionchoice
 				`	"Why do you need multiple methods of decision making?"`
-			`	"Because we are in the midst of war, and located in an actively hazardous part of the galaxy. We, as a people, need to make countless thousands of on-the-spot decisions every day. If we had to reach a consensus for every troop movement, expedition, or resource allocation we would be overwhelemed within days." She stops spaking, and another Remnant picks up the explanation.`
-			`	"By the same token, prefects can be killed, or overloaded. Having as much decision making as possible handled by the Remnant as a group reduces our vulnerability to assasination strikes, and helps protect our prefects from burning out under the responsibility. On the flip side, it also protects our society from becoming an autocracy where one powerful person or small group makes all the decisions."`
+			`	"Because we are in the midst of war, and located in an actively hazardous part of the galaxy. We, as a people, need to make countless thousands of on-the-spot decisions every day. If we had to reach a consensus for every troop movement, expedition, or resource allocation we would be overwhelmed within days." She stops spaking, and another Remnant picks up the explanation.`
+			`	"By the same token, prefects can be killed, or overloaded. Having as much decision making as possible handled by the Remnant as a group reduces our vulnerability to assassination strikes, and helps protect our prefects from burning out under the responsibility. On the flip side, it also protects our society from becoming an autocracy where one powerful person or small group makes all the decisions."`
 			label missionchoice
 			`	The Remnant still and look at you. "So, will you take this mission?"`
 			choice
@@ -59,10 +59,12 @@ mission "Remnant: Cognizance 20"
 				`	"Later."`
 					goto maybelater
 			label takemission
-			`	"Excellent. Pick up our supplies from this pad on <stopover> then return here to pick up the team of researchers who will be going with you. Remember, you will need 5 bunks free as well as an onboard research laboratory."`
+			`	"Excellent. We will load our equipment racks on-board, and the equipment to go in them will be waiting for you on from pad D43A on <stopover>. Once it is loaded, return here to pick up the team of researchers who will be going with you. Remember, you will need 5 bunks free as well as an on-board research laboratory."`
 				accept
 			label maybelater
-			`	"Oh, that's unfortunate. Maybe some other time, then." The crowd makes various gestures of disapointment, and turn back to observing the projection and discussing their theories.`
+			`	"Oh, that's unfortunate. Maybe some other time, then." The crowd makes various gestures of disappointment, and turn back to observing the projection and discussing their theories.`
 				defer
 	to complete
 		has outfit "Research Laboratory"
+	on stopover
+		`You land on the pad indicated
