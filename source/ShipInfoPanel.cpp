@@ -498,7 +498,6 @@ void ShipInfoPanel::DrawCargo(const Rectangle &bounds)
 	const Ship &ship = **shipIt;
 
 	// Cargo list.
-	bool parkedCargo = ship.IsParked;
 	const CargoHold &cargo = (player.Cargo().Used() ? player.Cargo() : ship.Cargo());
 	Table table;
 	table.AddColumn(0, Table::LEFT);
@@ -510,14 +509,7 @@ void ShipInfoPanel::DrawCargo(const Rectangle &bounds)
 	bool hasSpace = (table.GetRowBounds().Bottom() < endY);
 	if((cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace)
 	{
-		if(parkedCargo)
-		{
-			table.Draw("Parked Cargo", bright);
-		}	
-		else 
-		{	
-			table.Draw("Cargo", bright);
-		}
+		table.Draw("Cargo", bright);
 		table.Advance();
 		hasSpace = (table.GetRowBounds().Bottom() < endY);
 	}
