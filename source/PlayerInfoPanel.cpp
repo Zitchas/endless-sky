@@ -621,7 +621,7 @@ void PlayerInfoPanel::DrawFleet(const Rectangle &bounds)
 		table.Draw(hull);
 		
 		string fuel = to_string(static_cast<int>(
-			ship.Attributes().Get("fuel capacity") * ship.Fuel()));
+			ship.Attributes().Get("cargo space")));
 		table.Draw(fuel);
 		
 		// If this isn't the flagship, we'll remember how many crew it has, but
