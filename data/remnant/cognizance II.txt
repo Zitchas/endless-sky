@@ -8,7 +8,7 @@
 # WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 # PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-mission "Remnant: Cognizance 20"
+mission "Remnant: Cognizance 21"
 	name "Preparation for expedition"
 	description "Outfit a research laboratory and go to <planet>."
 	blocked "You need 10 free space for this mission."
@@ -19,6 +19,8 @@ mission "Remnant: Cognizance 20"
 		government "Remnant"
 	to offer
 		has "Remnant: Cognizance 18: done"
+	to complete
+		has outfit "Research Laboratory"
 	on offer
 		conversation
 			`The crowd inside the spaceport cafeteria is an excited flurry of movement. You squeeze through a gap in the crowd to discover that they are gathered around a holoprojector displaying footage of the strange creature that recently followed you to Viminal and then on to Nenia. From the snippets of conversation that you catch, it appears that they are discussing theories about it. Almost as soon as you arrive, however, the gestures still and one of the Remnant gestures to you. "Greetings, Seeker. You are the one who found this creature. Since you traveled with it, could you share more recordings of it?"`
@@ -64,7 +66,25 @@ mission "Remnant: Cognizance 20"
 			label maybelater
 			`	"Oh, that's unfortunate. Maybe some other time, then." The crowd makes various gestures of disappointment, and turn back to observing the projection and discussing their theories.`
 				defer
+	on stopover
+		`You land on pad D43A and sure enough, there is a team waiting to load a bunch of equipment into the racks. Within minutes they are done loading, and cheerfully wave as they head off.`
+	on complete
+		`One of the Remnant is waiting for you. "Thanks for picking up the equipment. The team that you will be taking to Ssil Vida is waiting for you in the spaceport."`
+
+
+mission "Remnant: Cognizance 22"
+	name "Expedition to "
+	description "Outfit a research laboratory and go to <planet>."
+	blocked "You need 10 free space for this mission."
+	cargo "supplies" 10
+	source
+		government "Remnant"
+	stopover
+		planet "Ssil Vida"
+	to offer
+		has "Remnant: Cognizance 21: done"
+		has outfit "Research Laboratory"
 	to complete
 		has outfit "Research Laboratory"
-	on stopover
-		`You land on the pad indicated
+	on offer
+		conversation
