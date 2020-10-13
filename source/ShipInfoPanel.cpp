@@ -498,7 +498,7 @@ void ShipInfoPanel::DrawCargo(const Rectangle &bounds)
 	const Ship &ship = **shipIt;
 	bool parkedCargo = (*shipIt)->IsParked();
 	// Cargo list.
-	const CargoHold &cargo = ((player.Cargo().Used() && !parkedCargo) ? player.Cargo() : ship.Cargo());
+	const CargoHold &cargo = ((player.Cargo().Used() && !parkedCargo && ship.GetSystem() == player.GetSystem()) ? player.Cargo() : ship.Cargo());
 	Table table;
 	table.AddColumn(0, Table::LEFT);
 	table.AddColumn(WIDTH - 20, Table::RIGHT);
