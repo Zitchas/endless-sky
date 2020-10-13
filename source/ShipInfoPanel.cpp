@@ -513,15 +513,15 @@ void ShipInfoPanel::DrawCargo(const Rectangle &bounds)
 		table.Advance();
 		hasSpace = (table.GetRowBounds().Bottom() < endY);
 	}	
-	else if((!(ship.GetSystem() == player.GetSystem()) || !player.Cargo().Used())) && (cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace)	
+	else if(ship.GetSystem() == player.GetSystem() && player.Cargo().Used() && (cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace)
 	{
-		table.Draw("Ship Cargo", bright);
+		table.Draw("Pooled Cargo", bright);
 		table.Advance();
 		hasSpace = (table.GetRowBounds().Bottom() < endY);
 	}
 	else if((cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace)
 	{
-		table.Draw("Pooled Cargo", bright);
+		table.Draw("Ship Cargo", bright);
 		table.Advance();
 		hasSpace = (table.GetRowBounds().Bottom() < endY);
 	}	
