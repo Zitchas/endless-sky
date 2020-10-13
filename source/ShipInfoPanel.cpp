@@ -403,8 +403,8 @@ void ShipInfoPanel::DrawWeapons(const Rectangle &bounds)
 	}
 	// If necessary, shrink the sprite to keep the hardpoints inside the labels.
 	// The width of this UI block will be 2 * (LABEL_WIDTH + HARDPOINT_DX).
-	static const double LABEL_WIDTH = 150.;
-	static const double LABEL_DX = 95.;
+	static const double LABEL_WIDTH = 245.;
+	static const double LABEL_DX = 195.;
 	static const double LABEL_PAD = 5.;
 	if(maxX > (LABEL_DX - LABEL_PAD))
 		scale = min(scale, (LABEL_DX - LABEL_PAD) / (2. * maxX));
@@ -440,7 +440,7 @@ void ShipInfoPanel::DrawWeapons(const Rectangle &bounds)
 	{
 		string name = "[empty]";
 		if(hardpoint.GetOutfit())
-			name = font.Truncate(hardpoint.GetOutfit()->Name(), 150);
+			name = font.Truncate(hardpoint.GetOutfit()->Name(), 200);
 		
 		bool isRight = (hardpoint.GetPoint().X() >= 0.);
 		bool isTurret = hardpoint.IsTurret();
@@ -507,13 +507,19 @@ void ShipInfoPanel::DrawCargo(const Rectangle &bounds)
 	
 	double endY = bounds.Bottom() - 30. * (cargo.Passengers() != 0);
 	bool hasSpace = (table.GetRowBounds().Bottom() < endY);
-	if((!parkedCargo && (cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace))
+	if((!parkedCargo && player.Cargo().Used() && (cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace))
 	{
 		table.Draw("Pooled Cargo", bright);
 		table.Advance();
 		hasSpace = (table.GetRowBounds().Bottom() < endY);
 	}
 	else if((parkedCargo && (cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace))
+	{
+		table.Draw("Parked Cargo", bright);
+		table.Advance();
+		hasSpace = (table.GetRowBounds().Bottom() < endY);
+	}	
+	else if((!parkedCargo && !player.Cargo().Used() && (cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace))
 	{
 		table.Draw("Ship Cargo", bright);
 		table.Advance();
