@@ -507,19 +507,19 @@ void ShipInfoPanel::DrawCargo(const Rectangle &bounds)
 	
 	double endY = bounds.Bottom() - 30. * (cargo.Passengers() != 0);
 	bool hasSpace = (table.GetRowBounds().Bottom() < endY);
-	if((parkedCargo && (cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace))
+	if(parkedCargo && (cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace)
 	{
 		table.Draw("Parked Cargo", bright);
 		table.Advance();
 		hasSpace = (table.GetRowBounds().Bottom() < endY);
 	}	
-	else if((!ship.GetSystem() == player.GetSystem() || !player.Cargo().Used() && (cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace))
+	else if((!ship.GetSystem() == player.GetSystem() || !player.Cargo().Used()) && (cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace)	
 	{
 		table.Draw("Ship Cargo", bright);
 		table.Advance();
 		hasSpace = (table.GetRowBounds().Bottom() < endY);
 	}
-	else if((cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace))
+	else if((cargo.CommoditiesSize() || cargo.HasOutfits() || cargo.MissionCargoSize()) && hasSpace)
 	{
 		table.Draw("Pooled Cargo", bright);
 		table.Advance();
