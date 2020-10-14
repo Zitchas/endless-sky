@@ -650,7 +650,7 @@ void ShipInfoPanel::Rename(const string &name)
 
 bool ShipInfoPanel::CanDump() const
 {
-	if(canEdit || shipIt == player.Ships().end())
+	if(canEdit || shipIt == player.Ships().end() || (*shipIt)->IsParked())
 		return false;
 	
 	CargoHold &cargo = (*shipIt)->Cargo();
