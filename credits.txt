@@ -1,5 +1,7 @@
 Welcome to Endless Sky!
-version 0.9.12
+version 0.9.12 (10sec Person)
+Last sync with master: (2020-Oct-17)
+
 
 This game is open source.
 To report bugs, give feedback,
