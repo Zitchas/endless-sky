@@ -570,6 +570,7 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 				command |= Command::DEPLOY;
 				Deploy(*it, !fightersRetreat);
 			}
+			DoCloak(*it, command)
 			if(isCloaking)
 				command |= Command::CLOAK;
 		}
