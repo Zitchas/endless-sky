@@ -882,6 +882,11 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 		}
 		// From here down, we're only dealing with ships that have a "parent"
 		// which is in the same system as them.
+		
+		else if((personality.IsTimid() || (it->IsYours() && healthRemaining < RETREAT_HEALTH))
+				&& parent->Position().Distance(it->Position()) > 500.)
+			MoveEscort(*it, command);
+		
 		else if(parent->GetGovernment()->IsEnemy(gov))
 		{
 			// Fight your target, if you have one.
@@ -913,9 +918,9 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 			MoveEscort(*it, command);
 		// Timid ships always stay near their parent. Injured player
 		// escorts will stay nearby until they have repaired a bit.
-		else if((personality.IsTimid() || (it->IsYours() && healthRemaining < RETREAT_HEALTH))
-				&& parent->Position().Distance(it->Position()) > 500.)
-			MoveEscort(*it, command);
+		//else if((personality.IsTimid() || (it->IsYours() && healthRemaining < RETREAT_HEALTH))
+		//		&& parent->Position().Distance(it->Position()) > 500.)
+		//	MoveEscort(*it, command);
 		// Otherwise, attack targets depending on how heroic you are.
 		else if(target && (targetDistance < 2000. || personality.IsHeroic()))
 			MoveIndependent(*it, command);
