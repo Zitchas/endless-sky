@@ -860,6 +860,11 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 			else
 				command.SetTurn(TurnToward(*it, TargetAim(*it)));
 		}
+		// dropped in here to see if retreat overrides focus on target
+		else if((personality.IsTimid() || (it->IsYours() && healthRemaining < RETREAT_HEALTH))
+				&& parent->Position().Distance(it->Position()) > 500.)
+			MoveEscort(*it, command);
+		
 		else if(FollowOrders(*it, command))
 		{
 			// If this is an escort and it followed orders, its only final task
@@ -882,11 +887,6 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 		}
 		// From here down, we're only dealing with ships that have a "parent"
 		// which is in the same system as them.
-		
-		else if((personality.IsTimid() || (it->IsYours() && healthRemaining < RETREAT_HEALTH))
-				&& parent->Position().Distance(it->Position()) > 500.)
-			MoveEscort(*it, command);
-		
 		else if(parent->GetGovernment()->IsEnemy(gov))
 		{
 			// Fight your target, if you have one.
