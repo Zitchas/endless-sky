@@ -859,12 +859,7 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 				Stop(*it, command);
 			else
 				command.SetTurn(TurnToward(*it, TargetAim(*it)));
-		}
-		// dropped in here to see if retreat overrides focus on target
-		else if((personality.IsTimid() || (it->IsYours() && healthRemaining < RETREAT_HEALTH))
-				&& parent->Position().Distance(it->Position()) > 500.)
-			MoveEscort(*it, command);
-		
+		}	
 		else if(FollowOrders(*it, command))
 		{
 			// If this is an escort and it followed orders, its only final task
@@ -918,9 +913,9 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 			MoveEscort(*it, command);
 		// Timid ships always stay near their parent. Injured player
 		// escorts will stay nearby until they have repaired a bit.
-		//else if((personality.IsTimid() || (it->IsYours() && healthRemaining < RETREAT_HEALTH))
-		//		&& parent->Position().Distance(it->Position()) > 500.)
-		//	MoveEscort(*it, command);
+		else if((personality.IsTimid() || (it->IsYours() && healthRemaining < RETREAT_HEALTH))
+				&& parent->Position().Distance(it->Position()) > 500.)
+			MoveEscort(*it, command);
 		// Otherwise, attack targets depending on how heroic you are.
 		else if(target && (targetDistance < 2000. || personality.IsHeroic()))
 			MoveIndependent(*it, command);
