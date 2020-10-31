@@ -576,7 +576,7 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 				it->SetCommands(command);
 				continue;
 			} */
-			if(isCloaking)
+			if(isCloaking && flagship)
 				command |= Command::CLOAK;
 		}
 		// Cloak if the AI considers it appropriate.
