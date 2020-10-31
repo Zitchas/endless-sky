@@ -570,14 +570,16 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 				command |= Command::DEPLOY;
 				Deploy(*it, !fightersRetreat);
 			}
+			// allow player escorts to cloak independently
 		/*	if(DoCloak(*it, command))
 			{
 				// The ship chose to retreat from its target, e.g. to repair.
 				it->SetCommands(command);
 				continue;
 			} */
-			//if(isCloaking)
-			//	command |= Command::CLOAK;
+			// this makes escorts cloak
+			if(isCloaking)
+				command |= Command::CLOAK;
 		}
 		// Cloak if the AI considers it appropriate.
 		else if(DoCloak(*it, command))
