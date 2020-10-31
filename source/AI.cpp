@@ -3559,7 +3559,7 @@ void AI::MovePlayer(Ship &ship, const PlayerInfo &player, Command &activeCommand
 		command |= Command::DEPLOY;
 		Deploy(ship, !Preferences::Has("Damaged fighters retreat"));
 	}
-	if(isCloaking)
+	if(isCloaking && flagship)
 		command |= Command::CLOAK;
 	
 	ship.SetCommands(command);
