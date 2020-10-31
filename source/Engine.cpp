@@ -1717,7 +1717,7 @@ void Engine::HandleKeyboardInputs()
 	if(keyHeld.Has(Command::CLOAK) && keyHeld.Has(Command::SHIFT))
 	{
 		activeCommands |= Command::CLOAKFLEET;
-		activeCommands.Clear(Command::CLOAK);
+		//activeCommands.Clear(Command::CLOAK);
 	}	
 }
 
