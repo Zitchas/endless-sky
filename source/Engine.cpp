@@ -1713,6 +1713,12 @@ void Engine::HandleKeyboardInputs()
 		activeCommands |= Command::STOP;
 		activeCommands.Clear(Command::BACK);
 	}
+	// Command to cloak entire fleet
+	if(keyHeld.Has(Command::CLOAK) && keyHeld.Has(Command::SHIFT))
+	{
+		activeCommands |= Command::CLOAKFLEET;
+		//activeCommands.Clear(Command::CLOAK);
+	}	
 }
 
 
