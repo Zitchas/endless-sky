@@ -69,7 +69,7 @@ const Command Command::AMMO(1uL << 25, "Fleet: Toggle ammo usage");
 const Command Command::WAIT(1uL << 26, "");
 const Command Command::STOP(1ul << 27, "");
 const Command Command::SHIFT(1uL << 28, "");
-
+const Command Command::CLOAKFLEET(1uL << 29, "Cloak your fleet");
 
 
 // In the given text, replace any instances of command names (in angle brackets)
