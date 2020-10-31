@@ -2468,7 +2468,7 @@ bool AI::DoCloak(Ship &ship, Command &command)
 		
 		// If your parent has chosen to cloak, cloak and rendezvous with them.
 		const shared_ptr<const Ship> &parent = ship.GetParent();
-		if(parent && parent->Commands().Has(Command::CLOAKFLEET) && parent->GetSystem() == ship.GetSystem()
+		if(parent && parent->Commands().Has(Command::CLOAK) && parent->GetSystem() == ship.GetSystem()
 				&& !parent->GetGovernment()->IsEnemy(ship.GetGovernment()))
 		{
 			command |= Command::CLOAK;
