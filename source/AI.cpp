@@ -369,7 +369,7 @@ void AI::UpdateKeys(PlayerInfo &player, Command &activeCommands)
 			if(!it->IsParked() && it->Attributes().Get("cloak"))
 			{
 				fleetCloaking = !fleetCloaking;
-				Messages::Add(isCloaking ? "Your fleet is cloaking." : "Your fleet is uncloaking.");
+				Messages::Add(fleetCloaking ? "Your fleet is cloaking." : "Your fleet is uncloaking.");
 				break;
 			}	
 	// Toggle your secondary weapon.
