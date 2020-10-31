@@ -361,10 +361,17 @@ void AI::UpdateKeys(PlayerInfo &player, Command &activeCommands)
 			if(!it->IsParked() && it->Attributes().Get("cloak"))
 			{
 				isCloaking = !isCloaking;
-				Messages::Add(isCloaking ? "Engaging cloaking device." : "Disengaging cloaking device.");
+				Messages::Add(isCloaking ? "Flagship cloaking." : "Flagship decloaking.");
 				break;
 			}
-	
+	if(activeCommands.Has(Command::CLOAKFLEET))
+		for(const auto &it : player.Ships())
+			if(!it->IsParked() && it->Attributes().Get("cloak"))
+			{
+				fleetCloaking = !fleetCloaking;
+				Messages::Add(isCloaking ? "Your fleet is cloaking." : "Your fleet is uncloaking.");
+				break;
+			}	
 	// Toggle your secondary weapon.
 	if(activeCommands.Has(Command::SELECT))
 		player.SelectNext();
@@ -578,7 +585,7 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 				continue;
 			} */
 			// this makes escorts cloak
-			if(isCloaking)
+			if(fleetCloaking)
 				command |= Command::CLOAK;
 		}
 		// Cloak if the AI considers it appropriate.
