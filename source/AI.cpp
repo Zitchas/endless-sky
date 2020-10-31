@@ -576,8 +576,8 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 				it->SetCommands(command);
 				continue;
 			} */
-			if(isCloaking && flagship)
-				command |= Command::CLOAK;
+			//if(isCloaking)
+			//	command |= Command::CLOAK;
 		}
 		// Cloak if the AI considers it appropriate.
 		else if(DoCloak(*it, command))
@@ -3559,8 +3559,9 @@ void AI::MovePlayer(Ship &ship, const PlayerInfo &player, Command &activeCommand
 		command |= Command::DEPLOY;
 		Deploy(ship, !Preferences::Has("Damaged fighters retreat"));
 	}
-	//if(isCloaking)
-	//	command |= Command::CLOAK;
+	// this only makes the flagship cloak
+	if(isCloaking)
+		command |= Command::CLOAK;
 	
 	ship.SetCommands(command);
 }
