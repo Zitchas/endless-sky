@@ -356,20 +356,20 @@ void AI::UpdateKeys(PlayerInfo &player, Command &activeCommands)
 		Messages::Add("Coming to a stop.");
 	
 	// Only toggle the "cloak" command if one of your ships has a cloaking device.
-	if(activeCommands.Has(Command::CLOAK))
-		for(const auto &it : player.Ships())
-			if(!it->IsParked() && it->Attributes().Get("cloak"))
-			{
-				isCloaking = !isCloaking;
-				Messages::Add(isCloaking ? "Flagship cloaking." : "Flagship decloaking.");
-				break;
-			}
 	if(activeCommands.Has(Command::CLOAKFLEET))
 		for(const auto &it : player.Ships())
 			if(!it->IsParked() && it->Attributes().Get("cloak"))
 			{
 				fleetCloaking = !fleetCloaking;
 				Messages::Add(fleetCloaking ? "Your fleet is cloaking." : "Your fleet is uncloaking.");
+				break;
+			}
+	if(activeCommands.Has(Command::CLOAK))
+		for(const auto &it : player.Ships())
+			if(!it->IsParked() && it->Attributes().Get("cloak"))
+			{
+				isCloaking = !isCloaking;
+				Messages::Add(isCloaking ? "Flagship cloaking." : "Flagship decloaking.");
 				break;
 			}	
 	// Toggle your secondary weapon.
