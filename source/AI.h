@@ -191,6 +191,7 @@ private:
 	
 	bool isCloaking = false;
 	bool fleetCloaking = false;	
+	bool flagCloaking = false;
 	
 	bool escortsAreFrugal = true;
 	bool escortsUseAmmo = true;
