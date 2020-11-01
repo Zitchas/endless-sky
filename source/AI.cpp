@@ -361,7 +361,7 @@ void AI::UpdateKeys(PlayerInfo &player, Command &activeCommands)
 			if(!it->IsParked() && it->Attributes().Get("cloak"))
 			{
 				flagCloaking = !flagCloaking;
-				Messages::Add(fleetCloaking ? "Flagship cloaking." : "Flagship uncloaking.");
+				Messages::Add(flagCloaking ? "Flagship cloaking." : "Flagship decloaking.");
 				break;
 			}
 	if(activeCommands.Has(Command::CLOAK))
