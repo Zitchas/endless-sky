@@ -360,8 +360,17 @@ void AI::UpdateKeys(PlayerInfo &player, Command &activeCommands)
 		for(const auto &it : player.Ships())
 			if(!it->IsParked() && it->Attributes().Get("cloak"))
 			{
-				flagCloaking = !flagCloaking;
-				Messages::Add(flagCloaking ? "Flagship cloaking." : "Flagship decloaking.");
+				if(isCloaking)
+				{
+					flagDecloak = !flagDecloak;
+					Messages::Add(flagDecloak ? "Flagship only decloaking." : "Flagship only cloaking.");	
+				}
+				else
+				{	
+					flagDecloak = false;
+					flagCloaking = !flagCloaking;
+					Messages::Add(flagCloaking ? "Flagship cloaking." : "Flagship decloaking.");
+				}	
 				break;
 			}
 	if(activeCommands.Has(Command::CLOAK))
@@ -3569,7 +3578,7 @@ void AI::MovePlayer(Ship &ship, const PlayerInfo &player, Command &activeCommand
 		Deploy(ship, !Preferences::Has("Damaged fighters retreat"));
 	}
 	// this only makes the flagship cloak
-	if(flagCloaking || isCloaking)
+	if(flagCloaking || (isCloaking && !flagDecloak))
 		command |= Command::CLOAK;
 	
 	ship.SetCommands(command);
