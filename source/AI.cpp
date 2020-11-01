@@ -363,6 +363,7 @@ void AI::UpdateKeys(PlayerInfo &player, Command &activeCommands)
 				if(isCloaking)
 				{
 					flagDecloak = !flagDecloak;
+					flagCloaking = false;
 					Messages::Add(flagDecloak ? "Flagship only decloaking." : "Flagship only cloaking.");	
 				}
 				else
