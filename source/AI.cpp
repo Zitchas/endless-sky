@@ -356,12 +356,12 @@ void AI::UpdateKeys(PlayerInfo &player, Command &activeCommands)
 		Messages::Add("Coming to a stop.");
 	
 	// Only toggle the "cloak" command if one of your ships has a cloaking device.
-	if(activeCommands.Has(Command::CLOAKFLEET))
+	if(activeCommands.Has(Command::CLOAKFLAG))
 		for(const auto &it : player.Ships())
 			if(!it->IsParked() && it->Attributes().Get("cloak"))
 			{
-				fleetCloaking = !fleetCloaking;
-				Messages::Add(fleetCloaking ? "Your fleet is cloaking." : "Your fleet is uncloaking.");
+				flagCloaking = !flagCloaking;
+				Messages::Add(fleetCloaking ? "Flagship cloaking." : "Flagship uncloaking.");
 				break;
 			}
 	if(activeCommands.Has(Command::CLOAK))
@@ -369,7 +369,7 @@ void AI::UpdateKeys(PlayerInfo &player, Command &activeCommands)
 			if(!it->IsParked() && it->Attributes().Get("cloak"))
 			{
 				isCloaking = !isCloaking;
-				Messages::Add(isCloaking ? "Flagship cloaking." : "Flagship decloaking.");
+				Messages::Add(isCloaking ? "All Cloaking." : "All Decloaking.");
 				break;
 			}	
 	// Toggle your secondary weapon.
@@ -585,7 +585,7 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 				continue;
 			} */
 			// this makes escorts cloak
-			if(fleetCloaking)
+			if(fleetCloaking || isCloaking)
 				command |= Command::CLOAK;
 		}
 		// Cloak if the AI considers it appropriate.
@@ -3569,7 +3569,7 @@ void AI::MovePlayer(Ship &ship, const PlayerInfo &player, Command &activeCommand
 		Deploy(ship, !Preferences::Has("Damaged fighters retreat"));
 	}
 	// this only makes the flagship cloak
-	if(isCloaking)
+	if(flagCloaking || isCloaking)
 		command |= Command::CLOAK;
 	
 	ship.SetCommands(command);
