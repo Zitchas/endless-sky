@@ -390,13 +390,13 @@ void PreferencesPanel::DrawControls()
 	Table shiftTable;
 	shiftTable.AddColumn(125, Table::RIGHT);
 	shiftTable.SetUnderline(0, 130);
-	shiftTable.DrawAt(Point(-400, 42));
+	shiftTable.DrawAt(Point(-400, 12));
 	
 	shiftTable.DrawUnderline(medium);
 	shiftTable.Draw("With <shift> key", bright);
 	shiftTable.DrawGap(5);
 	shiftTable.Draw("Cloak flagship", medium);
-	shiftTable.DrawGap(5);	
+	shiftTable.DrawGap(15);	
 	shiftTable.Draw("Select nearest ship", medium);
 	shiftTable.Draw("Select next escort", medium);
 	shiftTable.Draw("Talk to planet", medium);
