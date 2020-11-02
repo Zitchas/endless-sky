@@ -185,7 +185,7 @@ bool PreferencesPanel::Click(int x, int y, int clicks)
 				if(speed > 60)
 					speed = 20;
 				Preferences::SetScrollSpeed(speed);
-			}
+			}			
 			else
 				Preferences::Set(zone.Value(), !Preferences::Has(zone.Value()));
 			break;
@@ -390,13 +390,13 @@ void PreferencesPanel::DrawControls()
 	Table shiftTable;
 	shiftTable.AddColumn(125, Table::RIGHT);
 	shiftTable.SetUnderline(0, 130);
-	shiftTable.DrawAt(Point(-400, 12));
+	shiftTable.DrawAt(Point(-400, 0));
 	
 	shiftTable.DrawUnderline(medium);
 	shiftTable.Draw("With <shift> key", bright);
-	shiftTable.DrawGap(5);
+	shiftTable.DrawGap(10);
 	shiftTable.Draw("Cloak flagship", medium);
-	shiftTable.DrawGap(15);	
+	shiftTable.DrawGap(25);	
 	shiftTable.Draw("Select nearest ship", medium);
 	shiftTable.Draw("Select next escort", medium);
 	shiftTable.Draw("Talk to planet", medium);
@@ -509,6 +509,11 @@ void PreferencesPanel::DrawSettings()
 			isOn = true;
 			text = Preferences::Has(FIGHTER_REPAIR) ? "parallel" : "series";
 		}
+		else if(setting == FIGHTER_RETREAT)
+		{
+			isOn = true;
+			text = Preferences::Has(FIGHTER_REPAIR) ? "early" : "late";
+		}		
 		else if(setting == SHIP_OUTLINES)
 		{
 			isOn = true;
@@ -549,7 +554,7 @@ void PreferencesPanel::DrawSettings()
 		{
 			isOn = true;
 			text = to_string(Preferences::ScrollSpeed());
-		}
+		}		
 		else
 			text = isOn ? "on" : "off";
 		
