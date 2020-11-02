@@ -394,7 +394,7 @@ void PreferencesPanel::DrawControls()
 	
 	shiftTable.DrawUnderline(medium);
 	shiftTable.Draw("With <shift> key", bright);
-	shiftTable.DrawGap(10);
+	shiftTable.DrawGap(5);
 	shiftTable.Draw("Cloak flagship", medium);
 	shiftTable.DrawGap(25);	
 	shiftTable.Draw("Select nearest ship", medium);
@@ -512,7 +512,7 @@ void PreferencesPanel::DrawSettings()
 		else if(setting == FIGHTER_RETREAT)
 		{
 			isOn = true;
-			text = Preferences::Has(FIGHTER_REPAIR) ? "early" : "late";
+			text = Preferences::Has(FIGHTER_RETREAT) ? "early" : "late";
 		}		
 		else if(setting == SHIP_OUTLINES)
 		{
