@@ -1697,7 +1697,8 @@ bool AI::ShouldDock(const Ship &ship, const Ship &parent, const System *playerSy
 	
 	// If a carried ship has repair abilities, avoid having it get stuck oscillating between
 	// retreating and attacking when at exactly 25% health by adding hysteresis to the check.
-	double retreatFactor = (Preferences::Has("Fighter retreat health") ? 1 : 2);
+	// has fighter retreat health means early retreat
+	double retreatFactor = (Preferences::Has("Fighter retreat health") ? 3 : 1);
 	double minHealth = retreatFactor * RETREAT_HEALTH + .1 * !ship.Commands().Has(Command::DEPLOY);
 	if(ship.Health() < minHealth && (!ship.IsYours() || Preferences::Has("Damaged fighters retreat")))
 		return true;
