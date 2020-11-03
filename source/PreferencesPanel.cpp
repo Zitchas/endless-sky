@@ -52,7 +52,7 @@ namespace {
 	const string REACTIVATE_HELP = "Reactivate first-time help";
 	const string SCROLL_SPEED = "Scroll speed";
 	const string FIGHTER_REPAIR = "Repair fighters in";
-	const string FIGHTER_RETREAT = "Fighter retreat health";
+	const string FIGHTER_RETREAT = "Fighters retreat";
 	const string SHIP_OUTLINES = "Ship outlines in shops";
 }
 
