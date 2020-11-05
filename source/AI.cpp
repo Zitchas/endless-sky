@@ -852,12 +852,12 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 			// to its mothership. So, it should continue to be deployed.
 			command |= Command::DEPLOY;
 			
-			if(it->IsYours && !target && it->Attributes().Get("miner") && DoHarvesting(*it, command))
+			if(it->IsYours() && !target && it->Attributes().Get("miner") && DoHarvesting(*it, command))
 			{
 			it->SetCommands(command);
 			continue;
 			}
-			if(it->IsYours && !target && it->Attributes().Get("miner"))
+			if(it->IsYours() && !target && it->Attributes().Get("miner"))
 			{
 				DoMining(*it, command);
 				it->SetCommands(command);
