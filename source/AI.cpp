@@ -851,6 +851,18 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 			// If we get here, it means that the ship has not decided to return
 			// to its mothership. So, it should continue to be deployed.
 			command |= Command::DEPLOY;
+			
+			if(it->IsYours && !target && it->Attributes().Get("miner") && DoHarvesting(*it, command))
+			{
+			it->SetCommands(command);
+			continue;
+			}
+			if(it->IsYours && !target && it->Attributes().Get("miner"))
+			{
+				DoMining(*it, command);
+				it->SetCommands(command);
+				continue;
+			}	
 		}
 		// If this ship has decided to recall all of its fighters because combat has ceased,
 		// it comes to a stop to facilitate their reboarding process.
