@@ -190,6 +190,9 @@ private:
 	Command autoPilot;
 	
 	bool isCloaking = false;
+	bool fleetCloaking = false;	
+	bool flagCloaking = false;
+	bool flagDecloak = false;
 	
 	bool escortsAreFrugal = true;
 	bool escortsUseAmmo = true;

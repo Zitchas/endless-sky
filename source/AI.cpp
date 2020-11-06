@@ -356,15 +356,32 @@ void AI::UpdateKeys(PlayerInfo &player, Command &activeCommands)
 		Messages::Add("Coming to a stop.");
 	
 	// Only toggle the "cloak" command if one of your ships has a cloaking device.
+	if(activeCommands.Has(Command::CLOAKFLAG))
+		for(const auto &it : player.Ships())
+			if(!it->IsParked() && it->Attributes().Get("cloak"))
+			{
+				flagCloaking = !flagCloaking;
+				Messages::Add(flagCloaking ? "Flagship cloaking." : "Flagship decloaking.");	
+				break;
+			}
 	if(activeCommands.Has(Command::CLOAK))
 		for(const auto &it : player.Ships())
 			if(!it->IsParked() && it->Attributes().Get("cloak"))
 			{
-				isCloaking = !isCloaking;
-				Messages::Add(isCloaking ? "Engaging cloaking device." : "Disengaging cloaking device.");
+				if(!flagCloaking || !fleetCloaking)
+				{
+					flagCloaking = true;
+					fleetCloaking = true;
+					Messages::Add("All Cloaking.");
+				}
+				else
+				{
+					flagCloaking = false;
+					fleetCloaking = false;
+					Messages::Add("All Decloaking.");					
+				}
 				break;
-			}
-	
+			}	
 	// Toggle your secondary weapon.
 	if(activeCommands.Has(Command::SELECT))
 		player.SelectNext();
@@ -570,7 +587,15 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 				command |= Command::DEPLOY;
 				Deploy(*it, !fightersRetreat);
 			}
-			if(isCloaking)
+			// allow player escorts to cloak independently
+		/*	if(DoCloak(*it, command))
+			{
+				// The ship chose to retreat from its target, e.g. to repair.
+				it->SetCommands(command);
+				continue;
+			} */
+			// this makes escorts cloak
+			if(fleetCloaking)
 				command |= Command::CLOAK;
 		}
 		// Cloak if the AI considers it appropriate.
@@ -826,6 +851,18 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 			// If we get here, it means that the ship has not decided to return
 			// to its mothership. So, it should continue to be deployed.
 			command |= Command::DEPLOY;
+			
+			if(it->IsYours() && !target && it->Attributes().Get("miner") && DoHarvesting(*it, command))
+			{
+			it->SetCommands(command);
+			continue;
+			}
+			if(it->IsYours() && !target && it->Attributes().Get("miner"))
+			{
+				DoMining(*it, command);
+				it->SetCommands(command);
+				continue;
+			}	
 		}
 		// If this ship has decided to recall all of its fighters because combat has ceased,
 		// it comes to a stop to facilitate their reboarding process.
@@ -853,7 +890,7 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 				Stop(*it, command);
 			else
 				command.SetTurn(TurnToward(*it, TargetAim(*it)));
-		}
+		}	
 		else if(FollowOrders(*it, command))
 		{
 			// If this is an escort and it followed orders, its only final task
@@ -1672,7 +1709,9 @@ bool AI::ShouldDock(const Ship &ship, const Ship &parent, const System *playerSy
 	
 	// If a carried ship has repair abilities, avoid having it get stuck oscillating between
 	// retreating and attacking when at exactly 25% health by adding hysteresis to the check.
-	double minHealth = RETREAT_HEALTH + .1 * !ship.Commands().Has(Command::DEPLOY);
+	// has preferences fighter retreat means early retreat at 50% health otherwise at 25% health
+	double retreatFactor = (Preferences::Has("Fighters retreat") ? 2 : 1);
+	double minHealth = retreatFactor * RETREAT_HEALTH + .1 * !ship.Commands().Has(Command::DEPLOY);
 	if(ship.Health() < minHealth && (!ship.IsYours() || Preferences::Has("Damaged fighters retreat")))
 		return true;
 	
@@ -1680,8 +1719,9 @@ bool AI::ShouldDock(const Ship &ship, const Ship &parent, const System *playerSy
 	
 	// If a carried ship has fuel capacity but is very low, it should return if
 	// the parent can refuel it.
+	// added hysteresis to fuel return
 	double maxFuel = ship.Attributes().Get("fuel capacity");
-	if(maxFuel && ship.Fuel() < .005 && parent.JumpFuel() < parent.Fuel() *
+	if(maxFuel && ship.Fuel() < (.01 + .1 * !ship.Commands().Has(Command::DEPLOY)) && parent.JumpFuel() < parent.Fuel() *
 			parent.Attributes().Get("fuel capacity") - maxFuel)
 		return true;
 	
@@ -1889,6 +1929,7 @@ void AI::PrepareForHyperspace(Ship &ship, Command &command)
 }
 
 	
+
 void AI::CircleAround(Ship &ship, Command &command, const Body &target)
 {
 	Point direction = target.Position() - ship.Position();
@@ -2867,7 +2908,8 @@ void AI::AutoFire(const Ship &ship, Command &command, bool secondary) const
 		++index;
 		// Skip weapons that are not ready to fire.
 		if(!hardpoint.IsReady())
-			continue;			
+			continue;
+		
 		const Weapon *weapon = hardpoint.GetOutfit();
 		// Don't expend ammo for homing weapons that have no target selected.
 		if(!currentTarget && weapon->Homing() && weapon->Ammo())
@@ -3550,7 +3592,8 @@ void AI::MovePlayer(Ship &ship, const PlayerInfo &player, Command &activeCommand
 		command |= Command::DEPLOY;
 		Deploy(ship, !Preferences::Has("Damaged fighters retreat"));
 	}
-	if(isCloaking)
+	// this only makes the flagship cloak
+	if(flagCloaking)
 		command |= Command::CLOAK;
 	
 	ship.SetCommands(command);
