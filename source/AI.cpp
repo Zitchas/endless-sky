@@ -1804,8 +1804,10 @@ bool AI::MoveTo(Ship &ship, Command &command, const Point &targetPosition, const
 	if(isFacing)
 		command |= Command::FORWARD;
 	else if(shouldReverse)
+	{
+		command.SetTurn(TurnToward(ship, velocity));
 		command |= Command::BACK;
-	
+	}
 	return false;
 }
 
@@ -2499,9 +2501,9 @@ bool AI::DoCloak(Ship &ship, Command &command)
 				return false;
 		}
 		
-		// If your parent has chosen to cloak, cloak and rendezvous with them.
+		// If your parent has chosen to cloak, cloak and rendezvous with them. Except player ships.
 		const shared_ptr<const Ship> &parent = ship.GetParent();
-		if(parent && parent->Commands().Has(Command::CLOAK) && parent->GetSystem() == ship.GetSystem()
+		if(!ship.IsYours() && parent && parent->Commands().Has(Command::CLOAK) && parent->GetSystem() == ship.GetSystem()
 				&& !parent->GetGovernment()->IsEnemy(ship.GetGovernment()))
 		{
 			command |= Command::CLOAK;
