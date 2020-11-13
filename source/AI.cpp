@@ -1804,8 +1804,10 @@ bool AI::MoveTo(Ship &ship, Command &command, const Point &targetPosition, const
 	if(isFacing)
 		command |= Command::FORWARD;
 	else if(shouldReverse)
+	{
+		command.SetTurn(TurnToward(ship, velocity));
 		command |= Command::BACK;
-	
+	}
 	return false;
 }
 
