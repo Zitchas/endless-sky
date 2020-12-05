@@ -1901,7 +1901,8 @@ void AI::PrepareForHyperspace(Ship &ship, Command &command)
 		command.SetTurn(TurnToward(ship, direction));
 }
 
-	
+
+
 void AI::CircleAround(Ship &ship, Command &command, const Body &target)
 {
 	Point direction = target.Position() - ship.Position();
@@ -2892,7 +2893,8 @@ void AI::AutoFire(const Ship &ship, Command &command, bool secondary) const
 		++index;
 		// Skip weapons that are not ready to fire.
 		if(!hardpoint.IsReady())
-			continue;			
+			continue;
+		
 		const Weapon *weapon = hardpoint.GetOutfit();
 		// Don't expend ammo for homing weapons that have no target selected.
 		if(!currentTarget && weapon->Homing() && weapon->Ammo())
