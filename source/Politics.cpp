@@ -214,7 +214,7 @@ string Politics::Fine(PlayerInfo &player, const Government *gov, int scan, const
 	int64_t maxFine = 0;
 	for(const shared_ptr<Ship> &ship : player.Ships())
 	{
-		// Check if the ship evades being scanned due to interference plating or being inscrutable.
+		// Check if the ship evades being scanned due to interference plating or being inscrutable (retry).
 		if(ship->Attributes().Get("inscrutable") > 0)
 			continue;		
 		if(Random::Real() > 1. / (1. + ship->Attributes().Get("scan interference")))
