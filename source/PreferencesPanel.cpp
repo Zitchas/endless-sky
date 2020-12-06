@@ -52,6 +52,7 @@ namespace {
 	const string REACTIVATE_HELP = "Reactivate first-time help";
 	const string SCROLL_SPEED = "Scroll speed";
 	const string FIGHTER_REPAIR = "Repair fighters in";
+	const string FIGHTER_RETREAT = "Fighters retreat";
 	const string SHIP_OUTLINES = "Ship outlines in shops";
 }
 
@@ -184,7 +185,7 @@ bool PreferencesPanel::Click(int x, int y, int clicks)
 				if(speed > 60)
 					speed = 20;
 				Preferences::SetScrollSpeed(speed);
-			}
+			}			
 			else
 				Preferences::Set(zone.Value(), !Preferences::Has(zone.Value()));
 			break;
@@ -389,11 +390,13 @@ void PreferencesPanel::DrawControls()
 	Table shiftTable;
 	shiftTable.AddColumn(125, Table::RIGHT);
 	shiftTable.SetUnderline(0, 130);
-	shiftTable.DrawAt(Point(-400, 52));
+	shiftTable.DrawAt(Point(-400, -2));
 	
 	shiftTable.DrawUnderline(medium);
 	shiftTable.Draw("With <shift> key", bright);
 	shiftTable.DrawGap(5);
+	shiftTable.Draw("Cloak flagship", medium);
+	shiftTable.DrawGap(30);	
 	shiftTable.Draw("Select nearest ship", medium);
 	shiftTable.Draw("Select next escort", medium);
 	shiftTable.Draw("Talk to planet", medium);
@@ -432,6 +435,7 @@ void PreferencesPanel::DrawSettings()
 		"Automatic firing",
 		EXPEND_AMMO,
 		FIGHTER_REPAIR,
+		FIGHTER_RETREAT,
 		TURRET_TRACKING,
 		"\n",
 		"Performance",
@@ -505,6 +509,11 @@ void PreferencesPanel::DrawSettings()
 			isOn = true;
 			text = Preferences::Has(FIGHTER_REPAIR) ? "parallel" : "series";
 		}
+		else if(setting == FIGHTER_RETREAT)
+		{
+			isOn = true;
+			text = Preferences::Has(FIGHTER_RETREAT) ? "early" : "late";
+		}		
 		else if(setting == SHIP_OUTLINES)
 		{
 			isOn = true;
@@ -545,7 +554,7 @@ void PreferencesPanel::DrawSettings()
 		{
 			isOn = true;
 			text = to_string(Preferences::ScrollSpeed());
-		}
+		}		
 		else
 			text = isOn ? "on" : "off";
 		

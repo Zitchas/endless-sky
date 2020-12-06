@@ -1454,6 +1454,7 @@ void PlayerInfo::UpdateCargoCapacities()
 			size += ship->Attributes().Get("cargo space");
 			int crew = (ship == flagship ? ship->Crew() : ship->RequiredCrew());
 			bunks += ship->Attributes().Get("bunks") - crew;
+			ship->Cargo().TransferAll(cargo);
 		}
 	cargo.SetSize(size);
 	cargo.SetBunks(bunks);
