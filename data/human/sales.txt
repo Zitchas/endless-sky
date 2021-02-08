@@ -15,6 +15,7 @@ shipyard "Basic Ships"
 
 shipyard "Tarazed Basics"
 	"Sparrow"
+	"Star Freight"
 	"Hawk"
 	"Blackbird"
 
@@ -83,6 +84,7 @@ shipyard "Megaparsec Advanced"
 
 shipyard "Syndicate Basics"
 	"Star Barge"
+	"Star Freight"
 	"Wasp"
 	"Freighter"
 

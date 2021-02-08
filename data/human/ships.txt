@@ -3118,6 +3118,51 @@ ship "Star Barge"
 
 
 
+ship "Star Freight"
+	sprite "ship/earth shaper"
+	thumbnail "thumbnail/earth shaper"
+	attributes
+		category "Light Freighter"
+		"cost" 600000
+		"shields" 1000
+		"hull" 1200
+		"required crew" 2
+		"bunks" 6
+		"mass" 100
+		"drag" 2.3
+		"heat dissipation" .8
+		"fuel capacity" 500
+		"cargo space" 100
+		"outfit space" 150
+		"weapon capacity" 20
+		"engine capacity" 60
+		weapon
+			"blast radius" 16
+			"shield damage" 160
+			"hull damage" 80
+			"hit force" 240
+	outfits
+		"Anti-Missile Turret"
+
+		"nGVF-BB Fuel Cell"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		
+		"X1700 Ion Thruster"
+		"X1200 Ion Steering"
+		"Hyperdrive"
+		
+	engine -9.5 38
+	engine 9.5 38
+	turret 0 -18 "Anti-Missile Turret"
+	leak "leak" 60 50
+	explode "tiny explosion" 10
+	explode "small explosion" 10
+	description "The syndicate CT-100 Star Freight is the logical progression of their widely popular Star Barge line: The designers simply extended the frame to carry twice as many cargo pods, and then used the extra internal space to fit in a slightly larger passenger area."
+	description "	Because of the increased cargo capacity but worse movement characteristics, few pilots are willing to fly these outside of well patrolled areas."
+
+
+
 ship "Star Queen"
 	sprite "ship/star queen"
 	thumbnail "thumbnail/star queen"
