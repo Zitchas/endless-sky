@@ -34,12 +34,12 @@ outfit "Flak Turret"
 		"fire effect" "flak muzzle smoke" 2
 		"die effect" "flak die"
 		"safe"
-		"inaccuracy" 25
+		"inaccuracy" 30
 		"turret turn" 4
 		"burst count" 10
 		"burst reload" 5
 		"velocity" 15
-		"lifetime" 35
+		"lifetime" 25
 		"reload" 25
 		"blast radius" 150
 		"firing energy" 1
@@ -48,7 +48,7 @@ outfit "Flak Turret"
 		"shield damage" 40
 		"hull damage" 20
 	description `These flak turrets date back to the era when the most serious thing planets needed to protect against was the ocassional pirate raid. Desperate for weaponry to fend of the Alphas, the Remnants salvaged many of these for their ships during their exodus.`
-	description `	While these weapons are poor in terms of their direct damage potential, the Remnant keep them in service because of their utility at disrupting incoming fighter formations. They are now returning to service on ships in light of the recent swarm of automata that swept across parts of human space.`
+	description `	While these weapons are poor in terms of their direct damage potential, the Remnant keep them in service because of their utility at disrupting incoming fighter formations. They are now returning to use on ships in light of the recent swarm of automata that swept across parts of human space.`
 
 
 
@@ -67,6 +67,7 @@ outfit "Remnant GASER Cannon"
 		sprite "projectile/gaser cannon/gaser cannon"
 			"frame rate" 10
 			rewind
+			"random start frame"
 		sound "electron beam"
 		"hit effect" "gaser hit"
 		"inaccuracy" .2
@@ -87,6 +88,7 @@ effect "gaser hit"
 	sprite "effect/gaser hit/gaser hit"
 		"no repeat"
 		"frame rate" 30
+		"random start frame"
 	"lifetime" 5
 	"random angle" 2
 	"random spin" 1
@@ -111,6 +113,7 @@ outfit "Remnant GASER Turret"
 		sprite "projectile/gaser turret/gaser turret"
 			"frame rate" 10
 			rewind
+			"random start frame"
 		sound "electron beam"
 		"hit effect" "gaser turret hit"
 		"inaccuracy" .2
@@ -131,6 +134,7 @@ effect "gaser turret hit"
 	sprite "effect/gaser turret hit/gaser turret hit"
 		"no repeat"
 		"frame rate" 30
+		"random start frame"
 	"lifetime" 5
 	"random angle" 2
 	"random spin" 1
@@ -375,6 +379,7 @@ outfit "Remnant Plasma Torch Cannon"
 	weapon
 		sprite "projectile/electron"
 			"frame rate" 60
+			"random start frame"
 		sound "electron beam"
 		"hit effect" "electron impact"
 		"inaccuracy" .2
@@ -404,6 +409,7 @@ outfit "Remnant Plasma Torch Turret"
 	weapon
 		sprite "projectile/electron"
 			"frame rate" 60
+			"random start frame"
 		sound "electron beam"
 		"hit effect" "electron impact"
 		"inaccuracy" .2
@@ -640,41 +646,41 @@ effect "emp spark"
 	"random velocity" 7
 	"velocity scale" 0.1
 
+Arrêtez
 
-
-outfit "Nullifier Missile"
-	plural "Nullifier Missiles"
+outfit "Errataz Missile"
+	plural "Errataz Missiles"
 	category "Ammunition"
 	cost 3500
-	thumbnail "outfit/nullifier"
+	thumbnail "outfit/errataz"
 	"mass" 1
-	"nullifier missile capacity" -1
-	description "This is ammunition for the Nullifier Missile Pod, a weapon that is manufactured by the Remnant."
+	"errataz missile capacity" -1
+	description "This is ammunition for the Errataz Missile Pod, a weapon that is manufactured by the Remnant."
 
-outfit "Nullifier Missile Pod"
+outfit "Errataz Missile Pod"
 	category "Secondary Weapons"
 	licenses
 		Remnant
 	cost 475000
-	thumbnail "outfit/nullifier missile pod"
+	thumbnail "outfit/errataz missile pod"
 	"mass" 9
 	"outfit space" -12
 	"weapon capacity" -12
 	"gun ports" -1
-	"nullifier missile capacity" 11
+	"errataz missile capacity" 11
 	weapon
-		sprite "projectile/nullifier"
+		sprite "projectile/errataz"
 			"frame rate" 2
 			"rewind"
 			"random start frame"
 		sound "rocket"
-		ammo "Nullifier Missile"
-		icon "icon/nullifier"
-		"fire effect" "nullifier fire" 5
-		"hit effect" "nullifier spark" 5
-		"hit effect" "nullifier hit" 2
+		ammo "Errataz Missile"
+		icon "icon/errataz"
+		"fire effect" "errataz fire" 5
+		"hit effect" "errataz spark" 5
+		"hit effect" "errataz hit" 2
 		"die effect" "tiny explosion"
-		"die effect" "nullifier die" 5
+		"die effect" "errataz die" 5
 		cluster
 		safe
 		phasing
@@ -694,16 +700,15 @@ outfit "Nullifier Missile Pod"
 		"blast radius" 100
 		"shield damage" 950
 		"hull damage" 150
-		"fuel damage" 100
-		"ion damage" 5
-		"slowing damage" 5
+		"fuel damage" 300
+		"slowing damage" 300
 		"hit force" 700
 		"missile strength" 140
 	description "With the rest of the galaxy starting to intrude on the Ember Waste, the Remnant designers created a weapon to ensure that no enemy ship manages to escape their space."
-	description "The Nullifier missile makes use of the Remnant's experience in containing and degrading nuclear reactions to forcefully stabilize the fuel of enemy starships. While it is easy enough for affected ships to purge their tanks of the useless material, it will make substantial dents in their fuel reserves."
+	description "The Errataz missile makes use of the Remnant's experience in containing and degrading nuclear reactions to forcefully stabilize the fuel of enemy starships. While it is easy enough for affected ships to purge their tanks of the useless material, it will make substantial dents in their fuel reserves."
 
-effect "nullifier fire"
-	sprite "effect/nullifier fire/nullifier fire"
+effect "errataz fire"
+	sprite "effect/errataz fire/errataz fire"
 		"no repeat"
 		"frame rate" 10
 	"lifetime" 31
@@ -712,8 +717,8 @@ effect "nullifier fire"
 	"random spin" 2
 	"random velocity" 7
 
-effect "nullifier spark"
-	sprite "effect/nullifier spark/nullifier spark"
+effect "errataz spark"
+	sprite "effect/errataz spark/errataz spark"
 		"no repeat"
 		"frame rate" 8
 	"lifetime" 22
@@ -722,8 +727,8 @@ effect "nullifier spark"
 	"random velocity" 4
 	"velocity scale" 0.1
 
-effect "nullifier die"
-	sprite "effect/nullifier die/nullifier die"
+effect "errataz die"
+	sprite "effect/errataz die/errataz die"
 		"no repeat"
 		"frame rate" 8
 	"lifetime" 45
@@ -732,8 +737,8 @@ effect "nullifier die"
 	"random velocity" 5
 	"velocity scale" 0.1
 
-effect "nullifier hit"
-	sprite "effect/nullifier hit/nullifier hit"
+effect "errataz hit"
+	sprite "effect/errataz hit/errataz hit"
 		"no repeat"
 		"frame rate" 8
 	"lifetime" 22
