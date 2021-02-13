@@ -234,7 +234,7 @@ ship "Albatross" "Albatross (Ember Shield)"
 
 
 
-ship "Condor Prototype"
+ship "Condor"
 	sprite "ship/condor"
 	thumbnail "thumbnail/condor"
 	attributes
@@ -331,7 +331,7 @@ ship "Condor Prototype"
 
 
 
-ship "Cormorant Prototype"
+ship "Cormorant"
 	sprite "ship/cormorant"
 	thumbnail "thumbnail/condor"
 	attributes
@@ -778,7 +778,7 @@ ship "Ibis"
 
 
 
-ship "Jaeger Prototype"
+ship "Jaeger"
 	plural "Jaegers"
 	sprite "ship/jaeger"
 	thumbnail "thumbnail/jaeger"
@@ -862,7 +862,7 @@ ship "Jaeger Prototype"
 
 
 
-ship "Merganser Prototype"
+ship "Merganser"
 	sprite "ship/merganser"
 	thumbnail "thumbnail/merganser"
 	attributes
@@ -1307,7 +1307,7 @@ ship "Puffin"
 
 
 
-ship "Skua Prototype"
+ship "Skua"
 	plural "Skuas"
 	sprite "ship/skua"
 	thumbnail "thumbnail/skua"
@@ -1609,7 +1609,7 @@ ship "Tern"
 
 
 
-ship "Vulture Prototype"
+ship "Vulture"
 	sprite "ship/vulture"
 	thumbnail "thumbnail/vulture"
 	attributes
