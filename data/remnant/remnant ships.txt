@@ -368,6 +368,7 @@ ship "Cormorant"
 		"slowing resistance" 3
 		"heat protection" 1.5
 		"remnant node" 9
+		"spinal mount" 1
 		weapon
 			"blast radius" 540
 			"shield damage" 8400
@@ -1648,6 +1649,7 @@ ship "Vulture"
 		"slowing resistance" 3
 		"heat protection" 1.5
 		"remnant node" 7
+		"spinal mount" 1
 		weapon
 			"blast radius" 400
 			"shield damage" 4000
