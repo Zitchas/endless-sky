@@ -402,4 +402,13 @@ effect "large impact glow"
 	"lifetime" 15
 	"velocity scale" .3
 
-
+effect "mega zap test"
+    sprite "effect/zappy"
+        "start frame" 0
+        "no repeat"
+        "frame rate" 10
+    "lifetime" 100
+    "velocity scale" 0
+    "random angle" 360
+    "random velocity" 0
+    "random frame rate" 30
