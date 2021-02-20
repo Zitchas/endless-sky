@@ -343,15 +343,15 @@ ship "Cormorant"
 		"hull" 78400
 		"required crew" 250
 		"bunks" 1500
-		"mass" 1590
+		"mass" 2590
 		"drag" 6.5
 		"heat dissipation" .80
 		"fuel capacity" 1800
 		"ramscoop" 3
 		"cargo space" 253
-		"outfit space" 1201
-		"weapon capacity" 456
-		"engine capacity" 450
+		"outfit space" 1301
+		"weapon capacity" 501
+		"engine capacity" 650
 		"shield generation" 4
 		"shield energy" 1.8
 		"hull repair rate" 4
