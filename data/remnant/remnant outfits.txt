@@ -779,8 +779,8 @@ outfit "Ember Tear"
 		"firing energy" 250
 		"firing fuel" 5
 		"firing heat" 100
-		"shield damage" 200
-		"hull damage" 200
+		"shield damage" 300
+		"hull damage" 300
 		"slowing damage" 10
 		"fuel damage" 2
 	description "While their pursuit of the secrets of Jump Drives has yet to result in the successful manufacture of such a drive, it has led to many other advances. One such is the Ember Tear. According to the Remnant technicians, this weapon is the conjunction of techniques developped in the study of the Jump Drives combined with some of the physics derived from the study of the Ember Waste."
