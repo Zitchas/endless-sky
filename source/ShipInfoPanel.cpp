@@ -454,7 +454,7 @@ void ShipInfoPanel::DrawWeapons(const Rectangle &bounds)
 	{
 		string name = "[empty]";
 		if(hardpoint.GetOutfit())
-			name = font.Truncate(hardpoint.GetOutfit()->Name(), 200);
+			name = hardpoint.GetOutfit()->Name();
 
 		
 		bool isRight = (hardpoint.GetPoint().X() >= 0.);
