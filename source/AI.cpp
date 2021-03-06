@@ -2314,8 +2314,8 @@ void AI::Attack(Ship &ship, Command &command, const Ship &target)
 				command |= Command::FORWARD;
 		}
 		return;
-    if(ship.Attributes().Get("rear") && target.TrueTurnRate() < ship.Acceleration() * 1.2) AttackRear(ship, command, target);
 	}
+    if(ship.Attributes().Get("rear") && target.TrueTurnRate() < ship.Acceleration() * 1.2) AttackRear(ship, command, target);
     else if(ship.Attributes().Get("rear")) StrikeThrough(ship, command, target);
 	else if(ship.Attributes().Get("strike")) StrikeThrough(ship, command, target);
 	else MoveToAttack(ship, command, target);
