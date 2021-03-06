@@ -2318,6 +2318,7 @@ void AI::Attack(Ship &ship, Command &command, const Ship &target)
     else if(ship.Attributes().Get("rear")) StrikeThrough(ship, command, target);
 	else if(ship.Attributes().Get("strike")) StrikeThrough(ship, command, target);
 	MoveToAttack(ship, command, target);
+	}
 }
 
 
