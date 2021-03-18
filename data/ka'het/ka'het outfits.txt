@@ -121,10 +121,10 @@ outfit "Ka'het Ravager Beam"
 		"velocity" 480
 		"lifetime" 1
 		"reload" 1
-		"firing energy" 3.7
-		"firing heat" 1.5
-		"shield damage" 1.8
-		"hull damage" 4.3
+		"firing energy" 4.4
+		"firing heat" 1.8
+		"shield damage" 1.4
+		"hull damage" 3.4
 	description "This laser beam was created by the Builders for use in asteroid mining. Unfortunately, they understood its effectiveness in combat only after it turned against them."
 
 outfit "Ka'het Ravager Turret"
@@ -147,10 +147,10 @@ outfit "Ka'het Ravager Turret"
 		"velocity" 480
 		"lifetime" 1
 		"reload" 1
-		"firing energy" 3.7
-		"firing heat" 1.5
-		"shield damage" 1.8
-		"hull damage" 4.3
+		"firing energy" 4.4
+		"firing heat" 1.8
+		"shield damage" 1.4
+		"hull damage" 3.4
 	description "This turret-mounted version of the Ravager Beam is one of the strongest weapons the Ka'het possess."
 
 effect "ravager impact"
@@ -176,11 +176,11 @@ outfit "Ka'het Annihilator"
 		"inaccuracy" 2.5
 		"velocity" 18
 		"lifetime" 35
-		"reload" 10
-		"firing energy" 31
-		"firing heat" 8
-		"shield damage" 43
-		"hull damage" 12
+		"reload" 20
+		"firing energy" 62
+		"firing heat" 16
+		"shield damage" 86
+		"hull damage" 24
 	description "The Builders initially created the Annihilator long ago, as a countermeasure to their newly discovered shield matrix. They kept developing it for centuries, with this being its final version."
 
 outfit "Ka'het Annihilator Turret"
@@ -201,9 +201,9 @@ outfit "Ka'het Annihilator Turret"
 		"turret turn" 2.3
 		"range override" 630
 		"velocity override" 18
-		"reload" 10
-		"firing energy" 62
-		"firing heat" 16
+		"reload" 20
+		"firing energy" 124
+		"firing heat" 32
 		"submunition" "Annihilator Projectile" 2
 	description "The Builders mounted two Annihilators on this turret, making it highly efficient against enemy shields."
 
@@ -216,8 +216,8 @@ outfit "Annihilator Projectile"
 		"inaccuracy" 2
 		"velocity" 18
 		"lifetime" 35
-		"shield damage" 43
-		"hull damage" 12
+		"shield damage" 86
+		"hull damage" 24
 
 outfit "Ka'het EMP Deployer"
 	category "Secondary Weapons"

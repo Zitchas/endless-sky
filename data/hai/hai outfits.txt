@@ -23,11 +23,11 @@ outfit "Pulse Cannon"
 		"inaccuracy" 1
 		"velocity" 15
 		"lifetime" 30
-		"reload" 20
-		"firing energy" 24
-		"firing heat" 70
-		"shield damage" 45
-		"hull damage" 34
+		"reload" 40
+		"firing energy" 48
+		"firing heat" 140
+		"shield damage" 90
+		"hull damage" 68
 	description "Like most examples of Hai engineering that you have seen, the Pulse Cannon does not stand out as a particularly advanced or elegant technology, but it has a reputation for being efficient, reliable, and well-balanced."
 
 outfit "Pulse Turret"
@@ -49,11 +49,11 @@ outfit "Pulse Turret"
 		"turret turn" 2.3
 		"velocity" 15
 		"lifetime" 30
-		"reload" 10
-		"firing energy" 24
-		"firing heat" 70
-		"shield damage" 45
-		"hull damage" 34
+		"reload" 20
+		"firing energy" 48
+		"firing heat" 140
+		"shield damage" 90
+		"hull damage" 68
 	description "Pulse Cannons are the primary offensive weapon used by Hai ships. This turret mounts two pulse cannons side by side and allows them to track even the fastest-moving of targets."
 
 effect "pulse impact"
@@ -83,14 +83,14 @@ outfit "Ion Cannon"
 		"inaccuracy" 1
 		"velocity" 16
 		"lifetime" 50
-		"reload" 60
-		"firing energy" 120
-		"firing force" 10
-		"firing heat" 150
+		"reload" 120
+		"firing energy" 240
+		"firing force" 20
+		"firing heat" 300
 		"hit force" 120
-		"shield damage" 168
-		"hull damage" 60
-		"ion damage" 5
+		"shield damage" 336
+		"hull damage" 120
+		"ion damage" 10
 	description "Ion cannons do not inflict as much damage as some other weapons, but they disrupt the electrical systems on any ship they hit, draining its energy. If a ship has sizable battery reserves, this may not have any effect, but for a ship running at near its energy generation capacity an ion strike can take it out of the battle for a few seconds while it recovers."
 
 effect "ion impact"
@@ -144,9 +144,9 @@ outfit "Railgun"
 		"velocity" 44
 		"lifetime" 1
 		"range override" 2100
-		"reload" 12
-		"firing energy" 3.5
-		"firing heat" 7.2
+		"reload" 24
+		"firing energy" 7
+		"firing heat" 14.4
 		"firing force" 70
 		"stream"
 		"submunition" "rslug" 1
@@ -164,9 +164,9 @@ outfit "rslug"
 		"turn" .6
 		"homing" 1
 		"optical tracking" .4
-		"shield damage" 4.2
-		"hull damage" 8.4
-		"ion damage" .3
+		"shield damage" 8.4
+		"hull damage" 16.8
+		"ion damage" .6
 		"hit force" 15
 
 effect "bullet impact"
