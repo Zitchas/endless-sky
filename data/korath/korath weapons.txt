@@ -31,16 +31,16 @@ outfit "Korath Grab-Strike"
 		"turret turn" 1.9
 		"velocity" 10
 		"lifetime" 100
-		"reload" 20
-		"firing energy" 60
-		"firing heat" 150
+		"reload" 40
+		"firing energy" 120
+		"firing heat" 300
 		"acceleration" 1
 		"drag" .1
 		"turn" .2
 		"homing" 4
 		"tracking" .7
-		"shield damage" 108
-		"hull damage" 32
+		"shield damage" 216
+		"hull damage" 64
 		"hit force" -160
 	description "Korath Grab-Strike projectiles are designed to pull a target closer to the Korath ship, to keep it from escaping."
 
@@ -74,10 +74,10 @@ outfit "Korath Banisher"
 		"velocity" 590
 		"lifetime" 1
 		"reload" 1
-		"firing energy" 3.3
-		"firing heat" 4.9
-		"shield damage" 2.8
-		"hull damage" .9
+		"firing energy" 4.0
+		"firing heat" 5.9
+		"shield damage" 2.2
+		"hull damage" .7
 		"hit force" 40
 	description "The Korath like to keep their enemies close... but not too close."
 
@@ -137,11 +137,11 @@ outfit "Korath Fire-Lance"
 		"velocity" 350
 		"lifetime" 1
 		"reload" 1
-		"firing energy" 2.5
-		"firing heat" 1.7
-		"shield damage" 3.5
-		"hull damage" 1.5
-		"heat damage" 12
+		"firing energy" 3.0
+		"firing heat" 2.0
+		"shield damage" 2.8
+		"hull damage" 1.2
+		"heat damage" 9.6
 	description "The Korath Fire-Lance is a medium-range beam weapon designed to be used by their fighters."
 
 effect "fire-lance impact"
@@ -170,15 +170,15 @@ outfit "Korath Repeater"
 		"inaccuracy" 4
 		"velocity" 13
 		"lifetime" 40
-		"reload" 10
-		"burst reload" 4
+		"reload" 20
+		"burst reload" 8
 		"burst count" 3
 		"cluster"
-		"firing energy" 24
-		"firing heat" 108
-		"shield damage" 26
-		"hull damage" 22
-		"heat damage" 33
+		"firing energy" 48
+		"firing heat" 216
+		"shield damage" 52
+		"hull damage" 44
+		"heat damage" 66
 	description "This is the smallest and simplest Korath projectile weapon, designed mostly for use on fighters and drones. As with most Korath technology, it generates a large amount of heat, enough that the gun must pause briefly after every few shots to cool down."
 
 effect "repeater impact"
@@ -212,15 +212,15 @@ outfit "Korath Repeater Turret"
 		"turret turn" 2.6
 		"velocity" 13
 		"lifetime" 40
-		"reload" 5
-		"burst reload" 2
+		"reload" 10
+		"burst reload" 4
 		"burst count" 6
 		"cluster"
-		"firing energy" 24
-		"firing heat" 108
-		"shield damage" 26
-		"hull damage" 22
-		"heat damage" 33
+		"firing energy" 48
+		"firing heat" 216
+		"shield damage" 52
+		"hull damage" 44
+		"heat damage" 66
 	description "Korath repeaters fire compact bolts of superheated plasma at their targets. For every one of these turrets installed on a ship, an auxiliary cooling system is typically required to cope with its heat output."
 
 
@@ -376,16 +376,16 @@ outfit "Korath Detainer"
 		"inaccuracy" .5
 		"velocity" 14
 		"lifetime" 140
-		"reload" 60
-		"burst reload" 10
+		"reload" 120
+		"burst reload" 20
 		"burst count" 2
-		"firing energy" 756
+		"firing energy" 1512
 		"firing force" 40
-		"firing heat" 400
+		"firing heat" 800
 		"hit force" 80
-		"shield damage" 320
-		"hull damage" 240
-		"slowing damage" 40
+		"shield damage" 640
+		"hull damage" 480
+		"slowing damage" 80
 		"blast radius" 20
 	description "Although not the most damaging weapon of its size, the Korath Detainer is feared for two reasons: its exceptionally long range, and its ability to interfere with the propulsion systems of any ship it strikes."
 
@@ -538,11 +538,11 @@ outfit "Korath Disruptor"
 		"velocity" 480
 		"lifetime" 1
 		"reload" 1
-		"firing energy" 8.0
-		"firing heat" 2.7
-		"shield damage" 3.8
-		"hull damage" .5
-		"disruption damage" .24
+		"firing energy" 9.6
+		"firing heat" 3.2
+		"shield damage" 3.0
+		"hull damage" .4
+		"disruption damage" .19
 	description "Korath Disruptors interfere with a ship's shields, allowing a ship's hull to be damaged even when shields are up. However, they do very little hull damage by themselves."
 
 effect "disruptor impact"
@@ -572,13 +572,13 @@ outfit "Korath Slicer"
 		"inaccuracy" 0
 		"velocity" 520
 		"lifetime" 1
-		"reload" 1.62
-		"burst reload" 1
+		"reload" 3.2
+		"burst reload" 2
 		"burst count" 17
-		"firing energy" 5.6
-		"firing heat" 17.8
-		"shield damage" 6.3
-		"hull damage" 16.7
+		"firing energy" 11.2
+		"firing heat" 35.6
+		"shield damage" 12.6
+		"hull damage" 33.4
 	description "This massive beam weapon is relatively ineffective against shields, but cuts through hull armor like it's made of paper."
 
 outfit "Korath Slicer Turret"
@@ -601,13 +601,13 @@ outfit "Korath Slicer Turret"
 		"turret turn" 2.9
 		"velocity" 520
 		"lifetime" 1
-		"reload" 1.62
-		"burst reload" 1
+		"reload" 3.24
+		"burst reload" 2
 		"burst count" 17
-		"firing energy" 5.6
-		"firing heat" 17.8
-		"shield damage" 6.3
-		"hull damage" 16.7
+		"firing energy" 11.2
+		"firing heat" 35.6
+		"shield damage" 12.6
+		"hull damage" 33.4
 	description "This turret fires a tightly focused energy beam that is particularly effective against hull armor. When paired with a disruptor turret, it is a deadly combination."
 
 effect "slicer impact"
