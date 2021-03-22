@@ -16,6 +16,9 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 #include "Command.h"
 #include "DistanceMap.h"
 #include "Flotsam.h"
+#include "FormationPattern.h"
+#include "FormationPositioner.h"
+#include "GameData.h"
 #include "Government.h"
 #include "Hardpoint.h"
 #include "Mask.h"
@@ -306,6 +309,199 @@ AI::AI(const List<Ship> &ships, const List<Minable> &minables, const List<Flotsa
 
 
 // Fleet commands from the player.
+void AI::IssueFormationChange(const PlayerInfo &player)
+{
+	// Figure out what ships we are giving orders to
+	vector<Ship *> ships;
+	bool fullFleet = player.SelectedShips().empty();
+	if(fullFleet)
+	{
+		for(const shared_ptr<Ship> &it : player.Ships())
+			if(it.get() != player.Flagship() && !it->IsParked()
+				&& !it->IsDestroyed())
+				ships.push_back(it.get());
+	}
+	else
+		for(const weak_ptr<Ship> &it : player.SelectedShips())
+		{
+			shared_ptr<Ship> ship = it.lock();
+			if(ship)
+				ships.push_back(ship.get());
+		}
+	
+	// This should never happen, but just in case:
+	if(ships.empty())
+	{
+		if(fullFleet)
+			Messages::Add("No ships in the fleet to change formation for.");
+		else
+			Messages::Add("No ships selected that can change formation.");
+		
+		return;
+	}
+	
+	const Set<FormationPattern> &formationPatterns = GameData::Formations();
+	
+	// First check which and how many formations we have in the current set of selected ships.
+	const FormationPattern *toSet = nullptr;
+	bool moreFound = false;
+	for(Ship *ship : ships)
+	{
+		const FormationPattern *shipsPattern = ship->GetFormationPattern();
+		if(shipsPattern)
+		{
+			if(!toSet)
+				toSet = formationPatterns.Find(shipsPattern->Name());
+			else if(toSet->Name() != shipsPattern->Name())
+				moreFound = true;
+		}
+	}
+	
+	// Now determine what formation to set.
+	// If more than one formation was found in the set, then we set it to the first one found.
+	if(!toSet)
+	{
+		// If no formation was set at all, then we set the first one from the set of formations.
+		auto it = formationPatterns.begin();
+		if(it != formationPatterns.end())
+			toSet = formationPatterns.Find(it->first);
+	}
+	else if(!moreFound)
+	{
+		// If only one formation was found, then select the next formation (or clear the formation if there is no next).
+		auto it = formationPatterns.begin();
+		while(it != formationPatterns.end() && it->first != toSet->Name())
+			++it;
+		if(it == formationPatterns.end())
+			toSet = nullptr;
+		else if(it->first == toSet->Name())
+		{
+			++it;
+			if(it == formationPatterns.end())
+				toSet = nullptr;
+			else
+				toSet = formationPatterns.Find(it->first);
+		}
+	}
+	
+	// Now set the pattern on the selected ships.
+	int changed = 0;
+	for(Ship *ship : ships)
+		if(ship->GetFormationPattern() != toSet)
+		{
+			ship->SetFormationPattern(toSet);
+			changed++;
+		}
+	
+	if(toSet)
+		Messages::Add(to_string(changed) + " ships are now flying in " + toSet->Name() + " formation.");
+	else
+		Messages::Add(to_string(changed) + " ships are no longer flying in formation.");
+}
+
+
+
+// Fleet commands from the player.
+void AI::IssueFormationRingDecrease(const PlayerInfo &player)
+{
+	// Figure out what ships we are giving orders to
+	vector<Ship *> ships;
+	bool fullFleet = player.SelectedShips().empty();
+	if(fullFleet)
+	{
+		for(const shared_ptr<Ship> &it : player.Ships())
+			if(it.get() != player.Flagship() && !it->IsParked()
+				&& !it->IsDestroyed())
+				ships.push_back(it.get());
+	}
+	else
+		for(const weak_ptr<Ship> &it : player.SelectedShips())
+		{
+			shared_ptr<Ship> ship = it.lock();
+			if(ship)
+				ships.push_back(ship.get());
+		}
+	
+	// This should never happen, but just in case:
+	if(ships.empty())
+	{
+		if(fullFleet)
+			Messages::Add("No ships in the fleet to change formation for.");
+		else
+			Messages::Add("No ships selected that can change formation.");
+		
+		return;
+	}
+	
+	int changed = 0;
+	
+	for(Ship *ship : ships)
+	{
+		ship->SetFormationRing(0);
+		changed++;
+	}
+	
+	Messages::Add(to_string(changed) + " ships are now flying in formation ring 0.");
+}
+
+
+
+// Fleet commands from the player.
+void AI::IssueFormationRingIncrease(const PlayerInfo &player)
+{
+	// Figure out what ships we are giving orders to
+	vector<Ship *> ships;
+	bool fullFleet = player.SelectedShips().empty();
+	if(fullFleet)
+	{
+		for(const shared_ptr<Ship> &it : player.Ships())
+			if(it.get() != player.Flagship() && !it->IsParked()
+				&& !it->IsDestroyed())
+				ships.push_back(it.get());
+	}
+	else
+		for(const weak_ptr<Ship> &it : player.SelectedShips())
+		{
+			shared_ptr<Ship> ship = it.lock();
+			if(ship)
+				ships.push_back(ship.get());
+		}
+	
+	// This should never happen, but just in case:
+	if(ships.empty())
+	{
+		if(fullFleet)
+			Messages::Add("No ships in the fleet to change formation for.");
+		else
+			Messages::Add("No ships selected that can change formation.");
+		
+		return;
+	}
+	
+	// First check which and how many formations we have in the current set of selected ships.
+	int maxRing = 0;
+	for(Ship *ship : ships)
+	{
+		int shipRing = ship->GetFormationRing();
+		if(shipRing > maxRing)
+			maxRing = shipRing;
+	}
+	maxRing++;
+	
+	// Now set the new ring on the selected ships.
+	int changed = 0;
+	for(Ship *ship : ships)
+	{
+		ship->SetFormationRing(maxRing);
+		changed++;
+	}
+	
+	Messages::Add(to_string(changed) + " ships are now flying in ring " + to_string(maxRing) + " of their formation.");
+}
+
+
+
+
 void AI::IssueShipTarget(const PlayerInfo &player, const shared_ptr<Ship> &target)
 {
 	Orders newOrders;
@@ -379,20 +575,28 @@ void AI::UpdateKeys(PlayerInfo &player, Command &activeCommands)
 	if(activeCommands.Has(Command::DEPLOY))
 		IssueDeploy(player);
 	
+	// Temporary borrow the gather, hold and fight commands to control formations.
+	if(activeCommands.Has(Command::GATHER) && activeCommands.Has(Command::SHIFT))
+		IssueFormationChange(player);
+	if(activeCommands.Has(Command::FIGHT) && activeCommands.Has(Command::SHIFT))
+		IssueFormationRingIncrease(player);
+	if(activeCommands.Has(Command::HOLD) && activeCommands.Has(Command::SHIFT))
+		IssueFormationRingDecrease(player);
+	
 	shared_ptr<Ship> target = flagship->GetTargetShip();
 	Orders newOrders;
-	if(activeCommands.Has(Command::FIGHT) && target && !target->IsYours())
+	if(activeCommands.Has(Command::FIGHT) && target && !target->IsYours() && !activeCommands.Has(Command::SHIFT))
 	{
 		newOrders.type = target->IsDisabled() ? Orders::FINISH_OFF : Orders::ATTACK;
 		newOrders.target = target;
 		IssueOrders(player, newOrders, "focusing fire on \"" + target->Name() + "\".");
 	}
-	if(activeCommands.Has(Command::HOLD))
+	if(activeCommands.Has(Command::HOLD) && !activeCommands.Has(Command::SHIFT))
 	{
 		newOrders.type = Orders::HOLD_POSITION;
 		IssueOrders(player, newOrders, "holding position.");
 	}
-	if(activeCommands.Has(Command::GATHER))
+	if(activeCommands.Has(Command::GATHER) && !activeCommands.Has(Command::SHIFT))
 	{
 		newOrders.type = Orders::GATHER;
 		newOrders.target = player.FlagshipPtr();
@@ -465,6 +669,7 @@ void AI::Clean()
 {
 	actions.clear();
 	notoriety.clear();
+	formations.clear();
 	governmentActions.clear();
 	scanPermissions.clear();
 	playerActions.clear();
@@ -515,6 +720,11 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 			int &value = fenceCount[&*it];
 			value = min(FENCE_MAX, value + FENCE_DECAY + 1);
 		}
+	
+	// Restart all formations so that they can be refilled this cycle.
+	for(auto &bIt : formations)
+		for(auto &pIt : bIt.second)
+			pIt.second.Start();
 	
 	const Ship *flagship = player.Flagship();
 	step = (step + 1) & 31;
@@ -842,6 +1052,19 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 			// If we get here, it means that the ship has not decided to return
 			// to its mothership. So, it should continue to be deployed.
 			command |= Command::DEPLOY;
+			
+			if(it->IsYours() && !target && it->Attributes().Get("miner") && DoHarvesting(*it, command))
+			{
+			it->SetCommands(command);
+			continue;
+			}
+            // added to allow player carried ships to mine
+			if(it->IsYours() && !target && it->Attributes().Get("miner"))
+			{
+				DoMining(*it, command);
+				it->SetCommands(command);
+				continue;
+			}	
 		}
 		// If this ship has decided to recall all of its fighters because combat has ceased,
 		// it comes to a stop to facilitate their reboarding process.
@@ -1362,6 +1585,50 @@ bool AI::FollowOrders(Ship &ship, Command &command) const
 
 
 
+void AI::MoveInFormation(Ship &ship, Command &command)
+{
+	shared_ptr<Ship> parent = ship.GetParent();
+	if(!parent)
+		return;
+	
+	const Body *formationLead = parent.get();
+	const FormationPattern *pattern = ship.GetFormationPattern();
+	
+	// First we retrieve the patterns available for the parent.
+	std::map<const FormationPattern *, FormationPositioner> * patterns = &formations[formationLead];
+	
+	// Add a formation-positioner for the pattern if none exists yet
+	auto it = patterns->find(pattern);
+	if(it == patterns->end())
+	{
+		patterns->emplace(piecewise_construct,
+			forward_as_tuple(pattern),
+			forward_as_tuple(formationLead, pattern));
+
+		// Find the emplaced value. It should exist now.
+		it = patterns->find(pattern);
+		if(it == patterns->end())
+			return;
+	}
+	
+	// Aggresively try to match the position and velocity for the formation position.
+	double POSITION_DEADBAND = ship.Radius() * 1.25;
+	static const double VELOCITY_DEADBAND = 0.1;
+	bool inPosition = MoveTo(ship, command, it->second.NextPosition(&ship), formationLead->Velocity(), POSITION_DEADBAND, VELOCITY_DEADBAND);
+	
+	// If we match the position and velocity, then also match the facing angle.
+	if(inPosition)
+	{
+		double facingDelta = formationLead->Facing().Degrees() - ship.Facing().Degrees();
+		if(abs(facingDelta) > 180.)
+			facingDelta += (facingDelta < 0. ? 360. : -360.);
+		
+		command.SetTurn(facingDelta);
+	}
+}
+
+
+
 void AI::MoveIndependent(Ship &ship, Command &command) const
 {
 	shared_ptr<const Ship> target = ship.GetTargetShip();
@@ -1543,7 +1810,7 @@ void AI::MoveIndependent(Ship &ship, Command &command) const
 
 
 
-void AI::MoveEscort(Ship &ship, Command &command) const
+void AI::MoveEscort(Ship &ship, Command &command)
 {
 	const Ship &parent = *ship.GetParent();
 	bool hasFuelCapacity = ship.Attributes().Get("fuel capacity") && ship.JumpFuel();
@@ -1631,11 +1898,15 @@ void AI::MoveEscort(Ship &ship, Command &command) const
 			MoveToPlanet(ship, command);
 			command |= Command::LAND;
 		}
+		else if(ship.GetFormationPattern())
+			MoveInFormation(ship, command);
 		else
 			KeepStation(ship, command, parent);
 	}
 	else if(parent.Commands().Has(Command::BOARD) && parent.GetTargetShip().get() == &ship)
 		Stop(ship, command, .2);
+	else if(ship.GetFormationPattern())
+		MoveInFormation(ship, command);
 	else
 		KeepStation(ship, command, parent);
 }
@@ -1788,7 +2059,37 @@ bool AI::MoveTo(Ship &ship, Command &command, const Point &targetPosition, const
 	
 	bool shouldReverse = false;
 	dp = targetPosition - StoppingPoint(ship, targetVelocity, shouldReverse);
+    bool isFacing = (dp.Unit().Dot(angle.Unit()) > .95);
+    if(!isClose || (!isFacing && !shouldReverse))
+        command.SetTurn(TurnToward(ship, dp));
+    if(isFacing)
+        command |= Command::FORWARD;
+    else if(shouldReverse)
+    {
+        command.SetTurn(TurnToward(ship, velocity.Unit()));
+        command |= Command::BACK;
+    }
+    return false;
+}
 
+
+
+bool AI::MoveThrough(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow)
+{
+    const Point &position = ship.Position();
+    const Point &velocity = ship.Velocity();
+    const Angle &angle = ship.Facing();
+    Point dp = targetPosition - position;
+    Point dv = targetVelocity - velocity;
+    
+    double speed = dv.Length();
+    
+    bool isClose = (dp.Length() < radius);
+    if(isClose && speed < slow)
+        return true;
+    
+    bool shouldReverse = false;
+    //dp = targetPosition - StoppingPoint(ship, targetVelocity, shouldReverse);
 	bool isFacing = (dp.Unit().Dot(angle.Unit()) > .95);
 	if(!isClose || (!isFacing && !shouldReverse))
 		command.SetTurn(TurnToward(ship, dp));
@@ -1941,6 +2242,162 @@ void AI::CircleAround(Ship &ship, Command &command, const Body &target)
 }
 
 
+
+void AI::StrikeThrough(Ship &ship, Command &command, const Ship &target)
+{
+    int targetTurretRange = target.TurretRange();
+    int weaponsRange = 864; // need to calculate turn around distance v attacker gun range.
+    Point direction = ship.Position() - target.Position();
+    double length = direction.Length();
+    
+    Point northUnit = target.Facing().Unit();
+    Point westUnit(northUnit.Y(),-northUnit.X());
+    Point eastUnit(-northUnit.Y(),northUnit.X());
+    
+    //Point east = (target.Position() + eastUnit * targetTurretRange);
+    //Point west = (target.Position() + westUnit * targetTurretRange);
+    
+    //Point frontAvoid = (direction.Unit().Cross(target.Facing().Unit()) < 0. ? west : east);
+    //Point velocity = ship.Velocity();
+    bool inFront = direction.Unit().Dot(target.Facing().Unit()) > .9;
+    bool isFacing = direction.Unit().Dot(ship.Facing().Unit()) < 0;
+    bool outerRadius = direction.Length() < targetTurretRange * 1.2 ; //should be max (target gun range, turget turret range)
+   // double speed = ship.MaxVelocity();
+ 
+    if(outerRadius)
+    {
+     /*   if(inFront && isFacing)
+        {
+            MoveThrough(ship, command, frontAvoid, target.Velocity(), 20., speed);
+            if(command.Has(Command::FORWARD) && ShouldUseAfterburner(ship))
+                command |= Command::AFTERBURNER;
+        }
+        else if(inFront)
+        {
+            command |= Command::FORWARD;
+        }
+        */
+        if(inFront && isFacing)
+        {
+                command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+                command |= Command::STRAFELEFT;
+                command |= Command::FORWARD;
+        }
+        else if(length >= weaponsRange)
+        {
+            command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+            command |= Command::FORWARD;
+        }
+        else if(length < weaponsRange && ship.Facing().Unit().Dot(ship.Velocity().Unit()) > .7)
+        {
+            command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+            command |= Command::FORWARD;
+        }
+        else if(length < weaponsRange && ship.Facing().Unit().Dot(ship.Velocity().Unit()) < .7)
+        {
+            command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+        }
+        else if(length < weaponsRange)
+        {
+            command |= Command::FORWARD;
+        }
+    }
+    else
+    {
+        command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+        command |= Command::FORWARD;
+    }
+}
+
+
+
+void AI::AttackRear(Ship &ship, Command &command, const Ship &target)
+{
+    int weaponsRange = 864; //attacker weapon range this will be passed in eventually
+    int targetTurretRange = target.TurretRange();
+    Point offset = target.Position() - target.Facing().Unit() * weaponsRange;
+    Point direction = ship.Position() - target.Position();
+    Point d = (target.Position() + target.Velocity()) - (ship.Position() + ship.Velocity());
+    
+    Point northUnit = target.Facing().Unit();
+    Point southUnit = -target.Facing().Unit();
+    Point westUnit(northUnit.Y(),-northUnit.X());
+    Point eastUnit(-northUnit.Y(),northUnit.X());
+    
+    Point northWestUnit(northUnit.X() + westUnit.X(),northUnit.Y() + westUnit.Y());
+    Point northWest = (target.Position() + northWestUnit * targetTurretRange/1.41);
+    
+    Point northEastUnit(northUnit.X() + eastUnit.X(),northUnit.Y() + eastUnit.Y());
+    Point northEast = (target.Position() + northEastUnit * targetTurretRange/1.41);
+    
+    Point southWestUnit(southUnit.X() + westUnit.X(),southUnit.Y() + westUnit.Y());
+    Point southWest = (target.Position() + southWestUnit * targetTurretRange/1.41);
+    
+    Point southEastUnit(southUnit.X() + eastUnit.X(),southUnit.Y() + eastUnit.Y());
+    Point southEast = (target.Position() + southEastUnit * targetTurretRange/1.41);
+    
+    Point frontAvoid = (direction.Cross(ship.Facing().Unit()) < 0. ? northWest : northEast);
+    Point rearAvoid = (direction.Cross(target.Facing().Unit()) > 0. ? southWest : southEast);
+    
+    bool isBehind = direction.Unit().Dot(target.Facing().Unit()) < -.75;
+    bool justLeft = direction.Unit().Dot(target.Facing().Unit()) < -.8 && direction.Cross(target.Facing().Unit()) > 0;
+    bool justRight = direction.Unit().Dot(target.Facing().Unit()) < -.8 && direction.Cross(target.Facing().Unit()) <= 0;
+    bool inFront = direction.Unit().Dot(target.Facing().Unit()) > .75;
+
+    bool atSide = (!inFront && !isBehind);
+    bool inRange = direction.Length() < weaponsRange;
+    bool tooClose = direction.Length() < weaponsRange * .9;
+    bool outerRadius = direction.Length() < weaponsRange * 2;
+    double reverseSpeed = ship.MaxReverseVelocity();
+    double speed = ship.MaxVelocity();
+    
+
+    if(outerRadius)
+    {
+        if(inFront)
+        {
+            MoveThrough(ship, command, frontAvoid, target.Velocity(), 20., speed);
+        }
+        else if(atSide)
+        {
+            MoveThrough(ship, command, rearAvoid, target.Velocity(), 20., speed);
+        }
+        else if(!isBehind) //not behind target
+        {
+            MoveTo(ship, command, offset, target.Velocity(), 80., 20);
+        }
+        else if(!inRange) //behind but too far away
+        {
+           command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+           command |= Command::FORWARD;
+        }
+        else if(tooClose) //behind target but too close
+        {
+               if(reverseSpeed && target.Velocity().Dot(-d.Unit()) <= reverseSpeed)
+               {
+                   command.SetTurn(TurnToward(ship, d));
+                   if(ship.Facing().Unit().Dot(d) >= 0.)
+                       command |= Command::BACK;
+               }
+               else
+               {
+                   MoveTo(ship, command, offset, target.Velocity(), 80., 20);
+               }
+        }
+        else if(inRange) //behind target, in sweet spot.
+        {
+            if(justRight) command |= Command::STRAFELEFT;
+            else if (justLeft) command |= Command::STRAFERIGHT;
+           command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+        }
+    }
+    else
+    {
+        command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+        command |= Command::FORWARD;
+    }
+}
+    
 
 void AI::Swarm(Ship &ship, Command &command, const Body &target)
 {
@@ -2116,8 +2573,10 @@ void AI::Attack(Ship &ship, Command &command, const Ship &target)
 		}
 		return;
 	}
-	
-	MoveToAttack(ship, command, target);
+    if(ship.Attributes().Get("rear") && target.TrueTurnRate() < ship.Acceleration() * 1.2) AttackRear(ship, command, target);
+    else if(ship.Attributes().Get("rear")) StrikeThrough(ship, command, target);
+	else if(ship.Attributes().Get("strike")) StrikeThrough(ship, command, target);
+	else MoveToAttack(ship, command, target);
 }
 
 
@@ -3015,7 +3474,7 @@ void AI::AutoFire(const Ship &ship, Command &command, bool secondary) const
 			v *= lifetime;
 			
 			const Mask &mask = target->GetMask(step);
-			if(mask.Collide(-p, v, target->Facing()) < 1.)
+			if(mask.Collide(-p, v, target->Facing(), target->Scale()) < 1.)
 			{
 				command.SetFire(index);
 				break;
@@ -3061,7 +3520,7 @@ void AI::AutoFire(const Ship &ship, Command &command, const Body &target) const
 		v *= lifetime;
 		
 		const Mask &mask = target.GetMask(step);
-		if(mask.Collide(-p, v, target.Facing()) < 1.)
+		if(mask.Collide(-p, v, target.Facing(), target.Scale()) < 1.)
 			command.SetFire(index);
 	}
 }
@@ -3468,6 +3927,10 @@ void AI::MovePlayer(Ship &ship, const PlayerInfo &player, Command &activeCommand
 	{
 		if(activeCommands.Has(Command::FORWARD))
 			command |= Command::FORWARD;
+        if(activeCommands.Has(Command::STRAFELEFT))
+            command |= Command::STRAFELEFT;
+        if(activeCommands.Has(Command::STRAFERIGHT))
+            command |= Command::STRAFERIGHT;
 		if(activeCommands.Has(Command::RIGHT | Command::LEFT))
 			command.SetTurn(activeCommands.Has(Command::RIGHT) - activeCommands.Has(Command::LEFT));
 		if(activeCommands.Has(Command::BACK))

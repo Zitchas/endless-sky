@@ -224,7 +224,7 @@ outfit "Thunderhead Launcher"
 	"outfit space" -26
 	"weapon capacity" -26
 	"gun ports" -1
-	"thunderhead capacity" 40
+	"thunderhead capacity" 20
 	weapon
 		sprite "projectile/thunderhead"
 			"no repeat"
@@ -238,11 +238,11 @@ outfit "Thunderhead Launcher"
 		"die effect" "missile death"
 		"hit effect" "medium explosion"
 		"inaccuracy" 10
-		"velocity" 4
-		"lifetime" 400
-		"reload" 75
-		"firing energy" 18
-		"firing heat" 36
+		"velocity" 2.0
+		"lifetime" 800.0
+		"reload" 150.0
+		"firing energy" 36.0
+		"firing heat" 72.0
 		"acceleration" 1.1
 		"drag" .1
 		"turn" 2
@@ -267,18 +267,18 @@ outfit "Thunderhead"
 			"frame rate" .1
 		"die effect" "missile death"
 		"hit effect" "small explosion"
-		"inaccuracy" 90
-		"velocity" 2
-		"lifetime" 400
+		"inaccuracy" 90.0
+		"velocity" 1.0
+		"lifetime" 800.0
 		"acceleration" 1.4
 		"drag" .1
 		"turn" 3
 		"homing" 4
 		"optical tracking" .9
 		"radar tracking" .6
-		"shield damage" 110
-		"hull damage" 80
-		"hit force" 150
+		"shield damage" 220.0
+		"hull damage" 160.0
+		"hit force" 300.0
 		"missile strength" 3
 
 outfit "Thunderhead Storage Array"

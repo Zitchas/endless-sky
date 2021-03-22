@@ -255,12 +255,12 @@ outfit "EMP Torpedo Bay"
 		"hit effect" "emp spark" 20
 		"die effect" "tiny explosion"
 		stream
-		"reload" 330
-		"firing energy" 400
-		"firing heat" 18
-		"inaccuracy" 5
-		"lifetime" 300
-		"velocity" 7
+		"reload" 660.0
+		"firing energy" 800.0
+		"firing heat" 36.0
+		"inaccuracy" 10.0
+		"lifetime" 600.0
+		"velocity" 3.5
 		"acceleration" .7
 		"drag" .1
 		"turn" 2
@@ -269,10 +269,10 @@ outfit "EMP Torpedo Bay"
 		"radar tracking" .8
 		"trigger radius" 50
 		"blast radius" 200
-		"shield damage" 700
-		"hull damage" 100
-		"ion damage" 48
-		"hit force" 90
+		"shield damage" 1400.0
+		"hull damage" 200.0
+		"ion damage" 96.0
+		"hit force" 180.0
 		"missile strength" 80
 	description "Electromagnetic pulse weapons were developed by the Remnant during the early days of their colony, when they were living in fear that the Alphas would overrun human space and expand beyond it."
 
@@ -375,7 +375,8 @@ outfit "Thermoelectric Cooler"
 	thumbnail "outfit/thermoelectric cooler"
 	"mass" 4
 	"outfit space" -4
-	"active cooling" 8
+	"cooling" 2
+	"active cooling" 10
 	"cooling energy" .4
 	description "This cooler is actually just one of the power-generating elements of a Millennium Cell, but wired so it can run in reverse: consuming electricity in order to transfer heat from a ship's systems to its exterior."
 

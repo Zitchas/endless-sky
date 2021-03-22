@@ -25,14 +25,14 @@ outfit "Bombardment Cannon"
 		sound "bombardment"
 		"hit effect" "bombardment impact"
 		"inaccuracy" 4
-		"velocity" 6
+		"velocity" 3.0
 		"random velocity" 1
-		"lifetime" 150
-		"reload" 9
-		"firing energy" 17
-		"firing heat" 14
-		"shield damage" 22
-		"hull damage" 25
+		"lifetime" 300.0
+		"reload" 18.0
+		"firing energy" 34.0
+		"firing heat" 28.0
+		"shield damage" 44.0
+		"hull damage" 50.0
 	description `The Bombardment Cannon was designed during the original war with the Quarg, in order to give Heliarch civilian ships a way to strike Quarg warships from a safe distance. But now, as with all their weapons, its use is limited to Heliarch warships.`
 
 outfit "Bombardment Turret"
@@ -55,15 +55,15 @@ outfit "Bombardment Turret"
 		sound "bombardment"
 		"hit effect" "bombardment impact"
 		"inaccuracy" 4
-		"turret turn" 2.8
-		"velocity" 6
+		"turret turn" 1.4
+		"velocity" 3.0
 		"random velocity" 1
-		"lifetime" 150
-		"reload" 3
-		"firing energy" 17
-		"firing heat" 14
-		"shield damage" 22
-		"hull damage" 25
+		"lifetime" 300.0
+		"reload" 6.0
+		"firing energy" 34.0
+		"firing heat" 28.0
+		"shield damage" 44.0
+		"hull damage" 50.0
 	description `A Bombardment Turret is not one of the most dangerous Heliarch weapons, but it has the advantage that it can hit targets a considerable distance away.`
 
 effect "bombardment impact"
@@ -99,12 +99,12 @@ outfit "Finisher Pod"
 		"hit effect" "finisher impact" 2
 		"hit effect" "finisher fragment" 12
 		"die effect" "finisher fragment" 6
-		"inaccuracy" 5
-		"velocity" 10
-		"lifetime" 60
-		"reload" 80
-		"firing energy" 120
-		"firing heat" 20
+		"inaccuracy" 10.0
+		"velocity" 5.0
+		"lifetime" 120.0
+		"reload" 160.0
+		"firing energy" 240.0
+		"firing heat" 40.0
 		"acceleration" .8
 		"drag" .1
 		"turn" 0.1
@@ -122,7 +122,7 @@ outfit "Active Finisher"
 		"hit effect" "finisher impact" 2
 		"hit effect" "finisher fragment" 12
 		"die effect" "small explosion"
-		"lifetime" 500
+		"lifetime" 1000.0
 		"acceleration" 1
 		"drag" .1
 		"turn" 2
@@ -130,9 +130,9 @@ outfit "Active Finisher"
 		"radar tracking" .8
 		"optical tracking" .5
 		"missile strength" 50
-		"shield damage" 1500
-		"hull damage" 1900
-		"hit force" 750
+		"shield damage" 3000.0
+		"hull damage" 3800.0
+		"hit force" 1500.0
 
 outfit "Finisher Storage Tube"
 	category "Ammunition"
