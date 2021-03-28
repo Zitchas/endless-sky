@@ -226,21 +226,21 @@ outfit "Hai Tracker Pod"
 		"hit effect" "tracker impact"
 		"hit effect" "tracker cloud" 3
 		"die effect" "tracker impact"
-		"inaccuracy" 20
-		"velocity" 14
-		"lifetime" 600
-		"reload" 60
-		"firing energy" 45
-		"firing heat" 5
+		"inaccuracy" 40.0
+		"velocity" 7.0
+		"lifetime" 1200.0
+		"reload" 120.0
+		"firing energy" 90.0
+		"firing heat" 10.0
 		"acceleration" .7
 		"drag" .05
 		"turn" 1.2
 		"homing" 4
 		"optical tracking" .8
 		"infrared tracking" .4
-		"shield damage" 200
-		"hull damage" 160
-		"hit force" 350
+		"shield damage" 400.0
+		"hull damage" 320.0
+		"hit force" 700.0
 		"missile strength" 16
 	description "Trackers are fast and accurate homing weapons. Although not as powerful as most human missiles, Trackers boast a significant hit force, helping to prevent the escape of whoever is unfortunate enough to be on the receiving end. Their only weakness is their large turning radius: if a Tracker misses its target, it takes a long time to turn around."
 
@@ -350,7 +350,8 @@ outfit "Hai Williwaw Cooling"
 	thumbnail "outfit/hai williwaw"
 	"mass" 8
 	"outfit space" -8
-	"cooling" 9.5
+	"energy consumption" 0.1
+	"cooling" 10
 	description "While Hai technology is fairly heat efficient, occasionally they outfit their ships such that they sporadically overheat and shut down. When that happens, they install these."
 
 

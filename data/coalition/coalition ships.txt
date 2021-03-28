@@ -115,7 +115,7 @@ ship "Arach Hulk"
 		"hull" 13800
 		"required crew" 8
 		"bunks" 14
-		"mass" 670
+		"mass" 737
 		"drag" 18.9
 		"heat dissipation" .50
 		"fuel capacity" 500
@@ -169,7 +169,7 @@ ship "Arach Spindle"
 		"hull" 9700
 		"required crew" 4
 		"bunks" 14
-		"mass" 340
+		"mass" 374
 		"drag" 10.8
 		"heat dissipation" .55
 		"fuel capacity" 500
@@ -391,7 +391,7 @@ ship "Heliarch Hunter"
 		"hull" 45300
 		"required crew" 26
 		"bunks" 41
-		"mass" 420
+		"mass" 441
 		"drag" 5.3
 		"heat dissipation" .71
 		"ion protection" .2
@@ -549,7 +549,7 @@ ship "Heliarch Interdictor"
 		"hull" 54600
 		"required crew" 42
 		"bunks" 70
-		"mass" 520
+		"mass" 546
 		"drag" 7.4
 		"heat dissipation" .70
 		"ion protection" .2
@@ -673,7 +673,7 @@ ship "Heliarch Judicator"
 		"hull" 41900
 		"required crew" 31
 		"bunks" 110
-		"mass" 480
+		"mass" 504
 		"drag" 7.9
 		"heat dissipation" .67
 		"ion protection" .2
@@ -970,7 +970,7 @@ ship "Heliarch Punisher"
 		"hull" 85000
 		"required crew" 96
 		"bunks" 145
-		"mass" 780
+		"mass" 858
 		"drag" 12.2
 		"heat dissipation" .60
 		"ion protection" .3
@@ -1156,6 +1156,7 @@ ship "Heliarch Pursuer"
 	thumbnail "thumbnail/heliarch pursuer"
 	attributes
 		category "Fighter"
+		rear 1
 		licenses
 			Heliarch
 		"cost" 1029000
@@ -1163,12 +1164,12 @@ ship "Heliarch Pursuer"
 		"hull" 1600
 		"required crew" 1
 		"bunks" 1
-		"mass" 31
-		"drag" 0.8
+		"mass" 15
+		"drag" 1.6
 		"heat dissipation" 0.99
-		"outfit space" 105
+		"outfit space" 137
 		"weapon capacity" 19
-		"engine capacity" 36
+		"engine capacity" 64
 		weapon
 			"blast radius" 15
 			"shield damage" 150
@@ -1183,8 +1184,8 @@ ship "Heliarch Pursuer"
 		"Small Shield Module"
 		"Small Repair Module"
 		
-		"Small Steering Module" 2
-		"Small Thrust Module" 2
+		"Small Steering Module" 4
+		"Small Thrust Module" 4
 	
 	engine 0 34.5
 	engine 7 33.5
@@ -1214,6 +1215,7 @@ ship "Heliarch Rover"
 	thumbnail "thumbnail/heliarch rover"
 	attributes
 		category "Fighter"
+		rear 1
 		licenses
 			Heliarch
 		"cost" 1238000
@@ -1221,12 +1223,12 @@ ship "Heliarch Rover"
 		"hull" 3100
 		"required crew" 1
 		"bunks" 1
-		"mass" 37
-		"drag" 1.19
+		"mass" 18
+		"drag" 2.38
 		"heat dissipation" .96
-		"outfit space" 125
+		"outfit space" 156
 		"weapon capacity" 24
-		"engine capacity" 32
+		"engine capacity" 64
 		weapon
 			"blast radius" 15
 			"shield damage" 150
@@ -1240,8 +1242,8 @@ ship "Heliarch Rover"
 		"Small Shield Module"
 		"Small Repair Module" 3
 		
-		"Small Thrust Module" 2
-		"Small Steering Module" 2
+		"Small Thrust Module" 4
+		"Small Steering Module" 4
 	
 	engine 7 28
 	engine -7 28
@@ -1270,6 +1272,7 @@ ship "Heliarch Stalker"
 	thumbnail "thumbnail/heliarch stalker"
 	attributes
 		category "Fighter"
+		rear 1
 		licenses
 			Heliarch
 		"cost" 1358000
@@ -1277,12 +1280,12 @@ ship "Heliarch Stalker"
 		"hull" 5200
 		"required crew" 1
 		"bunks" 2
-		"mass" 80
-		"drag" 2.1
+		"mass" 40
+		"drag" 4.2
 		"heat dissipation" 0.64
-		"outfit space" 133
+		"outfit space" 149
 		"weapon capacity" 43
-		"engine capacity" 16
+		"engine capacity" 32
 		weapon
 			"blast radius" 15
 			"shield damage" 150
@@ -1297,8 +1300,8 @@ ship "Heliarch Stalker"
 		"Large Shield Module"
 		"Large Repair Module"
 		
-		"Small Steering Module"
-		"Small Thrust Module"
+		"Small Steering Module" 2
+		"Small Thrust Module" 2
 	
 	engine 0 40 .8
 	turret 0 -1.5
@@ -1378,7 +1381,7 @@ ship "Kimek Spire"
 		"hull" 4900
 		"required crew" 19
 		"bunks" 197
-		"mass" 570
+		"mass" 627
 		"drag" 8.4
 		"heat dissipation" .60
 		"fuel capacity" 800
@@ -1432,7 +1435,7 @@ ship "Kimek Thistle"
 		"hull" 2800
 		"required crew" 7
 		"bunks" 52
-		"mass" 270
+		"mass" 284
 		"drag" 5.8
 		"heat dissipation" .70
 		"fuel capacity" 700
@@ -1569,7 +1572,7 @@ ship "Saryd Sojourner"
 		"hull" 7700
 		"required crew" 17
 		"bunks" 84
-		"mass" 640
+		"mass" 704
 		"drag" 12.9
 		"heat dissipation" .50
 		"fuel capacity" 800
@@ -1624,7 +1627,7 @@ ship "Saryd Traveler"
 		"hull" 4000
 		"required crew" 10
 		"bunks" 45
-		"mass" 350
+		"mass" 368
 		"drag" 5.5
 		"heat dissipation" .60
 		"fuel capacity" 600

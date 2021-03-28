@@ -14,6 +14,7 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 #define AI_H_
 
 #include "Command.h"
+#include "FormationPositioner.h"
 #include "Point.h"
 
 #include <cstdint>
@@ -51,6 +52,9 @@ template <class Type>
 	AI(const List<Ship> &ships, const List<Minable> &minables, const List<Flotsam> &flotsam);
 	
 	// Fleet commands from the player.
+	void IssueFormationChange(const PlayerInfo &player);
+	void IssueFormationRingIncrease(const PlayerInfo &player);
+	void IssueFormationRingDecrease(const PlayerInfo &player);
 	void IssueShipTarget(const PlayerInfo &player, const std::shared_ptr<Ship> &target);
 	void IssueMoveTarget(const PlayerInfo &player, const Point &target, const System *moveToSystem);
 	// Commands issued via the keyboard (mostly, to the flagship).
@@ -84,8 +88,9 @@ private:
 	std::vector<std::shared_ptr<Ship>> GetShipsList(const Ship &ship, bool targetEnemies, double maxRange = -1.) const;
 	
 	bool FollowOrders(Ship &ship, Command &command) const;
+	void MoveInFormation(Ship &ship, Command &command);
 	void MoveIndependent(Ship &ship, Command &command) const;
-	void MoveEscort(Ship &ship, Command &command) const;
+	void MoveEscort(Ship &ship, Command &command);
 	static void Refuel(Ship &ship, Command &command);
 	static bool CanRefuel(const Ship &ship, const StellarObject *target);
 	bool ShouldDock(const Ship &ship, const Ship &parent, const System *playerSystem) const;
@@ -95,9 +100,12 @@ private:
 	static double TurnToward(const Ship &ship, const Point &vector);
 	static bool MoveToPlanet(Ship &ship, Command &command);
 	static bool MoveTo(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow);
+    static bool MoveThrough(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow);
 	static bool Stop(Ship &ship, Command &command, double maxSpeed = 0., const Point direction = Point());
 	static void PrepareForHyperspace(Ship &ship, Command &command);
 	static void CircleAround(Ship &ship, Command &command, const Body &target);
+    static void StrikeThrough(Ship &ship, Command &command, const Ship &target);
+    static void AttackRear(Ship &ship, Command &command, const Ship &target);
 	static void Swarm(Ship &ship, Command &command, const Body &target);
 	static void KeepStation(Ship &ship, Command &command, const Body &target);
 	static void Attack(Ship &ship, Command &command, const Ship &target);
@@ -212,6 +220,9 @@ private:
 	std::map<const Ship *, Angle> miningAngle;
 	std::map<const Ship *, int> miningTime;
 	std::map<const Ship *, double> appeasmentThreshold;
+	
+	// Records for formations flying around leadships and other formation leading objects.
+	std::map<const Body *, std::map<const FormationPattern *, FormationPositioner>> formations;
 	
 	std::map<const Ship *, int64_t> shipStrength;
 	

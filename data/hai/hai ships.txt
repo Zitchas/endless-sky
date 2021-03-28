@@ -73,7 +73,7 @@ ship "Centipede"
 		"hull" 2400
 		"required crew" 35
 		"bunks" 131
-		"mass" 187
+		"mass" 197
 		"drag" 3.9
 		"heat dissipation" .75
 		"fuel capacity" 600
@@ -100,6 +100,7 @@ ship "Centipede"
 		`"Biroo" Atomic Steering`
 		`"Basrem" Atomic Steering`
 		Hyperdrive
+		"Pulse Rifle" 35
 		
 	engine -15 113
 	engine 15 113
@@ -129,7 +130,7 @@ ship "Centipede" "Centipede (Pulse)"
 		"Hai Williwaw Cooling" 5
 		"Luxury Accommodations"
 		"Quantum Keystone"
-		"Pulse Rifle" 24
+		"Pulse Rifle" 35
 		`"Biroo" Atomic Thruster`
 		`"Basrem" Atomic Steering`
 		`"Biroo" Atomic Steering`
@@ -142,15 +143,16 @@ ship "Flea"
 	thumbnail "thumbnail/hai flea"
 	attributes
 		category "Drone"
+		rear 1
 		"cost" 142400
 		"shields" 200
 		"hull" 700
-		"mass" 21
-		"drag" .55
+		"mass" 10
+		"drag" 1.10
 		"heat dissipation" .83
-		"outfit space" 63
+		"outfit space" 84
 		"weapon capacity" 13
-		"engine capacity" 22
+		"engine capacity" 44
 		"automaton" 1
 		weapon
 			"blast radius" 6
@@ -162,7 +164,7 @@ ship "Flea"
 		"Railgun Slug" 3000
 		"Sand Cell"
 		"Supercapacitor" 2
-		`"Baellie" Atomic Engines`
+		`"Baellie" Atomic Engines` 2
 
 	engine 0 27 1.4
 	gun 0 -27 "Railgun"
@@ -190,7 +192,7 @@ ship "Geocoris"
 		"hull" 6200
 		"required crew" 15
 		"bunks" 56
-		"mass" 810
+		"mass" 891
 		"drag" 17.1
 		"heat dissipation" 0.45
 		"fuel capacity" 800
@@ -214,6 +216,7 @@ ship "Geocoris"
 		`"Biroo" Atomic Thruster`
 		`"Bondir" Atomic Steering`
 		Hyperdrive
+		"Pulse Rifle" 15
 
 	engine 100 39
 	engine -100 39
@@ -244,12 +247,12 @@ ship "Geocoris" "Geocoris (Tracker)"
 		"Chameleon Anti-Missile"
 		"Boulder Reactor"
 		"Pebble Core"
+		"Pulse Rifle" 15
 		"Hai Ravine Batteries"
 		"Hai Corundum Regenerator" 2
 		"Hai Williwaw Cooling" 7
 		"Tracker Storage Pod" 3
 		"Quantum Keystone"
-		"Pulse Rifle" 14
 		`"Biroo" Atomic Thruster`
 		`"Bondir" Atomic Steering`
 		Hyperdrive
@@ -289,6 +292,7 @@ ship "Grasshopper"
 		`"Benga" Atomic Thruster`
 		`"Benga" Atomic Steering`
 		Hyperdrive
+		"Pulse Rifle" 1
 
 	engine 0 36
 	gun -6 -34 "Pulse Cannon"
@@ -309,7 +313,7 @@ ship "Grasshopper" "Grasshopper (Tracker)"
 		"Hai Corundum Regenerator"
 		"Hai Williwaw Cooling" 2
 		"Quantum Keystone"
-		"Pulse Rifle"
+		"Pulse Rifle" 1
 		`"Basrem" Atomic Thruster`
 		`"Basrem" Atomic Steering`
 		Hyperdrive
@@ -322,6 +326,7 @@ ship "Grasshopper" "Grasshopper (Surveillance)"
 		"Supercapacitor"
 		"Outfit Scanner" 5
 		"Cargo Scanner" 5
+		"Pulse Rifle" 1
 		"Hai Corundum Regenerator"
 		"Hai Williwaw Cooling" 2
 		"Quantum Keystone"
@@ -365,6 +370,8 @@ ship "Lightning Bug"
 		`"Benga" Atomic Thruster`
 		`"Biroo" Atomic Steering`
 		"Hyperdrive"
+		"Pulse Rifle" 5
+		
 	engine -40 22
 	engine 40 22
 	gun 0 -40 "Ion Cannon"
@@ -385,9 +392,9 @@ ship "Lightning Bug" "Lightning Bug (Pulse)"
 		"Hai Tracker" 56
 		"Pulse Turret" 2
 		"Geode Reactor"
+		"Pulse Rifle" 5
 		"Hai Gorge Batteries"
 		"Hai Corundum Regenerator"
-		"Pulse Rifle" 2
 		`"Biroo" Atomic Thruster`
 		`"Benga" Atomic Steering`
 		"Hyperdrive"
@@ -401,10 +408,10 @@ ship "Lightning Bug" "Lightning Bug (Surveillance)"
 		"Geode Reactor"
 		"Outfit Scanner" 5
 		"Cargo Scanner" 5
+		"Pulse Rifle" 5
 		"Hai Williwaw Cooling"
 		"Hai Gorge Batteries"
 		"Hai Corundum Regenerator"
-		"Pulse Rifle" 2
 		`"Benga" Atomic Thruster`
 		`"Benga" Atomic Steering`
 		"Hyperdrive"
@@ -421,7 +428,7 @@ ship "Pond Strider"
 		"hull" 3000
 		"required crew" 9
 		"bunks" 18
-		"mass" 168
+		"mass" 177
 		"drag" 3.55
 		"hull repair rate" 1
 		"heat dissipation" .5
@@ -559,7 +566,7 @@ ship "Shield Beetle"
 		"hull" 9800
 		"required crew" 47
 		"bunks" 95
-		"mass" 650
+		"mass" 715
 		"drag" 8.8
 		"heat dissipation" .60
 		"fuel capacity" 500
@@ -585,6 +592,7 @@ ship "Shield Beetle"
 		"Hai Diamond Regenerator"
 		"Hai Williwaw Cooling" 2
 		"Quantum Keystone"
+		"Pulse Rifle" 47
 		`"Bondir" Atomic Thruster`
 		`"Bufaer" Atomic Steering`
 		"Hyperdrive"
@@ -703,7 +711,7 @@ ship "Shield Beetle" "Shield Beetle (Pulse)"
 		"Hai Ravine Batteries"
 		"Hai Diamond Regenerator" 2
 		"Hai Williwaw Cooling" 3
-		"Pulse Rifle" 27
+		"Pulse Rifle" 47
 		`"Bondir" Atomic Thruster`
 		`"Bufaer" Atomic Steering`
 		"Hyperdrive"
@@ -728,7 +736,7 @@ ship "Shield Beetle" "Shield Beetle (Tracker)"
 		"Hai Diamond Regenerator"
 		"Hai Williwaw Cooling" 2
 		"Quantum Keystone"
-		"Pulse Rifle" 32
+		"Pulse Rifle" 47
 		`"Bondir" Atomic Thruster`
 		`"Bufaer" Atomic Steering`
 		"Hyperdrive"
@@ -747,7 +755,7 @@ ship "Solifuge"
 		"hull" 11000
 		"required crew" 62
 		"bunks" 118
-		"mass" 925
+		"mass" 1018
 		"drag" 15.4
 		"heat dissipation" .42
 		"fuel capacity" 600
@@ -772,6 +780,7 @@ ship "Solifuge"
 		"Hai Diamond Regenerator"
 		"Hai Williwaw Cooling" 6
 		"Quantum Keystone"
+		"Pulse Rifle" 62
 		`"Benga" Atomic Steering`
 		`"Bufaer" Atomic Steering`
 		`"Bondir" Atomic Thruster`
@@ -900,7 +909,7 @@ ship "Solifuge" "Solifuge (Tracker)"
 		"Hai Corundum Regenerator"
 		"Hai Diamond Regenerator" 2
 		"Hai Williwaw Cooling" 6
-		"Pulse Rifle" 59
+		"Pulse Rifle" 62
 		`"Benga" Atomic Steering`
 		`"Bufaer" Atomic Steering`
 		`"Bondir" Atomic Thruster`
@@ -913,17 +922,18 @@ ship "Violin Spider"
 	thumbnail "thumbnail/hai violin spider"
 	attributes
 		category "Fighter"
+		rear 1
 		"cost" 139000
 		"shields" 1400
 		"hull" 600
 		"required crew" 1
 		"bunks" 1
-		"mass" 31
-		"drag" 0.9
+		"mass" 15
+		"drag" 1.9
 		"heat dissipation" .7
-		"outfit space" 92
+		"outfit space" 121
 		"weapon capacity" 19
-		"engine capacity" 30
+		"engine capacity" 60
 		weapon
 			"blast radius" 12
 			"shield damage" 120
@@ -936,8 +946,8 @@ ship "Violin Spider"
 		Supercapacitor
 		"Hai Williwaw Cooling"
 		"Pulse Rifle"
-		`"Basrem" Atomic Steering`
-		`"Basrem" Atomic Thruster`
+		`"Basrem" Atomic Steering` 2
+		`"Basrem" Atomic Thruster` 2
 
 	engine -15 30
 	engine 15 30
@@ -971,7 +981,7 @@ ship "Water Bug"
 		"hull" 4500
 		"required crew" 5
 		"bunks" 29
-		"mass" 270
+		"mass" 297
 		"drag" 5.9
 		"heat dissipation" .75
 		"fuel capacity" 600
@@ -996,6 +1006,7 @@ ship "Water Bug"
 		"Hai Diamond Regenerator"
 		"Hai Williwaw Cooling"
 		"Quantum Keystone"
+		"Pulse Rifle" 5
 		`"Benga" Atomic Thruster`
 		`"Benga" Atomic Steering`
 		"Hyperdrive"
@@ -1043,7 +1054,7 @@ ship "Water Bug" "Water Bug (Pulse)"
 		"Hai Chasm Batteries"
 		"Hai Diamond Regenerator"
 		"Hai Williwaw Cooling"
-		"Pulse Rifle" 3
+		"Pulse Rifle" 5
 		`"Benga" Atomic Thruster`
 		`"Benga" Atomic Steering`
 		"Hyperdrive"

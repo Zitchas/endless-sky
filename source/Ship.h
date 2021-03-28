@@ -34,6 +34,7 @@ class DataNode;
 class DataWriter;
 class Effect;
 class Flotsam;
+class FormationPattern;
 class Government;
 class Hazard;
 class Minable;
@@ -161,6 +162,8 @@ public:
 	void SetPosition(Point position);
 	// When creating a new ship, you must set the following:
 	void Place(Point position = Point(), Point velocity = Point(), Angle angle = Angle());
+    double turretRange = 0;
+    double TurretRange() const;
 	void SetName(const std::string &name);
 	void SetSystem(const System *system);
 	void SetPlanet(const Planet *planet);
@@ -317,8 +320,11 @@ public:
 	// Get this ship's movement characteristics.
 	double Mass() const;
 	double TurnRate() const;
+    double TrueTurnRate() const;
 	double Acceleration() const;
 	double MaxVelocity() const;
+    double DisplayVelocity() const;
+    double DisplaySlowing()  const;
 	double MaxReverseVelocity() const;
 	
 	// This ship just got hit by the given projectile. Take damage according to
@@ -399,6 +405,11 @@ public:
 	// Mining target.
 	std::shared_ptr<Minable> GetTargetAsteroid() const;
 	std::shared_ptr<Flotsam> GetTargetFlotsam() const;
+	// Pattern to use when flying in a formation
+	const FormationPattern *GetFormationPattern() const;
+	int GetFormationRing() const;
+	void SetFormationRing(int newRing);
+	
 	
 	// Set this ship's targets.
 	void SetTargetShip(const std::shared_ptr<Ship> &ship);
@@ -408,6 +419,8 @@ public:
 	// Mining target.
 	void SetTargetAsteroid(const std::shared_ptr<Minable> &asteroid);
 	void SetTargetFlotsam(const std::shared_ptr<Flotsam> &flotsam);
+	// Pattern to use when flying in a formation (nullptr to clear formation)
+	void SetFormationPattern(const FormationPattern *formation);
 	
 	// Manage escorts. When you set this ship's parent, it will automatically
 	// register itself as an escort of that ship, and unregister itself from any
@@ -471,6 +484,7 @@ private:
 	bool isBoarding = false;
 	bool hasBoarded = false;
 	bool isThrusting = false;
+    bool isLatThrusting = false;
 	bool isReversing = false;
 	bool isSteering = false;
 	double steeringDirection = 0.;
@@ -575,6 +589,8 @@ private:
 	const System *targetSystem = nullptr;
 	std::weak_ptr<Minable> targetAsteroid;
 	std::weak_ptr<Flotsam> targetFlotsam;
+	const FormationPattern* formationPattern = nullptr;
+	int formationRing = 0;
 	
 	// Links between escorts and parents.
 	std::vector<std::weak_ptr<Ship>> escorts;

@@ -19,7 +19,7 @@ ship "Korath Dredger"
 		"hull" 16000
 		"required crew" 201
 		"bunks" 395
-		"mass" 1503
+		"mass" 1654
 		"drag" 18.3
 		"heat dissipation" .65
 		"fuel capacity" 900
@@ -42,7 +42,7 @@ ship "Korath Dredger"
 		"Triple Plasma Core"
 		"Large Heat Shunt" 3
 		"Fuel Processor"
-		"Korath Repeater Rifle" 190
+		"Korath Repeater Rifle" 200
 		
 		"Steering (Planetary Class)"
 		"Steering (Asteroid Class)"
@@ -91,7 +91,7 @@ ship "Korath Dredger" "Korath Dredger (Crippled)"
 		"Triple Plasma Core"
 		"Large Heat Shunt" 3
 		"Fuel Processor"
-		"Korath Repeater Rifle" 190
+		"Korath Repeater Rifle" 200
 		
 		"Steering (Planetary Class)"
 		"Steering (Lunar Class)"
@@ -115,13 +115,13 @@ ship "Korath Raider"
 	sprite "ship/raider"
 	thumbnail "thumbnail/raider"
 	attributes
-		category "Heavy Warship"
+		category "Medium Warship"
 		"cost" 16570000
 		"shields" 27000
 		"hull" 9000
 		"required crew" 145
 		"bunks" 250
-		"mass" 720
+		"mass" 756
 		"drag" 12
 		"heat dissipation" .5
 		"fuel capacity" 600
@@ -256,17 +256,20 @@ ship "Korath Chaser"
 	thumbnail "thumbnail/chaser"
 	attributes
 		category "Fighter"
+		rear 1
 		"cost" 671000
 		"shields" 2300
 		"hull" 900
 		"required crew" 1
 		"bunks" 1
-		"mass" 40
-		"drag" .9
+		"mass" 20
+		"drag" 1.8
 		"heat dissipation" .9
-		"outfit space" 92
+		"outfit space" 116
 		"weapon capacity" 25
-		"engine capacity" 30
+		"engine capacity" 48
+		"thrust" 22.4
+		"turn" 280.0
 		weapon
 			"blast radius" 48
 			"shield damage" 320
@@ -279,8 +282,8 @@ ship "Korath Chaser"
 		"Small Heat Shunt"
 		"Korath Repeater Rifle" 
 		
-		"Thruster (Asteroid Class)"
-		"Steering (Asteroid Class)"
+		"Thruster (Asteroid Class)" 2
+		"Steering (Asteroid Class)" 2
 	
 	engine -7 23
 	engine 7 23
@@ -300,7 +303,7 @@ ship "Korath World-Ship"
 		hull 34000
 		"required crew" 794
 		"bunks" 1492
-		"mass" 1735
+		"mass" 2082
 		"drag" 21
 		"heat dissipation" .4
 		"fuel capacity" 1000
@@ -322,7 +325,7 @@ ship "Korath World-Ship"
 		"Systems Core (Large)"
 		"Large Heat Shunt" 2
 		"Fuel Processor"
-		"Korath Repeater Rifle" 150
+		"Korath Repeater Rifle" 800
 		
 		"Thruster (Planetary Class)"
 		"Steering (Planetary Class)"
@@ -381,7 +384,7 @@ ship "Korath World-Ship" "Korath World-Ship A (Jump)"
 		"Systems Core (Large)"
 		"Large Heat Shunt" 2
 		"Fuel Processor"
-		"Korath Repeater Rifle" 150
+		"Korath Repeater Rifle" 800
 		
 		"Thruster (Planetary Class)"
 		"Steering (Planetary Class)"
@@ -407,7 +410,7 @@ ship "Korath World-Ship" "Korath World-Ship B (Jump)"
 		"Systems Core (Large)"
 		"Large Heat Shunt" 2
 		"Fuel Processor"
-		"Korath Repeater Rifle" 150
+		"Korath Repeater Rifle" 800
 		
 		"Thruster (Planetary Class)"
 		"Steering (Planetary Class)"
@@ -433,7 +436,7 @@ ship "Korath World-Ship" "Korath World-Ship C (Jump)"
 		"Systems Core (Large)"
 		"Large Heat Shunt" 2
 		"Fuel Processor"
-		"Korath Repeater Rifle" 150
+		"Korath Repeater Rifle" 800
 		
 		"Thruster (Planetary Class)"
 		"Steering (Planetary Class)"
@@ -459,7 +462,7 @@ ship "Korath World-Ship" "Korath World-Ship B (Ember)"
 		"Systems Core (Large)"
 		"Large Heat Shunt" 2
 		"Fuel Processor"
-		"Korath Repeater Rifle" 150
+		"Korath Repeater Rifle" 800
 		"Outfits Expansion"
 		
 		"Thruster (Planetary Class)"
@@ -484,7 +487,7 @@ ship "Korath World-Ship" "Korath World-Ship B (Crippled)"
 		
 		"Triple Plasma Core"
 		"Large Heat Shunt" 2
-		"Korath Repeater Rifle" 150
+		"Korath Repeater Rifle" 800
 		"Outfits Expansion"
 		
 		"Thruster (Planetary Class)"
@@ -512,7 +515,7 @@ ship "Kar Ik Vot 349"
 		"shields" 57200
 		"hull" 65400
 		"automaton" 1
-		"mass" 1350
+		"mass" 1485
 		"drag" 16.8
 		"heat dissipation" .5
 		"fuel capacity" 400
@@ -669,7 +672,7 @@ ship "Tek Far 71 - Lek"
 		"shields" 25400
 		"hull" 29500
 		"automaton" 1
-		"mass" 610
+		"mass" 641
 		"drag" 9.6
 		"heat dissipation" .6
 		"fuel capacity" 400
@@ -762,7 +765,7 @@ ship "Tek Far 78 - Osk"
 		"shields" 27600
 		"hull" 34100
 		"automaton" 1
-		"mass" 690
+		"mass" 725
 		"drag" 10.2
 		"heat dissipation" .55
 		"fuel capacity" 400
@@ -854,7 +857,7 @@ ship "Tek Far 109"
 		"shields" 17900
 		"hull" 15800
 		"automaton" 1
-		"mass" 540
+		"mass" 567
 		"drag" 9.1
 		"heat dissipation" .65
 		"fuel capacity" 400
@@ -1010,17 +1013,20 @@ ship "Far Lek 14"
 	thumbnail "thumbnail/far lek 14"
 	attributes
 		category "Drone"
+		rear 1
 		"cost" 573000
 		"shields" 900
 		"hull" 1600
 		"automaton" 1
-		"mass" 26
-		"drag" .8
+		"mass" 13
+		"drag" 1.6
 		"heat dissipation" 1.1
-		"outfit space" 65
+		"outfit space" 89
 		"weapon capacity" 11
-		"engine capacity" 24
+		"engine capacity" 48
 		"self destruct" .6
+		"thrust" 22.4
+		"turn" 280.0
 		weapon
 			"blast radius" 5
 			"shield damage" 50
@@ -1048,17 +1054,20 @@ ship "Far Osk 27"
 	thumbnail "thumbnail/far osk 27"
 	attributes
 		category "Fighter"
+		rear 1
 		"cost" 761000
 		"shields" 1500
 		"hull" 2400
 		"automaton" 1
-		"mass" 34
-		"drag" 1.1
+		"mass" 17
+		"drag" 2.2
 		"heat dissipation" 1.0
-		"outfit space" 99
+		"outfit space" 123
 		"weapon capacity" 22
-		"engine capacity" 24
+		"engine capacity" 48
 		"self destruct" .6
+		"thrust" 22.4
+		"turn" 280.0
 		weapon
 			"blast radius" 12
 			"shield damage" 120
@@ -1070,8 +1079,8 @@ ship "Far Osk 27"
 		"Generator (Furnace Class)"
 		"Small Heat Shunt" 2
 		
-		"Thruster (Asteroid Class)"
-		"Steering (Asteroid Class)"
+		"Thruster (Asteroid Class)" 2
+		"Steering (Asteroid Class)" 2
 		
 	engine -4 37
 	engine 4 37
@@ -1245,7 +1254,7 @@ ship "Model 64"
 		"shields" 41700
 		"hull" 18000
 		"automaton" 1
-		"mass" 580
+		"mass" 609
 		"drag" 11.1
 		"heat dissipation" 1.1
 		"fuel capacity" 400
@@ -1301,7 +1310,7 @@ ship "Model 128"
 		"shields" 57000
 		"hull" 23100
 		"automaton" 1
-		"mass" 780
+		"mass" 819
 		"drag" 13.2
 		"heat dissipation" 1.0
 		"fuel capacity" 400
@@ -1358,7 +1367,7 @@ ship "Model 256"
 		"shields" 71700
 		"hull" 28700
 		"automaton" 1
-		"mass" 970
+		"mass" 1067
 		"drag" 15.3
 		"heat dissipation" .9
 		"fuel capacity" 400
@@ -1417,7 +1426,7 @@ ship "Model 512"
 		"shields" 86400
 		"hull" 34200
 		"automaton" 1
-		"mass" 1150
+		"mass" 1265
 		"drag" 17.4
 		"heat dissipation" .8
 		"fuel capacity" 400
