@@ -332,7 +332,7 @@ outfit "Millennium Cell"
 	cost 553000
 	thumbnail "outfit/millennium cell"
 	"mass" 25
-	"outfit space" -25
+	"outfit space" -26
 	"energy generation" 3.6
 	"heat generation" 6.0
 	"ion resistance" 0.025
@@ -345,8 +345,8 @@ outfit "Epoch Cell"
 		Remnant
 	cost 2123000
 	thumbnail "outfit/epoch cell"
-	"mass" 85
-	"outfit space" -85
+	"mass" 83
+	"outfit space" -86
 	"energy generation" 12.7
 	"heat generation" 19.8
 	"ion resistance" 0.085
@@ -359,8 +359,8 @@ outfit "Aeon Cell"
 		Remnant
 	cost 4384000
 	thumbnail "outfit/aeon cell"
-	"mass" 140
-	"outfit space" -140
+	"mass" 136
+	"outfit space" -141
 	"energy generation" 21.9
 	"heat generation" 31.5
 	"ion resistance" 0.14
