@@ -1017,7 +1017,7 @@ outfit "Torpedo Pod"
 	description "Torpedoes are the most powerful homing weapon, but they move slowly enough that fast ships can simply outrun them, making them most useful against large targets or against small ships at times when they are too distracted to dodge."
 	description "	Pods enable fighters and other light craft to carry small quantities of torpedoes into battle while retaining enough space for other weapons. Large ships are better off with full-size launchers."
 
-	effect "torpedo fire"
+effect "torpedo fire"
 	sprite "effect/torpedo fire"
 		"no repeat"
 		"frame rate" 10
