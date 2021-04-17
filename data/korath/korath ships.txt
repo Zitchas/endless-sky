@@ -128,7 +128,7 @@ ship "Korath Dredger" "Korath Dredger (Hyperdrive)"
 		"Thruster (Asteroid Class)"
 		"Hyperdrive"
 		"Jump Drive (Broken)"
-	
+
 
 ship "Korath Raider"
 	sprite "ship/raider"
