@@ -2515,7 +2515,7 @@ mission "Remnant: Bounty 2"
 		government "Remnant"
 	to offer
 		has "Remnant: Salvage 4: offered"
-		random < 60
+		random < 50
 	npc kill
 		government "Korath"
 		personality heroic vindictive target uninterested waiting marked
@@ -3684,7 +3684,7 @@ mission "Remnant: Bounty 3"
 		government "Remnant"
 	to offer
 		has "Remnant: Cognizance 4: failed"
-		random < 60
+		random < 40
 	npc kill
 		government "Korath"
 		personality heroic vindictive target uninterested waiting marked
@@ -4060,7 +4060,7 @@ mission "Remnant: Bounty 4"
 		government "Remnant"
 	to offer
 		has "Remnant: Cognizance 14: done"
-		random < 60
+		random < 30
 	npc kill
 		government "Korath"
 		personality heroic vindictive target uninterested waiting marked
