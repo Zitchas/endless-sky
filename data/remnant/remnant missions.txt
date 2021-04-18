@@ -3678,7 +3678,6 @@ mission "Remnant: Cognizance 4"
 mission "Remnant: Bounty 3"
 	job
 	repeat
-	name "Damaged Dredger Bounty"
 	description "A damaged Korath ship is lurking in Remnant territory. Hunt it down, and then return to <planet> to receive your payment of <payment>."
 	source
 		government "Remnant"
