@@ -28,18 +28,21 @@ mission "Remnant: Cognizance 21"
 				`	"Deffinitely."`
 				`	"Maybe later."`
 					goto maybelater
-			`	A few commands on your commlink later, and recordings your ship automatically made from its sensors while in flight pop up on a second projector that someone sets up. Several others pull up their commlinks and start skimming over the attached sensor logs. Almost immediately one waves to get everyone's attention.`
+			`	A few commands on your commlink later, and recordings your ship automatically made from its sensors while in flight pop up on a second projector. Several others pull up their commlinks and start skimming over the attached sensor logs. Almost immediately one waves to get everyone's attention.`
 			`	"Captain, was there anything unusual when you arrived there?"`
 			choice
 				`	"Yes, sensors reported life signs."`
-				`	"I don't remember, but I think you already spotted something."`
-			`	One of the Remnant pulls up the relevant section and puts it up on the projector. "Right here, the logs show that there is ambient life-signs all over the system, but nothing physical shows up on the scanners." He frowns at the projector. "Now, all the equipment status signals in the records are nominal, and both the check digits and data hashes match."`
+				`	"I don't remember. Did you notice something?"`
+			`	One of the Remnant pulls up the relevant section and puts it up on the projector. "Right here, the logs show that there is ambient life-signs all over the system, but nothing of significance shows up on the physical scanners." He frowns at the projector. "All the equipment status signals in the records are nominal, and both the check digits and data hashes match."`
 			choice
 				`	"So there's no problems with the data?"`
 				`	"Skip the technical jargon. What does it mean?"`
 					goto skiptech
 			`	Another Remnant nods. "Exactly. There is no problem with the data or the equipment, so one way or another, this is what it recorded. As such, either there is something here which we have never seen before, or there is something causing problems with conventional sensors." He looks around at the gathered Remnant and pauses as if focusing on something you can't see or hear, then turns to you. "We have reached a consensus.`
+				goto missionstatement
 			label skiptech
+			`	The Remnant pauses for a moment to adjust what they were about to say before continuing. "What it means is that there is no obvious explanation for why there would be life signs out there." They glance around at the rest of the gathered Remnant then back to you.`
+			label missionstatement
 			`	"We would like you to equip a research laboratory on your ship and take a team of five researchers to Ssil Vida. Can you do that?"`
 			choice
 				`	"That sounds reasonable."`
@@ -88,4 +91,6 @@ mission "Remnant: Cognizance 22"
 		has outfit "Research Laboratory"
 	on offer
 		conversation
-			`	In the cafeteria the scene hasn't changed much: There is still a large group of Remnant gathered around a cluster of projectors, with a constant stream of gestures discussing various points of the data. You understand enough to figure out that most of the conversation is deep into technical discussions of how the lifesign sensors might give the readings they do without having anything visible. The principle differences from before is that there is a stack of small bags and helmets next to the door and five of the Remnant present are wearing pressure suits. One of them notices you and waves you over. "Captain <first>! My name is Dusk, and I am one of the researchers that you volunteered to transport to Ssil Vida."
+			`	In the cafeteria the scene hasn't changed much: There is still a large group of Remnant gathered around a cluster of projectors, with a constant stream of gestures discussing various points of the data. You understand enough to figure out that most of the conversation is deep into technical discussions of how the lifesign sensors might give the readings they do without having anything visible. The principle differences from before is that there is a stack of small bags and helmets next to the door and five of the Remnant present are wearing pressure suits. One of them notices you and waves you over. "Captain <first>! My name is Dusk, and I am one of the researchers that you volunteered to transport to Ssil Vida."`
+			choice
+				`	"Dusk? Are 
