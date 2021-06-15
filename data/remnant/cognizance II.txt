@@ -8,7 +8,7 @@
 # WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 # PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-mission "Remnant: Cognizance 21"
+mission "Remnant: Cognizance 20"
 	name "Preparation for expedition"
 	description "Outfit a research laboratory and go to <planet>."
 	blocked "You need 10 free cargo space as well as a research laboratory for this mission."
@@ -18,7 +18,7 @@ mission "Remnant: Cognizance 21"
 	stopover
 		government "Remnant"
 	to offer
-		has "Remnant: Cognizance 18: done"
+		has "Remnant: Cognizance 19: done"
 	to complete
 		has outfit "Research Laboratory"
 	on offer
@@ -75,7 +75,7 @@ mission "Remnant: Cognizance 21"
 		`One of the Remnant is waiting for you. "Thanks for picking up the equipment. The team that you will be taking to Ssil Vida is waiting for you in the spaceport."`
 
 
-mission "Remnant: Cognizance 22"
+mission "Remnant: Cognizance 21"
 	name "Expedition to "
 	description "Outfit a research laboratory and go to <planet>."
 	blocked "You need 10 free space for this mission."
@@ -93,4 +93,24 @@ mission "Remnant: Cognizance 22"
 		conversation
 			`	In the cafeteria the scene hasn't changed much: There is still a large group of Remnant gathered around a cluster of projectors, with a constant stream of gestures discussing various points of the data. You understand enough to figure out that most of the conversation is deep into technical discussions of how the lifesign sensors might give the readings they do without having anything visible. The principle differences from before is that there is a stack of small bags and helmets next to the door and five of the Remnant present are wearing pressure suits. One of them notices you and waves you over. "Captain <first>! My name is Dusk, and I am one of the researchers that you volunteered to transport to Ssil Vida."`
 			choice
-				`	"Dusk? Are 
+				`	"Dusk? Are names of like that common?"`
+				`	"Pleased to meet you, Dusk."`
+					goto missiondescription
+			`	"You mean names of the various phases of daylight? Mmm, I would not say they are common, but nore are they rare, either. Our ancestors devoted their lives, one way or another, to studying the stars and the everchanging light of the universe. It should not be surprising that their vocabulary should be so entwined in our culture."`
+			choice
+				`	"Who were your ancestors?"`
+				`	"Interesting. Well, what is our mission?"`
+					goto missiondescription
+			`	Dusk looks thoughtful for a moment. "Our ancestors came froma different era for humanity. They were the heirs of a golden age of human scientific progress and progress, when governments and institutions poured vast wealth into science. The developments of that time period resulted in the completion of the hyperspace relay network, new terraforming techniques, and advanced genetic engineering capabilities." His face clouds at that. "This, of course, culminated in the Alphas." He pauses, then shakes his head. "But you asked who are ancestors were, not about human history.`
+			`	"In that era there were a number of burgeoning astronomy and exploration programs across human space. Despite also benefiting from the substantial budgets science in general as receiving, they were being pushed to the margins of the academic community: Unlike many of the more practical sciences like biology and chemistry which were coming up with new wonders, astronomy and astrophysics was purely academic. There was no budget in explaining the why's of the universe, not when other scientists were creating homo superior and unleashing instantaneous interstellar communication. So they banded together. It was not, I gather from the records, an unusual thing for academics of a particular field to meet with others of their field. If one faculty could not fund an expedition, perhaps two different faculties working together could. Eventually they formed a loose organization, a sort of 'standing conference' on astronomy and astrophysics, through which they met to discuss, debate, and organize."`
+			choice
+				`	"Your ancestors were originally a scientific conference?"`
+				`	"Thanks for the background. So, what is our mission?"`
+					goto missiontransition
+			`	Several of the Remnant nod, and another signs. "They gathered together to talk of their science, and each brought with them the captains and crew who enabled them. Some of those captains brought with them resources, too. Who else would appreciate learning of the void than those who ply their trades across it? The association group over time, although as best we can tell from our records it made an effort to remain both politically and economically neutral. As such, it remained comparatively small and close-knit. Many of our ancestores have told stories about calling themselves the 'Exploration Vector,' alluding to the fact that they were the one subset of humanity on a course to head out into the furthest reaches of space. They even held contests about who could go the furthest from inhabited space, or who could spend the longest time`
+			`	"When the war against the Alphas started, it was these people who had the most knowledge and experience with the farthest reaches of space. While many outfitters might sell a captain a map showing the hyperjumps a few systems into the uninhabited territories, it was the e`
+			label missiontransition
+			`	Dusk smiles and signs apologetically. "My apologies for being overly detailed. I found the study of our ancestors to be an intriguing one, so I have spent much time searching out my families' history."`
+			label missiondescription
+			# main mission description goes here.
+			
