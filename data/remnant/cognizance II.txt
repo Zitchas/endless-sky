@@ -77,7 +77,7 @@ mission "Remnant: Cognizance 20"
 
 mission "Remnant: Cognizance 21"
 	name "Expedition to "
-	description "Outfit a research laboratory and go to <planet>."
+	description "Outfit a research laboratory and go to <stopover>."
 	blocked "You need 10 free space for this mission."
 	cargo "supplies" 10
 	source
@@ -118,9 +118,10 @@ mission "Remnant: Cognizance 21"
 				`	"Which ship was that?"`
 				`	"I think I can see where this is going. Time to get to work."`
 					goto missiontransition
-			`	Dust smiles "The Shadow Step", an independent science vessel who did double-duty as a gas miner. She made quite the fortune harvesting rarer gases from obscure gas planets off the charted paths. Her captain was always making modifications. Not a genius by any means, but what they lacked in brilliance, they made up for in dedication and willingness to experiment. ` #bit more the discovery here. The exodus can be in another mission.
+			`	Dust smiles "The Shadow Step, an independent science vessel who did double-duty as a gas miner. She made a quiet fortune harvesting rarer gases from obscure gas planets off the charted paths. Never enough to attract the attention of the big corporate entities, but enough to be comfortable. Her captain was always making modifications. Not a genius by any means, but what they lacked in brilliance, they made up for in dedication and willingness to experiment. According to our records, making modifications to the Shadow Step was their main hobby, and the small crew she flew with had similar interests." Dust pauses to take a drink. "Thanks to the bravery of the Shadow Step and her crew, the hard work of the researchers that worked with them, and the contributions of a vast number of other ships and teams, the way out was discovered." Dust signs this last with a note of finality, and many of the Remnant who were listening make the sign for 'respect' and 'together.'`
 			label missiontransition
-			`	Dusk smiles and signs apologetically. "My apologies for being overly detailed. I found the study of our ancestors to be an intriguing one, so I have spent much time searching out my families' history."`
+			`	Dusk smiles and signs apologetically. "My apologies for being overly detailed. I found the study of our ancestors to be an intriguing one, so I have spent much time searching out my families' history. That, in turn, has led to a detailed interest in the early years of our society." Dust gestures towards the holo of Ssil Vida. "But enough of history, the present calls to us."`
 			label missiondescription
-			# main mission description goes here.
+			`	Dust leans over the holo, peering at the details. "The mission is a very standard arc: We go to the station, set up our equipment to get some detailed readings, and return here once we are done. For these initial readings we should need about a day onsite, and we will leave some of our equipment to take ongoing recordings for retrieval later.
+			
 			
