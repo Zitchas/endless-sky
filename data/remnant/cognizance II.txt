@@ -64,15 +64,20 @@ mission "Remnant: Cognizance 20"
 				`	"Later."`
 					goto maybelater
 			label takemission
-			`	"Excellent. We will load our equipment racks on-board, and the equipment to go in them will be waiting for you on from pad D43A on <stopover>. Once it is loaded, return here to pick up the team of researchers who will be going with you. Remember, you will need 5 bunks free as well as an on-board research laboratory."`
+			`	"Excellent. We will load our equipment racks on-board, and the equipment to go in them will be waiting for you on from pad D43A on <stopover>. Once it is loaded, return here to pick up the team of researchers who will be going with you. Remember, you will need 5 bunks free as well as an on-board research laboratory to complement our equipment."`
 				accept
 			label maybelater
 			`	"Oh, that's unfortunate. Maybe some other time, then." The crowd makes various gestures of disappointment, and turn back to observing the projection and discussing their theories.`
 				defer
 	on stopover
-		`You land on pad D43A and sure enough, there is a team waiting to load a bunch of equipment into the racks. Within minutes they are done loading, and cheerfully wave as they head off.`
+		conversation
+			`You land on pad D43A and sure enough, there is a team waiting to load a bunch of equipment into the racks. Within minutes they are done loading, and cheerfully wave as they head off.`
+	on visit
+		conversation
+			`According to your log you are where you need to be, but something is missing. The mission checklist blinks quietly at you on the side of your console, remininding you that you need to have a Research Laboratory installed, and the requested equipment has to have arrived. If you have more than one ship it might not have arrived yet.`
 	on complete
-		`One of the Remnant is waiting for you. "Thanks for picking up the equipment. The team that you will be taking to Ssil Vida is waiting for you in the spaceport."`
+		conversation
+			`One of the Remnant is waiting for you. "Thanks for picking up the equipment. The team that you will be taking to Ssil Vida is waiting for you in the spaceport."`
 
 
 mission "Remnant: Cognizance 21"
@@ -122,6 +127,28 @@ mission "Remnant: Cognizance 21"
 			label missiontransition
 			`	Dusk smiles and signs apologetically. "My apologies for being overly detailed. I found the study of our ancestors to be an intriguing one, so I have spent much time searching out my families' history. That, in turn, has led to a detailed interest in the early years of our society." Dust gestures towards the holo of Ssil Vida. "But enough of history, the present calls to us."`
 			label missiondescription
-			`	Dust leans over the holo, peering at the details. "The mission is a very standard arc: We go to the station, set up our equipment to get some detailed readings, and return here once we are done. For these initial readings we should need about a day onsite, and we will leave some of our equipment to take ongoing recordings for retrieval later.
+			`	Dust leans over the holo, peering at the details. "The mission is a very standard arc: We go to the station, set up our equipment to get some detailed readings, and return here once we are done. For these initial readings we should need about a day onsite, and we will leave some of our equipment to take ongoing recordings for retrieval later. After that... Well, we will see what the data says and decide from there."`
+				accept
+	on stopover
+		conversation
+			`Dusk and the team of scientists waste no time in getting to work: They have the preliminary sensors working almost from the moment you left the spaceport, and by the time you dock with Ssil Vida they have all their equipment arranged to quickly offload and setup. With the space cleared, they expand the research laboratory and set to work analyzing the system. Before long they are clustered around displays and adjusting sensor readings, deep in discussion. Eventually, Dusk strides over to you. "Everything is setup and proceeding nominally, Captain. We will need a few hours to complete the measurements, you do not need to stand around watching, although you are welcome to if you like." Dusk heads back over to check on one of the devices.`
+			choice
+				`	Relax on the <ship> until they are done.`
+					goto relax
+				`	Ask if you can help with their work.`
+					goto scienceassistant
+				`	Explore Ssil Vida.`
+			#explore Ssil Vida here.
+			goto wrapup
+			label scienceassistant
+			apply scienceinterest += 1
+			`	You follow Dusk over to the equipment, and ask if there is anything you can do to help. He looks surprised, but pleased. After thinking about it for a moment, he asks you if you can help monitor some diagnostics and do some preventative maintnance on some of the equipment. Over the following few hours, Dusk keeps you involved in the work, ocassionally explaining what the various pieces of equipment do.`
+			goto wrapup
+			label relax
+			#enter description of lounging around onboard your ship
+			label wrapup
+			#everything gets packed up, a few long long-term sensors are placed, time to head home.
+			
+			
 			
 			
