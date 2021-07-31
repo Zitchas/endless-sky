@@ -136,6 +136,10 @@
 		<Unit filename="source/Flotsam.h" />
 		<Unit filename="source/FogShader.cpp" />
 		<Unit filename="source/FogShader.h" />
+		<Unit filename="source/FormationPattern.cpp" />
+		<Unit filename="source/FormationPattern.h" />
+		<Unit filename="source/FormationPositioner.cpp" />
+		<Unit filename="source/FormationPositioner.h" />
 		<Unit filename="source/FrameTimer.cpp" />
 		<Unit filename="source/FrameTimer.h" />
 		<Unit filename="source/Galaxy.cpp" />
@@ -160,6 +164,8 @@
 		<Unit filename="source/ImageBuffer.h" />
 		<Unit filename="source/ImageSet.cpp" />
 		<Unit filename="source/ImageSet.h" />
+		<Unit filename="source/InfoPanelState.cpp" />
+		<Unit filename="source/InfoPanelState.h" />
 		<Unit filename="source/Information.cpp" />
 		<Unit filename="source/Information.h" />
 		<Unit filename="source/Interface.cpp" />
