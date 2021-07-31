@@ -133,12 +133,13 @@ mission "Remnant: Cognizance 21"
 		conversation
 			`Dusk and the team of scientists waste no time in getting to work: They have the preliminary sensors working almost from the moment you left the spaceport, and by the time you dock with Ssil Vida they have all their equipment arranged to quickly offload and setup. With the space cleared, they expand the research laboratory and set to work analyzing the system. Before long they are clustered around displays and adjusting sensor readings, deep in discussion. Eventually, Dusk strides over to you. "Everything is setup and proceeding nominally, Captain. We will need a few hours to complete the measurements, you do not need to stand around watching, although you are welcome to if you like." Dusk heads back over to check on one of the devices.`
 			choice
-				`	Relax on the <ship> until they are done.`
+				`	Return to the <ship> and prepare for departure.`
 					goto relax
 				`	Ask if you can help with their work.`
 					goto scienceassistant
 				`	Explore Ssil Vida.`
-			#explore Ssil Vida here.
+			apply explorationinterest += 1
+			`	You pick up some instruments and recording equipment, and check the map tracking the other Remnant researchers. Picking an unexplored direction, you set off`
 			goto wrapup
 			label scienceassistant
 			apply scienceinterest += 1
