@@ -160,6 +160,8 @@ public:
 	void SetPosition(Point position);
 	// When creating a new ship, you must set the following:
 	void Place(Point position = Point(), Point velocity = Point(), Angle angle = Angle());
+	double turretRange = 0;
+	double TurretRange() const;
 	void SetName(const std::string &name);
 	void SetSystem(const System *system);
 	void SetPlanet(const Planet *planet);
@@ -316,8 +318,11 @@ public:
 	// Get this ship's movement characteristics.
 	double Mass() const;
 	double TurnRate() const;
+	double TrueTurnRate() const;
 	double Acceleration() const;
 	double MaxVelocity() const;
+	double DisplayVelocity() const;
+	double DisplaySlowing()  const;
 	double MaxReverseVelocity() const;
 	
 	// This ship just got hit by a projectile or hazard. Take damage according to
@@ -468,6 +473,7 @@ private:
 	bool isBoarding = false;
 	bool hasBoarded = false;
 	bool isThrusting = false;
+	bool isLatThrusting = false;
 	bool isReversing = false;
 	bool isSteering = false;
 	double steeringDirection = 0.;
