@@ -18,7 +18,7 @@ ship "Aerie"
 		"hull" 1900
 		"required crew" 10
 		"bunks" 28
-		"mass" 130
+		"mass" 300
 		"drag" 4.1
 		"heat dissipation" .7
 		"fuel capacity" 500
@@ -33,7 +33,7 @@ ship "Aerie"
 			"hit force" 1200
 	outfits
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 136
+		"Sidewinder Missile" 68
 		"Sidewinder Missile Rack" 2
 		"Heavy Laser Turret" 2
 		"Heavy Anti-Missile Turret"
@@ -43,7 +43,8 @@ ship "Aerie"
 		"LP072a Battery Pack"
 		"D41-HY Shield Generator"
 		"Large Radar Jammer"
-		"Laser Rifle" 3
+		"Laser Rifle" 10
+		"Security Station" 2
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -82,7 +83,7 @@ ship "Argosy"
 		"required crew" 4
 		"bunks" 14
 		"mass" 330
-		"drag" 5.9
+		"drag" 4.19
 		"heat dissipation" .7
 		"fuel capacity" 400
 		"cargo space" 120
@@ -97,13 +98,14 @@ ship "Argosy"
 	outfits
 		"Energy Blaster" 2
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 30
 		"Blaster Turret"
 		"Anti-Missile Turret"
 		
 		"RT-I Radiothermal"
 		"LP072a Battery Pack"
 		"D23-QP Shield Generator"
+		"Laser Rifle" 4
 		
 		"Greyhound Plasma Thruster"
 		"Greyhound Plasma Steering"
@@ -142,7 +144,7 @@ ship "Arrow"
 		"required crew" 1
 		"bunks" 5
 		"mass" 130
-		"drag" 2.0
+		"drag" 1.7
 		"heat dissipation" .85
 		"fuel capacity" 600
 		"cargo space" 10
@@ -155,8 +157,8 @@ ship "Arrow"
 			"hull damage" 120
 			"hit force" 360
 	outfits
-		"Sidewinder Missile Launcher"
-		"Sidewinder Missile" 45
+		"Sidewinder Missile Pod" 2
+		"Sidewinder Missile" 4
 		"Anti-Missile Turret"
 		
 		"Dwarf Core"
@@ -164,6 +166,7 @@ ship "Arrow"
 		"D14-RN Shield Generator"
 		"Small Radar Jammer"
 		"Luxury Accommodations"
+		"Laser Rifle" 2
 		
 		"A250 Atomic Thruster"
 		"A255 Atomic Steering"
@@ -171,8 +174,8 @@ ship "Arrow"
 		
 	engine -8 56
 	engine 8 56
-	gun -7.5 -36 "Sidewinder Missile Launcher"
-	gun 7.5 -36
+	gun -7.5 -36 "Sidewinder Missile Pod"
+	gun 7.5 -36 "Sidewinder Missile Pod"
 	turret 0 17.5 "Anti-Missile Turret"
 	leak "leak" 80 50
 	explode "tiny explosion" 12
@@ -196,8 +199,8 @@ ship "Auxiliary"
 		"hull" 5900
 		"required crew" 87
 		"bunks" 250
-		"mass" 820
-		"drag" 13.3
+		"mass" 2090
+		"drag" 14.3
 		"heat dissipation" .45
 		"fuel capacity" 900
 		"cargo space" 250
@@ -211,7 +214,7 @@ ship "Auxiliary"
 			"hit force" 4200
 	outfits
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 100
+		"Sidewinder Missile" 44
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -222,6 +225,8 @@ ship "Auxiliary"
 		"Water Coolant System"
 		"Large Radar Jammer"
 		"Ramscoop"
+		"Laser Rifle" 87
+		"Security Station" 15
 		
 		"X4700 Ion Thruster"
 		"X1700 Ion Thruster"
@@ -295,14 +300,14 @@ ship "Bactrian"
 	attributes
 		licenses
 			City-Ship
-		category "Heavy Warship"
+		category "Transport"
 		"cost" 17600000
 		"shields" 17500
 		"hull" 8600
 		"required crew" 70
 		"bunks" 245
-		"mass" 940
-		"drag" 16.1
+		"mass" 2510
+		"drag" 15.3
 		"heat dissipation" .4
 		"fuel capacity" 700
 		"cargo space" 530
@@ -316,9 +321,9 @@ ship "Bactrian"
 			"hit force" 3900
 	outfits
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 90
-		"Torpedo Launcher" 2
-		"Torpedo" 60
+		"Sidewinder Missile" 44
+		"Torpedo Launcher"
+		"Torpedo" 15
 		"Heavy Laser Turret" 4
 		"Heavy Anti-Missile Turret" 2
 		
@@ -327,7 +332,7 @@ ship "Bactrian"
 		"D94-YV Shield Generator"
 		"Large Radar Jammer"
 		"Ramscoop"
-		"Laser Rifle" 15
+		"Laser Rifle" 70
 		
 		"X4700 Ion Thruster"
 		"X5200 Ion Steering"
@@ -335,7 +340,6 @@ ship "Bactrian"
 		
 	engine -18 230
 	engine 18 230
-	gun -15 -226 "Torpedo Launcher"
 	gun 15 -226 "Torpedo Launcher"
 	gun -40 -133 "Sidewinder Missile Launcher"
 	gun -45 -128 "Sidewinder Missile Launcher"
@@ -366,17 +370,20 @@ ship "Barb"
 	thumbnail "thumbnail/barb"
 	attributes
 		category "Fighter"
+		rear 1
 		"cost" 50000
 		"shields" 800
 		"hull" 200
 		"required crew" 1
 		"bunks" 2
-		"mass" 20
-		"drag" .8
+		"mass" 10
+		"drag" 1.6
 		"heat dissipation" .78
-		"outfit space" 85
+		"outfit space" 105
 		"weapon capacity" 24
-		"engine capacity" 22
+		"engine capacity" 40
+		"thrust" 8.0
+		"turn" 110
 		weapon
 			"blast radius" 12
 			"shield damage" 120
@@ -389,12 +396,15 @@ ship "Barb"
 		"nGVF-AA Fuel Cell"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
+		"Laser Rifle" 2
 
-		"X1050 Ion Engines"
+		"X1050 Ion Engines" 2
 		
 	engine 9 25
 	engine -8 25
+	"reverse engine" -7.5 -24.5
 	gun -7.5 -24.5 "Energy Blaster"
+	gun -7.5 -24.5
 	turret 9.5 8.5 "Blaster Turret"
 	leak "leak" 60 50
 	explode "tiny explosion" 15
@@ -406,19 +416,43 @@ ship "Barb"
 ship "Barb" "Barb (Proton)"
 	sprite "ship/barbp"
 	thumbnail "thumbnail/barbp"
-	add attributes
-		"bunks" -1
-		"weapon capacity" 4
+	attributes
+		category "Fighter"
+		rear 1
+		"cost" 50000
+		"shields" 800
+		"hull" 200
+		"required crew" 1
+		"bunks" 1
+		"mass" 10
+		"drag" 1.6
+		"heat dissipation" .78
+		"outfit space" 105
+		"weapon capacity" 28
+		"engine capacity" 40
+		"thrust" 8.0
+		"turn" 110
+		weapon
+			"blast radius" 12
+			"shield damage" 120
+			"hull damage" 60
+			"hit force" 180
+
 	outfits
 		"Proton Gun"
 		
 		"nGVF-AA Fuel Cell"
 		"Supercapacitor"
 		"D14-RN Shield Generator"
+		"Laser Rifle" 1
 
-		"X1050 Ion Engines"
+		"X1050 Ion Engines" 2
 		
+	engine 9 25
+	engine -8 25
+	"reverse engine" -7.5 -24.5
 	gun -7.5 -24.5 "Proton Gun"
+	gun -7.5 -24.5
 	leak "leak" 60 50
 	description `The Barb's commercial success spurred demand for a variant equipped with a Proton Gun. Syndicated Systems had to remove the turret mounting hardware to fit the powerful cannon, but the result is a level of short-range firepower that is unheard-of for a craft its size.`
 
@@ -434,8 +468,8 @@ ship "Bastion"
 		"hull" 4700
 		"required crew" 17
 		"bunks" 40
-		"mass" 580
-		"drag" 10.3
+		"mass" 800
+		"drag" 8.3
 		"heat dissipation" .5
 		"fuel capacity" 500
 		"cargo space" 110
@@ -450,7 +484,7 @@ ship "Bastion"
 	outfits
 		"Plasma Cannon" 2
 		"Heavy Rocket Launcher" 2
-		"Heavy Rocket" 60
+		"Heavy Rocket" 30
 		"Heavy Rocket Rack" 2
 		"Blaster Turret" 2
 		"Anti-Missile Turret"
@@ -461,7 +495,8 @@ ship "Bastion"
 		"D67-TM Shield Generator"
 		"Water Coolant System"
 		"Tactical Scanner"
-		"Laser Rifle" 7
+		"Laser Rifle" 17
+		"Security Station" 5
 		
 		"Impala Plasma Thruster"
 		"Impala Plasma Steering"
@@ -498,8 +533,9 @@ ship "Behemoth"
 		"hull" 6300
 		"required crew" 12
 		"bunks" 30
-		"mass" 540
+		"mass" 594
 		"drag" 11.7
+		"drag" 8.35
 		"heat dissipation" .4
 		"fuel capacity" 600
 		"cargo space" 490
@@ -519,7 +555,7 @@ ship "Behemoth"
 		"LP144a Battery Pack"
 		"D41-HY Shield Generator"
 		"Small Radar Jammer"
-		"Laser Rifle" 3
+		"Laser Rifle" 12
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -559,38 +595,47 @@ ship "Berserker"
 		"hull" 500
 		"required crew" 1
 		"bunks" 2
-		"mass" 110
-		"drag" 2.2
+		"mass" 70
+		"drag" 1.76
 		"heat dissipation" .85
 		"fuel capacity" 400
 		"cargo space" 10
-		"outfit space" 200
+		"outfit space" 262
 		"weapon capacity" 35
-		"engine capacity" 65
+		"engine capacity" 127
+		"thrust" 23.0
+		"turn" 590
 		weapon
 			"blast radius" 30
 			"shield damage" 300
 			"hull damage" 150
 			"hit force" 450
 	outfits
-		"Energy Blaster" 2
-		"Javelin Pod" 2
-		"Javelin" 400
+		"Energy Blaster" 4
+		"Javelin Mini Pod" 2
+		"Javelin" 40
 		
 		"nGVF-CC Fuel Cell"
 		"LP072a Battery Pack"
 		"D23-QP Shield Generator"
+		"Laser Rifle" 1
 		
-		"X2700 Ion Thruster"
-		"X3200 Ion Steering"
+		"X2700 Ion Thruster" 2
+		"X3200 Ion Steering" 2
 		"Hyperdrive"
 		
 	engine -10 45
 	engine 10 45
+	"reverse engine" -12 10
+		under
+	"reverse engine" 12 10
+		under
+	gun -12 10 "Energy Blaster"
+	gun 12 10 "Energy Blaster"
 	gun -20 12 "Energy Blaster"
 	gun 20 12 "Energy Blaster"
-	gun -44 10 "Javelin Pod"
-	gun 44 10 "Javelin Pod"
+	gun -44 10 "Javelin Mini Pod"
+	gun 44 10 "Javelin Mini Pod"
 	leak "leak" 60 50
 	leak "flame" 80 80
 	explode "tiny explosion" 10
@@ -611,7 +656,7 @@ ship "Blackbird"
 		"required crew" 3
 		"bunks" 28
 		"mass" 220
-		"drag" 5.0
+		"drag" 4.5
 		"heat dissipation" .7
 		"fuel capacity" 700
 		"cargo space" 60
@@ -633,6 +678,7 @@ ship "Blackbird"
 		"D23-QP Shield Generator"
 		"Small Radar Jammer"
 		"Luxury Accommodations"
+		"Laser Rifle" 5
 		
 		"Impala Plasma Thruster"
 		"Impala Plasma Steering"
@@ -683,6 +729,7 @@ ship "Bounder"
 		"KP-6 Photovoltaic Array"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
+		"Laser Rifle" 2
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -706,17 +753,20 @@ ship "Boxwing"
 	thumbnail "thumbnail/boxwing"
 	attributes
 		category "Fighter"
+		rear 1
 		cost 369000
 		"shields" 400
 		"hull" 800
 		"required crew" 1
 		"bunks" 1
-		"mass" 45
-		"drag" .59
+		"mass" 22
+		"drag" 1.18
 		"heat dissipation" .27
-		"outfit space" 45
-		"engine capacity" 28
+		"outfit space" 60
+		"engine capacity" 40
 		"cargo space" 80
+		"thrust" 8.0
+		"turn" 110
 		weapon
 			"blast radius" 12
 			"shield damage" 120
@@ -724,13 +774,18 @@ ship "Boxwing"
 			"hit force" 180
 	outfits
 		"nGVF-AA Fuel Cell"
+		"Laser Rifle" 1
 
-		"X1050 Ion Engines"
+		"X1050 Ion Engines" 2
 
 	engine 23 -1
 	engine -23 -1
 	engine 19 29
 	engine -19 29
+	"reverse engine" -4 -32
+		under
+	"reverse engine" 4 -32
+		under
 	leak "leak" 70 50
 	leak "flame" 50 80
 	explode "tiny explosion" 15
@@ -748,8 +803,8 @@ ship "Bulk Freighter"
 		"hull" 7600
 		"required crew" 6
 		"bunks" 18
-		"mass" 870
-		"drag" 15.8
+		"mass" 957
+		"drag" 11.3
 		"heat dissipation" .5
 		"fuel capacity" 600
 		"cargo space" 600
@@ -763,14 +818,14 @@ ship "Bulk Freighter"
 			"hit force" 1800
 	outfits
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 90
+		"Sidewinder Missile" 44
 		"Laser Turret" 3
 		"Heavy Anti-Missile Turret" 2
 		
 		"RT-I Radiothermal"
 		"LP144a Battery Pack"
 		"D23-QP Shield Generator"
-		"Laser Rifle"
+		"Laser Rifle" 6
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -810,7 +865,7 @@ ship "Carrier"
 		"hull" 8300
 		"required crew" 111
 		"bunks" 184
-		"mass" 910
+		"mass" 2120
 		"drag" 17.7
 		"heat dissipation" .45
 		"fuel capacity" 700
@@ -826,7 +881,7 @@ ship "Carrier"
 	outfits
 		"Particle Cannon" 4
 		"Meteor Missile Launcher" 4
-		"Meteor Missile" 150
+		"Meteor Missile" 76
 		"Meteor Missile Box" 2
 		"Heavy Laser Turret" 2
 		"Heavy Anti-Missile Turret" 2
@@ -837,9 +892,9 @@ ship "Carrier"
 		"Large Radar Jammer" 2
 		"Water Coolant System"
 		"Brig"
-		"Laser Rifle" 40
+		"Laser Rifle" 100
 		"Fragmentation Grenades" 40
-		"Security Station"
+		"Security Station" 6
 		"Tactical Scanner"
 		
 		"X5700 Ion Thruster"
@@ -893,7 +948,7 @@ ship "Class C Freighter"
 		"hull" 7600
 		"required crew" 18
 		"bunks" 43
-		"mass" 810
+		"mass" 891
 		"drag" 16.4
 		"heat dissipation" .5
 		"fuel capacity" 600
@@ -913,7 +968,7 @@ ship "Class C Freighter"
 		"Fission Reactor"
 		"LP072a Battery Pack"
 		"D94-YV Shield Generator"
-		"Laser Rifle" 5
+		"Laser Rifle" 18
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -975,11 +1030,12 @@ ship "Clipper"
 	outfits
 		"Beam Laser" 2
 		"Javelin Pod" 2
-		"Javelin" 400
+		"Javelin" 200
 		
 		"nGVF-DD Fuel Cell"
 		"LP072a Battery Pack"
 		"D23-QP Shield Generator"
+		"Laser Rifle" 3
 		
 		"Greyhound Plasma Thruster"
 		"Greyhound Plasma Steering"
@@ -1006,17 +1062,20 @@ ship "Combat Drone"
 	thumbnail "thumbnail/combat drone"
 	attributes
 		category "Drone"
+		rear 1
 		licenses
 			Navy
 		"cost" 83000
 		"hull" 700
 		"automaton" 1
-		"mass" 20
-		"drag" .59
+		"mass" 10
+		"drag" 1.18
 		"heat dissipation" .9
-		"outfit space" 58
+		"outfit space" 86
 		"weapon capacity" 8
-		"engine capacity" 28
+		"engine capacity" 56
+		"thrust" 12.0
+		"turn" 160
 		weapon
 			"blast radius" 5
 			"shield damage" 50
@@ -1028,12 +1087,17 @@ ship "Combat Drone"
 		"nGVF-AA Fuel Cell"
 		"Supercapacitor"
 		
-		"X1700 Ion Thruster"
-		"X1200 Ion Steering"
+		"X1700 Ion Thruster" 2
+		"X1200 Ion Steering" 2
 		
 	engine -9 29
 	engine 9 29
+	"reverse engine" -9 -0.5
+		under
+	"reverse engine" 9 -0.5
+		under
 	gun 0 -29 "Beam Laser"
+	gun 0 -29
 	explode "tiny explosion" 15
 	description "Combat drones are pilotless attack ships used primarily by the Republic Navy. Although very weak and easy to destroy, they can be very effective in large numbers. Because drones do not need a cockpit, they can be filled entirely with equipment and solid metal, which makes their hulls stronger than other small ships."
 
@@ -1109,7 +1173,7 @@ ship "Corvette"
 		"hull" 800
 		"required crew" 8
 		"bunks" 32
-		"mass" 150
+		"mass" 200
 		"drag" 3.5
 		"heat dissipation" .7
 		"fuel capacity" 500
@@ -1125,7 +1189,7 @@ ship "Corvette"
 	outfits
 		"Heavy Laser" 2
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 90
+		"Sidewinder Missile" 44
 		"Heavy Laser Turret"
 		"Anti-Missile Turret"
 		
@@ -1135,7 +1199,8 @@ ship "Corvette"
 		"LP072a Battery Pack"
 		"D94-YV Shield Generator"
 		"Large Radar Jammer"
-		"Laser Rifle" 3
+		"Laser Rifle" 8
+		"Security Station" 3
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -1173,8 +1238,8 @@ ship "Cruiser"
 		"hull" 6400
 		"required crew" 81
 		"bunks" 136
-		"mass" 680
-		"drag" 10.1
+		"mass" 1340
+		"drag" 11.1
 		"heat dissipation" .45
 		"fuel capacity" 600
 		"cargo space" 60
@@ -1189,7 +1254,7 @@ ship "Cruiser"
 	outfits
 		"Particle Cannon" 4
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 90
+		"Sidewinder Missile" 44
 		"Heavy Laser Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -1198,9 +1263,9 @@ ship "Cruiser"
 		"D67-TM Shield Generator"
 		"Large Radar Jammer" 2
 		"Liquid Nitrogen Cooler"
-		"Laser Rifle" 20
+		"Laser Rifle" 80
 		"Fragmentation Grenades" 20
-		"Security Station"
+		"Security Station" 12
 		"Tactical Scanner"
 		
 		"X4700 Ion Thruster"
@@ -1241,17 +1306,20 @@ ship "Dagger"
 	thumbnail "thumbnail/dagger"
 	attributes
 		category "Fighter"
+		rear 1
 		"cost" 129000
 		"shields" 1000
 		"hull" 300
 		"required crew" 1
 		"bunks" 1
-		"mass" 20
-		"drag" .63
+		"mass" 10
+		"drag" 1.26
 		"heat dissipation" .9
-		"outfit space" 90
+		"outfit space" 117
 		"weapon capacity" 20
-		"engine capacity" 30
+		"engine capacity" 56
+		"thrust" 12.0
+		"turn" 160
 		weapon
 			"blast radius" 12
 			"shield damage" 120
@@ -1259,21 +1327,24 @@ ship "Dagger"
 			"hit force" 180
 	outfits
 		"Beam Laser"
-		"Javelin Pod"
-		"Javelin" 200
+		"Javelin Mini Pod" 2
+		"Javelin" 40
 		
 		"nGVF-AA Fuel Cell"
 		"Supercapacitor"
 		"D14-RN Shield Generator"
 		"Small Radar Jammer"
+		"Laser Rifle" 1
 		
-		"X1700 Ion Thruster"
-		"X1200 Ion Steering"
+		"X1700 Ion Thruster" 2
+		"X1200 Ion Steering" 2
 		
 	engine -15 30
 	engine 15 30
-	gun -14 -10 "Beam Laser"
-	gun 14 -10 "Javelin Pod"
+	gun -16 -20 "Beam Laser"
+	gun 16 -20
+	gun -12 -21 "Javelin Mini Pod"
+	gun 12 -21 "Javelin Mini Pod"
 	leak "leak" 60 50
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -1293,8 +1364,8 @@ ship "Dreadnought"
 		"hull" 7300
 		"required crew" 84
 		"bunks" 147
-		"mass" 630
-		"drag" 10.1
+		"mass" 1810
+		"drag" 11.1
 		"heat dissipation" .65
 		"fuel capacity" 600
 		"cargo space" 100
@@ -1308,7 +1379,7 @@ ship "Dreadnought"
 			"hit force" 3900
 	outfits
 		"Torpedo Launcher" 4
-		"Torpedo" 120
+		"Torpedo" 60
 		"Plasma Turret" 3
 		"Heavy Anti-Missile Turret" 2
 		
@@ -1319,7 +1390,8 @@ ship "Dreadnought"
 		"Small Radar Jammer"
 		"Liquid Helium Cooler"
 		"Tactical Scanner"
-		"Laser Rifle" 25
+		"Laser Rifle" 85
+		"Security Station" 2
 		
 		"Orca Plasma Thruster"
 		"Orca Plasma Steering"
@@ -1353,6 +1425,7 @@ ship "Dropship"
 	thumbnail "thumbnail/dropship"
 	attributes
 		category "Fighter"
+		rear 1
 		licenses
 			Navy
 		"cost" 91000
@@ -1360,13 +1433,15 @@ ship "Dropship"
 		"hull" 200
 		"required crew" 1
 		"bunks" 9
-		"mass" 30
-		"drag" 0.8
+		"mass" 15
+		"drag" 1.6
 		"heat dissipation" .9
 		"cargo space" 5
-		"outfit space" 100
+		"outfit space" 123
 		"weapon capacity" 16
-		"engine capacity" 40
+		"engine capacity" 56
+		"thrust" 12.0
+		"turn" 160
 		weapon
 			"blast radius" 12
 			"shield damage" 120
@@ -1379,14 +1454,19 @@ ship "Dropship"
 		"Supercapacitor"
 		"D14-RN Shield Generator"
 		"Small Radar Jammer"
+		"Laser Rifle" 1
 		
-		"X1700 Ion Thruster"
-		"X1200 Ion Steering"
+		"X1700 Ion Thruster" 2
+		"X1200 Ion Steering" 2
 	
 	engine 13 26
 	engine -13 26
+	"reverse engine" -12.5 -5
+	"reverse engine" 12.5 -5
 	gun 2 -27 "Beam Laser"
 	gun -2 -27 "Beam Laser"
+	gun -12.5 -5
+	gun 12.5 -5
 	leak "leak" 60 50
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -1404,8 +1484,8 @@ ship "Falcon"
 		"hull" 3700
 		"required crew" 52
 		"bunks" 75
-		"mass" 510
-		"drag" 6.7
+		"mass" 980
+		"drag" 7.4
 		"heat dissipation" .7
 		"fuel capacity" 600
 		"cargo space" 90
@@ -1420,7 +1500,7 @@ ship "Falcon"
 	outfits
 		"Plasma Cannon" 2
 		"Torpedo Launcher" 2
-		"Torpedo" 60
+		"Torpedo" 30
 		"Quad Blaster Turret" 3
 		"Heavy Anti-Missile Turret"
 		
@@ -1431,7 +1511,8 @@ ship "Falcon"
 		"D41-HY Shield Generator"
 		"Large Radar Jammer"
 		"Liquid Nitrogen Cooler"
-		"Laser Rifle" 15
+		"Laser Rifle" 52
+		"Security Station" 5
 		
 		"Impala Plasma Thruster"
 		"Impala Plasma Steering"
@@ -1465,17 +1546,20 @@ ship "Finch"
 	thumbnail "thumbnail/finch"
 	attributes
 		category "Fighter"
+		rear 1
 		"cost" 126000
 		"shields" 1100
 		"hull" 200
 		"required crew" 1
 		"bunks" 1
-		"mass" 40
-		"drag" .83
+		"mass" 20
+		"drag" 1.66
 		"heat dissipation" .85
-		"outfit space" 110
+		"outfit space" 145
 		"weapon capacity" 20
-		"engine capacity" 40
+		"engine capacity" 70
+		"thrust" 19.2
+		"turn" 256
 		weapon
 			"blast radius" 12
 			"shield damage" 120
@@ -1483,20 +1567,27 @@ ship "Finch"
 			"hit force" 180
 	outfits
 		"Beam Laser"
-		"Javelin Pod"
-		"Javelin" 200
+		"Javelin Mini Pod" 2
+		"Javelin" 40
 		
 		"nGVF-BB Fuel Cell"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
+		"Laser Rifle" 1
 		
-		"Chipmunk Plasma Thruster"
-		"Chipmunk Plasma Steering"
+		"Chipmunk Plasma Thruster" 2
+		"Chipmunk Plasma Steering" 2
 		
 	engine -5 32
 	engine 5 32
+	"reverse engine" -5 21.5
+		over
+	"reverse engine" 5 21.5
+		over
 	gun -7 -14 "Beam Laser"
-	gun 7 -14 "Javelin Pod"
+	gun 7 -14
+	gun -14 -9.5 "Javelin Mini Pod"
+	gun 14 -9.5 "Javelin Mini Pod"
 	leak "flame" 60 80
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -1514,7 +1605,7 @@ ship "Firebird"
 		"hull" 3400
 		"required crew" 7
 		"bunks" 22
-		"mass" 290
+		"mass" 450
 		"drag" 4.5
 		"heat dissipation" .6
 		"fuel capacity" 400
@@ -1530,7 +1621,7 @@ ship "Firebird"
 	outfits
 		"Particle Cannon" 2
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 30
 		"Quad Blaster Turret"
 		"Anti-Missile Turret"
 		
@@ -1538,7 +1629,8 @@ ship "Firebird"
 		"nGVF-AA Fuel Cell"
 		"LP144a Battery Pack"
 		"D41-HY Shield Generator"
-		"Laser Rifle" 3
+		"Laser Rifle" 8
+		"Security Station" 2
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -1574,7 +1666,7 @@ ship "Flivver"
 		"required crew" 1
 		"bunks" 3
 		"mass" 40
-		"drag" 1.0
+		"drag" 0.6
 		"heat dissipation" .9
 		"fuel capacity" 500
 		"cargo space" 5
@@ -1588,11 +1680,12 @@ ship "Flivver"
 			"hit force" 240
 	outfits
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 30
 		
 		"nGVF-BB Fuel Cell"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
+		"Laser Rifle" 1
 		
 		"A120 Atomic Thruster"
 		"X1200 Ion Steering"
@@ -1620,7 +1713,7 @@ ship "Freighter"
 		"required crew" 2
 		"bunks" 7
 		"mass" 240
-		"drag" 5.6
+		"drag" 4.
 		"heat dissipation" .6
 		"fuel capacity" 600
 		"cargo space" 150
@@ -1639,6 +1732,7 @@ ship "Freighter"
 		"nGVF-EE Fuel Cell"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
+		"Laser Rifle" 2
 		
 		"X2700 Ion Thruster"
 		"X2200 Ion Steering"
@@ -1672,7 +1766,7 @@ ship "Frigate"
 		"hull" 2500
 		"required crew" 21
 		"bunks" 44
-		"mass" 310
+		"mass" 470
 		"drag" 5.2
 		"heat dissipation" .7
 		"fuel capacity" 500
@@ -1688,7 +1782,7 @@ ship "Frigate"
 	outfits
 		"Particle Cannon" 2
 		"Torpedo Launcher" 2
-		"Torpedo" 60
+		"Torpedo" 30
 		"Blaster Turret" 2
 		"Anti-Missile Turret"
 		
@@ -1696,9 +1790,9 @@ ship "Frigate"
 		"LP144a Battery Pack"
 		"D41-HY Shield Generator"
 		"Large Radar Jammer"
-		"Laser Rifle" 5
+		"Laser Rifle" 20
 		"Fragmentation Grenades" 5
-		"Security Station"
+		"Security Station" 2
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -1736,14 +1830,16 @@ ship "Fury"
 		"hull" 400
 		"required crew" 1
 		"bunks" 3
-		"mass" 70
-		"drag" 1.6
+		"mass" 60
+		"drag" 1.33
 		"heat dissipation" .9
 		"fuel capacity" 600
 		"cargo space" 15
-		"outfit space" 160
+		"outfit space" 207
 		"weapon capacity" 40
-		"engine capacity" 60
+		"engine capacity" 107
+		"thrust" 23.0
+		"turn" 307
 		weapon
 			"blast radius" 24
 			"shield damage" 240
@@ -1756,19 +1852,42 @@ ship "Fury"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
 		"Small Radar Jammer" 2
+		"Laser Rifle" 1
 		
-		"X2700 Ion Thruster"
-		"X2200 Ion Steering"
+		"X2700 Ion Thruster" 2
+		"X2200 Ion Steering" 2
 		"Hyperdrive"
 		
 	engine -11 35 0.8
+		angle -10
 	engine 11 35 0.8
-	engine -18 37 0.6
-	engine 18 37 0.6
+		angle 10
+	engine -18 38 0.6
+		angle -10
+	engine 18 38 0.6
+		angle 10
+	"reverse engine" -24 9
+		zoom 0.5
+		angle -10
+		over
+	"reverse engine" 24 9
+		zoom 0.5
+		angle 10
+		over
+	"reverse engine" -18 7
+		zoom 0.5
+		angle -10
+		over
+	"reverse engine" 18 7
+		zoom 0.5
+		angle 10
+		over
 	gun -10.5 -25.5
 	gun 10.5 -25.5
 	gun -17 -19.5
 	gun 17 -19.5
+	gun -37 16.5
+	gun 37 16.5
 	leak "flame" 50 80
 	explode "tiny explosion" 10
 	explode "small explosion" 20
@@ -1788,8 +1907,8 @@ ship "Gunboat"
 		"hull" 1400
 		"required crew" 7
 		"bunks" 12
-		"mass" 150
-		"drag" 3.1
+		"mass" 170
+		"drag" 2.8
 		"heat dissipation" .8
 		"fuel capacity" 600
 		"cargo space" 50
@@ -1813,6 +1932,7 @@ ship "Gunboat"
 		"Outfit Scanner"
 		"Tactical Scanner"
 		"Brig"
+		"Laser Rifle" 7
 		
 		"X3700 Ion Thruster"
 		"X2200 Ion Steering"
@@ -1844,7 +1964,7 @@ ship "Hauler"
 		"required crew" 3
 		"bunks" 12
 		"mass" 250
-		"drag" 10.5
+		"drag" 6.5
 		"heat dissipation" .6
 		"fuel capacity" 400
 		"cargo space" 130
@@ -1858,7 +1978,7 @@ ship "Hauler"
 			"hit force" 900
 	outfits
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 30
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -1866,6 +1986,7 @@ ship "Hauler"
 		"LP072a Battery Pack"
 		"D23-QP Shield Generator"
 		"Small Radar Jammer"
+		"Laser Rifle" 3
 		
 		"Greyhound Plasma Thruster"
 		"Impala Plasma Steering"
@@ -1901,8 +2022,8 @@ ship "Hauler II"
 		"hull" 5200
 		"required crew" 3
 		"bunks" 12
-		"mass" 360
-		"drag" 11.5
+		"mass" 396
+		"drag" 8.
 		"heat dissipation" .6
 		"fuel capacity" 400
 		"cargo space" 260
@@ -1916,7 +2037,7 @@ ship "Hauler II"
 			"hit force" 1200
 	outfits
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 30
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -1924,7 +2045,7 @@ ship "Hauler II"
 		"LP072a Battery Pack"
 		"D23-QP Shield Generator"
 		"Small Radar Jammer"
-		"Laser Rifle"
+		"Laser Rifle" 3
 		
 		"Greyhound Plasma Thruster"
 		"Impala Plasma Steering"
@@ -1960,8 +2081,8 @@ ship "Hauler III"
 		"hull" 6700
 		"required crew" 3
 		"bunks" 12
-		"mass" 470
-		"drag" 12.5
+		"mass" 517
+		"drag" 9.5
 		"heat dissipation" .6
 		"fuel capacity" 400
 		"cargo space" 390
@@ -1975,7 +2096,7 @@ ship "Hauler III"
 			"hit force" 1500
 	outfits
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 30
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -1983,7 +2104,7 @@ ship "Hauler III"
 		"LP072a Battery Pack"
 		"D23-QP Shield Generator"
 		"Small Radar Jammer"
-		"Laser Rifle"
+		"Laser Rifle" 3
 		
 		"Greyhound Plasma Thruster"
 		"Impala Plasma Steering"
@@ -2019,14 +2140,16 @@ ship "Hawk"
 		"hull" 500
 		"required crew" 2
 		"bunks" 4
-		"mass" 150
-		"drag" 2.1
+		"mass" 90
+		"drag" 1.67
 		"heat dissipation" .8
 		"fuel capacity" 300
 		"cargo space" 20
-		"outfit space" 200
+		"outfit space" 250
 		"weapon capacity" 50
-		"engine capacity" 70
+		"engine capacity" 120
+		"thrust" 36.8
+		"turn" 492
 		weapon
 			"blast radius" 30
 			"shield damage" 300
@@ -2040,13 +2163,20 @@ ship "Hawk"
 		"LP036a Battery Pack"
 		"D23-QP Shield Generator"
 		"Small Radar Jammer"
+		"Laser Rifle" 2
 		
-		"Greyhound Plasma Thruster"
-		"Greyhound Plasma Steering"
+		"Greyhound Plasma Thruster" 2
+		"Greyhound Plasma Steering" 2
 		"Hyperdrive"
 		
 	engine -23.5 41
 	engine 23.5 41
+	"reverse engine" -23.5 11.5
+		under
+	"reverse engine" 23.5 11.5
+		under
+	gun -8.5 -17.5 "Heavy Laser"
+	gun 8.5 -17.5 "Heavy Laser"
 	gun -8.5 -17.5
 	gun 8.5 -17.5
 	leak "leak" 60 50
@@ -2088,6 +2218,8 @@ ship "Headhunter"
 		"KP-6 Photovoltaic Array"
 		"LP072a Battery Pack"
 		"D23-QP Shield Generator"
+		"Laser Rifle" 2
+		"Security Station"
 		
 		"Greyhound Plasma Thruster"
 		"Greyhound Plasma Steering"
@@ -2115,19 +2247,19 @@ ship "Heavy Shuttle"
 	thumbnail "thumbnail/heavy shuttle"
 	attributes
 		category "Transport"
-		"cost" 320000
+		"cost" 470000
 		"shields" 700
 		"hull" 700
 		"required crew" 1
-		"bunks" 8
+		"bunks" 10
 		"mass" 110
-		"drag" 2.1
+		"drag" 1.85
 		"heat dissipation" .8
 		"fuel capacity" 500
-		"cargo space" 35
-		"outfit space" 120
-		"weapon capacity" 10
-		"engine capacity" 60
+		"cargo space" 40
+		"outfit space" 130
+		"weapon capacity" 15
+		"engine capacity" 65
 		weapon
 			"blast radius" 12
 			"shield damage" 120
@@ -2137,6 +2269,7 @@ ship "Heavy Shuttle"
 		"nGVF-AA Fuel Cell"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
+		"Laser Rifle" 1
 		
 		"X2700 Ion Thruster"
 		"X2200 Ion Steering"
@@ -2158,39 +2291,49 @@ ship "Lance"
 	thumbnail "thumbnail/lance"
 	attributes
 		category "Fighter"
+		rear 1
 		"cost" 93000
 		"shields" 800
 		"hull" 400
 		"required crew" 1
 		"bunks" 1
-		"mass" 30
-		"drag" .7
+		"mass" 15
+		"drag" 1.4
 		"heat dissipation" .8
-		"outfit space" 100
+		"outfit space" 129
 		"weapon capacity" 20
-		"engine capacity" 30
+		"engine capacity" 56
+		"thrust" 12.0
+		"turn" 160
 		weapon
 			"blast radius" 12
 			"shield damage" 120
 			"hull damage" 60
 			"hit force" 180
 	outfits
-		"Energy Blaster"
-		"Sidewinder Missile Launcher"
-		"Sidewinder Missile" 45
+		"Energy Blaster" 2
+		"Sidewinder Missile Pod" 2
+		"Sidewinder Missile" 8
 		
 		"nGVF-AA Fuel Cell"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
 		"Small Radar Jammer" 2
+		"Laser Rifle" 1
 		
-		"X1700 Ion Thruster"
-		"X1200 Ion Steering"
+		"X1700 Ion Thruster" 2
+		"X1200 Ion Steering" 2
 		
 	engine -15 30
 	engine 15 30
+	"reverse engine" -13 9.5
+		under
+	"reverse engine" 13 9.5
+		under
 	gun -14 -10 "Energy Blaster"
-	gun 14 -10 "Sidewinder Missile Launcher"
+	gun 14 -10 "Energy Blaster"
+	gun -8 3 "Sidewinder Missile Pod"
+	gun 8 3 "Sidewinder Missile Pod"
 	explode "tiny explosion" 15
 	explode "small explosion" 5
 	description "The Lance is the primary fighter used by the Republic Navy. As with all fighters, it is weak by itself but very effective as part of a larger squadron."
@@ -2207,7 +2350,7 @@ ship "Leviathan"
 		"hull" 5000
 		"required crew" 43
 		"bunks" 64
-		"mass" 480
+		"mass" 1010
 		"drag" 7.6
 		"heat dissipation" .5
 		"fuel capacity" 500
@@ -2229,7 +2372,8 @@ ship "Leviathan"
 		"LP144a Battery Pack"
 		"D67-TM Shield Generator"
 		"Liquid Helium Cooler"
-		"Laser Rifle" 15
+		"Laser Rifle" 43
+		"Security Station" 5
 		
 		"X3700 Ion Thruster"
 		"X4200 Ion Steering"
@@ -2267,7 +2411,7 @@ ship "Manta"
 		"hull" 1500
 		"required crew" 6
 		"bunks" 10
-		"mass" 170
+		"mass" 370
 		"drag" 4.7
 		"heat dissipation" .8
 		"fuel capacity" 400
@@ -2283,13 +2427,13 @@ ship "Manta"
 	outfits
 		"Particle Cannon" 4
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 75
+		"Meteor Missile" 38
 		"Meteor Missile Box"
 		
 		"RT-I Radiothermal"
 		"LP144a Battery Pack"
 		"D14-RN Shield Generator"
-		"Laser Rifle"
+		"Laser Rifle" 6
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -2324,8 +2468,8 @@ ship "Modified Argosy"
 		"hull" 1900
 		"required crew" 5
 		"bunks" 12
-		"mass" 250
-		"drag" 6.2
+		"mass" 280
+		"drag" 4.4
 		"heat dissipation" .6
 		"fuel capacity" 400
 		"cargo space" 60
@@ -2340,7 +2484,7 @@ ship "Modified Argosy"
 	outfits
 		"Heavy Laser" 2
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 30
 		"Heavy Laser Turret"
 		"Heavy Anti-Missile Turret"
 		
@@ -2349,7 +2493,8 @@ ship "Modified Argosy"
 		"D23-QP Shield Generator"
 		"Small Radar Jammer"
 		"Brig"
-		"Laser Rifle" 2
+		"Laser Rifle" 5
+		"Security Station" 2
 		
 		"Greyhound Plasma Thruster"
 		"X3200 Ion Steering"
@@ -2386,7 +2531,7 @@ ship "Mule"
 		"hull" 4400
 		"required crew" 14
 		"bunks" 43
-		"mass" 320
+		"mass" 600
 		"drag" 5.7
 		"heat dissipation" .5
 		"fuel capacity" 600
@@ -2401,7 +2546,7 @@ ship "Mule"
 			"hit force" 1500
 	outfits
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 136
+		"Sidewinder Missile" 68
 		"Sidewinder Missile Rack" 2
 		"Heavy Laser Turret" 2
 		"Heavy Anti-Missile Turret" 2
@@ -2412,7 +2557,8 @@ ship "Mule"
 		"D41-HY Shield Generator"
 		"Small Radar Jammer" 2
 		"Ramscoop"
-		"Laser Rifle"
+		"Laser Rifle" 15
+		"Security Station" 2
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -2448,8 +2594,8 @@ ship "Nest"
 		"hull" 3700
 		"required crew" 5
 		"bunks" 14
-		"mass" 250
-		"drag" 10.5
+		"mass" 410
+		"drag" 6.5
 		"heat dissipation" .67
 		"fuel capacity" 500
 		"cargo space" 40
@@ -2463,7 +2609,7 @@ ship "Nest"
 			"hit force" 900
 	outfits
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 30
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -2471,7 +2617,8 @@ ship "Nest"
 		"LP072a Battery Pack"
 		"D41-HY Shield Generator" 2
 		"Large Radar Jammer"
-		"Laser Rifle" 2
+		"Laser Rifle" 5
+		"Security Station" 5
 		
 		"Greyhound Plasma Thruster"
 		"Impala Plasma Steering"
@@ -2505,12 +2652,12 @@ ship "Osprey"
 	attributes
 		category "Medium Warship"
 		"cost" 4200000
-		"shields" 7200
-		"hull" 1600
+		"shields" 8300
+		"hull" 1800
 		"required crew" 9
 		"bunks" 24
-		"mass" 270
-		"drag" 5.9
+		"mass" 400
+		"drag" 6.3
 		"heat dissipation" .8
 		"fuel capacity" 600
 		"cargo space" 40
@@ -2532,7 +2679,7 @@ ship "Osprey"
 		"D41-HY Shield Generator"
 		"Large Radar Jammer"
 		"Liquid Helium Cooler"
-		"Laser Rifle" 3
+		"Laser Rifle" 9
 		
 		"Impala Plasma Thruster"
 		"Impala Plasma Steering"
@@ -2570,8 +2717,8 @@ ship "Protector"
 		"hull" 6500
 		"required crew" 30
 		"bunks" 69
-		"mass" 500
-		"drag" 10.3
+		"mass" 780
+		"drag" 7.1
 		"heat dissipation" .6
 		"fuel capacity" 400
 		"cargo space" 50
@@ -2585,7 +2732,7 @@ ship "Protector"
 			"hit force" 2400
 	outfits
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 90
+		"Sidewinder Missile" 44
 		"Quad Blaster Turret" 4
 		"Heavy Anti-Missile Turret" 2
 		
@@ -2594,7 +2741,8 @@ ship "Protector"
 		"D67-TM Shield Generator"
 		"Small Radar Jammer" 3
 		"Liquid Nitrogen Cooler"
-		"Laser Rifle" 6
+		"Laser Rifle" 30
+		"Security Station" 10
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -2632,7 +2780,7 @@ ship "Quicksilver"
 		"required crew" 3
 		"bunks" 6
 		"mass" 120
-		"drag" 2.7
+		"drag" 2
 		"heat dissipation" .8
 		"fuel capacity" 400
 		"cargo space" 10
@@ -2651,6 +2799,8 @@ ship "Quicksilver"
 		"LP036a Battery Pack"
 		"D23-QP Shield Generator"
 		"Cooling Ducts"
+		"Laser Rifle" 3
+		"Security Station"
 		
 		"Greyhound Plasma Thruster"
 		"Greyhound Plasma Steering"
@@ -2680,8 +2830,8 @@ ship "Rainmaker"
 		"hull" 1200
 		"required crew" 7
 		"bunks" 14
-		"mass" 180
-		"drag" 3.8
+		"mass" 130
+		"drag" 1.9
 		"heat dissipation" .6
 		"fuel capacity" 500
 		"cargo space" 25
@@ -2696,7 +2846,7 @@ ship "Rainmaker"
 	outfits
 		"Energy Blaster" 2
 		"Meteor Missile Launcher" 4
-		"Meteor Missile" 180
+		"Meteor Missile" 92
 		"Meteor Missile Box" 4
 		
 		"nGVF-CC Fuel Cell"
@@ -2704,6 +2854,8 @@ ship "Rainmaker"
 		"D14-RN Shield Generator"
 		"Large Radar Jammer"
 		"Tactical Scanner"
+		"Laser Rifle" 7
+		"Security Station" 3
 		
 		"X2700 Ion Thruster"
 		"X2200 Ion Steering"
@@ -2736,8 +2888,8 @@ ship "Raven"
 		"hull" 1400
 		"required crew" 6
 		"bunks" 13
-		"mass" 130
-		"drag" 3.7
+		"mass" 220
+		"drag" 3.3
 		"heat dissipation" .8
 		"fuel capacity" 500
 		"cargo space" 30
@@ -2752,13 +2904,13 @@ ship "Raven"
 	outfits
 		"Heavy Laser" 2
 		"Torpedo Launcher" 2
-		"Torpedo" 60
+		"Torpedo" 30
 		
 		"RT-I Radiothermal"
 		"KP-6 Photovoltaic Panel" 2
 		"LP072a Battery Pack"
 		"D41-HY Shield Generator"
-		"Laser Rifle" 2
+		"Laser Rifle" 6
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -2791,8 +2943,8 @@ ship "Roost"
 		"hull" 5200
 		"required crew" 7
 		"bunks" 16
-		"mass" 360
-		"drag" 11.5
+		"mass" 540
+		"drag" 8.
 		"heat dissipation" .67
 		"fuel capacity" 600
 		"cargo space" 80
@@ -2806,7 +2958,7 @@ ship "Roost"
 			"hit force" 1200
 	outfits
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 30
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -2815,7 +2967,8 @@ ship "Roost"
 		"D41-HY Shield Generator" 4
 		"Large Radar Jammer"
 		"Tactical Scanner"
-		"Laser Rifle" 2
+		"Laser Rifle" 7
+		"Security Station" 4
 		
 		"Greyhound Plasma Thruster"
 		"Impala Plasma Steering"
@@ -2856,7 +3009,7 @@ ship "Scout"
 		"required crew" 2
 		"bunks" 12
 		"mass" 110
-		"drag" 3.4
+		"drag" 3.
 		"heat dissipation" .7
 		"fuel capacity" 800
 		"cargo space" 55
@@ -2877,6 +3030,7 @@ ship "Scout"
 		"D14-RN Shield Generator"
 		"Small Radar Jammer"
 		"Ramscoop"
+		"Laser Rifle" 2
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -2955,8 +3109,8 @@ ship "Skein"
 		"hull" 6700
 		"required crew" 7
 		"bunks" 18
-		"mass" 470
-		"drag" 12.5
+		"mass" 670
+		"drag" 9.5
 		"heat dissipation" .71
 		"fuel capacity" 700
 		"cargo space" 120
@@ -2970,7 +3124,7 @@ ship "Skein"
 			"hit force" 1500
 	outfits
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 30
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -2979,7 +3133,7 @@ ship "Skein"
 		"D67-TM Shield Generator" 4
 		"Large Radar Jammer"
 		"Tactical Scanner"
-		"Laser Rifle" 4
+		"Laser Rifle" 7
 		
 		"Greyhound Plasma Thruster"
 		"Impala Plasma Steering"
@@ -3016,19 +3170,21 @@ ship "Sparrow"
 	thumbnail "thumbnail/sparrow"
 	attributes
 		category "Interceptor"
-		"cost" 225000
+		"cost" 220000
 		"shields" 1200
 		"hull" 300
 		"required crew" 1
 		"bunks" 2
-		"mass" 50
-		"drag" .9
+		"mass" 25
+		"drag" 1.8
 		"heat dissipation" .8
 		"fuel capacity" 300
 		"cargo space" 15
-		"outfit space" 130
+		"outfit space" 165
 		"weapon capacity" 20
-		"engine capacity" 40
+		"engine capacity" 75
+		"thrust" 19.2
+		"turn" 256
 		weapon
 			"blast radius" 16
 			"shield damage" 160
@@ -3041,14 +3197,22 @@ ship "Sparrow"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
 		
-		"Chipmunk Plasma Thruster"
-		"Chipmunk Plasma Steering"
+		"Chipmunk Plasma Thruster" 2
+		"Chipmunk Plasma Steering" 2
 		"Hyperdrive"
 		
 	engine -5 35
 	engine 5 35
+	"reverse engine" -4 20.5
+		over
+	"reverse engine" 4 20.5
+		over
 	gun -7 -10
 	gun 7 -10
+	gun -20 -13
+	gun 20 -13
+	gun -30 -10
+	gun 30 -10
 	leak "flame" 60 80
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -3068,7 +3232,7 @@ ship "Splinter"
 		"required crew" 7
 		"bunks" 21
 		"mass" 250
-		"drag" 4.0
+		"drag" 3.65
 		"heat dissipation" .7
 		"fuel capacity" 600
 		"cargo space" 75
@@ -3090,7 +3254,8 @@ ship "Splinter"
 		"D67-TM Shield Generator"
 		"Small Radar Jammer" 2
 		"Water Coolant System"
-		"Laser Rifle"
+		"Laser Rifle" 7
+		"Security Station" 4
 		
 		"X3700 Ion Thruster"
 		"X3200 Ion Steering"
@@ -3126,7 +3291,7 @@ ship "Star Barge"
 		"required crew" 1
 		"bunks" 3
 		"mass" 70
-		"drag" 2.1
+		"drag" 1.7
 		"heat dissipation" .8
 		"fuel capacity" 300
 		"cargo space" 50
@@ -3170,8 +3335,8 @@ ship "Star Queen"
 		"hull" 2200
 		"required crew" 41
 		"bunks" 112
-		"mass" 230
-		"drag" 4.5
+		"mass" 242
+		"drag" 4.
 		"heat dissipation" .65
 		"fuel capacity" 700
 		"cargo space" 60
@@ -3184,8 +3349,8 @@ ship "Star Queen"
 			"hull damage" 300
 			"hit force" 900
 	outfits
-		"Sidewinder Missile Launcher" 3
-		"Sidewinder Missile" 135
+		"Sidewinder Missile Launcher" 2
+		"Sidewinder Missile" 44
 		"Heavy Anti-Missile Turret" 2
 		
 		"KP-6 Photovoltaic Array" 4
@@ -3193,14 +3358,20 @@ ship "Star Queen"
 		"D94-YV Shield Generator"
 		"Small Radar Jammer" 3
 		"Luxury Accommodations"
+		"Laser Rifle" 41
 		
 		"X3700 Ion Thruster"
-		"X3200 Ion Steering"
+		"X2200 Ion Steering"
+		"X1100 Ion Reverse Engines"
 		"Hyperdrive"
 		
 	engine -18.5 115
 	engine 18.5 115
-	gun 0 -113 "Sidewinder Missile Launcher"
+	"reverse engine" -19 51
+		over
+	"reverse engine" 19 51
+		over
+	gun 0 -113
 	gun -24 -76 "Sidewinder Missile Launcher"
 	gun 24 -76 "Sidewinder Missile Launcher"
 	turret -21.5 2.5 "Heavy Anti-Missile Turret"
@@ -3222,17 +3393,20 @@ ship "Surveillance Drone"
 	thumbnail "thumbnail/surveillance drone"
 	attributes
 		category "Drone"
+		rear 1
 		licenses
 			Navy
 		"cost" 50000
 		"hull" 300
 		"automaton" 1
-		"mass" 15
-		"drag" .53
+		"mass" 7
+		"drag" 1.06
 		"heat dissipation" .9
-		"outfit space" 53
+		"outfit space" 81
 		"weapon capacity" 0
-		"engine capacity" 28
+		"engine capacity" 56
+		"thrust" 12.0
+		"turn" 160
 		weapon
 			"blast radius" 3
 			"shield damage" 30
@@ -3242,11 +3416,13 @@ ship "Surveillance Drone"
 		"nGVF-AA Fuel Cell"
 		"Surveillance Pod"
 		
-		"X1700 Ion Thruster"
-		"X1200 Ion Steering"
+		"X1700 Ion Thruster" 2
+		"X1200 Ion Steering" 2
 		
 	engine -5 29
 	engine 5 29
+	"reverse engine" 0 -25.5
+		under
 	explode "tiny explosion" 15
 	description "Surveillance drones are unarmed drones used by the Republic navy to scan ships and planets in a star system."
 
@@ -3262,8 +3438,8 @@ ship "Vanguard"
 		"hull" 6000
 		"required crew" 23
 		"bunks" 45
-		"mass" 500
-		"drag" 8
+		"mass" 800
+		"drag" 7.2
 		"heat dissipation" .6
 		"fuel capacity" 400
 		"cargo space" 50
@@ -3283,7 +3459,8 @@ ship "Vanguard"
 		"LP072a Battery Pack"
 		"D67-TM Shield Generator"
 		"Liquid Nitrogen Cooler"
-		"Laser Rifle" 4
+		"Laser Rifle" 23
+		"Security Station" 8
 		
 		"X3700 Ion Thruster"
 		"X4200 Ion Steering"
@@ -3327,14 +3504,16 @@ ship "Wasp"
 		"hull" 500
 		"required crew" 1
 		"bunks" 2
-		"mass" 60
+		"mass" 55
 		"drag" 1.2
 		"heat dissipation" .8
 		"fuel capacity" 400
 		"cargo space" 10
-		"outfit space" 150
+		"outfit space" 197
 		"weapon capacity" 28
-		"engine capacity" 60
+		"engine capacity" 107
+		"thrust" 23.0
+		"turn" 307
 		weapon
 			"blast radius" 20
 			"shield damage" 200
@@ -3342,23 +3521,26 @@ ship "Wasp"
 			"hit force" 300
 	outfits
 		"Energy Blaster" 2
-		"Sidewinder Missile Launcher"
-		"Sidewinder Missile" 45
+		"Sidewinder Missile Pod"
+		"Sidewinder Missile" 4
 		
 		"nGVF-BB Fuel Cell"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
 		"Small Radar Jammer"
+		"Laser Rifle" 1
 		
-		"X2700 Ion Thruster"
-		"X2200 Ion Steering"
+		"X2700 Ion Thruster" 2
+		"X2200 Ion Steering" 2
 		"Hyperdrive"
 		
 	engine -5.5 32.5
 	engine 5.5 32.5
-	gun 0 -41 "Sidewinder Missile Launcher"
+	gun 0 -41 "Sidewinder Missile Pod"
 	gun -13 -30.5 "Energy Blaster"
 	gun 13 -30.5 "Energy Blaster"
+	gun -13 -30.5
+	gun 13 -30.5
 	leak "leak" 60 50
 	explode "tiny explosion" 20
 	explode "small explosion" 10

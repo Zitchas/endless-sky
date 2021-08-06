@@ -19,7 +19,7 @@ ship "Emerald Sword"
 		"hull" 45000
 		"required crew" 86
 		"bunks" 302
-		"mass" 1520
+		"mass" 3200
 		"drag" 20
 		"heat dissipation" 0.45
 		"fuel capacity" 900
@@ -161,16 +161,17 @@ ship "Black Diamond"
 	swizzle 9
 	attributes
 		category "Fighter"
+		rear 1
 		"cost" 1000000
 		"shields" 1600
 		"hull" 3400
 		"automaton" 1
-		"mass" 50
-		"drag" .9
+		"mass" 25
+		"drag" 1.8
 		"heat dissipation" .86
-		"outfit space" 152
+		"outfit space" 223
 		"weapon capacity" 35
-		"engine capacity" 38
+		"engine capacity" 76
 		"hull repair rate" 1
 		"hull delay" 60
 		weapon
@@ -186,7 +187,7 @@ ship "Black Diamond"
 		"Small EM Battery"
 		"Small Hybrid Cooling"
 		
-		"Fission Drive"
+		"Fission Drive" 2
 	gun 0 -39.5 "Heavy Ion Cyclotron"
 	gun 22 -7.5 "Shard Fabricator"
 	gun -22 -7.5 "Shard Fabricator"

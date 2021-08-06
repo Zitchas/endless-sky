@@ -12,6 +12,7 @@ fleet "Heliarch"
 	government "Heliarch"
 	names "heliarch"
 	fighters "heliarch fighter"
+	formation "Vee"
 	cargo 1
 	personality
 		heroic opportunistic
@@ -90,6 +91,7 @@ fleet "Heliarch"
 fleet "Small Arach"
 	government "Coalition"
 	names "arach"
+	formation "Vee"
 	cargo 3
 	personality
 		timid
@@ -118,6 +120,7 @@ fleet "Small Arach"
 fleet "Large Arach"
 	government "Coalition"
 	names "arach"
+	formation "Vee"
 	cargo 3
 	personality
 		timid
@@ -147,6 +150,7 @@ fleet "Large Arach"
 fleet "Small Kimek"
 	government "Coalition"
 	names "kimek"
+	formation "Vee"
 	cargo 3
 	personality
 		timid
@@ -176,6 +180,7 @@ fleet "Small Kimek"
 fleet "Large Kimek"
 	government "Coalition"
 	names "kimek"
+	formation "Vee"
 	cargo 3
 	personality
 		timid
@@ -208,6 +213,7 @@ fleet "Large Kimek"
 fleet "Small Saryd"
 	government "Coalition"
 	names "saryd"
+	formation "Vee"
 	cargo 3
 	personality
 		timid
@@ -233,6 +239,7 @@ fleet "Small Saryd"
 fleet "Large Saryd"
 	government "Coalition"
 	names "saryd"
+	formation "Vee"
 	cargo 3
 	personality
 		timid

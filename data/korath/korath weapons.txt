@@ -74,10 +74,10 @@ outfit "Korath Banisher"
 		"velocity" 590
 		"lifetime" 1
 		"reload" 1
-		"firing energy" 3.3
-		"firing heat" 4.9
-		"shield damage" 2.8
-		"hull damage" .9
+		"firing energy" 4.0
+		"firing heat" 5.9
+		"shield damage" 2.2
+		"hull damage" .7
 		"hit force" 40
 	description "The Korath like to keep their enemies close... but not too close."
 
@@ -137,10 +137,10 @@ outfit "Korath Fire-Lance"
 		"velocity" 350
 		"lifetime" 1
 		"reload" 1
-		"firing energy" 2.5
-		"firing heat" 1.7
-		"shield damage" 3.5
-		"hull damage" 1.5
+		"firing energy" 3
+		"firing heat" 2.0
+		"shield damage" 2.8
+		"hull damage" 1.2
 		"heat damage" 12
 	description "The Korath Fire-Lance is a medium-range beam weapon designed to be used by their fighters."
 
@@ -263,24 +263,66 @@ outfit "Korath Piercer Launcher"
 		"hit effect" "piercer impact"
 		"hit effect" "piercer explosion"
 		"die effect" "piercer explosion"
-		"inaccuracy" 3
-		"velocity" 18
-		"lifetime" 200
-		"reload" 72
-		"firing energy" 29
-		"firing heat" 144
+		"inaccuracy" 6.0
+		"velocity" 8.5
+		"lifetime" 400.0
+		"reload" 144.0
+		"firing energy" 58.0
+		"firing heat" 288.0
 		"acceleration" .54
 		"drag" .03
 		"turn" 1.6
 		"homing" 4
 		"infrared tracking" .9
-		"shield damage" 290
-		"hull damage" 440
+		"shield damage" 580.0
+		"hull damage" 880.0
 		"piercing" .2
-		"hit force" 300
+		"hit force" 600.0
 		"missile strength" 73
 		"stream"
 	description "Korath Piercer missiles carry a pair of warheads. The first, a smaller one in the very tip of the missile, explodes on impact to blast a hole in the ship's shields to allow some of the subsequent, larger explosion to pierce through."
+
+outfit "Korath Piercer Pod"
+	category "Secondary Weapons"
+	cost 593000
+	thumbnail "outfit/piercer launcher"
+	"mass" 4
+	"outfit space" -7
+	"weapon capacity" -7
+	"energy capacity" 50
+	"gun ports" -1
+	"piercer capacity" 6
+	weapon
+		sprite "projectile/piercer"
+			"frame rate" 5
+			"random start frame"
+		sound "piercer"
+		ammo "Korath Piercer"
+		icon "icon/piercer"
+		"fire effect" "piercer fire"
+		"hit effect" "piercer impact"
+		"hit effect" "piercer explosion"
+		"die effect" "piercer explosion"
+		"inaccuracy" 6.0
+		"velocity" 8.5
+		"lifetime" 400.0
+		"reload" 350.0
+		"burst count" 6
+		"burst reload" 140
+		"firing energy" 58.0
+		"firing heat" 288.0
+		"acceleration" .54
+		"drag" .03
+		"turn" 1.6
+		"homing" 4
+		"infrared tracking" .9
+		"shield damage" 580.0
+		"hull damage" 880.0
+		"piercing" .2
+		"hit force" 600.0
+		"missile strength" 73
+	description "Korath Piercer missiles carry a pair of warheads. The first, a smaller one in the very tip of the missile, explodes on impact to blast a hole in the ship's shields to allow some of the subsequent, larger explosion to pierce through."
+	description "	Piercer Missile Pods are compact missile launchers designed to be fitted onto drone, fighter, and interceptor class ships. They are much more compact that the standard launcher, with a correspondingly limited capacity. While they can launch their complement of piercers slightly faster than normal, their reloading mechanism is significantly slower."
 
 effect "piercer fire"
 	sprite "effect/piercer fire"
@@ -415,21 +457,21 @@ outfit "Korath Minelayer"
 		"hit effect" "huge explosion"
 		"die effect" "minelayer split" 5
 		"submunition" "Korath Mine Submunition" 11
-		"inaccuracy" 10
-		"velocity" 3
-		"lifetime" 100
-		"reload" 180
-		"firing energy" 36
-		"firing heat" 36
+		"inaccuracy" 20.0
+		"velocity" 1.5
+		"lifetime" 200.0
+		"reload" 360.0
+		"firing energy" 72.0
+		"firing heat" 72.0
 		"acceleration" .16
 		"drag" .04
 		"turn" 2
 		"homing" 4
 		"infrared tracking" .9
 		"missile strength" 35
-		"shield damage" -3200
-		"hull damage" -2400
-		"hit force" -150
+		"shield damage" -6400.0
+		"hull damage" -4800.0
+		"hit force" -300.0
 		"stream"
 	description "This launcher fires cluster munitions that split into a cloud of stationary mines that each do a considerable amount of damage if a ship crashes into them. However, if a ship hits the mine before it has a chance to deploy, the damage is considerably reduced."
 
@@ -441,9 +483,9 @@ outfit "Korath Mine Submunition"
 		"hit effect" "large explosion"
 		"die effect" "tiny explosion"
 		"inaccuracy" 360
-		"velocity" 2
+		"velocity" 1.0
 		"random velocity" 5
-		"lifetime" 1000
+		"lifetime" 2000.0
 		"random lifetime" 60
 		"acceleration" .00001
 		"drag" .05
@@ -495,10 +537,10 @@ outfit "Korath Disruptor"
 		"velocity" 480
 		"lifetime" 1
 		"reload" 1
-		"firing energy" 8.0
-		"firing heat" 2.7
-		"shield damage" 3.8
-		"hull damage" .5
+		"firing energy" 9.6
+		"firing heat" 3.2
+		"shield damage" 3.0
+		"hull damage" .4
 		"disruption damage" .24
 	description "Korath Disruptors interfere with a ship's shields, allowing a ship's hull to be damaged even when shields are up. However, they do very little hull damage by themselves."
 

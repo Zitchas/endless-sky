@@ -15,7 +15,7 @@ ship "Albatross"
 	sprite "ship/albatross"
 	thumbnail "thumbnail/albatross"
 	attributes
-		category "Heavy Warship"
+		category "Medium Warship"
 		licenses
 			"Remnant Capital"
 		cost 20250000
@@ -24,7 +24,7 @@ ship "Albatross"
 		"required crew" 44
 		"bunks" 75
 		"cargo space" 124
-		"mass" 610
+		"mass" 900
 		"drag" 8.6
 		"heat dissipation" 0.6
 		"fuel capacity" 600
@@ -245,7 +245,7 @@ ship "Gull"
 		"hull" 2500
 		"required crew" 3
 		"bunks" 20
-		"mass" 270
+		"mass" 300
 		"drag" 6
 		"heat dissipation" 0.7
 		"fuel capacity" 600
@@ -384,7 +384,7 @@ ship "Heron"
 		"hull" 250500
 		"required crew" 1000
 		"bunks" 3000
-		"mass" 5000
+		"mass" 9000
 		"drag" 25
 		"heat dissipation" .80
 		"fuel capacity" 2500
@@ -512,7 +512,7 @@ ship "Ibis"
 		"hull" 6200
 		"required crew" 16
 		"bunks" 36
-		"mass" 350
+		"mass" 550
 		"drag" 5.1
 		"heat dissipation" 0.7
 		"fuel capacity" 700
@@ -591,7 +591,7 @@ ship "Pelican"
 		"required crew" 14
 		"bunks" 35
 		"cargo space" 302
-		"mass" 320
+		"mass" 550
 		"drag" 7.2
 		"heat dissipation" 0.7
 		"fuel capacity" 600
@@ -772,7 +772,7 @@ ship "Peregrine"
 		"hull" 8600
 		"required crew" 9
 		"bunks" 25
-		"mass" 350
+		"mass" 500
 		"drag" 4.3
 		"heat dissipation" 0.85
 		"fuel capacity" 900
@@ -847,6 +847,7 @@ ship "Petrel"
 	thumbnail "thumbnail/petrel"
 	attributes
 		category "Fighter"
+		rear 1
 		licenses
 			Remnant
 		"cost" 1141000
@@ -857,12 +858,16 @@ ship "Petrel"
 		"ramscoop" 0.5
 		"required crew" 2
 		"bunks" 3
-		"mass" 50
-		"drag" 1.55
+		"mass" 25
+		"drag" 3.10
 		"heat dissipation" .8
-		"outfit space" 133
+		"outfit space" 159
 		"weapon capacity" 33
-		"engine capacity" 34
+		"engine capacity" 52
+		"thrust" 27
+		"turn" 369.6
+		"reverse thrust" 16.2
+		"slowing resistance" 0.04
 		"shield generation" 0.36
 		"shield energy" 0.24
 		"hull repair rate" 0.82
@@ -885,7 +890,7 @@ ship "Petrel"
 		"Quantum Key Stone"
 		"Thermoelectric Cooler"
 		
-		"Anvil-Class Engine"
+		"Anvil-Class Engine" 2
 		
 	gun 0 -38.5
 	gun -10.5 -24 "Inhibitor Cannon"
@@ -1110,6 +1115,7 @@ ship "Tern"
 	thumbnail "thumbnail/tern"
 	attributes
 		category "Drone"
+		rear 1
 		licenses
 			Remnant
 		"cost" 860000
@@ -1117,15 +1123,19 @@ ship "Tern"
 		"hull" 2500
 		"automaton" 1
 		"cargo space" 5
-		"mass" 32
-		"drag" 1.0
+		"mass" 16
+		"drag" 2.0
 		"heat dissipation" .9
 		"fuel capacity" 50
 		"energy capacity" 500
 		"ramscoop" 0.5
-		"outfit space" 76
+		"outfit space" 102
 		"weapon capacity" 16
-		"engine capacity" 26
+		"engine capacity" 52
+		"thrust" 27
+		"turn" 369.6
+		"reverse thrust" 16.2
+		"slowing resistance" 0.04
 		"shield generation" 0.25
 		"shield energy" 0.16
 		"hull repair rate" 0.55
@@ -1148,7 +1158,7 @@ ship "Tern"
 		"Quantum Key Stone"
 		"Thermoelectric Cooler"
 		
-		"Anvil-Class Engine"
+		"Anvil-Class Engine" 2
 		
 	gun 0 -22 "Inhibitor Cannon"
 	engine -5 20.5
