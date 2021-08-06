@@ -45,7 +45,7 @@ const Command Command::FORWARD(1uL << 1, "Forward thrust");
 const Command Command::LEFT(1uL << 2, "Turn left");
 const Command Command::RIGHT(1uL << 3, "Turn right");
 const Command Command::BACK(1uL << 4, "Reverse");
-cconst Command Command::STRAFERIGHT(1uL << 5, "Strafe right");
+const Command Command::STRAFERIGHT(1uL << 5, "Strafe right");
 const Command Command::STRAFELEFT(1uL << 6, "Strafe left");
 const Command Command::PRIMARY(1uL << 7, "Fire primary weapon");
 const Command Command::SECONDARY(1uL << 8, "Fire secondary weapon");
