@@ -722,15 +722,8 @@ shipyard "Remnant"
 
 shipyard "Remnant Puffin"
 	"Puffin"
-	# All of the following ships should be removed before this is merged. Included here for testing purposes.
-	"Heron"
-	"Condor"
-	"Cormorant"
-	"Jaeger"
-	"Merganser"
-	"Peregrine"
-	"Skua"
-	"Vulture"
+
+
 
 outfitter "Remnant"
 	"Inhibitor Cannon"
@@ -765,32 +758,8 @@ outfitter "Remnant"
 	"Cargo Scanner"
 	"Outfit Scanner"
 	"Tuning Rifle"
-	"Salvage Scanner"
-	# All the following outfits should be removed before merging. All of these will be mission unlocks.
-	"Flak Turret"
-	"Remnant GASER Cannon"
-	"Remnant GASER Turret"
-	"Inhibitor Turret"
-	"Quantum Artillery"
-	"Remnant Flak Turret"
-	"Remnant Plasma Torch Cannon"
-	"Remnant Plasma Torch Turret"
-	"Ember Tear"
-	"Errataz Missile"
-	"Errataz Missile Pod"
-	"Quantum Tear"
-	"Crystal Grid"
-	"Plasma Crystal Core"
-	"Ember Waste Ramscoop"
-	"Remnant Ramscoop"
-	"Boarding Claws"
-	"Personal Cloak System"
-	"Personal Cloaking Suit"
-	"Tactical Assault System"
-	
-	
-	
-	
+	"Salvage Scanner"	
+
 
 outfitter "Remnant Salvage"
 	"Generator (Furnace Class)"
