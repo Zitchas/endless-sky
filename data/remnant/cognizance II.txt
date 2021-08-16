@@ -101,7 +101,7 @@ mission "Remnant: Cognizance 21"
 				`	"Dusk? Are names of like that common?"`
 				`	"Pleased to meet you, Dusk."`
 					goto missiondescription
-			`	"You mean names of the various phases of daylight? Mmm, I would not say they are common, but nore are they rare, either. Our ancestors devoted their lives, one way or another, to studying the stars and the everchanging light of the universe. It should not be surprising that their vocabulary should be so entwined in our culture."`
+			`	"You mean names of the various phases of daylight? Mmm, I would not say they are common, but nor are they rare, either. Our ancestors devoted their lives, one way or another, to studying the stars and the everchanging light of the universe. It should not be surprising that their vocabulary should be so entwined in our culture."`
 			choice
 				`	"Who were your ancestors?"`
 				`	"Interesting. Well, what is our mission?"`
@@ -139,7 +139,8 @@ mission "Remnant: Cognizance 21"
 					goto scienceassistant
 				`	Explore Ssil Vida.`
 			apply explorationinterest += 1
-			`	You pick up some instruments and recording equipment, and check the map tracking the other Remnant researchers. Picking an unexplored direction, you set off`
+			`	You pick up some instruments, recording equipment, and wayfinding labels, then check the map tracking the other Remnant researchers. Picking an unexplored direction, you set off.`
+			`	The first few corridors are marked with labels indicating the direction that other explorers traveled. Picking an unmarked hallway, you put up a wayfinding label of your own, and set off along it. Almost immediately the sense of scale you noticed in the main room is reinforced, as you travel considerable distance between doorways. Glancing inside, you find room after room containing large platforms. Examining them, you find that each platform is lightly padded with several bars set into it along each side. At each end of the platform the surface has what you would guess to be storage lockers embeded in it. Based on your experience, you realize that these resemble storage platforms used to secure delicate cargo, but there is no indication of what that cargo might be.`
 			goto wrapup
 			label scienceassistant
 			apply scienceinterest += 1
