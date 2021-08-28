@@ -774,10 +774,10 @@ outfit "Ember Tear"
 		"safe"
 		"lifetime" 1
 		"reload" 1
-		"firing force" 5
+		"firing force" 1
 		"blast radius" 150
 		"firing energy" 250
-		"firing fuel" 5
+		"firing fuel" 10
 		"firing heat" 100
 		"shield damage" 200
 		"hull damage" 200
