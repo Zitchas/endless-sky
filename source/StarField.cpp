@@ -203,6 +203,7 @@ void StarField::SetUpGraphics()
 
 	static const char *fragmentCode =
 		"// fragment starfield shader\n"
+		"precision mediump float;\n"
 		"in float fragmentAlpha;\n"
 		"in vec2 coord;\n"
 		"out vec4 finalColor;\n"
@@ -245,7 +246,7 @@ void StarField::MakeStars(int stars, int width)
 	
 	tileCols = (width / TILE_SIZE);
 	tileIndex.clear();
-	tileIndex.resize(tileCols * tileCols, 0);
+	tileIndex.resize(static_cast<size_t>(tileCols) * tileCols, 0);
 	
 	vector<int> off;
 	static const int MAX_OFF = 50;
@@ -274,7 +275,7 @@ void StarField::MakeStars(int stars, int width)
 	{
 		for(int j = 0; j < 10; ++j)
 		{
-			int index = Random::Int(off.size()) & ~1;
+			int index = Random::Int(static_cast<uint32_t>(off.size())) & ~1;
 			x += off[index];
 			y += off[index + 1];
 			x &= widthMod;
