@@ -141,13 +141,14 @@ mission "Remnant: Cognizance 21"
 			apply explorationinterest += 1
 			`	You pick up some instruments, recording equipment, and wayfinding labels, then check the map tracking the other Remnant researchers. Picking an unexplored direction, you set off.`
 			`	The first few corridors are marked with labels indicating the direction that other explorers traveled. Picking an unmarked hallway, you put up a wayfinding label of your own, and set off along it. Almost immediately the sense of scale you noticed in the main room is reinforced, as you travel considerable distance between doorways. Glancing inside, you find room after room containing large platforms. Examining them, you find that each platform is lightly padded with several bars set into it along each side. At each end of the platform the surface has what you would guess to be storage lockers embeded in it. Based on your experience, you realize that these resemble storage platforms used to secure delicate cargo, but there is no indication of what that cargo might be.`
+			`	Further exploration reveals considerable more oversized rooms`
 			goto wrapup
 			label scienceassistant
 			apply scienceinterest += 1
-			`	You follow Dusk over to the equipment, and ask if there is anything you can do to help. He looks surprised, but pleased. After thinking about it for a moment, he asks you if you can help monitor some diagnostics and do some preventative maintnance on some of the equipment. Over the following few hours, Dusk keeps you involved in the work, ocassionally explaining what the various pieces of equipment do.`
+			`	You follow Dusk over to the equipment, and ask if there is anything you can do to help. He looks surprised, but pleased. After thinking about it for a moment, he asks you if you can help monitor some diagnostics and do some preventative maintnance on some of the equipment. Over the following few hours, Dusk keeps you involved in the work, ocassionally explaining what the various pieces of equipment do. The rest of the team quickly follows suit, and before long you feel like part of the team. By the time Dusk starts wrapping up the observations you have started to pick up some of the scientific vocabulary, along with a few of the basics behind how the equipment works.`
 			goto wrapup
 			label relax
-			#enter description of lounging around onboard your ship
+			`	You head back to the <ship> and run through all the preliminary checks to get ready for the trip back to <destination>. You quickly finish the checks, along with some preventative maintenance, and end up spending a few hours relaxing while you wait for Dusk and his team to finish their studies.`
 			label wrapup
 			#everything gets packed up, a few long long-term sensors are placed, time to head home.
 			
