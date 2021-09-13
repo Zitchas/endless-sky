@@ -165,15 +165,13 @@ mission "Remnant: Cognizance 21"
 		payment 250000
 		conversation
 			`The trip back to <destination> goes quickly but quietly, as all the Remnant seem to be focused on writing reports of their observations. From what you can tell, each member of the team writes up their own observations and experiences, and then Dusk assembles all the reports into an expedition report that includes each researcher's verbatim report as well as his own.`
-			`	The <ship> settles into the current landing pattern for the main spaceport on <destination> as you flip through the exterior camera feeds. In the distance, you notice that one of the research hangers has some activity going on around it, but otherwise the spaceport seems to be humming along as usual. Dusk stops by the cockpit as you settle the <ship> into its berth. "Thank you for helping us, <first>. I do not think we ever mentioned it, but a logistics adjustment of <payment> has been applied to your account to cover your costs." Dusk turns and heads off to help the other researchers unload the equipment.`
+			`	The <ship> settles into the current landing pattern for the main spaceport on <destination> as you flip through the exterior camera feeds. In the distance, you notice that one of the research hangers has some activity going on around it, but otherwise the spaceport seems to be humming along as usual. Dusk stops by the cockpit as you settle the <ship> into its berth. "Thank you for helping us, <first>. It will take us some time to analyze this data, but we will likely be mounting another expedition to Ssil Vida in the near future." He pauses, then adds. "I do not think we ever mentioned it, but, as appropriate for your assistance, a logistics adjustment of <payment> has been applied to your account to cover your costs and provide resources to prepare for future endeavors." Dusk gives you a polite nod then heads off to help the other researchers unload the equipment.`
 
 
 
 mission "Remnant: Cognizance 22"
 	name "Delivery for Taely"
 	description "Pick up a shipment of supplies from <Stopover> for Taely."
-	blocked "You need 10 free space for this mission."
-	cargo "supplies" 10
 	source
 		government "Remnant"
 	stopover
@@ -187,5 +185,29 @@ mission "Remnant: Cognizance 22"
 		has outfit "Research Laboratory"
 	on offer
 		conversation
+
+
+
+mission "Remnant: Cognizance 23"
+	name "Delivery for Taely"
+	description "Pick up a shipment of supplies from <Stopover> for Taely."
+	blocked "You need 36 free space for this mission."
+	cargo "Special Supplies" 36
+	source
+		government "Remnant"
+	stopover
+		and
+			government "Remnant"
+			not attributes "requires: gaslining"
+	to offer
+		has "Remnant: Cognizance 22: done"
+		has outfit "Research Laboratory"
+	to complete
+		has outfit "Research Laboratory"
+	on offer
+		conversation
+
+
+
 
 
