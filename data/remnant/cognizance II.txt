@@ -25,7 +25,7 @@ mission "Remnant: Cognizance 20"
 		conversation
 			`The crowd inside the spaceport cafeteria is an excited flurry of movement. You squeeze through a gap in the crowd to discover that they are gathered around a holoprojector displaying footage of the strange creature that recently followed you to Viminal and then on to Nenia. From the snippets of conversation that you catch, it appears that they are discussing theories about it. Almost as soon as you arrive, however, the gestures still and one of the Remnant gestures to you. "Greetings, Seeker. You are the one who found this creature. Since you traveled with it, could you share more recordings of it?"`
 			choice
-				`	"Deffinitely."`
+				`	"Definitely."`
 				`	"Maybe later."`
 					goto maybelater
 			`	A few commands on your commlink later, and recordings your ship automatically made from its sensors while in flight pop up on a second projector. Several others pull up their commlinks and start skimming over the attached sensor logs. Almost immediately one waves to get everyone's attention.`
@@ -55,7 +55,7 @@ mission "Remnant: Cognizance 20"
 				`	"That makes sense."`
 					goto missionchoice
 				`	"Why do you need multiple methods of decision making?"`
-			`	"Because we are in the midst of war, and located in an actively hazardous part of the galaxy. We, as a people, need to make countless thousands of on-the-spot decisions every day. If we had to reach a consensus for every troop movement, expedition, or resource allocation we would be overwhelmed within days." She stops spaking, and another Remnant picks up the explanation.`
+			`	"Because we are in the midst of war, and located in an actively hazardous part of the galaxy. We, as a people, need to make countless thousands of on-the-spot decisions every day. If we had to reach a consensus for every troop movement, expedition, or resource allocation we would be overwhelmed within days." She stops speaking, and another Remnant picks up the explanation.`
 			`	"By the same token, prefects can be killed, or overloaded. Having as much decision making as possible handled by the Remnant as a group reduces our vulnerability to assassination strikes, and helps protect our prefects from burning out under the responsibility. On the flip side, it also protects our society from becoming an autocracy where one powerful person or small group makes all the decisions."`
 			label missionchoice
 			`	The Remnant still and look at you. "So, will you take this mission?"`
@@ -74,14 +74,15 @@ mission "Remnant: Cognizance 20"
 			`You land on pad D43A and sure enough, there is a team waiting to load a bunch of equipment into the racks. Within minutes they are done loading, and cheerfully wave as they head off.`
 	on visit
 		conversation
-			`According to your log you are where you need to be, but something is missing. The mission checklist blinks quietly at you on the side of your console, remininding you that you need to have a Research Laboratory installed, and the requested equipment has to have arrived. If you have more than one ship it might not have arrived yet.`
+			`According to your log you are where you need to be, but something is missing. The mission checklist blinks quietly at you on the side of your console, reminding you that you need to have a Research Laboratory installed, and the requested equipment has to have arrived. If you have more than one ship it might not have arrived yet.`
 	on complete
 		conversation
 			`One of the Remnant is waiting for you. "Thanks for picking up the equipment. The team that you will be taking to Ssil Vida is waiting for you in the spaceport."`
 
 
+
 mission "Remnant: Cognizance 21"
-	name "Expedition to "
+	name "Expedition to Ssil Vida"
 	description "Outfit a research laboratory and go to <stopover>."
 	blocked "You need 10 free space for this mission."
 	cargo "supplies" 10
@@ -90,7 +91,7 @@ mission "Remnant: Cognizance 21"
 	stopover
 		planet "Ssil Vida"
 	to offer
-		has "Remnant: Cognizance 21: done"
+		has "Remnant: Cognizance 20: done"
 		has outfit "Research Laboratory"
 	to complete
 		has outfit "Research Laboratory"
@@ -101,22 +102,22 @@ mission "Remnant: Cognizance 21"
 				`	"Dusk? Are names of like that common?"`
 				`	"Pleased to meet you, Dusk."`
 					goto missiondescription
-			`	"You mean names of the various phases of daylight? Mmm, I would not say they are common, but nor are they rare, either. Our ancestors devoted their lives, one way or another, to studying the stars and the everchanging light of the universe. It should not be surprising that their vocabulary should be so entwined in our culture."`
+			`	"You mean names of the various phases of daylight?" He pauses for a few seconds. "I would not say they are common, but nor are they rare, either. Our ancestors devoted their lives, one way or another, to studying the stars and the ever-changing light of the universe. It should not be surprising that their vocabulary should be so entwined in our culture."`
 			choice
 				`	"Who were your ancestors?"`
 				`	"Interesting. Well, what is our mission?"`
 					goto missiondescription
-			`	Dusk looks thoughtful for a moment. "Our ancestors came froma different era for humanity. They were the heirs of a golden age of human scientific progress and progress, when governments and institutions poured vast wealth into science. The developments of that time period resulted in the completion of the hyperspace relay network, new terraforming techniques, and advanced genetic engineering capabilities." His face clouds at that. "This, of course, culminated in the Alphas." He pauses, then shakes his head. "But you asked who are ancestors were, not about human history.`
+			`	Dusk looks thoughtful for a moment. "Our ancestors came from a different era for humanity. They were the heirs of a golden age of human scientific progress and progress, when governments and institutions poured vast wealth into science. The developments of that time period resulted in the completion of the hyperspace relay network, new terraforming techniques, and advanced genetic engineering capabilities." His face clouds at that. "This, of course, culminated in the Alphas." He pauses, then shakes his head. "But you asked who are ancestors were, not about human history.`
 			`	"In that era there were a number of burgeoning astronomy and exploration programs across human space. Despite also benefiting from the substantial budgets science in general as receiving, they were being pushed to the margins of the academic community: Unlike many of the more practical sciences like biology and chemistry which were coming up with new wonders, astronomy and astrophysics was purely academic. There was no budget in explaining the why's of the universe, not when other scientists were creating homo superior and unleashing instantaneous interstellar communication. So they banded together. It was not, I gather from the records, an unusual thing for academics of a particular field to meet with others of their field. If one faculty could not fund an expedition, perhaps two different faculties working together could. Eventually they formed a loose organization, a sort of 'standing conference' on astronomy and astrophysics, through which they met to discuss, debate, and organize."`
 			choice
 				`	"Your ancestors were originally a scientific conference?"`
 				`	"Thanks for the background. So, what is our mission?"`
 					goto missiontransition
-			`	Several of the Remnant nod, and another signs. "They gathered together to talk of their science, and each brought with them the captains and crew who enabled them. Some of those captains brought with them resources, too. Who else would appreciate learning of the void than those who ply their trades across it? The association grew over time, although as best we can tell from our records it made an effort to remain both politically and economically neutral. As such, it remained comparatively small and close-knit. Many of our ancestores have told stories about calling themselves the 'Exploration Vector,' alluding to the fact that they were the one subset of humanity on a course to head out into the furthest reaches of space. They even held contests about who could go the furthest from inhabited space, or who could spend the longest time between resupply stops.`
-			`	"When the war against the Alphas started, it was these people who had the most knowledge and experience with the farthest reaches of space. While many outfitters might sell a captain a map showing the hyperjumps a few systems into the uninhabited territories, it was our ancestors who had spent years living in those systems while they did their research. Thus they were the ones who got the jobs running supplies, or flying reconnaissance. They saw first-hand the way the war was going. They made the rendez-vous and picked up the equipment drops, and they grew increasingly worried."`
+			`	Several of the Remnant nod, and another signs. "They gathered together to talk of their science, and each brought with them the captains and crew who enabled them. Some of those captains brought with them resources, too. Who else would appreciate learning of the void as much as those who ply their trades across it? The association grew over time, although as best we can tell from our records it made an effort to remain both politically and economically neutral. As such, it remained comparatively small and close-knit. Many of our ancestors have told stories about calling themselves the 'Exploration Vector,' alluding to the fact that they were the one subset of humanity on a course to head out into the furthest reaches of space. They even held contests about who could go the furthest from inhabited space, or who could spend the longest time between resupply stops.`
+			`	"When the war against the Alphas started, it was these people who had the most knowledge and experience with the farthest reaches of space. While many outfitters might sell a captain a map showing the hyperjumps a few systems into the uninhabited territories, it was our ancestors who had spent years living in those systems while they did their research. Thus they were the ones who got the jobs running supplies, or flying reconnaissance. They saw first-hand the way the war was going. They made the rendezvous' and picked up the equipment drops, and they grew increasingly worried."`
 			choice
 				`	"They were worried about the course the war was taking?"`
-				`	"That would be worrysome. We should focus on the mission."`
+				`	"That would be worrisome. We should focus on the mission."`
 					goto missiontransition
 			`	Dust starts gesturing again. "Yes, but also by what they saw. Strange ships that slipped over the horizon, odd energy signatures in the distance, novel equipment that simply showed up on Deep ships without explanation... It seemed like someone out there was taking advantage of the chaos to influence humanity. Someone beyond the reach of the normal hyperspace network. It spurred our ancestors to revisit old theories and kindle new ones. Knowing that there was someone, something beyond what we knew made us bold. It was not long before the first ship travelled through the wormhole."`
 			choice
@@ -140,18 +141,49 @@ mission "Remnant: Cognizance 21"
 				`	Explore Ssil Vida.`
 			apply explorationinterest += 1
 			`	You pick up some instruments, recording equipment, and wayfinding labels, then check the map tracking the other Remnant researchers. Picking an unexplored direction, you set off.`
-			`	The first few corridors are marked with labels indicating the direction that other explorers traveled. Picking an unmarked hallway, you put up a wayfinding label of your own, and set off along it. Almost immediately the sense of scale you noticed in the main room is reinforced, as you travel considerable distance between doorways. Glancing inside, you find room after room containing large platforms. Examining them, you find that each platform is lightly padded with several bars set into it along each side. At each end of the platform the surface has what you would guess to be storage lockers embeded in it. Based on your experience, you realize that these resemble storage platforms used to secure delicate cargo, but there is no indication of what that cargo might be.`
-			`	Further exploration reveals considerable more oversized rooms`
+			`	The first few corridors are marked with labels indicating the direction that other explorers traveled. Picking an unmarked hallway, you put up a wayfinding label of your own, and set off along it. Almost immediately the sense of scale you noticed in the main room is reinforced, as you travel considerable distance between doorways. Glancing inside, you find room after room containing large platforms. Examining them, you find that each platform is lightly padded with several bars set into it along each side. At each end of the platform the surface has what you would guess to be storage lockers embedded in it. Based on your experience, you realize that these resemble storage platforms used to secure delicate cargo, but there is no indication of what that cargo might be.`
+			`	Further exploration reveals considerably more oversized rooms, including one with vast amounts of storage lockers and freezers. You note that the rooms you search appear to be fairly well organized, so you conclude that either whatever happened to this station did not cause a panic, or someone else cleaned up afterwards. After a few hours exploring you head back to the main area.`
 			goto wrapup
 			label scienceassistant
 			apply scienceinterest += 1
-			`	You follow Dusk over to the equipment, and ask if there is anything you can do to help. He looks surprised, but pleased. After thinking about it for a moment, he asks you if you can help monitor some diagnostics and do some preventative maintnance on some of the equipment. Over the following few hours, Dusk keeps you involved in the work, ocassionally explaining what the various pieces of equipment do. The rest of the team quickly follows suit, and before long you feel like part of the team. By the time Dusk starts wrapping up the observations you have started to pick up some of the scientific vocabulary, along with a few of the basics behind how the equipment works.`
+			`	You follow Dusk over to the equipment, and ask if there is anything you can do to help. He looks surprised, but pleased. After thinking about it for a moment, he asks you if you can help monitor some diagnostics and do some preventative maintenance on some of the equipment. Over the following few hours, Dusk keeps you involved in the work, occasionally explaining what the various pieces of equipment do. The rest of the team quickly follows suit, and before long you feel like part of the team. By the time Dusk starts wrapping up the observations you have started to pick up some of the scientific vocabulary, along with a few of the basics behind how the equipment works.`
+			`	You help pack up the equipment, then head back to the main room where Dusk and several others are gathered.`
 			goto wrapup
 			label relax
 			`	You head back to the <ship> and run through all the preliminary checks to get ready for the trip back to <destination>. You quickly finish the checks, along with some preventative maintenance, and end up spending a few hours relaxing while you wait for Dusk and his team to finish their studies.`
+			`	Eventually you get a message from Dusk indicating that they are all packed up and ready to begin loading.`
 			label wrapup
-			#everything gets packed up, a few long long-term sensors are placed, time to head home.
-			
-			
-			
-			
+			`	You find Dusk in the main hall that opens directly off of the bay where the <ship> is docked. Remnant scurry around stacking equipment in preparation for loading, and a team appears to be setting up a number of instruments around the periphery of the room. Dusk spots you, and waves you over to where he appears to be checking the readings on a console.`
+			choice
+				`	"What are you doing now?"`
+				`	"Ready to load up?"`
+					goto loading
+			`	Dusk smiles at you and gestures at the others setting up instruments around the edge of the room. "We are leaving these instruments here running automated data collection routines. We cannot run the main instruments without access to larger power sources such as your ship, but these smaller instruments will be able to record baseline data for us as well as documenting any sudden changes in some of the spectral emanations. They will provide useful data for us in the future." He smiles, then continues. "As the saying goes, the best time to start collecting data is a hundred years ago. The second best time to start collecting data is now."`
+			label loading
+			`	He gestures to the rest of the team, who immediately start loading the <ship>. "Well, it is time to head back." Dusk heads over to the equipment pile, and starts carrying equipment onboard.`
+	on complete
+		payment 250000
+		conversation
+			`The trip back to <destination> goes quickly but quietly, as all the Remnant seem to be focused on writing reports of their observations. From what you can tell, each member of the team writes up their own observations and experiences, and then Dusk assembles all the reports into an expedition report that includes each researcher's verbatim report as well as his own.`
+			`	The <ship> settles into the current landing pattern for the main spaceport on <destination> as you flip through the exterior camera feeds. In the distance, you notice that one of the research hangers has some activity going on around it, but otherwise the spaceport seems to be humming along as usual. Dusk stops by the cockpit as you settle the <ship> into its berth. "Thank you for helping us, <first>. I do not think we ever mentioned it, but a logistics adjustment of <payment> has been applied to your account to cover your costs." Dusk turns and heads off to help the other researchers unload the equipment.`
+
+
+
+mission "Remnant: Cognizance 22"
+	name "Pick up some parts  "
+	description "Outfit a research laboratory and go to <stopover>."
+	blocked "You need 10 free space for this mission."
+	cargo "supplies" 10
+	source
+		government "Remnant"
+	stopover
+		planet "Ssil Vida"
+	to offer
+		has "Remnant: Cognizance 21: done"
+		has outfit "Research Laboratory"
+	to complete
+		has outfit "Research Laboratory"
+	on offer
+		conversation
+
+
