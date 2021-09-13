@@ -170,14 +170,16 @@ mission "Remnant: Cognizance 21"
 
 
 mission "Remnant: Cognizance 22"
-	name "Pick up some parts  "
-	description "Outfit a research laboratory and go to <stopover>."
+	name "Delivery for Taely"
+	description "Pick up a shipment of supplies from <Stopover> for Taely."
 	blocked "You need 10 free space for this mission."
 	cargo "supplies" 10
 	source
 		government "Remnant"
 	stopover
-		planet "Ssil Vida"
+		and
+			government "Remnant"
+			not attributes "requires: gaslining"
 	to offer
 		has "Remnant: Cognizance 21: done"
 		has outfit "Research Laboratory"
