@@ -189,10 +189,8 @@ mission "Remnant: Cognizance 22"
 
 
 mission "Remnant: Cognizance 23"
-	name "Delivery for Taely"
-	description "Pick up a shipment of supplies from <Stopover> for Taely."
-	blocked "You need 36 free space for this mission."
-	cargo "Special Supplies" 36
+	name "First Flight"
+	description "Escort the Merganser to <stopover>."
 	source
 		government "Remnant"
 	stopover
