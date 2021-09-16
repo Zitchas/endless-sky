@@ -162,7 +162,7 @@ mission "Remnant: Cognizance 21"
 			label loading
 			`	He gestures to the rest of the team, who immediately start loading the <ship>. "Well, it is time to head back." Dusk heads over to the equipment pile, and starts carrying equipment onboard.`
 	on complete
-		payment 250000
+		payment 350000
 		conversation
 			`The trip back to <destination> goes quickly but quietly, as all the Remnant seem to be focused on writing reports of their observations. From what you can tell, each member of the team writes up their own observations and experiences, and then Dusk assembles all the reports into an expedition report that includes each researcher's verbatim report as well as his own.`
 			`	The <ship> settles into the current landing pattern for the main spaceport on <destination> as you flip through the exterior camera feeds. In the distance, you notice that one of the research hangers has some activity going on around it, but otherwise the spaceport seems to be humming along as usual. Dusk stops by the cockpit as you settle the <ship> into its berth. "Thank you for helping us, <first>. It will take us some time to analyze this data, but we will likely be mounting another expedition to Ssil Vida in the near future." He pauses, then adds. "I do not think we ever mentioned it, but, as appropriate for your assistance, a logistics adjustment of <payment> has been applied to your account to cover your costs and provide resources to prepare for future endeavors." Dusk gives you a polite nod then heads off to help the other researchers unload the equipment.`
@@ -174,10 +174,12 @@ mission "Remnant: Cognizance 22"
 	description "Pick up a shipment of supplies from <Stopover> for Taely."
 	source
 		government "Remnant"
+		not attributes "requires: gaslining"
 	stopover
 		and
 			government "Remnant"
 			not attributes "requires: gaslining"
+			neighbor distance 1 3
 	to offer
 		has "Remnant: Cognizance 21: done"
 		has outfit "Research Laboratory"
