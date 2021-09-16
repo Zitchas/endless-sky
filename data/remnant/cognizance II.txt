@@ -165,28 +165,48 @@ mission "Remnant: Cognizance 21"
 		payment 350000
 		conversation
 			`The trip back to <destination> goes quickly but quietly, as all the Remnant seem to be focused on writing reports of their observations. From what you can tell, each member of the team writes up their own observations and experiences, and then Dusk assembles all the reports into an expedition report that includes each researcher's verbatim report as well as his own.`
-			`	The <ship> settles into the current landing pattern for the main spaceport on <destination> as you flip through the exterior camera feeds. In the distance, you notice that one of the research hangers has some activity going on around it, but otherwise the spaceport seems to be humming along as usual. Dusk stops by the cockpit as you settle the <ship> into its berth. "Thank you for helping us, <first>. It will take us some time to analyze this data, but we will likely be mounting another expedition to Ssil Vida in the near future." He pauses, then adds. "I do not think we ever mentioned it, but, as appropriate for your assistance, a logistics adjustment of <payment> has been applied to your account to cover your costs and provide resources to prepare for future endeavors." Dusk gives you a polite nod then heads off to help the other researchers unload the equipment.`
+			`	The <ship> settles into the current landing pattern for the main spaceport on <destination> as you flip through the exterior camera feeds. In the distance, you notice that one of the research hangars has some activity going on around it, but otherwise the spaceport seems to be humming along as usual. Dusk stops by the cockpit as you settle the <ship> into its berth. "Thank you for helping us, <first>. It will take us some time to analyze this data, but we will likely be mounting another expedition to Ssil Vida in the near future." He pauses, then adds. "I do not think we ever mentioned it, but, as appropriate for your assistance, a logistics adjustment of <payment> has been applied to your account to cover your costs and provide resources to prepare for future endeavors." Dusk gives you a polite nod then heads off to help the other researchers unload the equipment.`
 
 
 
 mission "Remnant: Cognizance 22"
-	name "Delivery for Taely"
-	description "Pick up a shipment of supplies from <Stopover> for Taely."
+	name "Deliver Data Backups for Taely"
+	description "Deliver a data backup to <Stopover> for Taely."
 	source
 		government "Remnant"
-		not attributes "requires: gaslining"
 	stopover
 		and
 			government "Remnant"
-			not attributes "requires: gaslining"
 			neighbor distance 1 3
 	to offer
 		has "Remnant: Cognizance 21: done"
-		has outfit "Research Laboratory"
 	to complete
-		has outfit "Research Laboratory"
 	on offer
 		conversation
+			`You step out of the <ship> into the fresh air of <origin>. You recall seeing some unusual activity over at one of the research hangars. There must be something interesting going on to generate that much activity.`
+			choice
+				`	Not today.`
+					decline
+				`	Go check out the activity.`
+			`	You follow the stream of engineers and technicians to find Taely wedged into a cavity on what must be a ship. You cannot quite tell what it looks like, however, because it is still surrounded by scaffolding, tubes, and other systems. Whatever it is, it is quite small: Without all the construction rigging you suspect that it would probably be only slightly larger than a puffin. As you peer around the supports a Remnant scurries up with a slimy cable in a bag and hands it to you. "Here, Taely will need this in a few seconds, could you hand it to her when she asks for it? I need to go find the next part. Thanks!" The Remnant vanishes into an adjacent storage room before you even have the chance to respond. Almost immediately, however, Taely twists around to look back at you. "Oh, <first>! I was expecting Cora to be there with the... Ah, they gave it to you. Excellent. If you could just hand it up to me, it would be much appreciated." You reach up to hand her the bag, and Taely inches farther into the craft until only her feet are visible. A few liquid sounds later, and Taely slides back out and drops to the ground.`
+			`	"So, you came to see what the excitement was about?"`
+			choice
+				`	"I spotted it on final for landing and I was curious."`
+					goto curious
+				`	"I saw it while inbound for landing and was worried."`
+			`	"Thanks for checking up on us, then" She signs with a smile. "People being concerned for the welfare of those around them is the adhesive that makes society strong."`
+			label curious
+			`	She gestures to the ship next to her. "You have arrived in our space at an opportune time, <first>. While most of our developments over the years have been tweaking existing ships, tweaks can only go so far. Even before we established our first shipyard, we have been constantly innovating and trying out new ship designs. Every new development is put on the conceptual model to see if it can help us build a better ship." She grimaces slightly. "Well, that is a bit hyperbolic. Not every development applies to spacecraft, just the ones of most interest to me." She grins at that. "In any case, several of our development projects are nearing the point of production, and this prototype should be operational within a few days."`
+			`	She pats a piece of exposed hull, and you think you can almost feel some kind of vibration or hum in response. Taely takes on a distant expression, as if lost in thought. After a long enough pause to feel awkward, she blinks a few times and focuses on you again. "Sorry about that. A new ship waking up and all that." She smiles, thoughtfully. "Before I get absorbed in my work again, would you be able to make a delivery for me? It is a simple one, but important. I need someone to deliver a crate of data files to <destination>. As my development project has reached its end, it is time to send a hard copy of the data to one of our archives for safe keeping. Could you deliver it for me?"`
+			choice
+				`	"Yes, I can"`
+					goto affirmative
+				`	"I am too busy for that."`
+			`	Taely looks disappointed, but shrugs. "No problem, I will get someone else to deliver it."`
+				decline
+			label affirmative
+			`	Taely looks please. "Excellent. Just delivers this to the archive on <destination>." She hands you a very robust looking datacrystal. "Looks a bit different from other data crystals, I am sure." She pauses. "These are archival crystals, and as such they have more robust data structures with many more layers of redundancy and error correction. Likewise, they have many additional layers of encryption and security to ensure that it does not fall into enemy hands. In other words, perfect for long-term storage." She pauses and smiles. "Once you have delivered this, please come back shortly to help with the initial launch of the new prototype."
+				accept
 
 
 
