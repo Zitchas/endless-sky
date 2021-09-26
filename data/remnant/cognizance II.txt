@@ -19,8 +19,6 @@ mission "Remnant: Cognizance 20"
 		government "Remnant"
 	to offer
 		has "Remnant: Cognizance 19: done"
-	to complete
-		has outfit "Research Laboratory"
 	on offer
 		conversation
 			`The crowd inside the spaceport cafeteria is an excited flurry of movement. You squeeze through a gap in the crowd to discover that they are gathered around a holoprojector displaying footage of the strange creature that recently followed you to Viminal and then on to Nenia. From the snippets of conversation that you catch, it appears that they are discussing theories about it. Almost as soon as you arrive, however, the gestures still and one of the Remnant gestures to you. "Greetings, Seeker. You are the one who found this creature. Since you traveled with it, could you share more recordings of it?"`
@@ -35,7 +33,7 @@ mission "Remnant: Cognizance 20"
 				`	"I don't remember. Did you notice something?"`
 			`	One of the Remnant pulls up the relevant section and puts it up on the projector. "Right here, the logs show that there is ambient life-signs all over the system, but nothing of significance shows up on the physical scanners." He frowns at the projector. "All the equipment status signals in the records are nominal, and both the check digits and data hashes match."`
 			choice
-				`	"So there's no problems with the data?"`
+				`	"So there is no problems with the data?"`
 				`	"Skip the technical jargon. What does it mean?"`
 					goto skiptech
 			`	Another Remnant nods. "Exactly. There is no problem with the data or the equipment, so one way or another, this is what it recorded. As such, either there is something here which we have never seen before, or there is something causing problems with conventional sensors." He looks around at the gathered Remnant and pauses as if focusing on something you can't see or hear, then turns to you. "We have reached a consensus.`
@@ -67,7 +65,7 @@ mission "Remnant: Cognizance 20"
 			`	"Excellent. We will load our equipment racks on-board, and the equipment to go in them will be waiting for you on from pad D43A on <stopover>. Once it is loaded, return here to pick up the team of researchers who will be going with you. Remember, you will need 5 bunks free as well as an on-board research laboratory to complement our equipment."`
 				accept
 			label maybelater
-			`	"Oh, that's unfortunate. Maybe some other time, then." The crowd makes various gestures of disappointment, and turn back to observing the projection and discussing their theories.`
+			`	"Oh, that is unfortunate. Maybe some other time, then." The crowd makes various gestures of disappointment, and turn back to observing the projection and discussing their theories.`
 				defer
 	on stopover
 		conversation
@@ -76,6 +74,7 @@ mission "Remnant: Cognizance 20"
 		conversation
 			`According to your log you are where you need to be, but something is missing. The mission checklist blinks quietly at you on the side of your console, reminding you that you need to have a Research Laboratory installed, and the requested equipment has to have arrived. If you have more than one ship it might not have arrived yet.`
 	on complete
+		require "Research Laboratory"
 		conversation
 			`One of the Remnant is waiting for you. "Thanks for picking up the equipment. The team that you will be taking to Ssil Vida is waiting for you in the spaceport."`
 
@@ -92,10 +91,8 @@ mission "Remnant: Cognizance 21"
 		planet "Ssil Vida"
 	to offer
 		has "Remnant: Cognizance 20: done"
-		has outfit "Research Laboratory"
-	to complete
-		has outfit "Research Laboratory"
 	on offer
+		require "Research Laboratory"
 		conversation
 			`	In the cafeteria the scene hasn't changed much: There is still a large group of Remnant gathered around a cluster of projectors, with a constant stream of gestures discussing various points of the data. You understand enough to figure out that most of the conversation is deep into technical discussions of how the lifesign sensors might give the readings they do without having anything visible. The principle differences from before is that there is a stack of small bags and helmets next to the door and five of the Remnant present are wearing pressure suits. One of them notices you and waves you over. "Captain <first>! My name is Dusk, and I am one of the researchers that you volunteered to transport to Ssil Vida."`
 			choice
@@ -108,7 +105,7 @@ mission "Remnant: Cognizance 21"
 				`	"Interesting. Well, what is our mission?"`
 					goto missiondescription
 			`	Dusk looks thoughtful for a moment. "Our ancestors came from a different era for humanity. They were the heirs of a golden age of human scientific progress and progress, when governments and institutions poured vast wealth into science. The developments of that time period resulted in the completion of the hyperspace relay network, new terraforming techniques, and advanced genetic engineering capabilities." His face clouds at that. "This, of course, culminated in the Alphas." He pauses, then shakes his head. "But you asked who are ancestors were, not about human history.`
-			`	"In that era there were a number of burgeoning astronomy and exploration programs across human space. Despite also benefiting from the substantial budgets science in general as receiving, they were being pushed to the margins of the academic community: Unlike many of the more practical sciences like biology and chemistry which were coming up with new wonders, astronomy and astrophysics was purely academic. There was no budget in explaining the why's of the universe, not when other scientists were creating homo superior and unleashing instantaneous interstellar communication. So they banded together. It was not, I gather from the records, an unusual thing for academics of a particular field to meet with others of their field. If one faculty could not fund an expedition, perhaps two different faculties working together could. Eventually they formed a loose organization, a sort of 'standing conference' on astronomy and astrophysics, through which they met to discuss, debate, and organize."`
+			`	"In that era there were a number of burgeoning astronomy and exploration programs across human space. Despite also benefiting from the substantial budgets science in general as receiving, they were being pushed to the margins of the academic community: Unlike many of the more practical sciences like biology and chemistry which were coming up with new wonders, astronomy and astrophysics was purely academic. There was no budget in explaining the whys of the universe, not when other scientists were creating homo superior and unleashing instantaneous interstellar communication. So they banded together. It was not, I gather from the records, an unusual thing for academics of a particular field to meet with others of their field. If one faculty could not fund an expedition, perhaps two different faculties working together could. Eventually they formed a loose organization, a sort of 'standing conference' on astronomy and astrophysics, through which they met to discuss, debate, and organize."`
 			choice
 				`	"Your ancestors were originally a scientific conference?"`
 				`	"Thanks for the background. So, what is our mission?"`
@@ -131,6 +128,7 @@ mission "Remnant: Cognizance 21"
 			`	Dust leans over the holo, peering at the details. "The mission is a very standard arc: We go to the station, set up our equipment to get some detailed readings, and return here once we are done. For these initial readings we should need about a day onsite, and we will leave some of our equipment to take ongoing recordings for retrieval later. After that... Well, we will see what the data says and decide from there."`
 				accept
 	on stopover
+		require "Research Laboratory"
 		conversation
 			`Dusk and the team of scientists waste no time in getting to work: They have the preliminary sensors working almost from the moment you left the spaceport, and by the time you dock with Ssil Vida they have all their equipment arranged to quickly offload and setup. With the space cleared, they expand the research laboratory and set to work analyzing the system. Before long they are clustered around displays and adjusting sensor readings, deep in discussion. Eventually, Dusk strides over to you. "Everything is setup and proceeding nominally, Captain. We will need a few hours to complete the measurements, you do not need to stand around watching, although you are welcome to if you like." Dusk heads back over to check on one of the devices.`
 			choice
@@ -143,12 +141,12 @@ mission "Remnant: Cognizance 21"
 			`	You pick up some instruments, recording equipment, and wayfinding labels, then check the map tracking the other Remnant researchers. Picking an unexplored direction, you set off.`
 			`	The first few corridors are marked with labels indicating the direction that other explorers traveled. Picking an unmarked hallway, you put up a wayfinding label of your own, and set off along it. Almost immediately the sense of scale you noticed in the main room is reinforced, as you travel considerable distance between doorways. Glancing inside, you find room after room containing large platforms. Examining them, you find that each platform is lightly padded with several bars set into it along each side. At each end of the platform the surface has what you would guess to be storage lockers embedded in it. Based on your experience, you realize that these resemble storage platforms used to secure delicate cargo, but there is no indication of what that cargo might be.`
 			`	Further exploration reveals considerably more oversized rooms, including one with vast amounts of storage lockers and freezers. You note that the rooms you search appear to be fairly well organized, so you conclude that either whatever happened to this station did not cause a panic, or someone else cleaned up afterwards. After a few hours exploring you head back to the main area.`
-			goto wrapup
+				goto wrapup
 			label scienceassistant
 			apply scienceinterest += 1
 			`	You follow Dusk over to the equipment, and ask if there is anything you can do to help. He looks surprised, but pleased. After thinking about it for a moment, he asks you if you can help monitor some diagnostics and do some preventative maintenance on some of the equipment. Over the following few hours, Dusk keeps you involved in the work, occasionally explaining what the various pieces of equipment do. The rest of the team quickly follows suit, and before long you feel like part of the team. By the time Dusk starts wrapping up the observations you have started to pick up some of the scientific vocabulary, along with a few of the basics behind how the equipment works.`
 			`	You help pack up the equipment, then head back to the main room where Dusk and several others are gathered.`
-			goto wrapup
+				goto wrapup
 			label relax
 			`	You head back to the <ship> and run through all the preliminary checks to get ready for the trip back to <destination>. You quickly finish the checks, along with some preventative maintenance, and end up spending a few hours relaxing while you wait for Dusk and his team to finish their studies.`
 			`	Eventually you get a message from Dusk indicating that they are all packed up and ready to begin loading.`
@@ -162,6 +160,7 @@ mission "Remnant: Cognizance 21"
 			label loading
 			`	He gestures to the rest of the team, who immediately start loading the <ship>. "Well, it is time to head back." Dusk heads over to the equipment pile, and starts carrying equipment onboard.`
 	on complete
+		require "Research Laboratory"
 		payment 350000
 		conversation
 			`The trip back to <destination> goes quickly but quietly, as all the Remnant seem to be focused on writing reports of their observations. From what you can tell, each member of the team writes up their own observations and experiences, and then Dusk assembles all the reports into an expedition report that includes each researcher's verbatim report as well as his own.`
@@ -175,9 +174,8 @@ mission "Remnant: Cognizance 22"
 	source
 		government "Remnant"
 	stopover
-		and
-			government "Remnant"
-			neighbor distance 1 3
+		government "Remnant"
+		neighbor distance 1 3
 	to offer
 		has "Remnant: Cognizance 21: done"
 	to complete
@@ -205,8 +203,61 @@ mission "Remnant: Cognizance 22"
 			`	Taely looks disappointed, but shrugs. "No problem, I will get someone else to deliver it."`
 				decline
 			label affirmative
-			`	Taely looks please. "Excellent. Just delivers this to the archive on <destination>." She hands you a very robust looking datacrystal. "Looks a bit different from other data crystals, I am sure." She pauses. "These are archival crystals, and as such they have more robust data structures with many more layers of redundancy and error correction. Likewise, they have many additional layers of encryption and security to ensure that it does not fall into enemy hands. In other words, perfect for long-term storage." She pauses and smiles. "Once you have delivered this, please come back shortly to help with the initial launch of the new prototype."
+			`	Taely looks please. "Excellent. Just delivers this to the archive on <destination>." She hands you a very robust looking datacrystal. "Looks a bit different from other data crystals, I am sure." She pauses. "These are archival crystals, and as such they have more robust data structures with many more layers of redundancy and error correction. Likewise, they have many additional layers of encryption and security to ensure that it does not fall into enemy hands. In other words, perfect for long-term storage." She pauses and smiles. "Once you have delivered this, please come back shortly to help with the initial launch of the new prototype."`
 				accept
+	on stopover
+		conversation
+			`Glancing around the spaceport on <stopover> you quickly spot an information desk with several busy-looking Remnant. As you approach, one of them signs a greetings to you and asks how they can be of service today. A few gestures later, and they pull out a device that they wave over the data crystal. The device makes a number of chirps before falling silent, at which the Remnant looks satisfied. "Everything looks in order, Captain <last>. Please come this way." He gestures towards an inconspicuous hallway tucked behind the information desk.`
+			branch trusted
+				and
+					has "license: Remnant Capital"
+					or
+						not "Deep: Remnant 0: offered"
+						has "Deep: Remnant 0: declined"
+						has "Deep: Remnant 3: Secret: done"
+			label surfacevault
+			`	The Remnant leads you through several sets of increasingly impressive doors before arriving at a room filled with small doors. They pick one, use a key to open one, and pull out a small metal box that they unlock with a second key. "If you would place the data crystal here, we will record the surface metadata, and those who need it will be able to retrieve it when necessary." He waits until you have placed it in the box, then reverses the process to secure it in the vault wall again.`
+				goto departure
+			label trusted
+			`	The Remnant gestures "Would you prefer to put it put it in the surface vault or the deep vault?"`
+			choice
+				`	The surface vault.`
+					goto surfacevault
+				`	The deep vault.`
+			`	The Remnant leads you through several sets of increasingly impressive doors before finally taking you through an almost invisible door tucked in the back corner of a storage room. Inside, he pauses and gestures "I would recommend you hold onto the rails, and either hook your feet onto the toeholds or activate the magnets in your boots, if you have them. The drop is quite sudden." Looking around, you note that there are what look like toeholds bolted to the floor around the edge of the room, and your guide has inserted his feet into one pair.`
+			`	As soon as you gesture that you are ready, the floor seems to drop out from below you. It seems as though you are in an elevator dropping down so fast that you are experiencing negative g forces. After several minutes it begins to slow down and instead of feeling lighter than usual, you feel heavier than usual. Eventually, however, it eases off and the door opens once again.`
+			choice
+				`	"Well, onwards we go."`
+					goto vault
+				`	"How far down are we?"`
+			`	The Remnant smiles, and gestures "I do not know the exact distance, but suffice to say that it is far enough that multiple direct strikes to the spaceport with nuclear ordiance would be insufficient to penetrate to this depth."`
+			label vault
+			`	Outside the elevator, the Remnant leads you down a short hallway with many doors, and eventually it opens onto a larger hall. At the opposite end of the hall is a massive door flanked with several large devices that look remarkably similar to Point Defense Turrets, but subtly different. Your guide takes a few steps into the room, and a short pedestal pops out of the floor near him. He pulls a license out of his pocket, places it in the slot, and presses firmly on it for a second, before removing it once again.`
+			`	He then walks briskly across the hall, gesturing you to follow. Shields flare in and out of existence around the two of you, forming a series of openings that allow you to approach the vault door, which opens when you reach it. Inside is a disappointingly small room with a small tray on a pedestal.`
+			`	"If you would place the data crystal here, we will record the surface metadata, and those who need it will be able to retrieve it when necessary." He gestures to the tray, and once you place the datacrystal on it, a shield springs into existence surrounding the tray, and the whole assembly sinks into the floor.`
+			choice
+				`	"Well, that is done. Taely is waiting for me."`
+					goto departure
+				`	"Those turrets looked different"`
+			`	The Remnant nods. "You are observant. Most of those turrets are, in fact, the originals that we discovered here. They are excellent guardian systems, which is why we built similar ones to use as point defence systems for our ships.`
+			choice
+				`	"Originals?"`
+				`	"You did not build the vault?"`
+					goto buildvault
+			`	"Yes, originals. As in, they were built by those who lived here before us, and survived countless eons protecting these hidden vaults. Even after so much time, they were still sufficiently functional to be formidable obstacles. We have since repaired them and learned much, including a lot that we have yet to be able to put into practice." He sighs, but makes a gesture of anticipation. "If we can master even half the science that made these, we will be able to achieve things that would seem like magic to those still on the ancestral worlds."`
+			choice
+				`	"But you produce these turrets for use on ships..."`
+				`	"What about the Point Defence Turrets on your ships?"`
+			`	"There is a big difference between being able to make something that looks similar, and being able to recreate something perfectly. The elements that we have formed into the defence turrets are actually the simplest and least advanced pieces of these ancient protectors." He shakes his head. "Someday, though. We are making new breakthroughs all the time."`
+				goto departure
+			label buildvault
+			`	"No, we did not build the vaults. They were built by ancient inhabitants of these worlds. We were lucky to find them, hidden away as they were. We have studied them, repaired them, and added additional layers of our own; but fundamentally these are still the structures left behind by those who came before." He nods appreciatively at the surrounding room. Taking a moment to look around, you note that the walls and floor join seemlessly, and are made of a dark metallic substance that seems to shimmer. After allowing you a moment to admire the view, he turns back to the door. "Time to go, Captain. We would not want the sentries to think you were dawdling here."`
+			label departure
+			`	The Remnant leads you back out of the vault the same way you entered, and back to the information desk. He thanks you for your assistance and waves farewell before being drawn into a conversation with another ship captain. You gesture a polite farewell and head back to the spaceport. Taely mentioned something about launching a new prototype, and that is likely to be interesting.`
+	on complete
+		payment 250000
+		conversation
+			`You have barely cleared the security perimeter when your commlink chimes with a notification of a logistics credit of <payment> being deposited to your account, closely following a message to land on pad 3E5 near the research hanger Taely has been working in.`
 
 
 
@@ -216,18 +267,15 @@ mission "Remnant: Cognizance 23"
 	source
 		government "Remnant"
 	stopover
-		and
-			government "Remnant"
-			not attributes "requires: gaslining"
+		government "Remnant"
+		not attributes "requires: gaslining"
 	to offer
 		has "Remnant: Cognizance 22: done"
-		has outfit "Research Laboratory"
-	to complete
-		has outfit "Research Laboratory"
 	on offer
+		require "Research Laboratory"
 		conversation
-
-
+			`Stuff`
+	on complete
 
 
 
