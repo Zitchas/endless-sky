@@ -594,7 +594,7 @@ ship "Merganser"
 		"fuel capacity" 600
 		"ramscoop" 1
 		"mass" 50
-		"drag" .9
+		"drag" 1.5
 		"heat dissipation" .9
 		"gaslining" 1
 		"outfit space" 191
@@ -621,7 +621,7 @@ ship "Merganser"
 		"Inhibitor Cannon" 2
 		"Nullifier Missile" 6
 		
-		"Millennium Cell"
+		"Millennium Cell" 2
 		"Crystal Capacitor" 2
 		"Thermoelectric Cooler"
 		
