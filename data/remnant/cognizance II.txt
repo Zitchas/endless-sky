@@ -257,13 +257,14 @@ mission "Remnant: Cognizance 22"
 	on complete
 		payment 250000
 		conversation
-			`You have barely cleared the security perimeter when your commlink chimes with a notification of a logistics credit of <payment> being deposited to your account, closely following a message to land on pad 3E5 near the research hanger Taely has been working in.`
+			`You have barely cleared the security perimeter when your commlink chimes twice with a notification of a logistics credit of <payment> being deposited to your account, closely following a message to land on pad 3E5 near the research hanger Taely has been working in.`
 
 
 
 mission "Remnant: Cognizance 23"
 	name "First Flight"
 	description "Escort the Merganser to <stopover>."
+	landing
 	source
 		government "Remnant"
 	stopover
@@ -274,7 +275,16 @@ mission "Remnant: Cognizance 23"
 	on offer
 		require "Research Laboratory"
 		conversation
-			`Stuff`
+			`You disembark from the <ship> just in time to watch a trio of small ships taxi out of the hangar where Taely has been working. They are strange little ships, only somewhat larger than the terns and petrels you see on a regular basis. What stands out the most, however is the fact that the three ships seem to be walking of their own accord. Taely follows them out, and when they reach the landing pad she whistles, and the three ships turn around and cluster around her. She smiles and reaches up to pat them on the nose.`
+			choice
+				`	Walk over to where she is standing.`
+					goto walkover
+				`	Wait until she notices you.`
+			`	After several minutes of watching Taely commune with the trio of ships, she turns towards you and waves you over. "Enjoying the view?" She signs as you approach, but she continues without waiting for a response. "They are nice ships,and a major step forward in our ship development. Well worth watching."`
+				goto merganserintro
+			label walkover
+			`	Taely waves to you as you approach. "Eager to meet the latest additions to our fleet?" She pats the nose of the nearest ship. "They definitely are a beautiful addition to the Remnant patrols."`
+			label merganserintro
 	on complete
 
 
