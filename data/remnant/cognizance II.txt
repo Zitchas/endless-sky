@@ -273,18 +273,39 @@ mission "Remnant: Cognizance 23"
 	to offer
 		has "Remnant: Cognizance 22: done"
 	on offer
-		require "Research Laboratory"
 		conversation
-			`You disembark from the <ship> just in time to watch a trio of small ships taxi out of the hangar where Taely has been working. They are strange little ships, only somewhat larger than the terns and petrels you see on a regular basis. What stands out the most, however is the fact that the three ships seem to be walking of their own accord. Taely follows them out, and when they reach the landing pad she whistles, and the three ships turn around and cluster around her. She smiles and reaches up to pat them on the nose.`
+			`You disembark from the <ship> just in time to watch a trio of small ships taxi out of the hangar where Taely has been working. They are strange little ships, only somewhat larger than the terns and petrels you see on a regular basis. What stands out the most, however is the fact that the three ships seem to be walking of their own accord, moving forward on flexible landing legs. Taely follows them out, and when they reach the landing pad she whistles, and the three ships turn around and cluster around her. She smiles and reaches up to pat them on the nose. The trio sparkle with irridescent ripples as they move around, the skin flexing and twisting like some sort of organic creature.`
 			choice
 				`	Walk over to where she is standing.`
 					goto walkover
 				`	Wait until she notices you.`
-			`	After several minutes of watching Taely commune with the trio of ships, she turns towards you and waves you over. "Enjoying the view?" She signs as you approach, but she continues without waiting for a response. "They are nice ships,and a major step forward in our ship development. Well worth watching."`
+			`	After several minutes of watching Taely commune with the trio of ships, she turns towards you and waves you over. "Enjoying the view?" She signs as you approach, but she continues without waiting for a response. "They are nice ships,and a major step forward in our ship development. Well worth watching." She nods to herself as she runs a hand along a fin, as if checking something.`
 				goto merganserintro
 			label walkover
-			`	Taely waves to you as you approach. "Eager to meet the latest additions to our fleet?" She pats the nose of the nearest ship. "They definitely are a beautiful addition to the Remnant patrols."`
+			`	Taely waves to you as you approach. "Eager to meet the latest additions to our fleet?" She pats the nose of the nearest ship. "They definitely are a beautiful addition to the Remnant patrols." She smiles to herself and runs a hand along one of the fins as if checking for something.`
 			label merganserintro
+			branch penguin
+				has "event: remnant: penguin"
+			`	"Captain <first>," she signs, "Please meet our first three Mergansers. I have been working on them for years now, and recent breakthroughs in our materials science have enabled significant progress in our ship designs." She pauses and gestures to one. Would you like to touch it?`
+				goto touch
+			label penguin
+			`	"Captain <first>," she signs, "Please meet our first three Mergansers. I have been working on them for years now. In fact, the penguin that you helped me complete was an early prototype that was testing some of the techniques for these. With that and other recent breakthroughs in our materials science, significant progress in our ship designs has been made possible." She pauses and gestures to one. Would you like to touch it?`
+			label touch
+			choice
+				`	"No."`
+					goto turndown
+				`	"Yes."`
+			`	Taely smiles. "Just hold out your hand, and let it sense you first. Once it bumps your hand, you can touch it safely." You follow her example, and a few moments later the nearest merganser nudges your hand. You follow Taely's lead in running your hand along it, and you discover that - despite the slimy appearance - the ship skin is dry and smooth. The surface is clearly metallic, but you can feel it stretch and twist under your hand as the ship shifts and moves. You can feel pulsing vibrations not entirely unlike the ones you are used to on the <ship>, but with subtle fluctuations.`
+			choice
+				`	"So what do these ships do do?"`
+					goto turndown
+				`	"Amazing what science can do these days."`
+				`	"They are beautiful."`
+			`	Taely nods in agreement. "I am glad you can appreciate some of the things we have achieved here. It makes me think that you will appreciate some of my other projects too."`
+			label turndown
+			`	"Historically, we have relied on starlings to fill light combat roles here in the Ember Waste, but as we spread out through the galaxy finding new systems it stretches the number available for defense and patrols rather thin." She pauses, then continues. "Of course, we could just make more starlings, but our pool of specialized crew is not infinite either. The solution is these Mergansers. They are sufficiently advanced that they only require a single crew to operate, and have sufficient range to patrol significant amounts of the Ember Waste. This makes them ideal for escorting gulls on resource gathering expeditions, patrolling for incursions, and other uses. Perhaps most importantly, though, is that they are fast enough to chase down anything we have encountered out here so far."`
+			`	She frowns a bit at that. Unfortunately, the weapons program is not moving as quickly as I would like, so the Merganser does not have the tackling ability that I was originally envisioning for it. But at least it is an adept hunter we can use to pursue our enemies.`
+			
 	on complete
 
 
