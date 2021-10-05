@@ -305,7 +305,18 @@ mission "Remnant: Cognizance 23"
 			label turndown
 			`	"Historically, we have relied on starlings to fill light combat roles here in the Ember Waste, but as we spread out through the galaxy finding new systems it stretches the number available for defense and patrols rather thin." She pauses, then continues. "Of course, we could just make more starlings, but our pool of specialized crew is not infinite either. The solution is these Mergansers. They are sufficiently advanced that they only require a single crew to operate, and have sufficient range to patrol significant amounts of the Ember Waste. This makes them ideal for escorting gulls on resource gathering expeditions, patrolling for incursions, and other uses. Perhaps most importantly, though, is that they are fast enough to chase down anything we have encountered out here so far."`
 			`	She frowns a bit at that. Unfortunately, the weapons program is not moving as quickly as I would like, so the Merganser does not have the tackling ability that I was originally envisioning for it. But at least it is an adept hunter we can use to pursue our enemies.`
-			
+			choice
+				`	"OK"`
+					goto mergansermission
+				`	"What is tackling?"`
+			`	"In space combat, 'tackling' refers to the tactic of pinning down an enemy to make them vulnerable to the rest of the fleet. It can also refer to hindering a target's ability to move, run, or escape. You are probably familiar with the idea of using missiles or weapons with an impact force to disrupt an opponent's hyperjump. This is a prime example of tackling." She pauses, thoughtfully. "Our inhibitors are tackling weapons, but they are not sufficiently effective as far as I am concerned."`
+			choice
+				`	"Thanks for the explanation."`
+					goto mergansermission
+				`	"What is the problem with them?"`
+			`	"Decisive strike capability, mostly." Her gestures take on a conciliatory tone. "They are excellent weapons for swarms of ships, or when mounted on a ship that can carry many of them. But when one only has the opportunity to land a few hits, they are insufficient to pin down their target. But that is an aside. For now, we should celebrate our new ships, and see what they can do." She pets the nearest Merganser lovingly.`
+			label mergansermission
+			`	`
 	on complete
 
 
