@@ -398,6 +398,7 @@ mission "Remnant: Cognizance 24"
 	name "Equipment to Ssil Vida"
 	description "Dusk needs a load of <cargo> taken to Ssil Vida."
 	cargo "Outpost Equipment" 11
+	passengers 1
 	source
 		government "Remnant"
 	destination "Ssil Vida"
@@ -413,9 +414,22 @@ mission "Remnant: Cognizance 24"
 				`	"Why do you need to do that?"`
 			`	"For safety. The station might appear to be enduring and constant, but if we lacked independent facilities the slightest failure could kill everyone. Given that we do not even understand how the station is running, depending on it continuing to do so would be foolish." Taely nods in agreement with Dusk, and adds. "We will, of course, be looking to do a full evaluation of the station eventually, but it is rather large and it will be quite some time before we can finish that.`
 			label skipexplanation
-			`	Dusk gestures and their commlink sprays a holographic list into the air between you. "Basically, we would like you to take this set of equipment, then stop by Esquiline to pick up a technician by the name of Gavriil, who will be leading the establishment of the life support systems on Ssil Vida."`
+			`	Dusk gestures and their commlink sprays a holographic list into the air between you. "Basically, we would like you to load this set of equipment, then stop by Esquiline to pick up a technician by the name of Gavriil, who will be leading the establishment of the life support systems on Ssil Vida."`
 			choice
 				`	"I know Gavriil."`
 					goto knowgavriil
 				`	"Who is that?"`
-			`	"Gavriil is a technician with a knack for balancing life support systems, especially in situations where there are more than one environments that need to be kept in harmony. As I recall, you worked with him to set up Esquiline station."
+			`	"Gavriil is a technician with a knack for balancing life support systems, especially in situations where there are more than one environments that need to be kept in harmony. As I recall, you worked with him to set up Esquiline station."`
+				goto onwards
+			label knowgavriil
+			`	"Excellent. He is looking forward to working with you again. Now that the multi-environment facet of Esquiline is on track, he is ready to move on to a new challenge."`
+			label onwards
+			`	Dusk scans down the list of equipment. "This will be enough to get things started. We will have regular supply runs start after you deliver these, so there should be just the initial load that we would like you to take. Can you do it?"`
+			choice
+				`	Accept.`
+					accept
+				`	Decline.`
+					decline
+	on stopover
+		conversation
+			
