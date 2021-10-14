@@ -1,4 +1,4 @@
-# Copyright (c) 2020 by Zitchas
+# Copyright (c) 2021 by Zitchas
 #
 # Endless Sky is free software: you can redistribute it and/or modify it under the
 # terms of the GNU General Public License as published by the Free Software
@@ -401,6 +401,7 @@ mission "Remnant: Cognizance 24"
 	passengers 1
 	source
 		government "Remnant"
+	stopover "Esquiline"
 	destination "Ssil Vida"
 	to offer
 		has "Remnant: Cognizance 23: done"
@@ -432,4 +433,5 @@ mission "Remnant: Cognizance 24"
 					decline
 	on stopover
 		conversation
-			
+			`	As you slip into the dock on Esquiline it quickly becomes apparent that the station is rapidly returning to full functionality, or perhaps even expanding beyond its original design: People are everywhere, and most of them are moving with purpose or diligently working on something. Several technicians cling to the ceiling overhead as they install new conduit. Despite the busy atmosphere, people frequently stop to glance out the windows, and a flutter of gestures break out whenever someone spots a void sprite. Seeing how busy it is, you understand the traffic controler's request that you refrain from taking up a berth for longer than necessary.`
+			`	You find Gavriil nearby, where he is going over a freshly installed hydroponics array with a pair of Remnant in tow. He quickly finishes and gestures farewell to the other two before walking over to you. "Greetings, Captain <first>! Welcome back to Esquiline, it has changed a bit since you were here last." His gestures have an overtone of pride. "Dusk told me that we have a new station to bring online again.
