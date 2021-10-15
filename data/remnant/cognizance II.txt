@@ -434,4 +434,25 @@ mission "Remnant: Cognizance 24"
 	on stopover
 		conversation
 			`	As you slip into the dock on Esquiline it quickly becomes apparent that the station is rapidly returning to full functionality, or perhaps even expanding beyond its original design: People are everywhere, and most of them are moving with purpose or diligently working on something. Several technicians cling to the ceiling overhead as they install new conduit. Despite the busy atmosphere, people frequently stop to glance out the windows, and a flutter of gestures break out whenever someone spots a void sprite. Seeing how busy it is, you understand the traffic controler's request that you refrain from taking up a berth for longer than necessary.`
-			`	You find Gavriil nearby, where he is going over a freshly installed hydroponics array with a pair of Remnant in tow. He quickly finishes and gestures farewell to the other two before walking over to you. "Greetings, Captain <first>! Welcome back to Esquiline, it has changed a bit since you were here last." His gestures have an overtone of pride. "Dusk told me that we have a new station to bring online again.
+			`	You find Gavriil nearby, where he is going over a freshly installed hydroponics array with a pair of Remnant in tow. He quickly finishes and gestures farewell to the other two before walking over to you. "Greetings, Captain <first>! Welcome back to Esquiline, it has changed a bit since you were here last." His gestures have an overtone of pride. "Dusk told me that we have a new station to bring online again, so we should probably get moving.`
+	on complete
+		payment 250000
+		conversation
+			`	The equipment is quickly unloaded as Gavriil quickly scouts some of the nearby rooms. "I have picked a suitable area to start in. If you could help move these over to that room there," He gestures towards one of the large rooms with the platforms in it. "It would be much appreciated."`
+			choice
+				`	"I would rather not."`
+				`	"Sure."`
+					goto sure
+				`	"Why the rush?"`
+					goto rush
+			`	"Suit yourself, I have work to do." He quickly sets to moving the equipment to the desired room.`
+				goto gavriilend
+			label sure
+			`	"Thanks, many hands make light work." You quickly have all the equipment moved into the desired room.`
+				goto gavriilend
+			label rush
+			`	"Here, help carry this and we can talk while we shift this." He hands you a lift and the two of you start moving the equipment. "Basically, we had a visitor out here. Not sure who they were, but they flew a human ship. Our scans said there was one Korath and a bunch of humans onboard. And they came with enough firepower to make life miserable for everyone. We only had a few scouts in the area, so we stayed hidden and bargained. In the end, they gave us some 'useless' data, and they got an hour to explore the station and take a few loose items. Our scans indicated that they took some stuff without much obvious value from these big halls." He gestures to the room around you with all the platforms.`
+			choice
+				`	"That is odd."`
+				`	"What did the Remnant get?"`
+				
