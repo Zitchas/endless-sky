@@ -475,7 +475,7 @@ mission "Remnant: Cognizance 24"
 
 mission "Remnant: Cognizance 25"
 	name "Equipment to Ssil Vida"
-	description "Dusk needs a load of <cargo> taken to Ssil Vida."
+	description "Gavriil has asked you to do a patrol through the nearby systems."
 	landing
 	source "Ssil Vida"
 	waypoint "Diespiter"
