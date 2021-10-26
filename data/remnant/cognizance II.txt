@@ -505,4 +505,10 @@ mission "Remnant: Cognizance 25"
 			outfitters "Korath Basics" "Korath Exiles"
 			variant
 				"Korath Chaser" 3
-		dialog "You have destroyed the ships that the raider left behind."s
+		dialog "You have destroyed the ships that the raider left behind."
+	on waypoint
+		dialog "You have patrolled all six systems."
+	on complete
+		payment 250000
+		conversation
+			
