@@ -487,7 +487,7 @@ mission "Remnant: Cognizance 25"
 		has "Remnant: Cognizance 24: done"
 	on offer
 		conversation
-			`You have barely had a chance to check to finish your preflight checks on <ship> before Gavrill is tapping on your airlock. "Setting up a new environment is always an interesting challenge." Gavriil gestures. "But to the task at hand: Could you do a quick patrol through this collection of newly accessible systems? We have scouts enroute with surveillance satellites to place in each of them, but I picked up the signature of a korath raider that was here recently, and I want to be sure that it left no surprises." He pauses, then makes a gesture you have come to recognize as meaning the accompanying message is intended as a summary. "So, visit each of the systems in this sector, and make sure that the raider did not leave anything behind." His gestures switch to a tone of finality. "Can you help with this?"`
+			`You have barely had a chance to check to finish your preflight checks on <ship> before Gavriil is tapping on your airlock. "Setting up a new environment is always an interesting challenge." Gavriil gestures. "But to the task at hand: Could you do a quick patrol through this collection of newly accessible systems? We have scouts enroute with surveillance satellites to place in each of them, but I picked up the signature of a korath raider that was here recently, and I want to be sure that it left no surprises." He pauses, then makes a gesture you have come to recognize as meaning the accompanying message is intended as a summary. "So, visit each of the systems in this sector, and make sure that the raider did not leave anything behind." His gestures switch to a tone of finality. "Can you help with this?"`
 			choice
 				`	"Yes."`
 					accept
@@ -511,4 +511,14 @@ mission "Remnant: Cognizance 25"
 	on complete
 		payment 250000
 		conversation
-			
+			`Back on Ssil Vida, you check in with Gavriil and report the destruction of three Korath chasers that you located. "Three?" He signs quizickly. "That is an odd number. Raiders only carry two at most. I will report this right away. But in the meantime, come take a look at what I have set up." He leads you off towards the spaceport.`
+
+
+
+mission "Remnant: Cognizance 26"
+	name
+	
+	
+	
+	
+	look at this!" He gestures at the smooth sheeting covering the walls, and the new equipment quietly humming away off to the side. "Setting up the life support systems as self-contained environment within the station was simple enough that I did some preliminary power tracing on the station itself. It seems that the station is currently being powered by a immense fusion reactor that is clearly reaching its end of life." He pauses, then continues. "Not to mention it is basically running on the dregs of the dregs of the remains of its spent fuel. I do not know how much longer it will last, but likely no more than a few weeks, even at the vastly reduced  
