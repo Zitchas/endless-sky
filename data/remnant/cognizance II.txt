@@ -516,9 +516,14 @@ mission "Remnant: Cognizance 25"
 
 
 mission "Remnant: Cognizance 26"
-	name
-	
-	
-	
-	
-	look at this!" He gestures at the smooth sheeting covering the walls, and the new equipment quietly humming away off to the side. "Setting up the life support systems as self-contained environment within the station was simple enough that I did some preliminary power tracing on the station itself. It seems that the station is currently being powered by a immense fusion reactor that is clearly reaching its end of life." He pauses, then continues. "Not to mention it is basically running on the dregs of the dregs of the remains of its spent fuel. I do not know how much longer it will last, but likely no more than a few weeks, even at the vastly reduced  
+	name "Bring an Aeon Cell to Ssil Vida"
+	description "Gavriil has asked you to go pick up a self-contained Aeon Cell from Viminal."
+	source "Ssil Vida"
+	stopover "Viminal"
+	to offer
+		has "Remnant: Cognizance 25: done"
+	on offer
+		conversation
+			`Gavriil strides into the room with confidence. "look at this!" He gestures at the smooth sheeting covering the walls, and the new equipment quietly humming away off to the side. A large panel with a diagram of the station stands out in the middle of it.`
+			scene "ssil vida alert holoram"
+			`	"Setting up the life support systems as self-contained environment within the station was simple enough that I did some preliminary power tracing on the station itself. It seems that the station is currently being powered by a immense fusion reactor that is clearly reaching its end of life." He pauses, then continues. "Not to mention it is basically running on the dregs of the dregs of the remains of its spent fuel. I do not know how much longer it will last, but likely no more than a few weeks, even at the vastly reduced  `
