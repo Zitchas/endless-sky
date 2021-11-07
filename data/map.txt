@@ -18460,7 +18460,7 @@ system Parca
 			sprite planet/rhea
 			distance 305
 			period 15.037
-		object
+		object Baianus
 			sprite planet/callisto
 			distance 424
 			period 24.6467
@@ -26458,6 +26458,13 @@ planet Babiali
 	description `Babiali's surface is a bona fide example of cataclysm. Ice and rock extends from horizon to horizon, with vast networks of cracks and fissures suggesting it was subject to some kind of sudden force fairly recently in its geological history.`
 	description `	At present, Babiali has a regular stream of mining and research craft systematically flying over the crust looking for rare metals or anything else of value. Despite the activity, no one has bothered to set up anything resembling a spaceport.`
 	security 0
+	government Uninhabited
+
+planet Baianus
+	attributes uninhabited
+	landscape land/canyon12
+	description `This frozen water world is reminiscent of Titan back in Sol: The surface is little more than a shattered wasteland of ice and the ocassional rock outcropping, but the unbreathably thin atmosphere contains countless tantilizing traces of chemicals that suggest that something more might exist below the surface.`
+	description `	Unlike Titan, however, Baianus is regularly wracked by both waves of heat and energy, and a stay of any length on the surface is likely to see waves of auroras accompanied by glows and sparks rippling across the terrain. Your environmental system strongly recommends remaining inside your ship whenever ion storms are active.`
 	government Uninhabited
 
 planet "Bank of Blugtad"

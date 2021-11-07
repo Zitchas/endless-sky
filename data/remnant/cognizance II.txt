@@ -528,7 +528,53 @@ mission "Remnant: Cognizance 26"
 			`Gavriil strides into the room with confidence. "look at this!" He gestures at the smooth sheeting covering the walls, and the new equipment quietly humming away off to the side. A large panel with a diagram of the station stands out in the middle of it.`
 			scene "scene/ssil vida alert holoram"
 			`	"Setting up the life support systems as self-contained environment within the station was simple enough that I did some preliminary power tracing on the station itself. It seems that the station is currently being powered by a immense fusion reactor that is clearly reaching its end of life." He pauses, then continues. "Not to mention it is basically running on the dregs of the dregs of the remains of its spent fuel. I do not know how much longer it will last, but likely no more than a few weeks. As best I can tell, it is still trying to power everything, but the main load," He points to the glowing red sphere on the hologram. "Seems to have simply shutdown once the power levels dropped below a certain threshold." He frowns at the display.`
-			`	"I do not know what will happen to the station when the main reactor fails completely, and we are not interested in letting this station collapse before we have had the chance to thoroughly investigate it. As such, we need to take action now to give ourselves room to work." He turns towards you. "I have contacted Viminal, and they have an Aeon Cell ready for transport. Please go pick it up and transport it back here." He smiles faintly. "Oh, and it does not matter whether you transport it installed on your ship or in your cargo, but make sure it is not your primary power source: I have the tools to uninstall it from your ship and set it up to connect to the station, but I do not have the equipment to install it back into your ship. Remember: It is vital that I have the Aeon Cell by <date>.`
+			`	"I do not know what will happen to the station when the main reactor fails completely, and we are not interested in letting this station collapse before we have had the chance to thoroughly investigate it. As such, we need to take action now to give ourselves room to work." He turns towards you. "I have contacted Viminal, and they have an Aeon Cell ready for transport. Please go pick it up and transport it back here." He smiles faintly. "Oh, and it does not matter whether you transport it installed on your ship or in your cargo, but make sure it is not your primary power source: I have the tools to uninstall it from your ship and set it up to connect to the station, but I do not have the equipment to install it back into your ship." He pauses to check a readout on the display. "Remember: It is vital that I have the Aeon Cell by <date>.`
 				accept
 	on stopover "Viminal"
 		outfit "Aeon Cell" 1
+		dialog "The Remnant have an Aeon cell ready when you land. You remind yourself to make sure that it is suitably stowed before taking off again."
+	on complete
+		payment 250000
+		outfit "Aeon Cell" -1
+		conversation
+			`Gavriil has you unload the Aeon Cell into a corner of a nearby bay. "Thank you, <first>! The station is running critically low of power, and this should help stabilize it. We will eventually need a full team out here as well as some fuel to get the main reactor running again, but first we need to figure out exactly what it uses."`
+			`	He pulls out his commlink and checks a few things. "Go to Caelian and check in with Torza. He should have finished putting the team through their paces by the time you get there. See you soon, Captain!"`
+
+
+
+mission "Remnant: Cognizance 27"
+	name "Recover equipment from Baianus."
+	description "Torza has asked you to recover equipment from Baianus by <date>."
+	blocked "Over the commlink Torza is a flurry of motion as he issues orders in several directions. 'Right now, we need another ship that can evacuate 302 tons and 20 people. Come back when you can help."
+	deadline 12
+	cargo "reserved" 302
+	passengers 20
+	source "Caelian"
+	destination "Baianus"
+	to offer
+		has "Remnant: Cognizance 26: done"
+	on offer
+		conversation
+			``
+
+
+
+mission "Remnant: Cognizance 28"
+	name "Recover equipment from Baianus."
+	description "Torza has asked you to recover equipment from Baianus by <date>."
+	blocked `The scene is one of organized chaos. One Remnant signs "We need a ship that can carry 302 cargo and 20 passengers."`
+	deadline 12
+	cargo "equipment" 302
+	passengers 20
+	landing
+	source "Baianus"
+	destination "Caelian"
+	to offer
+		has "Remnant: Cognizance 27: done"
+	on offer
+		conversation
+			`Punching through the Korath blockade finds you racing across the aurora filled skies of Baianus. You quickly slide into the designated approach track and start to enter your IFF code as a barrage of anti-air fire erupts from the ground to lance over your shoulder. As you drop into evasive manouvers you spot the wreckage of a chaser tumbling to the ice behind you, and a firelance beam sears the air where the <ship> had just been. Moments later you get the confirmation signal that they have accepted your ID and are tracking your position.`
+			`	As you approach the entrance to the starport directions appear on your comm panel directing you to a large stack of equipment around the edge of the landing pad. You ease inside and have barely touched down when a technician is dropping from the ceiling down onto your hull with a refueling hose and repair equipment. Meanwhile, a swarm of Remnant have equipment in motion. You quickly open the cargo hold doors, and the Remnant rush onboard directing lifts and loaders.`
+			`	The Remnant move fast, but you can hear the battle approaching. Even through the <ship>'s dampeners you can feel the heavy thud of anti-air artillery. The whine of generators being pushed to the limit fills the air as the shields crackle with incoming fire. Through the cacophany the Remnant move with purpose, gesturing directions silently through the din. Finally the last load is packed onboard, and one of them comes up to the cockpit. "Thank you for your assistance, Captain <last>. As the explosive charges have been set, I recommend we leave promptly." They nod respectfully, then strap themselves into the nearest harness.`
+			
+			
