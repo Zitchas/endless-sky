@@ -545,9 +545,10 @@ mission "Remnant: Cognizance 26"
 mission "Remnant: Cognizance 27"
 	name "Recover equipment from Baianus."
 	description "Torza has asked you to recover equipment from Baianus by <date>."
-	blocked "Over the commlink Torza is a flurry of motion as he issues orders in several directions. 'Right now, we need another ship that can evacuate 302 tons and 20 people. Come back when you can help."
+	landing
+	blocked "Over the commlink Torza is a flurry of motion as he issues orders in several directions. 'Right now, we need another ship that can evacuate 280 tons and 20 people. Come back when you can help."
 	deadline 12
-	cargo "reserved" 302
+	cargo "reserved" 280
 	passengers 20
 	source "Caelian"
 	destination "Baianus"
@@ -555,18 +556,32 @@ mission "Remnant: Cognizance 27"
 		has "Remnant: Cognizance 26: done"
 	on offer
 		conversation
-			``
+			`Your commlink springs to life as you enter final approach to Caelian, revealing Torza in a flurry of motion. He focuses momentarily on the camera. "Captain <first>, and flying a ship with a substantial lifting capacity, excellent! The Korath have discovered one of our forward operating bases, and we need help evacuating it now. It is located on Baianus in the Parca system. There is 20 people and 280 cubic meters of equipment to retrieve. The Korath have setup a blockade as they s, so you will need something reasonably fast to get through it. You can kill them or not, as you wish, but the primary task is evacuating the outpost."`
+				accept
+	npc
+		government "Korath"
+		personality heroic plunders harvests waiting staying
+		fleet
+			names "korath"
+			cargo 3
+			commodities Food Metal Plastic "Heavy Metals"
+			outfitters "Korath Basics" "Korath Exiles"
+			variant
+				"Korath World-Ship B (Ember)"
+				"Korath Dredger" 3
+				"Korath Raider (Ember)" 6
+				"Korath Chaser" 24
 
 
 
 mission "Remnant: Cognizance 28"
 	name "Recover equipment from Baianus."
 	description "Torza has asked you to recover equipment from Baianus by <date>."
+	landing
 	blocked `The scene is one of organized chaos. One Remnant signs "We need a ship that can carry 302 cargo and 20 passengers."`
 	deadline 12
 	cargo "equipment" 302
 	passengers 20
-	landing
 	source "Baianus"
 	destination "Caelian"
 	to offer
@@ -574,7 +589,21 @@ mission "Remnant: Cognizance 28"
 	on offer
 		conversation
 			`Punching through the Korath blockade finds you racing across the aurora filled skies of Baianus. You quickly slide into the designated approach track and start to enter your IFF code as a barrage of anti-air fire erupts from the ground to lance over your shoulder. As you drop into evasive manouvers you spot the wreckage of a chaser tumbling to the ice behind you, and a firelance beam sears the air where the <ship> had just been. Moments later you get the confirmation signal that they have accepted your ID and are tracking your position.`
-			`	As you approach the entrance to the starport directions appear on your comm panel directing you to a large stack of equipment around the edge of the landing pad. You ease inside and have barely touched down when a technician is dropping from the ceiling down onto your hull with a refueling hose and repair equipment. Meanwhile, a swarm of Remnant have equipment in motion. You quickly open the cargo hold doors, and the Remnant rush onboard directing lifts and loaders.`
-			`	The Remnant move fast, but you can hear the battle approaching. Even through the <ship>'s dampeners you can feel the heavy thud of anti-air artillery. The whine of generators being pushed to the limit fills the air as the shields crackle with incoming fire. Through the cacophany the Remnant move with purpose, gesturing directions silently through the din. Finally the last load is packed onboard, and one of them comes up to the cockpit. "Thank you for your assistance, Captain <last>. As the explosive charges have been set, I recommend we leave promptly." They nod respectfully, then strap themselves into the nearest harness.`
-			
-			
+			`	As you approach the entrance to the starport directions appear on your comm panel directing you to a spot where a large stack of equipment surrounds the landing pad. You ease inside and have barely touched down when a technician is dropping from the ceiling down onto your hull with a refueling hose and repair equipment. Meanwhile, a swarm of Remnant have equipment in motion. You quickly open the cargo hold doors, and the Remnant rush onboard directing lifts and loaders.`
+			`	The Remnant move fast, but you can hear the battle approaching. Even through the <ship>'s dampeners you can feel the heavy thud of anti-air artillery. The whine of generators being pushed to the limit fills the air as the shields crackle with incoming fire. Through the cacophany the Remnant move with purpose, gesturing instructions silently through the din. Finally the last load is packed onboard, and one of them comes up to the cockpit. "Thank you for your assistance, Captain <last>. As the explosive charges have been set, I recommend we leave promptly." They nod respectfully, then strap themselves into the nearest harness.`
+			`	The shield opens one final time to allow you to leave, leaping practically into the teeth of a Korath attack. The anti-air artillery continues its rythmic barrage against the incoming ships, but it is evident that both it and the shields around the base are failing under the assault. As you head for orbit, the last image you see is of the artillery pieces sag and collapse as they melt into the ground. Your sensors record a sudden explosion from the cavern, to which the Remnant give a sad but satisfied nod. "Take us back to Caelian please, Captain."`
+				launch
+	npc
+		government "Korath"
+		personality heroic plunders harvests waiting staying
+		fleet
+			names "korath"
+			cargo 3
+			commodities Food Metal Plastic "Heavy Metals"
+			outfitters "Korath Basics" "Korath Exiles"
+			variant
+				"Korath World-Ship B (Ember)"
+				"Korath Dredger" 3
+				"Korath Raider (Ember)" 6
+				"Korath Chaser" 24
+
