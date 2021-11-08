@@ -377,7 +377,7 @@ government "Marauder that acts like a pirate"
 		"Author" .01
 		"Pirate" 1
 		"Hai" -.01
-		" Hai " -.01
+		"Hai (Unfettered)" -.01
 		"Korath" -.01
 		"Merchant" -.1
 		"Syndicate" -.01
