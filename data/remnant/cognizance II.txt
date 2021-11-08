@@ -556,7 +556,7 @@ mission "Remnant: Cognizance 27"
 		has "Remnant: Cognizance 26: done"
 	on offer
 		conversation
-			`Your commlink springs to life as you enter final approach to Caelian, revealing Torza in a flurry of motion. He focuses momentarily on the camera. "Captain <first>, and flying a ship with a substantial lifting capacity, excellent! The Korath have discovered one of our forward operating bases, and we need help evacuating it now. It is located on Baianus in the Parca system. There is 20 people and 280 cubic meters of equipment to retrieve. The Korath have setup a blockade as they s, so you will need something reasonably fast to get through it. You can kill them or not, as you wish, but the primary task is evacuating the outpost."`
+			`Your commlink springs to life as you enter final approach to Caelian, revealing Torza in a flurry of motion. He focuses momentarily on the camera. "Captain <first>, and flying a ship with a substantial lifting capacity, excellent! The Korath have discovered one of our forward operating bases, and we need help evacuating it now. It is located on Baianus in the Parca system. There is 20 people and 280 cubic meters of equipment to retrieve. The Korath have setup a blockade, so you will need something reasonably fast to get through it. You can kill them or not, as you wish, but the primary task is evacuating the outpost. Embers speed your flight, Captain."`
 				accept
 	npc
 		government "Korath"
@@ -567,8 +567,8 @@ mission "Remnant: Cognizance 27"
 			commodities Food Metal Plastic "Heavy Metals"
 			outfitters "Korath Basics" "Korath Exiles"
 			variant
-				"Korath World-Ship B (Ember)"
-				"Korath Dredger" 3
+				"Korath Dredger" 1
+				"Korath Dredger (Ground Assault)" 2
 				"Korath Raider (Ember)" 6
 				"Korath Chaser" 24
 
@@ -602,8 +602,13 @@ mission "Remnant: Cognizance 28"
 			commodities Food Metal Plastic "Heavy Metals"
 			outfitters "Korath Basics" "Korath Exiles"
 			variant
-				"Korath World-Ship B (Ember)"
-				"Korath Dredger" 3
+				"Korath Dredger" 1
+				"Korath Dredger (Ground Assault)" 2
 				"Korath Raider (Ember)" 6
 				"Korath Chaser" 24
+	on complete
+		payment 500000
+		conversation
+			`The brutal sun of Caelian hits you like a hammer as you open the hatch to let the evacuees out. A few of the Remnant step into the sun as if relishing the heat, while others move quickly to the shade of a nearby structure to confer. Several, however, need to be carried out to waiting vehicles: It seems that they were hurt in one of the initial raids, and while adrenaline kept them going during the evacuation, their condition deteriorated during the flight back. Meanwhile, other Remnant appear next to the ship with cargo lifts and camel-drawn hovercarts, and begin to offload.`
+			`	"The Embers saw you safetly through, I see." Gestures Torza, appearing from a nearby hatch. 
 
