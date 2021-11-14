@@ -610,5 +610,5 @@ mission "Remnant: Cognizance 28"
 		payment 500000
 		conversation
 			`The brutal sun of Caelian hits you like a hammer as you open the hatch to let the evacuees out. A few of the Remnant step into the sun as if relishing the heat, while others move quickly to the shade of a nearby structure to confer. Several, however, need to be carried out to waiting vehicles: It seems that they were hurt in one of the initial raids, and while adrenaline kept them going during the evacuation, their condition deteriorated during the flight back. Meanwhile, other Remnant appear next to the ship with cargo lifts and camel-drawn hovercarts, and begin to offload.`
-			`	"The Embers saw you safetly through, I see." Gestures Torza, appearing from a nearby hatch. 
+			`	"The Embers saw you safely through, I see." Gestures Torza, appearing from a nearby hatch. 
 
