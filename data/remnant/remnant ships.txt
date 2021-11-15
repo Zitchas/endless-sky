@@ -858,7 +858,7 @@ ship "Peregrine"
 		"heat dissipation" 0.85
 		"fuel capacity" 900
 		"ramscoop" 2.5
-		"cargo space" 49
+		"cargo space" 59
 		"outfit space" 552
 		"weapon capacity" 220
 		"engine capacity" 171

@@ -532,12 +532,12 @@ mission "Remnant: Cognizance 26"
 				accept
 	on stopover "Viminal"
 		outfit "Aeon Cell" 1
-		dialog "The Remnant have an Aeon cell ready when you land. You remind yourself to make sure that it is suitably stowed before taking off again."
+		dialog "The Remnant have an Aeon cell ready when you land. They carefully move it to your ship, and several touch it reverantly before they depart. You remind yourself to make sure that it is suitably stowed before taking off again."
 	on complete
 		payment 250000
 		outfit "Aeon Cell" -1
 		conversation
-			`Gavriil has you unload the Aeon Cell into a corner of a nearby bay. "Thank you, <first>! The station is running critically low of power, and this should help stabilize it. We will eventually need a full team out here as well as some fuel to get the main reactor running again, but first we need to figure out exactly what it uses."`
+			`Gavriil has you unload the Aeon Cell into a corner of a nearby bay. "Thank you, <first>! The station is running critically low of power, and this should help stabilize it. We will eventually need a full team out here as well as some fuel to get the main reactor running properly, but first we need to figure out exactly what it uses."`
 			`	He pulls out his commlink and checks a few things. "Go to Caelian and check in with Torza. He should have finished putting the team through their paces by the time you get there. See you soon, Captain!"`
 
 
@@ -546,7 +546,7 @@ mission "Remnant: Cognizance 27"
 	name "Recover equipment from Baianus."
 	description "Torza has asked you to recover equipment from Baianus by <date>."
 	landing
-	blocked "Over the commlink Torza is a flurry of motion as he issues orders in several directions. 'Right now, we need another ship that can evacuate 280 tons and 20 people. Come back when you can help."
+	blocked "Over the commlink Torza is a flurry of motion as he issues orders in several directions. 'Right now, we need another ship that can evacuate 280 tons and 20 people. Return here when you have suitable capabilities."
 	deadline 12
 	cargo "reserved" 280
 	passengers 20
@@ -580,7 +580,7 @@ mission "Remnant: Cognizance 28"
 	landing
 	blocked `The scene is one of organized chaos. One Remnant signs "We need a ship that can carry 302 cargo and 20 passengers."`
 	deadline 12
-	cargo "equipment" 302
+	cargo "equipment" 280
 	passengers 20
 	source "Baianus"
 	destination "Caelian"
@@ -610,5 +610,29 @@ mission "Remnant: Cognizance 28"
 		payment 500000
 		conversation
 			`The brutal sun of Caelian hits you like a hammer as you open the hatch to let the evacuees out. A few of the Remnant step into the sun as if relishing the heat, while others move quickly to the shade of a nearby structure to confer. Several, however, need to be carried out to waiting vehicles: It seems that they were hurt in one of the initial raids, and while adrenaline kept them going during the evacuation, their condition deteriorated during the flight back. Meanwhile, other Remnant appear next to the ship with cargo lifts and camel-drawn hovercarts, and begin to offload.`
-			`	"The Embers saw you safely through, I see." Gestures Torza, appearing from a nearby hatch. 
+			`	"The Embers saw you safely through." Gestures Torza with a note of appreciation, appearing from a nearby hatch. "The loss of that outpost is unfortunate, but at least most of the Remnant there survived. Thank you for your assistance." He glances at his commlink. Your logistics adjustment has been added to your account, of course, but I suspect that you are interested in pushing forward the progress in studying Ssil Vida. Meet me in the spaceport in a couple hours."`
+
+
+
+mission "Remnant: Cognizance 29"
+	name "Recover equipment from Baianus."
+	description "Torza has asked you to recover equipment from Baianus by <date>."
+	landing
+	blocked `You check in with Torza, who glances at his commlink. "You will need a ship with space for 15 people and 30 cubic meters of cargo."`
+	cargo "equipment" 30
+	passengers 15
+	source "Caelian"
+	destination "Viminal"
+	to offer
+		has "Remnant: Cognizance 28: done"
+	on offer
+		conversation
+			`You walk into the cafeteria to find a group of Remnant looking tired but pleased with themselves. Torza is striding among them with a tray filled with bottles, handing them out. "Good work, everyone. And excellent pacing on that run." He turns towards you. "And right on schedule, the captain who will be transporting you over to Ssil Vida." He gestures for you to take a seat and offers you a bottle as well.`
+			choice
+				`	Gesture that you are not thirsty.`
+					goto notthirsty
+				`	Take a bottle and gesture appreciation.`
+			`	You sip from the bottle, and discover that it tastes like some kind of restorative sports drink. You can pick out hints of salt and a few other flavors, but most of it is an indeterminate taste you cannot quite identify. Torza nods in approval as you drink. "Especially in heat like this, hydration is important." He turns back to the group.`
+			`	"Now as discussed 
+
 
