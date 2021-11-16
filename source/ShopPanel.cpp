@@ -379,7 +379,7 @@ void ShopPanel::DrawButtons()
 		int modWidth = font.Width(mod);
 		font.Draw(mod, buyCenter + Point(-.5 * modWidth, 10.), dim);
 		if(CanSellMultiple())
-			font.Draw(mod, sellCenter + Point(-.5 * modWidth, 10.), dim);	
+			font.Draw(mod, sellCenter + Point(-.5 * modWidth, 10.), dim);
 	}
 }
 
@@ -686,6 +686,8 @@ bool ShopPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &command, boo
 				playerShip = playerShips.empty() ? nullptr : *playerShips.begin();
 		}
 	}
+	else if(key == SDLK_TAB)
+		activePane = (activePane == ShopPane::Main ? ShopPane::Sidebar : ShopPane::Main);
 	else
 		return false;
 	
@@ -1018,7 +1020,7 @@ void ShopPanel::SideSelect(Ship *ship)
 			else if(on)
 				playerShips.insert(other.get());
 		}
-	}	
+	}
 	else if(!control)
 		playerShips.clear();
 	else if(playerShips.count(ship))

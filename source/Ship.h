@@ -248,7 +248,7 @@ public:
 	bool IsThrusting() const;
 	bool IsReversing() const;
 	bool IsSteering() const;
-	// The direction that the ship is steering. If positive, the ship is steering right. 
+	// The direction that the ship is steering. If positive, the ship is steering right.
 	// If negative, the ship is steering left.
 	double SteeringDirection() const;
 	// Get the points from which engine flares should be drawn.
@@ -516,9 +516,20 @@ private:
 	double fuel = 0.;
 	double energy = 0.;
 	double heat = 0.;
-	double ionization = 0.;
-	double disruption = 0.;
-	double slowness = 0.;
+ 	// Accrued "ion damage" that will affect this ship's energy over time.
+ 	double ionization = 0.;
+ 	// Accrued "disruption damage" that will affect this ship's shield effectiveness over time.
+ 	double disruption = 0.;
+ 	// Accrued "slowing damage" that will affect this ship's movement over time.
+ 	double slowness = 0.;
+ 	// Accrued "discharge damage" that will affect this ship's shields over time.
+ 	double discharge = 0.;
+ 	// Accrued "corrosion damage" that will affect this ship's hull over time.
+ 	double corrosion = 0.;
+ 	// Accrued "leak damage" that will affect this ship's fuel over time.
+ 	double leakage = 0.;
+ 	// Accrued "burn damage" that will affect this ship's heat over time.
+ 	double burning = 0.;
 	// Delays for shield generation and hull repair.
 	int shieldDelay = 0;
 	int hullDelay = 0;
