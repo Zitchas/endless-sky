@@ -216,7 +216,7 @@ mission "Remnant: Cognizance 22"
 						has "Deep: Remnant 0: declined"
 						has "Deep: Remnant 3: Secret: done"
 			label surfacevault
-			`	The Remnant leads you through several sets of increasingly impressive doors before arriving at a room filled with small doors. They pick one, use a key to open one, and pull out a small metal box that they unlock with a second key. "If you would place the data crystal here, we will record the surface metadata, and those who need it will be able to retrieve it when necessary." He waits until you have placed it in the box, then reverses the process to secure it in the vault wall again.`
+			`	The Remnant leads you through several sets of increasingly impressive doors before arriving at a room filled with tiny doors. They pick one, use a key to open one, and pull out a small metal box that they unlock with a second key. "If you would place the data crystal here, we will record the surface metadata, and those who need it will be able to retrieve it when necessary." He waits until you have placed it in the box, then reverses the process to secure it in the vault wall again.`
 				goto departure
 			label trusted
 			`	The Remnant gestures "Would you prefer to put it put it in the surface vault or the deep vault?"`
@@ -239,16 +239,21 @@ mission "Remnant: Cognizance 22"
 				`	"Well, that is done. Taely is waiting for me."`
 					goto departure
 				`	"Those turrets looked different"`
-			`	The Remnant nods. "You are observant. Most of those turrets are, in fact, the originals that we discovered here. They are excellent guardian systems, which is why we built similar ones to use as point defence systems for our ships.`
+			`	The Remnant nods. "You are observant. Most of those turrets are, in fact, the originals that we discovered here. Each one is a veritable fortress in and of itself, which is why we built similar ones to use as point defence systems for our ships.`
 			choice
 				`	"Originals?"`
 				`	"You did not build the vault?"`
 					goto buildvault
+				`	"What do you mean by fortress?"`
+					goto fortress
 			`	"Yes, originals. As in, they were built by those who lived here before us, and survived countless eons protecting these hidden vaults. Even after so much time, they were still sufficiently functional to be formidable obstacles. We have since repaired them and learned much, including a lot that we have yet to be able to put into practice." He sighs, but makes a gesture of anticipation. "If we can master even half the science that made these, we will be able to achieve things that would seem like magic to those still on the ancestral worlds."`
 			choice
 				`	"But you produce these turrets for use on ships..."`
 				`	"What about the Point Defence Turrets on your ships?"`
 			`	"There is a big difference between being able to make something that looks similar, and being able to recreate something perfectly. The elements that we have formed into the defence turrets are actually the simplest and least advanced pieces of these ancient protectors." He shakes his head. "Someday, though. We are making new breakthroughs all the time."`
+				goto departure
+			label fortress
+			`	The Remnant's gestures take on a tone of curiosity. "We are not sure what they are intended to hold, but their design includes a lot of passageways and chambers that resemble a hive or a miniature city. Some have speculated that the vault builders might have been miniscule beings, which would mean that these protective devices might well have housed thousands of individuals." He shakes his head. "Despite all we have learned about them, there are still some things that we do not quite understand." After allowing you a moment to absorb the implications, he turns back to the door. "Time to go, Captain. The sentries grow twitchy when people dawdle here."`
 				goto departure
 			label buildvault
 			`	"No, we did not build the vaults. They were built by ancient inhabitants of these worlds. We were lucky to find them, hidden away as they were. We have studied them, repaired them, and added additional layers of our own; but fundamentally these are still the structures left behind by those who came before." He nods appreciatively at the surrounding room. Taking a moment to look around, you note that the walls and floor join seemlessly, and are made of a dark metallic substance that seems to shimmer. After allowing you a moment to admire the view, he turns back to the door. "Time to go, Captain. We would not want the sentries to think you were dawdling here."`
