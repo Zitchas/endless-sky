@@ -786,6 +786,7 @@ ship "Penguin"
 		"reverse flare sprite" "effect/remnant flare/small"
 			"frame rate" 5
 		"reverse flare sound" "plasma tiny"
+		"remnant node" 1
 		weapon
 			"blast radius" 20
 			"shield damage" 260
@@ -873,7 +874,9 @@ ship "Peregrine"
 		"outfit scan power" 18
 		"outfit scan speed" 1
 		"tactical scan power" 50
-		"remnant node" 3
+		"ion protection" 0.25
+		"slowing protection" 0.25
+		"remnant node" 5
 		weapon
 			"blast radius" 240
 			"shield damage" 2400

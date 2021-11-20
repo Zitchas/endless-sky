@@ -253,7 +253,7 @@ mission "Remnant: Cognizance 22"
 			`	"There is a big difference between being able to make something that looks similar, and being able to recreate something perfectly. The elements that we have formed into the defence turrets are actually the simplest and least advanced pieces of these ancient protectors." He shakes his head. "Someday, though. We are making new breakthroughs all the time."`
 				goto departure
 			label fortress
-			`	The Remnant's gestures take on a tone of curiosity. "We are not sure what they are intended to hold, but their design includes a lot of passageways and chambers that resemble a hive or a miniature city. Some have speculated that the vault builders might have been miniscule beings, which would mean that these protective devices might well have housed thousands of individuals." He shakes his head. "Despite all we have learned about them, there are still some things that we do not quite understand." After allowing you a moment to absorb the implications, he turns back to the door. "Time to go, Captain. The sentries grow twitchy when people dawdle here."`
+			`	The Remnant's gestures take on a tone of curiosity. "We are not sure what they are intended to hold, but their design includes a lot of passageways and chambers that resemble a hive or a miniature city. Some have speculated that the vault builders might have been miniscule beings, which would mean that these protective devices might well have housed thousands of individuals." He shakes his head. "It must have been quite the feat to survive and prosper in a world where wildlife could annihilate a village in a single footstep." After allowing you a moment to absorb the implications, he turns back to the door. "Time to go, Captain. The sentries grow twitchy when people dawdle here."`
 				goto departure
 			label buildvault
 			`	"No, we did not build the vaults. They were built by ancient inhabitants of these worlds. We were lucky to find them, hidden away as they were. We have studied them, repaired them, and added additional layers of our own; but fundamentally these are still the structures left behind by those who came before." He nods appreciatively at the surrounding room. Taking a moment to look around, you note that the walls and floor join seemlessly, and are made of a dark metallic substance that seems to shimmer. After allowing you a moment to admire the view, he turns back to the door. "Time to go, Captain. We would not want the sentries to think you were dawdling here."`
@@ -614,20 +614,20 @@ mission "Remnant: Cognizance 28"
 	on complete
 		payment 500000
 		conversation
-			`The brutal sun of Caelian hits you like a hammer as you open the hatch to let the evacuees out. A few of the Remnant step into the sun as if relishing the heat, while others move quickly to the shade of a nearby structure to confer. Several, however, need to be carried out to waiting vehicles: It seems that they were hurt in one of the initial raids, and while adrenaline kept them going during the evacuation, their condition deteriorated during the flight back. Meanwhile, other Remnant appear next to the ship with cargo lifts and camel-drawn hovercarts, and begin to offload.`
-			`	"The Embers saw you safely through." Gestures Torza with a note of appreciation, appearing from a nearby hatch. "The loss of that outpost is unfortunate, but at least most of the Remnant there survived. Thank you for your assistance." He glances at his commlink. Your logistics adjustment has been added to your account, of course, but I suspect that you are interested in pushing forward the progress in studying Ssil Vida. Meet me in the spaceport in a couple hours."`
+			`The brutal sun of Caelian hits you like a hammer as you open the hatch to let the evacuees out. A few of the Remnant step into the sun as if relishing the heat, while others move quickly to the shade of a nearby structure to confer. Several, however, need to be carried out to waiting vehicles: It seems that they were hurt in one of the initial raids, and while adrenaline kept them going during the evacuation, their condition deteriorated during the flight back. The Remnant carry them with reverant haste, and they the vehicles they are loaded into vanish quickly into nearby structures.`
+			`	"The Embers saw you safely through." Gestures Torza with a note of appreciation, appearing from a nearby hatch. "The loss of that outpost is unfortunate, but at least most of the Remnant there survived. Thank you for your assistance." He glances at his commlink. Your logistics adjustment has been added to your account, of course, but I suspect that you are interested in pushing forward the progress in studying Ssil Vida. Meet me in the spaceport when you are ready."`
 
 
 
 mission "Remnant: Cognizance 29"
 	name "Recover equipment from Baianus."
-	description "Torza has asked you to recover equipment from Baianus by <date>."
+	description "Torza has tasked you with transporting a team of technicians to Ssil Vida."
 	landing
 	blocked `You check in with Torza, who glances at his commlink. "You will need a ship with space for 15 people and 30 cubic meters of cargo."`
 	cargo "equipment" 30
 	passengers 15
 	source "Caelian"
-	destination "Viminal"
+	destination "Ssil Vida"
 	to offer
 		has "Remnant: Cognizance 28: done"
 	on offer
@@ -637,7 +637,57 @@ mission "Remnant: Cognizance 29"
 				`	Gesture that you are not thirsty.`
 					goto notthirsty
 				`	Take a bottle and gesture appreciation.`
-			`	You sip from the bottle, and discover that it tastes like some kind of restorative sports drink. You can pick out hints of salt and a few other flavors, but most of it is an indeterminate taste you cannot quite identify. Torza nods in approval as you drink. "Especially in heat like this, hydration is important." He turns back to the group.`
-			`	"Now as discussed 
+			`	You sip from the bottle, and discover that it tastes like some kind of restorative sports drink. You can pick out hints of salt and a few other flavors, but most of it is an indeterminate taste you cannot quite identify. Torza nods in approval as you drink. "Especially in heat like this, hydration is important." He continues weaving around the group handing out the remaining bottles.`
+			choice
+				`	(drink in silence)`
+					goto powerbriefing
+				`	(ask the Remnant next to you what just happened)`
+			`	The Remnant smiles a tiredly. "We did a ten kilometer run in just under thirty seven minutes, wearing our emergency environmental suits and carrying basic survival and maintnance gear. Torza set a hard pace, but we kept up." She takes a sip from her drink. "It is hard work, but endurance is rather important for survival, especially in an unknown environment like Ssil Vida." She takes another sip. "It was an interesting changes of pace. Normally I carry full engineering kit, so this was a 'fast scramble' in comparison. He," she gestures at Torza, "likes to change things up. No two runs are the same when he sets the pace."`
+				goto powerbriefing
+			label notthirsty
+			`	Torza quickly continues his rounds, and soon everyone is sipping on a drink. Several have pulled up displays of Ssil Vida, while others are chatting as they go over inventory lists. Most of the conversation that you catch sounds like a group of technicians prepping for a mission.`
+			label powerbriefing
+			`	After a few minutes Torza gestures for everyone to pay attention. "Now, to review the paramters: Ssil Vida appears to be a giant mechanism for doing something we do not yet know. The core systems have exhausted the capacity of its large fusion reactor to supply it. The installation of the Aeon Cell has reduced the strain on the system, but cannot fully power the station. You need to focus on the power systems, and figure out how to fully stabilize the distribution. While you are doing that, <first> will be returning to Viminal for the next step in this operation. You will all be staying on Ssil Vida for at least a few months, maybe longer as the situation warrants. Agreed?" Around the room there are a variety of nods and gestures of affirmation.`
+			`	Torza makes a gesture of respect. "Embers sharpen your sight, friends."`
+	on complete
+		payment 250000
+		conversation
+			`Gavriil is waiting at the dock when the <ship>'s hatches finish cycling. "Welcome," he gestures. "It is good to have fresh minds to share Ssil Vida with." The Remnant onbard stream out of the ship in a rush, each carrying a heavy pack of equipment. They gesture respect, and head off in different directions. Evidently they have studied the maps prior to arrival, as they all seem to know where they are going. Several stay behind with Gavriil and help unload the rest of the equipment.`
+			`	"We have made good progress since you were here last. We have managed to take over control of life support systems in several wings of rooms, and now those are run entirely from our own systems. Aside from relieving a tiny amount of load from the station's power core, it also means that the station could fail completely and we would still have safe living quarters to serve as base of operations." He pauses, and is gestures take on a tone of disgust. "Of course, we are working to avoid that. But having multiple backup systems is the key to survival in hostile conditions." He looks around at the few Remnant who have yet to vanish into the rest of the station. "Thank you for bringing more explorers." He hands you a datacrystal. "I have already transmitted this data to Viminal, but I would appreciate it if you could take this to them to ensure there are no errors or data corruption.`
+
+
+
+mission "Remnant: Cognizance 30"
+	name "Deliver datacrystal to Viminal"
+	description "Gavriil has asked you to take a datacrystal to Viminal."
+	landing
+	source "Ssil Vida"
+	destination "Viminal"
+	to offer
+		has "Remnant: Cognizance 29: done"
+	on complete
+		conversation
+			`Not knowing who to deliver the data crystal to, you take it to the information desk. The Remnant currently working there gestures that they have been expecting it. They thank you for delivering it. As you leave the information desk, your commlink chimes with a message from prefect Chilia. It informs you that Chilia would like to speak with you, and is currently in the spaceport cafeteria.`
+
+
+
+mission "Remnant: Cognizance 31"
+	name "Deliver datacrystal to Viminal"
+	description "Gavriil has asked you to take a datacrystal to Viminal."
+	source "Viminal"
+	stopover "Clink"
+	destination "Ssil Vida"
+	to offer
+		has "Remnant: Cognizance 30: done"
+	on offer
+		conversation
+			`Chilia is just collecting his tray from the counter when you step into the cafeteria. Seeing you enter, he picks up a second one and nods towards a pair of open seats at a table with Taely and Dusk. "We are glad you could make it, <first>." Taely looks happy, brimming with contained energy. "It is an exciting day, Captain, but Dusk can start." She nods to Dusk, who sets down his fork to gesture. "While Gavriil has been making excellent progress setting up facilities on Ssil Vida, I hae been working with a team of xenolinguists on deciphering the data we have collected so far. Based on Gavriil's recommendations, we have been focussing on the power distribution system`
+	on accept
+		dialog
+			`	Taely smiles. "Take good care of it. Fly far, <first>!"`
+		give ship Peregrine
+	on complete
+		conversation
+			`Gavriil answers your landing request as you approach Ssil Vida, but it is Dusk who meets you at the docking bay.`
 
 
