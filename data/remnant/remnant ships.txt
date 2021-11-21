@@ -857,7 +857,7 @@ ship "Peregrine"
 		"mass" 350
 		"drag" 4.3
 		"heat dissipation" 0.85
-		"fuel capacity" 900
+		"fuel capacity" 1100
 		"ramscoop" 2.5
 		"cargo space" 59
 		"outfit space" 552

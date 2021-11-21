@@ -653,7 +653,7 @@ mission "Remnant: Cognizance 29"
 		payment 250000
 		conversation
 			`Gavriil is waiting at the dock when the <ship>'s hatches finish cycling. "Welcome," he gestures. "It is good to have fresh minds to share Ssil Vida with." The Remnant onbard stream out of the ship in a rush, each carrying a heavy pack of equipment. They gesture respect, and head off in different directions. Evidently they have studied the maps prior to arrival, as they all seem to know where they are going. Several stay behind with Gavriil and help unload the rest of the equipment.`
-			`	"We have made good progress since you were here last. We have managed to take over control of life support systems in several wings of rooms, and now those are run entirely from our own systems. Aside from relieving a tiny amount of load from the station's power core, it also means that the station could fail completely and we would still have safe living quarters to serve as base of operations." He pauses, and is gestures take on a tone of disgust. "Of course, we are working to avoid that. But having multiple backup systems is the key to survival in hostile conditions." He looks around at the few Remnant who have yet to vanish into the rest of the station. "Thank you for bringing more explorers." He hands you a datacrystal. "I have already transmitted this data to Viminal, but I would appreciate it if you could take this to them to ensure there are no errors or data corruption.`
+			`	"We have made good progress since you were here last. We have managed to take over control of life support systems in several wings of rooms, and now those are run entirely from our own systems. Aside from relieving a tiny amount of load from the station's power core, it also means that the station could fail completely and we would still have safe living quarters to serve as base of operations." He pauses, and is gestures take on a tone of disgust. "Of course, we are working to avoid that. But having multiple backup systems is the key to survival in hostile conditions." He looks around at the few Remnant who have yet to vanish into the rest of the station. "Thank you for bringing more explorers." He hands you a datacrystal. "I have already transmitted this data to Viminal, but I would appreciate it if you could take this to them to ensure there are no errors or data corruption in the transmission.`
 
 
 
@@ -672,22 +672,73 @@ mission "Remnant: Cognizance 30"
 
 
 mission "Remnant: Cognizance 31"
-	name "Deliver datacrystal to Viminal"
-	description "Gavriil has asked you to take a datacrystal to Viminal."
+	name "Pickup Refined Fuel"
+	description "Chilia has asked you to pick up a refined fuel from Clink."
+	deadline 15
+	stealth
+	infiltrating
 	source "Viminal"
-	stopover "Clink"
-	destination "Ssil Vida"
+	destination "Clink"
 	to offer
 		has "Remnant: Cognizance 30: done"
+		has "license: Remnant Capital"
 	on offer
 		conversation
-			`Chilia is just collecting his tray from the counter when you step into the cafeteria. Seeing you enter, he picks up a second one and nods towards a pair of open seats at a table with Taely and Dusk. "We are glad you could make it, <first>." Taely looks happy, brimming with contained energy. "It is an exciting day, Captain, but Dusk can start." She nods to Dusk, who sets down his fork to gesture. "While Gavriil has been making excellent progress setting up facilities on Ssil Vida, I hae been working with a team of xenolinguists on deciphering the data we have collected so far. Based on Gavriil's recommendations, we have been focussing on the power distribution system`
+			`Chilia is just collecting his tray from the counter when you step into the cafeteria. Seeing you enter, he picks up a second one and nods towards a pair of open seats at a table with Taely and Dusk. "We are glad you could make it, <first>." Taely looks happy, brimming with contained energy. "It is an exciting day, Captain, but Dusk should lead." She nods to Dusk, who sets down his fork to gesture. "While Gavriil has been making excellent progress setting up facilities on Ssil Vida, I hae been working with a team of xenolinguists on deciphering the data we have collected so far. Based on Gavriil's recommendations, we have been focussing on the power distribution system.`
+			branch ssilvidaemeraldsword
+				has "Sheragi Archaeology: Epilogue: Done"
+			`	A hologram of Ssil Vida appears in the air over the table, then fades away to leave a large highlighted object with a network of lines reaching around the station. "As Gavriil has told you, the station's primary power source appears to be a massive fusion reactor. As best we can tell, it is quite a simple design, albeit one built for totally automated functioning and bigger than the largest reactors ever built by humanity. Unfortunately, it has consumed its entire fuel supply and is currently using up the last of the fuel it is capable of extracting by refining spent fuel. Our current estimates is that it is producing less than ten percent of its nominal power. This is sufficiently low that it has already ceased powering the majority of the station's systems." He gestures to Chilia.`
+			`	"Based on our analysis, the reactor appears to use a very specific isotope. Whether it is truly needed or others would suffice is unknown, but for now we are inclined to provide it with an exact match. While we will be able to produce it eventually, it will take time that we do not have." The diagram of Ssil Vida vanishes and is replaced by a map of the galaxy, which focuses in on Kornephoros, near the juncture of the Rim and the South. "Our records indicate that the most easily accessible deposits are on Clink." Chilia turns to you. "As you are from Ancestral space and are most familiar with the people there, we would like you to travel there and bring back 58 cubic meters of processed fuel for the reactor. Can you do this?"`
+				goto ssilvidacontinue
+			label ssilvidaemeraldsword
+			`	A hologram of Ssil Vida appears in the air over the table, then fades away to leave a large highlighted object with a network of lines reaching around the station. "As Gavriil has told you, the station's primary power source appears to be a massive fusion reactor. Based on our intial scans, it appears to be a match to the Sheragi reactor you recently discovered, albeit on a vastly larger scale. Unfortunately, it has consumed its entire fuel supply and is currently using up the last of the fuel it is capable of extracting by refining spent fuel. Our current estimates is that it is producing less than ten percent of its nominal power. This is sufficiently low that it has already ceased powering the majority of the station's systems." He gestures to Chilia.`
+			`	"Based on our analysis, the reactor appears to use a very specific isotope, which appears to be one favored by the Sheragi. Whether it is truly needed or others would suffice is unknown, but for now we are inclined to provide it with an exact match. While we will be able to produce it eventually, it will take time that we do not have." The diagram of Ssil Vida vanishes and is replaced by a map of the galaxy, which focuses in on Kornephoros, in the heart of the ancient Sheragi territory. "Our records indicate that the most easily accessible deposits are on Clink." Chilia turns to you. "As you have worked extensively around that area, and are thus familiar with the people there, we would like you to travel there and bring back 58 cubic meters of processed fuel for the reactor. Can you do this?"`
+			label ssilvidacontinue
+			choice
+				`	(Agree)`
+				`	(Decline)`
+					decline
+			`	All four of them look pleased, and exchange looks that seem to indicate they expected that response. Taely gestures with a thankful tone. "We appreciate your willingness to help us explore this mystery, <first>. Given that time is of the essence here, this seems like an opportune time to reveal a new ship that has just reached production." She stands up, and gestures for you to accompany her to the shipyard.`
+			`	There, crouched next to <ship>, is what you can only describe as a predator: It has long sleek lines with flared wings that resemble feathers, and a massive engine array that suggest incomparable mobility in a ship of its size. As you approach you can see several Remnant working around it. One gestures, and the ship extends a wing and the Remnant reaches in between the feathers to do something, then steps back and the ship runs through a range of twisting motions as it moves its wings around. It strongly resembles a raptor preening its feathers. Taely walks right up to the nose and the ship crouches down so she can put her hand on its nose. "Captain <first>, I would like to introduce you to the Peregrine. It is the first new capital warship design we have built in over a century, and is the result of decades of work on my part as well as many others. Hopefully, it is the first of many new ships that are successful."`
+			choice
+				`	"Looks great. Let's fly!"`
+					goto letsfly
+				`	"What sort of ship is it?"`
+			`	Taely gestures in reverence. "It is what we term a liveship." She scowls at you. "And before you start thinking about ships made of big piles of flesh and ooze, this is obviously not that." She runs her hand along the ship, obviously quite smooth and solid. "Liveships, as we are calling them, are spaceships that have a sufficient degree of self-awareness and self-control to be deemed alive. They are manufactured, and have energy and fuel requirements just like any ship. Likewise, they are largely made of materials similar to what you are familiar with. But they are concious. They can move and flex in ways that would be impossible to precisely control with servos and traditional position reporting. They can feel where each tendril is as surely as most people can tell where their hand is, and each ripple of a wormhole vortex is as perceptible to them as the crest of a sand dune would be to you or I."`
+			`	She turns to you and pulls up a display, listing off various statistics. "From a technical standpoint, the Peregrine class starship is classified as a medium warship, built along the lines of the fast-attack cruisers from earlier eras. While it does not have the thickest armor or shields we could have installed, it makes up for it in unrivaled mobility and a neural system that has been hardened against some of the effects that could slow it down. It is also, so far, the largest production ship that has built-in cloaking." As if on queue, the ship vanishes from sight. There is a brief rustle and a woosh of air, and the ship reappears on the other side of you. Several of the Remnant working on it look amused, and relocate to continue working. Taely gestures amusement, and continues. "Given your recent work with Plume, it may also be relevant to you that the Peregrine is what we term a 'gaslined' starship; meaning it is built to not only fly in atmosphere, but handle both the pressure and conditions found in the depths of gas giants and other high-pressure worlds.`
+			label letsfly
+			`	Taely smiles, and continues. "You should be able to take off shortly, but Chilia does have some final comments on this mission." She gestures to him, and he steps to the front. "Given recent events in Ancestral space, the authorities are understandably suspicious of large volumes of fissile material being transported around. Likewise, it would be extremely problematic if someone managed to scan the Peregrine. As such, being scanned will result in the mission failing." He pauses, and taps on his commlink. "We have inserted an order for the material into the hyperspace communication system under the company name 'Solar Winds Logistics Ltd.' The miners on Clink are to have the shipment ready to load at a mining site just outside of the spaceport. Far enough away to avoid the standard arrival and departure scans."`
+			choice
+				`	"Sounds good. Time to go."`
+					goto departure
+				`	"What about people seeing the ship?"`
+			`	Chilia grins. "Fortunately for us, the diversity of human preference lends itself to our cause. While there may be only a handful of ships available for sale, spaceships are a surprisingly diverse and unregulated industry. As such, shipyards have carried on the tradition dating back to the earliest of vehicles: If someone has the wealth to pay for it, there is a shipwright willing to build it. In our time observing Ancestral space, we have seen replicas in flight of every spaceship that has ever graced popular culture or a media production. While many are barely able to manage interplanetary travel, a surprising number are in use as fully functional ships plying interstellar space. Given the similarity between our ships and those of certain productions, we are not concerned with being seen - only with being scanned."`
+			label departure
+			`	A hatch opens on the Peregrine, and all the workers quickly finish their tasks and stow their equipment onboard. "Ready for departure when you are, Captain!" calls one from the hatch.`
+				accept
 	on accept
 		dialog
-			`	Taely smiles. "Take good care of it. Fly far, <first>!"`
-		give ship Peregrine
-	on complete
+			`	As the trio move clear of the landing pad Chilia signs one last message to you. "You may want to cloak as soon as you take off. Our ships will be scanning for you too: Better to practice avoiding them before you reach Ancestral space. Embers guide you, <first>!"`
+		give ship Peregrine "Shadow Flight"
+	on decline
+		dialog
+			`	You have declined an essential Remnant mission, and this ends the Remnant campaign. If that was not what you intended, you may wish to reload.`
+
+
+
+mission "Remnant: Cognizance 32"
+	name "Pickup refined fuel."
+	description "Deliver the refined fuel to Ssil Vida."
+	landing
+	deadline 15
+	cargo "Refined Fuel" 58
+	stealth
+	source "Clink"
+	destination "Ssil Vida"
+	to offer
+		has "Remnant: Cognizance 31: done"
+	on offer
 		conversation
-			`Gavriil answers your landing request as you approach Ssil Vida, but it is Dusk who meets you at the docking bay.`
+
 
 
