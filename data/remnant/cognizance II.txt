@@ -673,7 +673,7 @@ mission "Remnant: Cognizance 30"
 
 mission "Remnant: Cognizance 31"
 	name "Pickup Refined Fuel"
-	description "Chilia has asked you to pick up a refined fuel from Clink."
+	description "Chilia has asked you to pick up a refined fuel from Clink by <date>."
 	deadline 15
 	stealth
 	infiltrating
@@ -728,7 +728,7 @@ mission "Remnant: Cognizance 31"
 
 mission "Remnant: Cognizance 32"
 	name "Pickup refined fuel."
-	description "Deliver the refined fuel to Ssil Vida."
+	description "Deliver the refined fuel to Ssil Vida by <date>."
 	landing
 	deadline 15
 	cargo "Refined Fuel" 58
@@ -739,6 +739,10 @@ mission "Remnant: Cognizance 32"
 		has "Remnant: Cognizance 31: done"
 	on offer
 		conversation
-
+			`Your reception is as friendly as Clink's reputation suggests: No-one is there to meet you, and no-one arrives to help load the cargo. Just a forlorn datapad mounted on a post in front of the pile of crates requesting that you enter your pickup code to disarm the security sensors, and a request to notify the bulk shipment coordinator when you are done loading. You enter the pickup code Chilia had sent you while you were in flight, load the <ship>, and get ready to head to Ssil Vida.`
+			`	As you are completing your checks your sensors alert you to the arrival of a small fleet that seems to be maintaining orbit over this area. It looks like you might have to take steps to avoid observers right away.`
+				accept
+	NPC
+		
 
 
