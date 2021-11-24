@@ -742,7 +742,38 @@ mission "Remnant: Cognizance 32"
 			`Your reception is as friendly as Clink's reputation suggests: No-one is there to meet you, and no-one arrives to help load the cargo. Just a forlorn datapad mounted on a post in front of the pile of crates requesting that you enter your pickup code to disarm the security sensors, and a request to notify the bulk shipment coordinator when you are done loading. You enter the pickup code Chilia had sent you while you were in flight, load the <ship>, and get ready to head to Ssil Vida.`
 			`	As you are completing your checks your sensors alert you to the arrival of a small fleet that seems to be maintaining orbit over this area. It looks like you might have to take steps to avoid observers right away.`
 				accept
-	NPC
+	npc evade
+		government "Bounty Hunter"
+		personality waiting unconstrained surveillance
+		system "Kornephoros"
+		dialog "Don't know who you are, but there's a bounty on unaffiliated people picking up large volumes of weapons grade materials that I intend to collect!"
+		fleet
+			names "bounty hunter"
+			variant
+				"Vanguard (Missile)"
+				"Splinter" 2
+				"Quicksilver (Proton)" 3
+	on complete
+		payment 250000
+		event "remnant: ssil vida activation"
+		conversation
+			`When you contact Ssil Vida to confirm where to unload your cargo you are greeted by Dust, who directs you to a docking bay closer to the main reactor. As you open the hatch, though, it is Gavriil and a group of Remnant with lifters waiting. They greet you cheerfully, but they definitely seem in a rush to get the processed fuel unloaded and shuttled into the depths of the station. Once the last unit is off your ship Gavriil slows down enough to thank you for the prompt delivery, but apologizes as he rushes off as there is not much time left. His parting gesture suggests you talk to Dusk up in the control room.`
 		
-
+event "remnant: ssil vida activation"
+	unvisit "Vaticanus"
+	unvisit "Egeria"
+	unvisit "Prosa"
+	unvisit "Diespiter"
+	unvisit "Statina"
+	unvisit "Postverta"
+	system Egeria
+		remove object "Wormhole Barren Alpha"
+		add "jump range" 50
+	system Levana
+		remove object "Wormhole Barren Alpha"
+	system Caeculus
+		remove object "Wormhole Barren Beta"
+	system Prosa
+		remove object "Wormhole Barren Beta"
+	
 
