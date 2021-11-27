@@ -739,7 +739,7 @@ mission "Remnant: Cognizance 32"
 		has "Remnant: Cognizance 31: done"
 	on offer
 		conversation
-			`Your reception is as friendly as Clink's reputation suggests: No-one is there to meet you, and no-one arrives to help load the cargo. Just a forlorn datapad mounted on a post in front of the pile of crates requesting that you enter your pickup code to disarm the security sensors, and a request to notify the bulk shipment coordinator when you are done loading. You enter the pickup code Chilia had sent you while you were in flight, load the <ship>, and get ready to head to Ssil Vida.`
+			`Your reception is as friendly as Clink's reputation suggests: No-one is there to meet you, and no-one arrives to help load the cargo. Just a forlorn datapad mounted on a post in front of the pile of crates requesting that you enter your pickup code to disarm the security sensors, and a statement that ships depart as soon as they are done loading. You enter the pickup code Chilia had sent you while you were in flight, load the <ship>, and get ready to head to Ssil Vida.`
 			`	As you are completing your checks your sensors alert you to the arrival of a small fleet that seems to be maintaining orbit over this area. It looks like you might have to take steps to avoid observers right away.`
 				accept
 	npc evade
@@ -771,9 +771,12 @@ event "remnant: ssil vida activation"
 		add "jump range" 50
 	system Levana
 		remove object "Wormhole Barren Alpha"
+		add "jump range" 50
 	system Caeculus
 		remove object "Wormhole Barren Beta"
+		add "jump range" 50
 	system Prosa
 		remove object "Wormhole Barren Beta"
+		add "jump range" 50
 	
 
