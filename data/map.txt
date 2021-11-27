@@ -8029,6 +8029,7 @@ system Diespiter
 	habitable 534.375
 	haze _menu/haze-red
 	link Statina
+	belt 2000
 	asteroids "small rock" 65 3
 	asteroids "medium rock" 14 1
 	asteroids "large rock" 3 1
@@ -8751,6 +8752,7 @@ system Egeria
 	haze _menu/haze-red
 	link Vaticanus
 	link Statina
+	belt 2000
 	asteroids "small rock" 1 8
 	asteroids "medium rock" 20 5
 	asteroids "large rock" 9 7
@@ -19501,6 +19503,7 @@ system Postverta
 	pos 297 269
 	government Uninhabited
 	attributes "ember waste" "inaccessible"
+	belt 2000
 	habitable 135
 	haze _menu/haze-red
 	asteroids "medium rock" 4 2
@@ -19676,6 +19679,7 @@ system Prosa
 	habitable 2372.76
 	haze _menu/haze-red
 	link Vaticanus
+	belt 2000
 	asteroids "medium metal" 11 2
 	asteroids "large metal" 2 2
 	asteroids "small rock" 4 1
@@ -23339,6 +23343,7 @@ system Statina
 	haze _menu/haze-red
 	link Diespiter
 	link Egeria
+	belt 2000
 	asteroids "large rock" 1 4
 	asteroids "small metal" 39 3
 	asteroids "medium metal" 72 3
@@ -24801,6 +24806,7 @@ system Vaticanus
 	haze _menu/haze-red
 	link Egeria
 	link Prosa
+	belt 2000
 	asteroids "small rock" 3 6
 	asteroids "medium rock" 11 9
 	asteroids "large rock" 5 8

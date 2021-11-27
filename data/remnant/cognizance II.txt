@@ -769,14 +769,92 @@ event "remnant: ssil vida activation"
 	system Egeria
 		remove object "Wormhole Barren Alpha"
 		add "jump range" 50
+		add minables "plant" 80 5
+		add minables "plant2" 80 5
+		add minables "plant cluster" 80 5
+		add minables "large plant" 40 3
+		add minables "large plant2" 40 3
+		add minables "large plant cluster" 40 3
+		add minables "space flora" 80 5
+		add minables "large space flora" 40 3
+		add minables "stealth space flora" 40 5
+		add minables "stealth large space flora" 25 3
+		add hazard "Ember Waste Base Heat" 100
+		add hazard "Ember Waste Base Storm" 15000
+	system Diespiter
+		add "jump range" 50
+		add minables "plant" 80 5
+		add minables "plant2" 80 5
+		add minables "plant cluster" 80 5
+		add minables "large plant" 40 3
+		add minables "large plant2" 40 3
+		add minables "large plant cluster" 40 3
+		add minables "space flora" 80 5
+		add minables "large space flora" 40 3
+		add minables "stealth space flora" 40 5
+		add minables "stealth large space flora" 25 3
+		add hazard "Ember Waste Base Heat" 100
+		add hazard "Ember Waste Base Storm" 15000
 	system Levana
 		remove object "Wormhole Barren Alpha"
-		add "jump range" 50
 	system Caeculus
 		remove object "Wormhole Barren Beta"
+	system Postverta
 		add "jump range" 50
+		add minables "plant" 80 5
+		add minables "plant2" 80 5
+		add minables "plant cluster" 80 5
+		add minables "large plant" 40 3
+		add minables "large plant2" 40 3
+		add minables "large plant cluster" 40 3
+		add minables "space flora" 80 5
+		add minables "large space flora" 40 3
+		add minables "stealth space flora" 40 5
+		add minables "stealth large space flora" 25 3
+		add hazard "Ember Waste Base Heat" 100
+		add hazard "Ember Waste Base Storm" 15000
 	system Prosa
 		remove object "Wormhole Barren Beta"
 		add "jump range" 50
+		add minables "plant" 80 5
+		add minables "plant2" 80 5
+		add minables "plant cluster" 80 5
+		add minables "large plant" 40 3
+		add minables "large plant2" 40 3
+		add minables "large plant cluster" 40 3
+		add minables "space flora" 80 5
+		add minables "large space flora" 40 3
+		add minables "stealth space flora" 40 5
+		add minables "stealth large space flora" 25 3
+		add hazard "Ember Waste Base Heat" 100
+		add hazard "Ember Waste Base Storm" 15000
+	system Statina
+		add "jump range" 50
+		add minables "plant" 80 5
+		add minables "plant2" 80 5
+		add minables "plant cluster" 80 5
+		add minables "large plant" 40 3
+		add minables "large plant2" 40 3
+		add minables "large plant cluster" 40 3
+		add minables "space flora" 80 5
+		add minables "large space flora" 40 3
+		add minables "stealth space flora" 40 5
+		add minables "stealth large space flora" 25 3
+		add hazard "Ember Waste Base Heat" 100
+		add hazard "Ember Waste Base Storm" 15000
+	system Vaticanus
+		add "jump range" 50
+		add minables "plant" 80 5
+		add minables "plant2" 80 5
+		add minables "plant cluster" 80 5
+		add minables "large plant" 40 3
+		add minables "large plant2" 40 3
+		add minables "large plant cluster" 40 3
+		add minables "space flora" 80 5
+		add minables "large space flora" 40 3
+		add minables "stealth space flora" 40 5
+		add minables "stealth large space flora" 25 3
+		add hazard "Ember Waste Base Heat" 100
+		add hazard "Ember Waste Base Storm" 15000
 	
 
