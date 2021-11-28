@@ -758,7 +758,7 @@ mission "Remnant: Cognizance 32"
 		event "remnant: ssil vida activation"
 		conversation
 			`When you contact Ssil Vida to confirm where to unload your cargo you are greeted by Dust, who directs you to a docking bay closer to the main reactor. As you open the hatch, though, it is Gavriil and a group of Remnant with lifters waiting. They greet you cheerfully, but they definitely seem in a rush to get the processed fuel unloaded and shuttled into the depths of the station. Once the last unit is off your ship Gavriil slows down enough to thank you for the prompt delivery, but apologizes as he rushes off as there is not much time left. His parting gesture suggests you talk to Dusk up in the control room.`
-		
+
 event "remnant: ssil vida activation"
 	unvisit "Vaticanus"
 	unvisit "Egeria"
@@ -813,6 +813,10 @@ event "remnant: ssil vida activation"
 		add minables "stealth large space flora" 25 3
 		add hazard "Ember Waste Base Heat" 100
 		add hazard "Ember Waste Base Storm" 15000
+		add object "Fertriery"
+			sprite planet/nebula1
+			distance 2004.06
+			period 2098.28
 	system Prosa
 		remove object "Wormhole Barren Beta"
 		add "jump range" 50
@@ -856,5 +860,59 @@ event "remnant: ssil vida activation"
 		add minables "stealth large space flora" 25 3
 		add hazard "Ember Waste Base Heat" 100
 		add hazard "Ember Waste Base Storm" 15000
-	
+
+
+
+mission "Remnant: Cognizance 33"
+	name "Observe changes in Postverta"
+	description "Something is going on outside, and Dusk would like you to take a look."
+	landing
+	source "Ssil Vida"
+	waypoint "Postverta"
+	to offer
+		has "Remnant: Cognizance 32: done"
+	on offer
+		conversation
+			`Up in the control station Dusk and a small team of Remnant are busily working at a bunch of consoles. Alarms blink, and are quickly dealt with only to have new ones appear elsewhere. There is so much motion that at a glance it seems like there is twice as many of them. From a glance at the readings, it appears you brought the shipment of fuel just in time: the Aeon Cell is overloaded trying to take on the load from the fusion reactor, and most of their efforts have been directed towards carefully orchestrating rolling brown outs across the systems to keep everything minimally functional.`
+			`	Gavriil suddenly appears on a viewscreen, gesturing that the fuel injection process has begun, and Dusk anxiously scans a number of readings. There is a moment of stillness, then readings suddenly start to climb. The Remnant quickly recalibrate their sensors to the larger volumes of power being handdled, and the readings continue to push the top of the charts upwards. Section by section, whole banks of indicators flicker and fade out. A minute or two later, and the last display ceases to indicate any problems remaining in the power grid.`
+			`	Dusk turns towards you and the team with a satisfied gesture just beginning when there is a sudden shift as if everything had just went sideways. You almost feel like you can see a brief ripple, but it vanishes before you can focus on it. You are left with a feeling that something has changed. At the same time, the proximity sensors and systems monitoring the surrounding system light up. Someone looks up from a console. "The system is alive, Dusk! All those ghost life signs we were picking up just became much more solid!" Another gestures in clipped, fast tones. "And we have several large masses that have appeared as well. They look to be planetary in scale, but the readings seem to indicate something a bit more nebulous."`
+			`	Dusk looks around, and then gestures. "Captain <first>, please go investigate what is going on out there. Just take a good look around and then report back."`
+				accept
+	on enter "Postverta"
+		conversation
+			`Just like the Remnant said, the system appears to be full of life. Where once there was just asteroids and a fairly empty system, there is now lifesigns everywhere. As you dodge amongs the asteroids, you note that most of them appear to have stuff growing on them. Plants, for lack of a better word. Moss or fungus might be a better word, although you are fairly certain that nothing in the current classifications of life can adequately categorize what you can see outside. The sudden appearance of all this life is only compounded when your sensors light up to notify you that it is tracking several flocks of void sprites.`
+			`	As you move away from the station you spot signs of life and activity everywhere: Flitting amongs the rocks, soaring along the solar winds, and hunting amongst clouds. What is unclear, however, is where it came from. The only hint might be in the fact that your ship instruments report a sudden spike in the ambient energy in the surrounding area.`
+	on complete
+		conversation
+			`Back on the station Dusk, Gavriil, and many of the Remnant on the station meet you in the docking bay. Dusk and several of the others just came back from walking out on the hull of Ssil Vida, and they report seeing void sprites passing close to the station. They quickly pull the data from your ship sensors and throw it up on a holographic display. Everyone gathers around, intently drinking in the data and footage. They stand, stare, and ponder with intense concentration as the data continues to stream in from the station.`
+			`	Without warning, something clicks in your mind. Suddenly there is a humm of hundreds of conversations crowding your thoughts and a momentary feeling of seeing the system through thousands of eyes. You feel a wave of curiosity, and a glimpse of Ssil Vida as it might have been once - shiny and gleaming. The image ages like a fast-forward video of untold thousands of orbits as the station wears and the sky changes around it. Then the image freezes on what appears to be the present day. A feeling of appreciation replaces the sense of curiosity, followed by a blurry image of the <ship> leaving the station and heading in a dozen different directions simultaneously, as if watching it splinter into ghosts going different directions.`
+			`	The final image is of the creature the Remnant termed the 'Ember Node,' floating in space. The image splinters the same way as the image of your ship, and fragments into multiple ghosts of itself that vanish into a rift of energy. The sense of curiosity returns, and then there is a another click, and suddenly your mind is your own once again.`
+
+
+
+mission "Remnant: Cognizance 34"
+	name "Postverta system sweep."
+	description "Conduct a sweep of nearby systems and return to Ssil Vida."
+	landing
+	source "Ssil Vida"
+	waypoint "Diespiter"
+	waypoint "Statina"
+	waypoint "Vaticanus"
+	waypoint "Egeria"
+	waypoint "Prosa"
+	to offer
+		has "Remnant: Cognizance 33: done"
+	on offer
+		conversation
+			`The Remnant have a shocked expression, and a couple of them are look dazed. Most, however, seem to be handling the incursion fairly well. Dusk gestures eagerly to you. "Good to see you recovered quickly, <first>. We will take care of everyone here - we need you out there. Go do a sweep through each of the surrounding systems, and see if you can get a signal to any of the Remnant worlds. Our communicators have all lost connection, as have the isolated backups. So we need to re-establish communication promptly." He shakes his head. "I love meeting new beings, but they always manage to surprise."`
+				accept
+	on waypoint
+		dialog
+			`You have succesfully visited all the nearby systems. Time to report back to Ssil Vida.`
+	on complete
+		conversation
+			`Back in the control room the Remnant appear to have regained their composure. Remnant rush around, and every sensor and tool is in use. It is as if the Remnant are afraid everything is going to vanish any moment. Which, upon reflection, might actually happen. You find Gavriil carefully tending a console, and he looks up as you approach. "The Embers guided you back, I see. How does the outside world fare?" He listens intently as you described your flight through the surrounding systems, and nods when you mention that your navigation system is reporting no connections to the rest of the Ember Waste. Even predictions as to jump drive performance indicate no valid jumps. "No connections whatsoever?" He looks thoughtful. "That actually makes sense." He gestures at a display of the area. "As best our sensors can pick up, the universe beyond this pocket of the Ember Waste just does not exist."`
+			`	He quickly continues. "Of course, 
+
+
 
