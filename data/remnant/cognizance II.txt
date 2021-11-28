@@ -963,7 +963,7 @@ mission "Remnant: Cognizance 35"
 			`With a shudder that is felt in every fiber of your being, you glimpse the ripple that makes reality look like the surface of a pond after a single rain drop. Almost before it begins, everything is still again. You look at your sensors, and it looks like Postverta has once again returned to its prior, barren, form.`
 			action
 				fail "Remnant: Cognizance 35"
-				"Remnant: Cognizance 36: failed" 0
+				"Remnant: Cognizance 36: failed" --
 
 event "remnant: ssil vida deactivation"
 	unvisit "Vaticanus"
@@ -1252,6 +1252,7 @@ event "remnant: ssil vida deactivation"
 			period 389
 
 
+
 mission "Remnant: Cognizance 36"
 	name "Activate Ssil Vida Power."
 	description "Accept this to signal everyone to restore the power."
@@ -1268,7 +1269,7 @@ mission "Remnant: Cognizance 36"
 			`With a shudder that is felt in every fiber of your being, you glimpse the ripple that makes reality look like the surface of a pond after a single rain drop. Almost before it begins, everything is still again. You look at your sensors, and it looks like Postverta is once again overflowing with life.`
 			action
 				fail "Remnant: Cognizance 36"
-				"Remnant: Cognizance 35: failed" 0
+				"Remnant: Cognizance 35: failed" --
 
 event "remnant: ssil vida reactivation"
 	unvisit "Vaticanus"
@@ -1605,4 +1606,31 @@ event "remnant: ssil vida reactivation"
 			sprite planet/wormhole-red
 			distance 2754
 			period 389
+
+
+
+mission "Remnant: Cognizance 37"
+	name "Take data to Viminal."
+	description "The rest of the Remnant need to know what is happening. Take this data to them."
+	landing
+	repeat
+	source "Ssil Vida"
+	destination "Viminal"
+	to offer
+		has "Remnant: Cognizance 34: done"
+	on complete
+		conversation
+			`A crowd of Remnant cluster around your ship as you land, but it is just one who gestures quickly, asking if the rest of the team who went with you are safe. You nod, and a ripple of relief goes through the crowd. "So, what happened?" asks another.`
+			choice
+				`	(Explain everything that happened.)`
+					goto cognizanceexplanation
+				`	"I think I should tell this to the prefects first."`
+			`	The Remnant around you look amused. "Do not be concerned, <first>. Everything you say will reach them. The sooner you tell us, the sooner we can take start preparing for whatever is necessary.`
+			choice
+				`	(Explain everything that happened.)`
+					goto cognizanceexplanation
+				`	"I thought the prefects were your leaders?"`
+			` "They bear our executive responsibilities, it is true. Times of critical threats require the capacity for decisions to be made in the instant. But do not confuse the authority to make high-value decisions with being 
+				
+
 
