@@ -8029,10 +8029,9 @@ system Diespiter
 	government Uninhabited
 	attributes "ember waste" "inaccessible"
 	habitable 534.375
-	belt 1500
+	belt 2000
 	haze _menu/haze-red
 	link Statina
-	belt 2000
 	asteroids "small rock" 65 3
 	asteroids "medium rock" 14 1
 	asteroids "large rock" 3 1
@@ -19519,7 +19518,6 @@ system Postverta
 	attributes "ember waste" "inaccessible"
 	belt 2000
 	habitable 135
-	belt 1500
 	haze _menu/haze-red
 	asteroids "medium rock" 4 2
 	asteroids "large rock" 4 3
@@ -23359,12 +23357,11 @@ system Statina
 	pos 385 198
 	government Uninhabited
 	attributes "ember waste" "inaccessible" "wormhole"
+	belt 2000
 	habitable 135
-	belt 1500
 	haze _menu/haze-red
 	link Diespiter
 	link Egeria
-	belt 2000
 	asteroids "large rock" 1 4
 	asteroids "small metal" 39 3
 	asteroids "medium metal" 72 3
