@@ -126,33 +126,20 @@ mission "First Contact: Remnant"
 
 
 
-# Compatibility patch for those who made contact with the Remnant prior to v0.9.9
-# This will also catch everyone who completed this mission prior to the correction in 0.9.15 to give them "remnant: blood test pure"
+# Compatibility patch for those who made contact with the Remnant prior to v0.9.15:
 mission "Remnant: Blood Test Patch"
 	landing
 	invisible
 	to offer
 		has "event: ember waste label"
 	on offer
-		set "remnant blood test pure" # This line is depreciated and will be removed in future versions. Test for "remnant: blood test pure" instead.
 		set "remnant: blood test pure"
-		fail
-
-
-
-# Changes Remnant hails once contacted and submitted to blood test
-mission "Remnant: Hails Change"
-	landing
-	invisible
-	to offer
-		has "remnant: blood test pure"
-	on offer
 		event "remnant: change hail"
 		fail
 
 
 
-mission "Remnant: Lost in Ember Waste 1"
+mission "Remnant: Lost in Ember Waste: Trigger"
 	landing
 	invisible
 	source
@@ -160,6 +147,7 @@ mission "Remnant: Lost in Ember Waste 1"
 	to offer
 		has "remnant: blood test pure"
 		not "license: Remnant"
+		not "lost in ember waste: offered"
 	on offer
 		require "Quantum Keystone" 0
 		require "Quantum Key Stone" 0
@@ -169,47 +157,15 @@ mission "Remnant: Lost in Ember Waste 1"
 
 
 
-mission "Remnant: Lost in Ember Waste Compatibility"
+mission "Remnant: Lost in Ember Waste"
 	landing
 	invisible
 	source
 		government "Remnant"
 	to offer
-		has "lost in ember waste: declined"
-		not "Remnant: Lost in Ember Waste: declined"
-	on offer
-		set "Remnant: Lost in Ember Waste: offered"
-		set "Remnant: Lost in Ember Waste: declined"
-		set "event: remnant: lost in ember waste"
-		fail
-
-
-
-mission "Remnant: Lost in Ember Waste 2 Compatibility"
-	landing
-	invisible
-	source
-		government "Remnant"
-	to offer
-		has "lost in ember waste: declined"
-		has "Remnant: Lost in Ember Waste: declined"
-	on offer
-		set "Remnant: Lost in Ember Waste: offered"
-		set "Remnant: Lost in Ember Waste: declined"
-		set "Remnant: Lost in Ember Waste 2: offered"
-		set "Remnant: Lost in Ember Waste 2: declined"
-		set "event: remnant: lost in ember waste"
-		fail
-
-
-
-mission "Remnant: Lost in Ember Waste 2"
-	landing
-	invisible
-	source
-		government "Remnant"
-	to offer
-		has "event: remnant: lost in ember waste"
+		or
+			has "event: remnant: lost in ember waste"
+			has "event: lost in ember waste"
 		not "license: Remnant"
 	on offer
 		require "Quantum Keystone" 0
@@ -294,8 +250,8 @@ mission "Remnant: Defense 1"
 	source "Caelian"
 	to offer
 		has "remnant: blood test pure"
+		not "remnant: defense delay"
 		not "Remnant defense delay"
-		not "Remnant: defense delay"
 	on offer
 		conversation
 			`In the relative quiet of this Remnant spaceport, it's unusually jarring when an alarm siren begins howling. All around you, people are rushing to get their ships into the air. Even though no one stops to explain to you what is happening, it's pretty clear that this is a planetary defense operation.`
@@ -306,7 +262,7 @@ mission "Remnant: Defense 1"
 			`	You remain behind on the planet. You probably just missed out on a great opportunity to earn the gratitude of the Remnant.`
 				defer
 	on defer
-		set "Remnant: defense delay"
+		set "remnant: defense delay"
 		event "remnant: defense timer" 20
 	npc
 		government "Remnant"
@@ -2031,12 +1987,13 @@ mission "Remnant: S-970 Regenerator"
 
 
 
-mission "Remnant: taely intro log"
+mission "Remnant: Taely Intro Log"
 	invisible
 	source
 		government "Remnant"
 	to offer
 		"remnant met taely" >= 1
+		not "Remnant: taely intro log: offered"
 	on offer
 		log "People" "Taely" `As an engineering prefect, Taely is the foremost authority among the Remnant on salvaged technology and a senior leader in their reverse engineering program.`
 		fail
@@ -2164,12 +2121,13 @@ mission "Remnant: Return the Samples 2"
 
 
 # Compatibility patch for those who completed Return the Samples 2 before 0.9.11, where it did not have the timer.
-mission "Remnant Return the Samples Compatibility Patch"
+mission "Remnant: Return the Samples Compatibility Patch"
 	landing
 	invisible
 	to offer
 		has "Remnant: Return the Samples 2: done"
 		not "event: remnant: return the samples timer"
+		not "Remnant Return the Samples Compatibility Patch: offered"
 	on offer
 		event "remnant: return the samples timer" 2
 		fail
