@@ -272,7 +272,7 @@ event "remnant: ssil vida area unvisted"
 
 
 event "remnant: ssil vida activation"
-	set "remnant: ssil cida active"
+	set "remnant: ssil vida active"
 	planet Fertriery
 		attributes "requires: gaslining" uninhabited
 		landscape land/nasa8
