@@ -162,9 +162,7 @@ mission "Remnant: Lost in Ember Waste"
 	source
 		government "Remnant"
 	to offer
-		or
-			has "event: remnant: lost in ember waste"
-			has "event: lost in ember waste"
+		has "event: remnant: lost in ember waste"
 		not "license: Remnant"
 	on offer
 		require "Quantum Keystone" 0
