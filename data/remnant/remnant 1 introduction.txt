@@ -147,7 +147,6 @@ mission "Remnant: Lost in Ember Waste: Trigger"
 	to offer
 		has "remnant: blood test pure"
 		not "license: Remnant"
-		not "lost in ember waste: offered"
 	on offer
 		require "Quantum Keystone" 0
 		require "Quantum Key Stone" 0
