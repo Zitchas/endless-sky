@@ -1993,7 +1993,6 @@ mission "Remnant: Taely Intro Log"
 		government "Remnant"
 	to offer
 		"remnant met taely" >= 1
-		not "Remnant: taely intro log: offered"
 	on offer
 		log "People" "Taely" `As an engineering prefect, Taely is the foremost authority among the Remnant on salvaged technology and a senior leader in their reverse engineering program.`
 		fail
@@ -2127,7 +2126,6 @@ mission "Remnant: Return the Samples Compatibility Patch"
 	to offer
 		has "Remnant: Return the Samples 2: done"
 		not "event: remnant: return the samples timer"
-		not "Remnant Return the Samples Compatibility Patch: offered"
 	on offer
 		event "remnant: return the samples timer" 2
 		fail
