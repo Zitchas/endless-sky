@@ -33,6 +33,10 @@ namespace {
 	// disallowed or undesirable behaviors (such as dividing by zero).
 	const auto MINIMUM_OVERRIDES = map<string, double>{
 		// Attributes which are present and map to zero may have any value.
+		{"cooling energy", 0.},
+		{"cloaking shield", 0.},
+		{"cloaking invulnerability", 0.},
+		{"cloaking targetability", 0.},
 		{"shield generation", 0,},
 		{"shield energy", 0.},
 		{"shield fuel", 0.},
