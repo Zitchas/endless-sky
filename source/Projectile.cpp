@@ -116,7 +116,8 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 
 			for(const auto &it : weapon->Submunitions())
 				for(size_t i = 0; i < it.count; ++i)
-					projectiles.emplace_back(*this, it.offset, it.facing + Projectile::Inaccuracy(it.weapon->Inaccuracy()), it.weapon);
+					projectiles.emplace_back(*this, it.offset, it.facing + Projectile::Inaccuracy(it.weapon->Inaccuracy() +
+						(cachedTarget && cachedTarget->Cloaking() == 1. ? (1. - cachedTarget->Attributes().Get("cloaking targetability")) * 5.: 0.)), it.weapon);
 		}
 		MarkForRemoval();
 		return;
@@ -363,6 +364,9 @@ void Projectile::BreakTarget()
 void Projectile::CheckLock(const Ship &target)
 {
 	double base = hasLock ? 1. : .15;
+	// If the target has a cloaking device, it can lower the chances of hitting it,
+	// instead of being completely undetectable.
+	double cloakJamming = target.Cloaking() == 1. ? target.Attributes().Get("cloaking targetability") : 1.;
 	hasLock = false;
 
 	// For each tracking type, calculate the probability twice every second that a
@@ -374,7 +378,8 @@ void Projectile::CheckLock(const Ship &target)
 	if(weapon->OpticalTracking())
 	{
 		double weight = target.Mass() * target.Mass();
-		double probability = weapon->OpticalTracking() * weight / (150000. + weight);
+		double probability = weapon->OpticalTracking() * weight / (150000. + weight) *
+			(target.Cloaking() == 1. ? (1. - target.Attributes().Get("cloaking visibility")) : 1.);
 		hasLock |= Check(probability, base);
 	}
 
@@ -389,7 +394,7 @@ void Projectile::CheckLock(const Ship &target)
 		double multiplier = 1.;
 		if(distance <= shortRange)
 			multiplier = 2. - distance / shortRange;
-		double probability = weapon->InfraredTracking() * min(1., target.Heat() * multiplier + .05);
+		double probability = weapon->InfraredTracking() * min(1., target.Heat() * multiplier + .05) * cloakJamming;
 		hasLock |= Check(probability, base);
 	}
 
@@ -408,7 +413,7 @@ void Projectile::CheckLock(const Ship &target)
 			double rangeFraction = min(1., distance / jammingRange);
 			radarJamming = (1. - rangeFraction) * radarJamming;
 		}
-		double probability = weapon->RadarTracking() / (1. + radarJamming);
+		double probability = weapon->RadarTracking() / (1. + radarJamming) * cloakJamming;
 		hasLock |= Check(probability, base);
 	}
 }

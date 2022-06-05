@@ -145,7 +145,7 @@ namespace {
 
 		// Make sure this ship is able to send a hail.
 		if(ship->IsDisabled() || !ship->Crew()
-				|| ship->Cloaking() >= 1. || ship->GetPersonality().IsMute())
+				|| (ship->Cloaking() == 1. && !ship->Attributes().Get("cloaked action")) || ship->GetPersonality().IsMute())
 			return false;
 
 		// Ships that don't share a language with the player shouldn't send hails.
@@ -608,7 +608,8 @@ void Engine::Step(bool isActive)
 	if(isActive && Preferences::Has("Show status overlays"))
 		for(const auto &it : ships)
 		{
-			if(!it->GetGovernment() || it->GetSystem() != currentSystem || it->Cloaking() == 1.)
+			if(!it->GetGovernment() || it->GetSystem() != currentSystem ||
+					(it->Cloaking() == 1. && !it->Attributes().Get("cloaking targetability")))
 				continue;
 			// Don't show status for dead ships.
 			if(it->IsDestroyed())
@@ -746,7 +747,8 @@ void Engine::Step(bool isActive)
 	}
 	else
 	{
-		if(target->GetSystem() == player.GetSystem() && target->Cloaking() < 1.)
+		if(target->GetSystem() == player.GetSystem() && (target->Cloaking() < 1. || 
+				target->Attributes().Get("cloaking targetability")))
 			targetUnit = target->Facing().Unit();
 		info.SetSprite("target sprite", target->GetSprite(), targetUnit, target->GetFrame(step));
 		info.SetString("target name", target->Name());
@@ -2009,12 +2011,15 @@ void Engine::DoCollisions(Projectile &projectile)
 		double triggerRadius = projectile.GetWeapon().TriggerRadius();
 		if(triggerRadius)
 			for(const Body *body : shipCollisions.Circle(projectile.Position(), triggerRadius))
+			{
+				const Ship *ship = reinterpret_cast<const Ship *>(body);
 				if(body == projectile.Target() || (gov->IsEnemy(body->GetGovernment())
-						&& reinterpret_cast<const Ship *>(body)->Cloaking() < 1.))
+						&& (ship->Cloaking() < 1. || ship->Attributes().Get("cloaking invulnerability") < 0.)))
 				{
 					closestHit = 0.;
 					break;
 				}
+			}
 
 		// If nothing triggered the projectile, check for collisions with ships.
 		if(closestHit > 0.)
@@ -2022,8 +2027,14 @@ void Engine::DoCollisions(Projectile &projectile)
 			Ship *ship = reinterpret_cast<Ship *>(shipCollisions.Line(projectile, &closestHit));
 			if(ship)
 			{
-				hit = ship->shared_from_this();
-				hitVelocity = ship->Velocity();
+				// Check if we can hit this.
+				if(ship->Cloaking() == 1. && ship->Attributes().Get("cloaking invulnerability") > 0.)
+					closestHit = 1.;
+				else
+				{
+					hit = ship->shared_from_this();
+					hitVelocity = ship->Velocity();
+				}
 			}
 		}
 		// "Phasing" projectiles can pass through asteroids. For all other
@@ -2062,7 +2073,8 @@ void Engine::DoCollisions(Projectile &projectile)
 			{
 				Ship *ship = reinterpret_cast<Ship *>(body);
 				bool targeted = (projectile.Target() == ship);
-				if(isSafe && !targeted && !gov->IsEnemy(ship->GetGovernment()))
+				if(isSafe && !targeted && !gov->IsEnemy(ship->GetGovernment()) && 
+						(ship->Cloaking() < 1. || ship->Attributes().Get("cloaking invulnerability") <= 0.))
 					continue;
 
 				// Only directly targeted ships get provoked by blast weapons.
@@ -2246,7 +2258,7 @@ void Engine::FillRadar()
 		{
 			// Do not show cloaked ships on the radar, except the player's ships.
 			bool isYours = ship->IsYours();
-			if(ship->Cloaking() >= 1. && !isYours)
+			if(ship->Cloaking() == 1. && !ship->Attributes().Get("cloaking shows on radar") && !isYours)
 				continue;
 
 			// Figure out what radar color should be used for this ship.
@@ -2296,6 +2308,9 @@ void Engine::AddSprites(const Ship &ship)
 {
 	bool hasFighters = ship.PositionFighters();
 	double cloak = ship.Cloaking();
+	double cloakVisibility = ship.Attributes().Get("cloaking visibility");
+	if(cloakVisibility)
+		cloak = min(1. - cloakVisibility, cloak);
 	bool drawCloaked = (cloak && ship.IsYours());
 	auto &itemsToDraw = draw[calcTickTock];
 	auto drawObject = [&itemsToDraw, cloak, drawCloaked](const Body &body) -> void

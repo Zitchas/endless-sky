@@ -1433,6 +1433,9 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 			cloak = min(1., cloak + cloakingSpeed);
 			fuel -= attributes.Get("cloaking fuel");
 			energy -= attributes.Get("cloaking energy");
+			shields -= attributes.Get("cloaking shields");
+			shieldDelay += attributes.Get("cloaking shield delay");
+			hullDelay += attributes.Get("cloaking hull delay");
 			heat += attributes.Get("cloaking heat");
 		}
 		else if(cloakingSpeed)
@@ -1996,7 +1999,7 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 
 			if(distance < 10. && speed < 1. && (CanBeCarried() || !turn))
 			{
-				if(cloak)
+				if(cloak && !attributes.Get("cloaked action"))
 				{
 					// Allow the player to get all the way to the end of the
 					// boarding sequence (including locking on to the ship) but
@@ -2532,6 +2535,9 @@ bool Ship::Fire(vector<Projectile> &projectiles, vector<Visual> &visuals)
 
 	if(CannotAct())
 		return false;
+	double cloakActionCost = attributes.Get("cloaked action");
+	if(cloak && cloakActionCost)
+		cloak -= cloakActionCost;
 
 	antiMissileRange = 0.;
 
@@ -2615,7 +2621,8 @@ bool Ship::IsCapturable() const
 
 bool Ship::IsTargetable() const
 {
-	return (zoom == 1.f && !explosionRate && !forget && !isInvisible && cloak < 1. && hull >= 0. && hyperspaceCount < 70);
+	return (zoom == 1.f && !explosionRate && !forget && !isInvisible && (cloak < 1. || 
+		(cloak == 1. && attributes.Get("cloaking targetability"))) && hull >= 0. && hyperspaceCount < 70);
 }
 
 
@@ -2672,7 +2679,8 @@ bool Ship::CanLand() const
 
 bool Ship::CannotAct() const
 {
-	return (zoom != 1.f || isDisabled || hyperspaceCount || pilotError || cloak);
+	return (zoom != 1.f || isDisabled || hyperspaceCount || pilotError || 
+		((cloak == 1. && !attributes.Get("cloaked action")) || (cloak != 1. && cloak)));
 }
 
 
