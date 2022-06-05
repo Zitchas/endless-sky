@@ -145,3 +145,46 @@ mission "Remnant: Visit to Paradise 1"
 			`	Taely leads you around the area for a few more hours, pointing out historical features, places where they resurrected trades and skills from before the advent of flight, and other interesting things. Eventually she heads back to the train station, which deposits you back in the main spaceport.`
 			`	"I hope you enjoyed the tour, <first>. It was interesting to see our history through fresh eyes." She smiles micheviously. "And I enjoyed the hoverboarding, too. Maybe we can do it again sometime." She pauses for a moment, focusing on something you cannot see. "Looks like duty calls. Embers guide your way, Captain <last>." She waves, and heads off into the crowd.`
 
+
+
+mission "Remnant: Celebration 1"
+	name "Deliver Celebration records to <destination>"
+	description "The Remnant have asked you to take records of their celebration to <destination>"
+	minor
+	source
+		government "Remnant"
+	destination
+		government "Remnant"
+	to offer
+		has "event: remnant: cognizance calm"
+		has "license: Remnant Capital"
+		random < 25
+		"day" = 7
+	on offer
+		conversation
+			`You stop by the starport just in time to see a large group of Remnant heading off together. A few of them notice you and gesture an invitation to accompany them, but before you can react Taely appears from the stream of people and approaches you.`
+			`	"Well met, <first>. We were just going to the monthly Celebration of Remembrance. Would you like to accompany us?"`
+			choice
+				`	"Yes, I would."`
+					goto celebrationattendance
+				`	"What is that?"`
+					goto celebrationdefinition
+				`	"No thanks."`
+			label celebrationdeclined
+			`	She nods. "May the Embers guide you, <first>." With that, she rejoins the stream of people and vanishes from sight.`
+				decline
+			label celebrationdefinition
+			`	"The Celebration of Remembrance is a gathering where we take a moment to remember where we have come from, appreciate where we are, and express our hope for the future." Her gestures take on a critical tone. "That sounds very formal, but it is more artistic than defined." She glances at the slowing flow of people. "It will be starting shortly, and I want to attend this month, so I should get moving. Do you want to come too?"`
+			choice
+				`	"Yes, I do."`
+				`	"No thanks."`
+					goto celebrationdeclined
+			label celebrationattendance
+			`	As the two of you join the flow of people Taely gestures once again. "I can provide you with some commentary`
+	on complete
+		conversation
+			``
+# Multiple different celebrations
+# Have a few 'conversations' with different characters that only occur once.
+# 
+
