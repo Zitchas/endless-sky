@@ -214,6 +214,7 @@ person "Marauding Max"
 ship "Marauder Fury"
 	plural "Marauder Furies"
 	sprite "ship/mfury"
+		"scale" 0.8
 	thumbnail "thumbnail/mfury"
 	attributes
 		category "Interceptor"
@@ -1390,6 +1391,7 @@ person "Brick"
 
 ship "Modified Boxwing"
 	sprite "ship/modified boxwing"
+		"scale" 0.8
 	thumbnail "thumbnail/modified boxwing"
 	attributes
 		category "Interceptor"

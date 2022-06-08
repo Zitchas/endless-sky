@@ -48,6 +48,7 @@ ship "Earth Shaper"
 
 ship "Flycatcher"
 	sprite "ship/flycatcher"
+		"scale" 0.5
 	thumbnail "thumbnail/flycatcher"
 	attributes
 		category "Drone"
@@ -567,6 +568,7 @@ ship "Hurricane" "Hurricane (Tough)"
 
 ship "Cool Breeze"
 	sprite "ship/cool breeze"
+		"scale" 0.8
 	thumbnail "thumbnail/cool breeze"
 	attributes
 		category "Interceptor"

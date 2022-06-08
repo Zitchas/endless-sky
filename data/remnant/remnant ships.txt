@@ -582,6 +582,7 @@ ship "Ibis"
 
 ship "Merganser"
 	sprite "ship/merganser"
+		"scale" 0.8
 	thumbnail "thumbnail/merganser"
 	attributes
 		category "Interceptor"
@@ -929,6 +930,7 @@ ship "Peregrine"
 
 ship "Petrel"
 	sprite "ship/petrel"
+		"scale" 0.75
 	thumbnail "thumbnail/petrel"
 	attributes
 		category "Fighter"
@@ -1195,6 +1197,7 @@ ship "Starling" "Starling (Thrasher)"
 
 ship "Tern"
 	sprite "ship/tern"
+		"scale" 0.5
 	thumbnail "thumbnail/tern"
 	attributes
 		category "Drone"

@@ -454,6 +454,7 @@ ship "Vareti'het" "Vareti'het (Strong, Disable-able)"
 
 ship "Selii'mar"
 	sprite "ship/selii'mar"
+		"scale" 0.5
 	thumbnail "thumbnail/selii'mar"
 	attributes
 		category "Drone"
@@ -485,6 +486,7 @@ ship "Selii'mar"
 
 ship "Faes'mar"
 	sprite "ship/faes'mar"
+		"scale" 0.5
 	thumbnail "thumbnail/faes'mar"
 	attributes
 		category "Drone"
@@ -528,6 +530,7 @@ ship "Faes'mar" "Faes'mar (Strong)"
 ship "Fetri'sei"
 	plural "Fetri'seia"
 	sprite "ship/fetri'sei"
+		"scale" 0.8
 	thumbnail "thumbnail/fetri'sei"
 	"never disabled"
 	attributes

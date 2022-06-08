@@ -1175,6 +1175,7 @@ ship "Heliarch Punisher" "Heliarch Punisher (Scrappy)"
 
 ship "Heliarch Pursuer"
 	sprite "ship/heliarch pursuer"
+		"scale" 0.75
 	thumbnail "thumbnail/heliarch pursuer"
 	attributes
 		category "Fighter"
@@ -1234,6 +1235,7 @@ ship "Heliarch Pursuer" "Heliarch Pursuer (Scrappy)"
 
 ship "Heliarch Rover"
 	sprite "ship/heliarch rover"
+		"scale" 0.75
 	thumbnail "thumbnail/heliarch rover"
 	attributes
 		category "Fighter"
@@ -1292,6 +1294,7 @@ ship "Heliarch Rover" "Heliarch Rover (Ions)"
 
 ship "Heliarch Stalker"
 	sprite "ship/heliarch stalker"
+		"scale" 0.75
 	thumbnail "thumbnail/heliarch stalker"
 	attributes
 		category "Fighter"

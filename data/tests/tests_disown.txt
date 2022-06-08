@@ -13,6 +13,7 @@ test-data "Owned Drone"
 		ship "Surveillance Drone"
 			name "Observer"
 			sprite "ship/surveillance drone"
+				"scale" 0.5
 			thumbnail "thumbnail/surveillance drone"
 			attributes
 				category "Drone"

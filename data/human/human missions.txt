@@ -2124,6 +2124,7 @@ mission "Terminus exploration"
 
 ship "Science Drone"
 	sprite "ship/science drone"
+		"scale" 0.5
 	attributes
 		category "Drone"
 		hull 200
