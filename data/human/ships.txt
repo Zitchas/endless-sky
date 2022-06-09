@@ -364,7 +364,7 @@ ship "Bactrian"
 
 ship "Barb"
 	sprite "ship/barb"
-		"scale" 0.75
+		"scale" 0.65
 	thumbnail "thumbnail/barb"
 	attributes
 		category "Fighter"
@@ -556,7 +556,7 @@ ship "Behemoth"
 
 ship "Berserker"
 	sprite "ship/berserker"
-		"scale" 0.8
+		"scale" 0.7
 	thumbnail "thumbnail/berserker"
 	attributes
 		category "Interceptor"
@@ -709,7 +709,7 @@ ship "Bounder"
 
 ship "Boxwing"
 	sprite "ship/boxwing"
-		"scale" 0.75
+		"scale" 0.65
 	thumbnail "thumbnail/boxwing"
 	attributes
 		category "Fighter"
@@ -1025,7 +1025,7 @@ ship "Clipper"
 
 ship "Combat Drone"
 	sprite "ship/combat drone"
-		"scale" 0.5
+		"scale" 0.6
 	thumbnail "thumbnail/combat drone"
 	attributes
 		category "Drone"
@@ -1265,7 +1265,7 @@ ship "Cruiser"
 
 ship "Dagger"
 	sprite "ship/dagger"
-		"scale" 0.75
+		"scale" 0.65
 	thumbnail "thumbnail/dagger"
 	attributes
 		category "Fighter"
@@ -1379,7 +1379,7 @@ ship "Dreadnought"
 
 ship "Dropship"
 	sprite "ship/dropship"
-		"scale" 0.75
+		"scale" 0.65
 	thumbnail "thumbnail/dropship"
 	attributes
 		category "Fighter"
@@ -1493,7 +1493,7 @@ ship "Falcon"
 ship "Finch"
 	plural "Finches"
 	sprite "ship/finch"
-		"scale" 0.75
+		"scale" 0.65
 	thumbnail "thumbnail/finch"
 	attributes
 		category "Fighter"
@@ -1764,7 +1764,7 @@ ship "Frigate"
 ship "Fury"
 	plural "Furies"
 	sprite "ship/fury"
-		"scale" 0.8
+		"scale" 0.7
 	thumbnail "thumbnail/fury"
 	attributes
 		category "Interceptor"
@@ -2053,7 +2053,7 @@ ship "Hauler III"
 
 ship "Hawk"
 	sprite "ship/hawk"
-		"scale" 0.8
+		"scale" 0.7
 	thumbnail "thumbnail/hawk"
 	attributes
 		category "Interceptor"
@@ -2198,7 +2198,7 @@ ship "Heavy Shuttle"
 
 ship "Lance"
 	sprite "ship/lance"
-		"scale" 0.75
+		"scale" 0.65
 	thumbnail "thumbnail/lance"
 	attributes
 		category "Fighter"
@@ -3061,7 +3061,7 @@ ship "Skein"
 
 ship "Sparrow"
 	sprite "ship/sparrow"
-		"scale" 0.8
+		"scale" 0.7
 	thumbnail "thumbnail/sparrow"
 	attributes
 		category "Interceptor"
@@ -3273,7 +3273,7 @@ ship "Star Queen"
 
 ship "Surveillance Drone"
 	sprite "ship/surveillance drone"
-		"scale" 0.5
+		"scale" 0.6
 	thumbnail "thumbnail/surveillance drone"
 	attributes
 		category "Drone"
@@ -3375,7 +3375,7 @@ ship "Vanguard"
 
 ship "Wasp"
 	sprite "ship/wasp"
-		"scale" 0.8
+		"scale" 0.7
 	thumbnail "thumbnail/wasp"
 	attributes
 		category "Interceptor"

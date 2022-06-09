@@ -299,7 +299,7 @@ ship "Korath Raider" "Korath Raider (Crippled)"
 
 ship "Korath Chaser"
 	sprite "ship/chaser"
-		"scale" 0.75
+		"scale" 0.65
 	thumbnail "thumbnail/chaser"
 	attributes
 		category "Fighter"
@@ -1078,7 +1078,7 @@ ship "Met Par Tek 53" "Met Par Tek 53 (Sniper)"
 
 ship "Far Lek 14"
 	sprite "ship/far lek 14"
-		"scale" 0.5
+		"scale" 0.6
 	thumbnail "thumbnail/far lek 14"
 	attributes
 		category "Drone"
@@ -1120,7 +1120,7 @@ ship "Far Lek 14"
 
 ship "Far Osk 27"
 	sprite "ship/far osk 27"
-		"scale" 0.75
+		"scale" 0.65
 	thumbnail "thumbnail/far osk 27"
 	attributes
 		category "Fighter"
@@ -1163,7 +1163,7 @@ ship "Far Osk 27"
 
 ship "Model 8"
 	sprite "ship/model 8"
-		"scale" 0.8
+		"scale" 0.7
 	thumbnail "thumbnail/model 8"
 	attributes
 		category "Interceptor"

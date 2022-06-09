@@ -10,7 +10,7 @@
 
 ship "Marauder Arrow"
 	sprite "ship/marrows"
-		"scale" 0.8
+		"scale" 0.7
 	thumbnail "thumbnail/marrows"
 	attributes
 		category "Interceptor"
@@ -110,7 +110,7 @@ ship "Marauder Arrow" "Marauder Arrow (Weapons)"
 
 ship "Marauder Bounder"
 	sprite "ship/mbounders"
-		"scale" 0.8
+		"scale" 0.7
 	thumbnail "thumbnail/mbounders"
 	attributes
 		category "Interceptor"
