@@ -15,7 +15,7 @@ outfit "Inhibitor Cannon"
 	licenses
 		Remnant
 	cost 471000
-	thumbnail "outfit/inhibitor cannon"
+	thumbnail "outfit/insortiach cannon"
 	"mass" 16
 	"outfit space" -16
 	"weapon capacity" -16
@@ -52,12 +52,13 @@ effect "inhibitor impact"
 	"random velocity" 6
 	"velocity scale" -.05
 
+
 outfit "Inhibitor Turret"
 	category "Turrets"
 	licenses
 		Remnant
 	cost 1371000
-	thumbnail "outfit/inhibitor turret"
+	thumbnail "outfit/insortiach turret"
 	"mass" 42
 	"outfit space" -28
 	"weapon capacity" -22
@@ -67,7 +68,7 @@ outfit "Inhibitor Turret"
 		sprite "projectile/inhibitor"
 			"frame rate" 10
 			"no repeat"
-		"hardpoint sprite" "hardpoint/inhibitor turret"
+		"hardpoint sprite" "hardpoint/insortiach turret"
 		"hardpoint offset" 6.
 		sound "inhibitor"
 		"hit effect" "inhibitor impact" 3
@@ -87,6 +88,78 @@ outfit "Inhibitor Turret"
 		"slowing damage" .5
 	description `While cannons that can interfere with a ship's engines are useful in any situation, the Remnant quickly decided that it would be even more useful as a turret that their ships could use to impede those chasing after them. These small Inhibitor Turrets are typically found primarily on Pelicans trying to outrun opponents rather than defeat them.`
 	description `Although these turrets are unremarkable in terms of performance, the comparatively recent perfection of a technique of installing the bulk of the weapon itself externally on the turret mount instead of under the base has resulted in a weapon that takes comparatively little outfit space. It does, however, still add quite a bit more to the mass of the ship.`
+
+
+outfit "Insortiach Cannon"
+	category "Guns"
+	licenses
+		Remnant
+	cost 471000
+	thumbnail "outfit/insortiach cannon"
+	"mass" 16
+	"outfit space" -8
+	"weapon capacity" -8
+	"gun ports" -1
+	weapon
+		sprite "projectile/inhibitor"
+			"frame rate" 10
+			"no repeat"
+		sound "inhibitor"
+		"hit effect" "inhibitor impact" 3
+		"inaccuracy" .5
+		"velocity" 41
+		"random velocity" .5
+		"lifetime" 24
+		"reload" 13
+		"cluster"
+		"firing energy" 26
+		"firing heat" 49
+		"firing force" 13
+		"shield damage" 26
+		"hull damage" 19.5
+		"hit force" 39
+		"slowing damage" .5
+		"energy consumption" 0.08
+	description `Nearly a century ago, a Remnant scout exploring space north of the Ember Waste came under fire from an alien fleet armed with weapons that interfered with the scout's engines. The story says that the Remnant captain calmly told her crew, "We aren't going home until we steal that weapon." That alien technology became the basis of the Inhibitor Cannon.`
+	description `	Space is always a premium on Remnant ships, and thus Maudrakoi engineering is of particular interest to them. While elements of it has been in long-standing use with the Point Defense Turrets, the Remnant's ability to apply it to new technology instead of merely duplicating existing systems has led to a revolution in density. While this has interesting benefits, it also requires a constant power draw to maintain the field.`
+
+
+outfit "Insortiach Turret"
+	category "Turrets"
+	licenses
+		Remnant
+	cost 1671000
+	thumbnail "outfit/insortiach turret"
+	"mass" 42
+	"outfit space" -20
+	"weapon capacity" -20
+	"required crew" 1
+	"turret mounts" -1
+	weapon
+		sprite "projectile/inhibitor"
+			"frame rate" 10
+			"no repeat"
+		"hardpoint sprite" "hardpoint/insortiach turret"
+		"hardpoint offset" 6.
+		sound "inhibitor"
+		"hit effect" "inhibitor impact" 3
+		"inaccuracy" .5
+		"turret turn" 3.5
+		"velocity" 41
+		"random velocity" .5
+		"lifetime" 24
+		"reload" 6.5
+		"cluster"
+		"firing energy" 26
+		"firing heat" 49
+		"firing force" 11
+		"shield damage" 26
+		"hull damage" 19.5
+		"hit force" 39
+		"slowing damage" .5
+		"energy consumption" 0.15
+	description `While cannons that can interfere with a ship's engines are useful in any situation, the Remnant quickly decided that it would be even more useful as a turret that their ships could use to impede those chasing after them. These small Inhibitor Turrets are typically found primarily on Pelicans trying to outrun opponents rather than defeat them.`
+	description `While the perfection of a technique for shifting the bulk of the turret's equipment into the external mount was a step in the right direction, the recent improvement in understanding Maudrakoi engineering has led to the ability to compact some of the equipment into a smaller space. This does have both positive and negative effects on the Insortiach Turret's performance.`
 
 
 outfit "Thrasher Cannon"
