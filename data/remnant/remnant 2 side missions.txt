@@ -148,13 +148,41 @@ mission "Remnant: Visit to Paradise 1"
 
 
 mission "Remnant: Insortiach Development 1"
-	name "Travel to <planet> to meet Penumbra"
+	name "Take data crystals to <planet> for Penumbra"
 	description "Take Taely to visit <stopovers>, then return to <planet>."
 	minor
 	source
-		government "Remnant"
+		random <25
+		or
+			"Viminal"
+			"Aventine"
 	destination "Caelian"
-	stopover "Vail"
+	cargo "prototypes" 3
+	blocked "Your commlink notifies you that someone sent you a mission request, but it was automatically deferred as <ship> needs at least 3 free cargo space."
 	to offer
 		has "event: remnant: cognizance calm"
+	on offer
+		conversation
+			`It is evening on Caelian when you enter the spaceport cafeteria; and the tables are full of Remnant. Some appear to be at the end of their scheduled work day, while others are just beginning. As you step into the room your commlink notifies you of an incoming message.`
+			`	The message arrives as a video feed with some sort of spinning logo with text superimposed on top: "Good evening <first> <last> of the <ship>. You are requested to transport prototype equipment to facility Be74-M4x on <destination> by <date>. Please respond to indicate your acceptance; the equipment will be delivered to <ship> shortly. - Penumbra" With that, the message ends, leaving you with a pair of buttons marked 'accept' and 'reject.'`
+			choice
+				`	"Accept"`
+					goto insortiachaccept
+				`	"Decline"`
+					decline
+				`	(Ask a nearby Remnant who this Penumbra is.)"`
+			`	Across the table from you a Remnant is just finishing their meal when you lean across to show them the name and ask who they are. The Remnant looks distant for a moment, then gestures that they are the coordinator for a manufacturing facility that transitions items destined for mass production from lab-built prototypes to designs suitable for significant production. They seem surprised that Penumbra would contact you directly, as normally their tasks are handled by the regular job distribution board.`
+			choice
+				`	"Thanks for the information!"`
+					goto thanks
+				`	"What does a coordinator do?"`
+			`	The Remnant looks thoughtful before replying. "They handle all the organizational elements: Keeping track of projects, working out availability, arranging details for special projects... things like those. There are algorithms and virtual intelligences to handle most of those, of course, but a human touch is often needed to ensure that things go smoothly."` 
+			label thanks
+			`	They pick up their tray. "Embers watch over you, <first>. Working with Penumbra is likely to be interesting." With that, they head off to drop off their tray, leaving you to contemplate your commlink's display with the accept and decline buttons.`
+			choice
+				`	"Accept"`
+				`	"Decline"`
+			label insortiachaccept
+			`	Moments after having selected the 'Accept' 
+			
 
