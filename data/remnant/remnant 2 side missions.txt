@@ -163,7 +163,7 @@ mission "Remnant: Insortiach Development 1"
 		has "event: remnant: cognizance calm"
 	on offer
 		conversation
-			`It is evening on Caelian when you enter the spaceport cafeteria; and the tables are full of Remnant. Some appear to be at the end of their scheduled work day, while others are just beginning. As you step into the room your commlink notifies you of an incoming message.`
+			`It is evening on Caelian when you enter the spaceport cafeteria; and the tables are full. Some appear to be at the end of their scheduled work day, while others are just beginning. As you step into the room your commlink notifies you of an incoming message.`
 			`	The message arrives as a video feed with some sort of spinning logo with text superimposed on top: "Good evening <first> <last> of the <ship>. You are requested to transport prototype equipment to facility Be74-M4x on <destination> by <date>. Please respond to indicate your acceptance; the equipment will be delivered to <ship> shortly. - Penumbra" With that, the message ends, leaving you with a pair of buttons marked 'accept' and 'reject.'`
 			choice
 				`	"Accept"`
@@ -171,7 +171,7 @@ mission "Remnant: Insortiach Development 1"
 				`	"Decline"`
 					decline
 				`	(Ask a nearby Remnant who this Penumbra is.)"`
-			`	Across the table from you a Remnant is just finishing their meal when you lean across to show them the name and ask who they are. The Remnant looks distant for a moment, then gestures that they are the coordinator for a manufacturing facility that transitions items destined for mass production from lab-built prototypes to designs suitable for significant production. They seem surprised that Penumbra would contact you directly, as normally their tasks are handled by the regular job distribution board.`
+			`	Across the table from you a Remnant is just finishing their meal when you lean across to show them the name and ask who they are. The Remnant looks distant for a moment, then gestures that Penumbra is the coordinator for a manufacturing facility that transitions items destined for mass production from lab-built prototypes to designs suitable for significant production. They seem surprised that Penumbra would contact you directly, as normally their tasks are handled by the regular job distribution board.`
 			choice
 				`	"Thanks for the information!"`
 					goto thanks
@@ -182,7 +182,8 @@ mission "Remnant: Insortiach Development 1"
 			choice
 				`	"Accept"`
 				`	"Decline"`
+					decline
 			label insortiachaccept
-			`	Moments after having selected the 'Accept' 
-			
+			`	Moments after having selected the 'Accept' button, a second message arrives. "The equipment will be loaded on your ship momentarily. Please ensure delivery by <date>."`
+	
 
