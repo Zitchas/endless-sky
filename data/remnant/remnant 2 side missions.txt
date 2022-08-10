@@ -158,9 +158,10 @@ mission "Remnant: Insortiach Development 1"
 			"Aventine"
 	destination "Caelian"
 	cargo "prototypes" 3
-	blocked "Your commlink notifies you that someone sent you a mission request, but it was automatically deferred as <ship> needs at least 3 free cargo space."
+	blocked "Your commlink notifies you that someone sent you a mission request, but it was automatically deferred as <ship> needs at least 3 tons of free cargo space."
 	to offer
 		has "event: remnant: cognizance calm"
+		# random < 25
 	on offer
 		conversation
 			`It is evening on Caelian when you enter the spaceport cafeteria; and the tables are full. Some appear to be at the end of their scheduled work day, while others are just beginning. As you step into the room your commlink notifies you of an incoming message.`
@@ -185,5 +186,39 @@ mission "Remnant: Insortiach Development 1"
 					decline
 			label insortiachaccept
 			`	Moments after having selected the 'Accept' button, a second message arrives. "The equipment will be loaded on your ship momentarily. Please ensure delivery by <date>."`
+				accept
+	on complete
+		payment 100000
+		conversation
+			`	You check-in on final approach to the spaceport of Caelian and are surprised when traffic control diverts you to a landing pad deep an industrial sector adjacent to the spaceport. The <ship> settles onto a shadowy pad with little more than a few landing lights for guidance. As you step out of your cargo bay an automated gravlift emerges from a dark corridor. Your commlink promptly indicates an incoming call.`
+			`	It is the same spinning logo as Penumbra's initial call, although this time it is accompanied by a monotonous chanting voice "You have completed the delivery successfully. The <ship> has been allocated <payment> accordingly. Please step aside so that the gravlift can unload the cargo."`
+			choice
+				`	(step aside so it can unload)`
+					goto unload
+				`	"Who are you?"`
+			`	"I am known as Penumbra. The previous message was clear enough, was it not?"`
+			choice
+				`	"I suppose it was." (step aside so it can unload)`
+					goto unload
+				`	"Yes, but that is just a name, not who you are."`
+			branch trusted
+				has "Remnant: Scanning Tolerances: done"
+			`	"Ah, well, I am the manager of this industrial complex. Nothing more or less. Interesting as this conversation is, you are obstructing my gravlift's work."`
+				goto initialconversation
+			label trusted
+			`	"Ah, well, I run this industrial complex, and manage the logistics of new developments. That said, my gravlift is waiting to unload the cargo."`
+			label initialconversation
+			choice
+				`	"That is something, I suppose." (Step aside so it can unload)`
+					goto unload
+				`	"What sort of new developments do you manage?"`
+			branch trusted2
+				has "Remnant: Scanning Tolerances: done"
+			`	"I generally work with new applications for heavy industry. Equipment, machinery, and the like. I must insist that you allow the cargo to be unloaded."`
+				goto unload
+			label trusted2
+			`	"I usually work with new applications for heavy industry; starship outfits and components in particular. Now, I must insist that you step aside so the cargo can be unloaded."`
+			label unload
+			`	The gravlift quickly unloads the cargo and vanishes with it into the darkness. As it goes, Penumbra continues. "As your performance was nominal, additional tasks will be available in the future." With that, the connection closes, leaving you standing by the cargo ramp of the <ship>.`
 	
 
