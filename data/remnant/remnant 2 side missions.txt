@@ -152,10 +152,7 @@ mission "Remnant: Insortiach Development 1"
 	description "Take Taely to visit <stopovers>, then return to <planet>."
 	minor
 	source
-		random <25
-		or
-			"Viminal"
-			"Aventine"
+		government "Remnant"
 	destination "Caelian"
 	cargo "prototypes" 3
 	blocked "Your commlink notifies you that someone sent you a mission request, but it was automatically deferred as <ship> needs at least 3 tons of free cargo space."
