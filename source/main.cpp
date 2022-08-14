@@ -26,6 +26,7 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 #include "GameWindow.h"
 #include "GameLoadingPanel.h"
 #include "Hardpoint.h"
+#include "Logger.h"
 #include "MenuPanel.h"
 #include "Outfit.h"
 #include "Panel.h"
@@ -87,6 +88,9 @@ int main(int argc, char *argv[])
 	bool printWeapons = false;
 	string testToRunName = "";
 
+	// Ensure that we log errors to the errors.txt file.
+	Logger::SetLogErrorCallback([](const string &errorMessage) { Files::LogErrorToFile(errorMessage); });
+
 	for(const char *const *it = argv + 1; *it; ++it)
 	{
 		string arg = *it;
@@ -129,7 +133,7 @@ int main(int argc, char *argv[])
 
 		if(!testToRunName.empty() && !GameData::Tests().Has(testToRunName))
 		{
-			Files::LogError("Test \"" + testToRunName + "\" not found.");
+			Logger::LogError("Test \"" + testToRunName + "\" not found.");
 			return 1;
 		}
 
@@ -326,7 +330,7 @@ void GameLoop(PlayerInfo &player, const Conversation &conversation, const string
 			// When flying around, all test processing must be handled in the
 			// thread-safe section of Engine. When not flying around (and when no
 			// Engine exists), then it is safe to execute the tests from here.
-			auto mainPanel = gamePanels.Root().get();
+			auto mainPanel = gamePanels.Root();
 			if(!isPaused && inFlight && menuPanels.IsEmpty() && mainPanel)
 				mainPanel->SetTestContext(testContext);
 			else if(debugMode && testDebugUIDelay > 0)
@@ -636,11 +640,26 @@ void InitConsole()
 		return;
 
 	// Perform console redirection.
-	if(redirectStdout && freopen("CONOUT$", "w", stdout))
-		setvbuf(stdout, nullptr, _IOFBF, 4096);
-	if(redirectStderr && freopen("CONOUT$", "w", stderr))
-		setvbuf(stderr, nullptr, _IOLBF, 1024);
-	if(redirectStdin && freopen("CONIN$", "r", stdin))
-		setvbuf(stdin, nullptr, _IONBF, 0);
+	if(redirectStdout)
+	{
+		FILE *fstdout = nullptr;
+		freopen_s(&fstdout, "CONOUT$", "w", stdout);
+		if(fstdout)
+			setvbuf(stdout, nullptr, _IOFBF, 4096);
+	}
+	if(redirectStderr)
+	{
+		FILE *fstderr = nullptr;
+		freopen_s(&fstderr, "CONOUT$", "w", stderr);
+		if(fstderr)
+			setvbuf(stderr, nullptr, _IOLBF, 1024);
+	}
+	if(redirectStdin)
+	{
+		FILE *fstdin = nullptr;
+		freopen_s(&fstdin, "CONIN$", "r", stdin);
+		if(fstdin)
+			setvbuf(stdin, nullptr, _IONBF, 0);
+	}
 }
 #endif
