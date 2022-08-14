@@ -500,13 +500,21 @@ void OutfitterPanel::FailBuy() const
 	}
 
 	if(!playerShip)
+	{
+		double mass = selectedOutfit->Mass();
+		double freeCargo = player.Cargo().Free();
+
+		GetUI()->Push(new Dialog("You cannot buy this outfit, because it takes up "
+			+ Tons(mass) + " of mass, and your fleet has "
+			+ Tons(freeCargo) + " of cargo space free."));
 		return;
+	}
+
 
 	double outfitNeeded = -selectedOutfit->Get("outfit space");
 	double outfitSpace = playerShip->Attributes().Get("outfit space");
 	if(outfitNeeded > outfitSpace)
 	{
-		string need =  to_string(outfitNeeded) + (outfitNeeded != 1. ? "tons" : "ton");
 		GetUI()->Push(new Dialog("You cannot install this outfit, because it takes up "
 			+ Tons(outfitNeeded) + " of outfit space, and this ship has "
 			+ Tons(outfitSpace) + " free."));
@@ -824,6 +832,18 @@ void OutfitterPanel::ToggleCargo()
 	if (selectedOutfit && !HasItem(selectedOutfit->Name()))
 	{
 		selectedOutfit = nullptr;
+	}
+
+	if(playerShip)
+	{
+		playerShip = nullptr;
+		playerShips.clear();
+	}
+	else
+	{
+		playerShip = player.Flagship();
+		if(playerShip)
+			playerShips.insert(playerShip);
 	}
 
 	ShopPanel::ToggleCargo();
