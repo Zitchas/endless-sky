@@ -16,6 +16,8 @@ person "Michael Zahniser"
 		word
 			"I hope you're enjoying the game!"
 	ship Kestrel Kestrel
+		sprite "ship/kestreloriginal"
+		thumbnail "thumbnail/kestreloriginal"
 		"never disabled"
 		attributes
 			category "Heavy Warship"
@@ -50,8 +52,6 @@ person "Michael Zahniser"
 		
 		engine -14 177
 		engine 14 177
-		bay "Fighter" -46 106 under
-		bay "Fighter" 46 106 under
 		gun -75 57 "Ion Cannon"
 		gun 75 57 "Ion Cannon"
 		gun -75 57 "Ion Cannon"
@@ -72,6 +72,8 @@ person "Michael Zahniser"
 		turret 23 14 "Electron Turret"
 		turret -23 14 "Heavy Anti-Missile Turret"
 		turret 23 14 "Heavy Anti-Missile Turret"
+		bay "Fighter" -46 106 under
+		bay "Fighter" 46 106 under
 		explode "small explosion" 50
 		explode "medium explosion" 80
 		explode "large explosion" 120
@@ -633,7 +635,7 @@ ship "Modified Osprey"
 		"Tactical Scanner"
 		"Wanderer Ramscoop"
 		
-		"Afterburner"
+		"Volcano Afterburner"
 		`"Bufaer" Atomic Thruster`
 		"Ionic Afterburner" 5
 		"Type 4 Radiant Thruster"
@@ -896,7 +898,7 @@ person "Prototype B3-CC4"
 			"I remember when the Archons tried to kill me with some supernovae. They got so depressed when they understood that not even their weapons could stop me."
 			"I ate a black hole once. It took me a few years, but it was definitely worth it. Tastes like chicken."
 			"I am the only thing in the universe capable of beating the power of friendship."
-			"I want to tell you some words of a long gone past, which back then used to scare people of your race more than any weapon or war machine. These words are, 'The MacOS workflow run was not successful.'"
+			"I want to tell you some words of a long gone past, which back then used to scare people of your race more than any weapon or war machine. These words are, 'The macOS workflow run was not successful.'"
 	phrase
 		word
 			"What are you looking at?"
