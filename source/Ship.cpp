@@ -2714,6 +2714,14 @@ const System *Ship::GetSystem() const
 
 
 
+const System *Ship::GetActualSystem() const
+{
+	auto p = GetParent();
+	return currentSystem ? currentSystem : (p ? p->GetSystem() : nullptr);
+}
+
+
+
 // If the ship is landed, get the planet it has landed on.
 const Planet *Ship::GetPlanet() const
 {
@@ -2773,6 +2781,13 @@ bool Ship::IsBoarding() const
 bool Ship::IsLanding() const
 {
 	return landingPlanet;
+}
+
+
+
+bool Ship::IsFleeing() const
+{
+	return isFleeing;
 }
 
 
@@ -4013,6 +4028,13 @@ shared_ptr<Flotsam> Ship::GetTargetFlotsam() const
 
 
 
+void Ship::SetFleeing(bool fleeing)
+{
+	isFleeing = fleeing;
+}
+
+
+
 // Set this ship's targets.
 void Ship::SetTargetShip(const shared_ptr<Ship> &ship)
 {
@@ -4139,6 +4161,23 @@ double Ship::BestFuel(const string &type, const string &subtype, double defaultF
 {
 	// Find the outfit that provides the least costly hyperjump.
 	double best = 0.;
+	double mass = Mass();
+
+	auto CalculateFuelCost = [mass, defaultFuel](const Outfit &outfit) -> double
+	{
+		double baseCost = outfit.Get("jump fuel");
+		if(baseCost <= 0.)
+			baseCost = defaultFuel;
+		// Mass cost is the fuel cost per 100 tons of ship mass. The jump base mass of a drive reduces the
+		// ship's effective mass for the jump mass cost calculation. A ship with a mass below the drive's
+		// jump base mass is allowed to have a negative mass cost.
+		double massCost = .01 * outfit.Get("jump mass cost") * (mass - outfit.Get("jump base mass"));
+		// Prevent a drive with a high jump base mass on a ship with a low mass from pushing the total
+		// cost too low. Put a floor at 1, as a floor of 0 would be assumed later on to mean you can't jump.
+		// If and when explicit 0s are allowed for fuel cost, this floor can become 0.
+		return max(1., baseCost + massCost);
+	};
+
 	// Make it possible for a hyperdrive to be integrated into a ship.
 	if(baseAttributes.Get(type) && (subtype.empty() || baseAttributes.Get(subtype)))
 	{
@@ -4150,15 +4189,12 @@ double Ship::BestFuel(const string &type, const string &subtype, double defaultF
 		double jumpRange = baseAttributes.Get("jump range");
 		if(!jumpRange)
 			jumpRange = System::DEFAULT_NEIGHBOR_DISTANCE;
+
 		// If no distance was given then we're either using a hyperdrive
 		// or refueling this ship, in which case this if statement will
 		// always pass.
 		if(jumpRange >= jumpDistance)
-		{
-			best = baseAttributes.Get("jump fuel");
-			if(!best)
-				best = defaultFuel;
-		}
+			best = CalculateFuelCost(baseAttributes);
 	}
 	// Search through all the outfits.
 	for(const auto &it : outfits)
@@ -4169,9 +4205,7 @@ double Ship::BestFuel(const string &type, const string &subtype, double defaultF
 				jumpRange = System::DEFAULT_NEIGHBOR_DISTANCE;
 			if(jumpRange >= jumpDistance)
 			{
-				double fuel = it.first->Get("jump fuel");
-				if(!fuel)
-					fuel = defaultFuel;
+				double fuel = CalculateFuelCost(*it.first);
 				if(!best || fuel < best)
 					best = fuel;
 			}
