@@ -40,15 +40,18 @@ Major Programming
   oo13
   Peter van der Meer
 
-Storyline & Faction Authors
-  Amazinite
-  Arachi-Lover
-  beccabunny
-  LocalGod79
-  Peter van der Meer
-  Pointedstick
-  TheUnfetteredOne
-  Zitchas
+Faction Authors
+  beccabunny - Builders & Ka'het
+  Lia Gerty - Korath
+  Zitchas - Remnant & Ember Waste
+  
+Major Storyline Authors
+  Amazinite - Deep Campaign
+  LocalGod79 - Marauder jobs
+  Peter van der Meer - Hauler IV missions
+  Pointedstick - Various small missions
+  MasterOfGrey - Hai Reveal
+  TheUnfetteredOne - Transport
 
 Editors & Proofreaders
   Arrow2thekn33
