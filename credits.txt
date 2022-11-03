@@ -14,11 +14,13 @@ Creator and Lead Programmer
 
 Developers
   Amazinite
+  Anarchist2
   Benjamin Hauch
   MCOfficer
   Peter van der Meer
   Pointedstick
   Quyykk
+  Saugia
   W1zrad
   Zitchas
 
@@ -41,17 +43,20 @@ Major Programming
   Peter van der Meer
 
 Faction Authors
-  beccabunny - Builders & Ka'het
-  Lia Gerty - Korath
-  Zitchas - Remnant & Ember Waste
+  beccabunny # - Builders & Ka'het
+  Lia Gerty # - Korath
+  Zitchas # - Remnant & Ember Waste
   
 Major Storyline Authors
-  Amazinite - Deep Campaign
-  LocalGod79 - Marauder jobs
-  Peter van der Meer - Hauler IV missions
-  Pointedstick - Various small missions
-  MasterOfGrey - Hai Reveal
-  TheUnfetteredOne - Transport
+  Amazinite # - Deep Campaign
+  MasterOfGrey # - Hai Reveal
+  Zitchas # - Remnant & Ember Waste
+ 
+Early Major Contributors
+  LocalGod79 # - Marauder jobs
+  Peter van der Meer # - Hauler IV
+  Pointedstick # - Various minis
+  TheUnfetteredOne # - Transports
 
 Editors & Proofreaders
   Arrow2thekn33
