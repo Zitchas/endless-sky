@@ -296,7 +296,7 @@ const string &Preferences::BoardingSetting()
 
 void Preferences::ToggleAlert()
 {
-	if(++alertIndicatorIndex >= ALERT_INDICATOR_SETTING.size())
+	if(++alertIndicatorIndex >= static_cast<int>(ALERT_INDICATOR_SETTING.size()))
 		alertIndicatorIndex = 0;
 }
 
