@@ -67,7 +67,6 @@ void Preferences::Load()
 	settings[FRUGAL_ESCORTS] = true;
 	settings[EXPEND_AMMO] = true;
 	settings["Damaged fighters retreat"] = true;
-	settings["Warning siren"] = true;
 	settings["Show escort systems on map"] = true;
 	settings["Show stored outfits on map"] = true;
 	settings["Show mini-map"] = true;
