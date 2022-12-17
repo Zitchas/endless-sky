@@ -110,7 +110,7 @@ void Preferences::Load()
 	auto it = settings.find("Warning siren");
 	if(it != settings.end())
 	{
-		if(it->second)
+		if(!it->second)
 			alertIndicatorIndex = 2;
 		settings.erase(it);
 	}
