@@ -3766,7 +3766,7 @@ void AI::MovePlayer(Ship &ship, const PlayerInfo &player, Command &activeCommand
 	if(shouldAutoAim)
 	{
 		Point pos = (target ? target->Position() : ship.GetTargetAsteroid()->Position());
-		if((pos - ship.Position()).Unit().Dot(ship.Facing().Unit()) >= .8)
+		if((pos - ship.Position()).Unit().Dot(ship.Facing().Unit()) >= .996)
 			command.SetTurn(TurnToward(ship, TargetAim(ship)));
 	}
 
