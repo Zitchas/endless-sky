@@ -147,7 +147,7 @@ const Color &Radar::GetColor(int type)
 		*GameData::Colors().Get("radar special"),
 		*GameData::Colors().Get("radar anomalous"),
 		*GameData::Colors().Get("radar blink"),
-		*GameData::Colors().Get("radar viewport")
+		*GameData::Colors().Get("radar viewport"),
 		*GameData::Colors().Get("radar star")
 	};
 
