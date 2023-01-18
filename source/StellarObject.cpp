@@ -7,10 +7,7 @@ Foundation, either version 3 of the License, or (at your option) any later versi
 
 Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program. If not, see <https://www.gnu.org/licenses/>.
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 */
 
 #include "StellarObject.h"
@@ -46,24 +43,20 @@ double StellarObject::Radius() const
 	double radius = -1.;
 	if(HasSprite())
 		radius = .5 * min(Width(), Height());
-
+	
 	// Special case: stars may have a huge cloud around them, but only count the
 	// core of the cloud as part of the radius.
 	if(isStar)
 		radius = min(radius, 80.);
-
+	
 	return radius;
 }
 
 
 
-bool StellarObject::HasValidPlanet() const
-{
-	return planet && planet->IsValid();
-}
-
-
-
+// If it is possible to land on this planet, this returns the Planet
+// objects that gives more information about it. Otherwise, this
+// function will just return nullptr.
 const Planet *StellarObject::GetPlanet() const
 {
 	return planet;
@@ -87,7 +80,7 @@ const string &StellarObject::LandingMessage() const
 	// Check if there's a custom message for this sprite type.
 	if(GameData::HasLandingMessage(GetSprite()))
 		return GameData::LandingMessage(GetSprite());
-
+	
 	static const string EMPTY;
 	return (message ? *message : EMPTY);
 }
@@ -98,7 +91,7 @@ const string &StellarObject::LandingMessage() const
 int StellarObject::RadarType(const Ship *ship) const
 {
 	if(IsStar())
-		return Radar::STAR;
+		return Radar::SPECIAL;
 	else if(!planet || !planet->IsAccessible(ship))
 		return Radar::INACTIVE;
 	else if(planet->IsWormhole())
@@ -109,7 +102,7 @@ int StellarObject::RadarType(const Ship *ship) const
 		return Radar::FRIENDLY;
 	else if(!planet->GetGovernment()->IsEnemy())
 		return Radar::UNFRIENDLY;
-
+	
 	return Radar::HOSTILE;
 }
 
@@ -151,11 +144,4 @@ int StellarObject::Parent() const
 double StellarObject::Distance() const
 {
 	return distance;
-}
-
-
-
-const vector<RandomEvent<Hazard>> &StellarObject::Hazards() const
-{
-	return hazards;
 }

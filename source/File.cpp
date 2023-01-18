@@ -7,10 +7,7 @@ Foundation, either version 3 of the License, or (at your option) any later versi
 
 Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program. If not, see <https://www.gnu.org/licenses/>.
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 */
 
 #include "File.h"
@@ -28,14 +25,17 @@ File::File(const string &path, bool write)
 
 
 
-File::File(File &&other) noexcept
+File::File(File &&other)
 {
-	swap(file, other.file);
+	if(file)
+		fclose(file);
+	file = other.file;
+	other.file = nullptr;
 }
 
 
 
-File::~File() noexcept
+File::~File()
 {
 	if(file)
 		fclose(file);
@@ -43,10 +43,12 @@ File::~File() noexcept
 
 
 
-File &File::operator=(File &&other) noexcept
+File &File::operator=(File &&other)
 {
-	if(this != &other)
-		swap(file, other.file);
+	if(file)
+		fclose(file);
+	file = other.file;
+	other.file = nullptr;
 	return *this;
 }
 

@@ -7,14 +7,11 @@ Foundation, either version 3 of the License, or (at your option) any later versi
 
 Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program. If not, see <https://www.gnu.org/licenses/>.
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 */
 
-#ifndef ES_FILE_H_
-#define ES_FILE_H_
+#ifndef FILE_H_
+#define FILE_H_
 
 #include <cstdio>
 #include <string>
@@ -24,20 +21,20 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 // RAII wrapper for FILE, to make sure it gets closed if an error occurs.
 class File {
 public:
-	File() noexcept = default;
+	File() = default;
 	explicit File(const std::string &path, bool write = false);
 	File(const File &) = delete;
-	File(File &&other) noexcept;
-	~File() noexcept;
-
+	File(File &&other);
+	~File();
+	
 	// Do not allow copying the FILE pointer.
 	File &operator=(const File &) = delete;
 	// Move assignment is OK though.
-	File &operator=(File &&) noexcept;
-
+	File &operator=(File &&other);
+	
 	operator bool() const;
 	operator FILE*() const;
-
+	
 private:
 	FILE *file = nullptr;
 };

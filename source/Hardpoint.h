@@ -7,10 +7,7 @@ Foundation, either version 3 of the License, or (at your option) any later versi
 
 Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program. If not, see <https://www.gnu.org/licenses/>.
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 */
 
 #ifndef HARDPOINT_H_
@@ -33,8 +30,7 @@ class Visual;
 class Hardpoint {
 public:
 	// Constructor. Hardpoints may or may not specify what weapon is in them.
-	Hardpoint(const Point &point, const Angle &baseAngle, bool isTurret,
-		bool isParallel, bool isUnder, const Outfit *outfit = nullptr);
+	Hardpoint(const Point &point, const Angle &baseAngle, bool isTurret, bool isPylon, bool isParallel, bool isUnder, bool isDefensive, const Outfit *outfit = nullptr);
 
 	// Get the weapon installed in this hardpoint (or null if there is none).
 	const Outfit *GetOutfit() const;
@@ -49,22 +45,27 @@ public:
 	// Get the angle this weapon ought to point at for ideal gun harmonization.
 	Angle HarmonizedAngle() const;
 	// Shortcuts for querying weapon characteristics.
-	bool IsTurret() const;
 	bool IsParallel() const;
-	bool IsUnder() const;
+	bool IsTurret() const;
+	bool IsPylon() const;
+	bool IsGun() const;
+    bool IsUnder() const;
+    bool IsDefensive() const;
 	bool IsHoming() const;
 	bool IsAntiMissile() const;
 	bool CanAim() const;
-
+	
 	// Check if this weapon is ready to fire.
 	bool IsReady() const;
 	// Check if this weapon was firing in the previous step.
 	bool WasFiring() const;
+	bool ShouldFire() const;
+	void SetShouldFire() const;
 	// If this is a burst weapon, get the number of shots left in the burst.
 	int BurstRemaining() const;
 	// Perform one step (i.e. decrement the reload count).
 	void Step();
-
+	
 	// Adjust this weapon's aim by the given amount, relative to its maximum
 	// "turret turn" rate.
 	void Aim(double amount);
@@ -74,9 +75,7 @@ public:
 	void Fire(Ship &ship, std::vector<Projectile> &projectiles, std::vector<Visual> &visuals);
 	// Fire an anti-missile. Returns true if the missile should be killed.
 	bool FireAntiMissile(Ship &ship, const Projectile &projectile, std::vector<Visual> &visuals);
-	// This weapon jammed. Increase its reload counters, but don't fire.
-	void Jam();
-
+	
 	// Install a weapon here (assuming it is empty). This is only for
 	// Armament to call internally.
 	void Install(const Outfit *outfit);
@@ -84,13 +83,13 @@ public:
 	void Reload();
 	// Uninstall the outfit from this port (if it has one).
 	void Uninstall();
-
-
+	
+	
 private:
 	// Reset the reload counters and expend ammunition, if any.
 	void Fire(Ship &ship, const Point &start, const Angle &aim);
-
-
+	
+	
 private:
 	// The weapon installed in this hardpoint.
 	const Outfit *outfit = nullptr;
@@ -100,11 +99,14 @@ private:
 	Angle baseAngle;
 	// This hardpoint is for a turret or a gun.
 	bool isTurret = false;
+	bool isPylon = false;
+	bool isGun = false;
 	// Indicates if this hardpoint disallows converging (guns only).
 	bool isParallel = false;
-	// Indicates whether the hardpoint sprite is drawn under the ship.
-	bool isUnder = false;
-
+    // Indicates if this hardpoint is placed under the ship. ajc
+    bool isUnder = false;
+	// Defensive hardpoints are not included in weapon range calculations. ajc
+	bool isDefensive = false;
 	// Angle adjustment for convergence.
 	Angle angle;
 	// Reload timers and other attributes.
@@ -113,6 +115,7 @@ private:
 	int burstCount = 0;
 	bool isFiring = false;
 	bool wasFiring = false;
+	mutable bool shouldFire = false;
 };
 
 

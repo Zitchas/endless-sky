@@ -7,10 +7,7 @@ Foundation, either version 3 of the License, or (at your option) any later versi
 
 Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program. If not, see <https://www.gnu.org/licenses/>.
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 */
 
 #include "SavedGame.h"
@@ -18,7 +15,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "DataFile.h"
 #include "DataNode.h"
 #include "Date.h"
-#include "text/Format.h"
+#include "Format.h"
 #include "SpriteSet.h"
 
 using namespace std;
@@ -38,10 +35,7 @@ void SavedGame::Load(const string &path)
 	DataFile file(path);
 	if(file.begin() != file.end())
 		this->path = path;
-
-	int flagshipIterator = -1;
-	int flagshipTarget = 0;
-
+	
 	for(const DataNode &node : file)
 	{
 		if(node.Token(0) == "pilot" && node.Size() >= 3)
@@ -52,10 +46,6 @@ void SavedGame::Load(const string &path)
 			system = node.Token(1);
 		else if(node.Token(0) == "planet" && node.Size() >= 2)
 			planet = node.Token(1);
-		else if(node.Token(0) == "playtime" && node.Size() >= 2)
-			playTime = Format::PlayTime(node.Value(1));
-		else if(node.Token(0) == "flagship index" && node.Size() >= 2)
-			flagshipTarget = node.Value(1);
 		else if(node.Token(0) == "account")
 		{
 			for(const DataNode &child : node)
@@ -65,7 +55,7 @@ void SavedGame::Load(const string &path)
 					break;
 				}
 		}
-		else if(node.Token(0) == "ship" && ++flagshipIterator == flagshipTarget)
+		else if(node.Token(0) == "ship" && !shipSprite)
 		{
 			for(const DataNode &child : node)
 			{
@@ -97,15 +87,14 @@ bool SavedGame::IsLoaded() const
 void SavedGame::Clear()
 {
 	path.clear();
-
+	
 	name.clear();
 	credits.clear();
 	date.clear();
-
+	
 	system.clear();
 	planet.clear();
-	playTime = "0s";
-
+	
 	shipSprite = nullptr;
 	shipName.clear();
 }
@@ -143,13 +132,6 @@ const string &SavedGame::GetSystem() const
 const string &SavedGame::GetPlanet() const
 {
 	return planet;
-}
-
-
-
-const string &SavedGame::GetPlayTime() const
-{
-	return playTime;
 }
 
 

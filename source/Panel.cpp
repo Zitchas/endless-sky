@@ -7,10 +7,7 @@ Foundation, either version 3 of the License, or (at your option) any later versi
 
 Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program. If not, see <https://www.gnu.org/licenses/>.
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 */
 
 #include "Panel.h"
@@ -23,7 +20,6 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "Point.h"
 #include "Preferences.h"
 #include "Screen.h"
-#include "text/Format.h"
 #include "UI.h"
 
 using namespace std;
@@ -33,14 +29,20 @@ using namespace std;
 // Move the state of this panel forward one game step.
 void Panel::Step()
 {
-	// It is ok for panels to be stateless.
+}
+
+
+
+// Draw this panel.
+void Panel::Draw()
+{
 }
 
 
 
 // Return true if this is a full-screen panel, so there is no point in
 // drawing any of the panels under it.
-bool Panel::IsFullScreen() const noexcept
+bool Panel::IsFullScreen()
 {
 	return isFullScreen;
 }
@@ -49,7 +51,7 @@ bool Panel::IsFullScreen() const noexcept
 
 // Return true if, when this panel is on the stack, no events should be
 // passed to any panel under it. By default, all panels do this.
-bool Panel::TrapAllEvents() const noexcept
+bool Panel::TrapAllEvents()
 {
 	return trapAllEvents;
 }
@@ -57,7 +59,7 @@ bool Panel::TrapAllEvents() const noexcept
 
 
 // Check if this panel can be "interrupted" to return to the main menu.
-bool Panel::IsInterruptible() const noexcept
+bool Panel::IsInterruptible() const
 {
 	return isInterruptible;
 }
@@ -108,16 +110,9 @@ bool Panel::ZoneClick(const Point &point)
 
 
 
-// Forward the given TestContext to the Engine under MainPanel.
-void Panel::SetTestContext(TestContext &testContext)
-{
-}
-
-
-
 // Panels will by default not allow fast-forward. The ones that do allow
 // it will override this (virtual) function and return true.
-bool Panel::AllowsFastForward() const noexcept
+bool Panel::AllowFastForward() const
 {
 	return false;
 }
@@ -173,7 +168,7 @@ bool Panel::Release(int x, int y)
 }
 
 
-
+	
 void Panel::SetIsFullScreen(bool set)
 {
 	isFullScreen = set;
@@ -194,13 +189,13 @@ void Panel::SetInterruptible(bool set)
 }
 
 
-
+	
 // Dim the background of this panel.
 void Panel::DrawBackdrop() const
 {
 	if(!GetUI()->IsTop(this))
 		return;
-
+	
 	// Darken everything but the dialog.
 	const Color &back = *GameData::Colors().Get("dialog backdrop");
 	FillShader::Fill(Point(), Point(Screen::Width(), Screen::Height()), back);
@@ -208,7 +203,7 @@ void Panel::DrawBackdrop() const
 
 
 
-UI *Panel::GetUI() const noexcept
+UI *Panel::GetUI() const
 {
 	return ui;
 }
@@ -231,7 +226,7 @@ bool Panel::DoKey(SDL_Keycode key, Uint16 mod)
 int Panel::Modifier()
 {
 	SDL_Keymod mod = SDL_GetModState();
-
+	
 	int modifier = 1;
 	if(mod & KMOD_ALT)
 		modifier *= 500;
@@ -239,7 +234,7 @@ int Panel::Modifier()
 		modifier *= 20;
 	if(mod & KMOD_SHIFT)
 		modifier *= 5;
-
+	
 	return modifier;
 }
 
@@ -252,14 +247,14 @@ bool Panel::DoHelp(const string &name) const
 	string preference = "help: " + name;
 	if(Preferences::Has(preference))
 		return false;
-
+	
 	const string &message = GameData::HelpMessage(name);
 	if(message.empty())
 		return false;
-
+	
 	Preferences::Set(preference);
-	ui->Push(new Dialog(Format::Capitalize(name) + ":\n\n" + message));
-
+	ui->Push(new Dialog(message));
+	
 	return true;
 }
 

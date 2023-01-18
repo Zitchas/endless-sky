@@ -7,10 +7,7 @@ Foundation, either version 3 of the License, or (at your option) any later versi
 
 Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program. If not, see <https://www.gnu.org/licenses/>.
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 */
 
 #include "DataWriter.h"
@@ -52,7 +49,7 @@ void DataWriter::Write(const DataNode &node)
 	for(int i = 0; i < node.Size(); ++i)
 		WriteToken(node.Token(i).c_str());
 	Write();
-
+	
 	// If this node has any children, call this function recursively on them.
 	if(node.HasChildren())
 	{
@@ -104,23 +101,23 @@ void DataWriter::WriteComment(const string &str)
 void DataWriter::WriteToken(const char *a)
 {
 	// Figure out what kind of quotation marks need to be used for this string.
-	bool needsQuoting = !*a || *a == '#';
+	bool hasSpace = !*a;
 	bool hasQuote = false;
 	for(const char *it = a; *it; ++it)
 	{
-		needsQuoting |= (*it <= ' ' && *it >= 0);
+		hasSpace |= (*it <= ' ' && *it >= 0);
 		hasQuote |= (*it == '"');
 	}
-
+	
 	// Write the token, enclosed in quotes if necessary.
 	out << *before;
-	if(needsQuoting && hasQuote)
+	if(hasSpace && hasQuote)
 		out << '`' << a << '`';
-	else if(needsQuoting)
+	else if(hasSpace)
 		out << '"' << a << '"';
 	else
 		out << a;
-
+	
 	// The next token written will not be the first one on this line, so it only
 	// needs to have a single space before it.
 	before = &space;
