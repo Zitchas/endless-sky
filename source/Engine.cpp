@@ -178,26 +178,26 @@ namespace {
 				if((point.side == side && point.steering == Ship::EnginePoint::NONE && point.lateral == Ship::EnginePoint::NONE)
 					|| (point.steering == Ship::EnginePoint::LEFT && ship.SteeringDirection() < 0.)
 					|| (point.steering == Ship::EnginePoint::RIGHT && ship.SteeringDirection() > 0.)
-                    || (point.lateral == Ship::EnginePoint::LEFT && ship.LateralDirection() < 0.)
-                    || (point.lateral == Ship::EnginePoint::RIGHT && ship.LateralDirection() > 0.))
+					|| (point.lateral == Ship::EnginePoint::LEFT && ship.LateralDirection() < 0.)
+					|| (point.lateral == Ship::EnginePoint::RIGHT && ship.LateralDirection() > 0.))
 					for(int i = 0; i < it.second && i < 3; ++i)
 					{
-                        // scale engine flares by turn magnitude. ajc
-                        if(!(point.steering == Ship::EnginePoint::NONE))
-                        {
-                            Body sprite(it.first, pos, ship.Velocity(), ship.Facing() + point.facing, point.zoom * abs(ship.SteeringDirection()));
-                            draw.Add(sprite, ship.Cloaking());
-                        }
-                        else if(!(point.lateral == Ship::EnginePoint::NONE))
-                        {
-                            Body sprite(it.first, pos, ship.Velocity(), ship.Facing() + point.facing, point.zoom * abs(ship.LateralDirection()));
-                            draw.Add(sprite, ship.Cloaking());
-                        }
-                        else
-                        {
-                            Body sprite(it.first, pos, ship.Velocity(), ship.Facing() + point.facing, point.zoom * abs(ship.ThrustMagnitute()));
-                            draw.Add(sprite, ship.Cloaking());
-                        }
+						// scale engine flares by turn magnitude. ajc
+						if(!(point.steering == Ship::EnginePoint::NONE))
+						{
+							Body sprite(it.first, pos, ship.Velocity(), ship.Facing() + point.facing, point.zoom * abs(ship.SteeringDirection()));
+							draw.Add(sprite, ship.Cloaking());
+						}
+						else if(!(point.lateral == Ship::EnginePoint::NONE))
+						{
+							Body sprite(it.first, pos, ship.Velocity(), ship.Facing() + point.facing, point.zoom * abs(ship.LateralDirection()));
+							draw.Add(sprite, ship.Cloaking());
+						}
+						else
+						{
+							Body sprite(it.first, pos, ship.Velocity(), ship.Facing() + point.facing, point.zoom * abs(ship.ThrustMagnitute()));
+							draw.Add(sprite, ship.Cloaking());
+						}
 					}
 		}
 	}
@@ -646,14 +646,14 @@ void Engine::Step(bool isActive)
 	if(flagship && flagship->Hull())
 	{
 		Point shipFacingUnit(0., -1.);
-        Point velocityFacingUnit (0., -1.);
+		Point velocityFacingUnit (0., -1.);
 		if(Preferences::Has("Rotate flagship in HUD"))
 			shipFacingUnit = flagship->Facing().Unit();
-            velocityFacingUnit = flagship->Velocity().Unit();
+			velocityFacingUnit = flagship->Velocity().Unit();
 		
 		info.SetSprite("player sprite", flagship->GetSprite(), shipFacingUnit, flagship->GetFrame(step));
-        info.SetSprite("velocity sprite", flagship->GetSprite(), velocityFacingUnit, flagship->GetFrame(step));
-        info.SetOutlineColor(Radar::GetColor(1));
+		info.SetSprite("velocity sprite", flagship->GetSprite(), velocityFacingUnit, flagship->GetFrame(step));
+		info.SetOutlineColor(Radar::GetColor(1));
 	}
 	if(currentSystem)
 		info.SetString("location", currentSystem->Name());
@@ -670,10 +670,10 @@ void Engine::Step(bool isActive)
 				if(alarmTime && step / 10 % 2)
 					info.SetCondition("red alert");
 			}
-        int speed = round(flagship->DisplayVelocity()*60);
-        info.SetString("speed", to_string(speed));
-        slow = (step / 20) % 2 ? round(100. * flagship->DisplaySlowing()) : slow;
-        info.SetString("slow", to_string(slow) + "%");
+		int speed = round(flagship->DisplayVelocity()*60);
+		info.SetString("speed", to_string(speed));
+		slow = (step / 20) % 2 ? round(100. * flagship->DisplaySlowing()) : slow;
+		info.SetString("slow", to_string(slow) + "%");
 		int solar = (player.TravelPlan().size());
 		//int solar = (flagship->DisplayRamScoop() * 100);
 		info.SetString("solar", to_string(solar));
@@ -709,16 +709,16 @@ void Engine::Step(bool isActive)
 		info.SetString("navigation mode", navigationMode);
 		const string &name = object->Name();
 		info.SetString("destination", name);
-        
-        // Show landing planet sprite if there's no ship target. ajc
-        if(!flagship->GetTargetShip())
-        {
-        info.SetSprite("landing sprite", object->GetSprite(), object->Facing().Unit(), object->GetFrame(step));
-        info.SetString("target name", Format::Capitalize(name));
-        info.SetCondition("range display");
-        int planetRange = round(object->Position().Distance(flagship->Position()));
-        info.SetString("target range", to_string(planetRange));
-        }
+		
+		// Show landing planet sprite if there's no ship target. ajc
+		if(!flagship->GetTargetShip())
+		{
+		info.SetSprite("landing sprite", object->GetSprite(), object->Facing().Unit(), object->GetFrame(step));
+		info.SetString("target name", Format::Capitalize(name));
+		info.SetCondition("range display");
+		int planetRange = round(object->Position().Distance(flagship->Position()));
+		info.SetString("target range", to_string(planetRange));
+		}
 		targets.push_back({
 			object->Position() - center,
 			object->Facing(),
@@ -739,39 +739,39 @@ void Engine::Step(bool isActive)
 		info.SetString("navigation mode", "Navigation:");
 		info.SetString("destination", "no destination");
 	}
-    // display travel plan final  system. ajc.
-    if(flagship && !player.TravelPlan().empty())
-    {
-        info.SetString("travel", "Destination:");
-        const string &travName = player.TravelPlan().front()->Name();
-        info.SetString("travel planet", travName);
-    }
-    
-    // display travel destination ajc
-    if(flagship && player.TravelDestination())
-    {
-    const Planet *planet = player.TravelDestination();
-        info.SetString("travel", "Autoland:");
-        const string &travName = planet->Name();
-        info.SetString("travel planet", travName);
-    }
+	// display travel plan final  system. ajc.
+	if(flagship && !player.TravelPlan().empty())
+	{
+		info.SetString("travel", "Destination:");
+		const string &travName = player.TravelPlan().front()->Name();
+		info.SetString("travel planet", travName);
+	}
+	
+	// display travel destination ajc
+	if(flagship && player.TravelDestination())
+	{
+	const Planet *planet = player.TravelDestination();
+		info.SetString("travel", "Autoland:");
+		const string &travName = planet->Name();
+		info.SetString("travel planet", travName);
+	}
 
-    //display x,y coordinates ajc
-    if(flagship)
-    {
+	//display x,y coordinates ajc
+	if(flagship)
+	{
 		//Point position = player.GetSystem()->Position(); // Galactic Cooordinates. ajc
 		Point position = flagship->Position();
 		int d = position.Length();
 		int x = position.X();
-        int y = position.Y();
+		int y = position.Y();
 		info.SetString("dhead","D:");
-        info.SetString("xhead","X:");
-        info.SetString("yhead","Y:");
-        info.SetString("dpos", to_string(d));
-        info.SetString("xpos", to_string(x));
-        info.SetString("ypos", to_string(y));
+		info.SetString("xhead","X:");
+		info.SetString("yhead","Y:");
+		info.SetString("dpos", to_string(d));
+		info.SetString("xpos", to_string(x));
+		info.SetString("ypos", to_string(y));
 		info.SetString("activity", flagship->GetActivity());
-    }
+	}
 	// Use the radar that was just populated. (The draw tick-tock has not
 	// yet been toggled, but it will be at the end of this function.)
 	shared_ptr<const Ship> target;
@@ -788,7 +788,7 @@ void Engine::Step(bool isActive)
 	}
 	if(!target)
 		targetSwizzle = -1;
-    // temporarily removed "no target" string ajc
+	// temporarily removed "no target" string ajc
 	//if(!target && !targetAsteroid)
 		//info.SetString("target name", "no target");
 	else if(!target)
@@ -857,7 +857,7 @@ void Engine::Step(bool isActive)
 			//		|| (tacticalRange && target->IsYours()))
 			{
 				info.SetCondition("tactical display");
-                int crew = (target->IsYours() ? min(target->RequiredCrew(), target->Crew()) : target->Crew());
+				int crew = (target->IsYours() ? min(target->RequiredCrew(), target->Crew()) : target->Crew());
 				info.SetString("target crew", to_string(crew));
 				int fuel = round(target->Fuel() * target->Attributes().Get("fuel capacity"));
 				info.SetString("target fuel", to_string(fuel));
@@ -865,15 +865,15 @@ void Engine::Step(bool isActive)
 				info.SetString("target energy", to_string(energy));
 				int heat = round(100. * target->Heat());
 				info.SetString("target heat", to_string(heat) + "%");
-                int turret = round(target->TurretRange());
-                info.SetString("target turret", to_string(turret) + " ");
-                int gun = round(target->GunRange());
-                info.SetString("target gun", to_string(gun) + " ");
-                int turn = round(60 * target->TrueTurnRate());
-                info.SetString("target turnrate", to_string(turn) + " ");
-              //  int h = (target->Height());
+				int turret = round(target->TurretRange());
+				info.SetString("target turret", to_string(turret) + " ");
+				int gun = round(target->GunRange());
+				info.SetString("target gun", to_string(gun) + " ");
+				int turn = round(60 * target->TrueTurnRate());
+				info.SetString("target turnrate", to_string(turn) + " ");
+			  //  int h = (target->Height());
 			//	int w = (target->Width());
-             //   info.SetString("target ion", to_string(w) + "," + to_string(h));
+			 //   info.SetString("target ion", to_string(w) + "," + to_string(h));
 				int dis = target->CountIncoming();
 				//double dis = target->Acceleration();
 				//int speed = round(target->DisplayVelocity()*60);
@@ -881,8 +881,8 @@ void Engine::Step(bool isActive)
 				int escorts = 0;
 				if(!target->GetParent())
 					escorts = target->GetEscorts().size();
-                string name = "Parent: " + (!target->GetParent() ? "I'm the daddy of " + to_string(escorts) :
-                        target->GetParent()->Name());
+				string name = "Parent: " + (!target->GetParent() ? "I'm the daddy of " + to_string(escorts) :
+						target->GetParent()->Name());
 				info.SetString("parent", name);
 				if(target->GetParent())
 				{
@@ -891,24 +891,24 @@ void Engine::Step(bool isActive)
 				}
 				string person = "Personality: ";
 				person += (target->GetPersonality().IsHeroic() ? "Heroic" : target->GetPersonality().IsCoward() ? "Coward" : target->GetPersonality().IsFleeing() ? "Fleeing" : "Other");
-                info.SetString("personality", person);
+				info.SetString("personality", person);
 				string JumpStatus = (target->IsEnteringHyperspace() ? "Jumping" : target->IsReadyToJump(true) ? "Jump Ready" : "Not Ready");
 					info.SetString("jumpstatus", JumpStatus);
-                if(target->GetTargetStellar() && target->GetTargetStellar()->GetPlanet())
-                 {
-                 string stellar = target->GetTargetStellar()->GetPlanet()->Name();
-                 info.SetString("stellar", "Planet: " + stellar);
-                 }
-                if(target->GetTargetSystem())
-                {
+				if(target->GetTargetStellar() && target->GetTargetStellar()->GetPlanet())
+				 {
+				 string stellar = target->GetTargetStellar()->GetPlanet()->Name();
+				 info.SetString("stellar", "Planet: " + stellar);
+				 }
+				if(target->GetTargetSystem())
+				{
 					string system = target->GetTargetSystem()->Name();
-                info.SetString("system", "System: " + system);
-                }
-                if(target->GetActivity().size())
-                {
+				info.SetString("system", "System: " + system);
+				}
+				if(target->GetActivity().size())
+				{
 					string targetActivity = target->GetActivity();
-                info.SetString("target activity", targetActivity);
-                }
+				info.SetString("target activity", targetActivity);
+				}
 			}
 		}
 	}
@@ -1035,8 +1035,8 @@ void Engine::Draw() const
 	for(const PlanetLabel &label : labels)
 		label.Draw();
 
-    drawUnder[drawTickTock].Draw();
-    batchDrawUnder[drawTickTock].Draw();
+	drawUnder[drawTickTock].Draw();
+	batchDrawUnder[drawTickTock].Draw();
 	draw[drawTickTock].Draw();
 	batchDraw[drawTickTock].Draw();
 	GameData::Background().DrawTop(center, centerVelocity, zoom);
@@ -1353,7 +1353,7 @@ void Engine::EnterSystem()
 		// Check whether this is a minable or an ordinary asteroid.
 		if(a.Type())
 			asteroids.Add(a.Type(), a.Count() * 2, a.Energy(), system->AsteroidBelt());
-        // Removed tiled asteroids ajc
+		// Removed tiled asteroids ajc
 	//	else
 	//		asteroids.Add(a.Name(), a.Count(), a.Energy());
 	}
@@ -1434,10 +1434,10 @@ void Engine::CalculateStep()
 	FrameTimer loadTimer;
 	
 	// Clear the list of objects to draw.
-    drawUnder[calcTickTock].Clear(step, zoom);
+	drawUnder[calcTickTock].Clear(step, zoom);
 	draw[calcTickTock].Clear(step, zoom);
 	batchDraw[calcTickTock].Clear(step, zoom);
-    batchDrawUnder[calcTickTock].Clear(step, zoom);
+	batchDrawUnder[calcTickTock].Clear(step, zoom);
 	radar[calcTickTock].Clear();
 	
 	if(!player.GetSystem())
@@ -1560,9 +1560,9 @@ void Engine::CalculateStep()
 		newCenterVelocity = flagship->Velocity();
 	}
 	draw[calcTickTock].SetCenter(newCenter, newCenterVelocity);
-    drawUnder[calcTickTock].SetCenter(newCenter, newCenterVelocity);
+	drawUnder[calcTickTock].SetCenter(newCenter, newCenterVelocity);
 	batchDraw[calcTickTock].SetCenter(newCenter);
-    batchDrawUnder[calcTickTock].SetCenter(newCenter);
+	batchDrawUnder[calcTickTock].SetCenter(newCenter);
 	radar[calcTickTock].SetCenter(newCenter);
 	
 	// Populate the radar.
@@ -1606,11 +1606,11 @@ void Engine::CalculateStep()
 					for(const auto &it : ship->Attributes().SteeringFlareSounds())
 						Audio::Play(it.first, ship->Position());
 				}
-                if(ship->IsLatThrusting() && !ship->LateralEnginePoints().empty())
-                {
-                    for(const auto &it : ship->Attributes().FlareSounds())
-                        Audio::Play(it.first, ship->Position());
-                }
+				if(ship->IsLatThrusting() && !ship->LateralEnginePoints().empty())
+				{
+					for(const auto &it : ship->Attributes().FlareSounds())
+						Audio::Play(it.first, ship->Position());
+				}
 			}
 			else
 				showFlagship = true;
@@ -1634,28 +1634,28 @@ void Engine::CalculateStep()
 			for(const auto &it : flagship->Attributes().SteeringFlareSounds())
 				Audio::Play(it.first);
 		}
-        if(abs(flagship->DisplayLateralThrust()) > 0.25 && !flagship->LateralEnginePoints().empty())
-        {
-            for(const auto &it : flagship->Attributes().FlareSounds())
-                Audio::Play(it.first);
-        }
+		if(abs(flagship->DisplayLateralThrust()) > 0.25 && !flagship->LateralEnginePoints().empty())
+		{
+			for(const auto &it : flagship->Attributes().FlareSounds())
+				Audio::Play(it.first);
+		}
 	}
 	// Draw the flotsam. Moved flotsam above ships to test. ajc.
 	for(const shared_ptr<Flotsam> &it : flotsam)
 		draw[calcTickTock].Add(*it);
 	// Draw the projectiles.
 	for(const Projectile &projectile : projectiles)
-        if(projectile.DrawUnder())
-                batchDrawUnder[calcTickTock].Add(projectile, projectile.Clip());
-        else
-                batchDraw[calcTickTock].Add(projectile, projectile.Clip());
+		if(projectile.DrawUnder())
+				batchDrawUnder[calcTickTock].Add(projectile, projectile.Clip());
+		else
+				batchDraw[calcTickTock].Add(projectile, projectile.Clip());
 	// Draw the visuals.
 	for(const Visual &visual : visuals)
-        if(visual.DrawUnder())
+		if(visual.DrawUnder())
 		batchDrawUnder[calcTickTock].AddVisual(visual);
-        else
-        batchDraw[calcTickTock].AddVisual(visual);
-    
+		else
+		batchDraw[calcTickTock].AddVisual(visual);
+	
 	// Keep track of how much of the CPU time we are using.
 	loadSum += loadTimer.Time();
 	if(++loadCount == 60)
@@ -2335,20 +2335,20 @@ void Engine::AddSprites(const Ship &ship)
 {
 	bool hasFighters = ship.PositionFighters();
 	double cloak = ship.Cloaking();
-    bool drawCloaked = (cloak && ship.IsYours());
-    //double transparency = ship.Attributes().Get("cloak transparency");
+	bool drawCloaked = (cloak && ship.IsYours());
+	//double transparency = ship.Attributes().Get("cloak transparency");
 	auto &itemsToDraw = draw[calcTickTock];
 	auto drawObject = [&itemsToDraw, cloak, drawCloaked](const Body &body) -> void
 	{
 		// Draw cloaked/cloaking sprites swizzled red, and overlay this solid
 		// sprite with an increasingly transparent "regular" sprite.
 		if(drawCloaked)
-        {
-       // itemsToDraw.AddSwizzled(body, 4);
+		{
+	   // itemsToDraw.AddSwizzled(body, 4);
 		itemsToDraw.Add(body, cloak * .6);
-        }
+		}
 		else
-        itemsToDraw.Add(body, cloak * .8);
+		itemsToDraw.Add(body, cloak * .8);
 	};
 	if(zoom > .1)
 	{
@@ -2363,21 +2363,21 @@ void Engine::AddSprites(const Ship &ship)
 		DrawFlareSprites(ship, draw[calcTickTock], ship.ReverseEnginePoints(), ship.Attributes().ReverseFlareSprites(), Ship::EnginePoint::UNDER);
 	if(ship.IsSteering() && !ship.SteeringEnginePoints().empty())
 		DrawFlareSprites(ship, draw[calcTickTock], ship.SteeringEnginePoints(), ship.Attributes().SteeringFlareSprites(), Ship::EnginePoint::UNDER);
-    if(ship.IsLatThrusting() && !ship.LateralEnginePoints().empty())
-        DrawFlareSprites(ship, draw[calcTickTock], ship.LateralEnginePoints(), ship.Attributes().FlareSprites(), Ship::EnginePoint::UNDER);
-    
-    for(const Hardpoint &hardpoint : ship.Weapons())
+	if(ship.IsLatThrusting() && !ship.LateralEnginePoints().empty())
+		DrawFlareSprites(ship, draw[calcTickTock], ship.LateralEnginePoints(), ship.Attributes().FlareSprites(), Ship::EnginePoint::UNDER);
+	
+	for(const Hardpoint &hardpoint : ship.Weapons())
 	{
-        if(hardpoint.GetOutfit() && hardpoint.GetOutfit()->HardpointSprite().HasSprite() && hardpoint.IsUnder())
-        {
-            Body body(
-                hardpoint.GetOutfit()->HardpointSprite(),
-                ship.Position() + ship.Zoom() * ship.Facing().Rotate(hardpoint.GetPoint()),
-                ship.Velocity(),
-                ship.Facing() + hardpoint.GetAngle(),
-                ship.Zoom());
-            drawObject(body);
-        }
+		if(hardpoint.GetOutfit() && hardpoint.GetOutfit()->HardpointSprite().HasSprite() && hardpoint.IsUnder())
+		{
+			Body body(
+				hardpoint.GetOutfit()->HardpointSprite(),
+				ship.Position() + ship.Zoom() * ship.Facing().Rotate(hardpoint.GetPoint()),
+				ship.Velocity(),
+				ship.Facing() + hardpoint.GetAngle(),
+				ship.Zoom());
+			drawObject(body);
+		}
 	}
 	
 	drawObject(ship);
@@ -2400,9 +2400,8 @@ void Engine::AddSprites(const Ship &ship)
 		DrawFlareSprites(ship, draw[calcTickTock], ship.ReverseEnginePoints(), ship.Attributes().ReverseFlareSprites(), Ship::EnginePoint::OVER);
 	if(ship.IsSteering() && !ship.SteeringEnginePoints().empty())
 		DrawFlareSprites(ship, draw[calcTickTock], ship.SteeringEnginePoints(), ship.Attributes().SteeringFlareSprites(), Ship::EnginePoint::OVER);
-    if(ship.IsLatThrusting() && !ship.LateralEnginePoints().empty())
-        DrawFlareSprites(ship, draw[calcTickTock], ship.LateralEnginePoints(), ship.Attributes().FlareSprites(), Ship::EnginePoint::OVER);
-    
+	if(ship.IsLatThrusting() && !ship.LateralEnginePoints().empty())
+		DrawFlareSprites(ship, draw[calcTickTock], ship.LateralEnginePoints(), ship.Attributes().FlareSprites(), Ship::EnginePoint::OVER);
 	if(hasFighters)
 		for(const Ship::Bay &bay : ship.Bays())
 			if(bay.side == Ship::Bay::OVER && bay.ship)
@@ -2410,17 +2409,17 @@ void Engine::AddSprites(const Ship &ship)
 	 }
 	// draw ship overlay symbols at low zoom levels. ajc.
 	else
-    {
+	{
 		int overlaySprite = RadarType(ship, step);
 		double spriteRadius = (ship.Width() + ship.Height()) * .0035;
-        Body body(
-            ship.Overlay() ? ship.Overlay() : SpriteSet::Get("overlay/defaultoverlay" + to_string(overlaySprite)),
-            ship.Position(),
-            ship.Velocity(),
-            ship.Facing(),
-            ship.Zoom() * spriteRadius);
-        drawObject(body);
-    }
+		Body body(
+			ship.Overlay() ? ship.Overlay() : SpriteSet::Get("overlay/defaultoverlay" + to_string(overlaySprite)),
+			ship.Position(),
+			ship.Velocity(),
+			ship.Facing(),
+			ship.Zoom() * spriteRadius);
+		drawObject(body);
+	}
 }
 
 
