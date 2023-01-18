@@ -7,10 +7,7 @@ Foundation, either version 3 of the License, or (at your option) any later versi
 
 Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program. If not, see <https://www.gnu.org/licenses/>.
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 */
 
 #ifndef STAR_FIELD_H_
@@ -18,14 +15,13 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 
 #include "Shader.h"
 
-#include "opengl.h"
+#include "gl_header.h"
 
 #include <vector>
 
 class Body;
 class Point;
 class Sprite;
-class System;
 
 
 
@@ -38,34 +34,31 @@ class System;
 class StarField {
 public:
 	void Init(int stars, int width);
-	void SetHaze(const Sprite *sprite, bool allowAnimation);
-
-	void Draw(const Point &pos, const Point &vel, double zoom = 1., const System *system = nullptr) const;
-
-
+	void SetHaze(const Sprite *sprite);
+	
+	void Draw(const Point &pos, const Point &vel, double zoom = 1.) const;
+	void DrawTop(const Point &pos, const Point &vel, double zoom = 1.) const;
+	
 private:
 	void SetUpGraphics();
 	void MakeStars(int stars, int width);
-
-
+	
+	
 private:
 	int widthMod;
 	int tileCols;
 	std::vector<int> tileIndex;
-
-	// Track the haze sprite, so we can animate the transition between different hazes.
-	const Sprite *lastSprite;
-	mutable double transparency = 0.;
-	std::vector<Body> haze[2];
-
+	
+	std::vector<Body> haze;
+	
 	Shader shader;
 	GLuint vao;
 	GLuint vbo;
-
+	
 	GLuint offsetI;
 	GLuint sizeI;
 	GLuint cornerI;
-
+	
 	GLuint scaleI;
 	GLuint rotateI;
 	GLuint elongationI;

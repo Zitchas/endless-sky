@@ -7,10 +7,7 @@ Foundation, either version 3 of the License, or (at your option) any later versi
 
 Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program. If not, see <https://www.gnu.org/licenses/>.
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 */
 
 #ifndef DATA_NODE_H_
@@ -32,17 +29,16 @@ class DataNode {
 public:
 	// Construct a DataNode. For the purpose of printing stack traces, each node
 	// must remember what its parent node is.
-	explicit DataNode(const DataNode *parent = nullptr) noexcept(false);
-	// Copying or moving a DataNode requires updating the parent pointers.
+	explicit DataNode(const DataNode *parent = nullptr);
+	// Copy constructor.
 	DataNode(const DataNode &other);
+	
 	DataNode &operator=(const DataNode &other);
-	DataNode(DataNode &&) noexcept;
-	DataNode &operator=(DataNode &&) noexcept;
-
+	
 	// Get the number of tokens in this node.
-	int Size() const noexcept;
+	int Size() const;
 	// Get all the tokens in this node as an iterable vector.
-	const std::vector<std::string> &Tokens() const noexcept;
+	const std::vector<std::string> &Tokens() const;
 	// Get the token at the given index. No bounds checking is done internally.
 	// DataFile loading guarantees index 0 always exists.
 	const std::string &Token(int index) const;
@@ -54,22 +50,22 @@ public:
 	// class is able to parse.
 	bool IsNumber(int index) const;
 	static bool IsNumber(const std::string &token);
-
+	
 	// Check if this node has any children. If so, the iterator functions below
 	// can be used to access them.
-	bool HasChildren() const noexcept;
-	std::list<DataNode>::const_iterator begin() const noexcept;
-	std::list<DataNode>::const_iterator end() const noexcept;
-
+	bool HasChildren() const;
+	std::list<DataNode>::const_iterator begin() const;
+	std::list<DataNode>::const_iterator end() const;
+	
 	// Print a message followed by a "trace" of this node and its parents.
 	int PrintTrace(const std::string &message = "") const;
-
-
+	
+	
 private:
 	// Adjust the parent pointers when a copy is made of a DataNode.
-	void Reparent() noexcept;
-
-
+	void Reparent();
+	
+	
 private:
 	// These are "child" nodes found on subsequent lines with deeper indentation.
 	std::list<DataNode> children;
@@ -79,7 +75,7 @@ private:
 	const DataNode *parent = nullptr;
 	// The line number in the given file that produced this node.
 	size_t lineNumber = 0;
-
+	
 	// Allow DataFile to modify the internal structure of DataNodes.
 	friend class DataFile;
 };

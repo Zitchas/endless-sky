@@ -7,10 +7,7 @@ Foundation, either version 3 of the License, or (at your option) any later versi
 
 Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program. If not, see <https://www.gnu.org/licenses/>.
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 */
 
 #include "Point.h"
@@ -23,7 +20,7 @@ using namespace std;
 
 
 
-Point::Point() noexcept
+Point::Point()
 #ifdef __SSE3__
 	: v(_mm_setzero_pd())
 #else
@@ -34,7 +31,7 @@ Point::Point() noexcept
 
 
 
-Point::Point(double x, double y) noexcept
+Point::Point(double x, double y)
 #ifdef __SSE3__
 	: v(_mm_set_pd(y, x))
 #else
@@ -45,21 +42,41 @@ Point::Point(double x, double y) noexcept
 
 
 
+Point::Point(const Point &point)
+#ifdef __SSE3__
+	: v(point.v)
+#else
+	: x(point.x), y(point.y)
+#endif
+{
+}
+
+
+
+Point &Point::operator=(const Point &point)
+{
+#ifdef __SSE3__
+	v = point.v;
+#else
+	x = point.x;
+	y = point.y;
+#endif
+	return *this;
+}
+
+
+
 // Check if the point is anything but (0, 0).
-Point::operator bool() const noexcept
+Point::operator bool() const
 {
 	return !!*this;
 }
 
 
 
-bool Point::operator!() const noexcept
+bool Point::operator!() const
 {
-#ifdef __SSE3__
-	return (!val.x & !val.y);
-#else
 	return (!x & !y);
-#endif
 }
 
 

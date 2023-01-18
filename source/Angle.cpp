@@ -7,10 +7,7 @@ Foundation, either version 3 of the License, or (at your option) any later versi
 
 Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program. If not, see <https://www.gnu.org/licenses/>.
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 */
 
 #include "Angle.h"
@@ -22,6 +19,8 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include <cmath>
 #include <cstdlib>
 #include <vector>
+
+using namespace std;
 
 namespace {
 	// Suppose you want to be able to turn 360 degrees in one second. Then you are
@@ -50,13 +49,21 @@ Angle Angle::Random(double range)
 	// The given range would have to be about 22.6 million degrees to overflow
 	// the size of a 32-bit int, which should never happen in normal usage.
 	uint32_t mod = static_cast<uint32_t>(fabs(range) * DEG_TO_STEP) + 1;
-	return Angle(mod ? static_cast<int32_t>(Random::Int(mod)) & MASK : 0);
+	return Angle(mod ? static_cast<int32_t>(Random::Int(mod)) : 0);
+}
+
+
+
+// Default constructor: generates an angle pointing straight up.
+Angle::Angle()
+	: angle(0)
+{
 }
 
 
 
 // Construct an Angle from the given angle in degrees.
-Angle::Angle(double degrees) noexcept
+Angle::Angle(double degrees)
 	: angle(llround(degrees * DEG_TO_STEP) & MASK)
 {
 	// Make sure llround does not overflow with the values of System::SetDate.
@@ -68,7 +75,7 @@ Angle::Angle(double degrees) noexcept
 
 
 // Construct an angle pointing in the direction of the given vector.
-Angle::Angle(const Point &point) noexcept
+Angle::Angle(const Point &point)
 	: Angle(TO_DEG * atan2(point.X(), -point.Y()))
 {
 }
@@ -122,7 +129,7 @@ Angle Angle::operator-() const
 Point Angle::Unit() const
 {
 	// The very first time this is called, create a lookup table of unit vectors.
-	static std::vector<Point> cache;
+	static vector<Point> cache;
 	if(cache.empty())
 	{
 		cache.reserve(STEPS);
@@ -151,7 +158,7 @@ double Angle::Degrees() const
 }
 
 
-
+	
 // Return a point rotated by this angle around (0, 0).
 Point Angle::Rotate(const Point &point) const
 {
