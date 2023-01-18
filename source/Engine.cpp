@@ -2367,6 +2367,7 @@ void Engine::AddSprites(const Ship &ship)
         DrawFlareSprites(ship, draw[calcTickTock], ship.LateralEnginePoints(), ship.Attributes().FlareSprites(), Ship::EnginePoint::UNDER);
     
     for(const Hardpoint &hardpoint : ship.Weapons())
+	{
         if(hardpoint.GetOutfit() && hardpoint.GetOutfit()->HardpointSprite().HasSprite() && hardpoint.IsUnder())
         {
             Body body(
@@ -2377,7 +2378,8 @@ void Engine::AddSprites(const Ship &ship)
                 ship.Zoom());
             drawObject(body);
         }
-
+	}
+	
 	drawObject(ship);
 
 	for(const Hardpoint &hardpoint : ship.Weapons())
