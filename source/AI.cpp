@@ -889,7 +889,7 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 		}
 		// If this ship has decided to recall all of its fighters because combat has ceased,
 		// it comes to a stop to facilitate their reboarding process.
-		bool mustRecall = false;
+		// bool mustRecall = false; Commented out because it doesn't actually do anything.
 		if(!target && it->HasBays() && !(it->IsYours() ?
 				thisIsLaunching : it->Commands().Has(Command::DEPLOY)))
 			for(const weak_ptr<Ship> &ptr : it->GetEscorts())
@@ -899,7 +899,7 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 				if(escort && escort->CanBeCarried() && !escort->HasDeployOrder() && escort->GetSystem() == it->GetSystem()
 						&& !escort->IsDisabled() && it->BaysFree(escort->Attributes().Category()))
 				{
-					mustRecall = true;
+					// mustRecall = true; Commented out because it doesn't actually do anything.
 					break;
 				}
 			}
@@ -1888,8 +1888,10 @@ bool AI::MoveToPlanet(Ship &ship, Command &command)
 	else if(shouldReverse)
 	{
 		if(facingPlanet)
+		{
 			command.SetLateralThrust(deviation * 5);
 			command.SetThrust(-dp.Length() / window);
+		}
 	}
 	
 	return false;

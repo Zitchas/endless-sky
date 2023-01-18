@@ -72,8 +72,8 @@ const Command Command::WAIT(1uL << 28, "");
 const Command Command::STOP(1ul << 29, "");
 const Command Command::SHIFT(1uL << 30, "");
 const Command Command::CLOAKFLEET(1uL << 31, "Cloak your escorts");
-const Command Command::CLOAKFLAG(1uL << 32, "Cloak your flagship");
-const Command Command::CTRL(1uL << 33, "");
+const Command Command::CLOAKFLAG(1UL << 32, "Cloak your flagship");
+const Command Command::CTRL(1UL << 33, "");
 
 // In the given text, replace any instances of command names (in angle brackets)
 // with key names (in quotes).
