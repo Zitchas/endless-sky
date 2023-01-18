@@ -458,10 +458,10 @@ void Interface::ImageElement::Draw(const Rectangle &rect, const Information &inf
 		OutlineShader::Draw(sprite, rect.Center(), rect.Dimensions(), color, unit, frame);
 	}
 	else // Added unit parameter for rotation. ajc
-    {
-        Point unit = info.GetSpriteUnit(name);
+	{
+		Point unit = info.GetSpriteUnit(name);
 		SpriteShader::Draw(sprite, rect.Center(), rect.Width() / sprite->Width(), 0, frame, unit);
-    }
+	}
 }
 
 

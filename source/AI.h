@@ -85,24 +85,24 @@ private:
 	
 	bool FollowOrders(Ship &ship, Command &command) const;
 	void MoveIndependent(Ship &ship, Command &command) const;
-    void MoveEscort(Ship &ship, Command &command, const PlayerInfo &player) const;
+	void MoveEscort(Ship &ship, Command &command, const PlayerInfo &player) const;
 	static void Refuel(Ship &ship, Command &command);
 	static bool CanRefuel(const Ship &ship, const StellarObject *target);
 	bool ShouldDock(const Ship &ship, const Ship &parent, const System *playerSystem) const;
-    bool synchroJump = false;
+	bool synchroJump = false;
 	
 	// Methods of moving from the current position to a desired position / orientation.
 	static double TurnBackward(const Ship &ship);
 	static double TurnToward(const Ship &ship, const Point &vector);
 	static bool MoveToPlanet(Ship &ship, Command &command);
 	static bool MoveTo(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow);
-    static bool MoveThrough(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow);
+	static bool MoveThrough(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow);
 	static bool MoveToRadius(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow);
 	static bool Stop(Ship &ship, Command &command, double maxSpeed = 0., const Point direction = Point());
 	static void PrepareForHyperspace(Ship &ship, Command &command);
 	static void CircleAround(Ship &ship, Command &command, const Body &target);
-    static void StrikeThrough(Ship &ship, Command &command, const Ship &target);
-    static void AttackRear(Ship &ship, Command &command, const Ship &target);
+	static void StrikeThrough(Ship &ship, Command &command, const Ship &target);
+	static void AttackRear(Ship &ship, Command &command, const Ship &target);
 	static void Swarm(Ship &ship, Command &command, const Body &target);
 	static void KeepStation(Ship &ship, Command &command, const Body &target);
 	static void Attack(Ship &ship, Command &command, const Ship &target);

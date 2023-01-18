@@ -36,34 +36,34 @@ namespace {
 	GLuint vbo;
 
 	const vector<vector<GLint>> SWIZZLE = {
-        {GL_RED, GL_GREEN, GL_BLUE, GL_ALPHA},        // 0 red + yellow markings(republic)
-        {GL_RED, GL_BLUE, GL_GREEN, GL_ALPHA},        // 1 red + magenta markings
-        {GL_GREEN, GL_RED, GL_BLUE, GL_ALPHA},        // 2 green + yellow (freeholders)
-        {GL_BLUE, GL_RED, GL_GREEN, GL_ALPHA},        // 3 green + cyan
-        {GL_GREEN, GL_BLUE, GL_RED, GL_ALPHA},        // 4 blue + magenta (syndicate)
-        {GL_BLUE, GL_GREEN, GL_RED, GL_ALPHA},        // 5 blue + cyan (merchant)
-        {GL_GREEN, GL_BLUE, GL_BLUE, GL_ALPHA},        // 6 red and black (pirate)
-        {GL_BLUE, GL_ZERO, GL_ZERO, GL_ALPHA},         // 7 red only (cloaked)
-        {GL_ZERO, GL_ZERO, GL_ZERO, GL_ALPHA},         // 8 black only (outline)
-        {GL_RED, GL_GREEN, GL_GREEN, GL_ALPHA},        // 9 faded red
-        {GL_RED, GL_BLUE, GL_BLUE, GL_ALPHA},        // 10 red
-        {GL_RED, GL_RED, GL_GREEN, GL_ALPHA},        // 11 faded yellow
-        {GL_GREEN, GL_GREEN, GL_BLUE, GL_ALPHA},    // 12 ochre
-        {GL_RED, GL_RED, GL_BLUE, GL_ALPHA},        // 13 yellow
-        {GL_GREEN, GL_RED, GL_GREEN, GL_ALPHA},        // 14 faded green
-        {GL_BLUE, GL_RED, GL_BLUE, GL_ALPHA},        // 15 green
-        {GL_BLUE, GL_GREEN, GL_BLUE, GL_ALPHA},        // 16 dark green
-        {GL_GREEN, GL_RED, GL_RED, GL_ALPHA},        // 17 faded cyan
-        {GL_BLUE, GL_RED, GL_RED, GL_ALPHA},        // 18 cyan
-        {GL_GREEN, GL_GREEN, GL_RED, GL_ALPHA},        // 19 faded blue
-        {GL_BLUE, GL_BLUE, GL_GREEN, GL_ALPHA},        // 20 navy blue
-        {GL_BLUE, GL_BLUE, GL_RED, GL_ALPHA},        // 21 deep blue
-        {GL_BLUE, GL_GREEN, GL_GREEN, GL_ALPHA},    // 22 dark blue
-        {GL_GREEN, GL_BLUE, GL_GREEN, GL_ALPHA},    // 23 purple
-        {GL_RED, GL_GREEN, GL_RED, GL_ALPHA},        // 24 faded magenta
-        {GL_RED, GL_BLUE, GL_RED, GL_ALPHA},        // 25 magenta
-        {GL_BLUE, GL_BLUE, GL_BLUE, GL_ALPHA},        // 26 black
-        {GL_GREEN, GL_GREEN, GL_GREEN, GL_ALPHA},    // 27 silver / monochrome
+		{GL_RED, GL_GREEN, GL_BLUE, GL_ALPHA},		// 0 red + yellow markings(republic)
+		{GL_RED, GL_BLUE, GL_GREEN, GL_ALPHA},		// 1 red + magenta markings
+		{GL_GREEN, GL_RED, GL_BLUE, GL_ALPHA},		// 2 green + yellow (freeholders)
+		{GL_BLUE, GL_RED, GL_GREEN, GL_ALPHA},		// 3 green + cyan
+		{GL_GREEN, GL_BLUE, GL_RED, GL_ALPHA},		// 4 blue + magenta (syndicate)
+		{GL_BLUE, GL_GREEN, GL_RED, GL_ALPHA},		// 5 blue + cyan (merchant)
+		{GL_GREEN, GL_BLUE, GL_BLUE, GL_ALPHA},		// 6 red and black (pirate)
+		{GL_BLUE, GL_ZERO, GL_ZERO, GL_ALPHA},		 // 7 red only (cloaked)
+		{GL_ZERO, GL_ZERO, GL_ZERO, GL_ALPHA},		 // 8 black only (outline)
+		{GL_RED, GL_GREEN, GL_GREEN, GL_ALPHA},		// 9 faded red
+		{GL_RED, GL_BLUE, GL_BLUE, GL_ALPHA},		// 10 red
+		{GL_RED, GL_RED, GL_GREEN, GL_ALPHA},		// 11 faded yellow
+		{GL_GREEN, GL_GREEN, GL_BLUE, GL_ALPHA},	// 12 ochre
+		{GL_RED, GL_RED, GL_BLUE, GL_ALPHA},		// 13 yellow
+		{GL_GREEN, GL_RED, GL_GREEN, GL_ALPHA},		// 14 faded green
+		{GL_BLUE, GL_RED, GL_BLUE, GL_ALPHA},		// 15 green
+		{GL_BLUE, GL_GREEN, GL_BLUE, GL_ALPHA},		// 16 dark green
+		{GL_GREEN, GL_RED, GL_RED, GL_ALPHA},		// 17 faded cyan
+		{GL_BLUE, GL_RED, GL_RED, GL_ALPHA},		// 18 cyan
+		{GL_GREEN, GL_GREEN, GL_RED, GL_ALPHA},		// 19 faded blue
+		{GL_BLUE, GL_BLUE, GL_GREEN, GL_ALPHA},		// 20 navy blue
+		{GL_BLUE, GL_BLUE, GL_RED, GL_ALPHA},		// 21 deep blue
+		{GL_BLUE, GL_GREEN, GL_GREEN, GL_ALPHA},	// 22 dark blue
+		{GL_GREEN, GL_BLUE, GL_GREEN, GL_ALPHA},	// 23 purple
+		{GL_RED, GL_GREEN, GL_RED, GL_ALPHA},		// 24 faded magenta
+		{GL_RED, GL_BLUE, GL_RED, GL_ALPHA},		// 25 magenta
+		{GL_BLUE, GL_BLUE, GL_BLUE, GL_ALPHA},		// 26 black
+		{GL_GREEN, GL_GREEN, GL_GREEN, GL_ALPHA},	// 27 silver / monochrome
 	};
 }
 
@@ -110,28 +110,28 @@ void SpriteShader::Init()
 		"  vec4 color;\n"
 		"  if(blur.x == 0 && blur.y == 0)\n"
 		"  {\n"
-		"    if(fade != 0)\n"
-		"      color = mix(\n"
-		"        texture(tex, vec3(fragTexCoord, first)),\n"
-		"        texture(tex, vec3(fragTexCoord, second)), fade);\n"
-		"    else\n"
-		"      color = texture(tex, vec3(fragTexCoord, first));\n"
+		"	if(fade != 0)\n"
+		"	  color = mix(\n"
+		"		texture(tex, vec3(fragTexCoord, first)),\n"
+		"		texture(tex, vec3(fragTexCoord, second)), fade);\n"
+		"	else\n"
+		"	  color = texture(tex, vec3(fragTexCoord, first));\n"
 		"  }\n"
 		"  else\n"
 		"  {\n"
-		"    color = vec4(0., 0., 0., 0.);\n"
-		"    const float divisor = range * (range + 2) + 1;\n"
-		"    for(int i = -range; i <= range; ++i)\n"
-		"    {\n"
-		"      float scale = (range + 1 - abs(i)) / divisor;\n"
-		"      vec2 coord = fragTexCoord + (blur * i) / range;\n"
-		"      if(fade != 0)\n"
-		"        color += scale * mix(\n"
-		"          texture(tex, vec3(coord, first)),\n"
-		"          texture(tex, vec3(coord, second)), fade);\n"
-		"      else\n"
-		"        color += scale * texture(tex, vec3(coord, first));\n"
-		"    }\n"
+		"	color = vec4(0., 0., 0., 0.);\n"
+		"	const float divisor = range * (range + 2) + 1;\n"
+		"	for(int i = -range; i <= range; ++i)\n"
+		"	{\n"
+		"	  float scale = (range + 1 - abs(i)) / divisor;\n"
+		"	  vec2 coord = fragTexCoord + (blur * i) / range;\n"
+		"	  if(fade != 0)\n"
+		"		color += scale * mix(\n"
+		"		  texture(tex, vec3(coord, first)),\n"
+		"		  texture(tex, vec3(coord, second)), fade);\n"
+		"	  else\n"
+		"		color += scale * texture(tex, vec3(coord, first));\n"
+		"	}\n"
 		"  }\n"
 		"  finalColor = color * alpha;\n"
 		"}\n";
@@ -188,19 +188,19 @@ void SpriteShader::Draw(const Sprite *sprite, const Point &position, float zoom,
 	item.position[0] = static_cast<float>(position.X());
 	item.position[1] = static_cast<float>(position.Y());
 	// Rotation (none) and scale.
-    // Changed transform  to allow rotation of image. ajc
-    double width = sprite->Width();
-    double height = sprite->Height();
-    Point uw = unit * width;
-    Point uh = unit * height;
-    
-    uw *= zoom;
-    uh *= zoom;
-    item.transform[0] = -uw.Y();
-    item.transform[1] = uw.X();
-    item.transform[2] = -uh.X();
-    item.transform[3] = -uh.Y();
-    
+	// Changed transform  to allow rotation of image. ajc
+	double width = sprite->Width();
+	double height = sprite->Height();
+	Point uw = unit * width;
+	Point uh = unit * height;
+	
+	uw *= zoom;
+	uh *= zoom;
+	item.transform[0] = -uw.Y();
+	item.transform[1] = uw.X();
+	item.transform[2] = -uh.X();
+	item.transform[3] = -uh.Y();
+	
 	//item.transform[0] = sprite->Width() * zoom;
 	//item.transform[3] = sprite->Height() * zoom;
 	// Swizzle.

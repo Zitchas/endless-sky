@@ -558,11 +558,11 @@ NPC NPC::Instantiate(map<string, string> &subs, const System *origin, const Syst
 	
 	// String replacement: Added fleetsize substitutions. ajc.
 	if(!result.ships.empty())
-    {   int size = result.ships.size();
-        string number = size > 1 ? to_string(size) + " ships" : "ship";
-        subs["<npc>"] = result.ships.front()->Name();
-        subs["<fleetsize>"] = number;
-    }
+	{   int size = result.ships.size();
+		string number = size > 1 ? to_string(size) + " ships" : "ship";
+		subs["<npc>"] = result.ships.front()->Name();
+		subs["<fleetsize>"] = number;
+	}
 	// Do string replacement on any dialog or conversation.
 	string dialogText = stockDialogPhrase ? stockDialogPhrase->Get()
 		: (!dialogPhrase.Name().empty() ? dialogPhrase.Get()

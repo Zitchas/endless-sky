@@ -97,7 +97,7 @@ void PlanetPanel::Draw()
 	Information info;
 	info.SetSprite("land", planet.Landscape());
 	if(selectedPanel)
-        info.SetCondition("has overlay");
+		info.SetCondition("has overlay");
 	const Ship *flagship = player.Flagship();
 	if(flagship && flagship->CanBeFlagship())
 		info.SetCondition("has ship");

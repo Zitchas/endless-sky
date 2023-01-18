@@ -63,8 +63,8 @@ void BatchShader::Init()
 		"  float second = mod(ceil(fragTexCoord.z), frameCount);\n"
 		"  float fade = fragTexCoord.z - first;\n"
 		"  finalColor = mix(\n"
-		"    texture(tex, vec3(fragTexCoord.xy, first)),\n"
-		"    texture(tex, vec3(fragTexCoord.xy, second)), fade);\n"
+		"	texture(tex, vec3(fragTexCoord.xy, first)),\n"
+		"	texture(tex, vec3(fragTexCoord.xy, second)), fade);\n"
 		"}\n";
 	
 	// Compile the shaders.

@@ -94,8 +94,8 @@ namespace {
 		for(const weak_ptr<Ship> &escort : ship.GetEscorts())
 		{
 			shared_ptr<const Ship> locked = escort.lock();
-            if(!locked || (ship.IsYours() && !(locked->IsYours() || locked->GetPersonality().IsEscort())))
-                continue;
+			if(!locked || (ship.IsYours() && !(locked->IsYours() || locked->GetPersonality().IsEscort())))
+				continue;
 			if(locked && !locked->IsDisabled() && !locked->CanBeCarried()
 					&& locked->GetSystem() == ship.GetSystem()
 					&& locked->JumpFuel() && !locked->IsReadyToJump(true))
@@ -797,7 +797,7 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 			bool hasParent = parent && !parent->IsDestroyed() && parent->GetGovernment() == gov;
 			bool inParentSystem = hasParent && parent->GetSystem() == it->GetSystem();
 			bool parentHasSpace = inParentSystem && parent->BaysFree(it->Attributes().Category());
-            // changed reparent interval from 1800 to 180. ajc
+			// changed reparent interval from 1800 to 180. ajc
 			if(!hasParent || (!inParentSystem && !it->JumpFuel()) || (!parentHasSpace && !Random::Int(180)))
 			{
 				// Find the possible parents for orphaned fighters and drones.
@@ -868,18 +868,18 @@ void AI::Step(const PlayerInfo &player, Command &activeCommands)
 			// If we get here, it means that the ship has not decided to return
 			// to its mothership. So, it should continue to be deployed.
 			command |= Command::DEPLOY;
-            if(FollowOrders(*it, command))
-            {
-                // If this is an escort and it followed orders, its only final task
-                // is to convert completed MOVE_TO orders into HOLD_POSITION orders.
-                UpdateOrders(*it);
-            }
+			if(FollowOrders(*it, command))
+			{
+				// If this is an escort and it followed orders, its only final task
+				// is to convert completed MOVE_TO orders into HOLD_POSITION orders.
+				UpdateOrders(*it);
+			}
 			else if(it->IsYours() && !target && it->Attributes().Get("miner") && DoHarvesting(*it, command))
 			{
 			it->SetCommands(command);
 			continue;
 			}
-            // added to allow player carried ships to mine. ajc
+			// added to allow player carried ships to mine. ajc
 			else if(it->IsYours() && !target && !minables.empty() && it->Attributes().Get("miner"))
 			{
 				DoMining(*it, command);
@@ -1392,7 +1392,7 @@ bool AI::FollowOrders(Ship &ship, Command &command) const
 		KeepStation(ship, command, *target);
 	else if(type == Orders::GATHER)
 	{
-       // MoveTo(ship, command, target->Position(), target->Velocity(), 240., .8);
+	   // MoveTo(ship, command, target->Position(), target->Velocity(), 240., .8);
 		CircleAround(ship, command, *target);
 	}
 	else
@@ -1591,16 +1591,16 @@ void AI::MoveEscort(Ship &ship, Command &command, const PlayerInfo &player) cons
 	const Ship &parent = *ship.GetParent();
 	bool hasFuelCapacity = ship.Attributes().Get("fuel capacity") && ship.JumpFuel();
 	bool isStaying = ship.GetPersonality().IsStaying() || !hasFuelCapacity;
-    // Avoid multiple calls to same functions. ajc.
-    const System *shipSystem = ship.GetSystem();
-    const System *parentSystem = parent.GetSystem();
+	// Avoid multiple calls to same functions. ajc.
+	const System *shipSystem = ship.GetSystem();
+	const System *parentSystem = parent.GetSystem();
 	bool parentIsHere = (shipSystem == parentSystem);
 	// Check if the parent has a target planet that is in the parent's system.
 	const Planet *parentPlanet = (parent.GetTargetStellar() ? parent.GetTargetStellar()->GetPlanet() : nullptr);
 	bool planetIsHere = (parentPlanet && parentPlanet->IsInSystem(parent.GetSystem()));
 	bool systemHasFuel = hasFuelCapacity && ship.GetSystem()->HasFuelFor(ship);
-    //Added a boolean for mission escorts so they can be made to land when reaching mission destination. ajc
-    bool missionDestination = ship.GetPersonality().IsEscort() && ship.GetTargetStellar() && parent.IsYours() && parentIsHere;
+	//Added a boolean for mission escorts so they can be made to land when reaching mission destination. ajc
+	bool missionDestination = ship.GetPersonality().IsEscort() && ship.GetTargetStellar() && parent.IsYours() && parentIsHere;
 	// Non-staying escorts should route to their parent ship's system if not already in it.
 	if(!parentIsHere && !isStaying)
 	{
@@ -1618,11 +1618,11 @@ void AI::MoveEscort(Ship &ship, Command &command, const PlayerInfo &player) cons
 		{
 			// Route to the parent ship's system and check whether
 			// the ship should land (refuel or wormhole) or jump.
-            // Route to end of travel plan if one exists. ajc.
-            if(!player.TravelPlan().empty() && ship.IsYours())
-                SelectRoute(ship, player.TravelPlan().front());
-            else
-                SelectRoute(ship, parent.GetSystem());
+			// Route to end of travel plan if one exists. ajc.
+			if(!player.TravelPlan().empty() && ship.IsYours())
+				SelectRoute(ship, player.TravelPlan().front());
+			else
+				SelectRoute(ship, parent.GetSystem());
 		}
 		
 		// Perform the action that this ship previously decided on.
@@ -1661,31 +1661,31 @@ void AI::MoveEscort(Ship &ship, Command &command, const PlayerInfo &player) cons
 		else if(!ship.JumpsRemaining())
 			// Return to the system center to maximize solar collection rate.
 			MoveTo(ship, command, Point(), Point(), 40., 0.1);
-        else
-        {
-            PrepareForHyperspace(ship, command);
-            command |= Command::JUMP;
-            if(!(parent.IsEnteringHyperspace() || parent.IsReadyToJump()) || !EscortsReadyToJump(ship))
-                command |= Command::WAIT;
-        } */
-     // New routing method to avoid stranding escorts at wormholes. ajc.
-        if(synchroJump && parent.GetTargetSystem() && ship.JumpFuel(parent.GetTargetSystem()))
-        {
-            ship.SetTargetSystem(parent.GetTargetSystem());
-            ship.SetTargetStellar(nullptr);
-        }
-     // If player has a travel plan, route to the destination rather than following the players jumps to a dead end. ajc.
-        else if(!player.TravelPlan().empty() && ship.IsYours())
-            SelectRoute(ship, player.TravelPlan().front());
-        else
-            SelectRoute(ship, parent.GetTargetSystem());
-        if(ship.GetTargetStellar())
-            {
-                MoveToPlanet(ship, command);
-                command |= Command::LAND;
-            }
-     //   else if(ShouldRefuel(ship, parent.GetTargetSystem()))
-      //     Refuel(ship, command);
+		else
+		{
+			PrepareForHyperspace(ship, command);
+			command |= Command::JUMP;
+			if(!(parent.IsEnteringHyperspace() || parent.IsReadyToJump()) || !EscortsReadyToJump(ship))
+				command |= Command::WAIT;
+		} */
+	 // New routing method to avoid stranding escorts at wormholes. ajc.
+		if(synchroJump && parent.GetTargetSystem() && ship.JumpFuel(parent.GetTargetSystem()))
+		{
+			ship.SetTargetSystem(parent.GetTargetSystem());
+			ship.SetTargetStellar(nullptr);
+		}
+	 // If player has a travel plan, route to the destination rather than following the players jumps to a dead end. ajc.
+		else if(!player.TravelPlan().empty() && ship.IsYours())
+			SelectRoute(ship, player.TravelPlan().front());
+		else
+			SelectRoute(ship, parent.GetTargetSystem());
+		if(ship.GetTargetStellar())
+			{
+				MoveToPlanet(ship, command);
+				command |= Command::LAND;
+			}
+	 //   else if(ShouldRefuel(ship, parent.GetTargetSystem()))
+	  //	 Refuel(ship, command);
 		else if(ship.GetTargetSystem() && ship.JumpsRemaining())
 		{
 			PrepareForHyperspace(ship, command);
@@ -1693,36 +1693,36 @@ void AI::MoveEscort(Ship &ship, Command &command, const PlayerInfo &player) cons
 			if(!(parent.IsEnteringHyperspace() || parent.IsReadyToJump()) || !EscortsReadyToJump(ship))
 				command |= Command::WAIT;
 		}
-        else
-        {
-            // Clear target system to avoid escorts being stranded due to holding unreachable destination. ajc.
-            ship.SetTargetSystem(nullptr);
-            // Return to the system center to maximize solar collection rate.
-            MoveTo(ship, command, Point(), Point(), 40., 0.1);
-        }
+		else
+		{
+			// Clear target system to avoid escorts being stranded due to holding unreachable destination. ajc.
+			ship.SetTargetSystem(nullptr);
+			// Return to the system center to maximize solar collection rate.
+			MoveTo(ship, command, Point(), Point(), 40., 0.1);
+		}
 	}
 	// If an escort is out of fuel, they should refuel without waiting for the
 	// "parent" to land (because the parent may not be planning on landing).
 	else if(systemHasFuel && !ship.JumpsRemaining())
 		Refuel(ship, command);
-    // Have mission escorts move to land rather than keeping station with player. ajc.
+	// Have mission escorts move to land rather than keeping station with player. ajc.
 	else if((parent.Commands().Has(Command::LAND) || missionDestination) && parentIsHere && planetIsHere && parentPlanet->CanLand(ship))
 	{
 		ship.SetTargetSystem(nullptr);
 		ship.SetTargetStellar(parent.GetTargetStellar());
-        
+		
 // Added code from PR: Keep escorts close to parent while flying towards planet for landing. #5621
 // Changed KeepStation to AttackRear to keep ships together, still needs work to prevent escorts overshooting planet as parent lands. ajc.
 		if(parent.IsLanding() || parent.CanLand() || missionDestination || parent.Position().Distance(parent.GetTargetStellar()->Position()) < 5000)
-        {
-            MoveToPlanet(ship, command);
+		{
+			MoveToPlanet(ship, command);
 			command |= Command::LAND;
-        }
-        else
-        {
-            MoveTo(ship, command, parent.Position() + parent.Facing().Unit() * -200, parent.Velocity(), 60., .8);
-            //AttackRear(ship, command, parent);
-        }
+		}
+		else
+		{
+			MoveTo(ship, command, parent.Position() + parent.Facing().Unit() * -200, parent.Velocity(), 60., .8);
+			//AttackRear(ship, command, parent);
+		}
 	}
 	else if(parent.Commands().Has(Command::BOARD) && parent.GetTargetShip().get() == &ship)
 		Stop(ship, command, .2);
@@ -1902,110 +1902,110 @@ bool AI::MoveToPlanet(Ship &ship, Command &command)
 // Instead of moving to a point with a fixed location, move to a moving point (Ship = position + velocity)
 bool AI::MoveTo(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow)
 {
-    const Point &position = ship.Position();
-    const Point &velocity = ship.Velocity();
-    const Angle &angle = ship.Facing();
-    Point dp = targetPosition - position;
-    Point dv = targetVelocity - velocity;
+	const Point &position = ship.Position();
+	const Point &velocity = ship.Velocity();
+	const Angle &angle = ship.Facing();
+	Point dp = targetPosition - position;
+	Point dv = targetVelocity - velocity;
 	Point target = dp;
-    
-    double speed = dv.Length();
-    
-    bool isClose = (dp.Length() < radius);
-    if(isClose && speed < slow)
-        return true;
-    
-    bool shouldReverse = false;
-    dp = targetPosition - (StoppingPoint(ship, targetVelocity, shouldReverse));
-    bool isFacing = (dp.Unit().Dot(angle.Unit()) > .95);
+	
+	double speed = dv.Length();
+	
+	bool isClose = (dp.Length() < radius);
+	if(isClose && speed < slow)
+		return true;
+	
+	bool shouldReverse = false;
+	dp = targetPosition - (StoppingPoint(ship, targetVelocity, shouldReverse));
+	bool isFacing = (dp.Unit().Dot(angle.Unit()) > .95);
 	bool facingTarget = target.Unit().Dot(angle.Unit()) > .95;
 	double deviation = velocity.Unit().Cross(target.Unit());
 	if(!isClose || (!isFacing && !shouldReverse))
 		command.SetTurn(TurnToward(ship, shouldReverse ? target : dp));
 	if(facingTarget)
 		command.SetLateralThrust(deviation * 5);
-    if(isFacing)
-    {
-        command.SetThrust(1.);
-    }
-    else if(shouldReverse)
-    {
-        command.SetThrust(-1.);
-    }
-    return false;
+	if(isFacing)
+	{
+		command.SetThrust(1.);
+	}
+	else if(shouldReverse)
+	{
+		command.SetThrust(-1.);
+	}
+	return false;
 }
 
 
 
 bool AI::MoveThrough(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow)
 {
-    const Point &position = ship.Position();
-    const Point &velocity = ship.Velocity();
-    const Angle &angle = ship.Facing();
-    Point dp = targetPosition - position;
-    Point dv = targetVelocity - velocity;
-    
-    double speed = dv.Length();
-    
-    bool isClose = (dp.Length() < radius);
-    if(isClose && speed < slow)
-        return true;
-    
-    bool isFacing = (dp.Unit().Dot(angle.Unit()) > .95);
-    if(!isClose)
-        command.SetTurn(TurnToward(ship, dp));
-    if(isFacing)
-        command.SetThrust(1.);
-    return false;
+	const Point &position = ship.Position();
+	const Point &velocity = ship.Velocity();
+	const Angle &angle = ship.Facing();
+	Point dp = targetPosition - position;
+	Point dv = targetVelocity - velocity;
+	
+	double speed = dv.Length();
+	
+	bool isClose = (dp.Length() < radius);
+	if(isClose && speed < slow)
+		return true;
+	
+	bool isFacing = (dp.Unit().Dot(angle.Unit()) > .95);
+	if(!isClose)
+		command.SetTurn(TurnToward(ship, dp));
+	if(isFacing)
+		command.SetThrust(1.);
+	return false;
 }
 
 
 
 bool AI::MoveToRadius(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow)
 {
-    const Point &position = ship.Position();
-    const Point &velocity = ship.Velocity();
-    const Angle &angle = ship.Facing();
-    Point dp = targetPosition - position;
-    Point dv = targetVelocity - velocity;
-    Point planet = targetPosition - position;
+	const Point &position = ship.Position();
+	const Point &velocity = ship.Velocity();
+	const Angle &angle = ship.Facing();
+	Point dp = targetPosition - position;
+	Point dv = targetVelocity - velocity;
+	Point planet = targetPosition - position;
 	bool facingPlanet = planet.Unit().Dot(angle.Unit()) > 0;
 
-    double speed = dv.Length();
-    
-    bool isClose = (dp.Length() < radius);
-    if(isClose && speed < slow)
-        return true;
-    
-    bool shouldReverse = false;
-    dp = targetPosition - (angle.Unit() * radius) - (StoppingPoint(ship, targetVelocity, shouldReverse));
-    bool isFacing = (dp.Unit().Dot(angle.Unit()) > .95);
+	double speed = dv.Length();
+	
+	bool isClose = (dp.Length() < radius);
+	if(isClose && speed < slow)
+		return true;
+	
+	bool shouldReverse = false;
+	dp = targetPosition - (angle.Unit() * radius) - (StoppingPoint(ship, targetVelocity, shouldReverse));
+	bool isFacing = (dp.Unit().Dot(angle.Unit()) > .95);
 	double deviation = velocity.Unit().Cross(planet.Unit());
 	if(!isClose || (!isFacing && !shouldReverse))
-        command.SetTurn(TurnToward(ship, shouldReverse ? planet : dp));
-    if(isFacing)
-    {
-        command.SetThrust(1.);
-      //  if(deviation < -0.02 && facingPlanet)
-       //     command.SetLateralThrust(-1.);
-     //   else if(deviation > 0.02 && facingPlanet)
-          //  command.SetLateralThrust(1.);
-    }
-    else if(shouldReverse)
-    {
-      //  if(angle.Unit().Dot(planet.Unit()) > 0)
-      //  command.SetTurn(-1 * (velocity.Unit().Cross(planet.Unit())));
-      //  else
+		command.SetTurn(TurnToward(ship, shouldReverse ? planet : dp));
+	if(isFacing)
+	{
+		command.SetThrust(1.);
+	  //  if(deviation < -0.02 && facingPlanet)
+	   //	 command.SetLateralThrust(-1.);
+	 //   else if(deviation > 0.02 && facingPlanet)
+		  //  command.SetLateralThrust(1.);
+	}
+	else if(shouldReverse)
+	{
+	  //  if(angle.Unit().Dot(planet.Unit()) > 0)
+	  //  command.SetTurn(-1 * (velocity.Unit().Cross(planet.Unit())));
+	  //  else
 	if(deviation < -0.01 && facingPlanet)
 		command.SetLateralThrust(-1.);
 	else if(deviation > 0.01 && facingPlanet)
 		command.SetLateralThrust(1.);
 
-       // command.SetTurn(TurnToward(ship, velocity.Unit()));
-        
-        command.SetThrust(-1.);
-    }
-    return false;
+	   // command.SetTurn(TurnToward(ship, velocity.Unit()));
+		
+		command.SetThrust(-1.);
+	}
+	return false;
 }
 
 
@@ -2174,160 +2174,160 @@ void AI::CircleAround(Ship &ship, Command &command, const Body &target)
 void AI::StrikeThrough(Ship &ship, Command &command, const Ship &target)
 {
 	int targetTurretRange = 520;//target.TurretRange();
-    int weaponsRange = 820; // need to calculate turn around distance v attacker gun range.
-    Point direction = ship.Position() - target.Position();
-    double length = direction.Length();
-    
-    Point northUnit = target.Facing().Unit();
-    Point westUnit(northUnit.Y(),-northUnit.X());
-    Point eastUnit(-northUnit.Y(),northUnit.X());
-    
-    //Point east = (target.Position() + eastUnit * targetTurretRange);
-    //Point west = (target.Position() + westUnit * targetTurretRange);
-    
-    //Point frontAvoid = (direction.Unit().Cross(target.Facing().Unit()) < 0. ? west : east);
-    //Point velocity = ship.Velocity();
-    bool inFront = direction.Unit().Dot(target.Facing().Unit()) > .8;
-    bool isFacing = direction.Unit().Dot(ship.Facing().Unit()) < 0;
-    bool outerRadius = direction.Length() < targetTurretRange * 3 ; //should be max (target gun range, turget turret range)
+	int weaponsRange = 820; // need to calculate turn around distance v attacker gun range.
+	Point direction = ship.Position() - target.Position();
+	double length = direction.Length();
+	
+	Point northUnit = target.Facing().Unit();
+	Point westUnit(northUnit.Y(),-northUnit.X());
+	Point eastUnit(-northUnit.Y(),northUnit.X());
+	
+	//Point east = (target.Position() + eastUnit * targetTurretRange);
+	//Point west = (target.Position() + westUnit * targetTurretRange);
+	
+	//Point frontAvoid = (direction.Unit().Cross(target.Facing().Unit()) < 0. ? west : east);
+	//Point velocity = ship.Velocity();
+	bool inFront = direction.Unit().Dot(target.Facing().Unit()) > .8;
+	bool isFacing = direction.Unit().Dot(ship.Facing().Unit()) < 0;
+	bool outerRadius = direction.Length() < targetTurretRange * 3 ; //should be max (target gun range, turget turret range)
    // double speed = ship.MaxVelocity();
  
-    if(outerRadius)
-    {
+	if(outerRadius)
+	{
 
-        if(inFront && isFacing)
-        {
-                command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
-                command.SetLateralThrust(1.);
-                command.SetThrust(1.);
-        }
-        else if(length >= weaponsRange)
-        {
-            command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
-            command.SetThrust(1.);
-        }
-        else if(length < weaponsRange && ship.Facing().Unit().Dot(ship.Velocity().Unit()) > .7)
-        {
-            command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
-            command.SetThrust(1.);
-        }
-        else if(length < weaponsRange && ship.Facing().Unit().Dot(ship.Velocity().Unit()) < -.7)
-        {
-            command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
-            command.SetThrust(1.);
-        }
-        else if(length < weaponsRange && ship.Facing().Unit().Dot(ship.Velocity().Unit()) < .7)
-        {
-            command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
-        }
-        else if(length < weaponsRange)
-        {
-            command.SetThrust(1.);
-        }
-    }
-    else
-    {
-       // MoveTo(ship, command, target.Position(), target.Velocity(), 80., 20);
-        command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
-        command.SetThrust(1.);
-    }
+		if(inFront && isFacing)
+		{
+				command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+				command.SetLateralThrust(1.);
+				command.SetThrust(1.);
+		}
+		else if(length >= weaponsRange)
+		{
+			command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+			command.SetThrust(1.);
+		}
+		else if(length < weaponsRange && ship.Facing().Unit().Dot(ship.Velocity().Unit()) > .7)
+		{
+			command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+			command.SetThrust(1.);
+		}
+		else if(length < weaponsRange && ship.Facing().Unit().Dot(ship.Velocity().Unit()) < -.7)
+		{
+			command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+			command.SetThrust(1.);
+		}
+		else if(length < weaponsRange && ship.Facing().Unit().Dot(ship.Velocity().Unit()) < .7)
+		{
+			command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+		}
+		else if(length < weaponsRange)
+		{
+			command.SetThrust(1.);
+		}
+	}
+	else
+	{
+	   // MoveTo(ship, command, target.Position(), target.Velocity(), 80., 20);
+		command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+		command.SetThrust(1.);
+	}
 }
 
 
 
 void AI::AttackRear(Ship &ship, Command &command, const Ship &target)
 {
-    int weaponsRange = 800; //attacker weapon range this will be passed in eventually
+	int weaponsRange = 800; //attacker weapon range this will be passed in eventually
 	int targetTurretRange = 520;//target.TurretRange();
-    Point offset = target.Position() - target.Facing().Unit() * weaponsRange;
-    Point direction = ship.Position() - target.Position();
-    Point d = (target.Position() + target.Velocity()) - (ship.Position() + ship.Velocity());
-    // 4 cardinal points. ajc
-    Point northUnit = target.Facing().Unit();
-    Point southUnit = -target.Facing().Unit();
-    Point westUnit(northUnit.Y(),-northUnit.X());
-    Point eastUnit(-northUnit.Y(),northUnit.X());
-    
-    Point northWestUnit(northUnit.X() + westUnit.X(),northUnit.Y() + westUnit.Y());
-    Point northWest = (target.Position() + northWestUnit * targetTurretRange/1.41);
-    
-    Point northEastUnit(northUnit.X() + eastUnit.X(),northUnit.Y() + eastUnit.Y());
-    Point northEast = (target.Position() + northEastUnit * targetTurretRange/1.41);
-    
-    Point southWestUnit(southUnit.X() + westUnit.X(),southUnit.Y() + westUnit.Y());
-    Point southWest = (target.Position() + southWestUnit * targetTurretRange/1.41);
-    
-    Point southEastUnit(southUnit.X() + eastUnit.X(),southUnit.Y() + eastUnit.Y());
-    Point southEast = (target.Position() + southEastUnit * targetTurretRange/1.41);
-    
-    Point frontAvoid = (direction.Cross(ship.Facing().Unit()) < 0. ? northWest : northEast);
-    Point rearAvoid = (direction.Cross(target.Facing().Unit()) > 0. ? southWest : southEast);
-    
-    bool isBehind = direction.Unit().Dot(target.Facing().Unit()) < -.75;
-    bool justLeft = direction.Unit().Dot(target.Facing().Unit()) < -.8 && direction.Cross(target.Facing().Unit()) > 0;
-    bool justRight = direction.Unit().Dot(target.Facing().Unit()) < -.8 && direction.Cross(target.Facing().Unit()) <= 0;
-    bool inFront = direction.Unit().Dot(target.Facing().Unit()) > .75;
+	Point offset = target.Position() - target.Facing().Unit() * weaponsRange;
+	Point direction = ship.Position() - target.Position();
+	Point d = (target.Position() + target.Velocity()) - (ship.Position() + ship.Velocity());
+	// 4 cardinal points. ajc
+	Point northUnit = target.Facing().Unit();
+	Point southUnit = -target.Facing().Unit();
+	Point westUnit(northUnit.Y(),-northUnit.X());
+	Point eastUnit(-northUnit.Y(),northUnit.X());
+	
+	Point northWestUnit(northUnit.X() + westUnit.X(),northUnit.Y() + westUnit.Y());
+	Point northWest = (target.Position() + northWestUnit * targetTurretRange/1.41);
+	
+	Point northEastUnit(northUnit.X() + eastUnit.X(),northUnit.Y() + eastUnit.Y());
+	Point northEast = (target.Position() + northEastUnit * targetTurretRange/1.41);
+	
+	Point southWestUnit(southUnit.X() + westUnit.X(),southUnit.Y() + westUnit.Y());
+	Point southWest = (target.Position() + southWestUnit * targetTurretRange/1.41);
+	
+	Point southEastUnit(southUnit.X() + eastUnit.X(),southUnit.Y() + eastUnit.Y());
+	Point southEast = (target.Position() + southEastUnit * targetTurretRange/1.41);
+	
+	Point frontAvoid = (direction.Cross(ship.Facing().Unit()) < 0. ? northWest : northEast);
+	Point rearAvoid = (direction.Cross(target.Facing().Unit()) > 0. ? southWest : southEast);
+	
+	bool isBehind = direction.Unit().Dot(target.Facing().Unit()) < -.75;
+	bool justLeft = direction.Unit().Dot(target.Facing().Unit()) < -.8 && direction.Cross(target.Facing().Unit()) > 0;
+	bool justRight = direction.Unit().Dot(target.Facing().Unit()) < -.8 && direction.Cross(target.Facing().Unit()) <= 0;
+	bool inFront = direction.Unit().Dot(target.Facing().Unit()) > .75;
 
-    bool atSide = (!inFront && !isBehind);
-    bool inRange = direction.Length() < weaponsRange;
-    bool tooClose = direction.Length() < weaponsRange * 1.5;
-    bool outerRadius = direction.Length() < weaponsRange * 3;
-    double reverseSpeed = ship.MaxReverseVelocity();
-    double speed = ship.MaxVelocity();
-    
+	bool atSide = (!inFront && !isBehind);
+	bool inRange = direction.Length() < weaponsRange;
+	bool tooClose = direction.Length() < weaponsRange * 1.5;
+	bool outerRadius = direction.Length() < weaponsRange * 3;
+	double reverseSpeed = ship.MaxReverseVelocity();
+	double speed = ship.MaxVelocity();
+	
 
-    if(outerRadius)
-    {
-        if(inFront)
-        {
-            MoveThrough(ship, command, frontAvoid, target.Velocity(), 20., speed);
-        }
-        else if(atSide)
-        {
-            MoveThrough(ship, command, rearAvoid, target.Velocity(), 20., speed);
-        }
-        else if(inRange) //behind target, in sweet spot.
-        {
-            if(justRight) command.SetLateralThrust(-1.);
-            else if (justLeft) command.SetLateralThrust(1.);
-           command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
-        }
-        else if(isBehind) //not behind target
-        {
-            MoveTo(ship, command, offset, target.Velocity(), 80., 2);
-        }
-        else if(!inRange) //behind but too far away
-        {
-           command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
-           command.SetThrust(1.);
-        }
-        else if(tooClose) //behind target but too close
-        {
-               if(reverseSpeed && target.Velocity().Dot(-d.Unit()) <= reverseSpeed)
-               {
-                   command.SetTurn(TurnToward(ship, d));
-                   if(ship.Facing().Unit().Dot(d) >= 0.)
-                       command.SetThrust(-1.);
-               }
-               else
-               {
-                   MoveTo(ship, command, offset, target.Velocity(), 80., 20);
-               }
-        }
-        else if(inRange) //behind target, in sweet spot.
-        {
-            if(justRight) command.SetLateralThrust(-1.);
-            else if (justLeft) command.SetLateralThrust(1.);
-           command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
-        }
-    }
-    else
-    {
-        command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
-        command.SetThrust(1.);
-    }
+	if(outerRadius)
+	{
+		if(inFront)
+		{
+			MoveThrough(ship, command, frontAvoid, target.Velocity(), 20., speed);
+		}
+		else if(atSide)
+		{
+			MoveThrough(ship, command, rearAvoid, target.Velocity(), 20., speed);
+		}
+		else if(inRange) //behind target, in sweet spot.
+		{
+			if(justRight) command.SetLateralThrust(-1.);
+			else if (justLeft) command.SetLateralThrust(1.);
+		   command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+		}
+		else if(isBehind) //not behind target
+		{
+			MoveTo(ship, command, offset, target.Velocity(), 80., 2);
+		}
+		else if(!inRange) //behind but too far away
+		{
+		   command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+		   command.SetThrust(1.);
+		}
+		else if(tooClose) //behind target but too close
+		{
+			   if(reverseSpeed && target.Velocity().Dot(-d.Unit()) <= reverseSpeed)
+			   {
+				   command.SetTurn(TurnToward(ship, d));
+				   if(ship.Facing().Unit().Dot(d) >= 0.)
+					   command.SetThrust(-1.);
+			   }
+			   else
+			   {
+				   MoveTo(ship, command, offset, target.Velocity(), 80., 20);
+			   }
+		}
+		else if(inRange) //behind target, in sweet spot.
+		{
+			if(justRight) command.SetLateralThrust(-1.);
+			else if (justLeft) command.SetLateralThrust(1.);
+		   command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+		}
+	}
+	else
+	{
+		command.SetTurn(TurnToward(ship, TargetAim(ship, target)));
+		command.SetThrust(1.);
+	}
 }
-    
+	
 
 
 void AI::Swarm(Ship &ship, Command &command, const Body &target)
@@ -2504,11 +2504,11 @@ void AI::Attack(Ship &ship, Command &command, const Ship &target)
 		}
 		return;
 	}
-    if(ship.Attributes().Get("rear") && target.TrueTurnRate() < ship.Acceleration() * 1.2)
+	if(ship.Attributes().Get("rear") && target.TrueTurnRate() < ship.Acceleration() * 1.2)
 	{
 		AttackRear(ship, command, target);
 	}
-    else if(ship.Attributes().Get("rear"))
+	else if(ship.Attributes().Get("rear"))
 	{
 		StrikeThrough(ship, command, target);
 	}
@@ -3040,12 +3040,12 @@ Point AI::StoppingPoint(const Ship &ship, const Point &targetVelocity, bool &sho
 	if(ship.Attributes().Get("reverse thrust"))
 	{
 		// Figure out your reverse thruster stopping distance:
-        Point reverseAcceleration = -ship.Facing().Unit() * (ship.Attributes().Get("reverse thrust") / ship.Mass());
-    //    Point reverseDragAcceleration = reverseAcceleration - velocity * (ship.Attributes().Get("drag") / ship.Mass());
+		Point reverseAcceleration = -ship.Facing().Unit() * (ship.Attributes().Get("reverse thrust") / ship.Mass());
+	//	Point reverseDragAcceleration = reverseAcceleration - velocity * (ship.Attributes().Get("drag") / ship.Mass());
 		double reverseDistance = v * (180. - degreesToTurn) / turnRate;
-      //  double aveDeceleration = (reverseDragAcceleration.Length() - reverseAcceleration.Length())/2 + reverseAcceleration.Length();
-       // reverseDistance += (v * v) / (2 * aveDeceleration) * (0.9 + velocity.Length()/1000);
-        reverseDistance += .5 * v * v / reverseAcceleration.Length();
+	  //  double aveDeceleration = (reverseDragAcceleration.Length() - reverseAcceleration.Length())/2 + reverseAcceleration.Length();
+	   // reverseDistance += (v * v) / (2 * aveDeceleration) * (0.9 + velocity.Length()/1000);
+		reverseDistance += .5 * v * v / reverseAcceleration.Length();
 		if(reverseDistance < stopDistance)
 		{
 			shouldReverse = true;
@@ -3538,11 +3538,11 @@ double AI::RendezvousTime(const Point &p, const Point &v, double vp)
 	// to intersect the target?
 	// (p.x + v.x*t)^2 + (p.y + v.y*t)^2 = vp^2*t^2
 	// p.x^2 + 2*p.x*v.x*t + v.x^2*t^2
-	//    + p.y^2 + 2*p.y*v.y*t + v.y^2t^2
-	//    - vp^2*t^2 = 0
+	//	+ p.y^2 + 2*p.y*v.y*t + v.y^2t^2
+	//	- vp^2*t^2 = 0
 	// (v.x^2 + v.y^2 - vp^2) * t^2
-	//    + (2 * (p.x * v.x + p.y * v.y)) * t
-	//    + (p.x^2 + p.y^2) = 0
+	//	+ (2 * (p.x * v.x + p.y * v.y)) * t
+	//	+ (p.x^2 + p.y^2) = 0
 	double a = v.Dot(v) - vp * vp;
 	double b = 2. * p.Dot(v);
 	double c = p.Dot(p);
@@ -3950,7 +3950,7 @@ void AI::MovePlayer(Ship &ship, const PlayerInfo &player, Command &activeCommand
 		
 		// transfer shift to a command so ship can read it. ajc.
 		if(activeCommands.Has(Command::SHIFT))
-            command |= Command::SHIFT;
+			command |= Command::SHIFT;
 		if(activeCommands.Has(Command::PRIMARY))
 		{
 			int index = 0;
@@ -4026,12 +4026,12 @@ void AI::MovePlayer(Ship &ship, const PlayerInfo &player, Command &activeCommand
 		autoPilot.Clear(Command::JUMP);
 	if(autoPilot.Has(Command::BOARD) && !(ship.GetTargetShip() && CanBoard(ship, *ship.GetTargetShip())))
 		autoPilot.Clear(Command::BOARD);
-    // synchroJump should be set true if there are mission escorts. ajc
+	// synchroJump should be set true if there are mission escorts. ajc
 	synchroJump = autoPilot.Has(Command::JUMP) && shift;
-    DistanceMap distance(player.GetSystem());
-    int jumps = 0;
-    if(!player.TravelPlan().empty())
-    jumps = distance.Days(player.TravelPlan().front());
+	DistanceMap distance(player.GetSystem());
+	int jumps = 0;
+	if(!player.TravelPlan().empty())
+	jumps = distance.Days(player.TravelPlan().front());
 	if(autoPilot.Has(Command::LAND) || (autoPilot.Has(Command::JUMP) && isWormhole))
 	{
 		if(ship.GetPlanet())
@@ -4068,23 +4068,23 @@ void AI::MovePlayer(Ship &ship, const PlayerInfo &player, Command &activeCommand
 			autoPilot.Clear();
 			Audio::Play(Audio::Get("fail"));
 		}
-        else if(player.HasTravelPlan() && player.TravelPlan().front() && jumps > 4 && synchroJump)
-        {
-            Messages::Add("More than 4 syncrojumps");
-            autoPilot.Clear();
-            Audio::Play(Audio::Get("fail"));
-        }
+		else if(player.HasTravelPlan() && player.TravelPlan().front() && jumps > 4 && synchroJump)
+		{
+			Messages::Add("More than 4 syncrojumps");
+			autoPilot.Clear();
+			Audio::Play(Audio::Get("fail"));
+		}
 		else
 		{
-            PrepareForHyperspace(ship, command);
-                command |= Command::JUMP;
-            // synchroJump should be set true if there are mission escorts. ajc
-            if(synchroJump)
-            {
-            Point direction = ship.GetTargetSystem()->Position() - ship.GetSystem()->Position();
-            if(ship.Facing().Unit().Dot(direction.Unit()) < 0.999 || !EscortsReadyToJump(ship))
-                command |= Command::WAIT;
-            }
+			PrepareForHyperspace(ship, command);
+				command |= Command::JUMP;
+			// synchroJump should be set true if there are mission escorts. ajc
+			if(synchroJump)
+			{
+			Point direction = ship.GetTargetSystem()->Position() - ship.GetSystem()->Position();
+			if(ship.Facing().Unit().Dot(direction.Unit()) < 0.999 || !EscortsReadyToJump(ship))
+				command |= Command::WAIT;
+			}
 			if(activeCommands.Has(Command::WAIT))
 				command |= Command::WAIT;
 		}

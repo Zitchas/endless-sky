@@ -103,10 +103,11 @@ int OutfitterPanel::DrawPlayerShipInfo(const Point &point)
 bool OutfitterPanel::HasItem(const string &name) const
 {
 	const Outfit *outfit = GameData::Outfits().Get(name);
-    // only show license(s) when the flagship is selected as they are 'carried' by the player. ajc
-    if(!(playerShip == player.Flagship()) && HasLicense(name))
-        return false;
-    
+	// only show license(s) when the flagship is selected as they are 'carried' by the player. ajc
+	if(!(playerShip == player.Flagship()) && HasLicense(name))
+	{
+		return false;
+	}
 	if((outfitter.Has(outfit) || player.Stock(outfit) > 0) && showForSale)
 		return true;
 	
@@ -408,9 +409,9 @@ void OutfitterPanel::Buy(bool fromCargo)
 			if(required && ship->Crew() + required <= static_cast<int>(ship->Attributes().Get("bunks")))
 				ship->AddCrew(required);
 			ship->Recharge();
-            if(selectedOutfit->Get("addturret"))
-                    GetUI()->Push(new Dialog(
-                    "Your ship has been upgraded with an additional turret mount. This is not reversible"));
+			if(selectedOutfit->Get("addturret"))
+					GetUI()->Push(new Dialog(
+					"Your ship has been upgraded with an additional turret mount. This is not reversible"));
 		}
 	}
 }
@@ -855,7 +856,7 @@ void OutfitterPanel::CheckRefill()
 	map<const Outfit *, int> needed;
 	for(const shared_ptr<Ship> &ship : player.Ships())
 	{
-        //Don't check parked ships for ammo refill. ajc
+		//Don't check parked ships for ammo refill. ajc
 		if(ship->GetSystem() != player.GetSystem() || ship->IsDisabled() || ship->IsParked())
 			continue;
 		

@@ -1075,15 +1075,15 @@ int64_t PlayerInfo::GetBasis(const string &commodity, int tons) const
 
 void PlayerInfo::AddPurchasedToday(const string &commodity, int64_t adjustment)
 {
-    purchasedToday[commodity] += adjustment;
+	purchasedToday[commodity] += adjustment;
 }
 
 
 
 int64_t PlayerInfo::GetPurchasedToday(const string &commodity)
 {
-    auto it = purchasedToday.find(commodity);
-    return (it == purchasedToday.end()) ? 0 : it->second;
+	auto it = purchasedToday.find(commodity);
+	return (it == purchasedToday.end()) ? 0 : it->second;
 }
 
 
@@ -1402,7 +1402,7 @@ bool PlayerInfo::TakeOff(UI *ui)
 	}
 	accounts.AddCredits(income);
 	cargo.Clear();
-    purchasedToday.clear();
+	purchasedToday.clear();
 	stockDepreciation = Depreciation();
 	if(sold)
 	{

@@ -51,7 +51,7 @@ ShipInfoPanel::ShipInfoPanel(PlayerInfo &player, int index)
 	SetInterruptible(false);
 	
 	// If a valid ship index was given, show that ship.
-    shipIndex = index;
+	shipIndex = index;
 	if(static_cast<unsigned>(index) < player.Ships().size())
 		shipIt += index;
 	else if(player.Flagship())
@@ -59,11 +59,11 @@ ShipInfoPanel::ShipInfoPanel(PlayerInfo &player, int index)
 		// Find the player's flagship. It may not be first in the list, if the
 		// first item in the list cannot be a flagship.
 		while(shipIt != player.Ships().end() && shipIt->get() != player.Flagship())
-        {
+		{
 			++shipIt;
-            ++shipIndex;
-        }
-        ++shipIndex;
+			++shipIndex;
+		}
+		++shipIndex;
 	}
 	
 	UpdateInfo();
@@ -123,41 +123,41 @@ bool ShipInfoPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &command,
 	bool shift = (mod & KMOD_SHIFT);
 	if(key == 'd' || key == SDLK_ESCAPE || (key == 'w' && (mod & (KMOD_CTRL | KMOD_GUI))))
 		GetUI()->Pop(this);
-    else if(!player.Ships().empty() && ((key == 'p' && !shift) || key == SDLK_LEFT || key == SDLK_UP))
-    {
-        if(shipIt == player.Ships().begin())
-        {
-            shipIt = player.Ships().end();
-            shipIndex = player.Ships().size();
-        }
-        --shipIt;
-        --shipIndex;
-        UpdateInfo();
-    }
-    else if(!player.Ships().empty() && (key == 'n' || key == SDLK_RIGHT || key == SDLK_DOWN))
-    {
-        ++shipIt;
-        ++shipIndex;
-        if(shipIt == player.Ships().end())
-        {
-            shipIt = player.Ships().begin();
-            shipIndex = 0;
-        }
-        UpdateInfo();
-    }
+	else if(!player.Ships().empty() && ((key == 'p' && !shift) || key == SDLK_LEFT || key == SDLK_UP))
+	{
+		if(shipIt == player.Ships().begin())
+		{
+			shipIt = player.Ships().end();
+			shipIndex = player.Ships().size();
+		}
+		--shipIt;
+		--shipIndex;
+		UpdateInfo();
+	}
+	else if(!player.Ships().empty() && (key == 'n' || key == SDLK_RIGHT || key == SDLK_DOWN))
+	{
+		++shipIt;
+		++shipIndex;
+		if(shipIt == player.Ships().end())
+		{
+			shipIt = player.Ships().begin();
+			shipIndex = 0;
+		}
+		UpdateInfo();
+	}
 	else if(key == 'i' || command.Has(Command::INFO))
 	{
 		GetUI()->Pop(this);
 		GetUI()->Push(new PlayerInfoPanel(player));
 	}
-    else if(key == 'w')
-    {
-        if(!player.Ships().empty())
-        {
-            GetUI()->Pop(this);
-            GetUI()->Push(new WeaponInfoPanel(player, shipIndex));
-        }
-    }
+	else if(key == 'w')
+	{
+		if(!player.Ships().empty())
+		{
+			GetUI()->Pop(this);
+			GetUI()->Push(new WeaponInfoPanel(player, shipIndex));
+		}
+	}
 	else if(key == 'R' || (key == 'r' && shift))
 		GetUI()->Push(new Dialog(this, &ShipInfoPanel::Rename, "Change this ship's name?", (*shipIt)->Name()));
 	else if(canEdit && (key == 'P' || (key == 'p' && shift)))

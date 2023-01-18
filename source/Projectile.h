@@ -60,14 +60,14 @@ public:
 	// This projectile was killed, e.g. by an anti-missile system.
 	void Kill();
 	// Was projectile launched from a hardpoint below the ship.
-    bool DrawUnder() const;
-    bool fireUnder = false;
+	bool DrawUnder() const;
+	bool fireUnder = false;
 	// Find out if this is a missile, and if so, how strong it is (i.e. what
 	// chance an anti-missile shot has of destroying it).
 	int MissileStrength() const;
-    int RemainingLifetime() const;
-    int homing = 0;
-    bool HasLock() const;
+	int RemainingLifetime() const;
+	int homing = 0;
+	bool HasLock() const;
 	bool HitAll() const;
 	// Get information on the weapon that fired this projectile.
 	const Weapon &GetWeapon() const;

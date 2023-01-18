@@ -52,7 +52,7 @@ namespace {
 	
 	const vector<string> ENGINE_SIDE = {"under", "over"};
 	const vector<string> STEERING_FACING = {"none", "left", "right"};
-    const vector<string> LATERAL_FACING = {"none", "left", "right"};
+	const vector<string> LATERAL_FACING = {"none", "left", "right"};
 	
 	const double MAXIMUM_TEMPERATURE = 100.;
 	
@@ -116,7 +116,7 @@ const vector<string> Ship::CATEGORIES = {
 	"Mining Vessel",
 	"Fighter",
 	"Drone",
-    "Gunship"
+	"Gunship"
 };
 
 
@@ -125,7 +125,7 @@ const vector<string> Ship::CATEGORIES = {
 const set<string> Ship::BAY_TYPES = {
 	"Drone",
 	"Fighter",
-    "Gunship",
+	"Gunship",
 	"Multi"
 };
 
@@ -206,12 +206,12 @@ void Ship::Load(const DataNode &node)
 				enginePoints.clear();
 				reverseEnginePoints.clear();
 				steeringEnginePoints.clear();
-                lateralEnginePoints.clear();
+				lateralEnginePoints.clear();
 				hasEngine = true;
 			}
 			bool reverse = (key == "reverse engine");
 			bool steering = (key == "steering engine");
-            bool lateral = (key == "lateral engine");
+			bool lateral = (key == "lateral engine");
 			
 			vector<EnginePoint> &editPoints = (!steering && !reverse && !lateral) ? enginePoints :
 				(reverse ? reverseEnginePoints : steering ? steeringEnginePoints : lateralEnginePoints);
@@ -236,10 +236,10 @@ void Ship::Load(const DataNode &node)
 						for(unsigned j = 1; j < STEERING_FACING.size(); ++j)
 							if(grandKey == STEERING_FACING[j])
 								engine.steering = j;
-                    if(lateral)
-                        for(unsigned j = 1; j < LATERAL_FACING.size(); ++j)
-                            if(grandKey == LATERAL_FACING[j])
-                                engine.lateral = j;
+					if(lateral)
+						for(unsigned j = 1; j < LATERAL_FACING.size(); ++j)
+							if(grandKey == LATERAL_FACING[j])
+								engine.lateral = j;
 				}
 			}
 		}
@@ -266,7 +266,7 @@ void Ship::Load(const DataNode &node)
 			}
 			Angle gunPortAngle = Angle(0.);
 			bool gunPortParallel = false;
-            bool hardpointUnder = false;
+			bool hardpointUnder = false;
 			bool hardpointDefensive = false;
 			if(child.HasChildren())
 			{
@@ -275,8 +275,8 @@ void Ship::Load(const DataNode &node)
 						gunPortAngle = grand.Value(1);
 					else if(grand.Token(0) == "parallel")
 						gunPortParallel = true;
-                    else if(grand.Token(0) == "under")
-                        hardpointUnder = true;
+					else if(grand.Token(0) == "under")
+						hardpointUnder = true;
 					else if(grand.Token(0) == "defensive")
 						hardpointDefensive = true;
 					else
@@ -497,8 +497,8 @@ void Ship::FinishLoading(bool isNewInstance)
 			reverseEnginePoints = base->reverseEnginePoints;
 		if(steeringEnginePoints.empty())
 			steeringEnginePoints = base->steeringEnginePoints;
-        if(lateralEnginePoints.empty())
-            lateralEnginePoints = base->lateralEnginePoints;
+		if(lateralEnginePoints.empty())
+			lateralEnginePoints = base->lateralEnginePoints;
 		if(explosionEffects.empty())
 		{
 			explosionEffects = base->explosionEffects;
@@ -755,9 +755,9 @@ void Ship::Save(DataWriter &out) const
 			for(const auto &it : baseAttributes.FlareSprites())
 				for(int i = 0; i < it.second; ++i)
 					it.first.SaveSprite(out, "flare sprite");
-            for(const auto &it : baseAttributes.LateralFlareSprites())
-                for(int i = 0; i < it.second; ++i)
-                    it.first.SaveSprite(out, "lateral flare sprite");
+			for(const auto &it : baseAttributes.LateralFlareSprites())
+				for(int i = 0; i < it.second; ++i)
+					it.first.SaveSprite(out, "lateral flare sprite");
 			for(const auto &it : baseAttributes.FlareSounds())
 				for(int i = 0; i < it.second; ++i)
 					out.Write("flare sound", it.first->Name());
@@ -855,16 +855,16 @@ void Ship::Save(DataWriter &out) const
 			out.Write(STEERING_FACING[point.steering]);
 			out.EndChild();
 		}
-        for(const EnginePoint &point : lateralEnginePoints)
-        {
-            out.Write("lateral engine", 2. * point.X(), 2. * point.Y());
-            out.BeginChild();
-            out.Write("zoom", point.zoom);
-            out.Write("angle", point.facing.Degrees());
-            out.Write(ENGINE_SIDE[point.side]);
-            out.Write(LATERAL_FACING[point.lateral]);
-            out.EndChild();
-        }
+		for(const EnginePoint &point : lateralEnginePoints)
+		{
+			out.Write("lateral engine", 2. * point.X(), 2. * point.Y());
+			out.BeginChild();
+			out.Write("zoom", point.zoom);
+			out.Write("angle", point.facing.Degrees());
+			out.Write(ENGINE_SIDE[point.side]);
+			out.Write(LATERAL_FACING[point.lateral]);
+			out.EndChild();
+		}
 		for(const Hardpoint &hardpoint : armament.Get())
 		{
 			const char *type = (hardpoint.IsTurret() ? "turret" : hardpoint.IsPylon() ? "pylon" : "gun");
@@ -882,10 +882,10 @@ void Ship::Save(DataWriter &out) const
 						out.Write("angle", hardpointAngle);
 					if(hardpoint.IsParallel())
 						out.Write("parallel");
-                    if(hardpoint.IsUnder())
-                        out.Write("under");
-                    if(hardpoint.IsDefensive())
-                        out.Write("defensive");
+					if(hardpoint.IsUnder())
+						out.Write("under");
+					if(hardpoint.IsDefensive())
+						out.Write("defensive");
 				}
 				out.EndChild();
 			}
@@ -1134,10 +1134,10 @@ void Ship::Place(Point position, Point velocity, Angle angle)
 	if(government)
 		SetSwizzle(customSwizzle >= 0 ? customSwizzle : government->GetSwizzle());
 	
-    // Get the weapon ranges for this ship, so the Ai can call it. ajc
-    const vector<Hardpoint> &hardpoints = armament.Get();
-    for(unsigned i = 0; i < hardpoints.size(); ++i)
-    {
+	// Get the weapon ranges for this ship, so the Ai can call it. ajc
+	const vector<Hardpoint> &hardpoints = armament.Get();
+	for(unsigned i = 0; i < hardpoints.size(); ++i)
+	{
 			const Weapon *weapon = hardpoints[i].GetOutfit();
 			if(weapon && !weapon->Ammo() && weapon->DoesDamage() && hardpoints[i].IsTurret())
 				turretRange = max(turretRange, weapon->Range() + hardpoints[i].GetPoint().Length());
@@ -1145,28 +1145,28 @@ void Ship::Place(Point position, Point velocity, Angle angle)
 				gunRange = max(gunRange, weapon->Range() + hardpoints[i].GetPoint().Length());
 			if(weapon && !weapon->Ammo() && weapon->DoesDamage() && hardpoints[i].IsDefensive())
 				defenseRange = max(defenseRange, weapon->Range() + hardpoints[i].GetPoint().Length());
-    }
+	}
 }
 
 
 // various weapon raanges for this ship. ajc.
 double Ship::TurretRange() const
 {
-    return turretRange;
+	return turretRange;
 }
 
 
 
 double Ship::GunRange() const
 {
-    return gunRange;
+	return gunRange;
 }
 
 
 
 double Ship::DefenseRange() const
 {
-    return defenseRange;
+	return defenseRange;
 }
 
 
@@ -1326,11 +1326,11 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 	// system set because they just entered a fighter bay.
 	forget += !isInSystem;
 	isThrusting = false;
-    isLatThrusting = false;
+	isLatThrusting = false;
 	isReversing = false;
 	isSteering = false;
 	steeringDirection = 0.;
-    lateralDirection = 0.;
+	lateralDirection = 0.;
 	fuelMass = fuel * .01;
 	countIncoming = 0;
 	if((!isSpecial && forget >= 1000) || !currentSystem)
@@ -1399,11 +1399,11 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 			cloak = 0.;
 	}
 	// cloaking sparks. ajc
-    if(cloak > 0 && cloak < 1)
-    {
-        double amount = Width() * Height() * .0001;
-        CreateSparks(visuals, "cloak effect", cloak * amount);
-    }
+	if(cloak > 0 && cloak < 1)
+	{
+		double amount = Width() * Height() * .0001;
+		CreateSparks(visuals, "cloak effect", cloak * amount);
+	}
 	if(IsDestroyed())
 	{
 		// Make sure the shields are zero, as well as the hull.
@@ -1569,13 +1569,13 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 			if(isUsingJumpDrive)
 			{
 				// Don't try to match the parent position if it is still hyperspacing. ajc.
-                if(parent && parent->currentSystem == currentSystem && (!parent->hyperspaceCount || parent->IsUsingJumpDrive()))
-                {
-                    position = parent->Position()  + (canBeCarried ? 200 : 1000) * Angle::Random().Unit();
-                    angle = parent->Facing();
-                }
-                else
-                    position = target + -angle.Unit() * (HYPER_D - (Random::Real() * 1000.));
+				if(parent && parent->currentSystem == currentSystem && (!parent->hyperspaceCount || parent->IsUsingJumpDrive()))
+				{
+					position = parent->Position()  + (canBeCarried ? 200 : 1000) * Angle::Random().Unit();
+					angle = parent->Facing();
+				}
+				else
+					position = target + -angle.Unit() * (HYPER_D - (Random::Real() * 1000.));
 				jumpLength = 0;
 				return;
 			}
@@ -1734,43 +1734,43 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 	double mass = Mass();
 	bool isUsingAfterburner = false;
 	if(isDisabled)
-    {
-        //allow disabled ships to drift slowly, rather than stopping ajc
-        if(velocity.Length() > .5)
+	{
+		//allow disabled ships to drift slowly, rather than stopping ajc
+		if(velocity.Length() > .5)
 		velocity *= 1. - attributes.Get("drag") / mass;
-        angle += .1;
+		angle += .1;
 		// degrade the hull, not mission ships. ajc
-        if(!personality.IsMarked() && !isYours)
-            hull -= (!Random::Int(20) ? 5 : 0);
-    
-    // Handle hull "leaks." added for disabled ships ajc
-    for(const Leak &leak : leaks)
-        if(leak.openPeriod > 0 && !Random::Int(leak.openPeriod))
-        {
-            activeLeaks.push_back(leak);
-            const vector<Point> &outline = GetMask().Points();
-            if(outline.size() < 2)
-                break;
-            int i = Random::Int(outline.size() - 1);
-            
-            // Position the leak along the outline of the ship, facing outward.
-            activeLeaks.back().location = (outline[i] + outline[i + 1]) * .5;
-            activeLeaks.back().angle = Angle(outline[i] - outline[i + 1]) + Angle(90.);
-        }
-    for(Leak &leak : activeLeaks)
-        if(leak.effect)
-        {
-            // Leaks always "flicker" every other frame.
-            if(Random::Int(2))
-                visuals.emplace_back(*leak.effect,
-                    angle.Rotate(leak.location) + position,
-                    velocity,
-                    leak.angle + angle);
-            
-            if(leak.closePeriod > 0 && !Random::Int(leak.closePeriod))
-                leak.effect = nullptr;
-        }
-    }
+		if(!personality.IsMarked() && !isYours)
+			hull -= (!Random::Int(20) ? 5 : 0);
+	
+	// Handle hull "leaks." added for disabled ships ajc
+	for(const Leak &leak : leaks)
+		if(leak.openPeriod > 0 && !Random::Int(leak.openPeriod))
+		{
+			activeLeaks.push_back(leak);
+			const vector<Point> &outline = GetMask().Points();
+			if(outline.size() < 2)
+				break;
+			int i = Random::Int(outline.size() - 1);
+			
+			// Position the leak along the outline of the ship, facing outward.
+			activeLeaks.back().location = (outline[i] + outline[i + 1]) * .5;
+			activeLeaks.back().angle = Angle(outline[i] - outline[i + 1]) + Angle(90.);
+		}
+	for(Leak &leak : activeLeaks)
+		if(leak.effect)
+		{
+			// Leaks always "flicker" every other frame.
+			if(Random::Int(2))
+				visuals.emplace_back(*leak.effect,
+					angle.Rotate(leak.location) + position,
+					velocity,
+					leak.angle + angle);
+			
+			if(leak.closePeriod > 0 && !Random::Int(leak.closePeriod))
+				leak.effect = nullptr;
+		}
+	}
 	else if(!pilotError)
 	{
 		if(commands.Turn())
@@ -1800,69 +1800,69 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 		// forward and reverse thrust. ajc.
 		
 		double thrustCommand = commands.Thrust();
-        // Reduce forward thrust if ship facing matches velocity and ship is nearing max speed. ajc.
-        if(MaxVelocity() && thrustCommand > 0 && !commands.Has(Command::AFTERBURNER) && angle.Unit().Dot(velocity.Unit()) > 0.99 && velocity.Length() >= MaxVelocity() * .90)
-            thrustCommand *= max(0., (1 - velocity.Length()/MaxVelocity())*10);
-        double thrust = 0.;
+		// Reduce forward thrust if ship facing matches velocity and ship is nearing max speed. ajc.
+		if(MaxVelocity() && thrustCommand > 0 && !commands.Has(Command::AFTERBURNER) && angle.Unit().Dot(velocity.Unit()) > 0.99 && velocity.Length() >= MaxVelocity() * .90)
+			thrustCommand *= max(0., (1 - velocity.Length()/MaxVelocity())*10);
+		double thrust = 0.;
 		thrustMagnitude = 0.;
-        if(thrustCommand)
-        {
-            // Check if we are able to apply this thrust.
-            double cost = attributes.Get((thrustCommand > 0.) ?
-                "thrusting energy" : "reverse thrusting energy");
-            if(energy < cost)
-                thrustCommand *= energy / cost;
-            thrustMagnitude = thrustCommand * slowMultiplier;
-            if(thrustCommand)
-            {
-                // If a reverse thrust is commanded and the capability does not
-                // exist, ignore it (do not even slow under drag).
-                isThrusting = (thrustCommand > 0.);
-                isReversing = !isThrusting && attributes.Get("reverse thrust");
-                thrust = attributes.Get(isThrusting ? "thrust" : "reverse thrust");
-                if(thrust)
-                {
-                    double scale = fabs(thrustCommand);
-                    energy -= scale * cost;
-                    heat += scale * attributes.Get(isThrusting ? "thrusting heat" : "reverse thrusting heat");
-                    acceleration += angle.Unit() * (thrustCommand * thrust / mass);
-                }
-            }
-        }
+		if(thrustCommand)
+		{
+			// Check if we are able to apply this thrust.
+			double cost = attributes.Get((thrustCommand > 0.) ?
+				"thrusting energy" : "reverse thrusting energy");
+			if(energy < cost)
+				thrustCommand *= energy / cost;
+			thrustMagnitude = thrustCommand * slowMultiplier;
+			if(thrustCommand)
+			{
+				// If a reverse thrust is commanded and the capability does not
+				// exist, ignore it (do not even slow under drag).
+				isThrusting = (thrustCommand > 0.);
+				isReversing = !isThrusting && attributes.Get("reverse thrust");
+				thrust = attributes.Get(isThrusting ? "thrust" : "reverse thrust");
+				if(thrust)
+				{
+					double scale = fabs(thrustCommand);
+					energy -= scale * cost;
+					heat += scale * attributes.Get(isThrusting ? "thrusting heat" : "reverse thrusting heat");
+					acceleration += angle.Unit() * (thrustCommand * thrust / mass);
+				}
+			}
+		}
 		// lateral thrusters. ajc.
 		double latThrustCommand = commands.LateralThrust();// commands.Has(Command::STRAFERIGHT) - commands.Has(Command::STRAFELEFT);
-     /*   if(!latThrustCommand)
-        {
-	    double deviation = Velocity().Unit().Cross(angle.Unit());
+	 /*   if(!latThrustCommand)
+		{
+		double deviation = Velocity().Unit().Cross(angle.Unit());
 		bool facing = angle.Unit().Dot(velocity.Unit()) > -.5;
-        if(deviation < -0.01 && thrustMagnitude && !commands.Has(Command::SHIFT) && facing)
-            latThrustCommand = -1.;
-        else if(deviation > 0.01 && thrustMagnitude && !commands.Has(Command::SHIFT) && facing)
-            latThrustCommand = 1.;
-        }*/
-        double latThrust = 0.;
-        if(latThrustCommand)
-        {
-            // Check if we are able to apply this thrust.
-            double cost = attributes.Get("thrusting energy") * 0.5;
-            if(energy < cost)
-                latThrustCommand *= energy / cost;
-            
-            if(latThrustCommand)
-            {
-                isLatThrusting = true;
-                lateralDirection = latThrustCommand;
-                latThrust = attributes.Get("thrust") * 0.5;
-                if(latThrust)
-                {
-                    double scale = fabs(latThrustCommand);
-                    energy -= scale * cost;
-                    heat += scale * attributes.Get("thrusting heat") * 0.5;
-                    Point lateral(-angle.Unit().Y(),angle.Unit().X());
-                    acceleration += lateral * (latThrustCommand * latThrust / mass);
-                }
-            }
-        }
+		if(deviation < -0.01 && thrustMagnitude && !commands.Has(Command::SHIFT) && facing)
+			latThrustCommand = -1.;
+		else if(deviation > 0.01 && thrustMagnitude && !commands.Has(Command::SHIFT) && facing)
+			latThrustCommand = 1.;
+		}*/
+		double latThrust = 0.;
+		if(latThrustCommand)
+		{
+			// Check if we are able to apply this thrust.
+			double cost = attributes.Get("thrusting energy") * 0.5;
+			if(energy < cost)
+				latThrustCommand *= energy / cost;
+			
+			if(latThrustCommand)
+			{
+				isLatThrusting = true;
+				lateralDirection = latThrustCommand;
+				latThrust = attributes.Get("thrust") * 0.5;
+				if(latThrust)
+				{
+					double scale = fabs(latThrustCommand);
+					energy -= scale * cost;
+					heat += scale * attributes.Get("thrusting heat") * 0.5;
+					Point lateral(-angle.Unit().Y(),angle.Unit().X());
+					acceleration += lateral * (latThrustCommand * latThrust / mass);
+				}
+			}
+		}
 
 		bool applyAfterburner = (commands.Has(Command::AFTERBURNER) || (thrustCommand > 0. && !thrust))
 				&& !CannotAct();
@@ -1911,7 +1911,7 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 					dragAcceleration = -vNormal * angle.Unit();
 			}
 			if(velocity.Length() > MaxVelocity() || velocity.Length() < 0.1)
-                 velocity += dragAcceleration;
+				 velocity += dragAcceleration;
 			 else
 				 velocity += acceleration;
 		}
@@ -2091,7 +2091,7 @@ void Ship::DoGeneration()
 			// repair, if there is still excess energy, transfer it.
 			energyRemaining = energy - attributes.Get("energy capacity");
 			double fuelRemaining = fuel - attributes.Get("fuel capacity");
-            if(energyRemaining > 0 || fuelRemaining > 0)
+			if(energyRemaining > 0 || fuelRemaining > 0)
 			for(const pair<double, Ship *> &it : carried)
 			{
 				Ship &ship = *it.second;
@@ -2161,7 +2161,7 @@ void Ship::DoGeneration()
 			fuel += ramScoop;
 			
 			double solarScaling = currentSystem->SolarPower() * scale;
-            solarEnergy = solarScaling * attributes.Get("solar collection");
+			solarEnergy = solarScaling * attributes.Get("solar collection");
 			energy += solarEnergy;
 			heat += solarScaling * attributes.Get("solar heat");
 		}
@@ -2234,9 +2234,9 @@ void Ship::Launch(list<shared_ptr<Ship>> &ships, vector<Visual> &visuals)
 				if(maxFuel)
 				{
 					double spareFuel = fuel - JumpFuel();
-                    bool canCollect = bay.ship->attributes.Get("ramscoop") && bay.ship->attributes.Get("fuel collector");
-                    if(canCollect)
-                        TransferFuel(bay.ship->fuel, this);
+					bool canCollect = bay.ship->attributes.Get("ramscoop") && bay.ship->attributes.Get("fuel collector");
+					if(canCollect)
+						TransferFuel(bay.ship->fuel, this);
 					else if(spareFuel > 0.)
 						TransferFuel(min(maxFuel - bay.ship->fuel, spareFuel), bay.ship.get());
 					// If still low or out-of-fuel, re-stock the carrier and don't launch.
@@ -2460,14 +2460,14 @@ bool Ship::Fire(vector<Projectile> &projectiles, vector<Visual> &visuals)
 		const Weapon *weapon = hardpoints[i].GetOutfit();
 		if(weapon && CanFire(weapon))
 		{
-            if(weapon->AntiMissile())
-            {
-                antiMissileRange = max(antiMissileRange, weapon->Velocity() + weaponRadius);
-                if(weapon->DoesDamage() && (commands.HasFire(i) || hardpoints[i].ShouldFire()))
-                    armament.Fire(i, *this, projectiles, visuals);
-            }
-            else if (weapon->IsPeriodic())
-                armament.Fire(i, *this, projectiles, visuals);
+			if(weapon->AntiMissile())
+			{
+				antiMissileRange = max(antiMissileRange, weapon->Velocity() + weaponRadius);
+				if(weapon->DoesDamage() && (commands.HasFire(i) || hardpoints[i].ShouldFire()))
+					armament.Fire(i, *this, projectiles, visuals);
+			}
+			else if (weapon->IsPeriodic())
+				armament.Fire(i, *this, projectiles, visuals);
 			else if(hardpoints[i].ShouldFire() || commands.HasFire(i))
 				armament.Fire(i, *this, projectiles, visuals);
 		}
@@ -2697,14 +2697,14 @@ bool Ship::IsThrusting() const
 
 bool Ship::IsLatThrusting() const
 {
-    return isLatThrusting;
+	return isLatThrusting;
 }
 
 
 
 double Ship::LateralDirection() const
 {
-    return lateralDirection;
+	return lateralDirection;
 }
 
 
@@ -2732,7 +2732,7 @@ double Ship::SteeringDirection() const
 
 double Ship::ThrustMagnitute() const
 {
-    return thrustMagnitude;
+	return thrustMagnitude;
 }
 
 
@@ -2789,7 +2789,7 @@ const vector<Ship::EnginePoint> &Ship::SteeringEnginePoints() const
 
 const vector<Ship::EnginePoint> &Ship::LateralEnginePoints() const
 {
-    return lateralEnginePoints;
+	return lateralEnginePoints;
 }
 
 
@@ -3199,7 +3199,7 @@ double Ship::TurnRate() const
 
 double Ship::TrueTurnRate() const
 {
-    return attributes.Get("turn") / Mass() * 1. / (1. + slowness * .05);
+	return attributes.Get("turn") / Mass() * 1. / (1. + slowness * .05);
 }
 
 
@@ -3230,56 +3230,56 @@ double Ship::DisplayVelocity() const
 	Point normal(-direction.Y(), direction.X());
 	double deviation = velocity.Dot(normal);
 	return deviation; */
-    return velocity.Length();
+	return velocity.Length();
 }
 
 
 
 double Ship::DisplaySlowing() const
 {
-    return 1. / (1. + slowness * .05);
+	return 1. / (1. + slowness * .05);
 }
 
 
 
 double Ship::DisplaySolar() const
 {
-    return 1. / (1. + disruption * .01);
+	return 1. / (1. + disruption * .01);
 }
 
 
 
 double Ship::DisplayIon() const
 {
-    return ionization;
+	return ionization;
 }
 
 
 
 double Ship::DisplayRamScoop() const
 {
-    return ramScoop;
+	return ramScoop;
 }
 
 
 
 double Ship::DisplayThrust() const
 {
-    return -thrustMagnitude;
+	return -thrustMagnitude;
 }
 
 
 
 double Ship::DisplayTurn() const
 {
-    return -commands.Turn();
+	return -commands.Turn();
 }
 
 
 
 double Ship::DisplayLateralThrust() const
 {
-    return -commands.LateralThrust();
+	return -commands.LateralThrust();
 }
 
 
@@ -3485,13 +3485,13 @@ bool Ship::Carry(const shared_ptr<Ship> &ship, bool force)
 			ship->SetTargetStellar(nullptr);
 			ship->SetParent(shared_from_this());
 			ship->isThrusting = false;
-            ship->isLatThrusting = false;
+			ship->isLatThrusting = false;
 			ship->isReversing = false;
 			ship->isSteering = false;
 			ship->commands.Clear();
 			// If this fighter collected anything in space, try to store it
 			// (unless this is a player-owned ship).
-            // Let player fighters unload cargo if bays are internal. ajc
+			// Let player fighters unload cargo if bays are internal. ajc
 			if(bay.side == Bay::INSIDE && cargo.Free() && !ship->Cargo().IsEmpty())
 				ship->Cargo().TransferAll(cargo);
 			// Return unused fuel to the carrier, for any launching fighter that needs it.
@@ -3645,19 +3645,19 @@ void Ship::AddOutfit(const Outfit *outfit, int count)
 		attributes.Add(*outfit, count);
 		if(outfit->IsWeapon())
 			armament.Add(outfit, count);
-        // allow adding a turret to a ship. ajc
+		// allow adding a turret to a ship. ajc
 	/*	if(outfit->Get("addturret") && count == 1)
-        {
-            int turret =  attributes.Get("turret mounts");
-            int x = attributes.Get("position x");
-            int y = attributes.Get("position y");
-            Point coord = Point(x,y);
-            // send false, false to armament for now, replace with bool isUnder and isDefensive later. ajc
-            armament.AddTurret(coord, false, false, nullptr);
-            attributes.Set("turret mounts", turret + 1);
-            baseAttributes.Set("turret mounts", turret +1);
-            AddOutfit(outfit, -1);
-        } */
+		{
+			int turret =  attributes.Get("turret mounts");
+			int x = attributes.Get("position x");
+			int y = attributes.Get("position y");
+			Point coord = Point(x,y);
+			// send false, false to armament for now, replace with bool isUnder and isDefensive later. ajc
+			armament.AddTurret(coord, false, false, nullptr);
+			attributes.Set("turret mounts", turret + 1);
+			baseAttributes.Set("turret mounts", turret +1);
+			AddOutfit(outfit, -1);
+		} */
 		if(outfit->Get("cargo space"))
 			cargo.SetSize(attributes.Get("cargo space"));
 		if(outfit->Get("hull"))

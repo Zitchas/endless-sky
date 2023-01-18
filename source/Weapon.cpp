@@ -44,12 +44,12 @@ void Weapon::LoadWeapon(const DataNode &node)
 			isSafe = true;
 		else if(key == "phasing")
 			isPhasing = true;
-        else if(key == "periodic")
-            isPeriodic = true;
-        else if(key == "hit all")
-            hitAll = true;
-        else if(key == "timed")
-            isTimed = true;
+		else if(key == "periodic")
+			isPeriodic = true;
+		else if(key == "hit all")
+			hitAll = true;
+		else if(key == "timed")
+			isTimed = true;
 		else if(key == "no damage scaling")
 			isDamageScaled = false;
 		else if(key == "parallel")
@@ -84,21 +84,21 @@ void Weapon::LoadWeapon(const DataNode &node)
 			int count = (child.Size() >= 3) ? child.Value(2) : 1;
 			hitEffects[GameData::Effects().Get(child.Token(1))] += count;
 		}
-        else if(key == "missile hit effect")
-        {
-            int count = (child.Size() >= 3) ? child.Value(2) : 1;
-            missileHitEffects[GameData::Effects().Get(child.Token(1))] += count;
-        }
+		else if(key == "missile hit effect")
+		{
+			int count = (child.Size() >= 3) ? child.Value(2) : 1;
+			missileHitEffects[GameData::Effects().Get(child.Token(1))] += count;
+		}
 		else if(key == "die effect")
 		{
 			int count = (child.Size() >= 3) ? child.Value(2) : 1;
 			dieEffects[GameData::Effects().Get(child.Token(1))] += count;
 		}
-        else if(key == "missile die effect")
-        {
-            int count = (child.Size() >= 3) ? child.Value(2) : 1;
-            missileDieEffects[GameData::Effects().Get(child.Token(1))] += count;
-        }
+		else if(key == "missile die effect")
+		{
+			int count = (child.Size() >= 3) ? child.Value(2) : 1;
+			missileDieEffects[GameData::Effects().Get(child.Token(1))] += count;
+		}
 		else if(key == "submunition")
 		{
 			int count = (child.Size() >= 3) ? child.Value(2) : 1;
@@ -314,7 +314,7 @@ const map<const Effect *, int> &Weapon::HitEffects() const
 
 const map<const Effect *, int> &Weapon::MissileHitEffects() const
 {
-    return missileHitEffects;
+	return missileHitEffects;
 }
 
 
@@ -327,7 +327,7 @@ const map<const Effect *, int> &Weapon::DieEffects() const
 
 const map<const Effect *, int> &Weapon::MissileDieEffects() const
 {
-    return missileDieEffects;
+	return missileDieEffects;
 }
 
 

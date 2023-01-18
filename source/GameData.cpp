@@ -499,10 +499,10 @@ void GameData::StepEconomy()
 	{
 		System &system = const_cast<System &>(*pit.first);
 		for(const auto &cit : pit.second)
-        {
-            int change = min(0, cit.second); // ajc added to prevent large purchases increasing price.
+		{
+			int change = min(0, cit.second); // ajc added to prevent large purchases increasing price.
 			system.SetSupply(cit.first, system.Supply(cit.first) - change);
-        }
+		}
 	}
 	purchases.clear();
 	

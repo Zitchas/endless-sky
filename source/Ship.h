@@ -89,7 +89,7 @@ public:
 		static const uint8_t OVER = 1;
 		
 		uint8_t steering = 0;
-        uint8_t lateral = 0;
+		uint8_t lateral = 0;
 		static const uint8_t NONE = 0;
 		static const uint8_t LEFT = 1;
 		static const uint8_t RIGHT = 2;
@@ -154,12 +154,12 @@ public:
 	void SetPosition(Point position);
 	// When creating a new ship, you must set the following:
 	void Place(Point position = Point(), Point velocity = Point(), Angle angle = Angle());
-    double turretRange = 0;
-    double gunRange = 0;
-    double TurretRange() const;
-    double GunRange() const;
-    double defenseRange = 0;
-    double DefenseRange() const;
+	double turretRange = 0;
+	double gunRange = 0;
+	double TurretRange() const;
+	double GunRange() const;
+	double defenseRange = 0;
+	double DefenseRange() const;
 	void SetName(const std::string &name);
 	void SetSystem(const System *system);
 	void SetPlanet(const Planet *planet);
@@ -249,14 +249,14 @@ public:
 	
 	// Check if the ship is thrusting. If so, the engine sound should be played.
 	bool IsThrusting() const;
-    bool IsLatThrusting() const;
+	bool IsLatThrusting() const;
 	bool IsReversing() const;
 	bool IsSteering() const;
-    double ThrustMagnitute() const;
+	double ThrustMagnitute() const;
 	// The direction that the ship is steering. If positive, the ship is steering right.
 	// If negative, the ship is steering left.
 	double SteeringDirection() const;
-    double LateralDirection() const;
+	double LateralDirection() const;
 	//set and count incoming projectiles. ajc.
 	int CountIncoming() const;
 	void SetIncoming(int count = 0);
@@ -266,7 +266,7 @@ public:
 	const std::vector<EnginePoint> &EnginePoints() const;
 	const std::vector<EnginePoint> &ReverseEnginePoints() const;
 	const std::vector<EnginePoint> &SteeringEnginePoints() const;
-    const std::vector<EnginePoint> &LateralEnginePoints() const;
+	const std::vector<EnginePoint> &LateralEnginePoints() const;
 	
 	// Make a ship disabled or destroyed, or bring back a destroyed ship.
 	void Disable();
@@ -326,17 +326,17 @@ public:
 	// Get this ship's movement characteristics.
 	double Mass() const;
 	double TurnRate() const;
-    double TrueTurnRate() const;
+	double TrueTurnRate() const;
 	double Acceleration() const;
 	double MaxVelocity() const;
-    double DisplayVelocity() const;
-    double DisplaySlowing()  const;
-    double DisplaySolar()  const;
-    double DisplayIon()  const;
-    double DisplayRamScoop()  const;
-    double DisplayThrust()  const;
-    double DisplayTurn()  const;
-    double DisplayLateralThrust()  const;
+	double DisplayVelocity() const;
+	double DisplaySlowing()  const;
+	double DisplaySolar()  const;
+	double DisplayIon()  const;
+	double DisplayRamScoop()  const;
+	double DisplayThrust()  const;
+	double DisplayTurn()  const;
+	double DisplayLateralThrust()  const;
 	double DisplayEscorts()  const;
 	double MaxReverseVelocity() const;
 	
@@ -487,12 +487,12 @@ private:
 	bool isBoarding = false;
 	bool hasBoarded = false;
 	bool isThrusting = false;
-    bool isLatThrusting = false;
+	bool isLatThrusting = false;
 	bool isReversing = false;
 	bool isSteering = false;
-    double thrustMagnitude = 0.;
+	double thrustMagnitude = 0.;
 	double steeringDirection = 0.;
-    double lateralDirection = 0.;
+	double lateralDirection = 0.;
 	double angularMomentum = 0.;
 	int countIncoming = 0;
 	bool neverDisabled = false;
@@ -529,7 +529,7 @@ private:
 	std::vector<EnginePoint> enginePoints;
 	std::vector<EnginePoint> reverseEnginePoints;
 	std::vector<EnginePoint> steeringEnginePoints;
-    std::vector<EnginePoint> lateralEnginePoints;
+	std::vector<EnginePoint> lateralEnginePoints;
 	Armament armament;
 	// While loading, keep track of which outfits already have been equipped.
 	// (That is, they were specified as linked to a given gun or turret point.)
@@ -544,9 +544,9 @@ private:
 	double ionization = 0.;
 	double disruption = 0.;
 	double slowness = 0.;
-    double solarEnergy = 0;
-    double ramScoop = 0;
-    double energyRemaining = 0;
+	double solarEnergy = 0;
+	double ramScoop = 0;
+	double energyRemaining = 0;
 	// Acceleration can be created by engines, firing weapons, or weapon impacts.
 	Point acceleration;
 	

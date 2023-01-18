@@ -185,7 +185,7 @@ Body *CollisionSet::Line(const Point &from, const Point &to, double *closestHit,
 			if(it->body != target && iGov && pGov && !iGov->IsEnemy(pGov))
 				continue;
 			if(it->body != target && locked)
-                continue;
+				continue;
 			/* stops projectiles hitting cloaked ships. ajc
 			Ship *ship = reinterpret_cast<Ship *>(it->body);
 			if(ship && ship->Cloaking())
@@ -267,7 +267,7 @@ Body *CollisionSet::Line(const Point &from, const Point &to, double *closestHit,
 			if(it->body != target && iGov && pGov && !iGov->IsEnemy(pGov))
 				continue;
 			if(it->body != target && locked)
-                continue;
+				continue;
 			/* stops projectiles hitting cloaked ships. ajc
 			Ship *ship = reinterpret_cast<Ship *>(it->body);
 			if(ship && ship->Cloaking())

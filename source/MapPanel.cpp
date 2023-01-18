@@ -77,9 +77,9 @@ namespace {
 	
 	const Color black(0.f, 1.f);
 	const Color red(1.f, 0.2f, 0.2f, 1.f);
-    const Color blue(0.3f, 0.53f, 1.f, 1.f);
-    const Color magenta(0.9f, 0.2f, 0.9f, 1.f);
-    const Color white(0.9f, 0.9f, 0.9f, 1.f);
+	const Color blue(0.3f, 0.53f, 1.f, 1.f);
+	const Color magenta(0.9f, 0.2f, 0.9f, 1.f);
+	const Color white(0.9f, 0.9f, 0.9f, 1.f);
 
 	// Hovering an escort pip for this many frames activates the tooltip.
 	const int HOVER_TIME = 60;
@@ -877,11 +877,11 @@ void MapPanel::DrawTravelPlan()
 			hasEscort |= (it.get() != flagship);
 		}
 	stranded |= !hasEscort;
-    int noFuel = 0;
-    int noDrive = 0;
-    int allGood = 0;
-    int noWormhole = 0;
-    bool wormholePath = false;
+	int noFuel = 0;
+	int noDrive = 0;
+	int allGood = 0;
+	int noWormhole = 0;
+	bool wormholePath = false;
 	const System *previous = playerSystem;
 	for(int i = player.TravelPlan().size() - 1; i >= 0; --i)
 	{
@@ -901,8 +901,8 @@ void MapPanel::DrawTravelPlan()
 		// Wormholes cost nothing to go through. If this is not a wormhole,
 		// check how much fuel every ship will expend to go through it.
 		if(!isWormhole)
-        {
-            allGood = 0;
+		{
+			allGood = 0;
 			for(auto &it : fuel)
 				if(it.second >= 0.)
 				{
@@ -911,55 +911,55 @@ void MapPanel::DrawTravelPlan()
 					{
 						it.second = -1.;
 						stranded = true;
-                        noDrive++;
-                        RingShader::Draw(Zoom() * (previous ? previous->Position() + center : center),
-                            11.f, 9.f, blue);
+						noDrive++;
+						RingShader::Draw(Zoom() * (previous ? previous->Position() + center : center),
+							11.f, 9.f, blue);
 					}
-                    else if(cost > it.second)
-                    {
-                        it.second = -1.;
-                        stranded = true;
-                        noFuel++;
-                        RingShader::Draw(Zoom() * (previous ? previous->Position() + center : center),
-                            11.f, 9.f, red);
-                    }
+					else if(cost > it.second)
+					{
+						it.second = -1.;
+						stranded = true;
+						noFuel++;
+						RingShader::Draw(Zoom() * (previous ? previous->Position() + center : center),
+							11.f, 9.f, red);
+					}
 					else
-                    {
+					{
 						it.second -= cost;
-                        allGood++;
-                    }
+						allGood++;
+					}
 				}
-        }
-        else if(isWormhole)
-        {
-            allGood = 0;
-            for(auto &it : fuel)
-            if(it.second >= 0.)
-            {
-                for(const StellarObject &object : previous->Objects())
-                {
-                    if(object.GetPlanet() && object.GetPlanet()->IsAccessible(it.first))
-                    {
-                        wormholePath = true;
-                        break;
-                    }
-                    else
-                    {
-                        wormholePath = false;
-                    }
-                }
-                if(wormholePath)
-                    allGood++;
-                else
-                {
-                    noWormhole++;
-                    it.second = -1.;
-                    stranded = true;
-                    RingShader::Draw(Zoom() * (previous ? previous->Position() + center : center),
-                        11.f, 9.f, magenta);
-                }
-            }
-        }
+		}
+		else if(isWormhole)
+		{
+			allGood = 0;
+			for(auto &it : fuel)
+			if(it.second >= 0.)
+			{
+				for(const StellarObject &object : previous->Objects())
+				{
+					if(object.GetPlanet() && object.GetPlanet()->IsAccessible(it.first))
+					{
+						wormholePath = true;
+						break;
+					}
+					else
+					{
+						wormholePath = false;
+					}
+				}
+				if(wormholePath)
+					allGood++;
+				else
+				{
+					noWormhole++;
+					it.second = -1.;
+					stranded = true;
+					RingShader::Draw(Zoom() * (previous ? previous->Position() + center : center),
+						11.f, 9.f, magenta);
+				}
+			}
+		}
 		// Color the path green if all ships can make it. Color it yellow if
 		// the flagship can make it, and red if the flagship cannot.
 		Color drawColor = outOfFlagshipFuelRangeColor;
@@ -974,43 +974,43 @@ void MapPanel::DrawTravelPlan()
 		Point to = Zoom() * (previous->Position() + center);
 		Point unit = (from - to).Unit() * LINK_OFFSET;
 		LineShader::Draw(from - unit, to + unit, 3.f, drawColor);
-        
-        const Font &font = FontSet::Get(18);
-        // Shows either link length or ship which can follow parent. ajc.
-        // Choose one of the following two lines and commebt out the other.
+		
+		const Font &font = FontSet::Get(18);
+		// Shows either link length or ship which can follow parent. ajc.
+		// Choose one of the following two lines and commebt out the other.
 	//	int linkLength = ((from - to).Length() / Zoom());
 	//	const string &allMessage = to_string(linkLength);
-        const string &allMessage = to_string(allGood);
-        Point offset(-7., -.5 * font.Height());
-        Point point (from + (to-from).Unit()*(from-to).Length()*.5);
-        RingShader::Draw(point,
-            11.f, 1.f, black);
-        font.Draw(allMessage, point + offset, white);
-        
+		const string &allMessage = to_string(allGood);
+		Point offset(-7., -.5 * font.Height());
+		Point point (from + (to-from).Unit()*(from-to).Length()*.5);
+		RingShader::Draw(point,
+			11.f, 1.f, black);
+		font.Draw(allMessage, point + offset, white);
+		
 		previous = next;
 	}
-    const Font &font = FontSet::Get(18);
+	const Font &font = FontSet::Get(18);
 	int width = Screen::Right() - 450;
 	if(noDrive)
 	{
-    const string &driveMessage = to_string(noDrive) + (noDrive > 1 ?  " Ships" :  " ship") + " cannot make a jump";
+	const string &driveMessage = to_string(noDrive) + (noDrive > 1 ?  " Ships" :  " ship") + " cannot make a jump";
 		width -= font.Width(driveMessage) + 15;
-    Point point(width, Screen::Bottom() - 30);
-    font.Draw(driveMessage, point, blue);
+	Point point(width, Screen::Bottom() - 30);
+	font.Draw(driveMessage, point, blue);
 	}
 	if(noFuel)
 	{
-    const string &fuelMessage = to_string(noFuel) + (noFuel > 1 ?  " Ships" :  " ship") + " will need to refuel";
+	const string &fuelMessage = to_string(noFuel) + (noFuel > 1 ?  " Ships" :  " ship") + " will need to refuel";
 		width -= font.Width(fuelMessage) + 15;
-    Point fuelPoint(width, Screen::Bottom() - 30);
-    font.Draw(fuelMessage, fuelPoint, red);
+	Point fuelPoint(width, Screen::Bottom() - 30);
+	font.Draw(fuelMessage, fuelPoint, red);
 	}
 	if(noWormhole)
 	{
-    const string &holeMessage = to_string(noWormhole) + (noWormhole > 1 ?  " Ships" :  " ship") + " cannot traverse a wormhole";
+	const string &holeMessage = to_string(noWormhole) + (noWormhole > 1 ?  " Ships" :  " ship") + " cannot traverse a wormhole";
 		width -= font.Width(holeMessage) + 15;
-    Point holePoint(width, Screen::Bottom() - 30);
-    font.Draw(holeMessage, holePoint, magenta);
+	Point holePoint(width, Screen::Bottom() - 30);
+	font.Draw(holeMessage, holePoint, magenta);
 	}
 }
 

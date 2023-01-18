@@ -77,7 +77,7 @@ private:
 	PlayerInfo &player;
 	// This is the currently selected ship.
 	std::vector<std::shared_ptr<Ship>>::const_iterator shipIt;
-    int shipIndex = 0;
+	int shipIndex = 0;
 	// Information about the currently selected ship.
 	ShipInfoDisplay info;
 	std::map<std::string, std::vector<const Outfit *>> outfits;

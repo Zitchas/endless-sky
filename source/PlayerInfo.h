@@ -139,8 +139,8 @@ public:
 	// Get cost basis for commodities.
 	void AdjustBasis(const std::string &commodity, int64_t adjustment);
 	int64_t GetBasis(const std::string &commodity, int tons = 1) const;
-    void AddPurchasedToday(const std::string &commodity, int64_t adjustment);
-    int64_t GetPurchasedToday(const std::string &commodity);
+	void AddPurchasedToday(const std::string &commodity, int64_t adjustment);
+	int64_t GetPurchasedToday(const std::string &commodity);
 	// Call this when leaving the outfitter, shipyard, or hiring panel.
 	void UpdateCargoCapacities();
 	// Switch cargo from being stored in ships to being stored here.

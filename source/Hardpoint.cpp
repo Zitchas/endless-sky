@@ -131,14 +131,14 @@ bool Hardpoint::IsParallel() const
 
 bool Hardpoint::IsUnder() const
 {
-    return isUnder;
+	return isUnder;
 }
 
 
 
 bool Hardpoint::IsDefensive() const
 {
-    return isDefensive;
+	return isDefensive;
 }
 
 
@@ -293,11 +293,11 @@ bool Hardpoint::FireAntiMissile(Ship &ship, const Projectile &projectile, vector
 	Angle aim(offset);
 	angle = aim - ship.Facing();
 	start += aim.Rotate(outfit->HardpointOffset());
-    
-    //Only use any regular fire/hit/die effects if all missile effcts maps are empty, this indicate a regular antimissile weapon
-    // and backwards compatibility is required. ajc
-    bool missileEffects = !(outfit->MissileHitEffects().empty() && outfit->MissileDieEffects().empty());
-    
+	
+	//Only use any regular fire/hit/die effects if all missile effcts maps are empty, this indicate a regular antimissile weapon
+	// and backwards compatibility is required. ajc
+	bool missileEffects = !(outfit->MissileHitEffects().empty() && outfit->MissileDieEffects().empty());
+	
 	CreateEffects(outfit->FireEffects(), start, ship.Velocity(), aim, IsUnder(), visuals);
 	
 	// Figure out where the effect should be placed. Anti-missiles do not create
@@ -305,13 +305,13 @@ bool Hardpoint::FireAntiMissile(Ship &ship, const Projectile &projectile, vector
 	CreateEffects(missileEffects ? outfit->MissileHitEffects() : outfit->HitEffects(), start + (.5 * range) * aim.Unit(), ship.Velocity(), aim, IsUnder(), visuals);
 
 	// Die effects are displayed at the projectile, whether or not it actually "dies."
-    CreateEffects(missileEffects ? outfit->MissileDieEffects() : outfit->DieEffects(), projectile.Position(), ship.Velocity(), aim, IsUnder(), visuals);
+	CreateEffects(missileEffects ? outfit->MissileDieEffects() : outfit->DieEffects(), projectile.Position(), ship.Velocity(), aim, IsUnder(), visuals);
 	
 	// Update the reload and burst counters, and expend ammunition if applicable.
 	Fire(ship, start, aim);
 	
 	// Check whether the missile was destroyed.
-    // Changed to >= and +1 missile strength for testing AM against non missiles ajc.
+	// Changed to >= and +1 missile strength for testing AM against non missiles ajc.
 	return (Random::Int(strength) >= Random::Int(projectile.MissileStrength()+1));
 }
 

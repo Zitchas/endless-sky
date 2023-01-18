@@ -225,8 +225,8 @@ void ShipInfoDisplay::UpdateAttributes(const Ship &ship, const Depreciation &dep
 	map<string, double> chassis;
 	static const vector<string> NAMES = {
 		"outfit space free:", "outfit space",
-		"    weapon capacity:", "weapon capacity",
-		"    engine capacity:", "engine capacity",
+		"	weapon capacity:", "weapon capacity",
+		"	engine capacity:", "engine capacity",
 		"gun ports free:", "gun ports",
 		"turret mounts free:", "turret mounts",
 		"pylon mounts free:", "pylon mounts",
@@ -290,18 +290,18 @@ void ShipInfoDisplay::UpdateAttributes(const Ship &ship, const Depreciation &dep
 	heatTable.push_back(Format::Number(
 		60. * (max(attributes.Get("thrusting heat"), attributes.Get("reverse thrusting heat")))));
 	attributesHeight += 20;
-    tableLabels.push_back("turn:");
-    energyTable.push_back(Format::Number(
-        -60. * (attributes.Get("turning energy"))));
-    heatTable.push_back(Format::Number(
-        60. * (attributes.Get("turning heat"))));
-    attributesHeight += 20;
-    tableLabels.push_back("afterburn:");
-    energyTable.push_back(Format::Number(
-        -60. * (attributes.Get("afterburner energy"))));
-    heatTable.push_back(Format::Number(
-        60. * (attributes.Get("afterburner heat"))));
-    attributesHeight += 20;
+	tableLabels.push_back("turn:");
+	energyTable.push_back(Format::Number(
+		-60. * (attributes.Get("turning energy"))));
+	heatTable.push_back(Format::Number(
+		60. * (attributes.Get("turning heat"))));
+	attributesHeight += 20;
+	tableLabels.push_back("afterburn:");
+	energyTable.push_back(Format::Number(
+		-60. * (attributes.Get("afterburner energy"))));
+	heatTable.push_back(Format::Number(
+		60. * (attributes.Get("afterburner heat"))));
+	attributesHeight += 20;
 	double firingEnergy = 0.;
 	double firingHeat = 0.;
 	for(const auto &it : ship.Outfits())
@@ -314,23 +314,23 @@ void ShipInfoDisplay::UpdateAttributes(const Ship &ship, const Depreciation &dep
 	energyTable.push_back(Format::Number(-60. * firingEnergy));
 	heatTable.push_back(Format::Number(60. * firingHeat));
 	attributesHeight += 20;
-    double antiMissileEnergy = 0.;
-    double antiMissileHeat = 0.;
-    for(const auto &it : ship.Outfits())
-        if(it.first->AntiMissile() && it.first->Reload())
-        {
-            antiMissileEnergy += it.second * it.first->FiringEnergy() / it.first->Reload();
-            antiMissileHeat += it.second * it.first->FiringHeat() / it.first->Reload();
-        }
-    tableLabels.push_back("anti missile:");
-    energyTable.push_back(Format::Number(-60. * antiMissileEnergy));
-    heatTable.push_back(Format::Number(60. * antiMissileHeat));
-    attributesHeight += 20;
+	double antiMissileEnergy = 0.;
+	double antiMissileHeat = 0.;
+	for(const auto &it : ship.Outfits())
+		if(it.first->AntiMissile() && it.first->Reload())
+		{
+			antiMissileEnergy += it.second * it.first->FiringEnergy() / it.first->Reload();
+			antiMissileHeat += it.second * it.first->FiringHeat() / it.first->Reload();
+		}
+	tableLabels.push_back("anti missile:");
+	energyTable.push_back(Format::Number(-60. * antiMissileEnergy));
+	heatTable.push_back(Format::Number(60. * antiMissileHeat));
+	attributesHeight += 20;
 	double shieldEnergy = (hasShieldRegen) ? attributes.Get("shield energy")
 		* (1. + attributes.Get("shield energy multiplier")) : 0.;
 	double hullEnergy = (hasHullRepair) ? attributes.Get("hull energy")
 		* (1. + attributes.Get("hull energy multiplier")) : 0.;
-    tableLabels.push_back("charge shields:") ;
+	tableLabels.push_back("charge shields:") ;
 	energyTable.push_back(Format::Number(-60. * (shieldEnergy)));
 	double shieldHeat = (hasShieldRegen) ? attributes.Get("shield heat")
 		* (1. + attributes.Get("shield heat multiplier")) : 0.;
@@ -338,17 +338,17 @@ void ShipInfoDisplay::UpdateAttributes(const Ship &ship, const Depreciation &dep
 		* (1. + attributes.Get("hull heat multiplier")) : 0.;
 	heatTable.push_back(Format::Number(60. * (shieldHeat)));
 	attributesHeight += 20;
-    tableLabels.push_back("repair hull:") ;
-    energyTable.push_back(Format::Number(-60. * (hullEnergy)));
-    heatTable.push_back(Format::Number(60. * (hullHeat)));
-    attributesHeight += 20;
-    if(attributes.Get("cloak"))
-     {
-         tableLabels.push_back("cloaking:");
-         energyTable.push_back(Format::Number(-60. * attributes.Get("cloaking energy")));
-         heatTable.push_back(Format::Number(60. * attributes.Get("cloaking heat")));
-         attributesHeight += 20;
-     }
+	tableLabels.push_back("repair hull:") ;
+	energyTable.push_back(Format::Number(-60. * (hullEnergy)));
+	heatTable.push_back(Format::Number(60. * (hullHeat)));
+	attributesHeight += 20;
+	if(attributes.Get("cloak"))
+	 {
+		 tableLabels.push_back("cloaking:");
+		 energyTable.push_back(Format::Number(-60. * attributes.Get("cloaking energy")));
+		 heatTable.push_back(Format::Number(60. * attributes.Get("cloaking heat")));
+		 attributesHeight += 20;
+	 }
 	tableLabels.push_back("Max:");
 	energyTable.push_back(Format::Number(attributes.Get("energy capacity")));
 	heatTable.push_back(Format::Number(60. * ship.HeatDissipation() * ship.MaximumHeat()));

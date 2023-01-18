@@ -37,9 +37,9 @@ public:
 	Point Unit() const;
 	double Zoom() const;
 	*/
-    bool DrawUnder() const;
-    bool fireUnder = false;
-    
+	bool DrawUnder() const;
+	bool fireUnder = false;
+	
 	// Step the effect forward.
 	void Move();
 	

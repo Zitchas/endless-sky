@@ -71,14 +71,14 @@ void EscortDisplay::Draw(const Rectangle &bounds) const
 	const Font &font = FontSet::Get(14);
 	// Top left corner of the current escort icon.
 	Point corner = Point(bounds.Left(), bounds.Bottom());
-    const Color &disabledColor = *colors.Get("escort disabled");
+	const Color &disabledColor = *colors.Get("escort disabled");
 	const Color &elsewhereColor = *colors.Get("escort elsewhere");
 	const Color &cannotJumpColor = *colors.Get("escort blocked");
 	const Color &notReadyToJumpColor = *colors.Get("escort not ready");
 	const Color &selectedColor = *colors.Get("escort selected");
 	const Color &hereColor = *colors.Get("escort present");
 	const Color &hostileColor = *colors.Get("escort hostile");
-    const Color &cloakedColor = *colors.Get("escort cloaked");
+	const Color &cloakedColor = *colors.Get("escort cloaked");
 	for(const Icon &escort : icons)
 	{
 		if(!escort.sprite)
@@ -100,12 +100,12 @@ void EscortDisplay::Draw(const Rectangle &bounds) const
 			font.Draw(escort.system, pos + Point(-10., 10.), elsewhereColor);
 
 		Color color;
-        if(escort.isDisabled)
-            color = disabledColor;
+		if(escort.isDisabled)
+			color = disabledColor;
 		else if(escort.isHostile)
 			color = hostileColor;
-        else if(escort.isCloaked)
-            color = cloakedColor;
+		else if(escort.isCloaked)
+			color = cloakedColor;
 		else if(!escort.isHere)
 			color = elsewhereColor;
 		else if(escort.cannotJump)
@@ -192,8 +192,8 @@ const vector<const Ship *> &EscortDisplay::Click(const Point &point) const
 
 EscortDisplay::Icon::Icon(const Ship &ship, bool isHere, bool fleetIsJumping, bool isSelected)
 	: sprite(ship.GetSprite()),
-    isDisabled(ship.IsDisabled()),
-    isCloaked(ship.Cloaking() >= 1),
+	isDisabled(ship.IsDisabled()),
+	isCloaked(ship.Cloaking() >= 1),
 	isHere(isHere && !ship.IsDisabled()),
 	isHostile(ship.GetGovernment() && ship.GetGovernment()->IsEnemy()),
 	notReadyToJump(fleetIsJumping && !ship.IsHyperspacing() && !ship.IsReadyToJump(true)),
@@ -227,8 +227,8 @@ int EscortDisplay::Icon::Height() const
 void EscortDisplay::Icon::Merge(const Icon &other)
 {
 	isHere &= other.isHere;
-    isDisabled |= other.isDisabled;
-    isCloaked |= other.isCloaked;
+	isDisabled |= other.isDisabled;
+	isCloaked |= other.isCloaked;
 	isHostile |= other.isHostile;
 	notReadyToJump |= other.notReadyToJump;
 	cannotJump |= other.cannotJump;

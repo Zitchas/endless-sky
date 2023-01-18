@@ -48,7 +48,7 @@ namespace {
 	
 	const int NAME_X = -330;
 	const int PRICE_X = -160;
-    const int AVAIL_X = -110;
+	const int AVAIL_X = -110;
 	const int LEVEL_X = -40;
 	const int BUY_X = 110;
 	const int BUYALL_X = 150;
@@ -111,7 +111,7 @@ void TradingPanel::Draw()
 	
 	font.Draw("Commodity", Point(NAME_X, y), selected);
 	font.Draw("Price", Point(PRICE_X, y), selected);
-    font.Draw("Available", Point(AVAIL_X, y), selected);
+	font.Draw("Available", Point(AVAIL_X, y), selected);
 	
 	string mod = "x " + to_string(Modifier());
 	font.Draw(mod, Point(BUY_X, y), unselected);
@@ -164,7 +164,7 @@ void TradingPanel::Draw()
 		y += 20;
 		int price = system.Trade(commodity.name);
 		int hold = player.Cargo().Get(commodity.name);
-        int available = max(0., round(system.Supply(commodity.name) * .2 - player.GetPurchasedToday(commodity.name)));
+		int available = max(0., round(system.Supply(commodity.name) * .2 - player.GetPurchasedToday(commodity.name)));
 		
 		bool isSelected = (i++ == selectedRow);
 		const Color &color = (!price ? unavailable : isSelected ? selected : unselected);
@@ -174,7 +174,7 @@ void TradingPanel::Draw()
 		{
 			canBuy |= isSelected;
 			font.Draw(to_string(price), Point(PRICE_X, y), color);
-            font.Draw(to_string(available), Point(AVAIL_X, y), color);
+			font.Draw(to_string(available), Point(AVAIL_X, y), color);
 			int basis = player.GetBasis(commodity.name);
 			if(basis && basis != price && hold)
 			{
@@ -192,7 +192,7 @@ void TradingPanel::Draw()
 					level = (5 * level) / (commodity.high - commodity.low);
 				font.Draw(TRADE_LEVEL[level], Point(LEVEL_X, y), color);
 			}
-            if(available > 0)
+			if(available > 0)
 			{
 			font.Draw("[buy]", Point(BUY_X, y), color);
 			font.Draw("[all]", Point(BUYALL_X, y), color);
@@ -251,7 +251,7 @@ bool TradingPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &command, 
 			
 			int64_t basis = player.GetBasis(it.name, -amount);
 			player.AdjustBasis(it.name, basis);
-            player.AddPurchasedToday(it.name, -amount);
+			player.AddPurchasedToday(it.name, -amount);
 			profit += amount * price + basis;
 			tonsSold += amount;
 			
@@ -316,7 +316,7 @@ void TradingPanel::Buy(int64_t amount)
 	amount *= Modifier();
 	const string &type = GameData::Commodities()[selectedRow].name;
 	int64_t price = system.Trade(type);
-    int64_t available = round(system.Supply(type) * .2 - player.GetPurchasedToday(type));
+	int64_t available = round(system.Supply(type) * .2 - player.GetPurchasedToday(type));
 	if(!price)
 		return;
 	
@@ -337,7 +337,7 @@ void TradingPanel::Buy(int64_t amount)
 		tonsSold += -amount;
 	}
 	amount = player.Cargo().Add(type, amount);
-    player.AddPurchasedToday(type, amount);
+	player.AddPurchasedToday(type, amount);
 	player.Accounts().AddCredits(-amount * price);
 	GameData::AddPurchase(system, type, amount);
 }

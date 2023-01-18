@@ -38,10 +38,10 @@ namespace {
 		{"shield energy", 0.},
 		{"shield fuel", 0.},
 		{"shield heat", 0.},
-        {"extra hyper", 0},
-        {"extra jump", 0},
-        {"position x", 0},
-        {"position y", 0},
+		{"extra hyper", 0},
+		{"extra jump", 0},
+		{"position x", 0},
+		{"position y", 0},
 		
 		// "Protection" attributes appear in denominators and are incremented by 1.
 		{"disruption protection", -0.99},
@@ -104,7 +104,7 @@ const vector<string> Outfit::CATEGORIES = {
 	"Engines",
 	"Hand to Hand",
 	"Special",
-    "Armament"
+	"Armament"
 };
 
 
@@ -116,7 +116,7 @@ void Outfit::Load(const DataNode &node)
 		name = node.Token(1);
 		pluralName = name + 's';
 	}
-    description.clear(); //added to clear duplicate descriptions ajc
+	description.clear(); //added to clear duplicate descriptions ajc
 	for(const DataNode &child : node)
 	{
 		if(child.Token(0) == "category" && child.Size() >= 2)
@@ -138,11 +138,11 @@ void Outfit::Load(const DataNode &node)
 			steeringFlareSprites.emplace_back(Body(), 1);
 			steeringFlareSprites.back().first.LoadSprite(child);
 		}
-        else if(child.Token(0) == "lateral flare sprite" && child.Size() >= 2)
-        {
-            lateralFlareSprites.emplace_back(Body(), 1);
-            lateralFlareSprites.back().first.LoadSprite(child);
-        }
+		else if(child.Token(0) == "lateral flare sprite" && child.Size() >= 2)
+		{
+			lateralFlareSprites.emplace_back(Body(), 1);
+			lateralFlareSprites.back().first.LoadSprite(child);
+		}
 		else if(child.Token(0) == "flare sound" && child.Size() >= 2)
 			++flareSounds[Audio::Get(child.Token(1))];
 		else if(child.Token(0) == "reverse flare sound" && child.Size() >= 2)
@@ -344,8 +344,10 @@ void Outfit::Add(const Outfit &other, int count)
 		AddFlareSprites(reverseFlareSprites, it, count);
 	for(const auto &it : other.steeringFlareSprites)
 		AddFlareSprites(steeringFlareSprites, it, count);
-    for(const auto &it : other.lateralFlareSprites)
-        AddFlareSprites(lateralFlareSprites, it, count);
+	for(const auto &it : other.lateralFlareSprites)
+	{
+		AddFlareSprites(lateralFlareSprites, it, count);
+	}
 	MergeMaps(flareSounds, other.flareSounds, count);
 	MergeMaps(reverseFlareSounds, other.reverseFlareSounds, count);
 	MergeMaps(steeringFlareSounds, other.steeringFlareSounds, count);
@@ -393,7 +395,7 @@ const vector<pair<Body, int>> &Outfit::SteeringFlareSprites() const
 
 const vector<pair<Body, int>> &Outfit::LateralFlareSprites() const
 {
-    return lateralFlareSprites;
+	return lateralFlareSprites;
 }
 
 

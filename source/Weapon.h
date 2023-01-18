@@ -49,8 +49,8 @@ public:
 	const std::map<const Effect *, int> &FireEffects() const;
 	const std::map<const Effect *, int> &LiveEffects() const;
 	const std::map<const Effect *, int> &HitEffects() const;
-    const std::map<const Effect *, int> &MissileHitEffects() const;
-    const std::map<const Effect *, int> &MissileDieEffects() const;
+	const std::map<const Effect *, int> &MissileHitEffects() const;
+	const std::map<const Effect *, int> &MissileDieEffects() const;
 	const std::map<const Effect *, int> &DieEffects() const;
 	const std::map<const Outfit *, int> &Submunitions() const;
 	
@@ -103,9 +103,9 @@ public:
 	// everything else, including asteroids.
 	bool IsSafe() const;
 	bool IsPhasing() const;
-    bool IsPeriodic() const;
-    bool HitAll() const;
-    bool IsTimed() const;
+	bool IsPeriodic() const;
+	bool HitAll() const;
+	bool IsTimed() const;
 	// Blast radius weapons will scale damage and hit force based on distance,
 	// unless the "no damage scaling" keyphrase is used in the weapon definition.
 	bool IsDamageScaled() const;
@@ -153,8 +153,8 @@ private:
 	std::map<const Effect *, int> fireEffects;
 	std::map<const Effect *, int> liveEffects;
 	std::map<const Effect *, int> hitEffects;
-    std::map<const Effect *, int> missileHitEffects;
-    std::map<const Effect *, int> missileDieEffects;
+	std::map<const Effect *, int> missileHitEffects;
+	std::map<const Effect *, int> missileDieEffects;
 	std::map<const Effect *, int> dieEffects;
 	std::map<const Outfit *, int> submunitions;
 	
@@ -163,9 +163,9 @@ private:
 	bool isStreamed = false;
 	bool isSafe = false;
 	bool isPhasing = false;
-    bool isPeriodic = false;
+	bool isPeriodic = false;
 	bool hitAll = false;
-    bool isTimed = false;
+	bool isTimed = false;
 	bool isDamageScaled = true;
 	// Guns and missiles are by default aimed a converged point at the
 	// maximum weapons range in front of the ship. When either the installed

@@ -34,6 +34,7 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 #include <algorithm>
 #include <cmath>
+#include <limits>
 #include <utility>
 
 using namespace std;
@@ -199,14 +200,14 @@ bool PlayerInfoPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &comman
 			GetUI()->Push(new ShipInfoPanel(player, selectedIndex));
 		}
 	}
-    else if(key == 'w')
-    {
-        if(!player.Ships().empty())
-        {
-            GetUI()->Pop(this);
-            GetUI()->Push(new WeaponInfoPanel(player, selectedIndex));
-        }
-    }
+	else if(key == 'w')
+	{
+		if(!player.Ships().empty())
+		{
+			GetUI()->Pop(this);
+			GetUI()->Push(new WeaponInfoPanel(player, selectedIndex));
+		}
+	}
 	else if(key == SDLK_PAGEUP || key == SDLK_PAGEDOWN)
 	{
 		int direction = (key == SDLK_PAGEDOWN) - (key == SDLK_PAGEUP);
@@ -570,15 +571,15 @@ void PlayerInfoPanel::DrawFleet(const Rectangle &bounds)
 	Color bright = *GameData::Colors().Get("bright");
 	Color elsewhere = *GameData::Colors().Get("dim");
 	Color dead(.4f, 0.f, 0.f, 0.f);
-    Color active(0.f, .4f, .2f, 0.f);
+	Color active(0.f, .4f, .2f, 0.f);
 	
 	// Table attributes.
 	Table table;
 	table.AddColumn(0, Table::LEFT);
 	table.AddColumn(200, Table::LEFT);
 	table.AddColumn(370, Table::LEFT);
-    table.AddColumn(600, Table::RIGHT);
-    table.AddColumn(660, Table::RIGHT);
+	table.AddColumn(600, Table::RIGHT);
+	table.AddColumn(660, Table::RIGHT);
 	table.AddColumn(720, Table::RIGHT);
 	table.AddColumn(780, Table::RIGHT);
 	table.AddColumn(840, Table::RIGHT);
@@ -597,7 +598,7 @@ void PlayerInfoPanel::DrawFleet(const Rectangle &bounds)
 	table.Draw("Hull");
 	table.Draw("Fuel");
 	table.Draw("Crew");
-    table.Draw("Bunks");
+	table.Draw("Bunks");
 	table.Draw("Cargo");
 	table.Draw("Spare");
 	table.DrawGap(5);
@@ -620,14 +621,14 @@ void PlayerInfoPanel::DrawFleet(const Rectangle &bounds)
 		isElsewhere |= (ship.CanBeCarried() && player.GetPlanet());
 		bool isDead = ship.IsDestroyed() || ship.IsDisabled();
 		bool isHovered = (index == hoverIndex);
-        bool isParked = ship.IsParked();
+		bool isParked = ship.IsParked();
 		table.SetColor(isDead ? dead : !isParked ? active : isElsewhere ? elsewhere : isHovered ? bright : dim);
 
 		// Store this row's position, to handle hovering.
 		zones.emplace_back(table.GetCenterPoint(), table.GetRowSize(), index);
 		
 		// Indent the ship name if it is a fighter or drone.
-		table.Draw(font.TruncateMiddle(ship.CanBeCarried() ? "    " + ship.Name() : ship.Name(), 217));
+		table.Draw(font.TruncateMiddle(ship.CanBeCarried() ? "	" + ship.Name() : ship.Name(), 217));
 		table.Draw(ship.ModelName());
 		
 		const System *system = ship.GetSystem();
@@ -651,18 +652,18 @@ void PlayerInfoPanel::DrawFleet(const Rectangle &bounds)
 			crewCount = min(crewCount, ship.RequiredCrew());
 		string crew = (ship.IsParked() ? "Parked" : to_string(crewCount));
 		table.Draw(crew);
-        
-        string bunks = to_string(static_cast<int>(
-            ship.Attributes().Get("bunks")));
-        table.Draw(bunks);
+		
+		string bunks = to_string(static_cast<int>(
+			ship.Attributes().Get("bunks")));
+		table.Draw(bunks);
 
 		string cargo = to_string(static_cast<int>(
 			ship.Cargo().Used()));
 		table.Draw(cargo);
-        
-        string spare = to_string(static_cast<int>(
-            ship.Cargo().Free()));
-        table.Draw(spare);
+		
+		string spare = to_string(static_cast<int>(
+			ship.Cargo().Free()));
+		table.Draw(spare);
 		
 		++index;
 	}

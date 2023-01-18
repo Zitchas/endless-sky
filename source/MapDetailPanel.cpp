@@ -217,23 +217,23 @@ bool MapDetailPanel::Click(int x, int y, int clicks)
 			SetCommodity(SHOW_GOVERNMENT);
 		else
 		{
-            selectedPlanet = nullptr;
+			selectedPlanet = nullptr;
 			for(const auto &it : planetY)
 				if(y >= it.second && y < it.second + 60)
 				{
 					selectedPlanet = it.first;
-                    if(y >= it.second && y < it.second + 30)
-                    {
-                        if(x > Screen::Left() + 160 && x < Screen::Left() + 240) SetCommodity(SHOW_VISITED);
-                    }
+					if(y >= it.second && y < it.second + 30)
+					{
+						if(x > Screen::Left() + 160 && x < Screen::Left() + 240) SetCommodity(SHOW_VISITED);
+					}
 					if(y >= it.second + 30 && y < it.second + 60)
 					{
-                        if(x > Screen::Left() && x < Screen::Left() + 90) SetCommodity(SHOW_REPUTATION);
-                        if(x > Screen::Left() + 90 && x < Screen::Left() + 180) SetCommodity(SHOW_SHIPYARD);
-                        if(x > Screen::Left() + 180 && x < Screen::Left() + 270) SetCommodity(SHOW_OUTFITTER);
+						if(x > Screen::Left() && x < Screen::Left() + 90) SetCommodity(SHOW_REPUTATION);
+						if(x > Screen::Left() + 90 && x < Screen::Left() + 180) SetCommodity(SHOW_SHIPYARD);
+						if(x > Screen::Left() + 180 && x < Screen::Left() + 270) SetCommodity(SHOW_OUTFITTER);
 					}
-                    if(selectedPlanet && player.Flagship())
-                        player.SetTravelDestination(selectedPlanet);
+					if(selectedPlanet && player.Flagship())
+						player.SetTravelDestination(selectedPlanet);
 					return true;
 				}
 		}
@@ -415,67 +415,67 @@ void MapDetailPanel::DrawInfo()
 		PointerShader::Draw(uiPoint + Point(-90., 20.), Point(1., 0.),
 			10.f, 10.f, 0.f, medium);
 	
-    uiPoint.Y() += 150.;
-    tradeY = uiPoint.Y() - 95.;
-    uiPoint.X() += 50.;
-    // Trade sprite goes from 310 to 540.
-    const Sprite *tradeSprite = SpriteSet::Get("ui/map trade");
-    SpriteShader::Draw(tradeSprite, uiPoint);
-    
-    uiPoint.X() -= 140.;
-    uiPoint.Y() -= 92.;
-    for(const Trade::Commodity &commodity : GameData::Commodities())
-    {
-        bool isSelected = false;
-        if(static_cast<unsigned>(this->commodity) < GameData::Commodities().size())
-            isSelected = (&commodity == &GameData::Commodities()[this->commodity]);
-        const Color &color = isSelected ? medium : dim;
-        
-        font.Draw(commodity.name, uiPoint, color);
-        
-        string price;
+	uiPoint.Y() += 150.;
+	tradeY = uiPoint.Y() - 95.;
+	uiPoint.X() += 50.;
+	// Trade sprite goes from 310 to 540.
+	const Sprite *tradeSprite = SpriteSet::Get("ui/map trade");
+	SpriteShader::Draw(tradeSprite, uiPoint);
+	
+	uiPoint.X() -= 140.;
+	uiPoint.Y() -= 92.;
+	for(const Trade::Commodity &commodity : GameData::Commodities())
+	{
+		bool isSelected = false;
+		if(static_cast<unsigned>(this->commodity) < GameData::Commodities().size())
+			isSelected = (&commodity == &GameData::Commodities()[this->commodity]);
+		const Color &color = isSelected ? medium : dim;
+		
+		font.Draw(commodity.name, uiPoint, color);
+		
+		string price;
 		string qty;
-        
-        bool hasVisited = player.HasVisited(selectedSystem);
-        if(hasVisited && selectedSystem->IsInhabited(player.Flagship()))
-        {
-            int value = selectedSystem->Trade(commodity.name);
+		
+		bool hasVisited = player.HasVisited(selectedSystem);
+		if(hasVisited && selectedSystem->IsInhabited(player.Flagship()))
+		{
+			int value = selectedSystem->Trade(commodity.name);
 			int avail = max(0., round(selectedSystem->Supply(commodity.name) * .2));
-            int localValue = (player.GetSystem() ? player.GetSystem()->Trade(commodity.name) : 0);
-            // Don't "compare" prices if the current system is uninhabited and
-            // thus has no prices to compare to.
-            bool noCompare = (!player.GetSystem() || !player.GetSystem()->IsInhabited(player.Flagship()));
-            if(!value)
-                price = "----";
-            else if(noCompare || player.GetSystem() == selectedSystem || !localValue)
-                price = to_string(value);
-            else
-            {
-                value -= localValue;
-                price += "(";
-                if(value > 0)
-                    price += '+';
-                price += to_string(value);
-                price += ")";
+			int localValue = (player.GetSystem() ? player.GetSystem()->Trade(commodity.name) : 0);
+			// Don't "compare" prices if the current system is uninhabited and
+			// thus has no prices to compare to.
+			bool noCompare = (!player.GetSystem() || !player.GetSystem()->IsInhabited(player.Flagship()));
+			if(!value)
+				price = "----";
+			else if(noCompare || player.GetSystem() == selectedSystem || !localValue)
+				price = to_string(value);
+			else
+			{
+				value -= localValue;
+				price += "(";
+				if(value > 0)
+					price += '+';
+				price += to_string(value);
+				price += ")";
 				qty = to_string(avail);
-            }
-        }
-        else
-            price = (hasVisited ? "n/a" : "?");
-        
-        Point pos = uiPoint + Point(160. - font.Width(price), 0.);
-        font.Draw(price, pos, color);
-        Point ava = uiPoint + Point(220. - font.Width(qty), 0.);
-        font.Draw(qty, ava, color);
-        
-        if(isSelected)
-            PointerShader::Draw(uiPoint + Point(0., 7.), Point(1., 0.), 10.f, 10.f, 0.f, color);
-        
-        uiPoint.Y() += 20.;
-    }
-    
+			}
+		}
+		else
+			price = (hasVisited ? "n/a" : "?");
+		
+		Point pos = uiPoint + Point(160. - font.Width(price), 0.);
+		font.Draw(price, pos, color);
+		Point ava = uiPoint + Point(220. - font.Width(qty), 0.);
+		font.Draw(qty, ava, color);
+		
+		if(isSelected)
+			PointerShader::Draw(uiPoint + Point(0., 7.), Point(1., 0.), 10.f, 10.f, 0.f, color);
+		
+		uiPoint.Y() += 20.;
+	}
+	
 	uiPoint.Y() = Screen::Top() + 560.;
-    uiPoint.X() += 90.;
+	uiPoint.X() += 90.;
 	planetY.clear();
 	// Draw the basic information for visitable planets in this system.
 	if(player.HasVisited(selectedSystem))

@@ -57,7 +57,7 @@ Projectile::Projectile(const Ship &parent, Point position, Angle angle, bool und
 	// If a random lifetime is specified, add a random amount up to that amount.
 	if(weapon->RandomLifetime())
 		lifetime += Random::Int(weapon->RandomLifetime() + 1);
-    fireUnder = under;
+	fireUnder = under;
 }
 
 
@@ -86,8 +86,8 @@ Projectile::Projectile(const Projectile &parent, const Weapon *weapon)
 	// If a random lifetime is specified, add a random amount up to that amount.
 	if(weapon->RandomLifetime())
 		lifetime += Random::Int(weapon->RandomLifetime() + 1);
-    if(parent.DrawUnder())
-        fireUnder = true;
+	if(parent.DrawUnder())
+		fireUnder = true;
 }
 
 
@@ -144,14 +144,14 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 	homing = weapon->Homing();
 	if(target && homing && !Random::Int(60))
 		CheckLock(*target);
-    if(!target)
-        hasLock = false;
+	if(!target)
+		hasLock = false;
 	if(target && homing && hasLock)
 	{
 		// Vector d is the direction we want to turn towards.
 		Point d = target->Position() - position;
-        // add this back in for projectile innacuracy and remove line above. ajc
-        //Point d = target->Position() + Angle::Random().Unit() * sqrt(target->Attributes().Get("radar jamming")) - position;
+		// add this back in for projectile innacuracy and remove line above. ajc
+		//Point d = target->Position() + Angle::Random().Unit() * sqrt(target->Attributes().Get("radar jamming")) - position;
 		Point unit = d.Unit();
 		double drag = weapon->Drag();
 		double trueVelocity = drag ? accel / drag : velocity.Length();
@@ -262,7 +262,7 @@ void Projectile::Kill()
 
 bool Projectile::DrawUnder() const
 {
-    return fireUnder;
+	return fireUnder;
 }
 
 
@@ -277,14 +277,14 @@ int Projectile::MissileStrength() const
 
 int Projectile::RemainingLifetime() const
 {
-    return lifetime;
+	return lifetime;
 }
 
 
 
 bool Projectile::HasLock() const
 {
-    return homing && hasLock;
+	return homing && hasLock;
 }
 
 

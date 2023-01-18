@@ -92,7 +92,7 @@ namespace {
 		{"shield energy multiplier", 3},
 		{"shield fuel multiplier", 3},
 		{"shield heat multiplier", 3},
-    
+	
 		{"disruption protection", 4},
 		{"force protection", 4},
 		{"fuel protection", 4},

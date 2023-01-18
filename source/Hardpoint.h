@@ -49,8 +49,8 @@ public:
 	bool IsTurret() const;
 	bool IsPylon() const;
 	bool IsGun() const;
-    bool IsUnder() const;
-    bool IsDefensive() const;
+	bool IsUnder() const;
+	bool IsDefensive() const;
 	bool IsHoming() const;
 	bool IsAntiMissile() const;
 	bool CanAim() const;
@@ -103,8 +103,8 @@ private:
 	bool isGun = false;
 	// Indicates if this hardpoint disallows converging (guns only).
 	bool isParallel = false;
-    // Indicates if this hardpoint is placed under the ship. ajc
-    bool isUnder = false;
+	// Indicates if this hardpoint is placed under the ship. ajc
+	bool isUnder = false;
 	// Defensive hardpoints are not included in weapon range calculations. ajc
 	bool isDefensive = false;
 	// Angle adjustment for convergence.

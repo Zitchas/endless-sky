@@ -322,16 +322,16 @@ void PrintHelp()
 {
 	cerr << endl;
 	cerr << "Command line options:" << endl;
-	cerr << "    -h, --help: print this help message." << endl;
-	cerr << "    -v, --version: print version information." << endl;
-	cerr << "    -s, --ships: print table of ship statistics, then exit." << endl;
-	cerr << "    -w, --weapons: print table of weapon statistics, then exit." << endl;
-	cerr << "    -t, --talk: read and display a conversation from STDIN." << endl;
-	cerr << "    -r, --resources <path>: load resources from given directory." << endl;
-	cerr << "    -c, --config <path>: save user's files to given directory." << endl;
-	cerr << "    -d, --debug: turn on debugging features (e.g. Caps Lock slows down instead of speeds up)." << endl;
-	cerr << "    -p, --parse-save: load the most recent saved game and inspect it for content errors" << endl;
-	cerr << "    --test <name>: run the empty testcase (any name is fine for now)" << endl;
+	cerr << "	-h, --help: print this help message." << endl;
+	cerr << "	-v, --version: print version information." << endl;
+	cerr << "	-s, --ships: print table of ship statistics, then exit." << endl;
+	cerr << "	-w, --weapons: print table of weapon statistics, then exit." << endl;
+	cerr << "	-t, --talk: read and display a conversation from STDIN." << endl;
+	cerr << "	-r, --resources <path>: load resources from given directory." << endl;
+	cerr << "	-c, --config <path>: save user's files to given directory." << endl;
+	cerr << "	-d, --debug: turn on debugging features (e.g. Caps Lock slows down instead of speeds up)." << endl;
+	cerr << "	-p, --parse-save: load the most recent saved game and inspect it for content errors" << endl;
+	cerr << "	--test <name>: run the empty testcase (any name is fine for now)" << endl;
 	cerr << endl;
 	cerr << "Report bugs to: <https://github.com/endless-sky/endless-sky/issues>" << endl;
 	cerr << "Home page: <https://endless-sky.github.io>" << endl;
