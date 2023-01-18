@@ -85,19 +85,24 @@ private:
 	
 	bool FollowOrders(Ship &ship, Command &command) const;
 	void MoveIndependent(Ship &ship, Command &command) const;
-	void MoveEscort(Ship &ship, Command &command) const;
+    void MoveEscort(Ship &ship, Command &command, const PlayerInfo &player) const;
 	static void Refuel(Ship &ship, Command &command);
 	static bool CanRefuel(const Ship &ship, const StellarObject *target);
-	bool ShouldDock(const Ship &ship, const Ship &parent, bool playerShipsLaunch) const;
+	bool ShouldDock(const Ship &ship, const Ship &parent, const System *playerSystem) const;
+    bool synchroJump = false;
 	
 	// Methods of moving from the current position to a desired position / orientation.
 	static double TurnBackward(const Ship &ship);
 	static double TurnToward(const Ship &ship, const Point &vector);
 	static bool MoveToPlanet(Ship &ship, Command &command);
 	static bool MoveTo(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow);
+    static bool MoveThrough(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow);
+	static bool MoveToRadius(Ship &ship, Command &command, const Point &targetPosition, const Point &targetVelocity, double radius, double slow);
 	static bool Stop(Ship &ship, Command &command, double maxSpeed = 0., const Point direction = Point());
 	static void PrepareForHyperspace(Ship &ship, Command &command);
 	static void CircleAround(Ship &ship, Command &command, const Body &target);
+    static void StrikeThrough(Ship &ship, Command &command, const Ship &target);
+    static void AttackRear(Ship &ship, Command &command, const Ship &target);
 	static void Swarm(Ship &ship, Command &command, const Body &target);
 	static void KeepStation(Ship &ship, Command &command, const Body &target);
 	static void Attack(Ship &ship, Command &command, const Ship &target);
@@ -151,7 +156,10 @@ private:
 	class Orders {
 	public:
 		static const int HOLD_POSITION = 0x000;
-		static const int MOVE_TO = 0x001;
+		// Hold active is the same command as hold position, but it is given when a ship
+		// actively needs to move back to the position it was holding.
+		static const int HOLD_ACTIVE = 0x001;
+		static const int MOVE_TO = 0x002;
 		static const int KEEP_STATION = 0x100;
 		static const int GATHER = 0x101;
 		static const int ATTACK = 0x102;
@@ -186,8 +194,10 @@ private:
 	// Command applied by the player's "autopilot."
 	Command autoPilot;
 	
-	bool isLaunching = false;
 	bool isCloaking = false;
+	bool fleetCloaking = false;	
+	bool flagCloaking = false;
+	bool flagDecloak = false;
 	
 	bool escortsAreFrugal = true;
 	bool escortsUseAmmo = true;

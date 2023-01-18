@@ -60,8 +60,8 @@ void EscortDisplay::Add(const Ship &ship, bool isHere, bool fleetIsJumping, bool
 void EscortDisplay::Draw(const Rectangle &bounds) const
 {
 	// Figure out how much space there is for the icons.
-	int maxColumns = max(1., bounds.Width() / WIDTH);
-	MergeStacks(maxColumns * bounds.Height());
+	//int maxColumns = max(1., bounds.Width() / WIDTH);
+	MergeStacks(40);
 	icons.sort();
 	stacks.clear();
 	zones.clear();
@@ -71,12 +71,14 @@ void EscortDisplay::Draw(const Rectangle &bounds) const
 	const Font &font = FontSet::Get(14);
 	// Top left corner of the current escort icon.
 	Point corner = Point(bounds.Left(), bounds.Bottom());
+    const Color &disabledColor = *colors.Get("escort disabled");
 	const Color &elsewhereColor = *colors.Get("escort elsewhere");
 	const Color &cannotJumpColor = *colors.Get("escort blocked");
 	const Color &notReadyToJumpColor = *colors.Get("escort not ready");
 	const Color &selectedColor = *colors.Get("escort selected");
 	const Color &hereColor = *colors.Get("escort present");
 	const Color &hostileColor = *colors.Get("escort hostile");
+    const Color &cloakedColor = *colors.Get("escort cloaked");
 	for(const Icon &escort : icons)
 	{
 		if(!escort.sprite)
@@ -98,8 +100,12 @@ void EscortDisplay::Draw(const Rectangle &bounds) const
 			font.Draw(escort.system, pos + Point(-10., 10.), elsewhereColor);
 
 		Color color;
-		if(escort.isHostile)
+        if(escort.isDisabled)
+            color = disabledColor;
+		else if(escort.isHostile)
 			color = hostileColor;
+        else if(escort.isCloaked)
+            color = cloakedColor;
 		else if(!escort.isHere)
 			color = elsewhereColor;
 		else if(escort.cannotJump)
@@ -124,10 +130,10 @@ void EscortDisplay::Draw(const Rectangle &bounds) const
 			string number = to_string(escort.ships.size());
 		
 			Point numberPos = pos;
-			numberPos.X() += 15. + width - font.Width(number);
+			numberPos.X() += 15. + width;// - font.Width(number);
 			numberPos.Y() -= .5 * font.Height();
 			font.Draw(number, numberPos, elsewhereColor);
-			width -= 20.;
+			width -= 2; //font.Width(number);
 		}
 		
 		// Draw the status bars.
@@ -186,6 +192,8 @@ const vector<const Ship *> &EscortDisplay::Click(const Point &point) const
 
 EscortDisplay::Icon::Icon(const Ship &ship, bool isHere, bool fleetIsJumping, bool isSelected)
 	: sprite(ship.GetSprite()),
+    isDisabled(ship.IsDisabled()),
+    isCloaked(ship.Cloaking() >= 1),
 	isHere(isHere && !ship.IsDisabled()),
 	isHostile(ship.GetGovernment() && ship.GetGovernment()->IsEnemy()),
 	notReadyToJump(fleetIsJumping && !ship.IsHyperspacing() && !ship.IsReadyToJump(true)),
@@ -219,6 +227,8 @@ int EscortDisplay::Icon::Height() const
 void EscortDisplay::Icon::Merge(const Icon &other)
 {
 	isHere &= other.isHere;
+    isDisabled |= other.isDisabled;
+    isCloaked |= other.isCloaked;
 	isHostile |= other.isHostile;
 	notReadyToJump |= other.notReadyToJump;
 	cannotJump |= other.cannotJump;

@@ -87,7 +87,7 @@ BoardingPanel::BoardingPanel(PlayerInfo &player, const shared_ptr<Ship> &victim)
 			outfit = sit->first;
 			// Don't include outfits that are installed and unplunderable. But,
 			// "unplunderable" outfits can still be stolen from cargo.
-			if(!sit->first->Get("unplunderable"))
+			if(!sit->first->Get("unplunderable") || you->Attributes().Get("magic spanners"))
 				count += sit->second;
 			++sit;
 		}
@@ -222,7 +222,7 @@ void BoardingPanel::Draw()
 // Handle key presses or button clicks that were mapped to key presses.
 bool BoardingPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &command, bool isNewPress)
 {
-	if((key == 'd' || key == 'x' || key == SDLK_ESCAPE || (key == 'w' && (mod & (KMOD_CTRL | KMOD_GUI)))) && CanExit())
+	if((key == 'x' || key == SDLK_ESCAPE || (key == 'w' && (mod & (KMOD_CTRL | KMOD_GUI)))) && CanExit())
 	{
 		// When closing the panel, mark the player dead if their ship was captured.
 		if(playerDied)
@@ -231,6 +231,15 @@ bool BoardingPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &command,
 	}
 	else if(playerDied)
 		return false;
+    else if(key == 't' && !CanTake())
+    {
+        const Outfit *outfit = plunder[selected].GetOutfit();
+        if(outfit && (player.Flagship()->Crew() * 2)  < outfit->Mass())
+        {
+        int mass = round(outfit->Mass());
+        GetUI()->Push(new Dialog(to_string(player.Flagship()->Crew()) + " crew can't remove an outfit weighing " + to_string(mass) + " tons"));
+        }
+    }
 	else if(key == 't' && CanTake())
 	{
 		CargoHold &cargo = you->Cargo();
@@ -593,7 +602,7 @@ bool BoardingPanel::Plunder::CanTake(const Ship &ship) const
 {
 	// If there's cargo space for this outfit, you can take it.
 	double mass = UnitMass();
-	if(ship.Cargo().Free() >= mass)
+	if(ship.Cargo().Free() >= mass && ship.Crew() * 2 > mass)
 		return true;
 	
 	// Otherwise, check if it is ammo for any of your weapons. If so, check if

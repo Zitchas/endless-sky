@@ -24,11 +24,16 @@ using namespace std;
 Visual::Visual(const Effect &effect, Point pos, Point vel, Angle facing, Point hitVelocity)
 	: Body(effect, pos, vel, facing), lifetime(effect.lifetime)
 {
+	if(effect.randomLifetime > 0)
+		lifetime += Random::Int(effect.randomLifetime + 1);
+	
 	angle += Angle::Random(effect.randomAngle) - Angle::Random(effect.randomAngle);
 	spin = Angle::Random(effect.randomSpin) - Angle::Random(effect.randomSpin);
 	
 	velocity *= effect.velocityScale;
 	velocity += hitVelocity * (1. - effect.velocityScale);
+    if(effect.initialVelocity)
+        velocity += effect.initialVelocity * angle.Unit();
 	if(effect.randomVelocity)
 		velocity += angle.Unit() * Random::Real() * effect.randomVelocity;
 	
@@ -39,6 +44,38 @@ Visual::Visual(const Effect &effect, Point pos, Point vel, Angle facing, Point h
 		AddFrameRate(effect.randomFrameRate * Random::Real());
 }
 
+
+
+Visual::Visual(const Effect &effect, Point pos, Point vel, Angle facing, bool under, Point hitVelocity)
+    : Body(effect, pos, vel, facing), lifetime(effect.lifetime)
+{
+    if(effect.randomLifetime > 0)
+        lifetime += Random::Int(effect.randomLifetime + 1);
+    
+    angle += Angle::Random(effect.randomAngle) - Angle::Random(effect.randomAngle);
+    spin = Angle::Random(effect.randomSpin) - Angle::Random(effect.randomSpin);
+    
+    velocity *= effect.velocityScale;
+    velocity += hitVelocity * (1. - effect.velocityScale);
+    if(effect.initialVelocity)
+        velocity += effect.initialVelocity * angle.Unit();
+    if(effect.randomVelocity)
+        velocity += angle.Unit() * Random::Real() * effect.randomVelocity;
+    
+    if(effect.sound)
+        Audio::Play(effect.sound, position);
+    
+    if(effect.randomFrameRate)
+        AddFrameRate(effect.randomFrameRate * Random::Real());
+    fireUnder = under;
+}
+
+
+
+bool Visual::DrawUnder() const
+{
+    return fireUnder;
+}
 
 
 // Step the effect forward.

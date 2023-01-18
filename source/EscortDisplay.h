@@ -53,6 +53,8 @@ private:
 		void Merge(const Icon &other);
 		
 		const Sprite *sprite;
+        bool isDisabled;
+        bool isCloaked;
 		bool isHere;
 		bool isHostile;
 		bool notReadyToJump;

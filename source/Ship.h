@@ -26,6 +26,7 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 #include <list>
 #include <map>
 #include <memory>
+#include <set>
 #include <string>
 #include <vector>
 
@@ -54,27 +55,26 @@ class Ship : public Body, public std::enable_shared_from_this<Ship> {
 public:
 	// These are all the possible category strings for ships.
 	static const std::vector<std::string> CATEGORIES;
+	// Allow retrieving the available bay types for the current game;
+	static const std::set<std::string> BAY_TYPES;
 	
 	class Bay {
 	public:
-		Bay(double x, double y, bool isFighter) : point(x * .5, y * .5), isFighter(isFighter) {}
+		Bay(double x, double y, std::string category) : point(x * .5, y * .5), category(category) {}
 		// Copying a bay does not copy the ship inside it.
-		Bay(const Bay &b) : point(b.point), isFighter(b.isFighter), side(b.side), facing(b.facing), launchEffects(b.launchEffects) {}
+		Bay(const Bay &b) : point(b.point), category(b.category), side(b.side), facing(b.facing), launchEffects(b.launchEffects) {}
 		
 		Point point;
 		std::shared_ptr<Ship> ship;
-		bool isFighter = false;
+		std::string category;
 		
 		uint8_t side = 0;
 		static const uint8_t INSIDE = 0;
 		static const uint8_t OVER = 1;
 		static const uint8_t UNDER = 2;
 		
-		uint8_t facing = 0;
-		static const uint8_t FORWARD = 0;
-		static const uint8_t LEFT = 1;
-		static const uint8_t RIGHT = 2;
-		static const uint8_t BACK = 3;
+		// The angle at which the carried ship will depart, relative to the carrying ship.
+		Angle facing;
 		
 		// The launch effect(s) to be simultaneously played when the bay's ship launches.
 		std::vector<const Effect *> launchEffects;
@@ -83,10 +83,19 @@ public:
 	class EnginePoint : public Point {
 	public:
 		EnginePoint(double x, double y, double zoom) : Point(x, y), zoom(zoom) {}
-		double Zoom() const { return zoom; }
 		
-	private:
+		uint8_t side = 0;
+		static const uint8_t UNDER = 0;
+		static const uint8_t OVER = 1;
+		
+		uint8_t steering = 0;
+        uint8_t lateral = 0;
+		static const uint8_t NONE = 0;
+		static const uint8_t LEFT = 1;
+		static const uint8_t RIGHT = 2;
+		
 		double zoom;
+		Angle facing;
 	};
 	
 	
@@ -125,12 +134,15 @@ public:
 	// Get the name of this model of ship.
 	const std::string &ModelName() const;
 	const std::string &PluralModelName() const;
+	// Get the name of this ship as a variant.
+	const std::string &VariantName() const;
 	// Get the generic noun (e.g. "ship") to be used when describing this ship.
 	const std::string &Noun() const;
 	// Get this ship's description.
 	const std::string &Description() const;
 	// Get the shipyard thumbnail for this ship.
 	const Sprite *Thumbnail() const;
+	const Sprite *Overlay() const;
 	// Get this ship's cost.
 	int64_t Cost() const;
 	int64_t ChassisCost() const;
@@ -142,6 +154,12 @@ public:
 	void SetPosition(Point position);
 	// When creating a new ship, you must set the following:
 	void Place(Point position = Point(), Point velocity = Point(), Angle angle = Angle());
+    double turretRange = 0;
+    double gunRange = 0;
+    double TurretRange() const;
+    double GunRange() const;
+    double defenseRange = 0;
+    double DefenseRange() const;
 	void SetName(const std::string &name);
 	void SetSystem(const System *system);
 	void SetPlanet(const Planet *planet);
@@ -155,6 +173,9 @@ public:
 	// A parked ship stays on a planet and requires no daily salary payments.
 	void SetIsParked(bool parked = true);
 	bool IsParked() const;
+	// The player can selectively deploy their carried ships, rather than just all / none.
+	void SetDeployOrder(bool shouldDeploy = true);
+	bool HasDeployOrder() const;
 	
 	// Access the ship's personality, which affects how the AI behaves.
 	const Personality &GetPersonality() const;
@@ -223,10 +244,29 @@ public:
 	// Get this ship's custom swizzle.
 	int CustomSwizzle() const;
 	
+	void SetActivity(const std::string &name);
+	const std::string &GetActivity() const;
+	
 	// Check if the ship is thrusting. If so, the engine sound should be played.
 	bool IsThrusting() const;
+    bool IsLatThrusting() const;
+	bool IsReversing() const;
+	bool IsSteering() const;
+    double ThrustMagnitute() const;
+	// The direction that the ship is steering. If positive, the ship is steering right.
+	// If negative, the ship is steering left.
+	double SteeringDirection() const;
+    double LateralDirection() const;
+	//set and count incoming projectiles. ajc.
+	int CountIncoming() const;
+	void SetIncoming(int count = 0);
+	int CountTargeting() const;
+	void SetTargeting(int count = 0);
 	// Get the points from which engine flares should be drawn.
 	const std::vector<EnginePoint> &EnginePoints() const;
+	const std::vector<EnginePoint> &ReverseEnginePoints() const;
+	const std::vector<EnginePoint> &SteeringEnginePoints() const;
+    const std::vector<EnginePoint> &LateralEnginePoints() const;
 	
 	// Make a ship disabled or destroyed, or bring back a destroyed ship.
 	void Disable();
@@ -286,8 +326,18 @@ public:
 	// Get this ship's movement characteristics.
 	double Mass() const;
 	double TurnRate() const;
+    double TrueTurnRate() const;
 	double Acceleration() const;
 	double MaxVelocity() const;
+    double DisplayVelocity() const;
+    double DisplaySlowing()  const;
+    double DisplaySolar()  const;
+    double DisplayIon()  const;
+    double DisplayRamScoop()  const;
+    double DisplayThrust()  const;
+    double DisplayTurn()  const;
+    double DisplayLateralThrust()  const;
+	double DisplayEscorts()  const;
 	double MaxReverseVelocity() const;
 	
 	// This ship just got hit by the given projectile. Take damage according to
@@ -301,19 +351,24 @@ public:
 	// impact, or from firing a weapon, for example.
 	void ApplyForce(const Point &force);
 	
-	// Check if this ship has fighter or drone bays.
+	// Check if this ship has bays to carry other ships.
 	bool HasBays() const;
-	// Check how many fighter and drone bays are not occupied at present. This
-	// does not check whether one of your escorts plans to use that bay.
-	int BaysFree(bool isFighter) const;
-	// Check if this ship has a bay free for the given fighter, and the bay is
-	// not reserved for one of its existing escorts.
+	// Check how many bays are not occupied at present. This does not check
+	// whether one of your escorts plans to use that bay.
+	int BaysFree(const std::string &category) const;
+	// Check how many bays this ship has of a given category.
+	int BaysTotal(const std::string &category) const;
+	// Check if this ship has a bay free for the given other ship, and the
+	// bay is not reserved for one of its existing escorts.
 	bool CanCarry(const Ship &ship) const;
-	// Check if this is a ship of a type that can be carried (fighter or drone).
+	// Change whether this ship can be carried. If false, the ship cannot be
+	// carried. If true, the ship can be carried if its category allows it.
+	void AllowCarried(bool allowCarried);
+	// Check if this is a ship of a type that can be carried.
 	bool CanBeCarried() const;
-	// Move the given ship into one of the fighter or drone bays, if possible.
-	bool Carry(const std::shared_ptr<Ship> &ship);
-	// Empty the fighter bays. If the fighters are not special ships that are
+	// Move the given ship into one of the bays, if possible.
+	bool Carry(const std::shared_ptr<Ship> &ship, bool force = false);
+	// Empty the bays. If the carried ships are not special ships that are
 	// saved in the player data, they will be deleted. Otherwise, they become
 	// visible as ships landed on the same planet as their parent.
 	void UnloadBays();
@@ -391,6 +446,7 @@ private:
 	void CreateExplosion(std::vector<Visual> &visuals, bool spread = false);
 	// Place a "spark" effect, like ionization or disruption.
 	void CreateSparks(std::vector<Visual> &visuals, const std::string &name, double amount);
+	void CreateSparks(std::vector<Visual> &visuals, const Effect *effect, double amount);
 	
 	
 private:
@@ -403,13 +459,17 @@ private:
 	const Government *government;
 	*/
 	
+	std::string activity;
+	
 	// Characteristics of the chassis:
 	const Ship *base = nullptr;
 	std::string modelName;
 	std::string pluralModelName;
+	std::string variantName;
 	std::string noun;
 	std::string description;
 	const Sprite *thumbnail = nullptr;
+	const Sprite *overlay = nullptr;
 	// Characteristics of this particular ship:
 	std::string name;
 	bool canBeCarried = false;
@@ -421,11 +481,20 @@ private:
 	bool isSpecial = false;
 	bool isYours = false;
 	bool isParked = false;
+	bool shouldDeploy = false;
 	bool isOverheated = false;
 	bool isDisabled = false;
 	bool isBoarding = false;
 	bool hasBoarded = false;
 	bool isThrusting = false;
+    bool isLatThrusting = false;
+	bool isReversing = false;
+	bool isSteering = false;
+    double thrustMagnitude = 0.;
+	double steeringDirection = 0.;
+    double lateralDirection = 0.;
+	double angularMomentum = 0.;
+	int countIncoming = 0;
 	bool neverDisabled = false;
 	bool isCapturable = true;
 	bool isInvisible = false;
@@ -456,8 +525,11 @@ private:
 	std::vector<Bay> bays;
 	// Cache the mass of carried ships to avoid repeatedly recomputing it.
 	double carriedMass = 0.;
-	
+	double fuelMass = 0.;
 	std::vector<EnginePoint> enginePoints;
+	std::vector<EnginePoint> reverseEnginePoints;
+	std::vector<EnginePoint> steeringEnginePoints;
+    std::vector<EnginePoint> lateralEnginePoints;
 	Armament armament;
 	// While loading, keep track of which outfits already have been equipped.
 	// (That is, they were specified as linked to a given gun or turret point.)
@@ -472,6 +544,9 @@ private:
 	double ionization = 0.;
 	double disruption = 0.;
 	double slowness = 0.;
+    double solarEnergy = 0;
+    double ramScoop = 0;
+    double energyRemaining = 0;
 	// Acceleration can be created by engines, firing weapons, or weapon impacts.
 	Point acceleration;
 	
@@ -486,6 +561,8 @@ private:
 	const Planet *landingPlanet = nullptr;
 	
 	int hyperspaceCount = 0;
+	int jumpLength = 0;
+	int hyperDistanceTravelled = 0;
 	const System *hyperspaceSystem = nullptr;
 	bool isUsingJumpDrive = false;
 	double hyperspaceFuelCost = 0.;

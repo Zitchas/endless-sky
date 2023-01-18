@@ -11,6 +11,7 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 */
 
 #include "Messages.h"
+#include "Preferences.h"
 
 #include <mutex>
 
@@ -51,6 +52,8 @@ const vector<Messages::Entry> &Messages::Get(int step)
 		// list, ignore it.
 		if(!isImportant)
 		{
+			if(Preferences::Has("Only show important messages"))
+				continue;
 			bool skip = false;
 			for(const Messages::Entry &entry : list)
 				skip |= (entry.message == message);

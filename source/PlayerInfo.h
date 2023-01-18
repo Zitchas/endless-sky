@@ -122,7 +122,7 @@ public:
 	// Add a captured ship to your fleet.
 	void AddShip(const std::shared_ptr<Ship> &ship);
 	// Buy or sell a ship.
-	void BuyShip(const Ship *model, const std::string &name);
+	void BuyShip(const Ship *model, const std::string &name, bool isGift = false);
 	void SellShip(const Ship *selected);
 	void DisownShip(const Ship *selected);
 	void ParkShip(const Ship *selected, bool isParked);
@@ -139,6 +139,8 @@ public:
 	// Get cost basis for commodities.
 	void AdjustBasis(const std::string &commodity, int64_t adjustment);
 	int64_t GetBasis(const std::string &commodity, int tons = 1) const;
+    void AddPurchasedToday(const std::string &commodity, int64_t adjustment);
+    int64_t GetPurchasedToday(const std::string &commodity);
 	// Call this when leaving the outfitter, shipyard, or hiring panel.
 	void UpdateCargoCapacities();
 	// Switch cargo from being stored in ships to being stored here.
@@ -157,6 +159,7 @@ public:
 	const std::list<Mission> &Missions() const;
 	const std::list<Mission> &AvailableJobs() const;
 	const Mission *ActiveBoardingMission() const;
+	void UpdateMissionNPCs();
 	void AcceptJob(const Mission &mission, UI *ui);
 	// Check to see if there is any mission to offer right now.
 	Mission *MissionToOffer(Mission::Location location);
@@ -291,7 +294,7 @@ private:
 	std::map<const Ship *, int> groups;
 	CargoHold cargo;
 	std::map<std::string, int64_t> costBasis;
-	
+	std::map<std::string, int64_t> purchasedToday;  //ajc
 	std::multimap<Date, std::string> logbook;
 	std::map<std::string, std::map<std::string, std::string>> specialLogs;
 	

@@ -16,6 +16,8 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 #include <cstdint>
 #include <string>
 
+class DataNode;
+
 
 
 // Class mapping key presses to specific commands / actions. The player can
@@ -33,6 +35,8 @@ public:
 	static const Command LEFT;
 	static const Command RIGHT;
 	static const Command BACK;
+    static const Command STRAFERIGHT;
+    static const Command STRAFELEFT;
 	static const Command PRIMARY;
 	static const Command SECONDARY;
 	static const Command SELECT;
@@ -46,6 +50,8 @@ public:
 	static const Command DEPLOY;
 	static const Command AFTERBURNER;
 	static const Command CLOAK;
+	static const Command CLOAKFLEET;
+	static const Command CLOAKFLAG;	
 	// UI controls:
 	static const Command MAP;
 	static const Command INFO;
@@ -69,7 +75,7 @@ public:
 	// Modifier command, usually triggered by shift-key. Changes behaviour of
 	// other commands like NEAREST, TARGET, HAIL and BOARD.
 	static const Command SHIFT;
-
+	static const Command CTRL;
 	
 public:
 	// In the given text, replace any instances of command names (in angle
@@ -96,6 +102,9 @@ public:
 	const std::string &KeyName() const;
 	bool HasConflict() const;
 	
+	// Load this command from an input file (for testing or scripted missions).
+	void Load(const DataNode &node);
+	
 	// Reset this to an empty command.
 	void Clear();
 	// Clear, set, or check the given bits. This ignores the turn field.
@@ -107,10 +116,15 @@ public:
 	// Get the commands that are set in this and not in the given command.
 	Command AndNot(Command command) const;
 	
-	// Get or set the turn amount. The amount must be between -1 and 1, but it
-	// can be a fractional value to allow finer control.
+	// Get or set the turn, thrust and lateral amount. The amount must be between -1 and 1, but it
+	// can be a fractional value to allow finer control. ajc
 	void SetTurn(double amount);
 	double Turn() const;
+	void SetThrust(double amount);
+	double Thrust() const;
+	void SetLateralThrust(double amount);
+	double LateralThrust() const;
+	
 	// Get or set the fire commands.
 	bool HasFire(int index) const;
 	void SetFire(int index);
@@ -144,8 +158,11 @@ private:
 	uint64_t state = 0;
 	// Turning amount is stored as a separate double to allow fractional values.
 	double turn = 0.;
+	double thrust = 0.;
+	double lateralThrust = 0.;
+	
 	// Turret turn rates, reduced to 8 bits to save space.
-	signed char aim[32] = {};
+	signed char aim[60] = {};
 };
 
 
