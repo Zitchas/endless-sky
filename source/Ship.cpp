@@ -1684,8 +1684,8 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 			// Testing if it's possible to have landed ships stay landed if their parent is still en route to planet. ajc.
 			if(!GetParent() || (GetParent() && !GetParent()->commands.Has(Command::LAND)))
 				zoom = min(1.f, zoom + .02f);
-				SetTargetStellar(nullptr);
-				landingPlanet = nullptr;
+			SetTargetStellar(nullptr);
+			landingPlanet = nullptr;
 		}
 		else
 			fuel = min(fuel + 1., attributes.Get("fuel capacity"));

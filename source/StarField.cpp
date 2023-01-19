@@ -187,6 +187,7 @@ void StarField::DrawTop(const Point &pos, const Point &vel, double zoom) const
 {
 	if(!Preferences::Has("Draw background haze") || zoom <= .1)
 		return;
+	
 		zoom *= 1.1;
 		DrawList drawList;
 		drawList.Clear(0, zoom);

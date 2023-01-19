@@ -680,8 +680,8 @@ void Engine::Step(bool isActive)
 		info.SetString("speed", to_string(speed));
 		slow = (step / 20) % 2 ? round(100. * flagship->DisplaySlowing()) : slow;
 		info.SetString("slow", to_string(slow) + "%");
-		int solar = (player.TravelPlan().size());
-		//int solar = (flagship->DisplayRamScoop() * 100);
+		// int solar = (player.TravelPlan().size());
+		int solar = (flagship->DisplayRamScoop() * 100);
 		info.SetString("solar", to_string(solar));
 		info.SetString("incoming", to_string(flagship->CountTargeting()));
 		info.SetBar("fuel", flagship->Fuel(),
