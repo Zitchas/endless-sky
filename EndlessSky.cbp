@@ -93,6 +93,7 @@
 		<Unit filename="source/BankPanel.h" />
 		<Unit filename="source/BatchDrawList.cpp" />
 		<Unit filename="source/BatchDrawList.h" />
+		<Unit filename="source/BatchDrawUnderList .cpp" />
 		<Unit filename="source/BatchShader.cpp" />
 		<Unit filename="source/BatchShader.h" />
 		<Unit filename="source/BoardingPanel.cpp" />
@@ -134,6 +135,7 @@
 		<Unit filename="source/DistanceMap.h" />
 		<Unit filename="source/DrawList.cpp" />
 		<Unit filename="source/DrawList.h" />
+		<Unit filename="source/DrawListUnder.cpp" />
 		<Unit filename="source/Effect.cpp" />
 		<Unit filename="source/Effect.h" />
 		<Unit filename="source/Engine.cpp" />
@@ -326,6 +328,7 @@
 		<Unit filename="source/Visual.h" />
 		<Unit filename="source/Weapon.cpp" />
 		<Unit filename="source/Weapon.h" />
+		<Unit filename="source/WeaponInfoPanel.cpp" />
 		<Unit filename="source/WinApp.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
