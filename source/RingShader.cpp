@@ -42,6 +42,7 @@ namespace {
 void RingShader::Init()
 {
 	static const char *vertexCode =
+		"// vertex ring shader\n"
 		"uniform vec2 scale;\n"
 		"uniform vec2 position;\n"
 		"uniform float radius;\n"
@@ -56,6 +57,7 @@ void RingShader::Init()
 		"}\n";
 
 	static const char *fragmentCode =
+		"// fragment ring shader\n"
 		"uniform vec4 color = vec4(1, 1, 1, 1);\n"
 		"uniform float radius;\n"
 		"uniform float width;\n"
@@ -72,8 +74,8 @@ void RingShader::Init()
 		"  float arcFalloff = 1 - min(2 * pi - arc, arc - angle) * radius;\n"
 		"  if(dash != 0)\n"
 		"  {\n"
-		"    arc = mod(arc, dash);\n"
-		"    arcFalloff = min(arcFalloff, min(arc, dash - arc) * radius);\n"
+		"	arc = mod(arc, dash);\n"
+		"	arcFalloff = min(arcFalloff, min(arc, dash - arc) * radius);\n"
 		"  }\n"
 		"  float len = length(coord);\n"
 		"  float lenFalloff = width - abs(len - radius);\n"

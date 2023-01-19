@@ -35,7 +35,7 @@ namespace {
 
 
 
-Projectile::Projectile(const Ship &parent, Point position, Angle angle, const Weapon *weapon)
+Projectile::Projectile(const Ship &parent, Point position, Angle angle, bool under, const Weapon *weapon)
 	: Body(weapon->WeaponSprite(), position, parent.Velocity(), angle),
 	weapon(weapon), targetShip(parent.GetTargetShip()), lifetime(weapon->Lifetime())
 {
@@ -57,6 +57,7 @@ Projectile::Projectile(const Ship &parent, Point position, Angle angle, const We
 	// If a random lifetime is specified, add a random amount up to that amount.
 	if(weapon->RandomLifetime())
 		lifetime += Random::Int(weapon->RandomLifetime() + 1);
+	fireUnder = under;
 }
 
 
@@ -85,6 +86,8 @@ Projectile::Projectile(const Projectile &parent, const Weapon *weapon)
 	// If a random lifetime is specified, add a random amount up to that amount.
 	if(weapon->RandomLifetime())
 		lifetime += Random::Int(weapon->RandomLifetime() + 1);
+	if(parent.DrawUnder())
+		fireUnder = true;
 }
 
 
@@ -109,7 +112,7 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 			// and submunitions.
 			for(const auto &it : weapon->DieEffects())
 				for(int i = 0; i < it.second; ++i)
-					visuals.emplace_back(*it.first, position, velocity, angle);
+					visuals.emplace_back(*it.first, position, velocity, angle, DrawUnder());
 			
 			for(const auto &it : weapon->Submunitions())
 				for(int i = 0; i < it.second; ++i)
@@ -120,7 +123,7 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 	}
 	for(const auto &it : weapon->LiveEffects())
 		if(!Random::Int(it.second))
-			visuals.emplace_back(*it.first, position, velocity, angle);
+			visuals.emplace_back(*it.first, position, velocity, angle, DrawUnder());
 	
 	// If the target has left the system, stop following it. Also stop if the
 	// target has been captured by a different government.
@@ -138,13 +141,17 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 	
 	double turn = weapon->Turn();
 	double accel = weapon->Acceleration();
-	int homing = weapon->Homing();
+	homing = weapon->Homing();
 	if(target && homing && !Random::Int(60))
 		CheckLock(*target);
+	if(!target)
+		hasLock = false;
 	if(target && homing && hasLock)
 	{
 		// Vector d is the direction we want to turn towards.
 		Point d = target->Position() - position;
+		// add this back in for projectile innacuracy and remove line above. ajc
+		//Point d = target->Position() + Angle::Random().Unit() * sqrt(target->Attributes().Get("radar jamming")) - position;
 		Point unit = d.Unit();
 		double drag = weapon->Drag();
 		double trueVelocity = drag ? accel / drag : velocity.Length();
@@ -216,7 +223,7 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 	
 	// If this projectile is now within its "split range," it should split into
 	// sub-munitions next turn.
-	if(target && (position - target->Position()).Length() < weapon->SplitRange() && !Random::Int(10))
+	if(target && (position - target->Position()).Length() < weapon->SplitRange())
 		lifetime = 0;
 }
 
@@ -253,11 +260,38 @@ void Projectile::Kill()
 
 
 
+bool Projectile::DrawUnder() const
+{
+	return fireUnder;
+}
+
+
 // Find out if this is a missile, and if so, how strong it is (i.e. what
 // chance an anti-missile shot has of destroying it).
 int Projectile::MissileStrength() const
 {
 	return weapon->MissileStrength();
+}
+
+
+
+int Projectile::RemainingLifetime() const
+{
+	return lifetime;
+}
+
+
+
+bool Projectile::HasLock() const
+{
+	return homing && hasLock;
+}
+
+
+
+bool Projectile::HitAll() const
+{
+	return weapon->HitAll();
 }
 
 

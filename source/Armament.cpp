@@ -26,17 +26,25 @@ using namespace std;
 
 
 // Add a gun hardpoint (fixed-direction weapon).
-void Armament::AddGunPort(const Point &point, const Outfit *outfit)
+void Armament::AddGunPort(const Point &point, const Angle &angle, bool isParallel, bool isUnder, bool isDefensive, const Outfit *outfit)
 {
-	hardpoints.emplace_back(point, false, outfit);
+	hardpoints.emplace_back(point, angle, false, false, isParallel, isUnder, isDefensive, outfit);
 }
 
 
 
 // Add a turret hardpoint (omnidirectional weapon).
-void Armament::AddTurret(const Point &point, const Outfit *outfit)
+void Armament::AddTurret(const Point &point, const Angle &angle, bool isUnder, bool isDefensive, const Outfit *outfit)
 {
-	hardpoints.emplace_back(point, true, outfit);
+	hardpoints.emplace_back(point, angle, true, false, false, isUnder, isDefensive, outfit);
+}
+
+
+
+// AAdd a pylon (for missiles). ajc.
+void Armament::AddPylon(const Point &point, bool isUnder, const Outfit *outfit)
+{
+	hardpoints.emplace_back(point, Angle(0.), false, true, false, isUnder, false, outfit);
 }
 
 
@@ -53,10 +61,12 @@ void Armament::Add(const Outfit *outfit, int count)
 	int existing = 0;
 	int added = 0;
 	bool isTurret = outfit->Get("turret mounts");
+	bool isPylon = outfit->Get("pylon mounts");
+	bool isGun = outfit->Get("gun ports");
 	// Do not equip weapons that do not define how they are mounted.
-	if(!isTurret && !outfit->Get("gun ports"))
+	if(!isTurret && !isPylon && !isGun)
 	{
-		Files::LogError("Skipping unmountable outfit \"" + outfit->Name() + "\". Weapon outfits must specify either \"gun ports\" or \"turret mounts\".");
+		Files::LogError("Skipping unmountable outfit \"" + outfit->Name() + "\". Weapon outfits must specify either \"gun ports\" or \"turret mounts\" or \"pylon\".");
 		return;
 	}
 	
@@ -78,7 +88,7 @@ void Armament::Add(const Outfit *outfit, int count)
 			else
 				++existing;
 		}
-		else if(!hardpoint.GetOutfit() && hardpoint.IsTurret() == isTurret)
+		else if(!hardpoint.GetOutfit() && hardpoint.IsTurret() == isTurret && hardpoint.IsPylon() == isPylon)
 		{
 			// If this is an empty, compatible slot, and we're adding outfits,
 			// install one of them here and decrease the count of how many we
@@ -150,7 +160,8 @@ void Armament::Swap(int first, int second)
 		return;
 	if(hardpoints[first].IsTurret() != hardpoints[second].IsTurret())
 		return;
-	
+	if(hardpoints[first].IsPylon() != hardpoints[second].IsPylon())
+		return;
 	// Swap the weapons in the two hardpoints.
 	const Outfit *outfit = hardpoints[first].GetOutfit();
 	hardpoints[first].Install(hardpoints[second].GetOutfit());
@@ -170,7 +181,7 @@ const vector<Hardpoint> &Armament::Get() const
 // Determine how many fixed gun hardpoints are on this ship.
 int Armament::GunCount() const
 {
-	return hardpoints.size() - TurretCount();
+	return hardpoints.size() - TurretCount() - PylonCount();
 }
 
 
@@ -181,6 +192,17 @@ int Armament::TurretCount() const
 	int count = 0;
 	for(const Hardpoint &hardpoint : hardpoints)
 		count += hardpoint.IsTurret();
+	return count;
+}
+
+
+
+// Determine how many pylon hardpoints are on this ship.
+int Armament::PylonCount() const
+{
+	int count = 0;
+	for(const Hardpoint &hardpoint : hardpoints)
+		count += hardpoint.IsPylon();
 	return count;
 }
 
@@ -237,7 +259,9 @@ void Armament::Step(const Ship &ship)
 	for(auto &it : streamReload)
 	{
 		int count = ship.OutfitCount(it.first);
-		it.second -= count;
+		// If this weapon mounts on a pylon don't count the number to determine the reload speed. ajc.
+		bool pylon = it.first->Get("pylon mounts");
+		it.second -= pylon ? 1 : count;
 		// Always reload to the quickest firing interval.
 		it.second = max(it.second, 1 - count);
 	}

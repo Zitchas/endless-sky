@@ -76,8 +76,11 @@ namespace {
 	}
 	
 	const Color black(0.f, 1.f);
-	const Color red(1.f, 0.f, 0.f, 1.f);
-	
+	const Color red(1.f, 0.2f, 0.2f, 1.f);
+	const Color blue(0.3f, 0.53f, 1.f, 1.f);
+	const Color magenta(0.9f, 0.2f, 0.9f, 1.f);
+	const Color white(0.9f, 0.9f, 0.9f, 1.f);
+
 	// Hovering an escort pip for this many frames activates the tooltip.
 	const int HOVER_TIME = 60;
 	// Length in frames of the recentering animation.
@@ -238,14 +241,17 @@ void MapPanel::DrawMiniMap(const PlayerInfo &player, float alpha, const System *
 		for(const System *link : system->Links())
 		{
 			// Only draw systems known to be attached to the jump systems.
-			if(!player.HasVisited(system) && !player.HasVisited(link))
-				continue;
+			//if(!player.HasVisited(system) && !player.HasVisited(link))
+			//	continue;
 			
 			// Draw the system link. This will double-draw the jump
 			// path if it is via hyperlink, to increase brightness.
 			Point to = link->Position() - center + drawPos;
 			Point unit = (from - to).Unit() * LINK_OFFSET;
 			LineShader::Draw(from - unit, to + unit, LINK_WIDTH, lineColor);
+			
+			if(!player.HasVisited(system) && !player.HasVisited(link))
+				continue;
 			
 			if(drawnSystems.count(link))
 				continue;
@@ -259,6 +265,19 @@ void MapPanel::DrawMiniMap(const PlayerInfo &player, float alpha, const System *
 					alpha * gov->GetColor().Get()[1],
 					alpha * gov->GetColor().Get()[2], 0.f);
 			RingShader::Draw(to, OUTER, INNER, color);
+			for(const System *sublink : link->Links())
+			{
+				//if(drawnSystems.count(sublink))
+				if(sublink == jump[0] || sublink == jump[1])
+					continue;
+				//drawnSystems.insert(sublink);
+				
+				Point from = link->Position() - center + drawPos;
+				Point to = sublink->Position() - center + drawPos;
+				Point unit = (from - to).Unit() * LINK_OFFSET;
+				Point point (from + (to-from).Unit()*(from-to).Length()*.5);
+				LineShader::Draw(from - unit, point + unit, LINK_WIDTH, lineColor);
+			}
 		}
 		
 		Angle angle;
@@ -317,6 +336,13 @@ void MapPanel::DrawMiniMap(const PlayerInfo &player, float alpha, const System *
 
 
 
+bool MapPanel::AllowFastForward() const
+{
+	return true;
+}
+
+
+
 bool MapPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &command, bool isNewPress)
 {
 	if(command.Has(Command::MAP) || key == 'd' || key == SDLK_ESCAPE
@@ -349,9 +375,9 @@ bool MapPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &command, bool
 		return true;
 	}
 	else if(key == '+' || key == '=')
-		player.SetMapZoom(min(2, player.MapZoom() + 1));
+		player.SetMapZoom(min(4, player.MapZoom() + 1));
 	else if(key == '-')
-		player.SetMapZoom(max(-2, player.MapZoom() - 1));
+		player.SetMapZoom(max(-4, player.MapZoom() - 1));
 	else
 		return false;
 	
@@ -431,9 +457,9 @@ bool MapPanel::Scroll(double dx, double dy)
 	Point mouse = UI::GetMouse();
 	Point anchor = mouse / Zoom() - center;
 	if(dy > 0.)
-		player.SetMapZoom(min(2, player.MapZoom() + 1));
+		player.SetMapZoom(min(4, player.MapZoom() + 1));
 	else if(dy < 0.)
-		player.SetMapZoom(max(-2, player.MapZoom() - 1));
+		player.SetMapZoom(max(-4, player.MapZoom() - 1));
 	
 	// Now, Zoom() has changed (unless at one of the limits). But, we still want
 	// anchor to be the same, so:
@@ -538,8 +564,13 @@ void MapPanel::Select(const System *system)
 	bool isJumping = flagship->IsEnteringHyperspace();
 	const System *source = isJumping ? flagship->GetTargetSystem() : playerSystem;
 	
-	bool shift = (SDL_GetModState() & KMOD_SHIFT) && !plan.empty();
-	if(system == source && !shift)
+	auto mod = SDL_GetModState();
+	// TODO: Whoever called Select should tell us what to do with this system vis-a-vis the travel plan, rather than
+	// possibly manipulating it both here and there. Or, we entirely separate Select from travel plan modifications.
+	bool shift = (mod & KMOD_SHIFT) && !plan.empty();
+	if(mod & KMOD_CTRL)
+		return;
+	else if(system == source && !shift)
 	{
 		plan.clear();
 		if(!isJumping)
@@ -687,11 +718,12 @@ void MapPanel::UpdateCache()
 		Color color = UninhabitedColor();
 		if(!player.HasVisited(&system))
 			color = UnexploredColor();
-		else if(system.IsInhabited(player.Flagship()) || commodity == SHOW_SPECIAL)
+		else if(system.IsInhabited(player.Flagship()) || commodity == SHOW_SPECIAL || commodity == SHOW_VISITED)
 		{
 			if(commodity >= SHOW_SPECIAL)
 			{
 				double value = 0.;
+				bool colorSystem = true;
 				if(commodity >= 0)
 				{
 					const Trade::Commodity &com = GameData::Commodities()[commodity];
@@ -721,19 +753,23 @@ void MapPanel::UpdateCache()
 				{
 					bool all = true;
 					bool some = false;
+					colorSystem = false;
 					for(const StellarObject &object : system.Objects())
-						if(object.GetPlanet() && !object.GetPlanet()->IsWormhole())
+						if(object.GetPlanet() && !object.GetPlanet()->IsWormhole()
+							&& object.GetPlanet()->IsAccessible(player.Flagship()))
 						{
 							bool visited = player.HasVisited(object.GetPlanet());
 							all &= visited;
 							some |= visited;
+							colorSystem = true;
 						}
 					value = -1 + some + all;
 				}
 				else
 					value = SystemValue(&system);
 				
-				color = MapColor(value);
+				if(colorSystem)
+					color = MapColor(value);
 			}
 			else if(commodity == SHOW_GOVERNMENT)
 			{
@@ -841,7 +877,11 @@ void MapPanel::DrawTravelPlan()
 			hasEscort |= (it.get() != flagship);
 		}
 	stranded |= !hasEscort;
-	
+	int noFuel = 0;
+	int noDrive = 0;
+	int allGood = 0;
+	int noWormhole = 0;
+	bool wormholePath = false;
 	const System *previous = playerSystem;
 	for(int i = player.TravelPlan().size() - 1; i >= 0; --i)
 	{
@@ -861,19 +901,65 @@ void MapPanel::DrawTravelPlan()
 		// Wormholes cost nothing to go through. If this is not a wormhole,
 		// check how much fuel every ship will expend to go through it.
 		if(!isWormhole)
+		{
+			allGood = 0;
 			for(auto &it : fuel)
 				if(it.second >= 0.)
 				{
 					double cost = isJump ? it.first->JumpDriveFuel() : it.first->HyperdriveFuel();
-					if(!cost || cost > it.second)
+					if(!cost)
 					{
 						it.second = -1.;
 						stranded = true;
+						noDrive++;
+						RingShader::Draw(Zoom() * (previous ? previous->Position() + center : center),
+							11.f, 9.f, blue);
+					}
+					else if(cost > it.second)
+					{
+						it.second = -1.;
+						stranded = true;
+						noFuel++;
+						RingShader::Draw(Zoom() * (previous ? previous->Position() + center : center),
+							11.f, 9.f, red);
 					}
 					else
+					{
 						it.second -= cost;
+						allGood++;
+					}
 				}
-		
+		}
+		else if(isWormhole)
+		{
+			allGood = 0;
+			for(auto &it : fuel)
+			if(it.second >= 0.)
+			{
+				for(const StellarObject &object : previous->Objects())
+				{
+					if(object.GetPlanet() && object.GetPlanet()->IsAccessible(it.first))
+					{
+						wormholePath = true;
+						break;
+					}
+					else
+					{
+						wormholePath = false;
+					}
+				}
+				if(wormholePath)
+					allGood++;
+				else
+				{
+					noWormhole++;
+					it.second = -1.;
+					stranded = true;
+					RingShader::Draw(Zoom() * (previous ? previous->Position() + center : center),
+						11.f, 9.f, magenta);
+				}
+			}
+		}
 		// Color the path green if all ships can make it. Color it yellow if
 		// the flagship can make it, and red if the flagship cannot.
 		Color drawColor = outOfFlagshipFuelRangeColor;
@@ -889,7 +975,42 @@ void MapPanel::DrawTravelPlan()
 		Point unit = (from - to).Unit() * LINK_OFFSET;
 		LineShader::Draw(from - unit, to + unit, 3.f, drawColor);
 		
+		const Font &font = FontSet::Get(18);
+		// Shows either link length or ship which can follow parent. ajc.
+		// Choose one of the following two lines and commebt out the other.
+	//	int linkLength = ((from - to).Length() / Zoom());
+	//	const string &allMessage = to_string(linkLength);
+		const string &allMessage = to_string(allGood);
+		Point offset(-7., -.5 * font.Height());
+		Point point (from + (to-from).Unit()*(from-to).Length()*.5);
+		RingShader::Draw(point,
+			11.f, 1.f, black);
+		font.Draw(allMessage, point + offset, white);
+		
 		previous = next;
+	}
+	const Font &font = FontSet::Get(18);
+	int width = Screen::Right() - 450;
+	if(noDrive)
+	{
+	const string &driveMessage = to_string(noDrive) + (noDrive > 1 ?  " Ships" :  " ship") + " cannot make a jump";
+		width -= font.Width(driveMessage) + 15;
+	Point point(width, Screen::Bottom() - 30);
+	font.Draw(driveMessage, point, blue);
+	}
+	if(noFuel)
+	{
+	const string &fuelMessage = to_string(noFuel) + (noFuel > 1 ?  " Ships" :  " ship") + " will need to refuel";
+		width -= font.Width(fuelMessage) + 15;
+	Point fuelPoint(width, Screen::Bottom() - 30);
+	font.Draw(fuelMessage, fuelPoint, red);
+	}
+	if(noWormhole)
+	{
+	const string &holeMessage = to_string(noWormhole) + (noWormhole > 1 ?  " Ships" :  " ship") + " cannot traverse a wormhole";
+		width -= font.Width(holeMessage) + 15;
+	Point holePoint(width, Screen::Bottom() - 30);
+	font.Draw(holeMessage, holePoint, magenta);
 	}
 }
 

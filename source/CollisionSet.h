@@ -45,7 +45,7 @@ public:
 	// Check for collisions with a line, which may be a projectile's current
 	// position or its entire expected trajectory (for the auto-firing AI).
 	Body *Line(const Point &from, const Point &to, double *closestHit = nullptr,
-		const Government *pGov = nullptr, const Body *target = nullptr) const;
+		const Government *pGov = nullptr, const Body *target = nullptr, bool locked = false, bool hitAll = false) const;
 	
 	// Get all objects within the given range of the given point.
 	const std::vector<Body *> &Circle(const Point &center, double radius) const;

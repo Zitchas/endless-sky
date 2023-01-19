@@ -45,32 +45,35 @@ const Command Command::FORWARD(1uL << 1, "Forward thrust");
 const Command Command::LEFT(1uL << 2, "Turn left");
 const Command Command::RIGHT(1uL << 3, "Turn right");
 const Command Command::BACK(1uL << 4, "Reverse");
-const Command Command::PRIMARY(1uL << 5, "Fire primary weapon");
-const Command Command::SECONDARY(1uL << 6, "Fire secondary weapon");
-const Command Command::SELECT(1uL << 7, "Select secondary weapon");
-const Command Command::LAND(1uL << 8, "Land on planet / station");
-const Command Command::BOARD(1uL << 9, "Board selected ship");
-const Command Command::HAIL(1uL << 10, "Talk to selected ship");
-const Command Command::SCAN(1uL << 11, "Scan selected ship");
-const Command Command::JUMP(1uL << 12, "Initiate hyperspace jump");
-const Command Command::TARGET(1uL << 13, "Select next ship");
-const Command Command::NEAREST(1uL << 14, "Select nearest hostile ship");
-const Command Command::DEPLOY(1uL << 15, "Deploy / recall fighters");
-const Command Command::AFTERBURNER(1uL << 16, "Fire afterburner");
-const Command Command::CLOAK(1uL << 17, "Toggle cloaking device");
-const Command Command::MAP(1uL << 18, "View star map");
-const Command Command::INFO(1uL << 19, "View player info");
-const Command Command::FULLSCREEN(1uL << 20, "Toggle fullscreen");
-const Command Command::FASTFORWARD(1uL << 21, "Toggle fast-forward");
-const Command Command::FIGHT(1uL << 22, "Fleet: Fight my target");
-const Command Command::GATHER(1uL << 23, "Fleet: Gather around me");
-const Command Command::HOLD(1uL << 24, "Fleet: Hold position");
-const Command Command::AMMO(1uL << 25, "Fleet: Toggle ammo usage");
-const Command Command::WAIT(1uL << 26, "");
-const Command Command::STOP(1ul << 27, "");
-const Command Command::SHIFT(1uL << 28, "");
-
-
+const Command Command::STRAFERIGHT(1uL << 5, "Strafe right");
+const Command Command::STRAFELEFT(1uL << 6, "Strafe left");
+const Command Command::PRIMARY(1uL << 7, "Fire primary weapon");
+const Command Command::SECONDARY(1uL << 8, "Fire secondary weapon");
+const Command Command::SELECT(1uL << 9, "Select secondary weapon");
+const Command Command::LAND(1uL << 10, "Land on planet / station");
+const Command Command::BOARD(1uL << 11, "Board selected ship");
+const Command Command::HAIL(1uL << 12, "Talk to selected ship");
+const Command Command::SCAN(1uL << 13, "Scan selected ship");
+const Command Command::JUMP(1uL << 14, "Initiate hyperspace jump");
+const Command Command::TARGET(1uL << 15, "Select next ship");
+const Command Command::NEAREST(1uL << 16, "Select nearest hostile ship");
+const Command Command::DEPLOY(1uL << 17, "Deploy / recall fighters");
+const Command Command::AFTERBURNER(1uL << 18, "Fire afterburner");
+const Command Command::CLOAK(1uL << 19, "Toggle cloaking device");
+const Command Command::MAP(1uL << 20, "View star map");
+const Command Command::INFO(1uL << 21, "View player info");
+const Command Command::FULLSCREEN(1uL << 22, "Toggle fullscreen");
+const Command Command::FASTFORWARD(1uL << 23, "Toggle fast-forward");
+const Command Command::FIGHT(1uL << 24, "Fleet: Fight my target");
+const Command Command::GATHER(1uL << 25, "Fleet: Gather around me");
+const Command Command::HOLD(1uL << 26, "Fleet: Hold position");
+const Command Command::AMMO(1uL << 27, "Fleet: Toggle ammo usage");
+const Command Command::WAIT(1uL << 28, "");
+const Command Command::STOP(1uL << 29, "");
+const Command Command::SHIFT(1uL << 30, "");
+const Command Command::CLOAKFLEET(1uL << 31, "Cloak your escorts");
+const Command Command::CLOAKFLAG(1uLL << 32, "Cloak your flagship");
+const Command Command::CTRL(1uLL << 33, "");
 
 // In the given text, replace any instances of command names (in angle brackets)
 // with key names (in quotes).
@@ -111,6 +114,8 @@ void Command::ReadKeyboard()
 	// Check whether the `Shift` modifier key was pressed for this step.
 	if(SDL_GetModState() & KMOD_SHIFT)
 		*this |= SHIFT;
+	if(SDL_GetModState() & KMOD_CTRL)
+		*this |= CTRL;
 }
 
 
@@ -221,6 +226,50 @@ bool Command::HasConflict() const
 
 
 
+// Load this command from an input file (for testing or scripted missions).
+void Command::Load(const DataNode &node)
+{
+	for(int i = 1; i < node.Size(); ++i)
+	{
+		static const map<string, Command> lookup = {
+			{"menu", Command::MENU},
+			{"forward", Command::FORWARD},
+			{"left", Command::LEFT},
+			{"right", Command::RIGHT},
+			{"Sleft", Command::STRAFELEFT},
+			{"Sright", Command::STRAFERIGHT},
+			{"back", Command::BACK},
+			{"primary", Command::PRIMARY},
+			{"secondary", Command::SECONDARY},
+			{"select", Command::SELECT},
+			{"land", Command::LAND},
+			{"board", Command::BOARD},
+			{"hail", Command::HAIL},
+			{"scan", Command::SCAN},
+			{"jump", Command::JUMP},
+			{"target", Command::TARGET},
+			{"nearest", Command::NEAREST},
+			{"deploy", Command::DEPLOY},
+			{"afterburner", Command::AFTERBURNER},
+			{"cloak", Command::CLOAK},
+			{"map", Command::MAP},
+			{"info", Command::INFO},
+			{"fight", Command::FIGHT},
+			{"gather", Command::GATHER},
+			{"hold", Command::HOLD},
+			{"ammo", Command::AMMO}
+		};
+		
+		auto it = lookup.find(node.Token(i));
+		if(it != lookup.end())
+			Set(it->second);
+		else
+			node.PrintTrace("Skipping unrecognized command \"" + node.Token(i) + "\":");
+	}
+}
+
+
+
 // Reset this to an empty command.
 void Command::Clear()
 {
@@ -283,7 +332,39 @@ double Command::Turn() const
 	return turn;
 }
 
+							
 
+// Set the thrust direction and amount to a value between -1 and 1.
+void Command::SetThrust(double amount)
+{
+	thrust = max(-1., min(1., amount));
+}
+
+
+
+// Get the thrust amount.
+double Command::Thrust() const
+{
+	return thrust;
+}
+
+							
+							
+// Set the lateral thrust direction and amount to a value between -1 and 1.
+void Command::SetLateralThrust(double amount)
+{
+	lateralThrust = max(-1., min(1., amount));
+}
+
+
+
+// Get the lateral thrust amount.
+double Command::LateralThrust() const
+{
+	return lateralThrust;
+}
+
+							
 
 // Check if this command includes a command to fire the given weapon.
 bool Command::HasFire(int index) const
@@ -319,7 +400,7 @@ bool Command::IsFiring() const
 // -1 or 1 means to turn at the full speed the turret is capable of.
 double Command::Aim(int index) const
 {
-	if(index < 0 || index >= 32)
+	if(index < 0 || index >= 60)
 		return 0;
 	
 	return aim[index] / 127.;
@@ -329,7 +410,7 @@ double Command::Aim(int index) const
 
 void Command::SetAim(int index, double amount)
 {
-	if(index < 0 || index >= 32)
+	if(index < 0 || index >= 60)
 		return;
 	
 	aim[index] = round(127. * max(-1., min(1., amount)));

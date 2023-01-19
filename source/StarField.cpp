@@ -25,6 +25,7 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 #include <algorithm>
 #include <cmath>
+#include <limits>
 #include <numeric>
 
 using namespace std;
@@ -90,6 +91,9 @@ void StarField::SetHaze(const Sprite *sprite)
 
 void StarField::Draw(const Point &pos, const Point &vel, double zoom) const
 {
+	if(zoom <= .1)
+		return;
+	double zoomCache = zoom;
 	// Draw the starfield unless it is disabled in the preferences.
 	if(Preferences::Has("Draw starfield"))
 	{
@@ -147,9 +151,10 @@ void StarField::Draw(const Point &pos, const Point &vel, double zoom) const
 	}
 	
 	// Draw the background haze unless it is disabled in the preferences.
-	if(!Preferences::Has("Draw background haze"))
+	if(Preferences::Has("Draw background haze"))
 		return;
-	
+	zoom = zoomCache;
+	zoom *= .9;
 	DrawList drawList;
 	drawList.Clear(0, zoom);
 	drawList.SetCenter(pos);
@@ -178,9 +183,42 @@ void StarField::Draw(const Point &pos, const Point &vel, double zoom) const
 
 
 
+void StarField::DrawTop(const Point &pos, const Point &vel, double zoom) const
+{
+	if(!Preferences::Has("Draw background haze") || zoom <= .1)
+		return;
+	zoom *= 1.1;
+	DrawList drawList;
+	drawList.Clear(0, zoom);
+	drawList.SetCenter(pos);
+	
+	// Any object within this range must be drawn. Some haze sprites may repeat
+	// more than once if the view covers a very large area.
+	Point size = Point(1., 1.) * haze.front().Radius() * 4;
+	Point topLeft = pos + (Screen::TopLeft() - size) / zoom;
+	Point bottomRight = pos + (Screen::BottomRight() + size) / zoom;
+	for(const Body &it : haze)
+	{
+		// Figure out the position of the first instance of this haze that is to
+		// the right of and below the top left corner of the screen.
+		double startX = fmod(it.Position().X() - topLeft.X(), HAZE_WRAP);
+		startX += topLeft.X() + HAZE_WRAP * (startX < 0.);
+		double startY = fmod(it.Position().Y() - topLeft.Y(), HAZE_WRAP);
+		startY += topLeft.Y() + HAZE_WRAP * (startY < 0.);
+	
+		// Draw any instances of this haze that are on screen.
+		for(double y = startY; y < bottomRight.Y(); y += HAZE_WRAP)
+			for(double x = startX; x < bottomRight.X(); x += HAZE_WRAP)
+				drawList.Add(it, Point(x, y));
+	}
+	drawList.Draw();
+}
+
+
 void StarField::SetUpGraphics()
 {
 	static const char *vertexCode =
+		"// vertex starfield shader\n"
 		"uniform mat2 rotate;\n"
 		"uniform vec2 translate;\n"
 		"uniform vec2 scale;\n"
@@ -201,6 +239,7 @@ void StarField::SetUpGraphics()
 		"}\n";
 
 	static const char *fragmentCode =
+		"// fragment starfield shader\n"
 		"in float fragmentAlpha;\n"
 		"in vec2 coord;\n"
 		"out vec4 finalColor;\n"
@@ -272,7 +311,7 @@ void StarField::MakeStars(int stars, int width)
 	{
 		for(int j = 0; j < 10; ++j)
 		{
-			int index = Random::Int(off.size()) & ~1;
+			int index = Random::Int(static_cast<uint32_t>(off.size())) & ~1;
 			x += off[index];
 			y += off[index + 1];
 			x &= widthMod;
@@ -328,18 +367,19 @@ void StarField::MakeStars(int stars, int width)
 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(data.front()) * data.size(), data.data(), GL_STATIC_DRAW);
 	
-	// connect the xy to the "vert" attribute of the vertex shader
+	// Connect the xy to the "vert" attribute of the vertex shader.
+	constexpr auto stride = 4 * sizeof(GLfloat);
 	glEnableVertexAttribArray(offsetI);
 	glVertexAttribPointer(offsetI, 2, GL_FLOAT, GL_FALSE,
-		4 * sizeof(GLfloat), nullptr);
+		stride, nullptr);
 	
 	glEnableVertexAttribArray(sizeI);
 	glVertexAttribPointer(sizeI, 1, GL_FLOAT, GL_FALSE,
-		4 * sizeof(GLfloat), (const GLvoid*)(2 * sizeof(GLfloat)));
+		stride, reinterpret_cast<const GLvoid *>(2 * sizeof(GLfloat)));
 	
 	glEnableVertexAttribArray(cornerI);
 	glVertexAttribPointer(cornerI, 1, GL_FLOAT, GL_FALSE,
-		4 * sizeof(GLfloat), (const GLvoid*)(3 * sizeof(GLfloat)));
+		stride, reinterpret_cast<const GLvoid *>(3 * sizeof(GLfloat)));
 	
 	// unbind the VBO and VAO
 	glBindBuffer(GL_ARRAY_BUFFER, 0);

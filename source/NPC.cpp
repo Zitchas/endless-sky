@@ -62,6 +62,10 @@ void NPC::Load(const DataNode &node)
 			succeedIf |= ShipEvent::SCAN_CARGO;
 		else if(node.Token(i) == "scan outfits")
 			succeedIf |= ShipEvent::SCAN_OUTFITS;
+		else if(node.Token(i) == "capture")
+			succeedIf |= ShipEvent::CAPTURE;
+		else if(node.Token(i) == "provoke")
+			succeedIf |= ShipEvent::PROVOKE;
 		else if(node.Token(i) == "evade")
 			mustEvade = true;
 		else if(node.Token(i) == "accompany")
@@ -70,6 +74,12 @@ void NPC::Load(const DataNode &node)
 			failIf |= ShipEvent::DESTROY;
 		}
 	}
+	
+	// Check for incorrect objective combinations.
+	if(failIf & ShipEvent::DESTROY && (succeedIf & ShipEvent::DESTROY || succeedIf & ShipEvent::CAPTURE))
+		node.PrintTrace("Warning: conflicting NPC mission objective to save and destroy or capture.");
+	if(mustEvade && (succeedIf & ShipEvent::DESTROY || succeedIf & ShipEvent::CAPTURE))
+		node.PrintTrace("Warning: redundant NPC mission objective to evade and destroy or capture.");
 	
 	for(const DataNode &child : node)
 	{
@@ -126,6 +136,15 @@ void NPC::Load(const DataNode &node)
 			conversation.Load(child);
 		else if(child.Token(0) == "conversation" && child.Size() > 1)
 			stockConversation = GameData::Conversations().Get(child.Token(1));
+		else if(child.Token(0) == "to" && child.Size() >= 2)
+		{
+			if(child.Token(1) == "spawn")
+				toSpawn.Load(child);
+			else if(child.Token(1) == "despawn")
+				toDespawn.Load(child);
+			else
+				child.PrintTrace("Skipping unrecognized attribute:");
+		}
 		else if(child.Token(0) == "ship")
 		{
 			if(child.HasChildren() && child.Size() == 2)
@@ -203,6 +222,29 @@ void NPC::Save(DataWriter &out) const
 		if(mustAccompany)
 			out.Write("accompany");
 		
+		// Only save out spawn conditions if they have yet to be met.
+		// This is so that if a player quits the game and returns, NPCs that
+		// were spawned do not then become despawned because they no longer
+		// pass the spawn conditions.
+		if(!toSpawn.IsEmpty() && !passedSpawnConditions)
+		{
+			out.Write("to", "spawn");
+			out.BeginChild();
+			{
+				toSpawn.Save(out);
+			}
+			out.EndChild();
+		}
+		if(!toDespawn.IsEmpty())
+		{
+			out.Write("to", "despawn");
+			out.BeginChild();
+			{
+				toDespawn.Save(out);
+			}
+			out.EndChild();
+		}
+		
 		if(government)
 			out.Write("government", government->GetTrueName());
 		personality.Save(out);
@@ -241,6 +283,39 @@ void NPC::Save(DataWriter &out) const
 
 
 
+// Update spawning and despawning for this NPC.
+void NPC::UpdateSpawning(const PlayerInfo &player)
+{
+	// The conditions are tested every time this function is called until
+	// they pass. This is so that a change in a player's conditions don't
+	// cause an NPC to "un-spawn" or "un-despawn." Despawn conditions are
+	// only checked after the spawn conditions have passed so that an NPC
+	// doesn't "despawn" before spawning in the first place.
+	if(!passedSpawnConditions)
+		passedSpawnConditions = toSpawn.Test(player.Conditions());
+	
+	if(passedSpawnConditions && !toDespawn.IsEmpty() && !passedDespawnConditions)
+		passedDespawnConditions = toDespawn.Test(player.Conditions());
+}
+
+
+
+// Return if spawned conditions have passed, without updating.
+bool NPC::PassedSpawn() const
+{
+	return passedSpawnConditions;
+}
+
+
+
+// Return if despawned conditions have passed, without updating.
+bool NPC::PassedDespawn() const
+{
+	return passedDespawnConditions;
+}
+
+
+
 // Get the ships associated with this set of NPCs.
 const list<shared_ptr<Ship>> NPC::Ships() const
 {
@@ -265,7 +340,7 @@ void NPC::Do(const ShipEvent &event, PlayerInfo &player, UI *ui, bool isVisible)
 			// before we check the mission's success status because otherwise
 			// momentarily reactivating a ship you're supposed to evade would
 			// clear the success status and cause the success message to be
-			// displayed a second time below. 
+			// displayed a second time below.
 			if(event.Type() & ShipEvent::CAPTURE)
 			{
 				Ship *copy = new Ship(*ptr);
@@ -290,10 +365,10 @@ void NPC::Do(const ShipEvent &event, PlayerInfo &player, UI *ui, bool isVisible)
 		actions[ship.get()] &= ~(ShipEvent::DISABLE);
 	
 	// Certain events only count towards the NPC's status if originated by
-	// the player: scanning, boarding, or assisting.
-	if(!event.ActorGovernment()->IsPlayer())
-		type &= ~(ShipEvent::SCAN_CARGO | ShipEvent::SCAN_OUTFITS
-				| ShipEvent::ASSIST | ShipEvent::BOARD);
+	// the player: scanning, boarding, assisting, capturing, or provoking.
+	if(!event.ActorGovernment() || !event.ActorGovernment()->IsPlayer())
+		type &= ~(ShipEvent::SCAN_CARGO | ShipEvent::SCAN_OUTFITS | ShipEvent::ASSIST
+				| ShipEvent::BOARD | ShipEvent::CAPTURE | ShipEvent::PROVOKE);
 	
 	// Apply this event to the ship and any ships it is carrying.
 	actions[ship.get()] |= type;
@@ -319,6 +394,11 @@ void NPC::Do(const ShipEvent &event, PlayerInfo &player, UI *ui, bool isVisible)
 
 bool NPC::HasSucceeded(const System *playerSystem) const
 {
+	// If this NPC has been despawned or was never spawned in the first place
+	// then ignore its objectives.
+	if(!passedSpawnConditions || passedDespawnConditions)
+		return true;
+	
 	if(HasFailed())
 		return false;
 	
@@ -386,7 +466,12 @@ bool NPC::IsLeftBehind(const System *playerSystem) const
 
 
 bool NPC::HasFailed() const
-{					
+{
+	// If this NPC has been despawned or was never spawned in the first place
+	// then ignore its objectives.
+	if(!passedSpawnConditions || passedDespawnConditions)
+		return false;
+	
 	for(const auto &it : actions)
 	{
 		if(it.second & failIf)
@@ -416,6 +501,11 @@ NPC NPC::Instantiate(map<string, string> &subs, const System *origin, const Syst
 	result.failIf = failIf;
 	result.mustEvade = mustEvade;
 	result.mustAccompany = mustAccompany;
+	
+	result.passedSpawnConditions = passedSpawnConditions;
+	result.passedDespawnConditions = passedDespawnConditions;
+	result.toSpawn = toSpawn;
+	result.toDespawn = toDespawn;
 	
 	// Pick the system for this NPC to start out in.
 	result.system = system;
@@ -466,10 +556,13 @@ NPC NPC::Instantiate(map<string, string> &subs, const System *origin, const Syst
 			Fleet::Place(*result.system, *ship);
 	}
 	
-	// String replacement:
+	// String replacement: Added fleetsize substitutions. ajc.
 	if(!result.ships.empty())
+	{   int size = result.ships.size();
+		string number = size > 1 ? to_string(size) + " ships" : "ship";
 		subs["<npc>"] = result.ships.front()->Name();
-	
+		subs["<fleetsize>"] = number;
+	}
 	// Do string replacement on any dialog or conversation.
 	string dialogText = stockDialogPhrase ? stockDialogPhrase->Get()
 		: (!dialogPhrase.Name().empty() ? dialogPhrase.Get()

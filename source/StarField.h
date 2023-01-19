@@ -37,7 +37,7 @@ public:
 	void SetHaze(const Sprite *sprite);
 	
 	void Draw(const Point &pos, const Point &vel, double zoom = 1.) const;
-	
+	void DrawTop(const Point &pos, const Point &vel, double zoom = 1.) const;
 	
 private:
 	void SetUpGraphics();

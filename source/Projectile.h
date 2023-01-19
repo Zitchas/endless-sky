@@ -36,7 +36,7 @@ class Weapon;
 // projectiles that may look different or travel in a new direction.
 class Projectile : public Body {
 public:
-	Projectile(const Ship &parent, Point position, Angle angle, const Weapon *weapon);
+	Projectile(const Ship &parent, Point position, Angle angle, bool under, const Weapon *weapon);
 	Projectile(const Projectile &parent, const Weapon *weapon);
 	// Ship explosion.
 	Projectile(Point position, const Weapon *weapon);
@@ -59,10 +59,16 @@ public:
 	double Clip() const;
 	// This projectile was killed, e.g. by an anti-missile system.
 	void Kill();
-	
+	// Was projectile launched from a hardpoint below the ship.
+	bool DrawUnder() const;
+	bool fireUnder = false;
 	// Find out if this is a missile, and if so, how strong it is (i.e. what
 	// chance an anti-missile shot has of destroying it).
 	int MissileStrength() const;
+	int RemainingLifetime() const;
+	int homing = 0;
+	bool HasLock() const;
+	bool HitAll() const;
 	// Get information on the weapon that fired this projectile.
 	const Weapon &GetWeapon() const;
 	

@@ -62,7 +62,7 @@ public:
 	
 	// Determine what flotsam this asteroid will create.
 	const std::map<const Outfit *, int> &Payload() const;
-	
+	const std::map<std::string, int> &Stuff() const;
 	
 private:
 	std::string name;
@@ -92,6 +92,7 @@ private:
 	// has a 25% chance of surviving, meaning that usually the yield is much
 	// lower than the defined limit but occasionally you get quite lucky.
 	std::map<const Outfit *, int> payload;
+	std::map<std::string, int> stuff;
 	// Explosion effects created when this object is destroyed.
 	std::map<const Effect *, int> explosions;
 };

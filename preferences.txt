@@ -1,0 +1,66 @@
+volume 2.1
+"window size" 1680 980
+zoom 100
+"scroll speed" 60
+"view zoom" 4
+"Automatic aiming" 1
+"Automatic firing" 1
+"Clickable radar display" 1
+"Damaged fighters retreat" 1
+"Draw background haze" 1
+"Draw haze in background" 1
+"Draw starfield" 1
+"Escorts expend ammo" 0
+"Escorts use ammo frugally" 0
+"Fighter retreat health" 1
+"Fighters retreat" 1
+"Hide unexplored map regions" 0
+"Highlight player's flagship" 0
+"Interrupt fast-forward" 1
+"Main zoom factor" 1
+"Only show important messages" 1
+"Parallax background" 1
+"Render motion blur" 1
+"Repair fighters in" 1
+"Rotate flagship in HUD" 1
+"Ship outlines in shops" 0
+"Show CPU / GPU load" 1
+"Show escort systems on map" 1
+"Show hyperspace flash" 1
+"Show mini-map" 1
+"Show planet labels" 1
+"Show status overlays" 0
+"Turrets focus fire" 1
+"View zoom factor" 0
+"Warning icon" 1
+"Warning siren" 1
+fullscreen 0
+"help: bank" 1
+"help: basics 1" 0
+"help: basics 2" 0
+"help: dead" 1
+"help: disabled" 1
+"help: friendly disabled" 1
+"help: hiring" 1
+"help: jobs" 1
+"help: lost 1" 0
+"help: lost 2" 0
+"help: lost 3" 0
+"help: lost 4" 0
+"help: lost 5" 0
+"help: lost 6" 0
+"help: lost 7" 0
+"help: map" 1
+"help: map advanced ports" 1
+"help: map advanced shops" 1
+"help: multiple ship controls" 1
+"help: multiple ships" 1
+"help: navigation" 1
+"help: outfitter" 1
+"help: outfitter 2" 1
+"help: outfitter 3" 1
+"help: ship info" 1
+"help: stranded" 1
+"help: trading" 1
+maximized 1
+vsync 1

@@ -30,8 +30,8 @@ class Visual;
 class Hardpoint {
 public:
 	// Constructor. Hardpoints may or may not specify what weapon is in them.
-	Hardpoint(const Point &point, bool isTurret, const Outfit *outfit = nullptr);
-	
+	Hardpoint(const Point &point, const Angle &baseAngle, bool isTurret, bool isPylon, bool isParallel, bool isUnder, bool isDefensive, const Outfit *outfit = nullptr);
+
 	// Get the weapon installed in this hardpoint (or null if there is none).
 	const Outfit *GetOutfit() const;
 	// Get the location, relative to the center of the ship, from which
@@ -40,10 +40,17 @@ public:
 	const Point &GetPoint() const;
 	// Get the angle that this weapon is aimed at, relative to the ship.
 	const Angle &GetAngle() const;
+	// Get the base angle that this weapon is aimed at (without harmonization/convergence), relative to the ship.
+	const Angle &GetBaseAngle() const;
 	// Get the angle this weapon ought to point at for ideal gun harmonization.
 	Angle HarmonizedAngle() const;
 	// Shortcuts for querying weapon characteristics.
+	bool IsParallel() const;
 	bool IsTurret() const;
+	bool IsPylon() const;
+	bool IsGun() const;
+	bool IsUnder() const;
+	bool IsDefensive() const;
 	bool IsHoming() const;
 	bool IsAntiMissile() const;
 	bool CanAim() const;
@@ -52,6 +59,8 @@ public:
 	bool IsReady() const;
 	// Check if this weapon was firing in the previous step.
 	bool WasFiring() const;
+	bool ShouldFire() const;
+	void SetShouldFire() const;
 	// If this is a burst weapon, get the number of shots left in the burst.
 	int BurstRemaining() const;
 	// Perform one step (i.e. decrement the reload count).
@@ -86,15 +95,27 @@ private:
 	const Outfit *outfit = nullptr;
 	// Hardpoint location, in world coordinates relative to the ship's center.
 	Point point;
+	// Angle of firing direction (guns only).
+	Angle baseAngle;
+	// This hardpoint is for a turret or a gun.
+	bool isTurret = false;
+	bool isPylon = false;
+	bool isGun = false;
+	// Indicates if this hardpoint disallows converging (guns only).
+	bool isParallel = false;
+	// Indicates if this hardpoint is placed under the ship. ajc
+	bool isUnder = false;
+	// Defensive hardpoints are not included in weapon range calculations. ajc
+	bool isDefensive = false;
 	// Angle adjustment for convergence.
 	Angle angle;
 	// Reload timers and other attributes.
 	double reload = 0.;
 	double burstReload = 0.;
 	int burstCount = 0;
-	bool isTurret = false;
 	bool isFiring = false;
 	bool wasFiring = false;
+	mutable bool shouldFire = false;
 };
 
 

@@ -21,6 +21,7 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 #include "Interface.h"
 #include "LogbookPanel.h"
 #include "MissionPanel.h"
+#include "Planet.h"
 #include "PlayerInfo.h"
 #include "Preferences.h"
 #include "Rectangle.h"
@@ -29,9 +30,11 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 #include "System.h"
 #include "Table.h"
 #include "UI.h"
+#include "WeaponInfoPanel.h"
 
 #include <algorithm>
 #include <cmath>
+#include <limits>
 #include <utility>
 
 using namespace std;
@@ -122,7 +125,8 @@ void PlayerInfoPanel::Draw()
 	// Fill in the information for how this interface should be drawn.
 	Information interfaceInfo;
 	interfaceInfo.SetCondition("player tab");
-	if(canEdit && player.Ships().size() > 1)
+	// Added case for no flagship, possible with two ships to park one, sell the flagship and be unable to unpark the other. ajc.
+	if(canEdit && (player.Ships().size() > 1 || !player.Flagship()))
 	{
 		bool allParked = true;
 		bool hasOtherShips = false;
@@ -174,6 +178,13 @@ void PlayerInfoPanel::Draw()
 
 
 
+bool PlayerInfoPanel::AllowFastForward() const
+{
+	return true;
+}
+
+
+
 bool PlayerInfoPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &command, bool isNewPress)
 {
 	bool control = (mod & (KMOD_CTRL | KMOD_GUI));
@@ -187,6 +198,14 @@ bool PlayerInfoPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &comman
 		{
 			GetUI()->Pop(this);
 			GetUI()->Push(new ShipInfoPanel(player, selectedIndex));
+		}
+	}
+	else if(key == 'w')
+	{
+		if(!player.Ships().empty())
+		{
+			GetUI()->Pop(this);
+			GetUI()->Push(new WeaponInfoPanel(player, selectedIndex));
 		}
 	}
 	else if(key == SDLK_PAGEUP || key == SDLK_PAGEDOWN)
@@ -278,7 +297,7 @@ bool PlayerInfoPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &comman
 		if(selectedIndex >= 0)
 			allSelected.insert(selectedIndex);
 	}
-	else if(canEdit && (key == 'P' || (key == 'p' && shift)) && !allSelected.empty())
+	else if(canEdit && (key == 'P' || (key == 'p')) && !allSelected.empty())
 	{
 		// Toggle the parked status for all selected ships.
 		bool allParked = true;
@@ -297,7 +316,7 @@ bool PlayerInfoPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &comman
 				player.ParkShip(&ship, !allParked);
 		}
 	}
-	else if(canEdit && (key == 'A' || (key == 'a' && shift)) && player.Ships().size() > 1)
+	else if(canEdit && (key == 'A' || (key == 'a')) && player.Ships().size() > 1)
 	{
 		// Toggle the parked status for all ships except the flagship.
 		bool allParked = true;
@@ -363,7 +382,7 @@ bool PlayerInfoPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &comman
 
 
 
-bool PlayerInfoPanel::Click(int x, int y, int clicks)
+bool PlayerInfoPanel::Click(int /* x */, int /* y */, int clicks)
 {
 	// Do nothing if the click was not on one of the ships in the fleet list.
 	if(hoverIndex < 0)
@@ -378,7 +397,6 @@ bool PlayerInfoPanel::Click(int x, int y, int clicks)
 			allSelected.erase(hoverIndex);
 		else
 		{
-			isDragging = true;
 			if(allSelected.count(hoverIndex))
 			{
 				// If the click is on an already selected line, start dragging
@@ -421,6 +439,7 @@ bool PlayerInfoPanel::Hover(int x, int y)
 
 bool PlayerInfoPanel::Drag(double dx, double dy)
 {
+	isDragging = true;
 	return Hover(hoverPoint + Point(dx, dy));
 }
 
@@ -552,36 +571,42 @@ void PlayerInfoPanel::DrawFleet(const Rectangle &bounds)
 	Color bright = *GameData::Colors().Get("bright");
 	Color elsewhere = *GameData::Colors().Get("dim");
 	Color dead(.4f, 0.f, 0.f, 0.f);
+	Color active(0.f, .4f, .2f, 0.f);
 	
 	// Table attributes.
 	Table table;
 	table.AddColumn(0, Table::LEFT);
-	table.AddColumn(220, Table::LEFT);
-	table.AddColumn(350, Table::LEFT);
-	table.AddColumn(550, Table::RIGHT);
-	table.AddColumn(610, Table::RIGHT);
-	table.AddColumn(670, Table::RIGHT);
-	table.AddColumn(730, Table::RIGHT);
-	table.SetUnderline(0, 730);
+	table.AddColumn(200, Table::LEFT);
+	table.AddColumn(370, Table::LEFT);
+	table.AddColumn(600, Table::RIGHT);
+	table.AddColumn(660, Table::RIGHT);
+	table.AddColumn(720, Table::RIGHT);
+	table.AddColumn(780, Table::RIGHT);
+	table.AddColumn(840, Table::RIGHT);
+	table.AddColumn(900, Table::RIGHT);
+	table.AddColumn(960, Table::RIGHT);
+	table.SetUnderline(0, 960);
 	table.DrawAt(bounds.TopLeft() + Point(10., 8.));
 	
 	// Header row.
 	table.DrawUnderline(dim);
 	table.SetColor(bright);
-	table.Draw("ship");
-	table.Draw("model");
-	table.Draw("system");
-	table.Draw("shields");
-	table.Draw("hull");
-	table.Draw("fuel");
-	table.Draw("crew");
+	table.Draw("Ship");
+	table.Draw("Model");
+	table.Draw("System / Planet");
+	table.Draw("Shields");
+	table.Draw("Hull");
+	table.Draw("Fuel");
+	table.Draw("Crew");
+	table.Draw("Bunks");
+	table.Draw("Cargo");
+	table.Draw("Spare");
 	table.DrawGap(5);
 	
 	// Loop through all the player's ships.
 	int index = scroll;
-	auto sit = player.Ships().begin() + scroll;
 	const Font &font = FontSet::Get(14);
-	for( ; sit < player.Ships().end(); ++sit)
+	for(auto sit = player.Ships().begin() + scroll; sit < player.Ships().end(); ++sit)
 	{
 		// Bail out if we've used out the whole drawing area.
 		if(!bounds.Contains(table.GetRowBounds()))
@@ -596,17 +621,19 @@ void PlayerInfoPanel::DrawFleet(const Rectangle &bounds)
 		isElsewhere |= (ship.CanBeCarried() && player.GetPlanet());
 		bool isDead = ship.IsDestroyed() || ship.IsDisabled();
 		bool isHovered = (index == hoverIndex);
-		table.SetColor(isDead ? dead : isElsewhere ? elsewhere : isHovered ? bright : dim);
-		
+		bool isParked = ship.IsParked();
+		table.SetColor(isDead ? dead : !isParked ? active : isElsewhere ? elsewhere : isHovered ? bright : dim);
+
 		// Store this row's position, to handle hovering.
 		zones.emplace_back(table.GetCenterPoint(), table.GetRowSize(), index);
 		
 		// Indent the ship name if it is a fighter or drone.
-		table.Draw(font.TruncateMiddle(ship.CanBeCarried() ? "    " + ship.Name() : ship.Name(), 217));
+		table.Draw(font.TruncateMiddle(ship.CanBeCarried() ? "	" + ship.Name() : ship.Name(), 217));
 		table.Draw(ship.ModelName());
 		
 		const System *system = ship.GetSystem();
-		table.Draw(system ? system->Name() : "");
+		const Planet *planet = ship.GetPlanet();
+		table.Draw((system ? system->Name() : "") + " / " + (planet ? planet->Name() : ""));
 		
 		string shields = to_string(static_cast<int>(100. * max(0., ship.Shields()))) + "%";
 		table.Draw(shields);
@@ -625,6 +652,18 @@ void PlayerInfoPanel::DrawFleet(const Rectangle &bounds)
 			crewCount = min(crewCount, ship.RequiredCrew());
 		string crew = (ship.IsParked() ? "Parked" : to_string(crewCount));
 		table.Draw(crew);
+		
+		string bunks = to_string(static_cast<int>(
+			ship.Attributes().Get("bunks")));
+		table.Draw(bunks);
+
+		string cargo = to_string(static_cast<int>(
+			ship.Cargo().Used()));
+		table.Draw(cargo);
+		
+		string spare = to_string(static_cast<int>(
+			ship.Cargo().Free()));
+		table.Draw(spare);
 		
 		++index;
 	}

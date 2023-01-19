@@ -53,11 +53,13 @@ private:
 	// is added to the parent velocity.
 	double velocityScale = 1.;
 	double randomVelocity = 0.;
+	double initialVelocity = 0.;
 	double randomAngle = 0.;
 	double randomSpin = 0.;
 	double randomFrameRate = 0.;
 	
 	int lifetime = 0;
+	int randomLifetime = 0;
 	
 	// Allow the Visual class to access all these private members.
 	friend class Visual;
