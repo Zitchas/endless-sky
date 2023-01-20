@@ -187,7 +187,7 @@ namespace {
 					|| (point.lateral == Ship::EnginePoint::RIGHT && ship.LateralDirection() > 0.))
 					for(int i = 0; i < it.second && i < 3; ++i)
 					{
-						// scale engine flares by turn magnitude. ajc
+						// scale engine flares by turn magnitude. VCcomment
 						if(!(point.steering == Ship::EnginePoint::NONE))
 						{
 							Body sprite(it.first, pos, ship.Velocity(), ship.Facing() + point.facing, point.zoom * abs(ship.SteeringDirection()));
@@ -406,7 +406,7 @@ void Engine::Place(const list<NPC> &npcs, shared_ptr<Ship> flagship)
 			// crew by attrition over the course of many days.
 			ship->AddCrew(max(0, ship->RequiredCrew() - ship->Crew()));
 			if(!ship->IsDisabled())
-				// set Recharge(false) to retain damage to NPC between landings. ajc.
+				// set Recharge(false) to retain damage to NPC between landings. VCcomment.
 				ship->Recharge();
 
 			if(ship->CanBeCarried())
@@ -544,7 +544,7 @@ void Engine::Step(bool isActive)
 	const System *currentSystem = player.GetSystem();
 	const Planet *currentPlanet = player.GetPlanet();
 	// Update this here, for thread safety.
-	// Stop player destination being put into travel plan to allow better 'free' jumping. See change in Ai. ajc.
+	// Stop player destination being put into travel plan to allow better 'free' jumping. See change in Ai. VCcomment.
 	//if(!player.HasTravelPlan() && flagship && flagship->GetTargetSystem())
 	//	player.TravelPlan().push_back(flagship->GetTargetSystem());
 	if(player.HasTravelPlan() && currentSystem == player.TravelPlan().back())
@@ -695,7 +695,7 @@ void Engine::Step(bool isActive)
 			info.SetBar("overheat", min(1., heat - 1.));
 		if(flagship->IsOverheated() && (step / 20) % 2)
 			info.SetBar("overheat blink", min(1., heat));
-		// new thrust/turn/lateral bars. ajc.
+		// new thrust/turn/lateral bars. VCcomment.
 		info.SetBar("thrust", flagship->DisplayThrust());
 		info.SetBar("turn", flagship->DisplayTurn());
 		info.SetBar("lateralthrust", flagship->DisplayLateralThrust());
@@ -716,7 +716,7 @@ void Engine::Step(bool isActive)
 		const string &name = object->Name();
 		info.SetString("destination", name);
 
-		// Show landing planet sprite if there's no ship target. ajc
+		// Show landing planet sprite if there's no ship target. VCcomment
 		if(!flagship->GetTargetShip())
 		{
 		info.SetSprite("landing sprite", object->GetSprite(), object->Facing().Unit(), object->GetFrame(step));
@@ -745,7 +745,7 @@ void Engine::Step(bool isActive)
 		info.SetString("navigation mode", "Navigation:");
 		info.SetString("destination", "no destination");
 	}
-	// display travel plan final  system. ajc.
+	// display travel plan final  system. VCcomment.
 	if(flagship && !player.TravelPlan().empty())
 	{
 		info.SetString("travel", "Destination:");
@@ -753,7 +753,7 @@ void Engine::Step(bool isActive)
 		info.SetString("travel planet", travName);
 	}
 
-	// display travel destination ajc
+	// display travel destination VCcomment
 	if(flagship && player.TravelDestination())
 	{
 	const Planet *planet = player.TravelDestination();
@@ -762,10 +762,10 @@ void Engine::Step(bool isActive)
 		info.SetString("travel planet", travName);
 	}
 
-	//display x,y coordinates ajc
+	//display x,y coordinates VCcomment
 	if(flagship)
 	{
-		//Point position = player.GetSystem()->Position(); // Galactic Cooordinates. ajc
+		//Point position = player.GetSystem()->Position(); // Galactic Cooordinates. VCcomment
 		Point position = flagship->Position();
 		int d = position.Length();
 		int x = position.X();
@@ -794,7 +794,7 @@ void Engine::Step(bool isActive)
 	}
 	if(!target)
 		targetSwizzle = -1;
-	// temporarily removed "no target" string ajc
+	// temporarily removed "no target" string VCcomment
 	//if(!target && !targetAsteroid)
 		//info.SetString("target name", "no target");
 	else if(!target)
@@ -1146,7 +1146,7 @@ void Engine::Draw() const
 	}
 	if(jumpCount && Preferences::Has("Show mini-map"))
 		MapPanel::DrawMiniMap(player, .5f * min(1.f, jumpCount / 30.f), jumpInProgress, step);
-	// this shows the mini-map any time the player has a jump pending but needs work re wormholes. ajc
+	// this shows the mini-map any time the player has a jump pending but needs work re wormholes. VCcomment
 /*	else if(player.TravelPlan().size())
 	{
 		const System *jumpInProgress[2] = {player.GetSystem(), player.TravelPlan().back()};
@@ -1180,7 +1180,7 @@ void Engine::Draw() const
 
 		bool isSelected = it.first == player.SelectedWeapon();
 		double range = it.first->Range();
-		// Turn ammo count green when target is in range of the weaapon. ajc
+		// Turn ammo count green when target is in range of the weaapon. VCcomment
 		Ship *flagship = player.Flagship();
 		shared_ptr<const Ship> target = flagship->GetTargetShip();
 		if(target)
@@ -1298,13 +1298,13 @@ void Engine::EnterSystem()
 		return;
 
 	doEnter = true;
-	// Removed date increment here while testing running clock. ajc.
+	// Removed date increment here while testing running clock. VCcomment.
 	//player.IncrementDate();
 	//minCounter = 0;
 	const Date &today = player.GetDate();
 
 	const System *system = flagship->GetSystem();
-	// Remove annoying space station sounds. ajc.
+	// Remove annoying space station sounds. VCcomment.
 	//Audio::PlayMusic(system->MusicName());
 	GameData::SetHaze(system->Haze());
 
@@ -1359,7 +1359,7 @@ void Engine::EnterSystem()
 		// Check whether this is a minable or an ordinary asteroid.
 		if(a.Type())
 			asteroids.Add(a.Type(), a.Count() * 2, a.Energy(), system->AsteroidBelt());
-		// Removed tiled asteroids ajc
+		// Removed tiled asteroids VCcomment
 	//	else
 	//		asteroids.Add(a.Name(), a.Count(), a.Energy());
 	}
@@ -1646,7 +1646,7 @@ void Engine::CalculateStep()
 				Audio::Play(it.first);
 		}
 	}
-	// Draw the flotsam. Moved flotsam above ships to test. ajc.
+	// Draw the flotsam. Moved flotsam above ships to test. VCcomment.
 	for(const shared_ptr<Flotsam> &it : flotsam)
 		draw[calcTickTock].Add(*it);
 	// Draw the projectiles.
@@ -2054,7 +2054,7 @@ void Engine::DoCollisions(Projectile &projectile)
 	double closestHit = 1.;
 	shared_ptr<Ship> hit;
 	const Government *gov = projectile.GetGovernment();
-	// sets incoming count of homing projectiles in ship. ajc.
+	// sets incoming count of homing projectiles in ship. VCcomment.
 	if(projectile.GetWeapon().Homing())
 	{
 		shared_ptr<Ship> target = projectile.TargetPtr();
@@ -2413,7 +2413,7 @@ void Engine::AddSprites(const Ship &ship)
 			if(bay.side == Ship::Bay::OVER && bay.ship)
 				drawObject(*bay.ship);
 	 }
-	// draw ship overlay symbols at low zoom levels. ajc.
+	// draw ship overlay symbols at low zoom levels. VCcomment.
 	else
 	{
 		int overlaySprite = RadarType(ship, step);

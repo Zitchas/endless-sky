@@ -556,7 +556,7 @@ NPC NPC::Instantiate(map<string, string> &subs, const System *origin, const Syst
 			Fleet::Place(*result.system, *ship);
 	}
 	
-	// String replacement: Added fleetsize substitutions. ajc.
+	// String replacement: Added fleetsize substitutions. VCcomment.
 	if(!result.ships.empty())
 	{   int size = result.ships.size();
 		string number = size > 1 ? to_string(size) + " ships" : "ship";

@@ -125,7 +125,7 @@ void PlayerInfoPanel::Draw()
 	// Fill in the information for how this interface should be drawn.
 	Information interfaceInfo;
 	interfaceInfo.SetCondition("player tab");
-	// Added case for no flagship, possible with two ships to park one, sell the flagship and be unable to unpark the other. ajc.
+	// Added case for no flagship, possible with two ships to park one, sell the flagship and be unable to unpark the other. VCcomment.
 	if(canEdit && (player.Ships().size() > 1 || !player.Flagship()))
 	{
 		bool allParked = true;

@@ -426,7 +426,7 @@ void WeaponInfoPanel::DrawWeapons(const Rectangle &bounds)
 		// Multiply hardpoint X by 2 to convert to sprite pixels.
 		maxX = max(maxX, fabs(2. * hardpoint.GetPoint().X()));
 		bool isRight = hardpoint.GetPoint().X() >= 0.;
-		// Alternate between left and right counting of hardpoints which are dead centre. ajc.
+		// Alternate between left and right counting of hardpoints which are dead centre. VCcomment.
 		if(hardpoint.GetPoint().X() == 0.)
 		{
 			isRight = stayRight;
@@ -487,7 +487,7 @@ void WeaponInfoPanel::DrawWeapons(const Rectangle &bounds)
 			range = font.Truncate("[" + to_string(displayRange) + "]", 200);
 			//defensive = hardpoint.IsDefensive() ? "[Def]" : hardpoint.IsAntiMissile() ? "[AM]" : "[Of]";
 		}
-		// Alternate drawing of hardpoints which are dead centre. ajc.
+		// Alternate drawing of hardpoints which are dead centre. VCcomment.
 		bool isRight = hardpoint.GetPoint().X() >= 0.;
 		if(hardpoint.GetPoint().X() == 0.)
 		{

@@ -1134,7 +1134,7 @@ void Ship::Place(Point position, Point velocity, Angle angle)
 	if(government)
 		SetSwizzle(customSwizzle >= 0 ? customSwizzle : government->GetSwizzle());
 	
-	// Get the weapon ranges for this ship, so the Ai can call it. ajc
+	// Get the weapon ranges for this ship, so the Ai can call it. VCcomment
 	const vector<Hardpoint> &hardpoints = armament.Get();
 	for(unsigned i = 0; i < hardpoints.size(); ++i)
 	{
@@ -1149,7 +1149,7 @@ void Ship::Place(Point position, Point velocity, Angle angle)
 }
 
 
-// various weapon raanges for this ship. ajc.
+// various weapon raanges for this ship. VCcomment.
 double Ship::TurretRange() const
 {
 	return turretRange;
@@ -1398,7 +1398,7 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 		else
 			cloak = 0.;
 	}
-	// cloaking sparks. ajc
+	// cloaking sparks. VCcomment
 	if(cloak > 0 && cloak < 1)
 	{
 		double amount = Width() * Height() * .0001;
@@ -1507,7 +1507,7 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 			jumpLength = !isUsingJumpDrive ? (hyperspaceSystem->Position() - currentSystem->Position()).Length() * (3000) : 100;
 		//static const int HYPER_C = 100;
 		//static const double HYPER_A = 2.;
-		static const double HYPER_D = 16000.; //changed from 1000. ajc.
+		static const double HYPER_D = 16000.; //changed from 1000. VCcomment.
 		if(hyperspaceSystem && isUsingJumpDrive)
 			fuel -= hyperspaceFuelCost / jumpLength;
 		else if(hyperspaceCount == 0)
@@ -1568,7 +1568,7 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 			target= Point();
 			if(isUsingJumpDrive)
 			{
-				// Don't try to match the parent position if it is still hyperspacing. ajc.
+				// Don't try to match the parent position if it is still hyperspacing. VCcomment.
 				if(parent && parent->currentSystem == currentSystem && (!parent->hyperspaceCount || parent->IsUsingJumpDrive()))
 				{
 					position = parent->Position()  + (canBeCarried ? 200 : 1000) * Angle::Random().Unit();
@@ -1681,7 +1681,7 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 		else if(fuel >= attributes.Get("fuel capacity")
 				|| !landingPlanet || !landingPlanet->HasSpaceport())
 		{
-			// Testing if it's possible to have landed ships stay landed if their parent is still en route to planet. ajc.
+			// Testing if it's possible to have landed ships stay landed if their parent is still en route to planet. VCcomment.
 			if(!GetParent() || (GetParent() && !GetParent()->commands.Has(Command::LAND)))
 				zoom = min(1.f, zoom + .02f);
 			SetTargetStellar(nullptr);
@@ -1735,15 +1735,15 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 	bool isUsingAfterburner = false;
 	if(isDisabled)
 	{
-		//allow disabled ships to drift slowly, rather than stopping ajc
+		//allow disabled ships to drift slowly, rather than stopping VCcomment
 		if(velocity.Length() > .5)
 		velocity *= 1. - attributes.Get("drag") / mass;
 		angle += .1;
-		// degrade the hull, not mission ships. ajc
+		// degrade the hull, not mission ships. VCcomment
 		if(!personality.IsMarked() && !isYours)
 			hull -= (!Random::Int(20) ? 5 : 0);
 	
-	// Handle hull "leaks." added for disabled ships ajc
+	// Handle hull "leaks." added for disabled ships VCcomment
 	for(const Leak &leak : leaks)
 		if(leak.openPeriod > 0 && !Random::Int(leak.openPeriod))
 		{
@@ -1795,12 +1795,12 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 			}
 				
 		}
-	//  angular momentum to turning, change angle in line 1793 to angularMomentum and uncomment line below. ajc.
+	//  angular momentum to turning, change angle in line 1793 to angularMomentum and uncomment line below. VCcomment.
 	//	angle += angularMomentum;
-		// forward and reverse thrust. ajc.
+		// forward and reverse thrust. VCcomment.
 		
 		double thrustCommand = commands.Thrust();
-		// Reduce forward thrust if ship facing matches velocity and ship is nearing max speed. ajc.
+		// Reduce forward thrust if ship facing matches velocity and ship is nearing max speed. VCcomment.
 		if(MaxVelocity() && thrustCommand > 0 && !commands.Has(Command::AFTERBURNER) && angle.Unit().Dot(velocity.Unit()) > 0.99 && velocity.Length() >= MaxVelocity() * .90)
 			thrustCommand *= max(0., (1 - velocity.Length()/MaxVelocity())*10);
 		double thrust = 0.;
@@ -1829,7 +1829,7 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 				}
 			}
 		}
-		// lateral thrusters. ajc.
+		// lateral thrusters. VCcomment.
 		double latThrustCommand = commands.LateralThrust();// commands.Has(Command::STRAFERIGHT) - commands.Has(Command::STRAFELEFT);
 	 /*   if(!latThrustCommand)
 		{
@@ -1917,7 +1917,7 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 		}
 		acceleration = Point();
 	}
-	// Make slowing damage actually slow the ship as well as reduce engine thrust. ajc.
+	// Make slowing damage actually slow the ship as well as reduce engine thrust. VCcomment.
 	if(slowness)
 		velocity *= 1. / (1. + slowness * .001);
 	// Boarding:
@@ -1969,7 +1969,7 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 					if(isYours)
 						Messages::Add("You cannot board a ship while cloaked.");
 				}
-				/*new code to allow the boarding ship to carry ships outwith bay category. ajc
+				/*new code to allow the boarding ship to carry ships outwith bay category. VCcomment
 				else if(scoopee && attributes.Get("scooper") && !(scoopee->isYours && scoopee->parent.lock()))
 				{
 						if(Carry(scoopee, true))
@@ -2012,7 +2012,7 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 				for(int i = 0; i < it.second; ++i)
 					visuals.emplace_back(*it.first, pos, effectVelocity, angle);
 		}
-	// smoke effects from engine points when ship has slowing damage. ajc.
+	// smoke effects from engine points when ship has slowing damage. VCcomment.
 	if(!forget && slowness > 0.2 && isThrusting)
 		for(const EnginePoint &point : enginePoints)
 		{
@@ -2215,7 +2215,7 @@ void Ship::Launch(list<shared_ptr<Ship>> &ships, vector<Visual> &visuals)
 	// is landing, jumping, or cloaked. If already destroyed (e.g. self-destructing),
 	// eject any ships still docked, possibly destroying them in the process.
 	bool ejecting = IsDestroyed();
-	// Allow carried ships to launch while carrier is cloaked. ajc
+	// Allow carried ships to launch while carrier is cloaked. VCcomment
 	if(!ejecting && (!commands.Has(Command::DEPLOY) || zoom != 1.f || hyperspaceCount ))
 		return;
 	
@@ -2256,7 +2256,7 @@ void Ship::Launch(list<shared_ptr<Ship>> &ships, vector<Visual> &visuals)
 			Point exitPoint = position + angle.Rotate(bay.point);
 			// When ejected, ships depart haphazardly.
 			Angle launchAngle = ejecting ? Angle(exitPoint - position) : angle + bay.facing;
-			// Take random launch component out. ajc
+			// Take random launch component out. VCcomment
 			Point v = velocity + (.3 * maxV) * launchAngle.Unit();// + (.2 * maxV) * Angle::Random().Unit();
 			bay.ship->Place(exitPoint, v, launchAngle);
 			bay.ship->SetSystem(currentSystem);
@@ -2267,7 +2267,7 @@ void Ship::Launch(list<shared_ptr<Ship>> &ships, vector<Visual> &visuals)
 			// Create the desired launch effects.
 			for(const Effect *effect : bay.launchEffects)
 				visuals.emplace_back(*effect, exitPoint, velocity, launchAngle);
-			// this type of ship cannot be recalled, so clear the deploy command. ajc
+			// this type of ship cannot be recalled, so clear the deploy command. VCcomment
 		//	if(attributes.Get("scooper"))
 		//		bay.ship->SetDeployOrder(false);
 			bay.ship.reset();
@@ -2633,7 +2633,7 @@ bool Ship::IsReadyToJump(bool waitingIsReady) const
 	Point direction = targetSystem->Position() - currentSystem->Position();
 	bool isJump = !attributes.Get("hyperdrive") || !currentSystem->Links().count(targetSystem);
 	bool isScram = attributes.Get("scram drive") && currentSystem->Links().count(targetSystem);
-	// Make sure ship can't depart before it reaches the distance to the 'gate' ajc.
+	// Make sure ship can't depart before it reaches the distance to the 'gate' VCcomment.
 	if(!isJump && !isScram && position.Length() < 15900)
 		return false;
 	double scramThreshold = attributes.Get("scram drive");
@@ -3389,7 +3389,7 @@ void Ship::ApplyForce(const Point &force)
 	// Reduce acceleration of small ships and increase acceleration of large
 	// ones by having 30% of the force be based on a fixed mass of 400, i.e. the
 	// mass of a typical light warship:
-	// Changed this nonsense. ajc
+	// Changed this nonsense. VCcomment
 	acceleration += force / currentMass;
 
 }
@@ -3463,10 +3463,10 @@ bool Ship::CanBeCarried() const
 }
 
 
-// Changes to this method to allow forcing a ship to be carried. ajc
+// Changes to this method to allow forcing a ship to be carried. VCcomment
 bool Ship::Carry(const shared_ptr<Ship> &ship, bool force)
 {
-	// Stop disabled ships being carried, this happens because Engine::Place() only checks for destroyed ships. ajc.
+	// Stop disabled ships being carried, this happens because Engine::Place() only checks for destroyed ships. VCcomment.
 	if(!ship || ship->IsDisabled() || (!ship->CanBeCarried() && !force))
 		return false;
 	
@@ -3477,7 +3477,7 @@ bool Ship::Carry(const shared_ptr<Ship> &ship, bool force)
 		if((bay.category == category || force) && !bay.ship)
 		{
 			bay.ship = ship;
-			// let carried ship remain in system if external, to take damage. ajc
+			// let carried ship remain in system if external, to take damage. VCcomment
 		//	if(!bay.side)
 			ship->SetSystem(nullptr);
 			ship->SetPlanet(nullptr);
@@ -3491,7 +3491,7 @@ bool Ship::Carry(const shared_ptr<Ship> &ship, bool force)
 			ship->commands.Clear();
 			// If this fighter collected anything in space, try to store it
 			// (unless this is a player-owned ship).
-			// Let player fighters unload cargo if bays are internal. ajc
+			// Let player fighters unload cargo if bays are internal. VCcomment
 			if(bay.side == Bay::INSIDE && cargo.Free() && !ship->Cargo().IsEmpty())
 				ship->Cargo().TransferAll(cargo);
 			// Return unused fuel to the carrier, for any launching fighter that needs it.
@@ -3645,14 +3645,14 @@ void Ship::AddOutfit(const Outfit *outfit, int count)
 		attributes.Add(*outfit, count);
 		if(outfit->IsWeapon())
 			armament.Add(outfit, count);
-		// allow adding a turret to a ship. ajc
+		// allow adding a turret to a ship. VCcomment
 	/*	if(outfit->Get("addturret") && count == 1)
 		{
 			int turret =  attributes.Get("turret mounts");
 			int x = attributes.Get("position x");
 			int y = attributes.Get("position y");
 			Point coord = Point(x,y);
-			// send false, false to armament for now, replace with bool isUnder and isDefensive later. ajc
+			// send false, false to armament for now, replace with bool isUnder and isDefensive later. VCcomment
 			armament.AddTurret(coord, false, false, nullptr);
 			attributes.Set("turret mounts", turret + 1);
 			baseAttributes.Set("turret mounts", turret +1);
@@ -3722,7 +3722,7 @@ void Ship::ExpendAmmo(const Weapon *weapon)
 	energy -= weapon->FiringEnergy();
 	fuel -= weapon->FiringFuel();
 	heat += weapon->FiringHeat();
-	// Test - reloads ammo from cargo, needs a delaay and limits. ajc.
+	// Test - reloads ammo from cargo, needs a delaay and limits. VCcomment.
 	for(const auto &it : cargo.Outfits())
 		if(it.first == weapon->Ammo() && it.second >= 1)
 		{
@@ -3973,7 +3973,7 @@ void Ship::CreateSparks(vector<Visual> &visuals, const Effect *effect, double am
 		amount -= Random::Real();
 		if(amount <= 0.)
 			break;
-		//Reach of effects increased to encompass carried ships. ajc
+		//Reach of effects increased to encompass carried ships. VCcomment
 		Point point((Random::Real() - .5) * Width() * 2,
 			(Random::Real() - .5) * Height() * 2);
 		if(HasBays())

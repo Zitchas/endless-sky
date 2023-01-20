@@ -523,7 +523,7 @@ void ShopPanel::DrawShip(const Ship &ship, const Point &center, bool isSelected)
 		float zoom = min(1.f, zoomSize / max(sprite->Width(), sprite->Height()));
 		SpriteShader::Draw(sprite, center, zoom, swizzle);
 	}
-	// Draw the ship name. Move the ship name in front of the thumbnail. ajc
+	// Draw the ship name. Move the ship name in front of the thumbnail. VCcomment
 	const Font &font = FontSet::Get(14);
 	const string &name = ship.Name().empty() ? ship.ModelName() : font.TruncateMiddle(ship.Name(), SIDE_WIDTH - 61);
 	Point offset(-.5f * font.Width(name), -.5f * SHIP_SIZE + 10.f);
@@ -583,7 +583,7 @@ bool ShopPanel::KeyDown(SDL_Keycode key, Uint16 mod, const Command &command, boo
 		player.UpdateCargoCapacities();
 		GetUI()->Pop(this);
 	}
-	/* pops up the info panel from outfitter, conflict over key 'i' ajc
+	/* pops up the info panel from outfitter, conflict over key 'i' VCcomment
 	else if(command.Has(Command::INFO))
 	{
 		GetUI()->Push(new PlayerInfoPanel(player));

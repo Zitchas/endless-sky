@@ -324,7 +324,7 @@ void TradingPanel::Buy(int64_t amount)
 	{
 		amount = min(min(amount, available), min<int64_t>(player.Cargo().Free(), player.Accounts().Credits() / price));
 		player.AdjustBasis(type, amount * price);
-		tonsSold -= amount; //remove any amount bought from the sold total. ajc
+		tonsSold -= amount; //remove any amount bought from the sold total. VCcomment
 	}
 	else
 	{

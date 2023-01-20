@@ -150,7 +150,7 @@ void Projectile::Move(vector<Visual> &visuals, vector<Projectile> &projectiles)
 	{
 		// Vector d is the direction we want to turn towards.
 		Point d = target->Position() - position;
-		// add this back in for projectile innacuracy and remove line above. ajc
+		// add this back in for projectile innacuracy and remove line above. VCcomment
 		//Point d = target->Position() + Angle::Random().Unit() * sqrt(target->Attributes().Get("radar jamming")) - position;
 		Point unit = d.Unit();
 		double drag = weapon->Drag();

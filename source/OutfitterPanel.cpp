@@ -103,7 +103,7 @@ int OutfitterPanel::DrawPlayerShipInfo(const Point &point)
 bool OutfitterPanel::HasItem(const string &name) const
 {
 	const Outfit *outfit = GameData::Outfits().Get(name);
-	// only show license(s) when the flagship is selected as they are 'carried' by the player. ajc
+	// only show license(s) when the flagship is selected as they are 'carried' by the player. VCcomment
 	if(!(playerShip == player.Flagship()) && HasLicense(name))
 	{
 		return false;
@@ -856,7 +856,7 @@ void OutfitterPanel::CheckRefill()
 	map<const Outfit *, int> needed;
 	for(const shared_ptr<Ship> &ship : player.Ships())
 	{
-		//Don't check parked ships for ammo refill. ajc
+		//Don't check parked ships for ammo refill. VCcomment
 		if(ship->GetSystem() != player.GetSystem() || ship->IsDisabled() || ship->IsParked())
 			continue;
 		
@@ -899,7 +899,7 @@ void OutfitterPanel::Refill()
 {
 	for(const shared_ptr<Ship> &ship : player.Ships())
 	{
-		if(ship->GetSystem() != player.GetSystem() || ship->IsDisabled() || ship->IsParked()) //Don't refill parked ships. AJC
+		if(ship->GetSystem() != player.GetSystem() || ship->IsDisabled() || ship->IsParked()) //Don't refill parked ships. VCcomment
 			continue;
 		
 		set<const Outfit *> toRefill;

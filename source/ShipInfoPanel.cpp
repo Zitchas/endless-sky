@@ -704,7 +704,7 @@ void ShipInfoPanel::Rename(const string &name)
 
 bool ShipInfoPanel::CanDump() const
 {
-	// disable dump cargo for carried ships. ajc
+	// disable dump cargo for carried ships. VCcomment
 	if(canEdit || shipIt == player.Ships().end() || (*shipIt)->IsParked() || !(*shipIt)->GetSystem())
 		return false;
 	

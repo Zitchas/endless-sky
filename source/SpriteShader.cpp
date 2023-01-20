@@ -174,7 +174,7 @@ void SpriteShader::Init()
 }
 
 
-// Added extra parameter to allow rotation of image. ajc
+// Added extra parameter to allow rotation of image. VCcomment
 void SpriteShader::Draw(const Sprite *sprite, const Point &position, float zoom, int swizzle, float frame, const Point &unit)
 {
 	if(!sprite)
@@ -188,7 +188,7 @@ void SpriteShader::Draw(const Sprite *sprite, const Point &position, float zoom,
 	item.position[0] = static_cast<float>(position.X());
 	item.position[1] = static_cast<float>(position.Y());
 	// Rotation (none) and scale.
-	// Changed transform  to allow rotation of image. ajc
+	// Changed transform  to allow rotation of image. VCcomment
 	double width = sprite->Width();
 	double height = sprite->Height();
 	Point uw = unit * width;

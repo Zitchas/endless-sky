@@ -294,7 +294,7 @@ private:
 	std::map<const Ship *, int> groups;
 	CargoHold cargo;
 	std::map<std::string, int64_t> costBasis;
-	std::map<std::string, int64_t> purchasedToday;  //ajc
+	std::map<std::string, int64_t> purchasedToday;  //VCcomment
 	std::multimap<Date, std::string> logbook;
 	std::map<std::string, std::map<std::string, std::string>> specialLogs;
 	

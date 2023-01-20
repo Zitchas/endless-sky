@@ -500,7 +500,7 @@ void GameData::StepEconomy()
 		System &system = const_cast<System &>(*pit.first);
 		for(const auto &cit : pit.second)
 		{
-			int change = min(0, cit.second); // ajc added to prevent large purchases increasing price.
+			int change = min(0, cit.second); // VCcomment added to prevent large purchases increasing price.
 			system.SetSupply(cit.first, system.Supply(cit.first) - change);
 		}
 	}
@@ -535,7 +535,7 @@ void GameData::StepEconomy()
 
 void GameData::AddPurchase(const System &system, const string &commodity, int tons)
 {
-	//if(tons < 0) removed in favour of limits in stepeconomy ajc
+	//if(tons < 0) removed in favour of limits in stepeconomy VCcomment
 		purchases[&system][commodity] += tons;
 }
 

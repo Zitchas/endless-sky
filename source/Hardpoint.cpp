@@ -227,7 +227,7 @@ void Hardpoint::Aim(double amount)
 
 
 
-// shouldFire is mutable. ajc.
+// shouldFire is mutable. VCcomment.
 void Hardpoint::SetShouldFire() const
 {
 	shouldFire = true;
@@ -295,7 +295,7 @@ bool Hardpoint::FireAntiMissile(Ship &ship, const Projectile &projectile, vector
 	start += aim.Rotate(outfit->HardpointOffset());
 	
 	//Only use any regular fire/hit/die effects if all missile effcts maps are empty, this indicate a regular antimissile weapon
-	// and backwards compatibility is required. ajc
+	// and backwards compatibility is required. VCcomment
 	bool missileEffects = !(outfit->MissileHitEffects().empty() && outfit->MissileDieEffects().empty());
 	
 	CreateEffects(outfit->FireEffects(), start, ship.Velocity(), aim, IsUnder(), visuals);
@@ -311,7 +311,7 @@ bool Hardpoint::FireAntiMissile(Ship &ship, const Projectile &projectile, vector
 	Fire(ship, start, aim);
 	
 	// Check whether the missile was destroyed.
-	// Changed to >= and +1 missile strength for testing AM against non missiles ajc.
+	// Changed to >= and +1 missile strength for testing AM against non missiles VCcomment.
 	return (Random::Int(strength) >= Random::Int(projectile.MissileStrength()+1));
 }
 

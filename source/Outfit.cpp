@@ -116,7 +116,7 @@ void Outfit::Load(const DataNode &node)
 		name = node.Token(1);
 		pluralName = name + 's';
 	}
-	description.clear(); //added to clear duplicate descriptions ajc
+	description.clear(); //added to clear duplicate descriptions VCcomment
 	for(const DataNode &child : node)
 	{
 		if(child.Token(0) == "category" && child.Size() >= 2)

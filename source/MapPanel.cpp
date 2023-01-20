@@ -976,7 +976,7 @@ void MapPanel::DrawTravelPlan()
 		LineShader::Draw(from - unit, to + unit, 3.f, drawColor);
 		
 		const Font &font = FontSet::Get(18);
-		// Shows either link length or ship which can follow parent. ajc.
+		// Shows either link length or ship which can follow parent. VCcomment.
 		// Choose one of the following two lines and commebt out the other.
 	//	int linkLength = ((from - to).Length() / Zoom());
 	//	const string &allMessage = to_string(linkLength);

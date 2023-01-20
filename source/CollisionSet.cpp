@@ -186,7 +186,7 @@ Body *CollisionSet::Line(const Point &from, const Point &to, double *closestHit,
 				continue;
 			if(it->body != target && locked)
 				continue;
-			/* stops projectiles hitting cloaked ships. ajc
+			/* stops projectiles hitting cloaked ships. VCcomment
 			Ship *ship = reinterpret_cast<Ship *>(it->body);
 			if(ship && ship->Cloaking())
 				continue;*/
@@ -268,7 +268,7 @@ Body *CollisionSet::Line(const Point &from, const Point &to, double *closestHit,
 				continue;
 			if(it->body != target && locked)
 				continue;
-			/* stops projectiles hitting cloaked ships. ajc
+			/* stops projectiles hitting cloaked ships. VCcomment
 			Ship *ship = reinterpret_cast<Ship *>(it->body);
 			if(ship && ship->Cloaking())
 				continue;*/

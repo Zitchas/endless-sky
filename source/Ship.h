@@ -257,7 +257,7 @@ public:
 	// If negative, the ship is steering left.
 	double SteeringDirection() const;
 	double LateralDirection() const;
-	//set and count incoming projectiles. ajc.
+	//set and count incoming projectiles. VCcomment.
 	int CountIncoming() const;
 	void SetIncoming(int count = 0);
 	int CountTargeting() const;

@@ -51,7 +51,7 @@ void Minable::Load(const DataNode &node)
 			int count = (child.Size() == 2 ? 1 : child.Value(2));
 			if(child.Token(0) == "payload")
 				payload[GameData::Outfits().Get(child.Token(1))] += count;
-			// Commodities as payload. ajc
+			// Commodities as payload. VCcomment
 			else if(child.Token(0) == "stuff")
 				stuff[child.Token(1)] += count;
 			//	for(const auto &it : GameData::Commodities())

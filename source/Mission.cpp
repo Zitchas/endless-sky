@@ -1147,7 +1147,7 @@ Mission Mission::Instantiate(const PlayerInfo &player, const shared_ptr<Ship> &b
 	
 	// Set the deadline, if requested.
 	if(deadlineBase || deadlineMultiplier)
-		// removed jumps while testing continuous time. ajc.
+		// removed jumps while testing continuous time. VCcomment.
 		result.deadline = player.GetDate() + deadlineBase + deadlineMultiplier;
 	
 	// Copy the conditions. The offer conditions must be copied too, because they

@@ -103,9 +103,9 @@ private:
 	bool isGun = false;
 	// Indicates if this hardpoint disallows converging (guns only).
 	bool isParallel = false;
-	// Indicates if this hardpoint is placed under the ship. ajc
+	// Indicates if this hardpoint is placed under the ship. VCcomment
 	bool isUnder = false;
-	// Defensive hardpoints are not included in weapon range calculations. ajc
+	// Defensive hardpoints are not included in weapon range calculations. VCcomment
 	bool isDefensive = false;
 	// Angle adjustment for convergence.
 	Angle angle;

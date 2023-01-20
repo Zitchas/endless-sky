@@ -117,7 +117,7 @@ public:
 	Command AndNot(Command command) const;
 	
 	// Get or set the turn, thrust and lateral amount. The amount must be between -1 and 1, but it
-	// can be a fractional value to allow finer control. ajc
+	// can be a fractional value to allow finer control. VCcomment
 	void SetTurn(double amount);
 	double Turn() const;
 	void SetThrust(double amount);

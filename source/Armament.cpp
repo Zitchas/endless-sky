@@ -41,7 +41,7 @@ void Armament::AddTurret(const Point &point, const Angle &angle, bool isUnder, b
 
 
 
-// AAdd a pylon (for missiles). ajc.
+// AAdd a pylon (for missiles). VCcomment.
 void Armament::AddPylon(const Point &point, bool isUnder, const Outfit *outfit)
 {
 	hardpoints.emplace_back(point, Angle(0.), false, true, false, isUnder, false, outfit);
@@ -259,7 +259,7 @@ void Armament::Step(const Ship &ship)
 	for(auto &it : streamReload)
 	{
 		int count = ship.OutfitCount(it.first);
-		// If this weapon mounts on a pylon don't count the number to determine the reload speed. ajc.
+		// If this weapon mounts on a pylon don't count the number to determine the reload speed. VCcomment.
 		bool pylon = it.first->Get("pylon mounts");
 		it.second -= pylon ? 1 : count;
 		// Always reload to the quickest firing interval.
