@@ -24,6 +24,8 @@ install/
 Release/
 *.layout
 *.depend
+.git
+.github
 scons-local*
 .sconsign.dblite
 /*.d
