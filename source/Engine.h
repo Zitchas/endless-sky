@@ -16,9 +16,11 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 #include "AI.h"
 #include "AsteroidField.h"
 #include "BatchDrawList.h"
+#include "BatchDrawUnderList.h"
 #include "CollisionSet.h"
 #include "Command.h"
 #include "DrawList.h"
+#include "DrawListUnder.h"
 #include "EscortDisplay.h"
 #include "Information.h"
 #include "Point.h"
@@ -78,6 +80,10 @@ public:
 	
 	// Draw a frame.
 	void Draw() const;
+	void DrawUnder() const;
+	
+	// Give an (automated/scripted) command on behalf of the player.
+	void GiveCommand(const Command &command);
 	
 	// Select the object the player clicked on.
 	void Click(const Point &from, const Point &to, bool hasShift);
@@ -165,7 +171,9 @@ private:
 	bool terminate = false;
 	bool wasActive = false;
 	DrawList draw[2];
+	DrawListUnder drawUnder[2];
 	BatchDrawList batchDraw[2];
+	BatchDrawUnderList batchDrawUnder[2];
 	Radar radar[2];
 	// Viewport position and velocity.
 	Point center;
@@ -175,6 +183,8 @@ private:
 	std::vector<Target> targets;
 	Point targetVector;
 	Point targetUnit;
+	int slow = 0;
+	double solar = 0;
 	int targetSwizzle = -1;
 	EscortDisplay escorts;
 	std::vector<Status> statuses;
@@ -187,6 +197,8 @@ private:
 	float highlightFrame = 0.f;
 	
 	int step = 0;
+	int minCounter = 0;
+	int hourCounter = 0;
 	
 	std::list<ShipEvent> eventQueue;
 	std::list<ShipEvent> events;

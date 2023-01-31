@@ -54,6 +54,7 @@ protected:
 private:
 	// Handle a change to what ship is shown.
 	void UpdateInfo();
+	void ClearZones();
 	
 	// Draw the ship tab (and its subsections).
 	void DrawShipStats(const Rectangle &bounds);
@@ -76,7 +77,7 @@ private:
 	PlayerInfo &player;
 	// This is the currently selected ship.
 	std::vector<std::shared_ptr<Ship>>::const_iterator shipIt;
-	
+	int shipIndex = 0;
 	// Information about the currently selected ship.
 	ShipInfoDisplay info;
 	std::map<std::string, std::vector<const Outfit *>> outfits;
@@ -85,11 +86,10 @@ private:
 	std::vector<ClickZone<int>> zones;
 	std::vector<ClickZone<std::string>> commodityZones;
 	std::vector<ClickZone<const Outfit *>> plunderZones;
-	// Keep track of which item the mouse is hovering over, which item was most
-	// recently selected, and which item is currently being dragged.
+	// Keep track of which item the mouse is hovering over and which item is
+	// currently being dragged.
 	int hoverIndex = -1;
 	int draggingIndex = -1;
-	int selectedIndex = -1;
 	// Track the current mouse location.
 	Point hoverPoint;
 	// You can only make changes to ships when landed on a planet.

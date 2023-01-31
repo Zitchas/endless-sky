@@ -49,6 +49,8 @@ public:
 	const std::map<const Effect *, int> &FireEffects() const;
 	const std::map<const Effect *, int> &LiveEffects() const;
 	const std::map<const Effect *, int> &HitEffects() const;
+	const std::map<const Effect *, int> &MissileHitEffects() const;
+	const std::map<const Effect *, int> &MissileDieEffects() const;
 	const std::map<const Effect *, int> &DieEffects() const;
 	const std::map<const Outfit *, int> &Submunitions() const;
 	
@@ -68,9 +70,11 @@ public:
 	// firing all at once (clustering) if the weapon is not an anti-missile and
 	// is not vulnerable to anti-missile, or has the "stream" attribute.
 	bool IsStreamed() const;
+	bool IsParallel() const;
 	
 	double Velocity() const;
 	double RandomVelocity() const;
+	double WeightedVelocity() const;
 	double Acceleration() const;
 	double Drag() const;
 	const Point &HardpointOffset() const;
@@ -99,6 +103,9 @@ public:
 	// everything else, including asteroids.
 	bool IsSafe() const;
 	bool IsPhasing() const;
+	bool IsPeriodic() const;
+	bool HitAll() const;
+	bool IsTimed() const;
 	// Blast radius weapons will scale damage and hit force based on distance,
 	// unless the "no damage scaling" keyphrase is used in the weapon definition.
 	bool IsDamageScaled() const;
@@ -146,6 +153,8 @@ private:
 	std::map<const Effect *, int> fireEffects;
 	std::map<const Effect *, int> liveEffects;
 	std::map<const Effect *, int> hitEffects;
+	std::map<const Effect *, int> missileHitEffects;
+	std::map<const Effect *, int> missileDieEffects;
 	std::map<const Effect *, int> dieEffects;
 	std::map<const Outfit *, int> submunitions;
 	
@@ -154,7 +163,16 @@ private:
 	bool isStreamed = false;
 	bool isSafe = false;
 	bool isPhasing = false;
+	bool isPeriodic = false;
+	bool hitAll = false;
+	bool isTimed = false;
 	bool isDamageScaled = true;
+	// Guns and missiles are by default aimed a converged point at the
+	// maximum weapons range in front of the ship. When either the installed
+	// weapon or the gun-port (or both) have the isParallel attribute set
+	// to true, then this convergence will not be used and the weapon will
+	// be aimed directly in the gunport angle/direction.
+	bool isParallel = false;
 	
 	// Attributes.
 	int lifetime = 0;
@@ -204,6 +222,9 @@ private:
 	
 	double piercing = 0.;
 	
+	double rangeOverride = 0.;
+	double velocityOverride = 0.;
+	
 	// Cache the calculation of these values, for faster access.
 	mutable bool calculatedDamage = true;
 	mutable bool doesDamage = false;
@@ -226,6 +247,7 @@ inline bool Weapon::IsStreamed() const { return isStreamed; }
 
 inline double Weapon::Velocity() const { return velocity; }
 inline double Weapon::RandomVelocity() const { return randomVelocity; }
+inline double Weapon::WeightedVelocity() const { return (velocityOverride > 0.) ? velocityOverride : velocity; }
 inline double Weapon::Acceleration() const { return acceleration; }
 inline double Weapon::Drag() const { return drag; }
 inline const Point &Weapon::HardpointOffset() const { return hardpointOffset; }
@@ -253,6 +275,9 @@ inline double Weapon::HitForce() const { return TotalDamage(HIT_FORCE); }
 
 inline bool Weapon::IsSafe() const { return isSafe; }
 inline bool Weapon::IsPhasing() const { return isPhasing; }
+inline bool Weapon::IsPeriodic() const { return isPeriodic; }
+inline bool Weapon::HitAll() const { return hitAll; }
+inline bool Weapon::IsTimed() const { return isTimed; }
 inline bool Weapon::IsDamageScaled() const { return isDamageScaled; }
 
 inline double Weapon::ShieldDamage() const { return TotalDamage(SHIELD_DAMAGE); }

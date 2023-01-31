@@ -32,7 +32,10 @@ namespace {
 	const string EXPEND_AMMO = "Escorts expend ammo";
 	const string FRUGAL_ESCORTS = "Escorts use ammo frugally";
 	
-	const vector<double> ZOOMS = {.25, .35, .50, .70, 1.00, 1.40, 2.00};
+	const vector<double> ZOOMS = {.05, .1, .2, .3, .4, .5, .6, .7, .80, .90, 1.00, 1.10, 1.20, 1.30, 1.40, 1.50, 1.60, 1.70, 1.80, 1.90, 2.00, 3.00, 4.00};
+	//const vector<double> ZOOMS = {.04375, .0625, .0875, .125, .175, .25, .35, .50, .70, 1.00, 1.40, 2.00, 2.80, 4.00};
+	//const vector<double> ZOOMS = {.125, .175, .25, .35, .50, .70, 1.00, 1.40, 2.00, 2.80};
+	//const vector<double> ZOOMS = {.25, .35, .50, .70, 1.00, 1.40, 2.00};
 	int zoomIndex = 4;
 	const double VOLUME_SCALE = .25;
 }
@@ -57,6 +60,8 @@ void Preferences::Load()
 	settings["Draw starfield"] = true;
 	settings["Hide unexplored map regions"] = true;
 	settings["Turrets focus fire"] = true;
+	settings["Ship outlines in shops"] = true;
+	settings["Interrupt fast-forward"] = true;
 	
 	DataFile prefs(Files::Config() + "preferences.txt");
 	for(const DataNode &node : prefs)

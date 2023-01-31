@@ -15,7 +15,6 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 #include "Color.h"
 #include "Dialog.h"
 #include "DistanceMap.h"
-#include "FillShader.h"
 #include "Font.h"
 #include "FontSet.h"
 #include "Format.h"
@@ -73,8 +72,13 @@ OutfitterPanel::OutfitterPanel(PlayerInfo &player)
 void OutfitterPanel::Step()
 {
 	CheckRefill();
-	DoHelp("outfitter");
 	ShopPanel::Step();
+	if(GetUI()->IsTop(this) && !checkedHelp) {
+		if(!DoHelp("outfitter") && !DoHelp("outfitter 2") && !DoHelp("outfitter 3")) {
+			// All help messages have now been displayed.
+			checkedHelp = true;
+		}
+	}
 }
 
 
@@ -99,6 +103,11 @@ int OutfitterPanel::DrawPlayerShipInfo(const Point &point)
 bool OutfitterPanel::HasItem(const string &name) const
 {
 	const Outfit *outfit = GameData::Outfits().Get(name);
+	// only show license(s) when the flagship is selected as they are 'carried' by the player. VCcomment
+	if(!(playerShip == player.Flagship()) && HasLicense(name))
+	{
+		return false;
+	}
 	if((outfitter.Has(outfit) || player.Stock(outfit) > 0) && showForSale)
 		return true;
 	
@@ -205,17 +214,80 @@ int OutfitterPanel::DetailWidth() const
 
 int OutfitterPanel::DrawDetails(const Point &center)
 {
-	if(!selectedOutfit)
-		return 0;
+	string selectedItem = "Nothing Selected";
+	const Font &font = FontSet::Get(14);
+	const Color &bright = *GameData::Colors().Get("bright");
+	const Color &dim = *GameData::Colors().Get("medium");
+	const Sprite *collapsedArrow = SpriteSet::Get("ui/collapsed");
 	
-	outfitInfo.Update(*selectedOutfit, player, CanSell());
-	Point offset(outfitInfo.PanelWidth(), 0.);
+	int heightOffset = 20;
 	
-	outfitInfo.DrawDescription(center - offset * 1.5 - Point(0., 10.));
-	outfitInfo.DrawRequirements(center - offset * .5 - Point(0., 10.));
-	outfitInfo.DrawAttributes(center + offset * .5 - Point(0., 10.));
+	if(selectedOutfit)
+	{
+		outfitInfo.Update(*selectedOutfit, player, CanSell());
+		selectedItem = selectedOutfit->Name();
+		
+		const Sprite *thumbnail = selectedOutfit->Thumbnail();
+		const Sprite *background = SpriteSet::Get("ui/outfitter selected");
+		
+		float tileSize = thumbnail
+			? max(thumbnail->Height(), static_cast<float>(TileSize()))
+			: static_cast<float>(TileSize());
+		
+		Point thumbnailCenter(center.X(), center.Y() + 20 + tileSize / 2);
+		
+		Point startPoint(center.X() - INFOBAR_WIDTH / 2 + 20, center.Y() + 20 + tileSize);
+		
+		double descriptionOffset = 35.;
+		Point descCenter(Screen::Right() - SIDE_WIDTH + INFOBAR_WIDTH / 2, startPoint.Y() + 20.);
+		
+		// Maintenance note: This can be replaced with collapsed.contains() in C++20
+		if(!collapsed.count("description"))
+		{
+			descriptionOffset = outfitInfo.DescriptionHeight();
+			outfitInfo.DrawDescription(startPoint);
+		}
+		else
+		{
+			std::string label = "description";
+			font.Draw(label, startPoint + Point(35., 12.), dim);
+			SpriteShader::Draw(collapsedArrow, startPoint + Point(20., 20.));
+		}
+		
+		// Calculate the new ClickZone for the description.
+		Point descDimensions(INFOBAR_WIDTH, descriptionOffset + 10.);
+		ClickZone<std::string> collapseDescription = ClickZone<std::string>(descCenter, descDimensions, std::string("description"));
+		
+		// Find the old zone, and replace it with the new zone.
+		for(auto it = categoryZones.begin(); it != categoryZones.end(); ++it)
+		{
+			if(it->Value() == "description")
+			{
+				categoryZones.erase(it);
+				break;
+			}
+		}
+		categoryZones.emplace_back(collapseDescription);
+		
+		Point attrPoint(startPoint.X(), startPoint.Y() + descriptionOffset);
+		Point reqsPoint(startPoint.X(), attrPoint.Y() + outfitInfo.AttributesHeight());
+		
+		SpriteShader::Draw(background, thumbnailCenter);
+		if(thumbnail)
+			SpriteShader::Draw(thumbnail, thumbnailCenter);
+		
+		outfitInfo.DrawAttributes(attrPoint);
+		outfitInfo.DrawRequirements(reqsPoint);
+		
+		heightOffset = reqsPoint.Y() + outfitInfo.RequirementsHeight();
+	}
 	
-	return outfitInfo.MaximumHeight();
+	// Draw this string representing the selected item (if any), centered in the details side panel
+	Point selectedPoint(
+		center.X() - font.Width(selectedItem) / 2, center.Y());
+	font.Draw(selectedItem, selectedPoint, bright);
+	
+	return heightOffset;
 }
 
 
@@ -337,6 +409,9 @@ void OutfitterPanel::Buy(bool fromCargo)
 			if(required && ship->Crew() + required <= static_cast<int>(ship->Attributes().Get("bunks")))
 				ship->AddCrew(required);
 			ship->Recharge();
+			if(selectedOutfit->Get("addturret"))
+					GetUI()->Push(new Dialog(
+					"Your ship has been upgraded with an additional turret mount. This is not reversible"));
 		}
 	}
 }
@@ -515,9 +590,13 @@ void OutfitterPanel::Sell(bool toCargo)
 			if(selectedOutfit->Get("required crew"))
 				ship->AddCrew(-selectedOutfit->Get("required crew"));
 			ship->Recharge();
-			if(toCargo && player.Cargo().Add(selectedOutfit))
+			if(toCargo)
 			{
-				// Transfer to cargo completed.
+				// Transfer to cargo even if it would exceed the capacity.
+				int size = player.Cargo().Size();
+				player.Cargo().SetSize(-1);
+				player.Cargo().Add(selectedOutfit);
+				player.Cargo().SetSize(size);
 			}
 			else
 			{
@@ -688,7 +767,8 @@ bool OutfitterPanel::ShipCanSell(const Ship *ship, const Outfit *outfit)
 {
 	if(!ship->OutfitCount(outfit))
 		return false;
-	
+	if(outfit->Get("permanent"))
+		return false;
 	// If this outfit requires ammo, check if we could sell it if we sold all
 	// the ammo for it first.
 	const Outfit *ammo = outfit->Ammo();
@@ -711,8 +791,12 @@ void OutfitterPanel::DrawOutfit(const Outfit &outfit, const Point &center, bool 
 	const Sprite *back = SpriteSet::Get(
 		isSelected ? "ui/outfitter selected" : "ui/outfitter unselected");
 	SpriteShader::Draw(back, center);
-	SpriteShader::Draw(thumbnail, center);
-	
+	if(thumbnail)
+	{
+	const float zoomSize = OUTFIT_SIZE - 60.f;
+	float zoom = min(1.f, zoomSize / max(thumbnail->Width(), thumbnail->Height()));
+	SpriteShader::Draw(thumbnail, center, zoom);
+	}
 	// Draw the outfit name.
 	const string &name = outfit.Name();
 	const Font &font = FontSet::Get(14);
@@ -772,7 +856,8 @@ void OutfitterPanel::CheckRefill()
 	map<const Outfit *, int> needed;
 	for(const shared_ptr<Ship> &ship : player.Ships())
 	{
-		if(ship->GetSystem() != player.GetSystem() || ship->IsDisabled())
+		//Don't check parked ships for ammo refill. VCcomment
+		if(ship->GetSystem() != player.GetSystem() || ship->IsDisabled() || ship->IsParked())
 			continue;
 		
 		++count;
@@ -814,7 +899,7 @@ void OutfitterPanel::Refill()
 {
 	for(const shared_ptr<Ship> &ship : player.Ships())
 	{
-		if(ship->GetSystem() != player.GetSystem() || ship->IsDisabled())
+		if(ship->GetSystem() != player.GetSystem() || ship->IsDisabled() || ship->IsParked()) //Don't refill parked ships. VCcomment
 			continue;
 		
 		set<const Outfit *> toRefill;

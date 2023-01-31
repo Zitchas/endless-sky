@@ -27,6 +27,7 @@ color "conversation background" .125 .125 .125 1.
 color "map side panel background" .125 .125 .125 1.
 color "shop side panel background" .2 .2 .2 1.
 color "shop side panel footer" .3 .3 .3 1.
+color "shop info panel background" .055 .055 .055 1.
 color "tooltip background" .2 .2 .2 1.
 color "logbook sidebar" .09 .09 .09 1.
 color "logbook background" .125 .125 .125 1.
@@ -61,14 +62,17 @@ color "waypoint back" 0. .3 .7 .5
 
 # Colors for the Escort HUD that is displayed in-flight.
 color "escort present" .8 .8 .8 1.
+color "escort cloaked"  .9 0 .9 1.
+color "escort disabled" 1. 0 0 1.
 color "escort elsewhere" .4 .4 .6 1.
 color "escort not ready" .9 .8 0. 1.
 color "escort blocked" .9 .2 0. 1.
 color "escort selected" .2 .8 0. 1.
 color "escort hostile" 1. .6 .4 1.
+color "blink" 1. 1. 1. 1.
 
 # Colors used when "status overlays" are enabled, and to show scan progress.
-color "overlay friendly shields" 0. .5 0. .25
+color "overlay friendly shields" 0. 0. 1. .25
 color "overlay friendly hull" .45 .5 0. .25
 color "overlay friendly disabled" .5 0 0 .25
 color "overlay hostile shields" .5 .15 0. .25
@@ -78,7 +82,8 @@ color "overlay outfit scan" .5 .5 .5 .25
 color "overlay cargo scan" .7 .7 .7 .25
 
 # Colors used in the radar map while in-flight.
-color "radar player" .2 1. 0. 0.
+color "radar player" .2 .8 0. 0.
+color "radar cloaked" .15 .52 .40 0.
 color "radar friendly" .4 .6 1. 0.
 color "radar unfriendly" .8 .8 .4 0.
 color "radar hostile" 1. .6 .4 0.
@@ -306,23 +311,33 @@ interface "hud"
 	sprite "ui/status"
 		from 0 0
 		align top right
-	
 	string "location"
-		from -20 25
+		from -15 25
 		color "medium"
 		align right
 	string "date"
-		from -20 45
+		from -60 45
+		color "medium"
+		align right
+	string "hour"
+		from -35 45
+		color "medium"
+		align right
+	string "minute"
+		from -15 45
 		color "medium"
 		align right
 	string "credits"
-		from -20 65
+		from -15 65
 		color "medium"
 		align right
-	
 	outline "player sprite"
 		center -75 155
 		dimensions 70 70
+	outline "velocity sprite"
+		center -75 155
+		dimensions 70 70
+		colored
 	ring "shields"
 		center -75 155
 		dimensions 120 120
@@ -338,6 +353,22 @@ interface "hud"
 		dimensions 110 110
 		color "disabled hull"
 		size 1.5
+	string "speed"
+		from -70 240
+		color "medium"
+		align right
+	string "slow"
+		from -70 268
+		color "medium"
+		align right
+	string "solar"
+		from -70 296
+		color "medium"
+		align right
+	string "incoming"
+		from -70 320
+		color "medium"
+		align right
 	bar "fuel"
 		from -53.5 425
 		dimensions 0 -192
@@ -364,125 +395,237 @@ interface "hud"
 		color "dim"
 		size 2
 
+	bar "thrust"
+		from -110 460
+		dimensions 50 0
+		color "heat"
+		size 2
+	bar "turn"
+		from -110 476
+		dimensions 50 0
+		color "heat"
+		size 2
+	bar "lateralthrust"
+		from -110 492
+		dimensions 50 0
+		color "heat"
+		size 2
+
 	# Targets.
 	anchor top left
 	sprite "ui/radar"
 		from 0 0
 		align top left
 	point "radar"
-		center 128 128
-	value "radar radius" 110
-	value "radar pointer radius" 130
+		center 160 160
+	value "radar radius" 142
+	value "radar pointer radius" 162
 	
 	sprite "ui/navigation"
-		from 200 0
+		from 220 0
 		align top left
 	string "navigation mode"
-		from 215 20
+		from 245 20
 		align left
 		color "medium"
 	string "destination"
-		from 230 40
+		from 260 40
 		align left
 		color "medium"
-	
+
+	visible if "red alert"
+	sprite "ui/error"
+		from 10 10
+		align top left
+	visible
+
+# new stuff for autoland display
+	string "travel"
+		from 400 20
+		align left
+		color "medium"
+	string "travel planet"
+		from 400 40
+		align left
+		color "medium"
+
+	string "activity"
+		from 530 18
+		align left
+		color "bright"
+	string "xhead"
+		from 530 40
+		align left
+		color "medium"
+	string "yhead"
+		from 600 40
+		align left
+		color "medium"
+	string "xpos"
+		from 550 40
+		align left
+		color "medium"
+	string "ypos"
+		from 620 40
+		align left
+		color "medium"
+	string "dhead"
+		from 670 40
+		align left
+		color "medium"
+	string "dpos"
+		from 690 40
+		align left
+		color "medium"
+
+# new stuff end	
+
 	sprite "ui/target"
-		from 0 240
+		from 0 300
 		align top left
 	point "target"
-		center 75 315
+		center 75 375
 		dimensions 140 140
 	value "target radius" 70
 	outline "target sprite"
-		center 75 315
+		center 75 375
 		dimensions 70 70
 		colored
+	image "landing sprite"
+		center 75 375
+		dimensions 120 120
 	ring "target shields"
-		center 75 315
+		center 75 375
 		dimensions 120 120
 		color "shields"
 		size 1.5
 	ring "target hull"
-		center 75 315
+		center 75 375
 		dimensions 110 110
 		color "hull"
 		size 1.5
 	ring "target disabled hull"
-		center 75 315
+		center 75 375
 		dimensions 110 110
 		color "disabled hull"
 		size 1.5
 	
 	visible if "range display"
 	sprite "ui/range"
-		from 130 263
+		from 130 323
 		align top left
 	string "target range"
-		from 160 260
+		from 160 320
 		align top left
 	visible if "tactical display"
 	sprite "ui/tactical"
-		from 130 290
+		from 130 350
 		align top left
 	string "target crew"
-		from 162 298
+		from 162 358
 		align top left
 	string "target fuel"
-		from 162 318
+		from 162 378
 		align top left
 	string "target energy"
-		from 157 338
+		from 162 398
 		align top left
 	string "target heat"
-		from 147 358
+		from 162 418
 		align top left
+	string "target turret"
+		from 162 438
+		align top left
+	string "target gun"
+		from 162 458
+		align top left
+	string "target turnrate"
+		from 162 478
+		align top left
+	string "target ion"
+		from 162 498
+		align top left
+
 	visible
 	
 	string "target name"
-		center 75 395
+		center 75 455
 		color "bright"
 	string "target type"
-		center 75 415
+		center 75 475
 		color "medium"
 	string "target government"
-		center 75 435
+		center 75 495
 		color "medium"
 	point "faction markers"
-		center 75 435
+		center 75 495
 	string "mission target"
-		center 75 455
+		center 75 515
+		color "medium"
+	string "parent"
+		from 10 535
+		align center left
+		color "medium"
+	string "PSystem"
+		from 10 555
+		align center left
+		color "medium"
+	string "jumpstatus"
+		from 10 575
+		align center left
+		color "medium"
+	string "system"
+		from 90 575
+		align center left
+		color "medium"
+	string "stellar"
+		from 10 595
+		align center left
+		color "medium"
+	string "target activity"
+		from 10 615
+		align center left
+		color "medium"
+	string "personality"
+		from 10 635
+		align center left
 		color "medium"
 	
 	# Other HUD elements:
 	box "escorts"
 		from 0 460 top left
-		to 120 0 bottom left
+		to 240 0 bottom left
 	box "messages"
-		from 120 0 bottom left
-		to -110 -200 bottom right
+		from 240 0 bottom left
+		to -110 -100 bottom right
 	box "ammo"
 		from -110 450 top right
 		to 0 0 bottom right
 	anchor top
 	point "mini-map"
-		center 0 100
+		center 500 150
 
 
 
 interface "planet"
 	image "land"
-		center -60 -140
+		center 0 -140
 	sprite "ui/planet dialog"
-		center -60 0
+		center 0 0
+
+	visible if "has overlay"
+	sprite "ui/planet dialog full"
+		center 0 0
+
 	button l
-		center -60 -140
+		center 0 -140
 		dimensions 720 360
 	
 	visible if "has shipyard"
 	sprite "ui/planet dialog button"
-		center 280 90
+		center 450 90
 	button s "_Shipyard"
-		center 280 90
+		center 450 90
 		dimensions 140 40
 		size 18
 		align right
@@ -490,9 +633,9 @@ interface "planet"
 	
 	visible if "has outfitter"
 	sprite "ui/planet dialog button"
-		center 280 150
+		center 450 150
 	button o "_Outfitter"
-		center 280 150
+		center 450 150
 		dimensions 140 40
 		size 18
 		align right
@@ -500,17 +643,17 @@ interface "planet"
 	
 	visible if "is inhabited"
 	sprite "ui/planet dialog button"
-		center -400 150
+		center -450 150
 	button j "_Job Board"
-		center -400 150
+		center -450 150
 		dimensions 140 40
 		size 18
 		align left
 		pad 10 0
 	sprite "ui/planet dialog button"
-		center 280 210
+		center 450 210
 	button h "_Hire Crew"
-		center 280 210
+		center 450 210
 		dimensions 140 40
 		size 18
 		align right
@@ -518,9 +661,9 @@ interface "planet"
 	
 	visible if "has trade"
 	sprite "ui/planet dialog button"
-		center -400 90
+		center -450 90
 	button t "_Trading"
-		center -400 90
+		center -450 90
 		dimensions 140 40
 		size 18
 		align left
@@ -528,9 +671,9 @@ interface "planet"
 	
 	visible if "has bank"
 	sprite "ui/planet dialog button"
-		center -400 210
+		center -450 210
 	button b "_Bank"
-		center -400 210
+		center -450 210
 		dimensions 140 40
 		size 18
 		align left
@@ -538,9 +681,9 @@ interface "planet"
 	
 	visible if "has spaceport"
 	sprite "ui/planet dialog button"
-		center -400 270
+		center -450 270
 	button p "Space_port"
-		center -400 270
+		center -450 270
 		dimensions 140 40
 		size 18
 		align left
@@ -548,9 +691,9 @@ interface "planet"
 	
 	visible if "has ship"
 	sprite "ui/planet dialog button"
-		center 280 270
+		center 450 270
 	button d "_Depart"
-		center 280 270
+		center 450 270
 		dimensions 140 40
 		size 18
 		align right
@@ -787,7 +930,7 @@ interface "trade"
 	
 	active if "can sell"
 	visible if "!can sell outfits"
-	button S "Sell All"
+	button S "Sell Cargo"
 		center 130 355
 		dimensions 90 30
 	
@@ -889,116 +1032,145 @@ interface "info panel"
 		center 0 -5
 	visible if "five buttons"
 	sprite "ui/five info buttons"
-		center 0 305
+		center 0 355
 	visible if "three buttons"
 	sprite "ui/three info buttons"
-		center 0 305
+		center 0 355
 	
 	box "player"
-		from -500 -290 to -250 280
+		from -625 -290 to -375 280
 	box "fleet"
-		from -250 -290 to 500 280
+		from -375 -290 to 625 280
 	
 	box "stats"
-		from -500 -290 to -250 280
-	box "outfits"
-		from -250 -290 to 500 30
-	box "weapons"
-		from -250 30 to 250 280
+		from -625 -340 to -375 330
 	box "cargo"
-		from 250 -290 to 500 280
+		from 375 -340 to 625 330
+	box "outfits"
+		from -375 -340 to 625 300
+	box "weapons"
+		from -375 -100 to 375 330
+	box "new weapons"
+		from -475 -330 to 475 330
+
+	visible if "weapon tab"
+	sprite "ui/weapon tab"
+		center 0 -360
+	label "Ship Info"
+		center -420 -355
+	label "Player _Info"
+		center -540 -355
+	label "Weapon _Info"
+		center -300 -355
+		color "bright"
+	button i
+		center -540 -355
+		dimensions 120 30
+	button s
+		center -420 -355
+		dimensions 120 30
 	
 	visible if "ship tab"
 	button R
-		center -375 -270
+		center -450 -325
 		dimensions 250 30
 	sprite "ui/ship tab"
-		center 0 -310
+		center 0 -360
 	label "Ship Info"
-		center -300 -305
+		center -420 -355
 		color "bright"
 	label "Player _Info"
-		center -420 -305
+		center -540 -355
+	label "Weapon _Info"
+		center -300 -355
 	button i
-		center -420 -305
+		center -540 -355
+		dimensions 120 30
+	button w
+		center -300 -355
 		dimensions 120 30
 	
 	visible if "player tab"
 	sprite "ui/player tab"
-		center 0 -310
+		center 0 -360
 	label "_Ship Info"
-		center -300 -305
+		center -420 -355
 	label "Player Info"
-		center -420 -305
+		center -540 -355
 		color "bright"
+	label "Weapon _Info"
+		center -300 -355
 	button s
-		center -300 -305
+		center -420 -355
+		dimensions 120 30
+	button w
+		center -300 -355
 		dimensions 120 30
 	
 	visible
 	button d "_Done"
-		center 455 305
+		center 455 355
 		dimensions 90 30
 	button m "_Missions..."
-		center 355 305
+		center 355 355
 		dimensions 90 30
 	active if "enable logbook"
 	button l "_Logbook..."
-		center 255 305
+		center 255 355
 		dimensions 90 30
 	active
 	
 	visible if "five buttons"
 	button n "_Next"
-		center 145 305
+		center 145 355
 		dimensions 90 30
 	button p "_Previous"
-		center 45 305
+		center 45 355
 		dimensions 90 30
 	
 	visible if "show park"
 	active if "can park"
 	sprite "ui/dialog cancel"
-		center -55 305
-	button P "Park"
-		center -55 305
+		center -55 355
+	button P "_Park"
+		center -55 355
 		dimensions 70 30
 	active
 	
 	visible if "show unpark"
 	sprite "ui/dialog cancel"
-		center -55 305
-	button P "Unpark"
-		center -55 305
+		center -55 355
+	button P "Un_park"
+		center -55 355
 		dimensions 70 30
 	
 	visible if "show disown"
 	sprite "ui/dialog cancel"
-		center -150 305
+		center -150 355
 	button D "Disown"
-		center -150 305
+		center -150 355
 		dimensions 70 30
 	
 	visible if "show dump"
 	active if "enable dump"
 	sprite "ui/wide button"
-		center -65 305
+		center -65 355
 	button c "Dump _Cargo"
-		center -65 305
+		center -65 355
 		dimensions 90 30
 	active
 	
 	visible if "show park all"
 	sprite "ui/wide button"
-		center 145 305
-	button A "Park All"
-		center 145 305
+		center 145 355
+	button A "Park _All"
+		center 145 355
 		dimensions 90 30
 	visible if "show unpark all"
 	sprite "ui/wide button"
-		center 145 305
-	button A "Unpark All"
-		center 145 305
+		center 145 355
+	button A "Unpark _All"
+		center 145 355
 		dimensions 90 30
 
 

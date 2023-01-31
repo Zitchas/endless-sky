@@ -53,7 +53,7 @@ PlanetPanel::PlanetPanel(PlayerInfo &player, function<void()> callback)
 	
 	text.SetFont(FontSet::Get(14));
 	text.SetAlignment(WrappedText::JUSTIFIED);
-	text.SetWrapWidth(480);
+	text.SetWrapWidth(580);
 	text.Wrap(planet.Description());
 	
 	// Since the loading of landscape images is deferred, make sure that the
@@ -96,7 +96,8 @@ void PlanetPanel::Draw()
 	
 	Information info;
 	info.SetSprite("land", planet.Landscape());
-	
+	if(selectedPanel)
+		info.SetCondition("has overlay");
 	const Ship *flagship = player.Flagship();
 	if(flagship && flagship->CanBeFlagship())
 		info.SetCondition("has ship");
@@ -132,7 +133,7 @@ void PlanetPanel::Draw()
 	ui.Draw(info, this);
 	
 	if(!selectedPanel)
-		text.Draw(Point(-300., 80.), *GameData::Colors().Get("bright"));
+		text.Draw(Point(-290., 80.), *GameData::Colors().Get("bright"));
 }
 
 

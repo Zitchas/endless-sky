@@ -457,8 +457,11 @@ void Interface::ImageElement::Draw(const Rectangle &rect, const Information &inf
 		Point unit = info.GetSpriteUnit(name);
 		OutlineShader::Draw(sprite, rect.Center(), rect.Dimensions(), color, unit, frame);
 	}
-	else
-		SpriteShader::Draw(sprite, rect.Center(), rect.Width() / sprite->Width(), 0, frame);
+	else // Added unit parameter for rotation. VCcomment
+	{
+		Point unit = info.GetSpriteUnit(name);
+		SpriteShader::Draw(sprite, rect.Center(), rect.Width() / sprite->Width(), 0, frame, unit);
+	}
 }
 
 
@@ -654,6 +657,17 @@ void Interface::BarElement::Draw(const Rectangle &rect, const Information &info,
 			v += filled;
 			Point to = start + min(v, value) * dimensions;
 			v += empty;
+			
+			LineShader::Draw(from, to, width, *color);
+		}
+		// draw in the opposite direction. VCcomment.
+		if(value < 0)
+		while(v > value)
+		{
+			Point from = start + v * dimensions;
+			v -= filled;
+			Point to = start + max(v, value) * dimensions;
+			v -= empty;
 			
 			LineShader::Draw(from, to, width, *color);
 		}

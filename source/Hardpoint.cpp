@@ -28,19 +28,19 @@ using namespace std;
 
 namespace {
 	// Create all the effects in the given list, at the given location, velocity, and angle.
-	void CreateEffects(const map<const Effect *, int> &m, Point pos, Point vel, Angle angle, vector<Visual> &visuals)
+	void CreateEffects(const map<const Effect *, int> &m, Point pos, Point vel, Angle angle, bool isUnder, vector<Visual> &visuals)
 	{
 		for(const auto &it : m)
 			for(int i = 0; i < it.second; ++i)
-				visuals.emplace_back(*it.first, pos, vel, angle);
+				visuals.emplace_back(*it.first, pos, vel, angle, isUnder);
 	}
 }
 
 
 
 // Constructor.
-Hardpoint::Hardpoint(const Point &point, bool isTurret, const Outfit *outfit)
-	: outfit(outfit), point(point * .5), isTurret(isTurret)
+Hardpoint::Hardpoint(const Point &point, const Angle &baseAngle, bool isTurret, bool isPylon, bool isParallel, bool isUnder, bool isDefensive, const Outfit *outfit)
+	: outfit(outfit), point(point * .5), baseAngle(baseAngle), isTurret(isTurret), isPylon(isPylon), isParallel(isParallel), isUnder(isUnder), isDefensive(isDefensive)
 {
 }
 
@@ -71,11 +71,23 @@ const Angle &Hardpoint::GetAngle() const
 
 
 
+// Get the default facing direction for a gun
+const Angle &Hardpoint::GetBaseAngle() const
+{
+	return baseAngle;
+}
+
+
+
 // Get the angle this weapon ought to point at for ideal gun harmonization.
 Angle Hardpoint::HarmonizedAngle() const
 {
 	if(!outfit)
 		return Angle();
+	
+	// Calculate reference point for non-forward facing guns.
+	Angle rotateAngle = Angle() - baseAngle;
+	Point refPoint = rotateAngle.Rotate(point);
 	
 	// Find the point of convergence of shots fired from this gun. That is,
 	// find the angle where the projectile's X offset will be zero when it
@@ -83,7 +95,7 @@ Angle Hardpoint::HarmonizedAngle() const
 	double d = outfit->Range();
 	// Projectiles with a range of zero should fire straight forward. A
 	// special check is needed to avoid divide by zero errors.
-	return Angle(d <= 0. ? 0. : -asin(point.X() / d) * TO_DEG);
+	return Angle(d <= 0. ? 0. : -asin(refPoint.X() / d) * TO_DEG);
 }
 
 
@@ -92,6 +104,41 @@ Angle Hardpoint::HarmonizedAngle() const
 bool Hardpoint::IsTurret() const
 {
 	return isTurret;
+}
+
+
+
+bool Hardpoint::IsPylon() const
+{
+	return isPylon;
+}
+
+
+
+bool Hardpoint::IsGun() const
+{
+	return !isPylon && !isTurret;
+}
+
+
+
+bool Hardpoint::IsParallel() const
+{
+	return isParallel;
+}
+
+
+
+bool Hardpoint::IsUnder() const
+{
+	return isUnder;
+}
+
+
+
+bool Hardpoint::IsDefensive() const
+{
+	return isDefensive;
 }
 
 
@@ -147,6 +194,7 @@ int Hardpoint::BurstRemaining() const
 // Perform one step (i.e. decrement the reload count).
 void Hardpoint::Step()
 {
+	shouldFire = false;
 	if(!outfit)
 		return;
 	
@@ -162,6 +210,7 @@ void Hardpoint::Step()
 	// continuously if it is not fired this frame.
 	if(burstReload <= 0.)
 		isFiring = false;
+	shouldFire = false;
 }
 
 
@@ -178,6 +227,20 @@ void Hardpoint::Aim(double amount)
 
 
 
+// shouldFire is mutable. VCcomment.
+void Hardpoint::SetShouldFire() const
+{
+	shouldFire = true;
+}
+
+
+
+bool Hardpoint::ShouldFire() const
+{
+	return shouldFire;
+}
+
+
 // Fire this weapon. If it is a turret, it automatically points toward
 // the given ship's target. If the weapon requires ammunition, it will
 // be subtracted from the given ship.
@@ -191,16 +254,16 @@ void Hardpoint::Fire(Ship &ship, vector<Projectile> &projectiles, vector<Visual>
 	// offset of (.5 * velocity) and that velocity includes the velocity of the
 	// ship that fired them.
 	Point start = ship.Position() + aim.Rotate(point) - .5 * ship.Velocity();
-	
+	Point visualStart = ship.Position() + aim.Rotate(point);
 	// Apply the aim and hardpoint offset.
 	aim += angle;
 	start += aim.Rotate(outfit->HardpointOffset());
 	
 	// Create a new projectile, originating from this hardpoint.
-	projectiles.emplace_back(ship, start, aim, outfit);
+	projectiles.emplace_back(ship, start, aim, IsUnder(), outfit);
 	
 	// Create any effects this weapon creates when it is fired.
-	CreateEffects(outfit->FireEffects(), start, ship.Velocity(), aim, visuals);
+	CreateEffects(outfit->FireEffects(), visualStart, ship.Velocity(), aim, IsUnder(), visuals);
 	
 	// Update the reload and burst counters, and expend ammunition if applicable.
 	Fire(ship, start, aim);
@@ -230,20 +293,26 @@ bool Hardpoint::FireAntiMissile(Ship &ship, const Projectile &projectile, vector
 	Angle aim(offset);
 	angle = aim - ship.Facing();
 	start += aim.Rotate(outfit->HardpointOffset());
-	CreateEffects(outfit->FireEffects(), start, ship.Velocity(), aim, visuals);
+	
+	//Only use any regular fire/hit/die effects if all missile effcts maps are empty, this indicate a regular antimissile weapon
+	// and backwards compatibility is required. VCcomment
+	bool missileEffects = !(outfit->MissileHitEffects().empty() && outfit->MissileDieEffects().empty());
+	
+	CreateEffects(outfit->FireEffects(), start, ship.Velocity(), aim, IsUnder(), visuals);
 	
 	// Figure out where the effect should be placed. Anti-missiles do not create
 	// projectiles; they just create a blast animation.
-	CreateEffects(outfit->HitEffects(), start + (.5 * range) * aim.Unit(), ship.Velocity(), aim, visuals);
-	
+	CreateEffects(missileEffects ? outfit->MissileHitEffects() : outfit->HitEffects(), start + (.5 * range) * aim.Unit(), ship.Velocity(), aim, IsUnder(), visuals);
+
 	// Die effects are displayed at the projectile, whether or not it actually "dies."
-	CreateEffects(outfit->DieEffects(), projectile.Position(), projectile.Velocity(), aim, visuals);
+	CreateEffects(missileEffects ? outfit->MissileDieEffects() : outfit->DieEffects(), projectile.Position(), ship.Velocity(), aim, IsUnder(), visuals);
 	
 	// Update the reload and burst counters, and expend ammunition if applicable.
 	Fire(ship, start, aim);
 	
 	// Check whether the missile was destroyed.
-	return (Random::Int(strength) > Random::Int(projectile.MissileStrength()));
+	// Changed to >= and +1 missile strength for testing AM against non missiles VCcomment.
+	return (Random::Int(strength) >= Random::Int(projectile.MissileStrength()+1));
 }
 
 
@@ -266,7 +335,14 @@ void Hardpoint::Install(const Outfit *outfit)
 		// inward so the projectiles will converge. For turrets, start them out
 		// pointing outward from the center of the ship.
 		if(!isTurret)
-			angle = HarmonizedAngle();
+		{
+			angle = baseAngle;
+			// Weapons that fire in parallel beams don't get a harmonized angle.
+			// And some hardpoints/gunslots are configured not to get harmonized.
+			// So only harmonize when both the port and the outfit supports it.
+			if(!isParallel && !outfit->IsParallel())
+				angle += HarmonizedAngle();
+		}
 		else
 			angle = Angle(point);
 	}
