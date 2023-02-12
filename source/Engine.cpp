@@ -2339,10 +2339,12 @@ void Engine::FillRadar()
 	// Add ships. Also check if hostile ships have newly appeared.
 	bool hasHostiles = false;
 
-	if(radarRefresh)
-		radarRefresh -= 6;
+	double radarRefresh = flagship->Attributes().Get("radar refresh rate");
+
+	if(radarAngle)
+		radarAngle -= radarRefresh;
 	else
-		radarRefresh = 360;
+		radarAngle = 360;
 
 	for(shared_ptr<Ship> &ship : ships)
 		if(ship->GetSystem() == playerSystem)
@@ -2357,16 +2359,16 @@ void Engine::FillRadar()
 			int type = isYourTarget ? Radar::SPECIAL : RadarType(*ship, step);
 			// Calculate how big the radar dot should be.
 			double size = sqrt(ship->Width() + ship->Height()) * .14 + .5;
+			double radarDeviation = 0;
 
-			double angleOffset = 39.9;
 			if(flagship)
-				angleOffset = flagship->AngleTo(*ship).Degrees() - radarRefresh;
-			if(abs(angleOffset) > 40.)
-				continue;
+				radarDeviation = flagship->AngleTo(*ship).Degrees() - radarAngle;
+			if(abs(radarDeviation) < 10.)
+				ship->SetLastKnownPosition();
 
-			double sizeMult = 1. - ((angleOffset + 40.1) / 80.);
+			double sizeMult = 2. - pow(radarDeviation / 360., 0.1);
 
-			radar[calcTickTock].Add(type, ship->Position(), size * sizeMult);
+			radar[calcTickTock].Add(type, ship->GetLastKnownPosition(), size * sizeMult);
 
 			// Check if this is a hostile ship.
 			hasHostiles |= (!ship->IsDisabled() && ship->GetGovernment()->IsEnemy()

@@ -451,6 +451,10 @@ public:
 	std::shared_ptr<Ship> GetParent() const;
 	const std::vector<std::weak_ptr<Ship>> &GetEscorts() const;
 
+	// Set and get last known position of the ship.
+	void SetLastKnownPosition();
+	Point GetLastKnownPosition() const;
+
 
 private:
 	// Add or remove a ship from this ship's list of escorts.
@@ -632,6 +636,8 @@ private:
 	std::weak_ptr<Ship> parent;
 
 	bool removeBays = false;
+
+	Point lastKnownPos;
 };
 
 

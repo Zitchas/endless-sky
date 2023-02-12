@@ -786,6 +786,12 @@ void Ship::FinishLoading(bool isNewInstance)
 		warning += "Defaulting " + string(attributes.Get("drag") ? "invalid" : "missing") + " \"drag\" attribute to 100.0\n";
 		attributes.Set("drag", 100.);
 	}
+	if(attributes.Get("radar refresh rate") <= 0.)
+	{
+		warning += "Defaulting " + string(attributes.Get("radar refresh rate") ? "invalid" : "missing") +
+		" \"radar refresh rate\" attribute to 3.0\n";
+		attributes.Set("radar refresh rate", 3.);
+	}
 
 	// Calculate the values used to determine this ship's value and danger.
 	attraction = CalculateAttraction();
@@ -3562,6 +3568,20 @@ double Ship::ReverseAcceleration() const
 double Ship::MaxReverseVelocity() const
 {
 	return attributes.Get("reverse thrust") / Drag();
+}
+
+
+
+void Ship::SetLastKnownPosition()
+{
+    lastKnownPos = this->Position();
+}
+
+
+
+Point Ship::GetLastKnownPosition() const
+{
+    return lastKnownPos;
 }
 
 

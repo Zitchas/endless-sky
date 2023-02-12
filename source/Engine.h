@@ -221,7 +221,8 @@ private:
 	CollisionSet shipCollisions;
 
 	int alarmTime = 0;
-	int radarRefresh = 0;
+	int radarAngle = 0;
+	Point shipPos;
 	double flash = 0.;
 	bool doFlash = false;
 	bool doEnter = false;
