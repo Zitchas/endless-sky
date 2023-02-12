@@ -2340,8 +2340,9 @@ void Engine::FillRadar()
 	bool hasHostiles = false;
 
 	double radarRefresh = flagship->Attributes().Get("radar refresh rate");
+	double radarBeamWidth = flagship->Attributes().Get("radar beam width");
 
-	if(radarAngle)
+	if(radarAngle > 0)
 		radarAngle -= radarRefresh;
 	else
 		radarAngle = 360;
@@ -2362,8 +2363,8 @@ void Engine::FillRadar()
 			double radarDeviation = 0;
 
 			if(flagship)
-				radarDeviation = flagship->AngleTo(*ship).Degrees() - radarAngle;
-			if(abs(radarDeviation) < 30.)
+				radarDeviation = abs(radarAngle - abs(flagship->AngleTo(*ship).Degrees()));
+            if(radarDeviation < radarBeamWidth)
 				ship->SetLastKnownPosition();
 
 			double sizeMult = 2. - pow(abs(radarDeviation) / 360., 0.1);

@@ -792,6 +792,12 @@ void Ship::FinishLoading(bool isNewInstance)
 		" \"radar refresh rate\" attribute to 3.0\n";
 		attributes.Set("radar refresh rate", 3.);
 	}
+	if(attributes.Get("radar beam width") <= 0.)
+	{
+		warning += "Defaulting " + string(attributes.Get("radar beam width") ? "invalid" : "missing") +
+		" \"radar beam width\" attribute to 10.0\n";
+		attributes.Set("radar beam width", 10.);
+	}
 
 	// Calculate the values used to determine this ship's value and danger.
 	attraction = CalculateAttraction();
