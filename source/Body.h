@@ -59,7 +59,7 @@ public:
 	const Point &Velocity() const;
 	const Angle &Facing() const;
 	Point Unit() const;
-	const Angle &AngleTo(const Body &other) const;
+	const Angle AngleTo(const Body &other) const;
 	double Zoom() const;
 	double Scale() const;
 

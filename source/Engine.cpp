@@ -2340,7 +2340,7 @@ void Engine::FillRadar()
 	bool hasHostiles = false;
 
 	if(radarRefresh)
-		--radarRefresh;
+		radarRefresh -= 6;
 	else
 		radarRefresh = 360;
 
@@ -2358,10 +2358,15 @@ void Engine::FillRadar()
 			// Calculate how big the radar dot should be.
 			double size = sqrt(ship->Width() + ship->Height()) * .14 + .5;
 
-			if(flagship && abs(flagship->AngleTo(*ship).Degrees() - radarRefresh) < 10.)
+			double angleOffset = 39.9;
+			if(flagship)
+				angleOffset = flagship->AngleTo(*ship).Degrees() - radarRefresh;
+			if(abs(angleOffset) > 40.)
 				continue;
 
-			radar[calcTickTock].Add(type, ship->Position(), size);
+			double sizeMult = 1. - ((angleOffset + 40.1) / 80.);
+
+			radar[calcTickTock].Add(type, ship->Position(), size * sizeMult);
 
 			// Check if this is a hostile ship.
 			hasHostiles |= (!ship->IsDisabled() && ship->GetGovernment()->IsEnemy()

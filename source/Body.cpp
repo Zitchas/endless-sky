@@ -166,9 +166,9 @@ Point Body::Unit() const
 
 
 // Angle of this Body relative to a second Body.
-const Angle &Body::AngleTo(const Body &other) const
+const Angle Body::AngleTo(const Body &other) const
 {
-    return Angle(this->position - other.Position());
+    return Angle(this->position.Unit() - other.Position().Unit());
 }
 
 
