@@ -165,6 +165,14 @@ Point Body::Unit() const
 
 
 
+// Angle of this Body relative to a second Body.
+const Angle &Body::AngleTo(const Body &other) const
+{
+    return Angle(this->position - other.Position());
+}
+
+
+
 // Zoom factor. This controls how big the sprite should be drawn.
 double Body::Zoom() const
 {
