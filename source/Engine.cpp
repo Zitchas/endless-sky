@@ -2363,10 +2363,10 @@ void Engine::FillRadar()
 
 			if(flagship)
 				radarDeviation = flagship->AngleTo(*ship).Degrees() - radarAngle;
-			if(abs(radarDeviation) < 10.)
+			if(abs(radarDeviation) < 30.)
 				ship->SetLastKnownPosition();
 
-			double sizeMult = 2. - pow(radarDeviation / 360., 0.1);
+			double sizeMult = 2. - pow(abs(radarDeviation) / 360., 0.1);
 
 			radar[calcTickTock].Add(type, ship->GetLastKnownPosition(), size * sizeMult);
 
