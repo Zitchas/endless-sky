@@ -913,7 +913,7 @@ ship "Merganser"
 		"cloaking fuel" .05
 		"atmosphere scan" 100
 		"outfit scan power" 25
-		"outfit scan efficiency" 15
+		"outfit scan efficiency" 20
 		"tactical scan power" 38
 		"ion resistance" 0.1
 		"ion resistance energy" -0.05
@@ -1098,7 +1098,7 @@ ship "Penguin"
 		"cloak" .03
 		"cloaking energy" 3
 		"cloaking fuel" .05
-		"outfit scan power" 100
+		"outfit scan power" 65
 		"outfit scan efficiency" 39
 		"tactical scan power" 62
 		"atmosphere scan" 100
@@ -1515,7 +1515,7 @@ ship "Starling"
 		"cloak" .02
 		"cloaking energy" 5
 		"cloaking fuel" .1
-		"outfit scan power" 25
+		"outfit scan power" 27
 		"outfit scan efficiency" 23
 		"tactical scan power" 38
 		weapon
