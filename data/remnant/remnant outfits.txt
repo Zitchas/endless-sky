@@ -635,7 +635,6 @@ outfit "Research Laboratory"
 	"cargo scan power" 20
 	"cargo scan efficiency" 6
 	"atmosphere scan" 100
-	"tactical scan power" 32
 	"required crew" 1
 	"unplunderable" 1
 	description "From the very beginning, the Remnant have relied on their ability to study everything they encounter. This knowledge has enabled them to survive and even prosper in the harsh environment of the Ember Waste. To enable this pursuit of knowledge, the Remnant designed this compact laboratory that is built onto the side of a cargo bay, mess hall, or other larger room. When the room isn't otherwise occupied, this module expands out to convert it into a fully fledged laboratory."
@@ -661,7 +660,7 @@ outfit "Salvage Scanner"
 	"mass" 7
 	"outfit space" -7
 	"outfit scan power" 25
-	"outfit scan efficiency" 15
+	"outfit scan efficiency" 20
 	"tactical scan power" 120
 	description "When the Remnant unraveled the alien Point Defense Turrets guarding the vaults on Aventine, they also deciphered the mechanisms that guided the ancient weapons. After significant investments in research and development, they have transformed those guidance systems into sophisticated scanning technology."
 	description "	While all Remnant ships are equipped with internal scanners, some captains still prefer to boost their range and power to more effectively select enemy ships worth targeting."
