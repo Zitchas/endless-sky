@@ -2065,8 +2065,9 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 
 			if (latThrustCommand)
 			{
-				//isLatThrusting = true;
-			  //  lateralDirection = latThrustCommand;
+				// These will be used for lateral thrusting flares once supported.
+				// isLatThrusting = true;
+				// lateralDirection = latThrustCommand;
 				latThrust = attributes.Get("thrust") * 0.5;
 				if (latThrust)
 				{
