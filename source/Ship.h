@@ -200,8 +200,8 @@ public:
 	bool CanSendHail(const PlayerInfo &player, bool allowUntranslated = false) const;
 
 	// Access the ship's AI cache, containing the range and expected AI behavior for this ship.
-	ShipAICache &GetAICache();
-	void UpdateCaches();
+	const ShipAICache &GetAICache() const;
+	void UpdateCaches(bool massLessChange = false);
 
 	// Set the commands for this ship to follow this timestep.
 	void SetCommands(const Command &command);
@@ -303,6 +303,8 @@ public:
 	double Hull() const;
 	double Fuel() const;
 	double Energy() const;
+	double DisplaySolar() const;
+	double DisplayRamScoop() const;
 	// A ship's heat is generally between 0 and 1, but if it receives
 	// heat damage the value can increase above 1.
 	double Heat() const;
@@ -359,6 +361,12 @@ public:
 	double MaxVelocity() const;
 	double ReverseAcceleration() const;
 	double MaxReverseVelocity() const;
+	// This is their potential acceleration right now
+	double TrueAcceleration() const;
+	// This is their potential turn right now
+	double TrueTurnRate() const;
+	// This is their current speed right now
+	double CurrentSpeed() const;
 
 	// This ship just got hit by a weapon. Take damage according to the
 	// DamageDealt from that weapon. The return value is a ShipEvent type,

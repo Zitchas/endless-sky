@@ -16,7 +16,6 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "Ship.h"
 
 #include "Audio.h"
-#include "CategoryList.h"
 #include "CategoryTypes.h"
 #include "DamageDealt.h"
 #include "DataNode.h"
@@ -756,11 +755,11 @@ void Ship::FinishLoading(bool isNewInstance)
 	// invalid bays. Add a default "launch effect" to any remaining internal bays if
 	// this ship is crewed (i.e. pressurized).
 	string warning;
-	const auto &bayCategories = GameData::GetCategory(CategoryType::BAY);
+	const auto &bayCategories = GameData::Category(CategoryType::BAY);
 	for(auto it = bays.begin(); it != bays.end(); )
 	{
 		Bay &bay = *it;
-		if(!bayCategories.Contains(bay.category))
+		if(find(bayCategories.begin(), bayCategories.end(), bay.category) == bayCategories.end())
 		{
 			warning += "Invalid bay category: " + bay.category + "\n";
 			it = bays.erase(it);
@@ -772,7 +771,7 @@ void Ship::FinishLoading(bool isNewInstance)
 			bay.launchEffects.emplace_back(GameData::Effects().Get("basic launch"));
 	}
 
-	canBeCarried = bayCategories.Contains(attributes.Category());
+	canBeCarried = find(bayCategories.begin(), bayCategories.end(), attributes.Category()) != bayCategories.end();
 
 	// Issue warnings if this ship has is misconfigured, e.g. is missing required values
 	// or has negative outfit, cargo, weapon, or engine capacity.
@@ -1438,17 +1437,22 @@ string Ship::GetHail(map<string, string> &&subs) const
 
 
 
-ShipAICache &Ship::GetAICache()
+const ShipAICache &Ship::GetAICache() const
 {
 	return aiCache;
 }
 
 
 
-void Ship::UpdateCaches()
+void Ship::UpdateCaches(bool massLessChange)
 {
-	aiCache.Recalibrate(*this);
-	navigation.Recalibrate(*this);
+	if(massLessChange)
+		aiCache.Calibrate(*this);
+	else
+	{
+		aiCache.Recalibrate(*this);
+		navigation.Recalibrate(*this);
+	}
 }
 
 
@@ -3298,6 +3302,25 @@ double Ship::Energy() const
 
 
 
+double Ship::DisplaySolar() const
+{
+	double scale = .2 + 1.8 / (.001 * position.Length() + 1);
+	double solarScaling = currentSystem->SolarPower() * scale;
+	double solarPower = solarScaling * attributes.Get("solar collection");
+	return solarPower;
+}
+
+
+
+double Ship::DisplayRamScoop() const
+{
+	double scale = .2 + 1.8 / (.001 * position.Length() + 1);
+	double ramScoop = currentSystem->SolarWind() * .03 * scale * (sqrt(attributes.Get("ramscoop")) + .05 * scale);
+	return ramScoop;
+}
+
+
+
 // Allow returning a heat value greater than 1 (i.e. conveying how overheated
 // this ship has become).
 double Ship::Heat() const
@@ -3541,10 +3564,24 @@ double Ship::TurnRate() const
 
 
 
+double Ship::TrueTurnRate() const
+{
+	return TurnRate() * 1. / (1. + slowness * .05);
+}
+
+
+
 double Ship::Acceleration() const
 {
 	double thrust = attributes.Get("thrust");
 	return (thrust ? thrust : attributes.Get("afterburner thrust")) / InertialMass();
+}
+
+
+
+double Ship::TrueAcceleration() const
+{
+	return Acceleration() * 1. / (1. + slowness * .05);
 }
 
 
@@ -3570,6 +3607,13 @@ double Ship::ReverseAcceleration() const
 double Ship::MaxReverseVelocity() const
 {
 	return attributes.Get("reverse thrust") / Drag();
+}
+
+
+
+double Ship::CurrentSpeed() const
+{
+	return Velocity().Length();
 }
 
 
