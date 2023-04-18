@@ -82,6 +82,7 @@ const Command Command::AMMO(ONE << 31, "Fleet: Toggle ammo usage");
 const Command Command::WAIT(ONE << 32, "");
 const Command Command::STOP(ONE << 33, "");
 const Command Command::SHIFT(ONE << 34, "");
+const Command Command::CTRL(ONE << 35, "");
 
 
 
