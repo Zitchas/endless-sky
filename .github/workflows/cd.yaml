@@ -3,7 +3,7 @@ name: CD
 on:
   push:
     branches:
-      - master
+      - mining-complete
   pull_request:
     types:
       - synchronize
@@ -35,16 +35,20 @@ jobs:
       - name: Adjust version strings
         run: ./utils/cd_update_versions.sh
       - uses: lukka/get-cmake@latest
-      - uses: lukka/run-vcpkg@v11
+      - uses: lukka/run-vcpkg@v10
         with:
-          vcpkgGitCommitId: '69efe9cc2df0015f0bb2d37d55acde4a75c9a25b'
-          doNotCache: true
+          vcpkgGitCommitId: '91dd61bd441a68b4017b61011d0350b2e6aeeccf'
       - uses: lukka/run-cmake@v10
         with:
           configurePreset: 'linux-release'
           buildPreset: 'linux-ci-release'
       - name: Package Application
         run: ./utils/build_appimage.sh build/release
+      - name: Prevent saving cache on failure
+        run: |
+          echo "RUNVCPKG_NO_CACHE=1" >> $GITHUB_ENV
+        if: ${{ failure() || cancelled() }}
+        shell: bash
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
@@ -67,10 +71,9 @@ jobs:
         run: ./utils/cd_update_versions.sh
         shell: bash
       - uses: lukka/get-cmake@latest
-      - uses: lukka/run-vcpkg@v11
+      - uses: lukka/run-vcpkg@v10
         with:
-          vcpkgGitCommitId: '69efe9cc2df0015f0bb2d37d55acde4a75c9a25b'
-          doNotCache: true
+          vcpkgGitCommitId: '91dd61bd441a68b4017b61011d0350b2e6aeeccf'
       - uses: lukka/run-cmake@v10
         with:
           configurePreset: 'mingw-release'
@@ -79,6 +82,11 @@ jobs:
         run: |
           cmake --install build/release
           7z a ${{ env.OUTPUT }} "./install/release/*"
+      - name: Prevent saving cache on failure
+        run: |
+          echo "RUNVCPKG_NO_CACHE=1" >> $GITHUB_ENV
+        if: ${{ failure() || cancelled() }}
+        shell: bash
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
@@ -100,10 +108,9 @@ jobs:
       - name: Install pkg-config
         run: type -P pkg-config || brew install pkg-config
       - uses: lukka/get-cmake@latest
-      - uses: lukka/run-vcpkg@v11
+      - uses: lukka/run-vcpkg@v10
         with:
-          vcpkgGitCommitId: '69efe9cc2df0015f0bb2d37d55acde4a75c9a25b'
-          doNotCache: true
+          vcpkgGitCommitId: '91dd61bd441a68b4017b61011d0350b2e6aeeccf'
       - uses: lukka/run-cmake@v10
         with:
           configurePreset: 'macos-release'
@@ -112,6 +119,11 @@ jobs:
         run: |
           cmake --install build/release
           7z a ${{ env.OUTPUT }} "./install/release/*"
+      - name: Prevent saving cache on failure
+        run: |
+          echo "RUNVCPKG_NO_CACHE=1" >> $GITHUB_ENV
+        if: ${{ failure() || cancelled() }}
+        shell: bash
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
@@ -148,21 +160,24 @@ jobs:
           git push --tags --force
       - name: Setup continuous release
         run: |
-          DESCRIPTION="Triggered on $(date -u '+%Y/%m/%d, %H:%M') UTC by commit ${{ github.sha }} (@${{ github.actor }})
-
-          This is an automated build of the latest source. It may be unstable or even crash, corrupt your save or eat your kitten. Use with caution!
-
-          https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends gettext-base
+          BUILD_DATE="$(date -u '+%Y/%m/%d, %H:%M')"
+          BUILD_COMMIT="${{ github.sha }}"
+          BUILD_USER="${{ github.actor }}"
+          BUILD_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          export BUILD_DATE BUILD_COMMIT BUILD_USER BUILD_URL
+          DESCRIPTION="$(envsubst < .github/workflows/description.md)"
           if ! github-release info -t continuous > /dev/null 2>&1; then
             github-release release \
               --tag continuous \
-              --name "Continuous Build" \
+              --name "Mining Complete: Continuous Build" \
               --description "$DESCRIPTION" \
               --pre-release
           else
             github-release edit \
               --tag continuous \
-              --name "Continuous Build" \
+              --name "Mining Complete: Continuous Build" \
               --description "$DESCRIPTION" \
               --pre-release
           fi

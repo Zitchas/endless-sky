@@ -33,6 +33,8 @@ trade
 		"civil defense emergency supplies"
 		"portable machine shop modules"
 		"local network repeaters and uplinks"
+
+trade
 	commodity "remnant industrial"
 		"chemical process equipment"
 		"reactor vessels"
@@ -63,6 +65,8 @@ trade
 		"sintered metal filters"
 		"industrial gases"
 		"ultrasonic agitators"
+
+trade
 	commodity "remnant outfitter repair"
 		"Inhibitor Cannon"
 		"Thrasher Cannon"
@@ -84,6 +88,8 @@ trade
 		"Crucible-Class Steering"
 		"Forge-Class Steering"
 		"Smelter-Class Steering"
+
+trade
 	commodity "remnant salvage"
 		"salvaged Builder"
 		"Ka'het Nullifier"

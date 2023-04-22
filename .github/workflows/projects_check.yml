@@ -8,10 +8,6 @@ on:
   pull_request:
     types: [opened, synchronize]
 
-concurrency:
-  group: ${{ github.ref }}-${{ github.workflow }}-${{ github.event_name }}
-  cancel-in-progress: true
-
 jobs:
   changed:
     uses: ./.github/workflows/compute-changes.yml

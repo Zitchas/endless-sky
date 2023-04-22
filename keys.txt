@@ -26,4 +26,6 @@
 "Fleet: Hold position" 104
 "Fleet: Toggle ammo usage" 117
 "Fleet: Harvest Flotsam" 122
+"Select nearest asteroid" 118
 "Mouse turning (hold)" 1073742050
+"Mouse turning (toggle)" 1073742054

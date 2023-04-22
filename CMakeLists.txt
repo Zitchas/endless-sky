@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 3.21..3.25)
 include(CMakeDependentOption)
 option(ES_USE_VCPKG "Use vcpkg to get dependencies." ON)
 cmake_dependent_option(ES_GLES "Build the game with OpenGL ES" OFF UNIX OFF)
-cmake_dependent_option(ES_STEAM "Build the game for the Steam Linux runtime" OFF UNIX OFF)
 cmake_dependent_option(ES_USE_SYSTEM_LIBRARIES "Use system libraries instead of the vcpkg ones." ON UNIX OFF)
 cmake_dependent_option(ES_USE_OFFSCREEN
 	"Use SDL's offscreen backend instead of Xvfb for the integration tests" OFF UNIX OFF)
@@ -38,11 +37,6 @@ endif()
 if(NOT ES_USE_SYSTEM_LIBRARIES)
 	# Tell vcpkg to use the required system libraries.
 	list(APPEND VCPKG_MANIFEST_FEATURES "system-libs")
-endif()
-
-# Some system libraries aren't available on the default Sniper runtime and need to be built from source.
-if(ES_STEAM)
-	list(APPEND VCPKG_MANIFEST_FEATURES "steam-libs")
 endif()
 
 # Various helpful options for IDEs.
@@ -142,11 +136,6 @@ if(ES_GLES)
 	target_link_libraries(ExternalLibraries INTERFACE OpenGL::OpenGL OpenGL::EGL)
 	target_compile_definitions(EndlessSkyLib PUBLIC ES_GLES)
 else()
-	# The Steam runtime can't rely on GLVND being available, so link against the legacy interface.
-	if(ES_STEAM)
-		set(OpenGL_GL_PREFERENCE "LEGACY")
-	endif()
-
 	find_package(OpenGL REQUIRED)
 	target_link_libraries(ExternalLibraries INTERFACE OpenGL::GL)
 
@@ -169,10 +158,8 @@ endif()
 if(APPLE AND ES_CREATE_BUNDLE)
 	add_executable(EndlessSky MACOSX_BUNDLE source/main.cpp)
 
-	# MacOS bundles are a bit special and need every resource specified when
-	# creating the executable.
 	# NOTE: This means that a reconfigure is needed if any assets are added/removed!
-	foreach(folder "data" "images" "sounds")
+	foreach(folder "data" "images" "sounds" "plugins")
 		file(GLOB_RECURSE RESOURCES "${CMAKE_CURRENT_SOURCE_DIR}/${folder}/*")
 		target_sources(EndlessSky PRIVATE "${RESOURCES}")
 
@@ -199,7 +186,7 @@ if(APPLE AND ES_CREATE_BUNDLE)
 		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}" VERBATIM)
 
 	# Now do the same to standalone files.
-	foreach(file "license.txt" "keys.txt" "credits.txt" "copyright" "changelog" "icons/endless-sky.icns")
+	foreach(file "plugins.txt" "license.txt" "keys.txt" "credits.txt" "copyright" "changelog" "icons/endless-sky.icns")
 		target_sources(EndlessSky PRIVATE ${file})
 		set_source_files_properties(${file} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/")
 	endforeach()
@@ -245,11 +232,13 @@ elseif(WIN32)
 	install(DIRECTORY data DESTINATION .)
 	install(DIRECTORY images DESTINATION .)
 	install(DIRECTORY sounds DESTINATION .)
+	install(DIRECTORY plugins DESTINATION .)
 	install(FILES credits.txt DESTINATION .)
 	install(FILES keys.txt DESTINATION .)
 	install(FILES copyright DESTINATION .)
 	install(FILES changelog DESTINATION .)
 	install(FILES license.txt DESTINATION .)
+	install(FILES plugins.txt DESTINATION .)
 elseif(UNIX)
 	# Install the binary.
 	install(TARGETS EndlessSky CONFIGURATIONS Release RUNTIME DESTINATION games)
@@ -281,6 +270,8 @@ elseif(UNIX)
 	install(DIRECTORY data DESTINATION share/games/endless-sky)
 	install(DIRECTORY images DESTINATION share/games/endless-sky)
 	install(DIRECTORY sounds DESTINATION share/games/endless-sky)
+	install(DIRECTORY plugins DESTINATION share/games/endless-sky)
+	install(FILES plugins.txt DESTINATION share/games/endless-sky)
 	install(FILES credits.txt DESTINATION share/games/endless-sky)
 	install(FILES keys.txt DESTINATION share/games/endless-sky)
 	install(FILES copyright DESTINATION share/doc/endless-sky)

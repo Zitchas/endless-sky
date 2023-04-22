@@ -344,20 +344,11 @@ mission "Forest Fire"
 mission "Local Politics"
 	minor
 	source
+		government "Free Worlds"
 		attributes "frontier"
-		attributes "south"
-		not attributes "station" "urban" "ex-pirate"
+		not attributes "station"
 	to offer
-		or
-			and
-				random < 5
-				or
-					has "flagship planet attribute: south pirate"
-					not "event: war begins"
-			and
-				random < 1
-				has "event: war begins"
-				not "event: fw suppressed Greenrock"
+		random < 1
 	on offer
 		conversation
 			`As you land on the pad, you note a general lack of presence around the spaceport. No one has scrambled to hook up your ship, nor has anybody else acknowledged your arrival. Instead, when you leave your ship, all you find is a note within the spaceport detailing where their "overlords" can find their yearly tribute.`
@@ -447,7 +438,7 @@ mission "Tarazed Ship Christening"
 			`	"Uhh... that would be me," the woman says, glancing around awkwardly.`
 			choice
 				`	(Try to salvage the awkward situation.)`
-				`	(Get out while I can.)`
+				`	(Get out while you can.)`
 					goto getout
 			`	"I'm just messing with you, my psychiatrist doesn't think it's very funny when I do it to him either."`
 			`	"Oh," the woman says quietly, "that's... nice, I guess."`
@@ -497,7 +488,7 @@ mission "News Reporter - Paradise"
 			choice
 				`	(Wait for her to approach.)`
 					goto walk
-				`	(Hope she doesn't notice me.)`
+				`	(Hope she doesn't notice you.)`
 					goto notice
 				`	(Try to avoid her.)`
 			`	You take a hallway off to the side to evade her. Just as you think you've gotten out of sight, you hear a voice. "Excuse me!" You turn to see the reporter following you.`
@@ -568,7 +559,7 @@ mission "Scientists at the Pub after a Conference"
 			choice
 				`	(Order another beverage and continue listening.)`
 					goto "overheard scientists 2"
-				`	(Finish my meal and leave.)`
+				`	(Finish your meal and leave.)`
 					decline
 			label "overheard scientists 2"
 			`	The group's conversation grows louder by virtue of both passion for the subject as well as the influence of a few drinks.`
@@ -583,9 +574,9 @@ mission "Scientists at the Pub after a Conference"
 			`	"That's a conundrum, alright. Maybe you could find some funding from industry? The Syndicate might be interested in your work."`
 			`	"Yeah, but I'm not sure yet if I'm willing to give up my academic freedom."`
 			choice
-				`	(Finish up at my own pace.)`
+				`	(Finish up at your own pace.)`
 					goto "overheard scientists 3"
-				`	(Settle my bill as quickly as possible and leave.)`
+				`	(Settle your bill as quickly as possible and leave.)`
 					decline
 			label "overheard scientists 3"
 			`	Two attendees compare gripes about job demands. "Teaching sucks. Between class hours, office hours, and preparing lectures, there's hardly any time left for research."`
