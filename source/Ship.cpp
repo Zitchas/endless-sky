@@ -2131,7 +2131,10 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 				if((aNormal > 0.) != (vNormal > 0.) && fabs(aNormal) > fabs(vNormal))
 					dragAcceleration = -vNormal * angle.Unit();
 			}
-			velocity += dragAcceleration;
+			if(velocity.Length() > MaxVelocity() || velocity.Length() < 0.1)
+				velocity += dragAcceleration;
+			else
+				velocity += acceleration;
 		}
 		acceleration = Point();
 	}
