@@ -76,6 +76,12 @@ public:
 		BOTH
 	};
 
+	enum class FlagshipVelocityIndicator : int_fast8_t {
+		OFF = 0,
+		GHOST,
+		ARROW,
+		BOTH
+	};
 
 public:
 	static void Load();
@@ -139,6 +145,14 @@ public:
 	static bool PlayAudioAlert();
 	static bool DisplayVisualAlert();
 	static bool DoAlertHelper(AlertIndicator toDo);
+
+	// Flagship Velocity Indicator
+	static void ToggleFlagshipVelocityIndicator();
+	static FlagshipVelocityIndicator GetFlagshipVelocityIndicator();
+	static const std::string& FlagshipVelocityIndicatorSetting();
+	static bool DisplayFlagshipVelocityGhost();
+	static bool DisplayFlagshipVelocityArrow();
+	static bool DoFlagshipVelocityIndicatorHelper(FlagshipVelocityIndicator toDo);
 
 	static int GetPreviousSaveCount();
 };

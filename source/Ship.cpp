@@ -2162,6 +2162,13 @@ double Ship::SteeringDirection() const
 
 
 
+double Ship::ThrustMagnitude() const
+{
+	return thrustMagnitude;
+}
+
+
+
 // Get the points from which engine flares should be drawn.
 const vector<Ship::EnginePoint> &Ship::EnginePoints() const
 {
@@ -2396,6 +2403,47 @@ double Ship::Energy() const
 	double maximum = attributes.Get("energy capacity");
 	return maximum ? min(1., energy / maximum) : (hull > 0.) ? 1. : 0.;
 }
+
+
+
+double Ship::DisplaySolar() const
+{
+	double scale = .2 + 1.8 / (.001 * position.Length() + 1);
+	double solarScaling = currentSystem->SolarPower() * scale;
+	double solarPower = solarScaling * attributes.Get("solar collection");
+	return solarPower;
+}
+
+
+
+double Ship::DisplayRamScoop() const
+{
+	double scale = .2 + 1.8 / (.001 * position.Length() + 1);
+	double ramScoop = currentSystem->SolarWind() * .03 * scale * (sqrt(attributes.Get("ramscoop")) + .05 * scale);
+	return ramScoop;
+}
+
+
+
+// These are for the thruster activity bars
+double Ship::DisplayThrust() const
+{
+	return -thrustMagnitude;
+}
+
+
+
+double Ship::DisplayTurn() const
+{
+	return -commands.Turn();
+}
+
+
+
+// double Ship::DisplayLateralThrust() const
+// {
+// 	return -commands.LateralThrust();
+// }
 
 
 
@@ -4195,6 +4243,7 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 		}
 		double thrustCommand = commands.Has(Command::FORWARD) - commands.Has(Command::BACK);
 		double thrust = 0.;
+		thrustMagnitude = 0.;
 		if(thrustCommand)
 		{
 			// Check if we are able to apply this thrust.
@@ -4222,6 +4271,8 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 				"thrusting heat" : "reverse thrusting heat");
 			if(cost > 0. && heat < cost)
 				thrustCommand *= heat / cost;
+
+			thrustMagnitude = thrustCommand * slowMultiplier;
 
 			if(thrustCommand)
 			{
@@ -4253,6 +4304,8 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 				}
 			}
 		}
+		// double latThrust = 0.;
+		// double lateralThrustValue = 0.;
 		bool applyAfterburner = (commands.Has(Command::AFTERBURNER) || (thrustCommand > 0. && !thrust))
 				&& !CannotAct();
 		if(applyAfterburner)
