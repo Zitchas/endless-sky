@@ -43,8 +43,14 @@ namespace {
 	const vector<string> DATEFMT_OPTIONS = {"dd/mm/yyyy", "mm/dd/yyyy", "yyyy-mm-dd"};
 	int dateFormatIndex = 0;
 
-	size_t zoomIndex = 4;
-	constexpr double VOLUME_SCALE = .25;
+	size_t zoomIndex = 13; //vanilla is 4
+
+	// This controls the range of zoom scales the player can switch to.
+	// larger values are close-up and small values are farther away
+	const vector<double> ZOOMS = {.105, .125, .15, .175, .2, .25, 0.3, 0.35, 0.4, 0.5, 0.6, 0.7, 0.85,
+		1., 1.2, 1.4, 1.7, 2., 2.4};
+
+  constexpr double VOLUME_SCALE = .25;
 
 	// Default to fullscreen.
 	int screenModeIndex = 1;
