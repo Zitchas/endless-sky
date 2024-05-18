@@ -16,6 +16,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #ifndef PLANET_H_
 #define PLANET_H_
 
+#include "Port.h"
 #include "Sale.h"
 
 #include <list>
@@ -41,6 +42,15 @@ class Wormhole;
 // are available, as well as attributes that determine what sort of missions
 // might choose it as a source or destination.
 class Planet {
+public:
+	enum class Friendliness : int_fast8_t {
+		FRIENDLY,
+		RESTRICTED,
+		HOSTILE,
+		DOMINATED
+	};
+
+
 public:
 	// Load a planet's description from a file.
 	void Load(const DataNode &node, Set<Wormhole> &wormholes);
@@ -71,11 +81,13 @@ public:
 	// Get planet's noun descriptor from attributes
 	const std::string &Noun() const;
 
-	// Check whether there is a spaceport (which implies there is also trading,
-	// jobs, banking, and hiring).
-	bool HasSpaceport() const;
-	// Get the spaceport's descriptive text.
-	const std::string &SpaceportDescription() const;
+	// Check whether this planet's port is named.
+	bool HasNamedPort() const;
+	// Get this planet's port.
+	const Port &GetPort() const;
+	// Check whether there are port services (such as trading, jobs, banking, and hiring)
+	// available on this planet.
+	bool HasServices() const;
 
 	// Check if this planet is inhabited (i.e. it has a spaceport, and does not
 	// have the "uninhabited" attribute).
@@ -133,6 +145,7 @@ public:
 	bool HasFuelFor(const Ship &ship) const;
 	bool CanLand(const Ship &ship) const;
 	bool CanLand() const;
+	Friendliness GetFriendliness() const;
 	bool CanUseServices() const;
 	void Bribe(bool fullAccess = true) const;
 
@@ -140,13 +153,14 @@ public:
 	std::string DemandTribute(PlayerInfo &player) const;
 	void DeployDefense(std::list<std::shared_ptr<Ship>> &ships) const;
 	void ResetDefense() const;
+	bool IsDefending() const;
 
 
 private:
 	bool isDefined = false;
 	std::string name;
 	std::string description;
-	std::string spaceport;
+	Port port;
 	const Sprite *landscape = nullptr;
 	std::string music;
 

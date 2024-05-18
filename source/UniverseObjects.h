@@ -20,6 +20,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "Sale.h"
 #include "Set.h"
 
+#include "CategoryList.h"
 #include "Color.h"
 #include "Conversation.h"
 #include "Effect.h"
@@ -27,6 +28,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "FormationPattern.h"
 #include "Galaxy.h"
 #include "GameEvent.h"
+#include "Gamerules.h"
 #include "Government.h"
 #include "Hazard.h"
 #include "Interface.h"
@@ -46,15 +48,19 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "Trade.h"
 #include "Wormhole.h"
 
+#include <atomic>
 #include <future>
 #include <map>
+#include <mutex>
 #include <set>
 #include <string>
 #include <vector>
 
 
 class Panel;
+class PlayerInfo;
 class Sprite;
+class TaskQueue;
 
 
 
@@ -66,7 +72,7 @@ class UniverseObjects {
 	friend class TestData;
 public:
 	// Load game objects from the given directories of definitions.
-	std::future<void> Load(const std::vector<std::string> &sources, bool debugMode = false);
+	std::shared_future<void> Load(TaskQueue &queue, const std::vector<std::string> &sources, bool debugMode = false);
 	// Determine the fraction of data files read from disk.
 	double GetProgress() const;
 	// Resolve every game object dependency.
@@ -76,7 +82,7 @@ public:
 	void Change(const DataNode &node);
 	// Update the neighbor lists and other information for all the systems.
 	// (This must be done any time a GameEvent creates or moves a system.)
-	void UpdateSystems();
+	void UpdateSystems(const PlayerInfo *player = nullptr);
 
 	// Check for objects that are referred to but never defined.
 	void CheckReferences();
@@ -122,6 +128,7 @@ private:
 	Set<Wormhole> wormholes;
 	std::set<double> neighborDistances;
 
+	Gamerules gamerules;
 	TextReplacements substitutions;
 	Trade trade;
 	std::vector<StartConditions> startConditions;
@@ -129,7 +136,7 @@ private:
 	std::map<const Sprite *, std::string> landingMessages;
 	std::map<const Sprite *, double> solarPower;
 	std::map<const Sprite *, double> solarWind;
-	std::map<CategoryType, std::vector<std::string>> categories;
+	std::map<CategoryType, CategoryList> categories;
 
 	std::map<std::string, std::string> tooltips;
 	std::map<std::string, std::string> helpMessages;
