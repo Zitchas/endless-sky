@@ -194,6 +194,7 @@ private:
 	std::vector<Projectile> projectiles;
 	std::vector<Weather> activeWeather;
 	std::list<std::shared_ptr<Flotsam>> flotsam;
+	std::vector<Point> radarInterference;
 	std::vector<Visual> visuals;
 	AsteroidField asteroids;
 

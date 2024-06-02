@@ -2622,11 +2622,11 @@ void Engine::DoScanning(const shared_ptr<Ship> &ship)
 // Fill in all the objects in the radar display.
 void Engine::FillRadar()
 {
-	const Ship *flagship = player.Flagship();
-	const System *playerSystem = player.GetSystem();
+	const Ship * flagship = player.Flagship();
+	const System * playerSystem = player.GetSystem();
 
 	// Add stellar objects.
-	for(const StellarObject &object : playerSystem->Objects())
+	for(const StellarObject & object : playerSystem->Objects())
 		if(object.HasSprite())
 		{
 			double r = max(2., object.Radius() * .03 + .5);
@@ -2636,10 +2636,10 @@ void Engine::FillRadar()
 	// Add pointers for neighboring systems.
 	if(flagship)
 	{
-		const System *targetSystem = flagship->GetTargetSystem();
-		const set<const System *> &links = (flagship->JumpNavigation().HasJumpDrive()) ?
+		const System * targetSystem = flagship->GetTargetSystem();
+		const set<const System *> & links = (flagship->JumpNavigation().HasJumpDrive()) ?
 			playerSystem->JumpNeighbors(flagship->JumpNavigation().JumpRange()) : playerSystem->Links();
-		for(const System *system : links)
+		for(const System * system : links)
 			if(player.HasSeen(*system))
 				radar[currentCalcBuffer].AddPointer(
 					(system == targetSystem) ? Radar::SPECIAL : Radar::INACTIVE,
@@ -2683,6 +2683,8 @@ void Engine::FillRadar()
 			hasHostiles |= (!ship->IsDisabled() && ship->GetGovernment()->IsEnemy()
 				&& ship->GetTargetShip() && ship->GetTargetShip()->IsYours());
 		}
+
+
 	// If hostile ships have appeared, play the siren.
 	if(alarmTime)
 		--alarmTime;
@@ -2707,6 +2709,41 @@ void Engine::FillRadar()
 		}
 		else if(projectile.GetWeapon().BlastRadius())
 			radar[currentCalcBuffer].Add(Radar::SPECIAL, projectile.Position(), 1.8);
+	}
+
+	int radarInterferenceValue = 3000;
+
+	if(radarInterference.size() < 1)
+	{
+		for(int i = 0; i < radarInterferenceValue; ++i)
+		{
+			Point pos;
+			Angle angle = Angle::Random();
+			pos = flagship->Position() + angle.Unit() * Random::Real() * 18000;
+			radarInterference.emplace_back(pos);
+		}
+	}
+	else
+	{
+		for(int i = 0; i < (radarInterferenceValue / 30); ++i)
+		{
+			radarInterference.erase(radarInterference.begin());
+			Point pos;
+			Angle angle = Angle::Random();
+			pos = flagship->Position() + angle.Unit() * Random::Real() * 18000;
+			radarInterference.emplace_back(pos);
+		}
+
+	}
+	// Draws lighter colored static.
+	for(int i = 0; i < radarInterference.size(); ++i)
+	{
+		int randStaticSize = Random::Int(2) + 1;
+		int randColor = Random::Int(2);
+		if(randColor == 1)
+			radar[currentCalcBuffer].Add(9, radarInterference.at(i), randStaticSize);
+		else
+			radar[currentCalcBuffer].Add(4, radarInterference.at(i), randStaticSize);
 	}
 }
 
