@@ -139,6 +139,8 @@ ship "Summer Leaf"
 	engine 18 64
 	gun -29 -9
 	gun 29 -9
+	pylon -35 16
+	pylon 35 16
 	explode "tiny explosion" 40
 	explode "small explosion" 20
 	explode "medium explosion" 10
@@ -192,6 +194,8 @@ ship "Autumn Leaf"
 	engine 18 64
 	gun -25 -22
 	gun 25 -22
+	pylon -31 34
+	pylon 31 34
 	turret 0 28
 	explode "tiny explosion" 50
 	explode "small explosion" 30
@@ -264,8 +268,8 @@ ship "Strong Wind"
 	gun 64 13 "Sunbeam"
 	gun -57 21 "Sunbeam"
 	gun 57 21 "Sunbeam"
-	gun -32 57 "Thunderhead Launcher"
-	gun 32 57 "Thunderhead Launcher"
+	pylon -32 57 "Thunderhead Launcher"
+	pylon 32 57 "Thunderhead Launcher"
 	explode "small explosion" 60
 	explode "medium explosion" 40
 	explode "large explosion" 20
@@ -321,8 +325,12 @@ ship "Tempest"
 	engine 22 129
 	gun -16 -100 "Sunbeam"
 	gun 16 -100 "Sunbeam"
-	gun -21 -83 "Thunderhead Launcher"
-	gun 21 -83 "Thunderhead Launcher"
+	gun -21 -83
+	gun 21 -83
+	pylon -43 64 "Thunderhead Launcher"
+	pylon 43 64 "Thunderhead Launcher"
+	pylon -56 61
+	pylon 56 61
 	turret 0 -37 "Dual Sunbeam Turret"
 	turret -32 87 "Wanderer Anti-Missile"
 	turret 32 87 "Wanderer Anti-Missile"
