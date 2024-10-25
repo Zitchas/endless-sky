@@ -579,10 +579,10 @@ ship "Ra'gru Ik 618" "Ra'gru Ik 618 (Crippled)"
 		"Hyperdrive"
 	
 	gun "Fire-Lance"
-	plyon
 	gun "Fire-Lance"
-	pylon
 	gun
+	pylon
+	pylon
 	pylon
 	pylon
 	pylon "Firelight Missile Bank"
@@ -624,10 +624,10 @@ ship "Ra'gru Ik 618" "Ra'gru Ik 618 (Ember)"
 		"Hyperdrive"
 		
 	gun "Fire-Lance"
-	pylon
+	gun "Fire-Lance"
 	gun "Fire-Lance"
 	pylon
-	gun "Fire-Lance"
+	pylon
 	pylon
 	pylon "Firelight Missile Bank"
 	pylon "Firelight Missile Bank"
@@ -668,10 +668,10 @@ ship "Ra'gru Ik 618" "Ra'gru Ik 618 (Grab)"
 		"Jump Drive"
 
 	gun "Fire-Lance"
-	pylon
+	gun "Fire-Lance"
 	gun "Fire-Lance"
 	pylon
-	gun "Fire-Lance"
+	pylon
 	pylon
 	pylon "Firelight Missile Bank"
 	pylon "Firelight Missile Bank"
@@ -714,10 +714,10 @@ ship "Ra'gru Ik 618" "Ra'gru Ik 618 (Storm)"
 		"Jump Drive"
 
 	gun "Fire-Lance"
-	pylon
+	gun "Fire-Lance"
 	gun "Fire-Lance"
 	pylon
-	gun "Fire-Lance"
+	pylon
 	pylon
 	pylon "Firelight Missile Bank"
 	pylon "Firelight Missile Bank"
@@ -759,10 +759,10 @@ ship "Ra'gru Ik 618" "Ra'gru Ik 618 (Mereti)"
 		"Jump Drive"
 		
 	gun "Husk-Slice"
-	pylon
+	gun "Husk-Slice"
 	gun "Husk-Slice"
 	pylon
-	gun "Husk-Slice"
+	pylon
 	pylon
 	pylon "Cluster Mine Layer"
 	pylon "Cluster Mine Layer"
@@ -804,10 +804,10 @@ ship "Ra'gru Ik 618" "Ra'gru Ik 618 (Sestor)"
 		"Jump Drive"
 		
 	gun "Korath Detainer"
-	pylon
+	gun "Korath Detainer"
 	gun "Korath Detainer"
 	pylon
-	gun "Korath Detainer"
+	pylon
 	pylon
 	pylon "Piercer Missile Launcher"
 	pylon "Piercer Missile Launcher"
