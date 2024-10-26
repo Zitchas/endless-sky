@@ -460,8 +460,10 @@ ship "Derecho"
 	engine 16 177
 	gun -12 -156 "Sunbeam"
 	gun 12 -156 "Sunbeam"
-	gun -17 -134 "Thunderhead Launcher"
-	gun 17 -134 "Thunderhead Launcher"
+	gun -17 -134
+	gun 17 -134
+	pylon -30 -49 "Thunderhead Launcher"
+	pylon 30 -49 "Thunderhead Launcher"
 	turret -28 -45 "Dual Sunbeam Turret"
 	turret 28 -45 "Dual Sunbeam Turret"
 	turret -38 95 "Wanderer Anti-Missile"
@@ -593,6 +595,10 @@ ship "Hurricane"
 	gun 85 21
 	gun -62 32
 	gun 62 32
+	pylon -40 28
+	pylon 40 28
+	pylon -53 61
+	pylon 53 61
 	turret -27 -80 "Dual Sunbeam Turret"
 	turret 27 -80 "Dual Sunbeam Turret"
 	turret 0 -33
@@ -642,10 +648,14 @@ ship "Hurricane" "Hurricane (Tough)"
 
 	gun "Sunbeam"
 	gun "Sunbeam"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
+	gun
+	gun
+	gun
+	gun
+	pylon "Thunderhead Launcher"
+	pylon "Thunderhead Launcher"
+	pylon "Thunderhead Launcher"
+	pylon "Thunderhead Launcher"
 	turret "Dual Sunbeam Turret"
 	turret "Dual Sunbeam Turret"
 	turret
@@ -676,6 +686,10 @@ ship "Hurricane" "Hurricane (Moonbeam)"
 	gun "Sunbeam"
 	gun "Moonbeam"
 	gun "Moonbeam"
+	pylon
+	pylon
+	pylon
+	pylon
 	turret "Moonbeam Turret"
 	turret "Moonbeam Turret"
 	turret "Moonbeam Turret"
