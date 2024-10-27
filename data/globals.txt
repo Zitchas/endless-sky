@@ -28,3 +28,13 @@ mission "main plot completed: global"
 	on offer
 		set "global: main plot completed"
 		fail
+
+mission "global mission: Tranquility Destroyed"
+	landing
+	invisible
+	to offer
+		has "person destroyed: Tranquility"
+	on offer
+		set "global: tranquility silenced"
+		fail
+
