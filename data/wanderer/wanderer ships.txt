@@ -740,6 +740,8 @@ ship "Cool Breeze"
 	engine 10 47
 	gun -15 -10
 	gun 15 -10
+	pylon -23 15
+	pylon 23 15
 	explode "tiny explosion" 30
 	explode "small explosion" 10
 	"final explode" "final explosion small"
@@ -807,6 +809,10 @@ ship "Winter Gale"
 	gun 20 -48 "Moonbeam"
 	gun -41 -10 "Sunbeam"
 	gun 41 -10 "Sunbeam"
+	pylon -21 5
+	pylon 21 5
+	pylon -34 -2
+	pylon 34 -2
 	turret 0 -28 "Wanderer Anti-Missile"
 	explode "tiny explosion" 20
 	explode "small explosion" 40
@@ -854,12 +860,16 @@ ship "Winter Gale" "Winter Gale (Missile)"
 		
 	engine -13 94
 	engine 13 94
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
+	gun
+	gun
+	gun
+	gun
 	gun "Moonbeam"
 	gun "Moonbeam"
+	pylon "Thunderhead Launcher"
+	pylon "Thunderhead Launcher"
+	pylon "Thunderhead Launcher"
+	pylon "Thunderhead Launcher"
 	turret "Wanderer Anti-Missile"
 
 
@@ -910,10 +920,18 @@ ship "Deep River"
 	engine -53 345 .7
 	gun -56 -217
 	gun 56 -217
-	gun -40 -217
-	gun 40 -217
-	gun -18 -217
-	gun 18 -217
+	pylon -49 -72
+		angle 270
+	pylon 49 -72
+		angle 90
+	pylon -49 62
+		angle 270
+	pylon 49 62
+		angle 90
+	pylon -49 195
+		angle 270
+	pylon 49 195
+		angle 90
 	explode "small explosion" 80
 	explode "medium explosion" 60
 	explode "large explosion" 30
@@ -998,6 +1016,20 @@ ship "Deep River Transport"
 	engine 53 345 .7
 	engine 0 345
 	engine -53 345 .7
+	gun -56 -217
+	gun 56 -217
+	pylon -49 -72
+		angle 270
+	pylon 49 -72
+		angle 90
+	pylon -49 62
+		angle 270
+	pylon 49 62
+		angle 90
+	pylon -49 195
+		angle 270
+	pylon 49 195
+		angle 90
 	turret -36 -205 "Wanderer Anti-Missile"
 	turret 36 -205 "Wanderer Anti-Missile"
 	turret -36 330 "Wanderer Anti-Missile"
@@ -1054,6 +1086,10 @@ ship "Riptide"
 		"Hyperdrive"
 	engine 30 165
 	engine -30 165
+	pylon -13 139
+		angle 160
+	pylon 13 139
+		angle 200
 	turret 0 -28 "Sunbeam Turret"
 	turret 40 110 "Wanderer Anti-Missile"
 	turret -40 110 "Wanderer Anti-Missile"
