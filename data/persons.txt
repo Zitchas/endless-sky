@@ -2233,10 +2233,10 @@ ship "Modified Hauler VI"
 	engine -83.5 196.5
 	engine 83.5 196.5
 	engine 0 196.5
-	gun -14.5 -168
-	gun 14.5 -168
-	gun -35 -128
-	gun 35 -128
+	pylon -14.5 -168
+	pylon 14.5 -168
+	pylon -35 -128
+	pylon 35 -128
 	turret -21 -124.5
 	turret 21 -124.5 "Point Defense Turret"
 	turret -32.5 -102.5
