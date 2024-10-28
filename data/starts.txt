@@ -235,6 +235,7 @@ conversation "lampyrid intro"
 	`	The elevator is so well-tuned that you do not even realize it is moving until it has deposited you back in the lobby. But as you leave the bank, you are smiling. This crazy adventure suddenly feels real to you. You are going to do it. You are finally going to get off this planet.`
 	`	Compared to the bank, you feel much more at home in the shipyard, walking among the rusted out hulks and newer ships that gleam in the sunlight. You smell grease and dirt and rocket fuel; wonderful smells. There are three ship models within your price range, but the one that stands out is the one off to the side on a private pad.`
 	`	A Lampyrid Mk. II, an antique that was old back when Firebirds were just starting to make a name for themselves. Your repairs over the past few years have not been enough to give it the 'like-new' shine that a collector would want, but it has been more than enough to get it flying. The only thing holding it back was your lack of a license. Now it beckons to you, ready to take you up into space, eager to repay your hard work with the adventure of a lifetime.`
+	`	The final step is to pull up your pilot profile and register the name of your ship.`
 
 
 start "lampyrid"
