@@ -1,6 +1,6 @@
-Welcome to Endless Sky!
+Welcome to Endless Sky Delta!
 
-version 0.10.10-delta
+version 0.10.11-pre-release
 
 The player's manual and other
 resources are available at:
