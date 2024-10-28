@@ -458,7 +458,16 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 	auto layout = Layout(static_cast<int>(LABEL_WIDTH), Truncate::BACK);
 	for(const Hardpoint & hardpoint : ship.Weapons())
 	{
-		string name = "[empty]";
+		bool isGun = hardpoint.IsGun();
+		bool isPylon = hardpoint.IsPylon();
+		bool isTurret = hardpoint.IsTurret();
+		string name = "[empty510]";
+		if(isGun == true)
+			name = "[empty gun port]";
+		if(isPylon == true)
+			name = "[empty pylon]";		
+		if(isTurret == true)
+			name = "[empty turret mount]";
 		if(hardpoint.GetOutfit())
 			name = hardpoint.GetOutfit()->DisplayName();
 
@@ -468,8 +477,6 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 			isRight = stayRight;
 			stayRight = !stayRight;
 		}
-		bool isTurret = hardpoint.IsTurret();
-		bool isPylon = hardpoint.IsPylon();
 
 		double & y = nextY[isRight][isTurret];
 		double x = centerX + (isRight ? LABEL_DX : -LABEL_DX - LABEL_WIDTH);
