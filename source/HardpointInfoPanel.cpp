@@ -404,6 +404,7 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 	double maxX = 0.;
 	int count[2][3] = { {0, 0, 0}, {0, 0, 0} };
 	bool stayRight = true;
+	int hardpointType = 0;
 	for(const Hardpoint & hardpoint : ship.Weapons())
 	{
 		// Multiply hardpoint X by 2 to convert to sprite pixels.
@@ -417,7 +418,6 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 		}
 		// Check to see if the hardpoint is a gun, pylon, or turret
 		// Return 0 for gun, 1 for turret, 2 for pylon.
-		int hardpointType = 0;
 		if(hardpoint.IsGun() == true)
 			hardpointType = 0;
 		else if(hardpoint.IsTurret() == true)
@@ -446,16 +446,18 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 	int gunRows = max(count[0][0], count[1][0]);
 	int turretRows = max(count[0][1], count[1][1]);
 	int pylonRows = max(count[0][2], count[1][2]);
-	// Add a gap of 10 between sections so that guns are grouped, pylons grouped, and turrets grouped.
+	// Add a gap of 10 between different types of mounts.
+	// This calculates the total height required for all the hardpoint labels
 	double height = 20. * (gunRows + pylonRows + turretRows) + 20. * (gunRows && turretRows && pylonRows)
 		+ 10 * (gunRows && turretRows && !pylonRows) + 10 * (gunRows && !turretRows && pylonRows)
 		+ 10 * (!gunRows && turretRows && pylonRows);
 
 	double gunY = bounds.Top() + .5 * (bounds.Height() - height);
-	double turretY = gunY + 20. * gunRows + 10. * (gunRows != 0);
-	double nextY[2][2] = {
-		{gunY + 20. * (gunRows - count[0][0]), turretY + 20. * (turretRows - count[0][1])},
-		{gunY + 20. * (gunRows - count[1][0]), turretY + 20. * (turretRows - count[1][1])} };
+	double turretY = gunY + 20. * gunRows + 10. * (gunRows != 0) + 20 * pylonRows + 10. * (pylonRows != 0);
+	double pylonY = gunY + 20. * gunRows + 10. * (gunRows != 0);
+	double nextY[2][3] = {
+		{gunY + 20. * (gunRows - count[0][0]), turretY + 20. * (turretRows - count[0][1]), pylonY + 20. * (pylonRows - count[0][2])},
+		{gunY + 20. * (gunRows - count[1][0]), turretY + 20. * (turretRows - count[1][1]), pylonY + 20. * (pylonRows - count[1][2])} };
 
 	int index = 0;
 	const double centerX = bounds.Center().X();
@@ -493,7 +495,7 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 			stayRight = !stayRight;
 		}
 
-		double & y = nextY[isRight][isTurret];
+		double & y = nextY[isRight][hardpointType];
 		double x = centerX + (isRight ? LABEL_DX : -LABEL_DX - LABEL_WIDTH);
 		bool isHover = (index == hoverIndex);
 		layout.align = isRight ? Alignment::LEFT : Alignment::RIGHT;
