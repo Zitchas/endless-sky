@@ -388,6 +388,7 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 	// Colors to draw with.
 	Color dim = *GameData::Colors().Get("medium");
 	Color bright = *GameData::Colors().Get("bright");
+	Color dimmer = *GameData::Colors().Get("dimmer");
 	const Font & font = FontSet::Get(14);
 	const Ship & ship = **shipIt;
 
@@ -461,6 +462,7 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 		bool isGun = hardpoint.IsGun();
 		bool isPylon = hardpoint.IsPylon();
 		bool isTurret = hardpoint.IsTurret();
+		bool isEmpty = !hardpoint.GetOutfit();
 		string name = "[empty510]";
 		if(isGun == true)
 			name = "[empty gun port]";
@@ -482,7 +484,7 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 		double x = centerX + (isRight ? LABEL_DX : -LABEL_DX - LABEL_WIDTH);
 		bool isHover = (index == hoverIndex);
 		layout.align = isRight ? Alignment::LEFT : Alignment::RIGHT;
-		font.Draw({ name, layout }, Point(x, y + TEXT_OFF), isHover ? bright : dim);
+		font.Draw({ name, layout }, Point(x, y + TEXT_OFF), isEmpty ? isHover ? dim : dimmer : isHover ? bright : dim);
 		Point zoneCenter(labelCenter[isRight], y + .5 * LINE_HEIGHT);
 		zones.emplace_back(zoneCenter, LINE_SIZE, index);
 
