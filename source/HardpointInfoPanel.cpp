@@ -402,7 +402,7 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 	// too far apart, the scale may need to be reduced.
 	// Also figure out how many weapons of each type are on each side.
 	double maxX = 0.;
-	int count[2][2] = { {0, 0}, {0, 0} };
+	int count[2][3] = { {0, 0, 0}, {0, 0, 0} };
 	bool stayRight = true;
 	for(const Hardpoint & hardpoint : ship.Weapons())
 	{
@@ -415,7 +415,17 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 			isRight = stayRight;
 			stayRight = !stayRight;
 		}
-		++count[isRight][hardpoint.IsTurret()];
+		// Check to see if the hardpoint is a gun, pylon, or turret
+		// Return 0 for gun, 1 for turret, 2 for pylon.
+		int hardpointType = -1;
+		if(hardpoint.IsGun() == true)
+			hardpointType = 0;
+		else if(hardpoint.IsTurret() == true)
+			hardpointType = 1;
+		else if(hardpoint.IsPylon() == true)
+			hardpointType = 2;
+
+		++count[isRight][hardpointType];
 	}
 	// If necessary, shrink the sprite to keep the hardpoints inside the labels.
 	// The width of this UI block will be 2 * (LABEL_WIDTH + HARDPOINT_DX).
@@ -434,9 +444,10 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 
 	// Figure out how tall each part of the weapon listing will be.
 	int gunRows = max(count[0][0], count[1][0]);
+	int pylonRows = max(count[0][2]), count[1][2];
 	int turretRows = max(count[0][1], count[1][1]);
 	// If there are both guns and turrets, add a gap of ten pixels.
-	double height = 20. * (gunRows + turretRows) + 10. * (gunRows && turretRows);
+	double height = 20. * (gunRows + pylonRows + turretRows) + 10. * (gunRows && turretRows); // WIP need to expand this to add 10 for guns and pylons, but also handle guns+turrets, guns+pylons, pylons+ turrets
 
 	double gunY = bounds.Top() + .5 * (bounds.Height() - height);
 	double turretY = gunY + 20. * gunRows + 10. * (gunRows != 0);
