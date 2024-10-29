@@ -29,12 +29,12 @@ mission "main plot completed: global"
 		set "global: main plot completed"
 		fail
 
-mission "global mission: Tranquility Destroyed"
+mission "global mission: Tranquility Achieved"
 	landing
 	invisible
 	to offer
-		has "person destroyed: Tranquility"
+		has "days since start" > 730
 	on offer
-		set "global: tranquility silenced"
+		set "global: tranquility achieved"
 		fail
 

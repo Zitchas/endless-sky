@@ -224,20 +224,6 @@ substitutions
 
 
 
-conversation "lampyrid intro"
-	scene "scene/lobby"
-	`The bank's architecture is what you would have called "futuristic" back when you dreamed that the future would be less squalid than the present: story above story of curves and spires and balconies, all in gleaming metal. A doorman stands by each of the heavy glass doors. You are wearing your very best clothes, but you feel shabby next to them.`
-	`	The loan broker's office is equally intimidating. Large computer monitors fill the walls, with stock quotes and other information spilling down them almost too fast to read. You occasionally glimpse the names of places that you have only seen in movies: Aldebaran. Tarazed. Earth.`
-	`	The pen is heavy as lead but glides almost without friction as you print your initials on the bottom of page after page of ominous legal documents and sign several dozen statements, notices, and agreements. The banker, a balding middle-aged man in a suit that you suspect costs more than the value of the ship you have been working, flips the pages past you quickly, uttering a curt, "Sign here. Now here," as he points to each page. He moves swiftly, mechanically.`
-	`	The only moment when he becomes truly animated is when explaining the Truth in Lending statement to you. "You are borrowing 480,000 credits," he says, "to be repaid over the course of one year. Your daily interest rate is 0.4%, which means that your daily payments are 2,503 credits, and by the end of the year you will have paid... 433,567 credits in interest. Sign here." He grins.`
-	`	You sign your name one final time:`
-	name
-	`	The elevator is so well-tuned that you do not even realize it is moving until it has deposited you back in the lobby. But as you leave the bank, you are smiling. This crazy adventure suddenly feels real to you. You are going to do it. You are finally going to get off this planet.`
-	`	Compared to the bank, you feel much more at home in the shipyard, walking among the rusted out hulks and newer ships that gleam in the sunlight. You smell grease and dirt and rocket fuel; wonderful smells. There are three ship models within your price range, but the one that stands out is the one off to the side on a private pad.`
-	`	A Lampyrid Mk. II, an antique that was old back when Firebirds were just starting to make a name for themselves. Your repairs over the past few years have not been enough to give it the 'like-new' shine that a collector would want, but it has been more than enough to get it flying. The only thing holding it back was your lack of a license. Now it beckons to you, ready to take you up into space, eager to repay your hard work with the adventure of a lifetime.`
-	`	The final step is to pull up your pilot profile and register the name of your ship.`
-
-
 start "lampyrid"
 	name "Lampyrid Start"
 	description `You grew up on New Boston, a world in the Dirt Belt. You've dreamed of owning a starship ever since your first visit to the spaceport, and years later you managed to acquire the wreck of an old Lampyrid-class transport.`
@@ -247,10 +233,10 @@ start "lampyrid"
 	system "Rutilicus"
 	planet "New Boston"
 	to reveal
-		has "global: tranquility silenced"
+		has "tranquility achieved"
 	conversation "lampyrid intro"
 	account
-		credits 480000
+		credits 300000
 		score 400
 		mortgage Mortgage
 			principal 480000
@@ -319,3 +305,17 @@ start "lampyrid"
 		explode "medium explosion" 30
 		explode "large explosion" 15
 		"final explode" "final explosion medium" 1
+
+
+conversation "lampyrid intro"
+	scene "scene/lobby"
+	`The bank's architecture is what you would have called "futuristic" back when you dreamed that the future would be less squalid than the present: story above story of curves and spires and balconies, all in gleaming metal. A doorman stands by each of the heavy glass doors. You are wearing your very best clothes, but you feel shabby next to them.`
+	`	The loan broker's office is equally intimidating. Large computer monitors fill the walls, with stock quotes and other information spilling down them almost too fast to read. You occasionally glimpse the names of places that you have only seen in movies: Aldebaran. Tarazed. Earth.`
+	`	The pen is heavy as lead but glides almost without friction as you print your initials on the bottom of page after page of ominous legal documents and sign several dozen statements, notices, and agreements. The banker, a balding middle-aged man in a suit that you suspect costs more than the value of the ship you have been working, flips the pages past you quickly, uttering a curt, "Sign here. Now here," as he points to each page. He moves swiftly, mechanically.`
+	`	The only moment when he becomes truly animated is when explaining the Truth in Lending statement to you. "You are borrowing 480,000 credits," he says, "to be repaid over the course of one year. 180,000 will be paid directly to the bureau of registrars for your license and ship registration, with the remainder deposited in your account. Your daily interest rate is 0.4%, which means that your daily payments are 2,503 credits, and by the end of the year you will have paid... 433,567 credits in interest. Sign here." He grins.`
+	`	You sign your name one final time:`
+	name
+	`	The elevator is so well-tuned that you do not even realize it is moving until it has deposited you back in the lobby. But as you leave the bank, you are smiling. This crazy adventure suddenly feels real to you. You are going to do it. You are finally going to get off this planet.`
+	`	Compared to the bank, you feel much more at home in the shipyard, walking among the rusted out hulks and newer ships that gleam in the sunlight. You smell grease and dirt and rocket fuel; wonderful smells. There are three ship models within your price range, but the one that stands out is the one off to the side on a private pad.`
+	`	A Lampyrid Mk. II, an antique that was old back when Firebirds were just starting to make a name for themselves. Your repairs over the past few years have not been enough to give it the 'like-new' shine that a collector would want, but it has been more than enough to get it flying. The only things holding it back was your lack of a license and the payment of the ship registration fee. Now it beckons to you, ready to take you up into space, eager to repay your hard work with the adventure of a lifetime.`
+	`	The final step is to pull up your pilot profile and register the name of your ship.`
