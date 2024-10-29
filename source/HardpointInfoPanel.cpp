@@ -417,7 +417,7 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 		}
 		// Check to see if the hardpoint is a gun, pylon, or turret
 		// Return 0 for gun, 1 for turret, 2 for pylon.
-		int hardpointType = -1;
+		int hardpointType = 0;
 		if(hardpoint.IsGun() == true)
 			hardpointType = 0;
 		else if(hardpoint.IsTurret() == true)
@@ -444,10 +444,12 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 
 	// Figure out how tall each part of the weapon listing will be.
 	int gunRows = max(count[0][0], count[1][0]);
-	int pylonRows = max(count[0][2]), count[1][2];
 	int turretRows = max(count[0][1], count[1][1]);
-	// If there are both guns and turrets, add a gap of ten pixels.
-	double height = 20. * (gunRows + pylonRows + turretRows) + 10. * (gunRows && turretRows); // WIP need to expand this to add 10 for guns and pylons, but also handle guns+turrets, guns+pylons, pylons+ turrets
+	int pylonRows = max(count[0][2], count[1][2]);
+	// Add a gap of 10 between sections so that guns are grouped, pylons grouped, and turrets grouped.
+	double height = 20. * (gunRows + pylonRows + turretRows) + 20. * (gunRows && turretRows && pylonRows)
+		+ 10 * (gunRows && turretRows && !pylonRows) + 10 * (gunRows && !turretRows && pylonRows)
+		+ 10 * (!gunRows && turretRows && pylonRows);
 
 	double gunY = bounds.Top() + .5 * (bounds.Height() - height);
 	double turretY = gunY + 20. * gunRows + 10. * (gunRows != 0);
