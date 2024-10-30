@@ -453,11 +453,13 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 		+ 10 * (!gunRows && turretRows && pylonRows);
 
 	double gunY = bounds.Top() + .5 * (bounds.Height() - height);
-	double turretY = gunY + 20. * gunRows + 10. * (gunRows != 0) + 20 * pylonRows + 10. * (pylonRows != 0);
 	double pylonY = gunY + 20. * gunRows + 10. * (gunRows != 0);
+	double turretY = gunY + 20. * gunRows + 10. * (gunRows != 0) + 20 * pylonRows + 10. * (pylonRows != 0);
 	double nextY[2][3] = {
-		{gunY + 20. * (gunRows - count[0][0]), turretY + 20. * (turretRows - count[0][1]), pylonY + 20. * (pylonRows - count[0][2])},
-		{gunY + 20. * (gunRows - count[1][0]), turretY + 20. * (turretRows - count[1][1]), pylonY + 20. * (pylonRows - count[1][2])} };
+		{gunY + 20. * (gunRows - count[0][0]), turretY + 20. * (turretRows - count[0][1]),
+			pylonY + 20. * (pylonRows - count[0][2])},
+		{gunY + 20. * (gunRows - count[1][0]), turretY + 20. * (turretRows - count[1][1]),
+			pylonY + 20. * (pylonRows - count[1][2])} };
 
 	int index = 0;
 	const double centerX = bounds.Center().X();
