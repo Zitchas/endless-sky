@@ -416,7 +416,7 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 			isRight = stayRight;
 			stayRight = !stayRight;
 		}
-		// Check to see if the hardpoint is a gun, pylon, or turret
+		// Check to see if the hardpoint is a gun, pylon, or turret.
 		// Return 0 for gun, 1 for turret, 2 for pylon.
 		if(hardpoint.IsGun() == true)
 			hardpointType = 0;
@@ -447,7 +447,7 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 	int turretRows = max(count[0][1], count[1][1]);
 	int pylonRows = max(count[0][2], count[1][2]);
 	// Add a gap of 10 between different types of mounts.
-	// This calculates the total height required for all the hardpoint labels
+	// This calculates the total height required for all the hardpoint labels.
 	double height = 20. * (gunRows + pylonRows + turretRows) + 20. * (gunRows && turretRows && pylonRows)
 		+ 10 * (gunRows && turretRows && !pylonRows) + 10 * (gunRows && !turretRows && pylonRows)
 		+ 10 * (!gunRows && turretRows && pylonRows);
