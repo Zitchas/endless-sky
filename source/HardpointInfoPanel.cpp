@@ -429,7 +429,7 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 	}
 	// If necessary, shrink the sprite to keep the hardpoints inside the labels.
 	// The width of this UI block will be 2 * (LABEL_WIDTH + HARDPOINT_DX).
-	static const double LABEL_WIDTH = 200.;
+	static const double LABEL_WIDTH = 250.;
 	static const double LABEL_DX = 95.;
 	static const double LABEL_PAD = 5.;
 	if(maxX > (LABEL_DX - LABEL_PAD))
@@ -454,7 +454,7 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 
 	double gunY = bounds.Top() + .5 * (bounds.Height() - height);
 	double pylonY = gunY + 20. * gunRows + 10. * (gunRows != 0);
-	double turretY = gunY + 20. * gunRows + 10. * (gunRows != 0) + 20 * pylonRows + 10. * (pylonRows != 0);
+	double turretY = pylonY + 20 * pylonRows + 10. * (pylonRows != 0);
 	double nextY[2][3] = {
 		{gunY + 20. * (gunRows - count[0][0]), turretY + 20. * (turretRows - count[0][1]),
 			pylonY + 20. * (pylonRows - count[0][2])},
@@ -497,6 +497,7 @@ void HardpointInfoPanel::DrawWeapons(const Rectangle & bounds)
 			stayRight = !stayRight;
 		}
 
+		int hardpointType = isPylon ? 2 : isTurret ? 1 : 0;
 		double & y = nextY[isRight][hardpointType];
 		double x = centerX + (isRight ? LABEL_DX : -LABEL_DX - LABEL_WIDTH);
 		bool isHover = (index == hoverIndex);
