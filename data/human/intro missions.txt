@@ -31,12 +31,12 @@ mission "Intro [0]"
 		conversation
 			branch lampyrid
 				has "flagship model: Lampyrid Mk. II"
-			`With some trepidation, you show the shipyard comptroller your license and registration. They look it over briefly before grunting and waving for you to continue on your way. Within minutes you liftoff for a test drive, piloting it out of the shipyard and onto a spare landing pad by the spaceport. Then you get out and look the ship, thinking about how much of a wreck it was when you first found it. You are busy polishing out a few rust spots with a piece of steel wool when an old man in grease-stained coveralls walks up.`
-			`	"Nothing quite like your first time at the controls," he says.`
-				goto firstStarship
-			label lampyrid
 			`With some trepidation, you give the shipyard owner your money and take your new ship for a test drive, piloting it out of the shipyard and onto a spare landing pad by the spaceport. Then you get out and look the ship over a bit more closely. You are busy polishing out a few rust spots with a piece of steel wool when an old man in grease-stained coveralls walks up.`
 			`	"Nothing quite like buying your very first starship," he says.`
+				goto firstStarship
+			label lampyrid
+			`With some trepidation, you show the shipyard comptroller your license and registration. They look it over briefly before grunting and waving for you to continue on your way. Within minutes you liftoff for a test drive, piloting it out of the shipyard and onto a spare landing pad by the spaceport. Then you get out and over the ship, thinking about how much of a wreck it was when you first found it. You are busy checking the torque on a recalictrant nut when an old man in grease-stained coveralls walks up.`
+			`	"Nothing quite like your first time at the controls," he says.`
 			label firstStarship
 			choice
 				`	"Yeah, I'm still kind of in shock over how much money I spent."`
