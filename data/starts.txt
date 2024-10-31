@@ -227,7 +227,7 @@ substitutions
 start "lampyrid"
 	name "Lampyrid Start"
 	description `You grew up on New Boston, a world in the Dirt Belt. You've dreamed of owning a starship ever since your first visit to the spaceport, and years later you managed to acquire the wreck of an old Lampyrid-class transport.`
-	description `After many long years of working at a textile mill during the day and working on your ship during the night, you've finally saved enough credits to apply for a pilot's license from the Republic and take to the skies in the old ship.`
+	description `	After many long years of working at a textile mill during the day and working on your ship during the night, you've finally saved enough credits to apply for a pilot's license from the Republic and take to the skies in the old ship.`
 	thumbnail "scene/lobby"
 	date 16 5 3013
 	system "Rutilicus"
@@ -248,7 +248,7 @@ start "lampyrid"
 		thumbnail "thumbnail/lampyrid"
 		attributes
 			category "Transport"
-			cost 2760000
+			"cost" 2760000
 			"shields" 5400
 			"hull" 4400
 			"required crew" 5
@@ -311,7 +311,7 @@ conversation "lampyrid intro"
 	scene "scene/lobby"
 	`The bank's architecture is what you would have called "futuristic" back when you dreamed that the future would be less squalid than the present: story above story of curves and spires and balconies, all in gleaming metal. A doorman stands by each of the heavy glass doors. You are wearing your very best clothes, but you feel shabby next to them.`
 	`	The loan broker's office is equally intimidating. Large computer monitors fill the walls, with stock quotes and other information spilling down them almost too fast to read. You occasionally glimpse the names of places that you have only seen in movies: Aldebaran. Tarazed. Earth.`
-	`	The pen is heavy as lead but glides almost without friction as you print your initials on the bottom of page after page of ominous legal documents and sign several dozen statements, notices, and agreements. The banker, a balding middle-aged man in a suit that you suspect costs more than the value of the ship you have been working, flips the pages past you quickly, uttering a curt, "Sign here. Now here," as he points to each page. He moves swiftly, mechanically.`
+	`	The pen is heavy as lead but glides almost without friction as you print your initials on the bottom of page after page of ominous legal documents and sign several dozen statements, notices, and agreements. The banker, a balding middle-aged man in a suit that you suspect costs more than the value of the ship you have been working on, flips the pages past you quickly, uttering a curt, "Sign here. Now here," as he points to each page. He moves swiftly, mechanically.`
 	`	The only moment when he becomes truly animated is when explaining the Truth in Lending statement to you. "You are borrowing 480,000 credits," he says, "to be repaid over the course of one year. 180,000 will be paid directly to the bureau of registrars for your license and ship registration, with the remainder deposited in your account. Your daily interest rate is 0.4%, which means that your daily payments are 2,503 credits, and by the end of the year you will have paid... 433,567 credits in interest. Sign here." He grins.`
 	`	You sign your name one final time:`
 	name
