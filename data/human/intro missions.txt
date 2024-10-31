@@ -35,7 +35,7 @@ mission "Intro [0]"
 			`	"Nothing quite like buying your very first starship," he says.`
 				goto firstStarship
 			label lampyrid
-			`With some trepidation, you show the shipyard comptroller your license and registration. They look it over briefly before grunting and waving for you to continue on your way. Within minutes you liftoff for a test drive, piloting it out of the shipyard and onto a spare landing pad by the spaceport. Then you get out and look over the ship, thinking about how much of a wreck it was when you first found it. You are busy checking the torque on a recalictrant nut when an old man in grease-stained coveralls walks up.`
+			`With some trepidation, you show the shipyard comptroller your license and registration. They look it over briefly before grunting and waving for you to continue on your way. Within minutes you liftoff for a test drive, piloting your Lampyrid out of the shipyard and onto a spare landing pad by the spaceport. Then you get out and look over the ship, thinking about how much of a wreck it was when you first found it. You are busy checking the torque on a recalcitrant nut when an old man in grease-stained coveralls walks up.`
 			`	"Nothing quite like your first time at the controls," he says.`
 			label firstStarship
 			choice
@@ -94,7 +94,7 @@ mission "Intro [0]"
 			`	With that, he settles down to wait for departure.`
 				accept
 			label registration
-			`	He frowns down at his commlink then smiles "I see you haven't even finished the registration process yet. You should probably pull up your pilot information and register a name for your ship. If they haven't changed the forms since I last did it, you should just need to click on the ship tab, and then click on the blank where your ship name should be. Then you will be all legal."`
+			`	He frowns down at his commlink, then smiles. "I see you haven't even finished the registration process yet. You should probably pull up your pilot information and register a name for your ship. If they haven't changed the forms since I last did it, you should just need to click on the ship tab, and then click on the blank where your ship name should be. Then you will be all legal."`
 				accept
 	
 	on accept
