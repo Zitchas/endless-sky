@@ -29,15 +29,31 @@ mission "Intro [0]"
 			`The Syndicate is a central part of the Republic's economy, but they are also well known for selling shoddy products and for doing damage to the environment on the worlds they control. Their treatment of workers is questionable, and their opposition to organized labor is legendary. Some Syndicate factory towns have even been accused of human rights abuses.`
 		log "Factions" "Pirates" `In poorer and more remote star systems, where the Navy seldom patrols, pirate attacks on merchant ships are frequent. Pirates are also known to attack large, unguarded convoys of freighters even in more populated areas. Most pirate fleets come from lawless worlds on the outskirts of human space.`
 		conversation
+			branch lampyrid
+				has "flagship model: Lampyrid Mk. II"
+			`With some trepidation, you show the shipyard comptroller your license and registration. They look it over briefly before grunting and waving for you to continue on your way. Within minutes you liftoff for a test drive, piloting it out of the shipyard and onto a spare landing pad by the spaceport. Then you get out and look the ship, thinking about how much of a wreck it was when you first found it. You are busy polishing out a few rust spots with a piece of steel wool when an old man in grease-stained coveralls walks up.`
+			`	"Nothing quite like your first time at the controls," he says.`
+				goto firstStarship
+			label lampyrid
 			`With some trepidation, you give the shipyard owner your money and take your new ship for a test drive, piloting it out of the shipyard and onto a spare landing pad by the spaceport. Then you get out and look the ship over a bit more closely. You are busy polishing out a few rust spots with a piece of steel wool when an old man in grease-stained coveralls walks up.`
 			`	"Nothing quite like buying your very first starship," he says.`
+			label firstStarship
 			choice
 				`	"Yeah, I'm still kind of in shock over how much money I spent."`
+					to display
+						not "flagship model: Lampyrid Mk. II"
 					goto money
+				`	"It took a lot of work, but it feels awesome!"`
+					to display
+						has "flagship model: Lampyrid Mk. II"
+					goto hard_work
 				`	"Well, I don't plan to get too attached to this one. I'll be flying something much nicer before long."`
 					goto bigger
 				`	"Beat it, old-timer, I've got more important things to do than chat with you."`
 					decline
+			label hard_work
+			`	He grins. "It takes a lot of knowledge and skill to get a ship running. Good thing you aren't depending on a loan. It's a crime how much interest the banks charge to first-timers. It's been that way ever since when I first started out."`
+				goto captain
 			label money
 			`	He grins. "I know the feeling. It's a crime how much interest the banks charge to first-timers. It's been that way ever since when I first started out."`
 				goto captain
