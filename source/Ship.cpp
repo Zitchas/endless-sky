@@ -337,7 +337,7 @@ void Ship::Load(const DataNode &node)
 				}
 			}
 		}
-		else if(key == "gun" || key == "turret")
+		else if(key == "gun" || key == "turret" || key == "pylon")
 		{
 			if(!hasArmament)
 			{
@@ -408,6 +408,8 @@ void Ship::Load(const DataNode &node)
 			}
 			if(key == "gun")
 				armament.AddGunPort(hardpoint, attributes, drawUnder, outfit);
+			else if(key == "pylon")
+				armament.AddPylon(hardpoint, attributes, drawUnder, outfit);
 			else
 				armament.AddTurret(hardpoint, attributes, drawUnder, outfit);
 		}
@@ -675,18 +677,28 @@ void Ship::FinishLoading(bool isNewInstance)
 			auto bend = base->Weapons().end();
 			auto nextGun = armament.Get().begin();
 			auto nextTurret = armament.Get().begin();
+			auto nextPylon = armament.Get().begin();
 			auto end = armament.Get().end();
 			Armament merged;
 			for( ; bit != bend; ++bit)
 			{
-				if(!bit->IsTurret())
+				if(!bit->IsTurret() && !bit->IsPylon())
 				{
-					while(nextGun != end && nextGun->IsTurret())
+					while(nextGun != end && (nextGun->IsTurret() || nextGun->IsPylon()))
 						++nextGun;
 					const Outfit *outfit = (nextGun == end) ? nullptr : nextGun->GetOutfit();
 					merged.AddGunPort(bit->GetPoint() * 2., bit->GetBaseAttributes(), bit->IsUnder(), outfit);
 					if(nextGun != end)
 						++nextGun;
+				}
+				else if(bit->IsPylon())
+				{
+					while (nextPylon != end && !nextPylon->IsPylon())
+						++nextPylon;
+					const Outfit * outfit = (nextPylon == end) ? nullptr : nextPylon->GetOutfit();
+					merged.AddPylon(bit->GetPoint() * 2., bit->GetBaseAttributes(), bit->IsUnder(), outfit);
+					if(nextPylon != end)
+						++nextPylon;
 				}
 				else
 				{
@@ -737,6 +749,7 @@ void Ship::FinishLoading(bool isNewInstance)
 
 	baseAttributes.Set("gun ports", armament.GunCount());
 	baseAttributes.Set("turret mounts", armament.TurretCount());
+	baseAttributes.Set("pylon", armament.PylonCount());
 
 	if(addAttributes)
 	{
@@ -802,9 +815,27 @@ void Ship::FinishLoading(bool isNewInstance)
 	// turrets are in turret mounts. This can only happen when the armament
 	// is configured incorrectly in a ship or variant definition. Do not
 	// bother printing this warning if the outfit is not fully defined.
+	// Note the GT in the two outputs for the first test stand for Gun Test
+	// while the TT in the second set of two outputs is for Turret Test,
+	// and the PT in the third set of two outputs is for Pylon Test.
+	// These are to ensure that each of these error messages is actually unique,
+	// whereas during testing we found that the message could appear in two
+	// different circumstances.
 	for(const Hardpoint &hardpoint : armament.Get())
 	{
 		const Outfit *outfit = hardpoint.GetOutfit();
+		if(outfit && outfit->IsDefined()
+				&& (hardpoint.IsGun() != (outfit->Get("gun ports") != 0.)))
+		{
+			string warning = (!isYours && !variantName.empty()) ? "variant \"" + variantName + "\"" : trueModelName;
+			if(!name.empty())
+				warning += " \"" + name + "\"";
+			warning += ": outfit \"" + outfit->TrueName() + "\" installed as a ";
+			warning += (hardpoint.IsGun() ? "gun but is a turret. GT\n\tgun" : "turret but is a gun. GT\n\tturret");
+			warning += to_string(2. * hardpoint.GetPoint().X()) + " " + to_string(2. * hardpoint.GetPoint().Y());
+			warning += " \"" + outfit->TrueName() + "\"";
+			Logger::LogError(warning);
+		}
 		if(outfit && outfit->IsDefined()
 				&& (hardpoint.IsTurret() != (outfit->Get("turret mounts") != 0.)))
 		{
@@ -812,7 +843,18 @@ void Ship::FinishLoading(bool isNewInstance)
 			if(!name.empty())
 				warning += " \"" + name + "\"";
 			warning += ": outfit \"" + outfit->TrueName() + "\" installed as a ";
-			warning += (hardpoint.IsTurret() ? "turret but is a gun.\n\tturret" : "gun but is a turret.\n\tgun");
+			warning += (hardpoint.IsTurret() ? "turret but is a gun.TT\n\tturret" : "gun but is a turret.TT\n\tgun");
+			warning += to_string(2. * hardpoint.GetPoint().X()) + " " + to_string(2. * hardpoint.GetPoint().Y());
+			warning += " \"" + outfit->TrueName() + "\"";
+			Logger::LogError(warning);
+		}
+		if(outfit && (hardpoint.IsPylon() != (outfit->Get("pylon") != 0.)))
+		{
+			string warning = (!isYours && !variantName.empty()) ? "variant \"" + variantName + "\"" : trueModelName;
+			if(!name.empty())
+				warning += " \"" + name + "\"";
+			warning += ": outfit \"" + outfit->TrueName() + "\" installed as a ";
+			warning += (hardpoint.IsPylon() ? "pylon but is a gun.PT\n\tpylon" : "gun but is a pylon.PT\n\tgun");
 			warning += to_string(2. * hardpoint.GetPoint().X()) + " " + to_string(2. * hardpoint.GetPoint().Y());
 			warning += " \"" + outfit->TrueName() + "\"";
 			Logger::LogError(warning);
@@ -1088,7 +1130,10 @@ void Ship::Save(DataWriter &out) const
 		}
 		for(const Hardpoint &hardpoint : armament.Get())
 		{
-			const char *type = (hardpoint.IsTurret() ? "turret" : "gun");
+			// This sets *type to one of turret, pylon, or gun based on which hardpoint Is_____ it matches.
+			// When we have a means to just test for guns directly, remember to add it here.
+			const char *type = (hardpoint.IsTurret() ? "turret" : hardpoint.IsPylon() ? "pylon" :
+				hardpoint.IsGun() ? "gun" : "gun");
 			if(hardpoint.GetOutfit())
 				out.Write(type, 2. * hardpoint.GetPoint().X(), 2. * hardpoint.GetPoint().Y(),
 					hardpoint.GetOutfit()->TrueName());
@@ -1413,6 +1458,7 @@ void Ship::Place(Point position, Point velocity, Angle angle, bool isDeparting)
 	disabledRecoveryCounter = 0;
 	isInvisible = !HasSprite();
 	jettisoned.clear();
+	jettisonedFromBay.clear();
 	hyperspaceCount = 0;
 	forget = 1;
 	targetShip.reset();
@@ -1966,7 +2012,11 @@ int Ship::Scan(const PlayerInfo &player)
 			for(const auto &sound : sounds)
 				Audio::Play(sound.first, position);
 	};
-	if(isYours || (target->isYours))
+	if(attributes.Get("silent scans"))
+	{
+		// No sounds.
+	}
+	else if(isYours || (target->isYours))
 	{
 		if(activeScanning & ShipEvent::SCAN_CARGO)
 			playScanSounds(attributes.CargoScanSounds(), position);
@@ -3509,7 +3559,7 @@ void Ship::Jettison(const string &commodity, int tons, bool wasAppeasing)
 	const Government *notForGov = wasAppeasing ? GetGovernment() : nullptr;
 
 	for( ; tons > 0; tons -= Flotsam::TONS_PER_BOX)
-		jettisoned.emplace_back(new Flotsam(commodity, (Flotsam::TONS_PER_BOX < tons)
+		Jettison(make_shared<Flotsam>(commodity, (Flotsam::TONS_PER_BOX < tons)
 			? Flotsam::TONS_PER_BOX : tons, notForGov));
 }
 
@@ -3539,7 +3589,7 @@ void Ship::Jettison(const Outfit *outfit, int count, bool wasAppeasing)
 		? 1 : static_cast<int>(Flotsam::TONS_PER_BOX / mass);
 	while(count > 0)
 	{
-		jettisoned.emplace_back(new Flotsam(outfit, (perBox < count)
+		Jettison(make_shared<Flotsam>(outfit, (perBox < count)
 			? perBox : count, notForGov));
 		count -= perBox;
 	}
@@ -4008,6 +4058,12 @@ int Ship::StepDestroyed(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flot
 			for(shared_ptr<Flotsam> &it : jettisoned)
 				it->Place(*this);
 			flotsam.splice(flotsam.end(), jettisoned);
+			for(auto &[newFlotsam, bayIndex] : jettisonedFromBay)
+			{
+				newFlotsam->Place(*this, bayIndex);
+				flotsam.emplace_back(std::move(newFlotsam));
+			}
+			jettisonedFromBay.clear();
 
 			// Any ships that failed to launch from this ship are destroyed.
 			for(Bay &bay : bays)
@@ -4398,11 +4454,21 @@ void Ship::DoPassiveEffects(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &
 
 void Ship::DoJettison(list<shared_ptr<Flotsam>> &flotsam)
 {
+	if(forget)
+		return;
 	// Jettisoned cargo effects (only for ships in the current system).
-	if(!jettisoned.empty() && !forget)
+	if(!jettisoned.empty())
 	{
 		jettisoned.front()->Place(*this);
 		flotsam.splice(flotsam.end(), jettisoned, jettisoned.begin());
+		return;
+	}
+	if(!jettisonedFromBay.empty())
+	{
+		auto &[newFlotsam, bayIndex] = jettisonedFromBay.front();
+		newFlotsam->Place(*this, bayIndex);
+		flotsam.emplace_back(std::move(newFlotsam));
+		jettisonedFromBay.pop_front();
 	}
 }
 
@@ -5255,4 +5321,29 @@ double Ship::CalculateDeterrence() const
 			tempDeterrence += .12 * strength / weapon->Reload();
 		}
 	return tempDeterrence;
+}
+
+
+
+void Ship::Jettison(shared_ptr<Flotsam> toJettison)
+{
+	if(currentSystem)
+	{
+		jettisoned.emplace_back(toJettison);
+		return;
+	}
+	// If this ship is currently being carried by another, transfer Flotsam to be jettisoned to the carrier.
+	shared_ptr<Ship> carrier = parent.lock();
+	if(!carrier)
+		return;
+	size_t bayIndex = 0;
+	for(const auto &bay : carrier->Bays())
+	{
+		if(bay.ship.get() == this)
+		{
+			carrier->jettisonedFromBay.emplace_back(toJettison, bayIndex);
+			break;
+		}
+		++bayIndex;
+	}
 }
