@@ -486,8 +486,8 @@ ShopPanel::BuyResult OutfitterPanel::CanBuy(bool onlyOwned) const
 		int pylonNeeded = -selectedOutfit->Get("pylon");
 		int pylonFree = playerShip->Attributes().Get("pylon");
 		if(pylonNeeded && !pylonFree)
-			return "This weapon is designed to be installed on a pylon, "
-				"but your ship does not have an unused pylon available.";
+			return "This weapon is designed to be installed on a missile pylon, "
+				"but your ship does not have an unused missile pylons available.";
 
 		if(selectedOutfit->Get("installable") < 0.)
 			errors.push_back("This item is not an outfit that can be installed in a ship.");
