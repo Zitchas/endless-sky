@@ -483,8 +483,8 @@ ShopPanel::BuyResult OutfitterPanel::CanBuy(bool onlyOwned) const
 			errors.push_back("This weapon is designed to be installed in a gun port, "
 				"but your ship does not have any unused gun ports available.");
 
-		int pylonNeeded = -selectedOutfit->Get("pylon");
-		int pylonFree = playerShip->Attributes().Get("pylon");
+		int pylonNeeded = -selectedOutfit->Get("missile pylons");
+		int pylonFree = playerShip->Attributes().Get("missile pylons");
 		if(pylonNeeded && !pylonFree)
 			return "This weapon is designed to be installed on a missile pylon, "
 				"but your ship does not have an unused missile pylons available.";
