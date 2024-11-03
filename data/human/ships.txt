@@ -24,7 +24,7 @@ ship "Aerie"
 		"mass" 520
 		"drag" 6.15
 		"heat dissipation" .47
-		"fuel capacity" 500
+		"fuel capacity" 515
 		"cargo space" 50
 		"outfit space" 390
 		"weapon capacity" 150
