@@ -95,7 +95,7 @@ ship "Argosy"
 		"mass" 1320
 		"drag" 7.4
 		"heat dissipation" .56
-		"fuel capacity" 400
+		"fuel capacity" 550
 		"cargo space" 120
 		"outfit space" 270
 		"weapon capacity" 90
@@ -165,7 +165,7 @@ ship "Arrow"
 		"mass" 260
 		"drag" 2.3
 		"heat dissipation" .74
-		"fuel capacity" 600
+		"fuel capacity" 500
 		"cargo space" 10
 		"outfit space" 180
 		"weapon capacity" 50
@@ -228,7 +228,7 @@ ship "Auxiliary"
 		"mass" 6560
 		"drag" 22.6
 		"heat dissipation" .27
-		"fuel capacity" 900
+		"fuel capacity" 3325
 		"cargo space" 250
 		"outfit space" 720
 		"weapon capacity" 160
@@ -304,7 +304,7 @@ ship "Bactrian"
 		"mass" 7520
 		"drag" 30.6
 		"heat dissipation" .22
-		"fuel capacity" 700
+		"fuel capacity" 2950
 		"cargo space" 530
 		"outfit space" 740
 		"weapon capacity" 300
@@ -436,7 +436,7 @@ ship "Bastion"
 		"mass" 2320
 		"drag" 16.5
 		"heat dissipation" .32
-		"fuel capacity" 500
+		"fuel capacity" 925
 		"cargo space" 110
 		"outfit space" 470
 		"weapon capacity" 190
@@ -506,7 +506,7 @@ ship "Behemoth"
 		"drag" 11.7
 		"drag" 18.2
 		"heat dissipation" .26
-		"fuel capacity" 600
+		"fuel capacity" 1675
 		"cargo space" 490
 		"outfit space" 510
 		"weapon capacity" 280
@@ -571,7 +571,7 @@ ship "Berserker"
 		"mass" 130
 		"drag" 2.5
 		"heat dissipation" .74
-		"fuel capacity" 400
+		"fuel capacity" 325
 		"cargo space" 10
 		"outfit space" 200
 		"weapon capacity" 35
@@ -629,7 +629,7 @@ ship "Blackbird"
 		"mass" 880
 		"drag" 6.2
 		"heat dissipation" .56
-		"fuel capacity" 700
+		"fuel capacity" 825
 		"cargo space" 60
 		"outfit space" 350
 		"weapon capacity" 90
@@ -685,7 +685,7 @@ ship "Bounder"
 		"mass" 260
 		"drag" 4.4
 		"heat dissipation" .67
-		"fuel capacity" 800
+		"fuel capacity" 700
 		"cargo space" 40
 		"outfit space" 220
 		"weapon capacity" 50
@@ -777,7 +777,7 @@ ship "Bulk Freighter"
 		"mass" 6960
 		"drag" 21
 		"heat dissipation" .27
-		"fuel capacity" 900
+		"fuel capacity" 3500
 		"cargo space" 640
 		"outfit space" 410
 		"weapon capacity" 180
@@ -843,7 +843,7 @@ ship "Bulwark"
 		"mass" 3520
 		"drag" 21
 		"heat dissipation" .27
-		"fuel capacity" 500
+		"fuel capacity" 1150
 		"cargo space" 12
 		"outfit space" 521
 		"weapon capacity" 223
@@ -915,7 +915,7 @@ ship "Carrier"
 		"mass" 7580
 		"drag" 35.4
 		"heat dissipation" .23
-		"fuel capacity" 700
+		"fuel capacity" 2875 # will need to adjust this for carried ships
 		"cargo space" 100
 		"outfit space" 820
 		"weapon capacity" 370
@@ -1010,7 +1010,7 @@ ship "Class C Freighter"
 		"mass" 7040
 		"drag" 21
 		"heat dissipation" .27
-		"fuel capacity" 900
+		"fuel capacity" 3300
 		"cargo space" 20
 		"outfit space" 410
 		"weapon capacity" 150
@@ -1106,7 +1106,7 @@ ship "Clipper"
 		"mass" 300
 		"drag" 4.3
 		"heat dissipation" .7
-		"fuel capacity" 500
+		"fuel capacity" 450
 		"cargo space" 70
 		"outfit space" 260
 		"weapon capacity" 60
@@ -1208,7 +1208,7 @@ ship "Container Transport"
 		"mass" 7040
 		"drag" 26.4
 		"heat dissipation" .4
-		"fuel capacity" 600
+		"fuel capacity" 2350
 		"cargo space" 550
 		"outfit space" 410
 		"weapon capacity" 180
@@ -1275,7 +1275,7 @@ ship "Corvette"
 		"mass" 600
 		"drag" 4.9
 		"heat dissipation" .5
-		"fuel capacity" 500
+		"fuel capacity" 550
 		"cargo space" 40
 		"outfit space" 420
 		"weapon capacity" 150
@@ -1348,7 +1348,7 @@ ship "Cruiser"
 		"mass" 5440
 		"drag" 18.7
 		"heat dissipation" .25
-		"fuel capacity" 600
+		"fuel capacity" 1925
 		"cargo space" 60
 		"outfit space" 760
 		"weapon capacity" 320
@@ -1438,7 +1438,7 @@ ship "Cutthroat"
 		"mass" 364
 		"drag" 3.9
 		"heat dissipation" .7
-		"fuel capacity" 500
+		"fuel capacity" 475
 		"cargo space" 27
 		"outfit space" 282
 		"weapon capacity" 60
