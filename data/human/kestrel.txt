@@ -465,7 +465,7 @@ ship "Kestrel" "Kestrel (More Bays)"
 	add attributes
 		"mass" 60
 		"weapon capacity" -20
-		"fuel capacity" 275 # This is an improvised stopgap to handle increase carrier mass.
+		"fuel capacity" 275 # This is an improvised stopgap to handle increased carrier mass.
 	outfits
 		"Particle Cannon" 2
 		"Torpedo Launcher" 2
