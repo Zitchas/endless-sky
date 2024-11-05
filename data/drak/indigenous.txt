@@ -36,6 +36,7 @@ ship "Subsidurial"
 		"inscrutable" 1
 		"gaslining" 1
 		"hyperdrive" 1
+		"jump fuel" 100
 		"jump speed" .2
 	outfits
 		Mouthparts? 3
@@ -247,6 +248,7 @@ ship "Embershade"
 		"cloaking energy" 5
 		"hyperdrive" 1
 		"jump speed" .1
+		"jump fuel" 75
 		"ramscoop" .05
 		"gaslining" 1
 		"inscrutable" 1
@@ -289,6 +291,7 @@ ship "Embersylph"
 		"scram drive" 0.4
 		"jump fuel" 75
 		"hyperdrive" 1
+		"jump fuel" 50
 		"ramscoop" 1.5
 		"gaslining" 1
 		"inscrutable" 1
