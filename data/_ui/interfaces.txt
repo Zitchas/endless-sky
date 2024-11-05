@@ -715,6 +715,23 @@ interface "hud"
 		color "heat"
 		size 2
 
+	# Maybe temporary display of mass
+	sprite "ui/tactical/solar"
+		from -110 328
+		align top left
+	string "flagship mass"
+		from -90 337
+		color "medium"
+		align left
+	# Maybe temporary display of fuel per jump
+	sprite "ui/tactical/solar"
+		from -110 348
+		align top left
+	string "flagship fuel per hyperjump"
+		from -90 357
+		color "medium"
+		align left
+
 	visible if "flagship ramscoop display"
 	sprite "ui/tactical/ramscoop"
 		from -114 290

@@ -790,6 +790,11 @@ void Engine::Step(bool isActive)
 			info.SetCondition("flagship solar display");
 			info.SetString("flagship solar", to_string(flagshipSolar));
 		}
+		// Temporary live stats on the ship:
+		int flagshipMass = flagship->InertialMass();
+		info.SetString("flagship mass", to_string(flagshipMass));
+		int flagshipHyperDriveFuel = 100 + (((flagshipMass - 900) / 100) * 4);
+		info.SetString("flagship fuel per hyperjump", to_string(flagshipHyperDriveFuel));
 		// new thrust/turn/lateral bars.
 		info.SetBar("thrust", flagship->DisplayThrust());
 		info.SetBar("turn", flagship->DisplayTurn());
