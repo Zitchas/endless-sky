@@ -2335,6 +2335,11 @@ Files:
  images/planet/browndwarf-l*
  images/planet/browndwarf-y-rogue*
  images/planet/browndwarf-y*
+ images/ui/tactical/hyperjump*
+ images/ui/tactical/jumpdrive*
+ images/ui/tactical/mass*
+ images/ui/tactical/scramjump*
+ images/ui/tactical/mass*
 Copyright: Lia Gerty (https://github.com/ravenshining)
 License: CC-BY-SA-4.0
 
