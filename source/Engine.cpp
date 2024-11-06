@@ -794,7 +794,11 @@ void Engine::Step(bool isActive)
 		int flagshipMass = flagship->InertialMass();
 		info.SetString("flagship mass", to_string(flagshipMass));
 		int flagshipHyperDriveFuel = 100 + (((flagshipMass - 900) / 100) * 4);
-		info.SetString("flagship fuel per hyperjump", to_string(flagshipHyperDriveFuel));
+		info.SetString("flagship hyperdrive fuel per hyperjump", to_string(flagshipHyperDriveFuel));
+		int flagshipScramDriveFuel = 150 + (((flagshipMass - 900) / 100) * 6);
+		info.SetString("flagship scramdrive fuel per hyperjump", to_string(flagshipScramDriveFuel));
+		int flagshipJumpDriveFuel = 200 + (((flagshipMass - 900) / 100) * 8);
+		info.SetString("flagship jump drive fuel per hyperjump", to_string(flagshipJumpDriveFuel));
 		// new thrust/turn/lateral bars.
 		info.SetBar("thrust", flagship->DisplayThrust());
 		info.SetBar("turn", flagship->DisplayTurn());

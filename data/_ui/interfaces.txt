@@ -727,16 +727,24 @@ interface "hud"
 	sprite "ui/tactical/hyperjump"
 		from -110 348
 		align top left
-	string "flagship fuel per hyperjump"
+	string "flagship hyperdrive fuel per hyperjump"
 		from -90 357
 		color "medium"
 		align left
 	sprite "ui/tactical/jumpdrivejump"
 		from -110 368
 		align top left
+	string "flagship scramdrive fuel per hyperjump"
+		from -90 377
+		color "medium"
+		align left
 	sprite "ui/tactical/scramjump"
 		from -110 388
 		align top left
+	string "flagship jump drive fuel per hyperjump"
+		from -90 397
+		color "medium"
+		align left
 
 	visible if "flagship ramscoop display"
 	sprite "ui/tactical/ramscoop"
