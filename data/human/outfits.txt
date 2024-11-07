@@ -313,7 +313,7 @@ outfit "Cockpit in-flight Mass Display"
 	"mass" 0
 	"outfit space" 0
 	"Mass Display" 1
-	description "This innocuous device is so compact as to barely count as an outfit at all. Some pilot find it useful to know what their ship's current mass is while in-flight, and this little display adds that information to their Heads Up Display."
+	description "This innocuous device is so compact as to barely count as an outfit at all. Some pilots find it useful to know what their ship's current mass is while in-flight, and this little display adds that information to their Heads Up Display."
 
 outfit "Cockpit Hyperjump Fuel Display"
 	category "Systems"
@@ -322,7 +322,7 @@ outfit "Cockpit Hyperjump Fuel Display"
 	"mass" 0
 	"outfit space" 0
 	"Hyperdrive Fuel Cost Display" 1
-	description "This innocuous device is so compact as to barely count as an outfit at all. It's sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump."
+	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump."
 
 outfit "Cockpit Scram drive Fuel Display"
 	category "Systems"
@@ -340,7 +340,7 @@ outfit "Cockpit Jump drive Fuel Display"
 	"mass" 0
 	"outfit space" 0
 	"Jump drive Fuel Cost Display" 1
-	description "This innocuous device is so compact as to barely count as an outfit at all. It's sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump with a scram drive."
+	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump with a scram drive."
 	
 	
 outfit "Cloaking Device"
