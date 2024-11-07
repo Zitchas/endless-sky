@@ -2817,7 +2817,7 @@ double Ship::Energy() const
 // Determine if the player has a jump drive fuel cost display installed
 bool Ship::DisplayMass() const
 {
-	bool displayMass = attributes.Get("Mass Display");
+	bool displayMass = attributes.Get("mass display");
 	return displayMass;
 }
 
@@ -2826,7 +2826,7 @@ bool Ship::DisplayMass() const
 // Determine if the player has a hyperdrive fuel cost display installed
 bool Ship::DisplayHyperFuelCost() const
 {
-	bool displayHD = attributes.Get("Hyperdrive Fuel Cost Display");
+	bool displayHD = attributes.Get("hyperdrive fuel cost display");
 	return displayHD;
 }
 
@@ -2835,7 +2835,7 @@ bool Ship::DisplayHyperFuelCost() const
 // Determine if the player has a scram drive fuel cost display installed
 bool Ship::DisplayScramFuelCost() const
 {
-	bool displaySD = attributes.Get("Scram drive Fuel Cost Display");
+	bool displaySD = attributes.Get("scram drive fuel cost display");
 	return displaySD;
 }
 
@@ -2844,7 +2844,7 @@ bool Ship::DisplayScramFuelCost() const
 // Determine if the player has a jump drive fuel cost display installed
 bool Ship::DisplayJumpFuelCost() const
 {
-	bool displayJD = attributes.Get("Jump drive Fuel Cost Display");
+	bool displayJD = attributes.Get("jump drive fuel cost display");
 	return displayJD;
 }
 

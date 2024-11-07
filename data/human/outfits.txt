@@ -312,7 +312,7 @@ outfit "In-flight Mass Display"
 	thumbnail "outfit/tactical scanner"
 	"mass" 0
 	"outfit space" 0
-	"Mass Display" 1
+	"mass display" 1
 	description "This innocuous device is so compact as to barely count as an outfit at all. Some pilots find it useful to know what their ship's current mass is while in-flight, and this little display adds that information to their Heads Up Display."
 
 outfit "Hyperjump Fuel Display"
@@ -321,7 +321,7 @@ outfit "Hyperjump Fuel Display"
 	thumbnail "outfit/tactical scanner"
 	"mass" 0
 	"outfit space" 0
-	"Hyperdrive Fuel Cost Display" 1
+	"hyperdrive fuel cost display" 1
 	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump."
 
 outfit "Scram drive Fuel Display"
@@ -330,7 +330,7 @@ outfit "Scram drive Fuel Display"
 	thumbnail "outfit/tactical scanner"
 	"mass" 0
 	"outfit space" 0
-	"Scram drive Fuel Cost Display" 1
+	"scram drive fuel cost display" 1
 	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump with a scram drive."
 
 outfit "Jump drive Fuel Display"
@@ -339,7 +339,7 @@ outfit "Jump drive Fuel Display"
 	thumbnail "outfit/tactical scanner"
 	"mass" 0
 	"outfit space" 0
-	"Jump drive Fuel Cost Display" 1
+	"jump drive fuel cost display" 1
 	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump with a scram drive."
 	
 	
