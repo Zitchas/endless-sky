@@ -2814,6 +2814,43 @@ double Ship::Energy() const
 
 
 
+// Determine if the player has a jump drive fuel cost display installed
+bool Ship::DisplayMass() const
+{
+	bool displayMass = attributes.Get("Mass Display");
+	return displayMass;
+}
+
+
+
+// Determine if the player has a hyperdrive fuel cost display installed
+bool Ship::DisplayHyperFuelCost() const
+{
+	bool displayHD = attributes.Get("Hyperdrive Fuel Cost Display");
+	return displayHD;
+}
+
+
+
+// Determine if the player has a scram drive fuel cost display installed
+bool Ship::DisplayScramFuelCost() const
+{
+	bool displaySD = attributes.Get("Scram drive Fuel Cost Display");
+	return displaySD;
+}
+
+
+
+// Determine if the player has a jump drive fuel cost display installed
+bool Ship::DisplayJumpFuelCost() const
+{
+	bool displayJD = attributes.Get("Jump drive Fuel Cost Display");
+	return displayJD;
+}
+
+
+
+// Calculate the ship's current solar energy.
 double Ship::DisplaySolar() const
 {
 	double scale = .2 + 1.8 / (.001 * position.Length() + 1);
@@ -2824,6 +2861,7 @@ double Ship::DisplaySolar() const
 
 
 
+// Calculate the ship's current ramscooop.
 double Ship::DisplayRamScoop() const
 {
 	double scale = .2 + 1.8 / (.001 * position.Length() + 1);
