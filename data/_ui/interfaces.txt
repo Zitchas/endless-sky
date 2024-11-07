@@ -718,17 +718,17 @@ interface "hud"
 	# If the player has a ship mass display, then this will display their flagship's mass in the HUD.
 	visible if "flagship mass display"
 	sprite "ui/tactical/mass"
-		from -110 328
+		from -116 328
 		align top left
 	string "flagship mass"
-		from -90 337
+		from -94 337
 		color "medium"
 		align left
 
 	# If the player has the relevant fuel cost calculator display, this will show that element in the HUD.
 	visible if "flagship hyper fuel display"
 	sprite "ui/tactical/hyperjump"
-		from -114 350
+		from -116 350
 		align top left
 	string "flagship hyperdrive fuel per hyperjump"
 		from -94 359
@@ -736,7 +736,7 @@ interface "hud"
 		align left
 	visible if "flagship scram fuel display"
 	sprite "ui/tactical/scramjump"
-		from -114 372
+		from -116 372
 		align top left
 	string "flagship scram drive fuel per hyperjump"
 		from -94 381
@@ -744,7 +744,7 @@ interface "hud"
 		align left
 	visible if "flagship jump fuel display"
 	sprite "ui/tactical/jumpdrivejump"
-		from -114 394
+		from -116 394
 		align top left
 	string "flagship jump drive fuel per hyperjump"
 		from -94 403
