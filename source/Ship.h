@@ -338,7 +338,7 @@ public:
 	bool HyperDriveFuelBar() const;
 	bool ScramDriveFuelBar() const;
 	bool JumpDriveFuelBar() const;
-	int FixedScaleFuelBar() const;
+	double FixedScaleFuelBar() const;
 	bool DisplayMass() const;
 	bool DisplayHyperFuelCost() const;
 	bool DisplayScramFuelCost() const;

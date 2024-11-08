@@ -2842,9 +2842,9 @@ bool Ship::JumpDriveFuelBar() const
 
 
 
-int Ship::FixedScaleFuelBar() const
+double Ship::FixedScaleFuelBar() const
 {
-	bool displayFixedScaleFuelBar = attributes.Get("fixed scale fuel bar scale");
+	double displayFixedScaleFuelBar = attributes.Get("fixed scale fuel bar scale");
 	return displayFixedScaleFuelBar;
 }
 

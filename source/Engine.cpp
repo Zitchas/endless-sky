@@ -799,7 +799,7 @@ void Engine::Step(bool isActive)
 		bool flagshipHyperFuelBar = (flagship->HyperDriveFuelBar());
 		bool flagshipScramFuelBar = (flagship->ScramDriveFuelBar());
 		bool flagshipJumpFuelBar = (flagship->JumpDriveFuelBar());
-		double flagshipFixedFuelBar = (flagship->FixedScaleFuelBar());
+		double flagshipFixedFuelBar = flagship->FixedScaleFuelBar();
 		// Transfers that information into the info setconditions.
 		if(flagshipMassDisplay)
 			info.SetCondition("flagship mass display");
@@ -811,13 +811,17 @@ void Engine::Step(bool isActive)
 			info.SetCondition("flagship jump fuel display");
 		// Calculates the mass, as well as hyper, scram, and jump drive fuel costs
 		double flagshipMass = flagship->InertialMass();
-		info.SetString("flagship mass", to_string(flagshipMass));
+		int flagshipMassNumber = round(flagshipMass);
+		info.SetString("flagship mass", to_string(flagshipMassNumber));
 		double flagshipHyperDriveFuel = 100 + (((flagshipMass - 900) / 100) * 4);
-		info.SetString("flagship hyperdrive fuel per hyperjump", to_string(flagshipHyperDriveFuel));
+		int flagshipHyperDriveFuelDisplay = round(flagshipHyperDriveFuel);
+		info.SetString("flagship hyperdrive fuel per hyperjump", to_string(flagshipHyperDriveFuelDisplay));
 		double flagshipScramDriveFuel = 150 + (((flagshipMass - 900) / 100) * 6);
-		info.SetString("flagship scram drive fuel per hyperjump", to_string(flagshipScramDriveFuel));
+		int flagshipScramDriveFuelDisplay = round(flagshipScramDriveFuel);
+		info.SetString("flagship scram drive fuel per hyperjump", to_string(flagshipScramDriveFuelDisplay));
 		double flagshipJumpDriveFuel = 200 + (((flagshipMass - 900) / 100) * 8);
-		info.SetString("flagship jump drive fuel per hyperjump", to_string(flagshipJumpDriveFuel));
+		int flagshipJumpDriveFuelDisplay = round(flagshipJumpDriveFuel);
+		info.SetString("flagship jump drive fuel per hyperjump", to_string(flagshipJumpDriveFuelDisplay));
 		// new thrust/turn/lateral bars.
 		info.SetBar("thrust", flagship->DisplayThrust());
 		info.SetBar("turn", flagship->DisplayTurn());
@@ -826,7 +830,7 @@ void Engine::Step(bool isActive)
 		double fuelCap = flagship->Attributes().Get("fuel capacity");
 		// This is just to see the fuel capacity temporarily
 		info.SetString("flagship fuel capacity", to_string(fuelCap));
-		info.SetString("flagship HD fuel bar", to_string(flagshipHyperFuelBar));
+		info.SetString("flagship HD fuel bar", to_string(flagshipFixedFuelBar));
 
 		// If the flagship has an outfit that forces a specific scale for the fuel bar, use that. If it has multiple,
 		// then the priority order is HD, then SD, then JD, then fixed quantity. If none, the default is HD.
@@ -834,36 +838,36 @@ void Engine::Step(bool isActive)
 		// fall back to a solid bar.
 		if(flagshipHyperFuelBar == 1)
 		{
-			if((fuelCap / flagshipHyperDriveFuel) < 31)
-				info.SetBar("fuel", flagship->Fuel(), fuelCap * (1 / flagshipHyperDriveFuel));
+			if((fuelCap / flagshipHyperDriveFuel) < 31.)
+				info.SetBar("fuel", flagship->Fuel(), fuelCap / flagshipHyperDriveFuel);
 			else
-				info.SetBar("fuel", flagship->Fuel(), 7);
+				info.SetBar("fuel", flagship->Fuel(), 7.);
 		}
 		else if(flagshipScramFuelBar == 1)
 		{
-			if((fuelCap / flagshipScramDriveFuel) < 31)
-				info.SetBar("fuel", flagship->Fuel(), fuelCap * (1 / flagshipScramDriveFuel));
+			if((fuelCap / flagshipScramDriveFuel) < 31.)
+				info.SetBar("fuel", flagship->Fuel(), fuelCap / flagshipScramDriveFuel);
 			else
-				info.SetBar("fuel", flagship->Fuel(), 2);
+				info.SetBar("fuel", flagship->Fuel(), 2.);
 		}
 		else if(flagshipJumpFuelBar == 1)
 		{
-			if((fuelCap / flagshipJumpDriveFuel) < 31)
-				info.SetBar("fuel", flagship->Fuel(), fuelCap * (1 / flagshipJumpDriveFuel));
+			if((fuelCap / flagshipJumpDriveFuel) < 31.)
+				info.SetBar("fuel", flagship->Fuel(), fuelCap / flagshipJumpDriveFuel);
 			else
-				info.SetBar("fuel", flagship->Fuel(), 3);
+				info.SetBar("fuel", flagship->Fuel(), 3.);
 		}
 		else if(flagshipFixedFuelBar >= 1)
 		{
-			if((fuelCap / flagshipFixedFuelBar) < 31)
-				info.SetBar("fuel", flagship->Fuel(), fuelCap * (1 / flagshipFixedFuelBar));
+			if((fuelCap / flagshipFixedFuelBar) < 31.)
+				info.SetBar("fuel", flagship->Fuel(), fuelCap / flagshipFixedFuelBar);
 			else
-				info.SetBar("fuel", flagship->Fuel(), 4);
+				info.SetBar("fuel", flagship->Fuel(), 4.);
 		}
-		else if((fuelCap / flagshipHyperDriveFuel) < 31)
-			info.SetBar("fuel", flagship->Fuel(), fuelCap * (1 / flagshipHyperDriveFuel));
+		else if((fuelCap / flagshipHyperDriveFuel) < 31.)
+			info.SetBar("fuel", flagship->Fuel(), fuelCap / flagshipHyperDriveFuel);
 		else
-			info.SetBar("fuel", flagship->Fuel(), 5);
+			info.SetBar("fuel", flagship->Fuel(), 1.);
 
 		info.SetBar("energy", flagship->Energy());
 		double heat = flagship->Heat();
