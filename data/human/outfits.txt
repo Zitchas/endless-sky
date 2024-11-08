@@ -340,7 +340,7 @@ outfit "Jump drive Fuel Display"
 	"mass" 0
 	"outfit space" 0
 	"jump drive fuel cost display" 1
-	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump with a scram drive."
+	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump with a jump drive."
 	
 	
 outfit "Cloaking Device"
