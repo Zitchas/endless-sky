@@ -828,9 +828,6 @@ void Engine::Step(bool isActive)
 		info.SetBar("lateralthrust", flagship->DisplayLateralThrust());
 		// Get the flagship's fuel capacity
 		double fuelCap = flagship->Attributes().Get("fuel capacity");
-		// This is just to see the fuel capacity temporarily
-		info.SetString("flagship fuel capacity", to_string(fuelCap));
-		info.SetString("flagship HD fuel bar", to_string(flagshipFixedFuelBar));
 
 		// If the flagship has an outfit that forces a specific scale for the fuel bar, use that. If it has multiple,
 		// then the priority order is HD, then SD, then JD, then fixed quantity. If none, the default is HD.
