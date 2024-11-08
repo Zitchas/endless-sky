@@ -799,7 +799,7 @@ void Engine::Step(bool isActive)
 		bool flagshipHyperFuelBar = (flagship->HyperDriveFuelBar());
 		bool flagshipScramFuelBar = (flagship->ScramDriveFuelBar());
 		bool flagshipJumpFuelBar = (flagship->JumpDriveFuelBar());
-		int flagshipFixedFuelBar = (flagship->FixedScaleFuelBar());
+		double flagshipFixedFuelBar = (flagship->FixedScaleFuelBar());
 		// Transfers that information into the info setconditions.
 		if(flagshipMassDisplay)
 			info.SetCondition("flagship mass display");
@@ -810,13 +810,13 @@ void Engine::Step(bool isActive)
 		if(flagshipJumpDisplay)
 			info.SetCondition("flagship jump fuel display");
 		// Calculates the mass, as well as hyper, scram, and jump drive fuel costs
-		int flagshipMass = flagship->InertialMass();
+		double flagshipMass = flagship->InertialMass();
 		info.SetString("flagship mass", to_string(flagshipMass));
-		int flagshipHyperDriveFuel = 100 + (((flagshipMass - 900) / 100) * 4);
+		double flagshipHyperDriveFuel = 100 + (((flagshipMass - 900) / 100) * 4);
 		info.SetString("flagship hyperdrive fuel per hyperjump", to_string(flagshipHyperDriveFuel));
-		int flagshipScramDriveFuel = 150 + (((flagshipMass - 900) / 100) * 6);
+		double flagshipScramDriveFuel = 150 + (((flagshipMass - 900) / 100) * 6);
 		info.SetString("flagship scram drive fuel per hyperjump", to_string(flagshipScramDriveFuel));
-		int flagshipJumpDriveFuel = 200 + (((flagshipMass - 900) / 100) * 8);
+		double flagshipJumpDriveFuel = 200 + (((flagshipMass - 900) / 100) * 8);
 		info.SetString("flagship jump drive fuel per hyperjump", to_string(flagshipJumpDriveFuel));
 		// new thrust/turn/lateral bars.
 		info.SetBar("thrust", flagship->DisplayThrust());
