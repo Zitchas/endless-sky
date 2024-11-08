@@ -29,7 +29,7 @@ outfit "Hyperjump Fuel Display"
 	"hyperdrive fuel cost display" 1
 	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump."
 
-outfit "Scram drive Fuel Display"
+outfit "Scram Drive Fuel Display"
 	category "Heads Up Displays"
 	cost 17000
 	thumbnail "outfit/tactical scanner"
@@ -38,7 +38,7 @@ outfit "Scram drive Fuel Display"
 	"scram drive fuel cost display" 1
 	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump with a scram drive."
 
-outfit "Jump drive Fuel Display"
+outfit "Jump Drive Fuel Display"
 	category "Heads Up Displays"
 	cost 23000
 	thumbnail "outfit/tactical scanner"
@@ -47,7 +47,7 @@ outfit "Jump drive Fuel Display"
 	"jump drive fuel cost display" 1
 	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump with a jump drive."
 
-outfit "Fuel bar hyperjump display"
+outfit "Fuel Bar Hyperjump Display"
 	category "Heads Up Displays"
 	cost 7000
 	thumbnail "outfit/tactical scanner"
@@ -57,7 +57,7 @@ outfit "Fuel bar hyperjump display"
 	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display so that their fuel bar is segmented into sections representing a single hyperdrive jump."
 	description "	Just like the HUD display, the amount of fuel represented by each segment of the bar is automatically calculated in flight, and while landed it uses the ship's fully outfitted but otherwise empty mass. Given how standardized hyperdrives are, this is the default segmentation most ships use, and it will override other fuel segmentation customizations. Due to limitations of the display, if you have 31 or more hyper jumps worth of fuel, the display will show as a solid bar."
 
-outfit "Fuel bar scram display"
+outfit "Fuel Bar Scram Display"
 	category "Heads Up Displays"
 	cost 9000
 	thumbnail "outfit/tactical scanner"
@@ -67,7 +67,7 @@ outfit "Fuel bar scram display"
 	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display so that their fuel bar is segmented into sections representing a single scram drive jump."
 	description "	Just like the HUD display, the amount of fuel represented by each segment of the bar is automatically calculated in flight, and while landed it uses the ship's fully outfitted but otherwise empty mass. Given how standardized hyperdrives are, this display modification will be overridden by the hyperdrive fuel segmentation, but will override other fuel display segmentations. Due to limitations of the display, if you have 31 or more scram jumps worth of fuel, the display will show as a solid bar."
 
-outfit "Fuel bar jump display"
+outfit "Fuel Bar Jump Display"
 	category "Heads Up Displays"
 	cost 11000
 	thumbnail "outfit/tactical scanner"
@@ -77,11 +77,11 @@ outfit "Fuel bar jump display"
 	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display so that their fuel bar is segmented into sections representing a single jump drive jump."
 	description "	Just like the HUD display, the amount of fuel represented by each segment of the bar is automatically calculated in flight, and while landed it uses the ship's fully outfitted but otherwise empty mass. Given how standardized hyperdrives are, this display modification will be overridden by the hyperdrive fuel segmentation as well as the scram drive fuel segmentation, but will override other fuel display segmentations. Due to limitations of the display, if you have 31 or more jump drive jumps worth of fuel, the display will show as a solid bar."
 
-outfit "Fuel bar fixed display"
+outfit "Fuel Bar Fixed Display"
 	category "Heads Up Displays"
 	cost 2000
 	thumbnail "outfit/tactical scanner"
 	"mass" 0
 	"outfit space" 0
-	"fixed scale fuel bar scale" 150
+	"fixed scale fuel bar scale" 100
 	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display so that their fuel bar is segmented into sections where each full section is exactly the amount of fuel specified. It will be overridden by any other fuel display segmentation that is present; and due to display limitations, it will show a solid bar if 31 or more full fuel segments would be called for."
