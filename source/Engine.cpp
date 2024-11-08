@@ -848,7 +848,7 @@ void Engine::Step(bool isActive)
 		}
 		else if(flagshipJumpFuelBar)
 		{
-			fuelToEvaluate = flagshipScramDriveFuel;
+			fuelToEvaluate = flagshipJumpDriveFuel;
 			fallBackSegmentation = 3.;
 		}
 		else if(flagshipFixedFuelBar)
