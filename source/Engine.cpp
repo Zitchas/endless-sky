@@ -856,8 +856,6 @@ void Engine::Step(bool isActive)
 			fuelToEvaluate = flagshipFixedFuelBar;
 			fallBackSegmentation = 4.;
 		}
-		
-		
 		if((fuelCap / fuelToEvaluate) < 31.)
 			info.SetBar("fuel", flagship->Fuel(), fuelCap / fuelToEvaluate);
 		else
