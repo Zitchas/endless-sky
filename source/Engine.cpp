@@ -791,14 +791,14 @@ void Engine::Step(bool isActive)
 		}
 		// These check for the attribute to determine if the pilot has installed
 		// outfits that give a live display of ship mass and jump fuel costs.
-		bool flagshipMassDisplay = (flagship->DisplayMass());
-		bool flagshipHyperDisplay = (flagship->DisplayHyperFuelCost());
-		bool flagshipScramDisplay = (flagship->DisplayScramFuelCost());
-		bool flagshipJumpDisplay = (flagship->DisplayJumpFuelCost());
+		bool flagshipMassDisplay = flagship->DisplayMass();
+		bool flagshipHyperDisplay = flagship->DisplayHyperFuelCost();
+		bool flagshipScramDisplay = flagship->DisplayScramFuelCost();
+		bool flagshipJumpDisplay = flagship->DisplayJumpFuelCost();
 		// These are to get the method of scaling the fuel bar segments.
-		bool flagshipHyperFuelBar = (flagship->HyperDriveFuelBar());
-		bool flagshipScramFuelBar = (flagship->ScramDriveFuelBar());
-		bool flagshipJumpFuelBar = (flagship->JumpDriveFuelBar());
+		bool flagshipHyperFuelBar = flagship->HyperDriveFuelBar();
+		bool flagshipScramFuelBar = flagship->ScramDriveFuelBar();
+		bool flagshipJumpFuelBar = flagship->JumpDriveFuelBar();
 		double flagshipFixedFuelBar = flagship->FixedScaleFuelBar();
 		// Transfers that information into the info setconditions.
 		if(flagshipMassDisplay)
@@ -813,13 +813,14 @@ void Engine::Step(bool isActive)
 		double flagshipMass = flagship->InertialMass();
 		int flagshipMassNumber = round(flagshipMass);
 		info.SetString("flagship mass", to_string(flagshipMassNumber));
-		double flagshipHyperDriveFuel = 100 + (((flagshipMass - 900) / 100) * 4);
+		double relativeFlagshipMass = ((flagshipMass - 900.) / 100.);
+		double flagshipHyperDriveFuel = 100. + (relativeFlagshipMass * 4.);
 		int flagshipHyperDriveFuelDisplay = round(flagshipHyperDriveFuel);
 		info.SetString("flagship hyperdrive fuel per hyperjump", to_string(flagshipHyperDriveFuelDisplay));
-		double flagshipScramDriveFuel = 150 + (((flagshipMass - 900) / 100) * 6);
+		double flagshipScramDriveFuel = 150. + (relativeFlagshipMass * 6.);
 		int flagshipScramDriveFuelDisplay = round(flagshipScramDriveFuel);
 		info.SetString("flagship scram drive fuel per hyperjump", to_string(flagshipScramDriveFuelDisplay));
-		double flagshipJumpDriveFuel = 200 + (((flagshipMass - 900) / 100) * 8);
+		double flagshipJumpDriveFuel = 200. + (relativeFlagshipMass * 8.);
 		int flagshipJumpDriveFuelDisplay = round(flagshipJumpDriveFuel);
 		info.SetString("flagship jump drive fuel per hyperjump", to_string(flagshipJumpDriveFuelDisplay));
 		// new thrust/turn/lateral bars.
@@ -833,38 +834,34 @@ void Engine::Step(bool isActive)
 		// then the priority order is HD, then SD, then JD, then fixed quantity. If none, the default is HD.
 		// In every case, if the player is trying to force a fuel bar that will result in 31 or more segments, then
 		// fall back to a solid bar.
-		if(flagshipHyperFuelBar == 1)
+		double fuelToEvaluate = flagshipHyperDriveFuel;
+		double fallBackSegmentation = 1.;
+		if(flagshipHyperFuelBar)
 		{
-			if((fuelCap / flagshipHyperDriveFuel) < 31.)
-				info.SetBar("fuel", flagship->Fuel(), fuelCap / flagshipHyperDriveFuel);
-			else
-				info.SetBar("fuel", flagship->Fuel(), 7.);
+			fuelToEvaluate = flagshipHyperDriveFuel;
+			fallBackSegmentation = 7.;
 		}
-		else if(flagshipScramFuelBar == 1)
+		else if(flagshipScramFuelBar)
 		{
-			if((fuelCap / flagshipScramDriveFuel) < 31.)
-				info.SetBar("fuel", flagship->Fuel(), fuelCap / flagshipScramDriveFuel);
-			else
-				info.SetBar("fuel", flagship->Fuel(), 2.);
+			fuelToEvaluate = flagshipScramDriveFuel;
+			fallBackSegmentation = 2.;
 		}
-		else if(flagshipJumpFuelBar == 1)
+		else if(flagshipJumpDriveFuel)
 		{
-			if((fuelCap / flagshipJumpDriveFuel) < 31.)
-				info.SetBar("fuel", flagship->Fuel(), fuelCap / flagshipJumpDriveFuel);
-			else
-				info.SetBar("fuel", flagship->Fuel(), 3.);
+			fuelToEvaluate = flagshipScramDriveFuel;
+			fallBackSegmentation = 3.;
 		}
-		else if(flagshipFixedFuelBar >= 1)
+		else if(flagshipFixedFuelBar)
 		{
-			if((fuelCap / flagshipFixedFuelBar) < 31.)
-				info.SetBar("fuel", flagship->Fuel(), fuelCap / flagshipFixedFuelBar);
-			else
-				info.SetBar("fuel", flagship->Fuel(), 4.);
+			fuelToEvaluate = flagshipFixedFuelBar;
+			fallBackSegmentation = 4.;
 		}
-		else if((fuelCap / flagshipHyperDriveFuel) < 31.)
-			info.SetBar("fuel", flagship->Fuel(), fuelCap / flagshipHyperDriveFuel);
+		
+		
+		if((fuelCap / fuelToEvaluate) < 31.)
+			info.SetBar("fuel", flagship->Fuel(), fuelCap / fuelToEvaluate);
 		else
-			info.SetBar("fuel", flagship->Fuel(), 1.);
+			info.SetBar("fuel", flagship->Fuel(), fallBackSegmentation);
 
 		info.SetBar("energy", flagship->Energy());
 		double heat = flagship->Heat();
