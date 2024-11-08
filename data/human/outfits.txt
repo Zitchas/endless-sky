@@ -306,43 +306,7 @@ outfit "Surveillance Pod"
 	"atmosphere scan" 100
 	description "This is Navy technology, a collection of scanners designed to fit perfectly inside one of their surveillance drones. Since the outputs are fairly standard, you could connect it to your own ship's systems if you want. Installing more than one increases the scan range and speed."
 
-outfit "In-flight Mass Display"
-	category "Heads Up Displays"
-	cost 5000
-	thumbnail "outfit/tactical scanner"
-	"mass" 0
-	"outfit space" 0
-	"mass display" 1
-	description "This innocuous device is so compact as to barely count as an outfit at all. Some pilots find it useful to know what their ship's current mass is while in-flight, and this little display adds that information to their Heads Up Display."
 
-outfit "Hyperjump Fuel Display"
-	category "Heads Up Displays"
-	cost 11000
-	thumbnail "outfit/tactical scanner"
-	"mass" 0
-	"outfit space" 0
-	"hyperdrive fuel cost display" 1
-	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump."
-
-outfit "Scram drive Fuel Display"
-	category "Heads Up Displays"
-	cost 17000
-	thumbnail "outfit/tactical scanner"
-	"mass" 0
-	"outfit space" 0
-	"scram drive fuel cost display" 1
-	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump with a scram drive."
-
-outfit "Jump drive Fuel Display"
-	category "Heads Up Displays"
-	cost 23000
-	thumbnail "outfit/tactical scanner"
-	"mass" 0
-	"outfit space" 0
-	"jump drive fuel cost display" 1
-	description "This innocuous device is so compact as to barely count as an outfit at all. Its sole purpose is to allow pilots to customize their heads-up display to provide their flight computer's current estimate of the amount of fuel they need to make a hyperjump with a jump drive."
-	
-	
 outfit "Cloaking Device"
 	category "Unique"
 	cost 1200000

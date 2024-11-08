@@ -335,6 +335,10 @@ public:
 	double Hull() const;
 	double Fuel() const;
 	double Energy() const;
+	bool HyperDriveFuelBar() const;
+	bool ScramDriveFuelBar() const;
+	bool JumpDriveFuelBar() const;
+	int FixedScaleFuelBar() const;
 	bool DisplayMass() const;
 	bool DisplayHyperFuelCost() const;
 	bool DisplayScramFuelCost() const;

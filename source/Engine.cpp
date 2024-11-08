@@ -234,7 +234,6 @@ namespace {
 	}
 
 	const double RADAR_SCALE = .00625;
-	const double MAX_FUEL_DISPLAY = 5000.;
 
 	const double CAMERA_VELOCITY_TRACKING = 0.1;
 	const double CAMERA_POSITION_CENTERING = 0.01;
@@ -796,7 +795,11 @@ void Engine::Step(bool isActive)
 		bool flagshipHyperDisplay = (flagship->DisplayHyperFuelCost());
 		bool flagshipScramDisplay = (flagship->DisplayScramFuelCost());
 		bool flagshipJumpDisplay = (flagship->DisplayJumpFuelCost());
-		int flagshipMass = flagship->InertialMass();
+		// These are to get the method of scaling the fuel bar segments.
+		bool flagshipHyperFuelBar = (flagship->HyperDriveFuelBar());
+		bool flagshipScramFuelBar = (flagship->ScramDriveFuelBar());
+		bool flagshipJumpFuelBar = (flagship->JumpDriveFuelBar());
+		int flagshipFixedFuelBar = (flagship->FixedScaleFuelBar());
 		// Transfers that information into the info setconditions.
 		if(flagshipMassDisplay)
 			info.SetCondition("flagship mass display");
@@ -807,6 +810,7 @@ void Engine::Step(bool isActive)
 		if(flagshipJumpDisplay)
 			info.SetCondition("flagship jump fuel display");
 		// Calculates the mass, as well as hyper, scram, and jump drive fuel costs
+		int flagshipMass = flagship->InertialMass();
 		info.SetString("flagship mass", to_string(flagshipMass));
 		int flagshipHyperDriveFuel = 100 + (((flagshipMass - 900) / 100) * 4);
 		info.SetString("flagship hyperdrive fuel per hyperjump", to_string(flagshipHyperDriveFuel));
@@ -820,12 +824,43 @@ void Engine::Step(bool isActive)
 		info.SetBar("lateralthrust", flagship->DisplayLateralThrust());
 		// Get the flagship's fuel capacity
 		double fuelCap = flagship->Attributes().Get("fuel capacity");
-		// If the flagship has a large amount of fuel, display a solid bar.
-		// Otherwise, display a segment for every 100 units of fuel.
-		if(fuelCap <= MAX_FUEL_DISPLAY)
-			info.SetBar("fuel", flagship->Fuel(), fuelCap * .01);
+		// If the flagship has an outfit that forces a specific scale for the fuel bar, use that. If it has multiple,
+		// then the priority order is HD, then SD, then JD, then fixed quantity. If none, the default is HD.
+		// In every case, if the player is trying to force a fuel bar that will result in 31 or more segments, then
+		// fall back to a solid bar.
+		if(flagshipHyperFuelBar)
+		{
+			if((fuelCap / flagshipHyperDriveFuel) < 310)
+				info.SetBar("fuel", flagship->Fuel(), fuelCap * (1 / flagshipHyperDriveFuel));
+			else
+				info.SetBar("fuel", 2);
+		}
+		else if(flagshipScramFuelBar)
+		{
+			if((fuelCap / flagshipScramDriveFuel) < 310)
+				info.SetBar("fuel", flagship->Fuel(), fuelCap * (1 / flagshipScramDriveFuel));
+			else
+				info.SetBar("fuel", 3);
+		}
+		else if(flagshipJumpFuelBar)
+		{
+			if((fuelCap / flagshipJumpDriveFuel) < 310)
+				info.SetBar("fuel", flagship->Fuel(), fuelCap * (1 / flagshipJumpDriveFuel));
+			else
+				info.SetBar("fuel", 4);
+		}
+		else if(flagshipFixedFuelBar > 0)
+		{
+			if((fuelCap / flagshipFixedFuelBar) < 310)
+				info.SetBar("fuel", flagship->Fuel(), fuelCap * (1 / flagshipFixedFuelBar));
+			else
+				info.SetBar("fuel", 5);
+		}
+		else if((fuelCap / 100) < 31)
+			info.SetBar("fuel", flagship->Fuel(), fuelCap * (1 / flagshipHyperDriveFuel));
 		else
-			info.SetBar("fuel", flagship->Fuel());
+			info.SetBar("fuel", 6);
+
 		info.SetBar("energy", flagship->Energy());
 		double heat = flagship->Heat();
 		info.SetBar("heat", min(1., heat));
