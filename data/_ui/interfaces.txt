@@ -750,6 +750,14 @@ interface "hud"
 		from -94 403
 		color "medium"
 		align left
+	string "flagship fuel capacity"
+		from -110 423
+		color "medium"
+		align left
+	string "flagship HD fuel bar"
+		from -110 443
+		color "medium"
+		align left
 
 	visible if "flagship ramscoop display"
 	sprite "ui/tactical/ramscoop"
