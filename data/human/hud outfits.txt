@@ -14,7 +14,7 @@
 outfit "In-flight Mass Display"
 	category "Heads Up Displays"
 	cost 5000
-	thumbnail "outfit/tactical scanner"
+	thumbnail "outfit/cockpit software"
 	"mass" 0
 	"outfit space" 0
 	"mass display" 1
@@ -23,7 +23,7 @@ outfit "In-flight Mass Display"
 outfit "Hyperjump Fuel Display"
 	category "Heads Up Displays"
 	cost 11000
-	thumbnail "outfit/tactical scanner"
+	thumbnail "outfit/cockpit software"
 	"mass" 0
 	"outfit space" 0
 	"hyperdrive fuel cost display" 1
@@ -32,7 +32,7 @@ outfit "Hyperjump Fuel Display"
 outfit "Scram Drive Fuel Display"
 	category "Heads Up Displays"
 	cost 17000
-	thumbnail "outfit/tactical scanner"
+	thumbnail "outfit/cockpit software"
 	"mass" 0
 	"outfit space" 0
 	"scram drive fuel cost display" 1
@@ -41,7 +41,7 @@ outfit "Scram Drive Fuel Display"
 outfit "Jump Drive Fuel Display"
 	category "Heads Up Displays"
 	cost 23000
-	thumbnail "outfit/tactical scanner"
+	thumbnail "outfit/cockpit software"
 	"mass" 0
 	"outfit space" 0
 	"jump drive fuel cost display" 1
@@ -50,7 +50,7 @@ outfit "Jump Drive Fuel Display"
 outfit "Fuel Bar Hyperjump Display"
 	category "Heads Up Displays"
 	cost 7000
-	thumbnail "outfit/tactical scanner"
+	thumbnail "outfit/cockpit software"
 	"mass" 0
 	"outfit space" 0
 	"hyperdrive fuel bar scale" 1
@@ -60,7 +60,7 @@ outfit "Fuel Bar Hyperjump Display"
 outfit "Fuel Bar Scram Display"
 	category "Heads Up Displays"
 	cost 9000
-	thumbnail "outfit/tactical scanner"
+	thumbnail "outfit/cockpit software"
 	"mass" 0
 	"outfit space" 0
 	"scram drive fuel bar scale" 1
@@ -70,7 +70,7 @@ outfit "Fuel Bar Scram Display"
 outfit "Fuel Bar Jump Display"
 	category "Heads Up Displays"
 	cost 11000
-	thumbnail "outfit/tactical scanner"
+	thumbnail "outfit/cockpit software"
 	"mass" 0
 	"outfit space" 0
 	"jump drive fuel bar scale" 1
@@ -80,7 +80,7 @@ outfit "Fuel Bar Jump Display"
 outfit "Fuel Bar Fixed Display"
 	category "Heads Up Displays"
 	cost 2000
-	thumbnail "outfit/tactical scanner"
+	thumbnail "outfit/cockpit software"
 	"mass" 0
 	"outfit space" 0
 	"fixed scale fuel bar scale" 100
