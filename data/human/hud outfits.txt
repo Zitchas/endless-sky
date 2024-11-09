@@ -14,7 +14,7 @@
 outfit "In-flight Mass Display"
 	category "Heads Up Displays"
 	cost 5000
-	thumbnail "outfit/cockpit software"
+	thumbnail "outfit/cockpit mass software"
 	"mass" 0
 	"outfit space" 0
 	"mass display" 1
@@ -23,7 +23,7 @@ outfit "In-flight Mass Display"
 outfit "Hyperjump Fuel Display"
 	category "Heads Up Displays"
 	cost 11000
-	thumbnail "outfit/cockpit software"
+	thumbnail "outfit/cockpit hyperjump software"
 	"mass" 0
 	"outfit space" 0
 	"hyperdrive fuel cost display" 1
@@ -32,7 +32,7 @@ outfit "Hyperjump Fuel Display"
 outfit "Scram Drive Fuel Display"
 	category "Heads Up Displays"
 	cost 17000
-	thumbnail "outfit/cockpit software"
+	thumbnail "outfit/cockpit scramjump software"
 	"mass" 0
 	"outfit space" 0
 	"scram drive fuel cost display" 1
@@ -41,7 +41,7 @@ outfit "Scram Drive Fuel Display"
 outfit "Jump Drive Fuel Display"
 	category "Heads Up Displays"
 	cost 23000
-	thumbnail "outfit/cockpit software"
+	thumbnail "outfit/cockpit jumpdrive software"
 	"mass" 0
 	"outfit space" 0
 	"jump drive fuel cost display" 1

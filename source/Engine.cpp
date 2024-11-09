@@ -839,22 +839,18 @@ void Engine::Step(bool isActive)
 		if(flagshipHyperFuelBar)
 		{
 			fuelToEvaluate = flagshipHyperDriveFuel;
-			fallBackSegmentation = 7.;
 		}
 		else if(flagshipScramFuelBar)
 		{
 			fuelToEvaluate = flagshipScramDriveFuel;
-			fallBackSegmentation = 2.;
 		}
 		else if(flagshipJumpFuelBar)
 		{
 			fuelToEvaluate = flagshipJumpDriveFuel;
-			fallBackSegmentation = 3.;
 		}
 		else if(flagshipFixedFuelBar)
 		{
 			fuelToEvaluate = flagshipFixedFuelBar;
-			fallBackSegmentation = 4.;
 		}
 		if((fuelCap / fuelToEvaluate) < 31.)
 			info.SetBar("fuel", flagship->Fuel(), fuelCap / fuelToEvaluate);
