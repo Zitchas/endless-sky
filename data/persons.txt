@@ -2234,6 +2234,7 @@ person "Random Dev"
 			"Prepare for the worst, but hope for the best."
 			"The journey of a thousand miles begins with a single step."
 	ship "Modified Protector" "Disco Ball"
+		"never disabled"
 
 
 
