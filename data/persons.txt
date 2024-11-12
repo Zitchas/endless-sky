@@ -1297,6 +1297,16 @@ person "Zitchas"
 			"Look good, don't they? You can thank Becca and Brick for that."
 			"Education cannot cure fear, intolerance, or incompetence. But it does give a bonus to resisting them."
 			"Why ever would a creator want to raise sheep? Much better to raise new creators."
+			"No such thing as too much information. Just information in the wrong place, wrong time, or wrong method of delivery."
+			"Journey before Destination."
+			"Creation instead of Destruction."
+			"Hope instead of Despair."
+			"Hugs!"
+			"Deep-fried Hugs!"
+			"You are important. Critical, even. Your continued existence is crucial for the fate of the world."
+			"Never forget that you are loved."
+			"Never forget that someone cares about you."
+			"Love makes the 'verse go round."
 	phrase
 		word
 			"If you ever need something to do: "
@@ -2219,7 +2229,7 @@ ship "Modified Hauler VI"
 
 
 
-person "Random Dev"
+person "Random Author"
 	government "Author"
 	frequency 300
 	personality
@@ -2227,12 +2237,23 @@ person "Random Dev"
 	phrase
 		word
 			"Forget your worries, come on, get happy!"
-			"Akunamatata!"
+			"Akunamatata! (Did I spell that right? I'm never sure.)"
 			"Dance like no-one is watching."
 			"Dance like you've got bigger things to worry about than what people think about you waving your arms."
 			"Hope for the best!"
 			"Prepare for the worst, but hope for the best."
 			"The journey of a thousand miles begins with a single step."
+			"Journey before Destination."
+			"If all you've got left is hope, then ask for help!"
+			"Someone cares. Never forget that."
+			"If in doubt, ask for help!"
+			"Even if you don't doubt, ask for help!"
+			"It may not always be apparent, but you have friends."
+			"No matter your place in the world, you matter."
+			"You are important to someone."
+			"Time for flashy lights!"
+			"Which way to the rave?"
+			"The best rave I've ever been to was in... uh... what town was that again?"
 	ship "Modified Protector" "Disco Ball"
 		"never disabled"
 
@@ -2248,8 +2269,8 @@ ship "Protector" "Modified Protector"
 		"hull" 15600
 		"required crew" 30
 		"bunks" 69
-		"mass" 4500
-		"drag" 19
+		"mass" 5000
+		"drag" 20
 		"heat dissipation" .6
 		"fuel capacity" 400
 		"cargo space" 50
