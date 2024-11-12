@@ -989,7 +989,6 @@ shipyard "Remnant"
 	"Petrel"
 	"Smew"
 	"Tern"
-	"Modified Protector"
 
 shipyard "Remnant Puffin"
 	"Puffin"

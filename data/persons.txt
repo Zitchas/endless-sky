@@ -2263,8 +2263,8 @@ ship "Protector" "Modified Protector"
 		"hull" 15600
 		"required crew" 30
 		"bunks" 69
-		"mass" 1500
-		"drag" 10.3
+		"mass" 4500
+		"drag" 19
 		"heat dissipation" .6
 		"fuel capacity" 400
 		"cargo space" 50
