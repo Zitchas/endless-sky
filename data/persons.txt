@@ -2219,37 +2219,21 @@ ship "Modified Hauler VI"
 
 
 
-person "Sarcasm"
+person "Random Dev"
 	government "Author"
 	frequency 300
 	personality
 		mining harvests plunders
 	phrase
 		word
-			"I've been tempted to code this up a few times."
-			"Sometimes nerfs are necessary."
-			"Quarg tech is a placeholder and really shouldn't factor into anything. "
-			"Well my priority list changes weekly based on my attention span so it really isn't up to any of us."
-			"Sorry that I can't work on 20 things at once."
-			"Talk to me about weapon ranges after we have larger systems, arrival distances, and more intellegent ship AI."
-			"I've said in the past that once I quit working on vanilla I'm going back to making plugins for the hell of it."
-			"I discussed that there's a distinction between realism and immersion. Immersion requires a level of realism, but realism isn't the goal."
-			"I'm going to passively aggressively bemoan the current state of affairs while doing nothing to change it."
-			"I'm letting it slide for the moment."
-			"I'd say there's a distinction between realism and immersion. Something can be unrealistic while still keeping you immersed."
-			"Poor guy. I don't want to imagine what junker he's flying."
-			"You're welcome."
-			"My first few PRs that got closed are because I had no idea what I was really doing."
-			"New thought: Plugins can and maybe even should break these rules."
-			"Endless Sky is Dragon Ball Z confirmed."
-			"I weep."
-			"It is all just so tiresome."
-			"Can people stop making their first PRs massive?"
-			"Flexing that Endless Sky clout."
-			"We can discuss dedicated mining ships when the mechanics are in."
-			"They're so advanced they don't even need pockets."
-			"But the journey of a thousand miles begins with a single step."
-	ship "Modified Protector" "Sarcasm"
+			"Forget your worries, come on, get happy!"
+			"Akunamatata!"
+			"Dance like no-one is watching."
+			"Dance like you've got bigger things to worry about than what people think about you waving your arms."
+			"Hope for the best!"
+			"Prepare for the worst, but hope for the best."
+			"The journey of a thousand miles begins with a single step."
+	ship "Modified Protector" "Disco Ball"
 
 
 
@@ -2268,8 +2252,8 @@ ship "Protector" "Modified Protector"
 		"heat dissipation" .6
 		"fuel capacity" 400
 		"cargo space" 50
-		"outfit space" 1002
-		"weapon capacity" 473
+		"outfit space" 974
+		"weapon capacity" 455
 		"engine capacity" 307
 		weapon
 			"blast radius" 160
@@ -2284,8 +2268,10 @@ ship "Protector" "Modified Protector"
 		"Mining Laser" 2
 		"Moonbeam"
 		"Sunbeam"
-		"Sidewinder Missile Launcher" 6
-		"Sidewinder Missile" 360
+		"Meteor Missile Launcher" 3
+		"Meteor Missile" 90
+		"Sidewinder Missile Launcher" 3
+		"Sidewinder Missile" 180
 		"Quad Blaster Turret" 6
 		"Heavy Anti-Missile Turret" 2
 		
@@ -2297,7 +2283,6 @@ ship "Protector" "Modified Protector"
 		"Liquid Nitrogen Cooler"
 		"Laser Rifle" 69
 		
-		"Afterburner"
 		"Tyrant Plasma Thruster"
 		"Tyrant Plasma Steering"
 		"Hyperdrive"
@@ -2322,15 +2307,15 @@ ship "Protector" "Modified Protector"
 		parallel
 	pylon -68 -68.5 "Sidewinder Missile Launcher"
 		"angle" -45
-	pylon -97.5 -1.5 "Sidewinder Missile Launcher"
+	pylon -97.5 -1.5 "Meteor Missile Launcher"
 		"angle" -90
 	pylon -70 66.5 "Sidewinder Missile Launcher"
 		"angle" -135
-	pylon 68.5 69 "Sidewinder Missile Launcher"
+	pylon 68.5 69 "Meteor Missile Launcher"
 		"angle" 135
 	pylon 97.5 0.5 "Sidewinder Missile Launcher"
 		"angle" 90
-	pylon 67.5 -71 "Sidewinder Missile Launcher"
+	pylon 67.5 -71 "Meteor Missile Launcher"
 		"angle" 45
 	turret 0 -28.5 "Heavy Anti-Missile Turret"
 	turret -48.5 -48.5 "Quad Blaster Turret"
