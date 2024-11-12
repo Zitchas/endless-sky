@@ -2219,8 +2219,8 @@ ship "Modified Hauler VI"
 
 
 
-person "Random Villain"
-	government "Syndicate"
+person "Sarcasm"
+	government "Author"
 	frequency 300
 	personality
 		mining harvests plunders
@@ -2232,7 +2232,6 @@ person "Random Villain"
 			"Well my priority list changes weekly based on my attention span so it really isn't up to any of us."
 			"Sorry that I can't work on 20 things at once."
 			"Talk to me about weapon ranges after we have larger systems, arrival distances, and more intellegent ship AI."
-			"Let it be known that Shields Up is a project I inherited, not my creation."
 			"I've said in the past that once I quit working on vanilla I'm going back to making plugins for the hell of it."
 			"I discussed that there's a distinction between realism and immersion. Immersion requires a level of realism, but realism isn't the goal."
 			"I'm going to passively aggressively bemoan the current state of affairs while doing nothing to change it."
@@ -2240,7 +2239,7 @@ person "Random Villain"
 			"I'd say there's a distinction between realism and immersion. Something can be unrealistic while still keeping you immersed."
 			"Poor guy. I don't want to imagine what junker he's flying."
 			"You're welcome."
-			"My first few PRs that got closed are from because I had no idea what I was really doing."
+			"My first few PRs that got closed are because I had no idea what I was really doing."
 			"New thought: Plugins can and maybe even should break these rules."
 			"Endless Sky is Dragon Ball Z confirmed."
 			"I weep."
@@ -2250,7 +2249,7 @@ person "Random Villain"
 			"We can discuss dedicated mining ships when the mechanics are in."
 			"They're so advanced they don't even need pockets."
 			"But the journey of a thousand miles begins with a single step."
-	ship "Modified Protector" "Priority"
+	ship "Modified Protector" "Sarcasm"
 
 
 
@@ -2269,8 +2268,8 @@ ship "Protector" "Modified Protector"
 		"heat dissipation" .6
 		"fuel capacity" 400
 		"cargo space" 50
-		"outfit space" 998
-		"weapon capacity" 322
+		"outfit space" 1002
+		"weapon capacity" 473
 		"engine capacity" 307
 		weapon
 			"blast radius" 160
@@ -2278,7 +2277,14 @@ ship "Protector" "Modified Protector"
 			"hull damage" 800
 			"hit force" 2400
 	outfits
-		"Sidewinder Missile Launcher" 8
+		"Beam Laser"
+		"Electron Beam"
+		"Fire-Lance"
+		"Heavy Laser"
+		"Mining Laser" 2
+		"Moonbeam"
+		"Sunbeam"
+		"Sidewinder Missile Launcher" 6
 		"Sidewinder Missile" 360
 		"Quad Blaster Turret" 6
 		"Heavy Anti-Missile Turret" 2
@@ -2298,27 +2304,47 @@ ship "Protector" "Modified Protector"
 		
 	engine -12 122.5
 	engine 12 122.5
-	gun -17.5 -101 "Sidewinder Missile Launcher"
-	gun -68 -68.5 "Sidewinder Missile Launcher"
+	gun -17.5 -101 "Mining Laser"
+		parallel
+	gun -68 -68.5 "Beam Laser"
 		"angle" -45
-	gun -97.5 -1.5 "Sidewinder Missile Launcher"
+	gun -97.5 -1.5 "Heavy Laser"
 		"angle" -90
-	gun -70 66.5 "Sidewinder Missile Launcher"
+	gun -70 66.5 "Electron Beam"
 		"angle" -135
-	gun 68.5 69 "Sidewinder Missile Launcher"
+	gun 68.5 69 "Sunbeam"
 		"angle" 135
-	gun 97.5 0.5 "Sidewinder Missile Launcher"
+	gun 97.5 0.5 "Moonbeam"
 		"angle" 90
-	gun 67.5 -71 "Sidewinder Missile Launcher"
+	gun 67.5 -71 "Fire-Lance"
 		"angle" 45
-	gun 17.5 -101 "Sidewinder Missile Launcher"
+	gun 17.5 -101 "Mining Laser"
+		parallel
+	pylon -68 -68.5 "Sidewinder Missile Launcher"
+		"angle" -45
+	pylon -97.5 -1.5 "Sidewinder Missile Launcher"
+		"angle" -90
+	pylon -70 66.5 "Sidewinder Missile Launcher"
+		"angle" -135
+	pylon 68.5 69 "Sidewinder Missile Launcher"
+		"angle" 135
+	pylon 97.5 0.5 "Sidewinder Missile Launcher"
+		"angle" 90
+	pylon 67.5 -71 "Sidewinder Missile Launcher"
+		"angle" 45
 	turret 0 -28.5 "Heavy Anti-Missile Turret"
 	turret -48.5 -48.5 "Quad Blaster Turret"
+		"angle" -45
 	turret 48.5 -48.5 "Quad Blaster Turret"
+		"angle" 45
 	turret -68.5 0 "Quad Blaster Turret"
+		"angle" -90
 	turret 68.5 0 "Quad Blaster Turret"
+		"angle" 90
 	turret -48.5 48.5 "Quad Blaster Turret"
+		"angle" -135
 	turret 48.5 48.5 "Quad Blaster Turret"
+		"angle" 135
 	turret 0 30 "Heavy Anti-Missile Turret"
 	leak "leak" 60 50
 	leak "flame" 20 80
