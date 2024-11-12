@@ -2315,6 +2315,9 @@ ship "Protector" "Modified Protector"
 		"outfit space" 974
 		"weapon capacity" 455
 		"engine capacity" 307
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		weapon
 			"blast radius" 160
 			"shield damage" 1600
