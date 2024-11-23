@@ -1921,7 +1921,7 @@ fleet "Large Southern Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		plunders harvests getaway
+		disables plunders harvests getaway
 	variant 2
 		"Sparrow" 4
 	variant 1
@@ -2101,7 +2101,7 @@ fleet "CCOR Logistics"
 	names "pirate"
 	cargo 1
 	personality
-		timid secretive coward appeasing
+		disables timid secretive coward appeasing
 	variant 1
 		"Hauler II"
 	variant 1
@@ -2295,7 +2295,7 @@ fleet "Large Core Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		plunders harvests getaway
+		disables plunders harvests getaway
 	variant 5
 		"Quicksilver (Proton)" 3
 	variant 2
@@ -2445,7 +2445,7 @@ fleet "Large Northern Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		plunders harvests getaway
+		disables plunders harvests getaway
 	variant 4
 		"Firebird"
 	variant 10
@@ -2903,7 +2903,7 @@ fleet "Marauder I"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 3
 		"Marauder Arrow"
 	variant 1
@@ -2922,7 +2922,7 @@ fleet "Marauder II"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 3
 		"Marauder Quicksilver"
 	variant 1
@@ -2941,7 +2941,7 @@ fleet "Marauder III"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 3
 		"Marauder Firebird"
 	variant 1
@@ -2966,7 +2966,7 @@ fleet "Marauder IV"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 3
 		"Marauder Falcon"
 	variant 1
@@ -2985,7 +2985,7 @@ fleet "Marauder fleet I"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 9
 		"Marauder Quicksilver"
 		"Marauder Arrow (Weapons)"
@@ -3024,7 +3024,7 @@ fleet "Marauder fleet II"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 4
 		"Marauder Quicksilver"
 		"Marauder Arrow (Weapons)"
@@ -3063,7 +3063,7 @@ fleet "Marauder fleet III"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 3
 		"Marauder Quicksilver"
 		"Marauder Arrow (Weapons)"
@@ -3102,7 +3102,7 @@ fleet "Marauder fleet IV"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 8
 		"Marauder Firebird"
 		"Marauder Raven"
@@ -3145,7 +3145,7 @@ fleet "Marauder fleet V"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 4
 		"Marauder Firebird"
 		"Marauder Raven"
@@ -3188,7 +3188,7 @@ fleet "Marauder fleet VI"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 2
 		"Marauder Firebird"
 		"Marauder Raven"
@@ -3231,7 +3231,7 @@ fleet "Marauder fleet VII"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 18
 		"Marauder Falcon"
 		"Osprey"
@@ -3271,7 +3271,7 @@ fleet "Marauder fleet VIII"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 8
 		"Marauder Falcon"
 		"Osprey"
@@ -3308,7 +3308,7 @@ fleet "Marauder fleet IX"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 3
 		"Marauder Falcon"
 		"Osprey"
@@ -3349,7 +3349,7 @@ fleet "Marauder fleet X"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 3
 		"Marauder Falcon"
 		"Marauder Firebird"
