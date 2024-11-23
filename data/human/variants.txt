@@ -1028,6 +1028,24 @@ ship "Clipper" "Clipper (Nuclear)"
 		"Volcano Afterburner"
 
 
+ship "Clipper" "Clipper (Raider)"
+	outfits
+		"Plasma Cannon" 2
+		"Energy Blaster" 2
+		"LP072a Battery Pack"
+		"KP-6 Photovoltaic Array" 3
+		"nGVF-CC Fuel Cell"
+		"Cargo Expansion"
+		"Interference Plating" 2
+		"D14-RN Shield Generator"
+		"Rangefinder Scanner"
+		"Greyhound Plasma Steering"
+		"Greyhound Plasma Thruster"
+		"Volcano Afterburner"
+		Hyperdrive
+
+
+
 ship "Clipper" "Clipper (Speedy)"
 	outfits
 		"Heavy Laser" 4
@@ -2235,6 +2253,35 @@ ship "Fury" "Fury (Missile)"
 		"Hyperdrive"
 
 
+ship "Fury" "Fury (Raider)"
+	outfits
+		"Modified Blaster" 4
+		"KP-6 Photovoltaic Array"
+		"LP072a Battery Pack"
+		"D14-RN Shield Generator"
+		"Cargo Expansion"
+		"Chipmunk Plasma Steering"
+		"Chipmunk Plasma Thruster"
+		"Volcano Afterburner"
+		Hyperdrive
+
+
+ship "Fury" "Fury (Raider Missile)"
+	outfits
+		"Modified Blaster" 4
+		"Javelin Mini Pod"
+		Javelin 30
+		"Meteor Missile Pod"
+		"Meteor Missile" 7
+		"KP-6 Photovoltaic Array"
+		"LP072a Battery Pack"
+		"Cargo Expansion"
+		"Chipmunk Plasma Steering"
+		"Chipmunk Plasma Thruster"
+		"Volcano Afterburner"
+		Hyperdrive
+
+
 ship "Fury" "Fury (Thermal Scanner)"
 	outfits
 		"Energy Blaster" 2
@@ -2401,6 +2448,21 @@ ship "Hawk" "Hawk (Plasma)"
 		"X2700 Ion Thruster"
 		"Greyhound Plasma Steering"
 		"Hyperdrive"
+
+
+ship "Hawk" "Hawk (Raider)"
+	outfits
+		"Beam Laser" 2
+		"KP-6 Photovoltaic Panel" 4
+		"LP072a Battery Pack"
+		"nGVF-AA Fuel Cell"
+		"Cargo Expansion"
+		"Small Radar Jammer"
+		"D23-QP Shield Generator"
+		"Volcano Afterburner"
+		"Greyhound Plasma Steering"
+		"Greyhound Plasma Thruster"
+		Hyperdrive
 
 
 ship "Hawk" "Hawk (Rocket)"

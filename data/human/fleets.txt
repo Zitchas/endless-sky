@@ -1964,17 +1964,17 @@ fleet "Small Southern Pirates"
 	variant 2
 		"Hawk (Speedy)"
 	variant 2
-		"Hawk (Rocket)"
+		"Hawk (Raider)"
 	variant 5
 		"Fury"
 	variant 4
-		"Fury (Bomber)"
+		"Fury (Raider)"
 	variant 1
 		"Fury (Laser)"
 	variant 1
 		"Fury (Gatling)"
 	variant 1
-		"Fury (Missile)"
+		"Fury (Raider Missile)"
 	variant 1
 		"Fury (Heavy)"
 	variant 4
@@ -1988,7 +1988,7 @@ fleet "Small Southern Pirates"
 	variant 1
 		"Fury" 3
 	variant 1
-		"Fury (Missile)" 2
+		"Fury (Raider Missile)" 2
 	variant 1
 		"Fury (Heavy)" 2
 	variant 1
@@ -1999,13 +1999,13 @@ fleet "Small Southern Pirates"
 		"Fury"
 		"Sparrow"
 	variant 1
-		"Hawk (Rocket)"
-		"Fury (Missile)"
+		"Hawk (Raider)"
+		"Fury (Raider Missile)"
 		"Sparrow"
 	variant 1
 		"Sparrow" 3
 	variant 1
-		"Fury (Bomber)"
+		"Fury (Raider)"
 		"Sparrow"
 	variant 1
 		"Hawk" 2
@@ -2014,7 +2014,7 @@ fleet "Small Southern Pirates"
 	variant 2
 		"Clipper"
 	variant 1
-		"Clipper (Heavy)"
+		"Clipper (Raider)"
 	variant 1
 		"Clipper (Speedy)"
 	variant 1
@@ -2073,7 +2073,7 @@ fleet "Large Southern Pirates"
 	variant 4
 		"Clipper"
 	variant 2
-		"Clipper (Heavy)"
+		"Clipper (Raider)"
 	variant 2
 		"Clipper (Speedy)"
 	variant 1
@@ -2090,13 +2090,13 @@ fleet "Large Southern Pirates"
 		"Clipper"
 		"Hawk"
 	variant 1
-		"Clipper (Heavy)"
-		"Hawk (Rocket)"
+		"Clipper (Raider)"
+		"Hawk (Raider)"
 	variant 2
 		"Hawk (Bomber)"
 		"Sparrow" 3
 	variant 2
-		"Fury (Bomber)"
+		"Fury (Raider)"
 		"Sparrow" 3
 	variant 1
 		"Clipper (Speedy)"
@@ -2105,14 +2105,14 @@ fleet "Large Southern Pirates"
 		"Hawk (Bomber)"
 		"Fury (Gatling)" 2
 	variant 1
-		"Fury (Bomber)"
+		"Fury (Raider)"
 		"Fury (Gatling)" 2
 	variant 3
 		"Argosy"
 		"Hawk"
 	variant 1
 		"Argosy (Blaster)"
-		"Hawk (Rocket)"
+		"Hawk (Raider)"
 	variant 1
 		"Argosy (Laser)"
 		"Hawk (Speedy)"
@@ -2121,7 +2121,7 @@ fleet "Large Southern Pirates"
 		"Hawk (Speedy)"
 	variant 1
 		"Argosy (Missile)"
-		"Hawk (Rocket)"
+		"Hawk (Raider)"
 	variant 1
 		"Modified Argosy"
 		"Sparrow" 2
@@ -2255,7 +2255,7 @@ fleet "Small Core Pirates"
 	variant 3
 		"Hawk"
 	variant 2
-		"Hawk (Rocket)"
+		"Hawk (Raider)"
 	variant 2
 		"Hawk (Speedy)"
 	variant 1
@@ -2316,10 +2316,10 @@ fleet "Large Core Pirates"
 		"Hawk (Bomber)"
 		"Quicksilver (Proton)" 2
 	variant 3
-		"Fury (Bomber)"
+		"Fury (Raider)"
 		"Quicksilver" 2
 	variant 3
-		"Fury (Bomber)"
+		"Fury (Raider)"
 		"Quicksilver (Proton)" 2
 	variant 2
 		"Headhunter (Strike)"
@@ -2382,11 +2382,11 @@ fleet "Small Northern Pirates"
 	variant 3
 		"Fury"
 	variant 1
-		"Fury (Missile)"
+		"Fury (Raider Missile)"
 	variant 1
 		"Fury (Laser)"
 	variant 1
-		"Fury (Bomber)"
+		"Fury (Raider)"
 	variant 1
 		"Fury (Heavy)"
 	variant 2
@@ -2398,7 +2398,7 @@ fleet "Small Northern Pirates"
 	variant 2
 		"Hawk"
 	variant 1
-		"Hawk (Rocket)"
+		"Hawk (Raider)"
 	variant 1
 		"Hawk (Speedy)"
 	variant 1
@@ -2474,10 +2474,10 @@ fleet "Large Northern Pirates"
 		"Berserker" 2
 	variant 2
 		"Firebird (Plasma)"
-		"Fury (Missile)"
+		"Fury (Raider Missile)"
 	variant 2
 		"Firebird (Missile)"
-		"Fury (Bomber)"
+		"Fury (Raider)"
 	variant 6
 		"Raven (Afterburner)" 2
 	variant 2
@@ -2647,7 +2647,7 @@ fleet "pirate raid"
 		"Berserker" 2
 	variant 1
 		"Firebird (Plasma)"
-		"Fury (Missile)"
+		"Fury (Raider Missile)"
 	variant 1
 		"Firebird (Missile)"
 		"Fury"
