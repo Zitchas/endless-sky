@@ -1842,17 +1842,17 @@ fleet "Small Southern Pirates"
 	variant 2
 		"Hawk (Speedy)"
 	variant 2
-		"Hawk (Rocket)"
+		"Hawk"
 	variant 5
 		"Fury"
 	variant 4
-		"Fury (Bomber)"
+		"Fury"
 	variant 1
 		"Fury (Laser)"
 	variant 1
 		"Fury (Gatling)"
 	variant 1
-		"Fury (Missile)"
+		"Fury"
 	variant 1
 		"Fury (Heavy)"
 	variant 4
@@ -1866,7 +1866,7 @@ fleet "Small Southern Pirates"
 	variant 1
 		"Fury" 3
 	variant 1
-		"Fury (Missile)" 2
+		"Fury" 2
 	variant 1
 		"Fury (Heavy)" 2
 	variant 1
@@ -1877,13 +1877,13 @@ fleet "Small Southern Pirates"
 		"Fury"
 		"Sparrow"
 	variant 1
-		"Hawk (Rocket)"
-		"Fury (Missile)"
+		"Hawk"
+		"Fury"
 		"Sparrow"
 	variant 1
 		"Sparrow" 3
 	variant 1
-		"Fury (Bomber)"
+		"Fury"
 		"Sparrow"
 	variant 1
 		"Hawk" 2
@@ -1892,7 +1892,7 @@ fleet "Small Southern Pirates"
 	variant 2
 		"Clipper"
 	variant 1
-		"Clipper (Heavy)"
+		"Clipper"
 	variant 1
 		"Clipper (Speedy)"
 	variant 1
@@ -1921,7 +1921,7 @@ fleet "Large Southern Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		plunders harvests getaway
+		disables plunders harvests getaway
 	variant 2
 		"Sparrow" 4
 	variant 1
@@ -1933,7 +1933,7 @@ fleet "Large Southern Pirates"
 	variant 2
 		"Argosy (Laser)"
 	variant 2
-		"Argosy (Missile)"
+		"Argosy"
 	variant 2
 		"Argosy (Turret)"
 	variant 1
@@ -1943,7 +1943,7 @@ fleet "Large Southern Pirates"
 	variant 1
 		"Modified Argosy (Blaster)"
 	variant 1
-		"Modified Argosy (Missile)"
+		"Modified Argosy"
 	variant 1
 		"Modified Argosy (Javelin)"
 	variant 1
@@ -1951,7 +1951,7 @@ fleet "Large Southern Pirates"
 	variant 4
 		"Clipper"
 	variant 2
-		"Clipper (Heavy)"
+		"Clipper"
 	variant 2
 		"Clipper (Speedy)"
 	variant 1
@@ -1961,36 +1961,36 @@ fleet "Large Southern Pirates"
 		"Osprey"
 		"Sparrow"
 	variant 1
-		"Osprey (Missile)"
+		"Osprey"
 	variant 1
 		"Osprey (Laser)"
 	variant 2
 		"Clipper"
 		"Hawk"
 	variant 1
-		"Clipper (Heavy)"
-		"Hawk (Rocket)"
+		"Clipper"
+		"Hawk"
 	variant 2
-		"Hawk (Bomber)"
+		"Hawk"
 		"Sparrow" 3
 	variant 2
-		"Fury (Bomber)"
+		"Fury"
 		"Sparrow" 3
 	variant 1
 		"Clipper (Speedy)"
 		"Hawk (Speedy)"
 	variant 1
-		"Hawk (Bomber)"
+		"Hawk"
 		"Fury (Gatling)" 2
 	variant 1
-		"Fury (Bomber)"
+		"Fury"
 		"Fury (Gatling)" 2
 	variant 3
 		"Argosy"
 		"Hawk"
 	variant 1
 		"Argosy (Blaster)"
-		"Hawk (Rocket)"
+		"Hawk"
 	variant 1
 		"Argosy (Laser)"
 		"Hawk (Speedy)"
@@ -1998,8 +1998,8 @@ fleet "Large Southern Pirates"
 		"Argosy (Turret)"
 		"Hawk (Speedy)"
 	variant 1
-		"Argosy (Missile)"
-		"Hawk (Rocket)"
+		"Argosy"
+		"Hawk"
 	variant 1
 		"Modified Argosy"
 		"Sparrow" 2
@@ -2010,10 +2010,10 @@ fleet "Large Southern Pirates"
 		"Modified Argosy (Blaster)"
 		"Sparrow" 2
 	variant 1
-		"Modified Argosy (Missile)" 2
+		"Modified Argosy" 2
 	variant 1
 		"Fury (Heavy)" 2
-		"Modified Argosy (Missile)"
+		"Modified Argosy"
 	variant 1
 		"Modified Argosy (Javelin)"
 		"Sparrow"
@@ -2101,7 +2101,7 @@ fleet "CCOR Logistics"
 	names "pirate"
 	cargo 1
 	personality
-		timid secretive coward appeasing
+		disables timid secretive coward appeasing
 	variant 1
 		"Hauler II"
 	variant 1
@@ -2183,7 +2183,7 @@ fleet "Large Independent"
 	names "pirate"
 	cargo 1
 	personality
-		plunders
+		disables plunders
 	variant 3
 		"Sparrow" 4
 	variant 5
@@ -2255,7 +2255,7 @@ fleet "Small Core Pirates"
 	variant 3
 		"Hawk"
 	variant 2
-		"Hawk (Rocket)"
+		"Hawk"
 	variant 2
 		"Hawk (Speedy)"
 	variant 1
@@ -2295,7 +2295,7 @@ fleet "Large Core Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		plunders harvests getaway
+		disables plunders harvests getaway
 	variant 5
 		"Quicksilver (Proton)" 3
 	variant 2
@@ -2307,19 +2307,19 @@ fleet "Large Core Pirates"
 		"Splinter (Laser)"
 		"Quicksilver"
 	variant 2
-		"Hawk (Bomber)"
+		"Hawk"
 		"Quicksilver" 2
 	variant 1
 		"Fury (Heavy)"
 		"Splinter"
 	variant 2
-		"Hawk (Bomber)"
+		"Hawk"
 		"Quicksilver (Proton)" 2
 	variant 3
-		"Fury (Bomber)"
+		"Fury"
 		"Quicksilver" 2
 	variant 3
-		"Fury (Bomber)"
+		"Fury"
 		"Quicksilver (Proton)" 2
 	variant 2
 		"Headhunter (Strike)"
@@ -2354,11 +2354,11 @@ fleet "Large Core Pirates"
 	variant 1
 		"Firebird (Plasma)"
 	variant 1
-		"Firebird (Missile)"
+		"Firebird"
 	variant 1
 		"Vanguard (Particle)"
 	variant 1
-		"Vanguard (Missile)"
+		"Vanguard"
 	variant 1
 		"Vanguard"
 	variant 1
@@ -2382,11 +2382,11 @@ fleet "Small Northern Pirates"
 	variant 3
 		"Fury"
 	variant 1
-		"Fury (Missile)"
+		"Fury"
 	variant 1
 		"Fury (Laser)"
 	variant 1
-		"Fury (Bomber)"
+		"Fury"
 	variant 1
 		"Fury (Heavy)"
 	variant 2
@@ -2398,11 +2398,11 @@ fleet "Small Northern Pirates"
 	variant 2
 		"Hawk"
 	variant 1
-		"Hawk (Rocket)"
+		"Hawk"
 	variant 1
 		"Hawk (Speedy)"
 	variant 1
-		"Hawk (Bomber)"
+		"Hawk"
 		"Sparrow"
 	variant 1
 		"Aerie"
@@ -2423,7 +2423,7 @@ fleet "Small Northern Pirates"
 	variant 2
 		"Corvette"
 	variant 1
-		"Corvette (Missile)"
+		"Corvette"
 	variant 1
 		"Corvette (Speedy)"
 	variant 1
@@ -2445,13 +2445,13 @@ fleet "Large Northern Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		plunders harvests getaway
+		disables plunders harvests getaway
 	variant 4
 		"Firebird"
 	variant 10
 		"Firebird (Laser)"
 	variant 2
-		"Firebird (Missile)"
+		"Firebird"
 	variant 8
 		"Firebird (Plasma)"
 	variant 2
@@ -2462,10 +2462,10 @@ fleet "Large Northern Pirates"
 		"Corvette (Speedy)"
 	variant 4
 		"Firebird (Plasma)"
-		"Corvette (Missile)"
+		"Corvette"
 	variant 2
 		"Firebird (Laser)"
-		"Corvette (Missile)"
+		"Corvette"
 	variant 4
 		"Firebird"
 		"Fury"
@@ -2474,10 +2474,10 @@ fleet "Large Northern Pirates"
 		"Berserker" 2
 	variant 2
 		"Firebird (Plasma)"
-		"Fury (Missile)"
+		"Fury"
 	variant 2
-		"Firebird (Missile)"
-		"Fury (Bomber)"
+		"Firebird"
+		"Fury"
 	variant 6
 		"Raven (Afterburner)" 2
 	variant 2
@@ -2502,7 +2502,7 @@ fleet "Large Northern Pirates"
 	variant 4
 		"Aerie"
 		"Dagger" 2
-		"Corvette (Missile)"
+		"Corvette"
 	variant 2
 		"Aerie" 2
 		"Dagger" 4
@@ -2527,10 +2527,10 @@ fleet "Large Northern Pirates"
 		"Firebird (Plasma)"
 	variant 4
 		"Leviathan (Heavy)"
-		"Firebird (Missile)"
+		"Firebird"
 	variant 4
 		"Leviathan (Laser)"
-		"Firebird (Missile)"
+		"Firebird"
 	variant 6
 		"Leviathan"
 	variant 4
@@ -2539,7 +2539,7 @@ fleet "Large Northern Pirates"
 		"Leviathan (Heavy)"
 	variant 2
 		"Fury (Heavy)" 2
-		"Firebird (Missile)"
+		"Firebird"
 	variant 1
 		"Bactrian"
 		"Dagger" 3
@@ -2647,9 +2647,9 @@ fleet "pirate raid"
 		"Berserker" 2
 	variant 1
 		"Firebird (Plasma)"
-		"Fury (Missile)"
+		"Fury"
 	variant 1
-		"Firebird (Missile)"
+		"Firebird"
 		"Fury"
 	variant 8
 		"Raven (Afterburner)" 2
@@ -2659,7 +2659,7 @@ fleet "pirate raid"
 		"Headhunter (Particle)" 3
 	variant 1
 		"Fury (Heavy)" 2
-		"Firebird (Missile)"
+		"Firebird"
 	variant 2
 		"Leviathan"
 		"Firebird"
