@@ -1828,6 +1828,128 @@ fleet "Large Syndicate"
 		"Protector (Proton)"
 		"Vanguard"
 
+fleet "Small Independent"
+	government "Independent"
+	names "pirate"
+	cargo 1
+	personality
+		disables plunders
+		confusion 20
+	variant 8
+		"Sparrow"
+	variant 3
+		"Hawk"
+	variant 2
+		"Hawk (Speedy)"
+	variant 2
+		"Hawk (Rocket)"
+	variant 5
+		"Fury"
+	variant 2
+		"Fury (Laser)"
+	variant 1
+		"Fury (Missile)"
+	variant 2
+		"Sparrow" 2
+	variant 1
+		"Hawk"
+		"Sparrow"
+	variant 1
+		"Hawk (Speedy)"
+		"Sparrow"
+	variant 1
+		"Fury" 3
+	variant 1
+		"Fury (Missile)" 3
+	variant 1
+		"Fury"
+		"Hawk"
+	variant 1
+		"Hawk"
+		"Fury"
+		"Sparrow"
+	variant 1
+		"Hawk (Rocket)"
+		"Fury (Missile)"
+		"Sparrow"
+	variant 1
+		"Sparrow" 3
+	variant 1
+		"Hawk" 2
+	variant 1
+		"Hawk (Speedy)" 2
+	variant 2
+		"Clipper"
+	variant 1
+		"Clipper (Heavy)"
+	variant 1
+		"Clipper (Speedy)"
+	variant 4
+		"Scrapper"
+	variant 3
+		"Scrapper (Minimal)"
+
+fleet "Large Independent"
+	government "Independent"
+	names "pirate"
+	cargo 1
+	personality
+		plunders
+	variant 3
+		"Sparrow" 4
+	variant 5
+		"Argosy"
+	variant 3
+		"Argosy (Blaster)"
+	variant 2
+		"Argosy (Laser)"
+	variant 2
+		"Argosy (Missile)"
+	variant 2
+		"Argosy (Turret)"
+	variant 4
+		"Clipper"
+	variant 2
+		"Clipper (Heavy)"
+	variant 2
+		"Clipper (Speedy)"
+	variant 2
+		"Clipper"
+		"Hawk"
+	variant 1
+		"Clipper (Heavy)"
+		"Hawk (Rocket)"
+	variant 1
+		"Clipper (Speedy)"
+		"Hawk (Speedy)"
+	variant 3
+		"Argosy"
+		"Hawk"
+	variant 1
+		"Argosy (Blaster)"
+		"Hawk (Rocket)"
+	variant 1
+		"Argosy (Laser)"
+		"Hawk (Speedy)"
+	variant 1
+		"Argosy (Turret)"
+		"Hawk (Speedy)"
+	variant 1
+		"Argosy (Missile)"
+		"Hawk (Rocket)"
+	variant 4
+		"Bastion"
+	variant 2
+		"Bastion (Heavy)"
+	variant 2
+		"Bastion (Laser)"
+	variant 2
+		"Falcon"
+	variant 1
+		"Falcon (Heavy)"
+	variant 1
+		"Falcon (Laser)"
+
 fleet "Small Southern Pirates"
 	government "Pirate"
 	names "pirate"
@@ -2116,128 +2238,6 @@ fleet "CCOR Logistics"
 	variant 1
 		"Hogshead (CCOR)"
 		"Enforcer (CCOR)"
-
-fleet "Small Independent"
-	government "Independent"
-	names "pirate"
-	cargo 1
-	personality
-		disables plunders
-		confusion 20
-	variant 8
-		"Sparrow"
-	variant 3
-		"Hawk"
-	variant 2
-		"Hawk (Speedy)"
-	variant 2
-		"Hawk (Rocket)"
-	variant 5
-		"Fury"
-	variant 2
-		"Fury (Laser)"
-	variant 1
-		"Fury (Missile)"
-	variant 2
-		"Sparrow" 2
-	variant 1
-		"Hawk"
-		"Sparrow"
-	variant 1
-		"Hawk (Speedy)"
-		"Sparrow"
-	variant 1
-		"Fury" 3
-	variant 1
-		"Fury (Missile)" 3
-	variant 1
-		"Fury"
-		"Hawk"
-	variant 1
-		"Hawk"
-		"Fury"
-		"Sparrow"
-	variant 1
-		"Hawk (Rocket)"
-		"Fury (Missile)"
-		"Sparrow"
-	variant 1
-		"Sparrow" 3
-	variant 1
-		"Hawk" 2
-	variant 1
-		"Hawk (Speedy)" 2
-	variant 2
-		"Clipper"
-	variant 1
-		"Clipper (Heavy)"
-	variant 1
-		"Clipper (Speedy)"
-	variant 4
-		"Scrapper"
-	variant 3
-		"Scrapper (Minimal)"
-
-fleet "Large Independent"
-	government "Independent"
-	names "pirate"
-	cargo 1
-	personality
-		plunders
-	variant 3
-		"Sparrow" 4
-	variant 5
-		"Argosy"
-	variant 3
-		"Argosy (Blaster)"
-	variant 2
-		"Argosy (Laser)"
-	variant 2
-		"Argosy (Missile)"
-	variant 2
-		"Argosy (Turret)"
-	variant 4
-		"Clipper"
-	variant 2
-		"Clipper (Heavy)"
-	variant 2
-		"Clipper (Speedy)"
-	variant 2
-		"Clipper"
-		"Hawk"
-	variant 1
-		"Clipper (Heavy)"
-		"Hawk (Rocket)"
-	variant 1
-		"Clipper (Speedy)"
-		"Hawk (Speedy)"
-	variant 3
-		"Argosy"
-		"Hawk"
-	variant 1
-		"Argosy (Blaster)"
-		"Hawk (Rocket)"
-	variant 1
-		"Argosy (Laser)"
-		"Hawk (Speedy)"
-	variant 1
-		"Argosy (Turret)"
-		"Hawk (Speedy)"
-	variant 1
-		"Argosy (Missile)"
-		"Hawk (Rocket)"
-	variant 4
-		"Bastion"
-	variant 2
-		"Bastion (Heavy)"
-	variant 2
-		"Bastion (Laser)"
-	variant 2
-		"Falcon"
-	variant 1
-		"Falcon (Heavy)"
-	variant 1
-		"Falcon (Laser)"
 
 fleet "Small Core Pirates"
 	government "Pirate"
