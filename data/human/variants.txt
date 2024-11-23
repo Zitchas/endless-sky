@@ -1033,11 +1033,11 @@ ship "Clipper" "Clipper (Raider)"
 		"Plasma Cannon" 2
 		"Energy Blaster" 2
 		"LP072a Battery Pack"
-		"KP-6 Photovoltaic Array" 3
+		"KP-6 Photovoltaic Panel" 3
 		"nGVF-CC Fuel Cell"
-		"Cargo Expansion"
-		"Interference Plating" 2
 		"D14-RN Shield Generator"
+		"Interference Plating" 2
+		"Cargo Expansion"
 		"Rangefinder Scanner"
 		"Greyhound Plasma Steering"
 		"Greyhound Plasma Thruster"
