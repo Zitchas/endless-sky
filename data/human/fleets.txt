@@ -2423,7 +2423,7 @@ fleet "Small Northern Pirates"
 	variant 2
 		"Corvette"
 	variant 1
-		"Corvette (Missile)"
+		"Corvette (Raider)"
 	variant 1
 		"Corvette (Speedy)"
 	variant 1
@@ -2462,10 +2462,10 @@ fleet "Large Northern Pirates"
 		"Corvette (Speedy)"
 	variant 4
 		"Firebird (Plasma)"
-		"Corvette (Missile)"
+		"Corvette (Raider)"
 	variant 2
 		"Firebird (Laser)"
-		"Corvette (Missile)"
+		"Corvette (Raider)"
 	variant 4
 		"Firebird"
 		"Fury"
@@ -2502,7 +2502,7 @@ fleet "Large Northern Pirates"
 	variant 4
 		"Aerie"
 		"Dagger" 2
-		"Corvette (Missile)"
+		"Corvette (Raider)"
 	variant 2
 		"Aerie" 2
 		"Dagger" 4

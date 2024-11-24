@@ -1261,6 +1261,42 @@ ship "Corvette" "Corvette (Missile)"
 	turret "Heavy Anti-Missile Turret"
 
 
+ship "Corvette" "Corvette (Raider)"
+	outfits
+		"Energy Blaster" 4
+		"Torpedo Pod"
+		Torpedo 3
+		"Meteor Missile Launcher"
+		"Meteor Missile" 30
+		"Heavy Laser Turret"
+		"Anti-Missile Turret"
+		"KP-6 Photovoltaic Array"
+		"LP072a Battery Pack"
+		"nGVF-CC Fuel Cell"
+		"D23-QP Shield Generator"
+		"Large Radar Jammer"
+		"Cargo Expansion" 3
+		"Cargo Scanner" 2
+		"Interference Plating" 2
+		"Fuel Pod" 2
+		"Laser Rifle" 3
+		"Water Coolant System"
+		"X3200 Ion Steering"
+		"X3700 Ion Thruster"
+		"Volcano Afterburner"
+		Hyperdrive
+	gun
+	gun
+	gun
+	gun
+	pylon "Meteor Missile Launcher"
+	pylon "Torpedo Pod"
+	pylon "Torpedo Launcher"
+	pylon "Torpedo Launcher"
+	turret "Anti-Missile Turret"
+	turret "Heavy Anti-Missile Turret"
+
+
 ship "Corvette" "Corvette (Speedy)"
 	outfits
 		"Particle Cannon" 4
