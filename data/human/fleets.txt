@@ -2055,7 +2055,7 @@ fleet "Large Southern Pirates"
 	variant 2
 		"Argosy (Laser)"
 	variant 2
-		"Argosy (Missile)"
+		"Argosy (Raider)"
 	variant 2
 		"Argosy (Turret)"
 	variant 1
@@ -2120,7 +2120,7 @@ fleet "Large Southern Pirates"
 		"Argosy (Turret)"
 		"Hawk (Speedy)"
 	variant 1
-		"Argosy (Missile)"
+		"Argosy (Raider)"
 		"Hawk (Raider)"
 	variant 1
 		"Modified Argosy"

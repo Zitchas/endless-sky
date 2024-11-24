@@ -99,6 +99,23 @@ ship "Argosy" "Argosy (Proton)"
 		"Hyperdrive"
 
 
+ship "Argosy" "Argosy (Raider)"
+	outfits
+		"Energy Blaster" 4
+		"Meteor Missile Pod" 2
+		"Meteor Missile" 14
+		"Blaster Turret"
+		"Tractor Beam"
+		"D14-RN Shield Generator"
+		"Cargo Expansion"
+		"LP072a Battery Pack"
+		"nGVF-BB Fuel Cell"
+		"Capybara Reverse Thruster"
+		"X3200 Ion Steering"
+		"Greyhound Plasma Thruster"
+		Hyperdrive
+
+
 ship "Argosy" "Argosy (Turret)"
 	outfits
 		"Heavy Laser Turret" 2
