@@ -1354,6 +1354,7 @@ vector<string> Ship::FlightCheck() const
 	double fuel = fuelCapacity + fuelChange;
 	double thrust = attributes.Get("thrust");
 	double reverseThrust = attributes.Get("reverse thrust");
+	double lateralThrust = attributes.Get("lateral thrust");
 	double afterburner = attributes.Get("afterburner thrust");
 	double thrustEnergy = attributes.Get("thrusting energy");
 	double turn = attributes.Get("turn");
@@ -1368,7 +1369,7 @@ vector<string> Ship::FlightCheck() const
 		checks.emplace_back("no energy!");
 	else if((energy - consuming <= 0.) && (fuel <= 0.))
 		checks.emplace_back("no fuel!");
-	else if(!thrust && !reverseThrust && !afterburner)
+	else if(!thrust && !reverseThrust && !lateralThrust && !afterburner)
 		checks.emplace_back("no thruster!");
 	else if(!turn)
 		checks.emplace_back("no steering!");
@@ -5002,28 +5003,16 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 			}
 		}
 		// Lateral Thrust functionality.
-		// This pulls "lateral thrust ratio" from the ship definition,
-		// and if there isn't one, it uses the default value of 0.25,
-		// which is listed as a gamerule value.
+		// This pulls "lateral thrust" from the ship definition,
 		double latThrustCommand = commands.LateralThrust();
 		double latThrust = 0.;
 		double lateralThrustValue = 0.;
-		if(attributes.Get("lateral thrust ratio"))
-			lateralThrustValue = attributes.Get("lateral thrust ratio");
-		else if(!attributes.Get("lateral thrust ratio"))
-		{
-			// lateralThrustValue = GameData::GetGamerules().DefaultLateralThrustRatio();
-			double tempLateralThrustRatio = (3000 - mass) / 3500;
-			double defaultLateralThrustRatio = GameData::GetGamerules().DefaultLateralThrustRatio();
-			if(tempLateralThrustRatio > defaultLateralThrustRatio)
-				lateralThrustValue = tempLateralThrustRatio;
-			else lateralThrustValue = defaultLateralThrustRatio;
-		}
+		lateralThrustValue = attributes.Get("lateral thrust");
 
 		if(latThrustCommand)
 		{
 			// Check if we are able to apply this thrust.
-			double cost = attributes.Get("thrusting energy") * lateralThrustValue;
+			double cost = attributes.Get("lateral thrusting energy") * lateralThrustValue;
 			if(energy < cost)
 				latThrustCommand *= energy / cost;
 
@@ -5032,12 +5021,12 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 				// These area used for lateral thrusting flares.
 				isLatThrusting = true;
 				lateralDirection = latThrustCommand;
-				latThrust = attributes.Get("thrust") * lateralThrustValue;
+				latThrust = attributes.Get("lateral thrust");
 				if(latThrust)
 				{
 					double scale = fabs(latThrustCommand);
 					energy -= scale * cost;
-					heat += scale * attributes.Get("thrusting heat") * lateralThrustValue;
+					heat += scale * attributes.Get("lateral thrusting heat") * lateralThrustValue;
 					Point lateral(-angle.Unit().Y(), angle.Unit().X());
 					acceleration += lateral * (latThrustCommand * latThrust / mass);
 				}
