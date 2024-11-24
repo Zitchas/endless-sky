@@ -211,7 +211,7 @@ namespace {
 				<< "fuel" << ',' << DataWriter::Quote("outfit space") << ',' << DataWriter::Quote("weapon capacity") << ','
 				<< DataWriter::Quote("engine capacity") << ',' << DataWriter::Quote("engine mod space") << ','
 				<< DataWriter::Quote("reverse thruster slot") << ',' << DataWriter::Quote("steering slot") << ','
-				<< DataWriter::Quote("thruster slot") << ',' << "speed" << ',' << "accel" << ',' << "turn" << ','
+				<< DataWriter::Quote("thruster slot") << ',' << "speed" << ',' << "accel" << ',' << "lateral" << ',' << "turn" << ','
 				<< DataWriter::Quote("energy generation") << ',' << DataWriter::Quote("max energy usage") << ','
 				<< DataWriter::Quote("energy capacity") << ',' << DataWriter::Quote("idle/max heat") << ','
 				<< DataWriter::Quote("max heat generation") << ',' << DataWriter::Quote("max heat dissipation") << ','
@@ -250,6 +250,7 @@ namespace {
 				cout << ship.BaseAttributes().Get("thruster slot") << ',';
 				cout << (attributes.Get("drag") ? (60. * attributes.Get("thrust") / attributes.Get("drag")) : 0) << ',';
 				cout << 3600. * attributes.Get("thrust") / mass << ',';
+				cout << 3600. * attributes.Get("lateral thrust") / mass << ',';
 				cout << 60. * attributes.Get("turn") / mass << ',';
 
 				double energyConsumed = attributes.Get("energy consumption")
@@ -487,6 +488,9 @@ namespace {
 				cout << outfit.Get("turn") * 60. << ',';
 				cout << outfit.Get("turning energy") * 60. << ',';
 				cout << outfit.Get("turning heat") * 60. << ',';
+				cout << outfit.Get("lateral thrust") * 3600. << ',';
+				cout << outfit.Get("lateral thrusting energy") * 60. << ',';
+				cout << outfit.Get("lateral thrusting heat") * 60. << ',';
 				cout << outfit.Get("reverse thrust") * 3600. << ',';
 				cout << outfit.Get("reverse thrusting energy") * 60. << ',';
 				cout << outfit.Get("reverse thrusting heat") * 60. << ',';
