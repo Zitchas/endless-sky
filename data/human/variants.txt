@@ -1920,6 +1920,35 @@ ship "Firebird" "Firebird (Plasma)"
 		"Hyperdrive"
 
 
+ship "Firebird" "Firebird (Raider)"
+	outfits
+		"Plasma Cannon" 4
+		"Meteor Missile Pod" 2
+		"Meteor Missile" 14
+		"Quad Blaster Turret"
+		"Anti-Missile Turret"
+		"Cargo Expansion" 2
+		"Cargo Scanner" 2
+		"D14-RN Shield Generator"
+		"LP144a Battery Pack"
+		"RT-I Radiothermal"
+		"Laser Rifle" 3
+		"X3200 Ion Steering"
+		"X3700 Ion Thruster"
+		"Volcano Afterburner"
+		Hyperdrive
+	gun
+	gun
+	gun
+	gun
+	pylon "Meteor Missile Pod"
+	pylon "Meteor Missile Pod"
+	pylon
+	pylon
+	turret "Quad Blaster Turret"
+	turret "Anti-Missile Turret"
+
+
 ship "Firebird" "Firebird (CCOR)"
 	outfits
 		"Twin Modified Blaster" 4

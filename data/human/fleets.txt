@@ -2354,7 +2354,7 @@ fleet "Large Core Pirates"
 	variant 1
 		"Firebird (Plasma)"
 	variant 1
-		"Firebird (Missile)"
+		"Firebird (Raider)"
 	variant 1
 		"Vanguard (Particle)"
 	variant 1
@@ -2451,7 +2451,7 @@ fleet "Large Northern Pirates"
 	variant 10
 		"Firebird (Laser)"
 	variant 2
-		"Firebird (Missile)"
+		"Firebird (Raider)"
 	variant 8
 		"Firebird (Plasma)"
 	variant 2
@@ -2476,7 +2476,7 @@ fleet "Large Northern Pirates"
 		"Firebird (Plasma)"
 		"Fury (Raider Missile)"
 	variant 2
-		"Firebird (Missile)"
+		"Firebird (Raider)"
 		"Fury (Raider)"
 	variant 6
 		"Raven (Afterburner)" 2
@@ -2527,10 +2527,10 @@ fleet "Large Northern Pirates"
 		"Firebird (Plasma)"
 	variant 4
 		"Leviathan (Heavy)"
-		"Firebird (Missile)"
+		"Firebird (Raider)"
 	variant 4
 		"Leviathan (Laser)"
-		"Firebird (Missile)"
+		"Firebird (Raider)"
 	variant 6
 		"Leviathan"
 	variant 4
@@ -2539,7 +2539,7 @@ fleet "Large Northern Pirates"
 		"Leviathan (Heavy)"
 	variant 2
 		"Fury (Heavy)" 2
-		"Firebird (Missile)"
+		"Firebird (Raider)"
 	variant 1
 		"Bactrian"
 		"Dagger" 3
@@ -2649,7 +2649,7 @@ fleet "pirate raid"
 		"Firebird (Plasma)"
 		"Fury (Raider Missile)"
 	variant 1
-		"Firebird (Missile)"
+		"Firebird (Raider)"
 		"Fury"
 	variant 8
 		"Raven (Afterburner)" 2
@@ -2659,7 +2659,7 @@ fleet "pirate raid"
 		"Headhunter (Particle)" 3
 	variant 1
 		"Fury (Heavy)" 2
-		"Firebird (Missile)"
+		"Firebird (Raider)"
 	variant 2
 		"Leviathan"
 		"Firebird"
