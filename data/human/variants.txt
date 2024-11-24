@@ -1291,10 +1291,10 @@ ship "Corvette" "Corvette (Raider)"
 	gun
 	pylon "Meteor Missile Launcher"
 	pylon "Torpedo Pod"
-	pylon "Torpedo Launcher"
-	pylon "Torpedo Launcher"
+	pylon
+	pylon
 	turret "Anti-Missile Turret"
-	turret "Heavy Anti-Missile Turret"
+	turret "Heavy Laser Turret"
 
 
 ship "Corvette" "Corvette (Speedy)"
