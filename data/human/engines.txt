@@ -112,6 +112,9 @@ outfit "X1050 Ion Engines"
 	"thrust" 10
 	"thrusting energy" .4
 	"thrusting heat" .6
+	"lateral thrust" 9 # 90% of its forward thrust.
+	"lateral thrusting energy" .36
+	"lateral thrusting heat" .54
 	"turn" 198
 	"turning energy" .25
 	"turning heat" .5
@@ -355,6 +358,107 @@ outfit "X5200 Ion Steering"
 		"frame rate" 0.8
 	"steering flare sound" "ion huge"
 	description "The X5200 is a steering system so large and powerful that only a handful of ships can install it. Due to its limited market, it is produced in small numbers."
+	description "	Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space for the same amount of thrust."
+
+
+# Note on Lateral Thrusters: My initial values here are to have each set of lateral thrusters be based on the thruster of the same "rank". 
+# So the tiny lateral has values equivalent to about 90% of a tiny thruster. The small lateral thruster is roughly 80% of a small thruster, etc.
+# This continues by 10% increments down to the Huge lateral thrusters that are equivalent of 50% of the huge thrusters.
+# This percentage is applied equally to mass, outfit space, engine capacity, lateral thrust, lateral thrusting energy, and lateral thrusting heat.
+outfit "X1400 Ion Lateral Thruster"
+	category "Engines"
+	series "Human: Ion"
+	index 17
+	"cost" 12000
+	thumbnail "outfit/tiny ion thruster"
+	"lateral thruster slot" -1
+	"mass" 14
+	"outfit space" -14
+	"engine capacity" -14
+	"flare sound" "ion tiny"
+	"lateral thrust" 12.6 # 90% of the tiny ion thruster
+	"lateral thrusting energy" .54
+	"lateral thrusting heat" .81
+	"lateral flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"lateral flare sound" "ion tiny"
+	description "This is the smallest thruster that you can buy, so weak that anything larger than a drone will accelerate quite slowly when using this engine. On the other hand, it is also very energy-efficient."
+	description "	Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space for the same amount of thrust."
+
+outfit "X2400 Ion Lateral Thruster"
+	category "Engines"
+	series "Human: Ion"
+	index 27
+	"cost" 26000
+	thumbnail "outfit/small ion thruster"
+	"lateral thruster slot" -1
+	"mass" 21
+	"outfit space" -21
+	"engine capacity" -21
+	"lateral thrust" 19.2 # 80% of the small ion thruster
+	"lateral thrusting energy" .88
+	"lateral thrusting heat" 1.36
+	"lateral flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"lateral flare sound" "ion tiny"
+	description "The X2700 Ion Thruster is intended mostly for use in small, single-person or two-person ships, as well as in fighters. It is also used in larger ships, such as freighters, that have very little space for propulsion systems or energy to drive them. But these larger ships move unbearably slowly as a result."
+	description "	Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space for the same amount of thrust."
+
+outfit "X3400 Ion Lateral Thruster"
+	category "Engines"
+	series "Human: Ion"
+	index 37
+	"cost" 58000
+	thumbnail "outfit/medium ion thruster"
+	"lateral thruster slot" -1
+	"mass" 32
+	"outfit space" -32
+	"engine capacity" -32
+	"lateral thrust" 30 # 70% of the medium ion thruster
+	"lateral thrusting energy" 1.33
+	"lateral thrusting heat" 2.24
+	"lateral flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"lateral flare sound" "ion tiny"
+	description "The X3700 Ion Thruster is designed for heavy freighters and small capital ships. In theory, it could be installed in smaller ships too, if they have enough engine space, to attain almost ridiculous speeds."
+	description "	Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space for the same amount of thrust."
+
+outfit "X4400 Ion Lateral Thruster"
+	category "Engines"
+	series "Human: Ion"
+	index 47
+	"cost" 128000
+	thumbnail "outfit/large ion thruster"
+	"lateral thruster slot" -1
+	"mass" 39
+	"outfit space" -39
+	"engine capacity" -39
+	"lateral thrust" 48 # 60% of the large ion thruster
+	"lateral thrusting energy" 2.1
+	"lateral thrusting heat" 3.72
+	"lateral flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"lateral flare sound" "ion tiny"
+	description "The X4700 Ion Thruster was developed when the Republic Navy began building warships so large that the X3700 was not sufficient for them. It allows even a capital ship to move at a respectable speed."
+	description "	Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space for the same amount of thrust."
+
+outfit "X5400 Ion Lateral Thruster"
+	category "Engines"
+	series "Human: Ion"
+	index 57
+	"cost" 281000
+	thumbnail "outfit/huge ion thruster"
+	"lateral thruster slot" -1
+	"mass" 60
+	"outfit space" -60
+	"engine capacity" -60
+	"lateral thrust" 67 # 50% of the huge ion thruster
+	"lateral thrusting energy" 3.15
+	"lateral thrusting heat" 5.85
+	"lateral flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"lateral flare sound" "ion tiny"
+	description "The X5700 thruster is intended for only the largest of capital ships. When the Syndicate first began producing them, these engines were considered little more than a publicity stunt, because no ship at the time was large enough to hold one."
 	description "	Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space for the same amount of thrust."
 
 
