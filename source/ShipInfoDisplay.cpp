@@ -1147,7 +1147,7 @@ void ShipInfoDisplay::DrawShipEnergyHeatStats(const Ship &ship, const Rectangle 
 
 	for(unsigned i = 0; i < tableLabels.size(); ++i)
 	{
-		// CheckHover(table, tableLabels[i]);
+		CheckHover(table, tableLabels[i]);
 		table.Draw(tableLabels[i], dim);
 		table.Draw(energyTable[i], bright);
 		table.Draw(heatTable[i], bright);
