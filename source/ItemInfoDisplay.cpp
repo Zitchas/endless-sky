@@ -31,7 +31,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 using namespace std;
 
 namespace {
-	const int HOVER_TIME = 60;
+	const int HOVER_TIME = 30;
 }
 
 
@@ -216,7 +216,7 @@ void ItemInfoDisplay::CheckHover(const Table &table, const string &label) const
 		if(hoverCount >= HOVER_TIME)
 		{
 			hoverCount = HOVER_TIME;
-			hoverText.Wrap(GameData::Tooltip(label));
+			hoverText.Wrap("Generic CheckHover: " + GameData::Tooltip(label));
 		}
 	}
 }
