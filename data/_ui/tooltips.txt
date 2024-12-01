@@ -502,7 +502,7 @@ tip "max speed:"
 	`The maximum speed of this ship when using thrusters. Excludes the effect of afterburners, unless there are no normal thrusters installed.`
 
 tip "max speed (w/AB):"
-	`The maximum speed of this ship when using thrusters, with the maximum speed including afterburners shown in parantheses.`
+	`The maximum speed of this ship when using thrusters, with the maximum speed including afterburners shown in parentheses.`
 
 tip "movement:"
 	`How quickly this ship can accelerate and turn.`
