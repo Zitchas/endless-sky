@@ -20,8 +20,8 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "BatchDrawList.h"
 #include "CargoHold.h"
 #include "Dialog.h"
-#include "FillShader.h"
-#include "FogShader.h"
+#include "shader/FillShader.h"
+#include "shader/FogShader.h"
 #include "text/Font.h"
 #include "text/FontSet.h"
 #include "text/Format.h"
@@ -30,7 +30,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "Government.h"
 #include "Information.h"
 #include "Interface.h"
-#include "LineShader.h"
+#include "shader/LineShader.h"
 #include "MapDetailPanel.h"
 #include "MapOutfitterPanel.h"
 #include "MapShipyardPanel.h"
@@ -39,16 +39,16 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "pi.h"
 #include "Planet.h"
 #include "PlayerInfo.h"
-#include "PointerShader.h"
+#include "shader/PointerShader.h"
 #include "Politics.h"
 #include "Preferences.h"
-#include "RingShader.h"
+#include "shader/RingShader.h"
 #include "RoutePlan.h"
 #include "Screen.h"
 #include "Ship.h"
 #include "ShipJumpNavigation.h"
 #include "image/SpriteSet.h"
-#include "SpriteShader.h"
+#include "shader/SpriteShader.h"
 #include "StellarObject.h"
 #include "System.h"
 #include "Trade.h"
@@ -336,7 +336,7 @@ void MapPanel::FinishDrawing(const string &buttonCondition)
 	// Remember which buttons we're showing.
 	MapPanel::buttonCondition = buttonCondition;
 
-	info.ClearConditions();
+	Information info;
 	info.SetCondition(buttonCondition);
 	const Interface *mapInterface = GameData::Interfaces().Get("map");
 	if(player.MapZoom() >= static_cast<int>(mapInterface->GetValue("max zoom")))
