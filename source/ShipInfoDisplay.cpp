@@ -615,7 +615,7 @@ void ShipInfoDisplay::DrawShipHealthStats(const Ship &ship, const Rectangle & bo
 
 
 	// This allows the section to stack nicely with other info panel sections,
-	// But will also allow it to be called on its own in a new box if desired.
+	// but will also allow it to be called on its own in a new box if desired.
 	for(int i = 0; i < infoPanelLine; i++)
 	{
 		table.DrawTruncatedPair(" ", dim, " ", bright, Truncate::MIDDLE, true);
