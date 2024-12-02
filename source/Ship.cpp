@@ -1020,6 +1020,9 @@ void Ship::Save(DataWriter &out) const
 			for(const auto &it : baseAttributes.ReverseFlareSounds())
 				for(int i = 0; i < it.second; ++i)
 					out.Write("reverse flare sound", it.first->Name());
+			for(const auto &it : baseAttributes.LateralFlareSounds())
+				for(int i = 0; i < it.second; ++i)
+					out.Write("lateral flare sound", it.first->Name());
 			for(const auto &it : baseAttributes.SteeringFlareSprites())
 				for(int i = 0; i < it.second; ++i)
 					it.first.SaveSprite(out, "steering flare sprite");
