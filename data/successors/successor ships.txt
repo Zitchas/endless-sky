@@ -34,6 +34,7 @@ ship "Aaulqra"
 		"outfit space" 550
 		"weapon capacity" 240
 		"engine capacity" 120
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -132,6 +133,7 @@ ship "Ejniisde"
 		"outfit space" 265
 		"weapon capacity" 85
 		"engine capacity" 100
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -213,6 +215,7 @@ ship "Kaskhorade"
 		"outfit space" 570
 		"weapon capacity" 280
 		"engine capacity" 110
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -314,6 +317,7 @@ ship "Kvelqde"
 		"outfit space" 160
 		"weapon capacity" 55
 		"engine capacity" 45
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -398,6 +402,7 @@ ship "Kvelqde-Khora"
 		"outfit space" 197
 		"weapon capacity" 63
 		"engine capacity" 45
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -482,6 +487,7 @@ ship "Myaede"
 		"outfit space" 275
 		"weapon capacity" 125
 		"engine capacity" 130
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -568,6 +574,7 @@ ship "Nnaatej"
 		"outfit space" 220
 		"weapon capacity" 54
 		"engine capacity" 82
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -653,6 +660,7 @@ ship "Nnesaarau"
 		"outfit space" 175
 		"weapon capacity" 30
 		"engine capacity" 60
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -728,6 +736,7 @@ ship "Ojde"
 		"outfit space" 330
 		"weapon capacity" 180
 		"engine capacity" 150
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -813,6 +822,7 @@ ship "Seiitej"
 		"outfit space" 370
 		"weapon capacity" 90
 		"engine capacity" 110
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -902,6 +912,7 @@ ship "Stolsaqra"
 		"outfit space" 212
 		"weapon capacity" 90
 		"engine capacity" 80
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -996,6 +1007,7 @@ ship "Veusade"
 		"outfit space" 370
 		"weapon capacity" 96
 		"engine capacity" 120
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1094,6 +1106,7 @@ ship "Vujlet"
 		"outfit space" 280
 		"weapon capacity" 105
 		"engine capacity" 85
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1

@@ -28,6 +28,7 @@ ship "Earth Shaper"
 		"cargo space" 27
 		"outfit space" 59
 		"engine capacity" 26
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -68,6 +69,7 @@ ship "Flycatcher"
 		"outfit space" 86
 		"weapon capacity" 28
 		"engine capacity" 26
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -115,6 +117,7 @@ ship "Summer Leaf"
 		"outfit space" 320
 		"weapon capacity" 84
 		"engine capacity" 103
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -170,6 +173,7 @@ ship "Autumn Leaf"
 		"outfit space" 361
 		"weapon capacity" 103
 		"engine capacity" 117
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -237,6 +241,7 @@ ship "Strong Wind"
 		"outfit space" 493
 		"weapon capacity" 198
 		"engine capacity" 114
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -298,6 +303,7 @@ ship "Tempest"
 		"outfit space" 607
 		"weapon capacity" 271
 		"engine capacity" 122
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -428,6 +434,7 @@ ship "Derecho"
 		"outfit space" 796
 		"weapon capacity" 342
 		"engine capacity" 164
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -563,6 +570,7 @@ ship "Hurricane"
 		"outfit space" 960
 		"weapon capacity" 428
 		"engine capacity" 140
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -718,6 +726,7 @@ ship "Cool Breeze"
 		"outfit space" 192
 		"weapon capacity" 41
 		"engine capacity" 62
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -780,6 +789,7 @@ ship "Winter Gale"
 		"outfit space" 478
 		"weapon capacity" 171
 		"engine capacity" 120
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -894,6 +904,7 @@ ship "Deep River"
 		"outfit space" 363
 		"weapon capacity" 177
 		"engine capacity" 83
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -994,6 +1005,7 @@ ship "Deep River Transport"
 		"outfit space" 321
 		"weapon capacity" 114
 		"engine capacity" 83
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1063,6 +1075,7 @@ ship "Riptide"
 		"outfit space" 488
 		"weapon capacity" 98
 		"engine capacity" 186
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1

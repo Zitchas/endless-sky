@@ -29,6 +29,7 @@ ship "Aerie"
 		"outfit space" 390
 		"weapon capacity" 150
 		"engine capacity" 95
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -100,6 +101,7 @@ ship "Argosy"
 		"outfit space" 270
 		"weapon capacity" 90
 		"engine capacity" 80
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -170,6 +172,7 @@ ship "Arrow"
 		"outfit space" 180
 		"weapon capacity" 50
 		"engine capacity" 75
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -233,6 +236,7 @@ ship "Auxiliary"
 		"outfit space" 720
 		"weapon capacity" 160
 		"engine capacity" 200
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -309,6 +313,7 @@ ship "Bactrian"
 		"outfit space" 740
 		"weapon capacity" 300
 		"engine capacity" 180
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -391,6 +396,7 @@ ship "Barb"
 		"outfit space" 85
 		"weapon capacity" 28
 		"engine capacity" 22
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -441,6 +447,7 @@ ship "Bastion"
 		"outfit space" 470
 		"weapon capacity" 190
 		"engine capacity" 120
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -510,6 +517,7 @@ ship "Behemoth"
 		"outfit space" 510
 		"weapon capacity" 280
 		"engine capacity" 90
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -575,6 +583,7 @@ ship "Berserker"
 		"outfit space" 200
 		"weapon capacity" 35
 		"engine capacity" 65
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -633,6 +642,7 @@ ship "Blackbird"
 		"outfit space" 350
 		"weapon capacity" 90
 		"engine capacity" 110
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -689,6 +699,7 @@ ship "Bounder"
 		"outfit space" 220
 		"weapon capacity" 50
 		"engine capacity" 110
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -737,6 +748,7 @@ ship "Boxwing"
 		"heat dissipation" .25
 		"outfit space" 45
 		"engine capacity" 28
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -781,6 +793,7 @@ ship "Bulk Freighter"
 		"outfit space" 410
 		"weapon capacity" 180
 		"engine capacity" 85
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -847,6 +860,7 @@ ship "Bulwark"
 		"outfit space" 521
 		"weapon capacity" 223
 		"engine capacity" 120
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -919,6 +933,7 @@ ship "Carrier"
 		"outfit space" 820
 		"weapon capacity" 370
 		"engine capacity" 210
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1014,6 +1029,7 @@ ship "Class C Freighter"
 		"outfit space" 410
 		"weapon capacity" 150
 		"engine capacity" 85
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1110,6 +1126,7 @@ ship "Clipper"
 		"outfit space" 260
 		"weapon capacity" 60
 		"engine capacity" 80
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1167,6 +1184,7 @@ ship "Combat Drone"
 		"outfit space" 58
 		"weapon capacity" 8
 		"engine capacity" 28
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1212,9 +1230,11 @@ ship "Container Transport"
 		"outfit space" 410
 		"weapon capacity" 180
 		"engine capacity" 85
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1279,6 +1299,7 @@ ship "Corvette"
 		"outfit space" 420
 		"weapon capacity" 150
 		"engine capacity" 100
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1352,6 +1373,7 @@ ship "Cruiser"
 		"outfit space" 760
 		"weapon capacity" 320
 		"engine capacity" 170
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1442,6 +1464,7 @@ ship "Cutthroat"
 		"outfit space" 282
 		"weapon capacity" 60
 		"engine capacity" 111
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1503,6 +1526,7 @@ ship "Dagger"
 		"outfit space" 90
 		"weapon capacity" 20
 		"engine capacity" 35
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1560,6 +1584,7 @@ ship "Dreadnought"
 		"outfit space" 790
 		"weapon capacity" 360
 		"engine capacity" 190
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1633,6 +1658,7 @@ ship "Dropship"
 		"outfit space" 100
 		"weapon capacity" 16
 		"engine capacity" 40
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1684,6 +1710,7 @@ ship "Enforcer"
 		"outfit space" 210
 		"weapon capacity" 55
 		"engine capacity" 60
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1740,6 +1767,7 @@ ship "Falcon"
 		"outfit space" 560
 		"weapon capacity" 250
 		"engine capacity" 150
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1811,6 +1839,7 @@ ship "Finch"
 		"outfit space" 110
 		"weapon capacity" 20
 		"engine capacity" 40
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1865,6 +1894,7 @@ ship "Firebird"
 		"outfit space" 400
 		"weapon capacity" 160
 		"engine capacity" 100
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1935,6 +1965,7 @@ ship "Flivver"
 		"outfit space" 130
 		"weapon capacity" 16
 		"engine capacity" 45
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1986,6 +2017,7 @@ ship "Freighter"
 		"outfit space" 250
 		"weapon capacity" 80
 		"engine capacity" 70
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2043,6 +2075,7 @@ ship "Frigate"
 		"outfit space" 410
 		"weapon capacity" 170
 		"engine capacity" 100
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2115,6 +2148,7 @@ ship "Fury"
 		"outfit space" 160
 		"weapon capacity" 40
 		"engine capacity" 60
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2176,6 +2210,7 @@ ship "Gunboat"
 		"outfit space" 270
 		"weapon capacity" 100
 		"engine capacity" 90
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2238,6 +2273,7 @@ ship "Hauler"
 		"outfit space" 350
 		"weapon capacity" 140
 		"engine capacity" 80
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2302,6 +2338,7 @@ ship "Hauler II"
 		"outfit space" 350
 		"weapon capacity" 140
 		"engine capacity" 80
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2368,6 +2405,7 @@ ship "Hauler III"
 		"outfit space" 350
 		"weapon capacity" 140
 		"engine capacity" 80
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2434,6 +2472,7 @@ ship "Hawk"
 		"outfit space" 200
 		"weapon capacity" 50
 		"engine capacity" 70
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2487,6 +2526,7 @@ ship "Headhunter"
 		"outfit space" 250
 		"weapon capacity" 60
 		"engine capacity" 80
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2551,6 +2591,7 @@ ship "Heavy Shuttle"
 		"outfit space" 130
 		"weapon capacity" 16
 		"engine capacity" 65
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2597,6 +2638,7 @@ ship "Hogshead"
 		"outfit space" 320
 		"weapon capacity" 80
 		"engine capacity" 90
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2655,6 +2697,7 @@ ship "Lance"
 		"outfit space" 100
 		"weapon capacity" 20
 		"engine capacity" 30
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2709,6 +2752,7 @@ ship "Leviathan"
 		"outfit space" 620
 		"weapon capacity" 240
 		"engine capacity" 120
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2784,6 +2828,7 @@ ship "Mammoth"
 		"outfit space" 536
 		"weapon capacity" 294
 		"engine capacity" 114
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2864,6 +2909,7 @@ ship "Manta"
 		"outfit space" 350
 		"weapon capacity" 140
 		"engine capacity" 100
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 2
@@ -2919,6 +2965,7 @@ ship "Mining Drone"
 		"outfit space" 62
 		"weapon capacity" 12
 		"engine capacity" 28
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2963,6 +3010,7 @@ ship "Modified Argosy"
 		"outfit space" 340
 		"weapon capacity" 140
 		"engine capacity" 80
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3034,6 +3082,7 @@ ship "Mule"
 		"outfit space" 440
 		"weapon capacity" 170
 		"engine capacity" 110
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3105,6 +3154,7 @@ ship "Nest"
 		"outfit space" 400
 		"weapon capacity" 140
 		"engine capacity" 80
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3171,6 +3221,7 @@ ship "Nighthawk"
 		"outfit space" 362
 		"weapon capacity" 102
 		"engine capacity" 123
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3232,6 +3283,7 @@ ship "Osprey"
 		"outfit space" 450
 		"weapon capacity" 180
 		"engine capacity" 130
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3300,6 +3352,7 @@ ship "Protector"
 		"outfit space" 590
 		"weapon capacity" 230
 		"engine capacity" 100
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3367,6 +3420,7 @@ ship "Quicksilver"
 		"outfit space" 240
 		"weapon capacity" 80
 		"engine capacity" 70
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3418,6 +3472,7 @@ ship "Rainmaker"
 		"outfit space" 240
 		"weapon capacity" 70
 		"engine capacity" 50
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3479,6 +3534,7 @@ ship "Raven"
 		"outfit space" 280
 		"weapon capacity" 100
 		"engine capacity" 100
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3541,6 +3597,7 @@ ship "Roost"
 		"outfit space" 450
 		"weapon capacity" 140
 		"engine capacity" 80
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3612,6 +3669,7 @@ ship "Saber"
 		"outfit space" 280
 		"weapon capacity" 105
 		"engine capacity" 90
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3676,6 +3734,7 @@ ship "Scout"
 		"outfit space" 220
 		"weapon capacity" 40
 		"engine capacity" 100
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3733,6 +3792,7 @@ ship "Scrapper"
 		"outfit space" 125
 		"weapon capacity" 12
 		"engine capacity" 58
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3782,6 +3842,7 @@ ship "Shuttle"
 		"outfit space" 120
 		"weapon capacity" 10
 		"engine capacity" 60
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3830,6 +3891,7 @@ ship "Skein"
 		"outfit space" 500
 		"weapon capacity" 140
 		"engine capacity" 80
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3907,6 +3969,7 @@ ship "Sparrow"
 		"outfit space" 130
 		"weapon capacity" 25
 		"engine capacity" 40
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -3962,6 +4025,7 @@ ship "Splinter"
 		"outfit space" 400
 		"weapon capacity" 150
 		"engine capacity" 100
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -4025,6 +4089,7 @@ ship "Star Barge"
 		"outfit space" 130
 		"weapon capacity" 20
 		"engine capacity" 40
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -4073,6 +4138,7 @@ ship "Star Queen"
 		"outfit space" 360
 		"weapon capacity" 120
 		"engine capacity" 100
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -4139,6 +4205,7 @@ ship "Sunder"
 		"outfit space" 230
 		"weapon capacity" 50
 		"engine capacity" 90
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -4199,6 +4266,7 @@ ship "Surveillance Drone"
 		"outfit space" 53
 		"weapon capacity" 0
 		"engine capacity" 28
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -4240,6 +4308,7 @@ ship "Valkyrie"
 		"outfit space" 400
 		"weapon capacity" 170
 		"engine capacity" 76
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -4308,6 +4377,7 @@ ship "Vanguard"
 		"outfit space" 560
 		"weapon capacity" 220
 		"engine capacity" 120
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -4383,6 +4453,7 @@ ship "Wasp"
 		"outfit space" 150
 		"weapon capacity" 28
 		"engine capacity" 60
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1

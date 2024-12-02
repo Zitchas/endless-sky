@@ -35,6 +35,7 @@ ship "Albatross"
 		"outfit space" 672
 		"weapon capacity" 236
 		"engine capacity" 142
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -323,6 +324,7 @@ ship "Modified Dromedary"
 		"outfit space" 740
 		"weapon capacity" 270
 		"engine capacity" 195
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -559,6 +561,7 @@ ship "Gull"
 		"outfit space" 311
 		"weapon capacity" 83
 		"engine capacity" 101
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -930,6 +933,7 @@ ship "Ibis"
 		"outfit space" 427
 		"weapon capacity" 147
 		"engine capacity" 109
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1028,6 +1032,7 @@ ship "Merganser"
 		"outfit space" 219
 		"weapon capacity" 85
 		"engine capacity" 70
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1153,6 +1158,7 @@ ship "Pelican"
 		"outfit space" 480
 		"weapon capacity" 157
 		"engine capacity" 144
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1251,6 +1257,7 @@ ship "Penguin"
 		"outfit space" 109
 		"weapon capacity" 33
 		"engine capacity" 54
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1378,6 +1385,7 @@ ship "Peregrine"
 		"outfit space" 552
 		"weapon capacity" 220
 		"engine capacity" 171
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 2
@@ -1513,6 +1521,7 @@ ship "Petrel"
 		"outfit space" 133
 		"weapon capacity" 33
 		"engine capacity" 34
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1585,6 +1594,7 @@ ship "Puffin"
 		"cargo space" 8
 		"outfit space" 80
 		"engine capacity" 26
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1648,6 +1658,7 @@ ship "Smew"
 		"outfit space" 80
 		"weapon capacity" 10
 		"engine capacity" 46
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1746,6 +1757,7 @@ ship "Starling"
 		"outfit space" 316
 		"weapon capacity" 83
 		"engine capacity" 94
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1926,6 +1938,7 @@ ship "Tern"
 		"outfit space" 76
 		"weapon capacity" 16
 		"engine capacity" 26
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1

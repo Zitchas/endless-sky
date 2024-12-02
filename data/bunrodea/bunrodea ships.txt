@@ -27,6 +27,7 @@ ship "Kaiken"
 		"outfit space" 121
 		"weapon capacity" 35
 		"engine capacity" 45
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -80,6 +81,7 @@ ship "Sasumata"
 		"outfit space" 397
 		"weapon capacity" 122
 		"engine capacity" 126
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -148,6 +150,7 @@ ship "Tanto"
 		"outfit space" 231
 		"weapon capacity" 56
 		"engine capacity" 102
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -203,6 +206,7 @@ ship "Ararebo"
 		"outfit space" 594
 		"weapon capacity" 112
 		"engine capacity" 108
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -273,6 +277,7 @@ ship "Tekkan"
 		"outfit space" 321
 		"weapon capacity" 100
 		"engine capacity" 85
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -332,6 +337,7 @@ ship "Kunai"
 		"outfit space" 407
 		"weapon capacity" 158
 		"engine capacity" 102
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -393,6 +399,7 @@ ship "Kama"
 		"outfit space" 573
 		"weapon capacity" 247
 		"engine capacity" 121
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -469,6 +476,7 @@ ship "Chigiriki"
 		"outfit space" 747
 		"weapon capacity" 504
 		"engine capacity" 145
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1

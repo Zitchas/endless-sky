@@ -32,6 +32,7 @@ ship "Venta"
 		"outfit space" 552
 		"weapon capacity" 240
 		"engine capacity" 130
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -98,6 +99,7 @@ ship "Nimbus"
 		"outfit space" 450
 		"weapon capacity" 120
 		"engine capacity" 85
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -172,6 +174,7 @@ ship "Nimbo Stratus"
 		"outfit space" 270
 		"weapon capacity" 50
 		"engine capacity" 60
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -216,6 +219,7 @@ ship "Nimbo Cirrus"
 		"cargo space" 200
 		"outfit space" 160
 		"engine capacity" 60
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -258,6 +262,7 @@ ship "Gero"
 		"cargo space" 20
 		"outfit space" 158
 		"engine capacity" 54
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1

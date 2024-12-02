@@ -33,6 +33,7 @@ ship "Shale"
 		"outfit space" 113
 		"weapon capacity" 0
 		"engine capacity" 58
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -76,6 +77,7 @@ ship "Dolomite"
 		"outfit space" 152
 		"weapon capacity" 0
 		"engine capacity" 81
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -124,6 +126,7 @@ ship "Conglomerate"
 		"outfit space" 253
 		"weapon capacity" 0
 		"engine capacity" 146
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -177,6 +180,7 @@ ship "Granofel"
 		"outfit space" 230
 		"weapon capacity" 0
 		"engine capacity" 151
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -230,6 +234,7 @@ ship "Gypsum"
 		"outfit space" 240
 		"weapon capacity" 42
 		"engine capacity" 120
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -285,6 +290,7 @@ ship "Corundum"
 		"outfit space" 316
 		"weapon capacity" 64
 		"engine capacity" 162
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -433,6 +439,7 @@ ship "Dunite"
 		"outfit space" 115
 		"weapon capacity" 22
 		"engine capacity" 56
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -608,6 +615,7 @@ ship "Slate"
 		"outfit space" 122
 		"weapon capacity" 0
 		"engine capacity" 58
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -652,6 +660,7 @@ ship "Schist"
 		"outfit space" 298
 		"weapon capacity" 100
 		"engine capacity" 96
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -735,6 +744,7 @@ ship "Rhyolite"
 		"outfit space" 220
 		"weapon capacity" 78
 		"engine capacity" 100
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -789,6 +799,7 @@ ship "Eclogite"
 		"outfit space" 285
 		"weapon capacity" 96
 		"engine capacity" 94
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -844,6 +855,7 @@ ship "Diorite"
 		"outfit space" 453
 		"weapon capacity" 195
 		"engine capacity" 140
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -917,6 +929,7 @@ ship "Hornfel"
 		"outfit space" 508
 		"weapon capacity" 240
 		"engine capacity" 94
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1049,6 +1062,7 @@ ship "Gneiss"
 		"outfit space" 841
 		"weapon capacity" 504
 		"engine capacity" 150
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1126,6 +1140,7 @@ ship "Granulite"
 		"outfit space" 651
 		"weapon capacity" 216
 		"engine capacity" 203
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1209,6 +1224,7 @@ ship "Halite"
 		"outfit space" 78
 		"weapon capacity" 30
 		"engine capacity" 21
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1257,6 +1273,7 @@ ship "Mica"
 		"outfit space" 118
 		"weapon capacity" 0
 		"engine capacity" 50
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1301,6 +1318,7 @@ ship "Coesite"
 		"outfit space" 264
 		"weapon capacity" 86
 		"engine capacity" 80
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1360,6 +1378,7 @@ ship "Tridymite"
 		"outfit space" 200
 		"weapon capacity" 0
 		"engine capacity" 86
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1417,6 +1436,7 @@ ship "Felsic"
 		"outfit space" 322
 		"weapon capacity" 109
 		"engine capacity" 106
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1474,6 +1494,7 @@ ship "Feldspar"
 		"outfit space" 566
 		"weapon capacity" 234
 		"engine capacity" 172
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1564,6 +1585,7 @@ ship "Epidote"
 		"outfit space" 552
 		"weapon capacity" 166
 		"engine capacity" 182
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1632,6 +1654,7 @@ ship "Kyanite"
 		"outfit space" 380
 		"weapon capacity" 202
 		"engine capacity" 160
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1

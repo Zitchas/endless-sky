@@ -29,6 +29,7 @@ ship "Aphid"
 		"outfit space" 185
 		"weapon capacity" 37
 		"engine capacity" 48
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -118,6 +119,7 @@ ship "Centipede"
 		"outfit space" 375
 		"weapon capacity" 78
 		"engine capacity" 88
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -257,6 +259,7 @@ ship "Cicada"
 		"outfit space" 323
 		"weapon capacity" 89
 		"engine capacity" 64
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -313,6 +316,7 @@ ship "Flea"
 		"outfit space" 63
 		"weapon capacity" 13
 		"engine capacity" 22
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -367,6 +371,7 @@ ship "Geocoris"
 		"outfit space" 582
 		"weapon capacity" 172
 		"engine capacity" 94
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -456,6 +461,7 @@ ship "Grasshopper"
 		"outfit space" 198
 		"weapon capacity" 47
 		"engine capacity" 61
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -554,6 +560,7 @@ ship "Lightning Bug"
 		"outfit space" 278
 		"weapon capacity" 87
 		"engine capacity" 93
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -677,6 +684,7 @@ ship "Ladybug"
 		"outfit space" 460
 		"weapon capacity" 170
 		"engine capacity" 120
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -837,6 +845,7 @@ ship "Pond Strider"
 		"outfit space" 354
 		"weapon capacity" 144
 		"engine capacity" 76
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -995,6 +1004,7 @@ ship "Sea Scorpion"
 		"outfit space" 510
 		"weapon capacity" 188
 		"engine capacity" 117
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1159,6 +1169,7 @@ ship "Scarab"
 		"outfit space" 231
 		"weapon capacity" 49
 		"engine capacity" 93
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1213,6 +1224,7 @@ ship "Shield Beetle"
 		"outfit space" 798
 		"weapon capacity" 333
 		"engine capacity" 150
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1679,6 +1691,7 @@ ship "Emperor Beetle"
 		"cargo space" 27
 		"weapon capacity" 352
 		"engine capacity" 139
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -1805,6 +1818,7 @@ ship "Solifuge"
 		"outfit space" 828
 		"weapon capacity" 342
 		"engine capacity" 166
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2022,6 +2036,7 @@ ship "Violin Spider"
 		"outfit space" 92
 		"weapon capacity" 23
 		"engine capacity" 30
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
@@ -2087,6 +2102,7 @@ ship "Water Bug"
 		"outfit space" 368
 		"weapon capacity" 145
 		"engine capacity" 64
+		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
 		"thruster slot" 1
