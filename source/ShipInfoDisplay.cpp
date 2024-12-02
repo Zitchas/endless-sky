@@ -20,7 +20,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "CategoryTypes.h"
 #include "Color.h"
 #include "Depreciation.h"
-#include "FillShader.h"
+#include "shader/FillShader.h"
 #include "text/Format.h"
 #include "GameData.h"
 #include "Gamerules.h"
@@ -616,7 +616,7 @@ void ShipInfoDisplay::DrawShipHealthStats(const Ship &ship, const Rectangle & bo
 
 
 	// This allows the section to stack nicely with other info panel sections,
-	// But will also allow it to be called on its own in a new box if desire.
+	// but will also allow it to be called on its own in a new box if desired.
 	for(int i = 0; i < infoPanelLine; i++)
 	{
 		table.DrawTruncatedPair(" ", dim, " ", bright, Truncate::MIDDLE, true);
@@ -624,21 +624,25 @@ void ShipInfoDisplay::DrawShipHealthStats(const Ship &ship, const Rectangle & bo
 
 	if(hasShieldRegen)
 	{
+		CheckHover(table, "shields (charge):");
 		table.DrawTruncatedPair("shields (charge):", dim, Format::Number(ship.MaxShields())
 			+ " (" + Format::Number(60. * shieldRegen) + "/s)", bright, Truncate::MIDDLE, true);
 	}
 	else
 	{
-		table.DrawTruncatedPair("shields", dim, Format::Number(ship.MaxShields()), bright, Truncate::MIDDLE, true);
+		CheckHover(table, "shields:");
+		table.DrawTruncatedPair("shields:", dim, Format::Number(ship.MaxShields()), bright, Truncate::MIDDLE, true);
 	}
 	if(hasHullRegen)
 	{
+		CheckHover(table, "hull (repair):");
 		table.DrawTruncatedPair("hull (repair):", dim, Format::Number(ship.MaxHull())
 			+ " (" + Format::Number(60. * hullRegen) + "/s)", bright, Truncate::MIDDLE, true);
 	}
 	else
 	{
-		table.DrawTruncatedPair("hull", dim, Format::Number(ship.MaxHull()), bright, Truncate::MIDDLE, true);
+		CheckHover(table, "hull:");
+		table.DrawTruncatedPair("hull:", dim, Format::Number(ship.MaxHull()), bright, Truncate::MIDDLE, true);
 	}
 	infoPanelLine = infoPanelLine + 2;
 }
@@ -671,11 +675,15 @@ void ShipInfoDisplay::DrawShipCarryingCapacities(const Ship &ship, const Rectang
 		table.DrawTruncatedPair(" ", dim, " ", bright, Truncate::MIDDLE, true);
 	}
 
+	CheckHover(table, "mass:");
 	table.DrawTruncatedPair("current mass:", dim, Format::Number(ship.Mass()) + " tons", bright, Truncate::MIDDLE, true);
+	CheckHover(table, "cargo:");
 	table.DrawTruncatedPair("cargo space:", dim, Format::Number(ship.Cargo().Used())
 		+ " / " + Format::Number(attributes.Get("cargo space")) + " tons", bright, Truncate::MIDDLE, true);
+	CheckHover(table, "required crew / bunks:");
 	table.DrawTruncatedPair("required crew / bunks", dim, Format::Number(ship.Crew())
 		+ " / " + Format::Number(attributes.Get("bunks")), bright, Truncate::MIDDLE, true);
+	CheckHover(table, "fuel / fuel capacity:");
 	table.DrawTruncatedPair("fuel / fuel capacity:", dim, Format::Number(ship.Fuel() * attributes.Get("fuel capacity"))
 		+ " / " + Format::Number(attributes.Get("fuel capacity")), bright, Truncate::MIDDLE, true);
 
@@ -737,17 +745,24 @@ void ShipInfoDisplay::DrawShipManeuverStats(const Ship &ship, const Rectangle & 
 	double baseTurn = (60. * attributes.Get("turn") * (1. + attributes.Get("turn multiplier"))) / emptyMass;
 	double minTurn = (60. * attributes.Get("turn") * (1. + attributes.Get("turn multiplier"))) / fullMass;
 
+	CheckHover(table, "max speed (w/AB):");
 	table.DrawTruncatedPair("max speed (w/AB):", dim, Format::Number(60. * attributes.Get("thrust") / ship.Drag()) + " (" +
 		Format::Number(60. * attributes.Get("afterburner thrust") / ship.Drag()) + ")", bright, Truncate::MIDDLE, true);
+	CheckHover(table, "movement (full - no cargo):");
 	table.DrawTruncatedPair("thrust (min - max):", dim, " ", bright, Truncate::MIDDLE, true);
+	CheckHover(table, "acceleration:");
 	table.DrawTruncatedPair("   forward:", dim, Format::Number(baseAccel / fullMass) +
 		" - " + Format::Number(baseAccel / emptyMass), bright, Truncate::MIDDLE, true);
+	CheckHover(table, "acceleration (afterburner):");
 	table.DrawTruncatedPair("   Afterburner:", dim, Format::Number(afterburnerAccel / fullMass) +
 		" - " + Format::Number(afterburnerAccel / emptyMass), bright, Truncate::MIDDLE, true);
+	CheckHover(table, "acceleration (reverse):");
 	table.DrawTruncatedPair("   reverse:", dim, Format::Number(reverseAccel / fullMass) +
 		" - " + Format::Number(reverseAccel / emptyMass), bright, Truncate::MIDDLE, true);
+	CheckHover(table, "acceleration (lateral):");
 	table.DrawTruncatedPair("   lateral:", dim, Format::Number(lateralAccel / fullMass) +
 		" - " + Format::Number(lateralAccel / emptyMass), bright, Truncate::MIDDLE, true); // currently doesn't work
+	CheckHover(table, "turning:");
 	table.DrawTruncatedPair("turning:", dim, Format::Number(minTurn) + " - " + Format::Number(baseTurn), bright,
 		Truncate::MIDDLE, true);
 
@@ -795,6 +810,7 @@ void ShipInfoDisplay::DrawShipOutfitStat(const Ship &ship, const Rectangle & bou
 
 	for(unsigned i = 0; i < NAMES.size(); i += 2)
 	{
+		CheckHover(table, "outfit space free:");
 		table.DrawTruncatedPair((NAMES[i]), dim, Format::Number(attributes.Get(NAMES[i + 1]))
 			+ " / " + Format::Number(chassis[NAMES[i + 1]]), bright, Truncate::MIDDLE, true);
 		infoPanelLine++;
@@ -828,7 +844,7 @@ void ShipInfoDisplay::DrawShipCapacities(const Ship &ship, const Rectangle & bou
 		table.DrawTruncatedPair(" ", dim, " ", bright, Truncate::MIDDLE, true);
 	}
 
-	// Find out how much outfit, engine, and weapon space the chassis has.
+	// Find out how much engine and weapon space the chassis has.
 	map<string, double> chassis;
 	static const vector<string> NAMES = {
 		"    weapon capacity:", "weapon capacity",
@@ -843,6 +859,7 @@ void ShipInfoDisplay::DrawShipCapacities(const Ship &ship, const Rectangle & bou
 
 	for(unsigned i = 0; i < NAMES.size(); i += 2)
 	{
+		CheckHover(table, NAMES[i]);
 		table.DrawTruncatedPair((NAMES[i]), dim, Format::Number(attributes.Get(NAMES[i + 1]))
 			+ " / " + Format::Number(chassis[NAMES[i + 1]]), bright, Truncate::MIDDLE, true);
 		infoPanelLine++;
@@ -893,6 +910,7 @@ void ShipInfoDisplay::DrawShipPropulsionCapacities(const Ship &ship, const Recta
 
 	for(unsigned i = 0; i < NAMES.size(); i += 2)
 	{
+		CheckHover(table, NAMES[i]);
 		table.DrawTruncatedPair((NAMES[i]), dim, Format::Number(attributes.Get(NAMES[i + 1]))
 			+ " / " + Format::Number(chassis[NAMES[i + 1]]), bright, Truncate::MIDDLE, true);
 		infoPanelLine++;
@@ -942,6 +960,7 @@ void ShipInfoDisplay::DrawShipHardpointStats(const Ship &ship, const Rectangle &
 
 	for(unsigned i = 0; i < NAMES.size(); i += 2)
 	{
+		CheckHover(table, NAMES[i]);
 		table.DrawTruncatedPair((NAMES[i]), dim, Format::Number(attributes.Get(NAMES[i + 1]))
 			+ " / " + Format::Number(chassis[NAMES[i + 1]]), bright, Truncate::MIDDLE, true);
 		infoPanelLine++;
@@ -988,6 +1007,7 @@ void ShipInfoDisplay::DrawShipBayStats(const Ship &ship, const Rectangle & bound
 			string bayLabel = bayType;
 			transform(bayLabel.begin(), bayLabel.end(), bayLabel.begin(), ::tolower);
 
+			CheckHover(table, bayLabel + " bays:");
 			table.DrawTruncatedPair(bayLabel + " bays:", dim, Format::Number(totalBays), bright, Truncate::MIDDLE, true);
 		}
 	}
@@ -1133,7 +1153,7 @@ void ShipInfoDisplay::DrawShipEnergyHeatStats(const Ship &ship, const Rectangle 
 
 	for(unsigned i = 0; i < tableLabels.size(); ++i)
 	{
-		// CheckHover(table, tableLabels[i]);
+		CheckHover(table, tableLabels[i]);
 		table.Draw(tableLabels[i], dim);
 		table.Draw(energyTable[i], bright);
 		table.Draw(heatTable[i], bright);
