@@ -5015,7 +5015,7 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 		if(latThrustCommand)
 		{
 			// Check if we are able to apply this thrust.
-			double cost = attributes.Get("lateral thrusting energy") * lateralThrustValue;
+			double cost = attributes.Get("lateral thrusting energy");
 			if(energy < cost)
 				latThrustCommand *= energy / cost;
 
@@ -5029,7 +5029,7 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 				{
 					double scale = fabs(latThrustCommand);
 					energy -= scale * cost;
-					heat += scale * attributes.Get("lateral thrusting heat") * lateralThrustValue;
+					heat += scale * attributes.Get("lateral thrusting heat");
 					Point lateral(-angle.Unit().Y(), angle.Unit().X());
 					acceleration += lateral * (latThrustCommand * latThrust / mass);
 				}
