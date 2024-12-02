@@ -361,7 +361,7 @@ outfit "X5200 Ion Steering"
 	description "	Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space for the same amount of thrust."
 
 
-# Note on Lateral Thrusters: My initial values here are to have each set of lateral thrusters be based on the thruster of the same "rank". 
+# Note on Lateral Thrusters: My initial values here are to have each set of lateral thrusters be based on the thruster of the same "rank".
 # So the tiny lateral has values equivalent to about 90% of a tiny thruster. The small lateral thruster is roughly 80% of a small thruster, etc.
 # This continues by 10% increments down to the Huge lateral thrusters that are equivalent of 50% of the huge thrusters.
 # This percentage is applied equally to mass, outfit space, engine capacity, lateral thrust, lateral thrusting energy, and lateral thrusting heat.
