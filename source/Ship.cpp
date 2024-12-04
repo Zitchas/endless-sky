@@ -5009,8 +5009,6 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 		// This pulls "lateral thrust" from the ship definition,
 		double latThrustCommand = commands.LateralThrust();
 		double latThrust = 0.;
-		double lateralThrustValue = 0.;
-		lateralThrustValue = attributes.Get("lateral thrust");
 
 		if(latThrustCommand)
 		{
