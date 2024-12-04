@@ -710,6 +710,110 @@ outfit "Tyrant Plasma Steering"
 	description "	Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
 
 
+# Note on Lateral Thrusters: My initial values here are to have each set of lateral thrusters be based on the thruster of the same "rank".
+# So the tiny lateral has values equivalent to about 90% of a tiny thruster. The small lateral thruster is roughly 80% of a small thruster, etc.
+# This continues by 10% increments down to the Huge lateral thrusters that are equivalent of 50% of the huge thrusters.
+# This percentage is applied equally to mass, outfit space, engine capacity, lateral thrust, lateral thrusting energy, and lateral thrusting heat.
+
+
+
+outfit "Chipmunk Plasma Lateral Thruster"
+	category "Engines"
+	series "Human: Plasma"
+	index 15
+	"cost" 20000
+	thumbnail "outfit/tiny plasma thruster"
+	"lateral thruster slot" -1
+	"mass" 18
+	"outfit space" -18
+	"engine capacity" -18
+	"lateral thrust" 19.8 # 90% of the tiny ion thruster
+	"lateral thrusting energy" 0.9
+	"lateral thrusting heat" 1.62
+	"lateral flare sprite" "effect/plasma flare/tiny"
+		"frame rate" 5
+	"lateral flare sound" "plasma tiny"
+	description "This is the smallest of the plasma lateral propulsion systems produced by Delta V Corporation, suitable for very light fighters and interceptors."
+	description "	Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
+
+outfit "Greyhound Plasma Lateral Thruster"
+	category "Engines"
+	series "Human: Plasma"
+	index 25
+	"cost" 45000
+	thumbnail "outfit/small plasma thruster"
+	"lateral thruster slot" -1
+	"mass" 27
+	"outfit space" -27
+	"engine capacity" -27
+	"lateral thrust" 31 # 80% of the tiny ion thruster
+	"lateral thrusting energy" 1.44
+	"lateral thrusting heat" 2.72
+	"lateral flare sprite" "effect/plasma flare/small"
+		"frame rate" 6
+	"lateral flare sound" "plasma small"
+	description "This lateral thruster is intended for small ships and for freighters. It comes in a crate decorated with a stylized cartoon of a running greyhound."
+	description "	Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
+
+outfit "Impala Plasma Lateral Thruster"
+	category "Engines"
+	series "Human: Plasma"
+	index 35
+	"cost" 99000
+	thumbnail "outfit/medium plasma thruster"
+	"lateral thruster slot" -1
+	"mass" 40
+	"outfit space" -40
+	"engine capacity" -40
+	"lateral thrust" 49 # 70% of the tiny ion thruster
+	"lateral thrusting energy" 2.24
+	"lateral thrusting heat" 4.55
+	"lateral flare sprite" "effect/plasma flare/medium"
+		"frame rate" 7
+	"lateral flare sound" "plasma medium"
+	description "Impala class lateral thrusters produce a significant amount of force, and are suitable for smaller capital ships. But, your ship may need extra cooling systems in order to handle them."
+	description "	Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
+
+outfit "Orca Plasma Lateral Thruster"
+	category "Engines"
+	series "Human: Plasma"
+	index 45
+	"cost" 217000
+	thumbnail "outfit/large plasma thruster"
+	"lateral thruster slot" -1
+	"mass" 58
+	"outfit space" -58
+	"engine capacity" -58
+	"lateral thrust" 77 # 60% of the tiny ion thruster
+	"lateral thrusting energy" 3.48
+	"lateral thrusting heat" 7.38
+	"lateral flare sprite" "effect/plasma flare/large"
+		"frame rate" 8
+	"lateral flare sound" "plasma large"
+	description "This lateral thruster draws enough power that a ship with anything short of a full-fledged nuclear reactor is unlikely to be able to use it, but the thrust it generates is impressive."
+	description "	Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
+
+outfit "Tyrant Plasma Lateral Thruster"
+	category "Engines"
+	series "Human: Plasma"
+	index 55
+	"cost" 389000
+	thumbnail "outfit/huge plasma thruster"
+	"lateral thruster slot" -1
+	"mass" 64
+	"outfit space" -64
+	"engine capacity" -64
+	"lateral thrust" 90 # 50% of the tiny ion thruster
+	"lateral thrusting energy" 4.3
+	"lateral thrusting heat" 9.55
+	"lateral flare sprite" "effect/plasma flare/huge"
+		"frame rate" 9
+	"lateral flare sound" "plasma huge"
+	description "The enormous crate that this lateral thruster is sold in comes decorated with a picture of a grinning Tyrannosaurus Rex with an improbable number of teeth. Only a handful of ships are large enough to require an engine of this size... or to have the capacity for one."
+	description "	Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
+
+
+
 outfit "Capybara Reverse Thruster"
 	category "Engines"
 	series "Human: Plasma"
