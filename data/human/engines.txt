@@ -1059,7 +1059,7 @@ outfit "A865 Atomic Steering"
 
 
 
-outfit "AL190 Atomic Lateral Thruster"
+outfit "AL129 Atomic Lateral Thruster"
 	category "Engines"
 	series "Human: Atomic"
 	index 15
