@@ -902,7 +902,7 @@ outfit "Crucible-Class Lateral Thruster"
 	"lateral flare sprite" "effect/remnant flare/small"
 		"frame rate" 5
 	"lateral flare sound" "plasma tiny"
-	description "These small but powerful lateral engines bear a superficial apperance of being classic ion thrusters, albeit very advanced ones."
+	description "These small but powerful lateral engines bear a superficial appearance of being classic ion thrusters, albeit very advanced ones."
 
 outfit "Forge-Class Lateral Thruster"
 	category "Engines"
