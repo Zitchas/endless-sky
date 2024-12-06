@@ -1052,6 +1052,104 @@ outfit "A865 Atomic Steering"
 	description "Atomic engines are considered by many to be Deep Sky's crowning achievement. Although they are so expensive that relatively few of them are in use, there are few captains who do not dream of one day installing a set of them."
 
 
+# Note on Lateral Thrusters: My initial values here are to have each set of lateral thrusters be based on the thruster of the same "rank".
+# So the tiny lateral has values equivalent to about 90% of a tiny thruster. The small lateral thruster is roughly 80% of a small thruster, etc.
+# This continues by 10% increments down to the Huge lateral thrusters that are equivalent of 50% of the huge thrusters.
+# This percentage is applied equally to mass, outfit space, engine capacity, lateral thrust, lateral thrusting energy, and lateral thrusting heat.
+
+
+
+outfit "AL190 Atomic Lateral Thruster"
+	category "Engines"
+	series "Human: Atomic"
+	index 15
+	"cost" 140000
+	thumbnail "outfit/tiny atomic thruster"
+	"lateral thruster slot" -1
+	"mass" 19
+	"outfit space" -19
+	"engine capacity" -19
+	"lateral thrust" 27
+	"lateral thrusting energy" 1.62
+	"lateral thrusting heat" 3.15
+	"lateral flare sprite" "effect/atomic flare/tiny"
+		"frame rate" 14
+	"lateral flare sound" "atomic tiny"
+	description "If you're looking for the most powerful lateral thruster that will fit into your ship, and have plenty of money to burn, Deep Sky's atomic lateral thrusters are your answer. Of course, the extra energy and cooling they require can easily offset the benefit of their small size."
+
+outfit "AL259 Atomic Lateral Thruster"
+	category "Engines"
+	series "Human: Atomic"
+	index 25
+	"cost" 280000
+	thumbnail "outfit/small atomic thruster"
+	"lateral thruster slot" -1
+	"mass" 27
+	"outfit space" -27
+	"engine capacity" -27
+	"lateral thrust" 36
+	"lateral thrusting energy" 2.48
+	"lateral thrusting heat" 4.88
+	"lateral flare sprite" "effect/atomic flare/small"
+		"frame rate" 13
+	"lateral flare sound" "atomic small"
+	description "Deep Sky's atomic lateral thrusters have been in production for centuries, but remain a niche product due to their high prices and high energy requirements."
+
+outfit "AL379 Atomic Lateral Thruster"
+	category "Engines"
+	series "Human: Atomic"
+	index 35
+	"cost" 560000
+	thumbnail "outfit/medium atomic thruster"
+	"lateral thruster slot" -1
+	"mass" 37
+	"outfit space" -37
+	"engine capacity" -37
+	"lateral thrust" 53
+	"lateral thrusting energy" 3.57
+	"lateral thrusting heat" 7.21
+	"lateral flare sprite" "effect/atomic flare/medium"
+		"frame rate" 12
+	"lateral flare sound" "atomic medium"
+	description "This lateral thruster is small enough to fit in a light warship or freighter, but powerful enough to move any but the largest of ships. Naturally, such performance comes at an exorbitant price."
+
+outfit "AL529 Atomic Lateral Thruster"
+	category "Engines"
+	series "Human: Atomic"
+	index 45
+	"cost" 1120000
+	thumbnail "outfit/large atomic thruster"
+	"lateral thruster slot" -1
+	"mass" 49
+	"outfit space" -49
+	"engine capacity" -49
+	"lateral thrust" 74
+	"lateral thrusting energy" 4.98
+	"lateral thrusting heat" 10.44
+	"lateral flare sprite" "effect/atomic flare/large"
+		"frame rate" 11
+	"lateral flare sound" "atomic large"
+	description "If your ship is sporting a set of Deep Sky's atomic lateral thrusters, you will be the envy of every pilot in the galaxy. No other form of propulsion that humanity has discovered produces so much lateral thrust from such a small engine."
+
+outfit "AL869 Atomic Lateral Thruster"
+	category "Engines"
+	series "Human: Atomic"
+	index 55
+	"cost" 2240000
+	thumbnail "outfit/huge atomic thruster"
+	"lateral thruster slot" -1
+	"mass" 63
+	"outfit space" -63
+	"engine capacity" -63
+	"lateral thrust" 100
+	"lateral thrusting energy" 6.65
+	"lateral thrusting heat" 14.55
+	"lateral flare sprite" "effect/atomic flare/huge"
+		"frame rate" 10
+	"lateral flare sound" "atomic huge"
+	description "The A860 Atomic Lateral Thruster is the most powerful lateral thruster sold in human space, and is much more compact than any of the alternatives. But, you may need to upgrade your ship's power and cooling systems to handle it."
+
+
 outfit "AR120 Reverse Thruster"
 	category "Engines"
 	series "Human: Atomic"
