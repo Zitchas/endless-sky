@@ -51,7 +51,7 @@ ship "Quarg Skylark"
 		"Intrusion Countermeasures" 120
 		
 		"Medium Graviton Thruster"
-		"Medium Graviton lateral Thruster"
+		"Medium Graviton Lateral Thruster"
 		"Medium Graviton Steering"
 		"Jump Drive"
 		
@@ -110,7 +110,7 @@ ship "Quarg Wardragon"
 		"Intrusion Countermeasures" 160
 		
 		"Medium Graviton Thruster"
-		"Medium Graviton lateral Thruster"
+		"Medium Graviton Lateral Thruster"
 		"Medium Graviton Steering"
 		"Jump Drive"
 		
