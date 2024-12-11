@@ -268,6 +268,7 @@ start "lampyrid"
 			"engine capacity" 130
 			"weapon capacity" 50
 			"reverse thruster slot" 1
+			"lateral thruster slot" 1
 			"steering slot" 1
 			"thruster slot" 1
 			weapon
@@ -277,20 +278,51 @@ start "lampyrid"
 				"hit force" 1500
 		outfits
 			"Anti-Missile Turret"
-			"S3 Thermionic"
+			"KP-6 Photovoltaic Array"
 			"LP036a Battery Pack"
 			"D67-TM Shield Generator"
 			"Large Radar Jammer"
 			"Ramscoop"
 		
-			"Impala Plasma Thruster"
-			"Impala Plasma Steering"
+			"X3200 Ion Steering"
+			"X3400 Ion Lateral Thruster"
+			"X3700 Ion Thruster"
 			"Hyperdrive"
 
 		engine -64 28 0.7
 		engine 0 80 1.8
 		engine 0 100 1.2
 		engine 64 28 0.7
+		"lateral engine" -23 -66
+			angle 90
+			right
+			under
+			zoom 0.3
+		"lateral engine" 23 -66
+			angle 270
+			left
+			under
+			zoom 0.3
+		"lateral engine" -79 0
+			angle 90
+			right
+			under
+			zoom 0.3
+		"lateral engine" 79 0
+			angle 270
+			left
+			under
+			zoom 0.3
+		"lateral engine" -30 68
+			angle 90
+			right
+			under
+			zoom 0.3
+		"lateral engine" 30 68
+			angle 270
+			left
+			under
+			zoom 0.3
 		"reverse engine" -64.5 -31.5 0.7
 		"reverse engine" 64.5 -31.5 0.7
 		"steering engine" -64.5 -31.5 0.7
