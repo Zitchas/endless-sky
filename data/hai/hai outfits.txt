@@ -824,7 +824,7 @@ outfit `"Bondir" Atomic Lateral Thruster`
 	"cost" 1100000
 	thumbnail "outfit/large atomic thruster hai"
 	"lateral thruster slot" -1
-	"mass" 
+	"mass" 37
 	"outfit space" -37
 	"engine capacity" -37
 	"lateral thrust" 57
