@@ -185,6 +185,8 @@ test-data "Fighters and Carriers and Escorts Save"
 				"gun ports" 2
 				"heat dissipation" 0.85
 				hull 200
+				"lateral thruster slot" 1
+				"missile pylons" 2
 				"outfit space" 1100
 				"required crew" 1
 				shields 1100
@@ -236,6 +238,8 @@ test-data "Fighters and Carriers and Escorts Save"
 				"gun ports" 2
 				"heat dissipation" 0.85
 				hull 200
+				"lateral thruster slot" 1
+				"missile pylons" 2
 				"outfit space" 1100
 				"required crew" 1
 				shields 1100
