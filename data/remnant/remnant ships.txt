@@ -32,9 +32,9 @@ ship "Albatross"
 		"heat dissipation" 0.4
 		"fuel capacity" 1775
 		"ramscoop" 2.75
-		"outfit space" 672
+		"outfit space" 710
 		"weapon capacity" 236
-		"engine capacity" 142
+		"engine capacity" 180
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -71,6 +71,7 @@ ship "Albatross"
 		"Quantum Key Stone"
 
 		"Smelter-Class Thruster"
+		"Smelter-Class Lateral Thruster"
 		"Smelter-Class Steering"
 		"Scram Drive"
 
@@ -128,6 +129,7 @@ ship "Albatross" "Albatross (Sniper)"
 		"Tuning Rifle" 57
 
 		"Forge-Class Thruster"
+		"Smelter-Class Lateral Thruster"
 		# "Crucible-Class Thruster" # Extra thruster
 		"Smelter-Class Steering"
 		"Scram Drive"
@@ -166,6 +168,7 @@ ship "Albatross" "Albatross (Turret)"
 		"Tuning Rifle" 49
 
 		"Smelter-Class Thruster"
+		"Smelter-Class Lateral Thruster"
 		"Smelter-Class Steering"
 		"Scram Drive"
 
@@ -191,6 +194,7 @@ ship "Albatross" "Albatross (Heavy)"
 		"Tuning Rifle" 65
 
 		"Forge-Class Thruster"
+		"Smelter-Class Lateral Thruster"
 		# "Crucible-Class Thruster" # Extra thruster
 		"Smelter-Class Steering"
 		# "Forge-Class Steering" # Extra steering
@@ -226,6 +230,7 @@ ship "Albatross" "Albatross (Shield)"
 		"Tuning Rifle" 75
 
 		"Crucible-Class Thruster"
+		"Forge-Class Lateral Thruster"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -252,6 +257,7 @@ ship "Albatross" "Albatross (Ember Shield)"
 		"Tuning Rifle" 47
 
 		"Crucible-Class Thruster"
+		"Crucible-Class Lateral Thruster"
 		"Crucible-Class Steering"
 		"Hyperdrive"
 
@@ -279,6 +285,7 @@ ship "Albatross" "Albatross (Sniper II)"
 		"Tuning Rifle" 57
 
 		"Forge-Class Thruster"
+		"Smelter-Class Lateral Thruster"
 		# "Crucible-Class Thruster" # Extra thruster
 		"Smelter-Class Steering"
 		"Scram Drive"
@@ -321,9 +328,9 @@ ship "Modified Dromedary"
 		"heat dissipation" .22
 		"fuel capacity" 5725
 		"cargo space" 550
-		"outfit space" 740
+		"outfit space" 800
 		"weapon capacity" 270
-		"engine capacity" 195
+		"engine capacity" 255
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -359,6 +366,7 @@ ship "Modified Dromedary"
 		"Tuning Rifle" 95
 
 		"Smelter-Class Thruster"
+		"Smelter-Class Lateral Thruster"
 		"Smelter-Class Steering"
 		"Hyperdrive"
 		"Scram Drive"
@@ -452,6 +460,7 @@ ship "Modified Dromedary" "Modified Dromedary Ghost"
 		"Laser Rifle" 100
 		
 		"X4700 Ion Thruster"
+		"X5400 Ion Lateral Thruster"
 		"X5200 Ion Steering"
 		"Hyperdrive"
 		
@@ -492,6 +501,7 @@ ship "Modified Dromedary" "Modified Dromedary Specter"
 		"Laser Rifle" 15
 		
 		"X4700 Ion Thruster"
+		"X5400 Ion Lateral Thruster"
 		"X5200 Ion Steering"
 		"Hyperdrive"
 
@@ -528,6 +538,7 @@ ship "Modified Dromedary" "Modified Dromedary Wreck"
 		"Laser Rifle" 150
 		
 		"X4700 Ion Thruster"
+		"X5400 Ion Lateral Thruster"
 		"X5200 Ion Steering"
 		"Hyperdrive"
 	turret "Laser Turret"
@@ -558,9 +569,9 @@ ship "Gull"
 		"fuel capacity" 650
 		"ramscoop" 1.75
 		"cargo space" 175
-		"outfit space" 311
+		"outfit space" 334
 		"weapon capacity" 83
-		"engine capacity" 101
+		"engine capacity" 124
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -603,6 +614,7 @@ ship "Gull"
 		"Tuning Rifle" 3
 
 		"Forge-Class Thruster"
+		"Forge-Class Lateral Thruster"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -661,6 +673,7 @@ ship "Gull" "Gull (Support)"
 		"Tuning Rifle" 3
 
 		"Forge-Class Thruster"
+		"Forge-Class Lateral Thruster"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -682,6 +695,7 @@ ship "Gull" "Gull (Support II)"
 		"Tuning Rifle" 3
 
 		"Forge-Class Thruster"
+		"Forge-Class Lateral Thruster"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -697,6 +711,7 @@ ship "Gull" "Gull (Cargo)"
 		"Tuning Rifle" 3
 
 		"Forge-Class Thruster"
+		"Forge-Class Lateral Thruster"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -712,6 +727,7 @@ ship "Gull" "Gull (Bunks)"
 		"Tuning Rifle" 3
 
 		"Forge-Class Thruster"
+		"Forge-Class Lateral Thruster"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -740,6 +756,7 @@ ship "Heron"
 		"reverse thruster slot" 1
 		"steering slot" 5
 		"thruster slot" 5
+		"lateral thruster slot" 5
 		"shield generation" 15
 		"shield energy" 1.8
 		"hull repair rate" 15
@@ -789,6 +806,7 @@ ship "Heron"
 		
 		"Bellows-Class Afterburner" 3
 		"Smelter-Class Thruster" 4
+		"Smelter-Class Lateral Thruster" 4
 		"Smelter-Class Steering" 5
 		"Hyperdrive"
 		"Jump Drive"
@@ -930,9 +948,9 @@ ship "Ibis"
 		"fuel capacity" 1000
 		"ramscoop" 2.75
 		"cargo space" 103
-		"outfit space" 427
+		"outfit space" 450
 		"weapon capacity" 147
-		"engine capacity" 109
+		"engine capacity" 132
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -972,6 +990,7 @@ ship "Ibis"
 		"Tuning Rifle" 20
 		
 		"Forge-Class Thruster"
+		"Forge-Class Lateral Thruster"
 		"Forge-Class Steering" # Extra steering
 		"Scram Drive"
 		
@@ -1029,9 +1048,9 @@ ship "Merganser"
 		"drag" 1.5
 		"heat dissipation" .75
 		"gaslining" 1
-		"outfit space" 219
+		"outfit space" 229
 		"weapon capacity" 85
-		"engine capacity" 70
+		"engine capacity" 80
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1155,9 +1174,9 @@ ship "Pelican"
 		"heat dissipation" 0.5
 		"fuel capacity" 875
 		"ramscoop" 2.75
-		"outfit space" 480
+		"outfit space" 218
 		"weapon capacity" 157
-		"engine capacity" 144
+		"engine capacity" 182
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1194,6 +1213,7 @@ ship "Pelican"
 		"Tuning Rifle" 15
 
 		"Smelter-Class Thruster"
+		"Smelter-Class Lateral Thruster"
 		"Smelter-Class Steering"
 		"Scram Drive"
 
@@ -1225,9 +1245,10 @@ ship "Pelican" "Pelican (Heavy Lift)"
 		"Cargo Expansion" 5
 		"Scram Drive"
 		"Smelter-Class Thruster"
+		"Smelter-Class Lateral Thruster"
+		"Smelter-Class Steering"
 		"Crystal Capacitor" 2
 		"Quantum Key Stone"
-		"Smelter-Class Steering"
 		"Tuning Rifle" 15
 		"Emergency Ramscoop" 5
 		"Aeon Cell"
@@ -1254,9 +1275,9 @@ ship "Penguin"
 		"energy capacity" 300
 		"ramscoop" 1.25
 		"cargo space" 19
-		"outfit space" 109
+		"outfit space" 123
 		"weapon capacity" 33
-		"engine capacity" 54
+		"engine capacity" 68
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1321,6 +1342,7 @@ ship "Penguin"
 		"Tuning Rifle" 1
 		
 		"Crucible-Class Thruster"
+		"Crucible-Class Lateral Thruster"
 		"Crucible-Class Steering"
 		"Hyperdrive"
 	
@@ -1382,9 +1404,9 @@ ship "Peregrine"
 		"fuel capacity" 1625
 		"ramscoop" 3.25
 		"cargo space" 59
-		"outfit space" 552
+		"outfit space" 590
 		"weapon capacity" 220
-		"engine capacity" 171
+		"engine capacity" 209
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1438,6 +1460,7 @@ ship "Peregrine"
 		
 		"Bellows-Class Afterburner"
 		"Smelter-Class Thruster"
+		"Smelter-Class Lateral Thruster"
 		"Smelter-Class Steering"
 		"Scram Drive"
 		
@@ -1484,6 +1507,7 @@ ship "Peregrine" "Peregrine (II)"
 		
 		"Bellows-Class Afterburner"
 		"Smelter-Class Thruster"
+		"Smelter-Class Lateral Thruster"
 		"Smelter-Class Steering"
 		"Scram Drive"
 		
@@ -1518,9 +1542,9 @@ ship "Petrel"
 		"mass" 68
 		"drag" 1.40
 		"heat dissipation" .73
-		"outfit space" 133
+		"outfit space" 137
 		"weapon capacity" 33
-		"engine capacity" 34
+		"engine capacity" 48
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1593,7 +1617,7 @@ ship "Puffin"
 		"ramscoop" 1.25
 		"cargo space" 8
 		"outfit space" 80
-		"engine capacity" 26
+		"engine capacity" 40
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1657,7 +1681,7 @@ ship "Smew"
 		"cargo space" 70
 		"outfit space" 80
 		"weapon capacity" 10
-		"engine capacity" 46
+		"engine capacity" 60
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1754,9 +1778,9 @@ ship "Starling"
 		"fuel capacity" 925
 		"ramscoop" 1.75
 		"cargo space" 36
-		"outfit space" 316
+		"outfit space" 339
 		"weapon capacity" 83
-		"engine capacity" 94
+		"engine capacity" 117
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1798,6 +1822,7 @@ ship "Starling"
 		"Thermoelectric Cooler"
 		
 		"Forge-Class Thruster"
+		"Forge-Class Lateral Thruster"
 		"Forge-Class Steering"
 		# "Crucible-Class Steering" # Extra steering
 		"Hyperdrive"
@@ -1837,6 +1862,7 @@ ship "Starling" "Starling (Heavy)"
 		"Tuning Rifle" 10
 
 		"Forge-Class Thruster"
+		"Forge-Class Lateral Thruster"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -1856,6 +1882,7 @@ ship "Starling" "Starling (Sniper)"
 		"Tuning Rifle" 9
 
 		"Forge-Class Thruster"
+		"Forge-Class Lateral Thruster"
 		"Smelter-Class Steering"
 		"Hyperdrive"
 
@@ -1883,6 +1910,7 @@ ship "Starling" "Starling (Hunter)"
 		"Tuning Rifle" 11
 
 		"Forge-Class Thruster"
+		"Forge-Class Lateral Thruster"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -1905,6 +1933,7 @@ ship "Starling" "Starling (Thrasher)"
 		"Tuning Rifle" 8
 
 		"Forge-Class Thruster"
+		"Forge-Class Lateral Thruster"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -1937,7 +1966,7 @@ ship "Tern"
 		"ramscoop" 1.25
 		"outfit space" 76
 		"weapon capacity" 16
-		"engine capacity" 26
+		"engine capacity" 40
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
