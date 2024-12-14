@@ -2873,7 +2873,7 @@ void Engine::DrawShipSprites(const Ship &ship)
 			ship.Attributes().ReverseFlareSprites(), Ship::EnginePoint::UNDER);
 	if(ship.IsLatThrusting() && !ship.LateralEnginePoints().empty())
 		DrawFlareSprites(ship, draw[currentCalcBuffer], ship.LateralEnginePoints(),
-			ship.Attributes().FlareSprites(), Ship::EnginePoint::UNDER);
+			ship.Attributes().LateralFlareSprites(), Ship::EnginePoint::UNDER);
 	if(ship.IsSteering() && !ship.SteeringEnginePoints().empty())
 		DrawFlareSprites(ship, draw[currentCalcBuffer], ship.SteeringEnginePoints(),
 			ship.Attributes().SteeringFlareSprites(), Ship::EnginePoint::UNDER);
@@ -2908,7 +2908,7 @@ void Engine::DrawShipSprites(const Ship &ship)
 			ship.Attributes().ReverseFlareSprites(), Ship::EnginePoint::OVER);
 	if(ship.IsLatThrusting() && !ship.LateralEnginePoints().empty())
 		DrawFlareSprites(ship, draw[currentCalcBuffer], ship.LateralEnginePoints(),
-			ship.Attributes().FlareSprites(), Ship::EnginePoint::OVER);
+			ship.Attributes().LateralFlareSprites(), Ship::EnginePoint::OVER);
 	if(ship.IsSteering() && !ship.SteeringEnginePoints().empty())
 		DrawFlareSprites(ship, draw[currentCalcBuffer], ship.SteeringEnginePoints(),
 			ship.Attributes().SteeringFlareSprites(), Ship::EnginePoint::OVER);
