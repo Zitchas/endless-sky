@@ -96,6 +96,325 @@ effect "ionic afterburner"
 
 
 
+outfit "Z17 Reaction Thruster"
+	category "Engines"
+	series "Human: Reaction"
+	index 17
+	"cost" 6000
+	thumbnail "outfit/tiny reaction thruster"
+	"thruster slot" -1
+	"engine mod space" 0.8
+	"mass" 16
+	"outfit space" -16
+	"engine capacity" -16
+	"thrust" 12
+	"thrusting energy" .6
+	"thrusting heat" .9
+	"flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"flare sound" "ion tiny"
+	description "This is the smallest thruster that you can buy, so weak that anything larger than a drone will accelerate quite slowly when using this engine. On the other hand, it is also very energy-efficient."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+outfit "Z27 Reaction Thruster"
+	category "Engines"
+	series "Human: Reaction"
+	index 27
+	"cost" 13000
+	thumbnail "outfit/small reaction thruster"
+	"thruster slot" -1
+	"engine mod space" 1.01
+	"mass" 27
+	"outfit space" -27
+	"engine capacity" -27
+	"thrust" 21
+	"thrusting energy" 1.1
+	"thrusting heat" 1.7
+	"flare sprite" "effect/ion flare/small"
+		"frame rate" 1.1
+	"flare sound" "ion small"
+	description "The Z27 Reaction Thruster is intended mostly for use in small, single-person or two-person ships, as well as in fighters. It is also used in larger ships, such as freighters, that have very little space for propulsion systems or energy to drive them. But these larger ships move unbearably slowly as a result."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+outfit "Z37 Reaction Thruster"
+	category "Engines"
+	series "Human: Reaction"
+	index 37
+	"cost" 29000
+	thumbnail "outfit/medium reaction thruster"
+	"thruster slot" -1
+	"engine mod space" 1.19
+	"mass" 46
+	"outfit space" -46
+	"engine capacity" -46
+	"thrust" 38
+	"thrusting energy" 1.9
+	"thrusting heat" 3.2
+	"flare sprite" "effect/ion flare/medium"
+		"frame rate" 1.0
+	"flare sound" "ion medium"
+	description "The Z37 Reaction Thruster is designed for heavy freighters and small capital ships. In theory, it could be installed in smaller ships too, if they have enough engine space, to attain almost ridiculous speeds."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+outfit "Z47 Reaction Thruster"
+	category "Engines"
+	series "Human: Reaction"
+	index 47
+	"cost" 64000
+	thumbnail "outfit/large reaction thruster"
+	"thruster slot" -1
+	"engine mod space" 1.35
+	"mass" 79
+	"outfit space" -79
+	"engine capacity" -79
+	"thrust" 72
+	"thrusting energy" 3.5
+	"thrusting heat" 6.2
+	"flare sprite" "effect/ion flare/large"
+		"frame rate" 0.9
+	"flare sound" "ion large"
+	description "The Z47 Reaction Thruster was developed when the Republic Navy began building warships so large that the Z37 was not sufficient for them. It allows even a capital ship to move at a respectable speed."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+outfit "Z57 Reaction Thruster"
+	category "Engines"
+	series "Human: Reaction"
+	index 57
+	"cost" 140000
+	thumbnail "outfit/huge reaction thruster"
+	"thruster slot" -1
+	"engine mod space" 1.48
+	"mass" 121
+	"outfit space" -121
+	"engine capacity" -121
+	"thrust" 120
+	"thrusting energy" 6.3
+	"thrusting heat" 11.7
+	"flare sprite" "effect/ion flare/huge"
+		"frame rate" 0.8
+	"flare sound" "ion huge"
+	description "The Z57 thruster is intended for only the largest of capital ships. When the Syndicate first began producing them, these engines were considered little more than a publicity stunt, because no ship at the time was large enough to hold one."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+
+outfit "Z12 Reaction Steering"
+	category "Engines"
+	series "Human: Reaction"
+	index 12
+	"cost" 5000
+	thumbnail "outfit/tiny reaction steering"
+	"steering slot" -1
+	"mass" 12
+	"outfit space" -12
+	"engine capacity" -12
+	"turn" 259
+	"turning energy" .3
+	"turning heat" .6
+	"steering flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"steering flare sound" "ion tiny"
+	description "This is the smallest set of steering thrusters that you can buy, generally considered suitable only for tiny, pilotless drones. Occasionally pilots looking for some extra outfit space will try swapping out their larger steering systems for one of these, but the results are invariably disappointing."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+outfit "Z22 Reaction Steering"
+	category "Engines"
+	series "Human: Reaction"
+	index 22
+	"cost" 10000
+	thumbnail "outfit/small reaction steering"
+	"steering slot" -1
+	"mass" 20
+	"outfit space" -20
+	"engine capacity" -20
+	"turn" 496
+	"turning energy" .6
+	"turning heat" 1.1
+	"steering flare sprite" "effect/ion flare/small"
+		"frame rate" 1.1
+	"steering flare sound" "ion small"
+	description "The Z22 steering system is designed for fighters and other small spacecraft, as well as for use in larger ships when maneuverability is not needed."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+outfit "Z32 Reaction Steering"
+	category "Engines"
+	series "Human: Reaction"
+	index 32
+	"cost" 23000
+	thumbnail "outfit/medium reaction steering"
+	"steering slot" -1
+	"mass" 35
+	"outfit space" -35
+	"engine capacity" -35
+	"turn" 955
+	"turning energy" 1.1
+	"turning heat" 2.0
+	"steering flare sprite" "effect/ion flare/medium"
+		"frame rate" 1.0
+	"steering flare sound" "ion medium"
+	description "The Z32 steering system is intended for small warships and freighters. It produces enough turning force to lend agility to all but the largest of human ships, and it is considerably more energy-efficient than the plasma-drive alternatives."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+outfit "Z42 Reaction Steering"
+	category "Engines"
+	series "Human: Reaction"
+	index 42
+	"cost" 51000
+	thumbnail "outfit/large reaction steering"
+	"steering slot" -1
+	"mass" 59
+	"outfit space" -59
+	"engine capacity" -59
+	"turn" 1925
+	"turning energy" 1.9
+	"turning heat" 3.9
+	"steering flare sprite" "effect/ion flare/large"
+		"frame rate" 0.9
+	"steering flare sound" "ion large"
+	description "The Z42 is a powerful steering system, designed mostly for warships because quick steering is seldom a requirement in freighter design."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+outfit "Z52 Reaction Steering"
+	category "Engines"
+	series "Human: Reaction"
+	index 52
+	"cost" 112000
+	thumbnail "outfit/huge reaction steering"
+	"steering slot" -1
+	"mass" 89
+	"outfit space" -89
+	"engine capacity" -89
+	"turn" 3522
+	"turning energy" 3.5
+	"turning heat" 7.3
+	"steering flare sprite" "effect/ion flare/huge"
+		"frame rate" 0.8
+	"steering flare sound" "ion huge"
+	description "The Z52 is a steering system so large and powerful that only a handful of ships can install it. Due to its limited market, it is produced in small numbers."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+
+# Note on Lateral Thrusters: My initial values here are to have each set of lateral thrusters be based on the thruster of the same "rank".
+# So the tiny lateral has values equivalent to about 90% of a tiny thruster. The small lateral thruster is roughly 80% of a small thruster, etc.
+# This continues by 10% increments down to the Huge lateral thrusters that are equivalent of 50% of the huge thrusters.
+# This percentage is applied equally to mass, outfit space, engine capacity, lateral thrust, lateral thrusting energy, and lateral thrusting heat.
+outfit "Z14 Reaction Lateral Thruster"
+	category "Engines"
+	series "Human: Reaction"
+	index 17
+	"cost" 6000
+	thumbnail "outfit/tiny reaction thruster"
+	"lateral thruster slot" -1
+	"mass" 14
+	"outfit space" -14
+	"engine capacity" -14
+	"flare sound" "ion tiny"
+	"lateral thrust" 11 # 90% of the tiny reaction thruster, rounded down to nearest integer
+	"lateral thrusting energy" .54
+	"lateral thrusting heat" .81
+	"lateral flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"lateral flare sound" "ion tiny"
+	description "This is the smallest thruster that you can buy, so weak that anything larger than a drone will accelerate quite slowly when using this engine. On the other hand, it is also very energy-efficient."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+outfit "Z24 Reaction Lateral Thruster"
+	category "Engines"
+	series "Human: Reaction"
+	index 27
+	"cost" 13000
+	thumbnail "outfit/small reaction thruster"
+	"lateral thruster slot" -1
+	"mass" 21
+	"outfit space" -21
+	"engine capacity" -21
+	"lateral thrust" 17 # 80% of the small reaction thruster
+	"lateral thrusting energy" .88
+	"lateral thrusting heat" 1.36
+	"lateral flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"lateral flare sound" "ion tiny"
+	description "The Z24 Reaction Thruster is intended mostly for use in small, single-person or two-person ships, as well as in fighters. It is also used in larger ships, such as freighters, that have very little space for propulsion systems or energy to drive them. But these larger ships move unbearably slowly as a result."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+outfit "Z34 Reaction Lateral Thruster"
+	category "Engines"
+	series "Human: Reaction"
+	index 37
+	"cost" 29000
+	thumbnail "outfit/medium reaction thruster"
+	"lateral thruster slot" -1
+	"mass" 32
+	"outfit space" -32
+	"engine capacity" -32
+	"lateral thrust" 27 # 70% of the medium reaction thruster
+	"lateral thrusting energy" 1.33
+	"lateral thrusting heat" 2.24
+	"lateral flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"lateral flare sound" "ion tiny"
+	description "The Z34 Reaction Thruster is designed for heavy freighters and small capital ships. In theory, it could be installed in smaller ships too, if they have enough engine space, to attain almost ridiculous speeds."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+outfit "Z44 Reaction Lateral Thruster"
+	category "Engines"
+	series "Human: Reaction"
+	index 47
+	"cost" 64000
+	thumbnail "outfit/large reaction thruster"
+	"lateral thruster slot" -1
+	"mass" 39
+	"outfit space" -39
+	"engine capacity" -39
+	"lateral thrust" 44 # 60% of the large reaction thruster
+	"lateral thrusting energy" 2.1
+	"lateral thrusting heat" 3.72
+	"lateral flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"lateral flare sound" "ion tiny"
+	description "The Z44 Reaction Thruster was developed when the Republic Navy began building warships so large that the X3700 was not sufficient for them. It allows even a capital ship to move at a respectable speed."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+outfit "Z54 Reaction Lateral Thruster"
+	category "Engines"
+	series "Human: Reaction"
+	index 57
+	"cost" 140000
+	thumbnail "outfit/huge reaction thruster"
+	"lateral thruster slot" -1
+	"mass" 60
+	"outfit space" -60
+	"engine capacity" -60
+	"lateral thrust" 60 # 50% of the huge reaction thruster
+	"lateral thrusting energy" 3.15
+	"lateral thrusting heat" 5.85
+	"lateral flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"lateral flare sound" "ion tiny"
+	description "The Z54 lateral thruster is intended for only the largest of capital ships. When the Syndicate first began producing them, these engines were considered little more than a publicity stunt, because no ship at the time was large enough to hold one."
+	description "	Reaction engines are widely used and reknown for their legendary reliability and ease of construction. Although superceded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+
+outfit "Z11 Reaction Reverse Thruster"
+	category "Engines"
+	series "Human: Reaction"
+	index 18
+	"cost" 6000
+	thumbnail "outfit/reverse thruster ion"
+	"reverse thruster slot" -1
+	"mass" 16
+	"outfit space" -16
+	"weapon capacity" -16
+	"reverse thrust" 11
+	"reverse thrusting energy" .6
+	"reverse thrusting heat" .9
+	"reverse flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"reverse flare sound" "ion tiny"
+	description "Traditionally, ships turn around so that they can use their main thrusters for deceleration. Some ships, however, are too ungainly for such maneuvers to be convenient, or carry sensitive cargo that must not be being swung around quickly. For such ships, a reverse thruster allows them to apply thrust smoothly backwards."
+	description "	Because a reverse thruster must be facing forwards, it must be installed in the weapon section of your ship instead of the engine section."
+
+
+
 outfit "X1050 Ion Engines"
 	plural "X1050 Ion Engines"
 	category "Engines"
