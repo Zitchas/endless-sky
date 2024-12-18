@@ -96,6 +96,40 @@ effect "ionic afterburner"
 
 
 
+outfit "RC10 Reaction Engines"
+	plural "RC10 Reaction Engines"
+	category "Engines"
+	series "Human: Reaction"
+	index 10
+	"cost" 10000
+	thumbnail "outfit/tiny ion engines"
+	"steering slot" -1
+	"lateral thruster slot" -1
+	"thruster slot" -1
+	"engine mod space" 0.79
+	"mass" 21
+	"outfit space" -20
+	"engine capacity" -20
+	"thrust" 9
+	"thrusting energy" .42
+	"thrusting heat" .62
+	"lateral thrust" 8 # 90% of its forward thrust.
+	"lateral thrusting energy" .38
+	"lateral thrusting heat" .56
+	"turn" 179
+	"turning energy" .27
+	"turning heat" .52
+	"flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"flare sound" "ion tiny"
+	"steering flare sprite" "effect/ion flare/tiny"
+		"frame rate" 1.2
+	"steering flare sound" "ion tiny"
+	description `The earliest probes and worker ships escorting the massive cityships during the initial push needed something compact and reliable. The RC10 engine combines thrusters, lateral thrusters, and steering into one unit for considerable space efficiency. The result has been a unit so dependable that it has remained in production for over 500 years virtually unchanged.`
+	description "	Reaction engines are widely used and renown for their legendary reliability and ease of construction. Although superseded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
+
+
+
 outfit "RC17 Reaction Thruster"
 	category "Engines"
 	series "Human: Reaction"
