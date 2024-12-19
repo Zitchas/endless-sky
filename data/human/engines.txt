@@ -96,6 +96,7 @@ effect "ionic afterburner"
 
 
 
+# Reaction Propulsion
 outfit "RC10 Reaction Engines"
 	plural "RC10 Reaction Engines"
 	category "Engines"
@@ -119,10 +120,10 @@ outfit "RC10 Reaction Engines"
 	"turn" 179
 	"turning energy" .27
 	"turning heat" .52
-	"flare sprite" "effect/ion flare/tiny"
+	"flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"flare sound" "ion tiny"
-	"steering flare sprite" "effect/ion flare/tiny"
+	"steering flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"steering flare sound" "ion tiny"
 	description `The earliest probes and worker ships escorting the massive cityships during the initial push needed something compact and reliable. The RC10 engine combines thrusters, lateral thrusters, and steering into one unit for considerable space efficiency. The result has been a unit so dependable that it has remained in production for over 500 years virtually unchanged.`
@@ -144,7 +145,7 @@ outfit "RC17 Reaction Thruster"
 	"thrust" 12
 	"thrusting energy" .62
 	"thrusting heat" .92
-	"flare sprite" "effect/ion flare/tiny"
+	"flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"flare sound" "ion tiny"
 	description "This is the weakest thruster that you can buy, so weak that anything larger than a drone will accelerate quite slowly when using this engine."
@@ -164,7 +165,7 @@ outfit "RC27 Reaction Thruster"
 	"thrust" 21
 	"thrusting energy" 1.14
 	"thrusting heat" 1.74
-	"flare sprite" "effect/ion flare/small"
+	"flare sprite" "effect/reaction flare/small"
 		"frame rate" 1.1
 	"flare sound" "ion small"
 	description "The RC27 Reaction Thruster is intended mostly for use in small, single-person or two-person ships, as well as in fighters. It is also used in larger ships, such as freighters, that have low maneuverability requirements."
@@ -184,7 +185,7 @@ outfit "RC37 Reaction Thruster"
 	"thrust" 38
 	"thrusting energy" 1.96
 	"thrusting heat" 3.26
-	"flare sprite" "effect/ion flare/medium"
+	"flare sprite" "effect/reaction flare/medium"
 		"frame rate" 1.0
 	"flare sound" "ion medium"
 	description "The RC37 Reaction Thruster is designed for heavy freighters and small capital ships. In theory, it could be installed in smaller ships too, if they have enough engine space, to attain higher performance."
@@ -204,7 +205,7 @@ outfit "RC47 Reaction Thruster"
 	"thrust" 72
 	"thrusting energy" 3.58
 	"thrusting heat" 6.28
-	"flare sprite" "effect/ion flare/large"
+	"flare sprite" "effect/reaction flare/large"
 		"frame rate" 0.9
 	"flare sound" "ion large"
 	description "The RC47 Reaction Thruster was developed when the Republic Navy began building warships so large that the RC37 was not sufficient for them. It allows even a capital ship to move at a respectable speed."
@@ -224,7 +225,7 @@ outfit "RC57 Reaction Thruster"
 	"thrust" 120
 	"thrusting energy" 6.4
 	"thrusting heat" 11.8
-	"flare sprite" "effect/ion flare/huge"
+	"flare sprite" "effect/reaction flare/huge"
 		"frame rate" 0.8
 	"flare sound" "ion huge"
 	description "The RC57 thruster is intended for only the largest of capital ships. When the Syndicate first began producing them, these engines were considered little more than a publicity stunt, because no ship at the time was large enough to hold one."
@@ -244,7 +245,7 @@ outfit "RC12 Reaction Steering"
 	"turn" 259
 	"turning energy" .32
 	"turning heat" .62
-	"steering flare sprite" "effect/ion flare/tiny"
+	"steering flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"steering flare sound" "ion tiny"
 	description "This is the weakest set of steering thrusters that you can buy, generally considered suitable only for tiny, pilotless drones. Occasionally pilots looking for some extra outfit space will try swapping out their larger steering systems for one of these, but the results are invariably disappointing."
@@ -263,7 +264,7 @@ outfit "RC22 Reaction Steering"
 	"turn" 496
 	"turning energy" .64
 	"turning heat" 1.14
-	"steering flare sprite" "effect/ion flare/small"
+	"steering flare sprite" "effect/reaction flare/small"
 		"frame rate" 1.1
 	"steering flare sound" "ion small"
 	description "The RC22 steering system is designed for fighters and other small spacecraft, as well as for use in larger ships when maneuverability is not needed."
@@ -282,7 +283,7 @@ outfit "RC32 Reaction Steering"
 	"turn" 955
 	"turning energy" 1.16
 	"turning heat" 2.06
-	"steering flare sprite" "effect/ion flare/medium"
+	"steering flare sprite" "effect/reaction flare/medium"
 		"frame rate" 1.0
 	"steering flare sound" "ion medium"
 	description "The RC32 steering system is intended for small warships and freighters. It produces enough turning force to lend agility to all but the largest of human ships, and it is considerably more energy-efficient than the plasma-drive alternatives."
@@ -301,7 +302,7 @@ outfit "RC42 Reaction Steering"
 	"turn" 1925
 	"turning energy" 1.98
 	"turning heat" 3.98
-	"steering flare sprite" "effect/ion flare/large"
+	"steering flare sprite" "effect/reaction flare/large"
 		"frame rate" 0.9
 	"steering flare sound" "ion large"
 	description "The RC42 is a powerful steering system, designed mostly for warships because quick steering is seldom a requirement in freighter design."
@@ -320,7 +321,7 @@ outfit "RC52 Reaction Steering"
 	"turn" 3522
 	"turning energy" 3.6
 	"turning heat" 7.4
-	"steering flare sprite" "effect/ion flare/huge"
+	"steering flare sprite" "effect/reaction flare/huge"
 		"frame rate" 0.8
 	"steering flare sound" "ion huge"
 	description "The RC52 is a steering system so large and powerful that only a handful of ships can install it. Due to its limited market, it is produced in small numbers."
@@ -345,7 +346,7 @@ outfit "RC14 Reaction Lateral Thruster"
 	"lateral thrust" 11 # 90% of the tiny reaction thruster, rounded down to nearest integer
 	"lateral thrusting energy" .56
 	"lateral thrusting heat" .83
-	"lateral flare sprite" "effect/ion flare/tiny"
+	"lateral flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
 	description "This is the smallest thruster that you can buy, so weak that anything larger than a drone will accelerate quite slowly when using this engine. On the other hand, it is also very energy-efficient."
@@ -364,7 +365,7 @@ outfit "RC24 Reaction Lateral Thruster"
 	"lateral thrust" 17 # 80% of the small reaction thruster
 	"lateral thrusting energy" .92
 	"lateral thrusting heat" 1.4
-	"lateral flare sprite" "effect/ion flare/tiny"
+	"lateral flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
 	description "The RC24 Reaction Thruster is intended mostly for use in small, single-person or two-person ships, as well as in fighters. It is also used in larger ships, such as freighters, that have very little space for propulsion systems or energy to drive them. But these larger ships move unbearably slowly as a result."
@@ -383,7 +384,7 @@ outfit "RC34 Reaction Lateral Thruster"
 	"lateral thrust" 27 # 70% of the medium reaction thruster
 	"lateral thrusting energy" 1.39
 	"lateral thrusting heat" 2.30
-	"lateral flare sprite" "effect/ion flare/tiny"
+	"lateral flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
 	description "The RC34 Reaction Thruster is designed for heavy freighters and small capital ships. In theory, it could be installed in smaller ships too, if they have enough engine space, to attain better maneuverability."
@@ -402,7 +403,7 @@ outfit "RC44 Reaction Lateral Thruster"
 	"lateral thrust" 44 # 60% of the large reaction thruster
 	"lateral thrusting energy" 2.9
 	"lateral thrusting heat" 3.8
-	"lateral flare sprite" "effect/ion flare/tiny"
+	"lateral flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
 	description "The RC44 Reaction Thruster was developed when the Republic Navy began building warships so large that the X3700 was not sufficient for them. It allows even a capital ship to move at a respectable speed."
@@ -421,7 +422,7 @@ outfit "RC54 Reaction Lateral Thruster"
 	"lateral thrust" 60 # 50% of the huge reaction thruster
 	"lateral thrusting energy" 3.25
 	"lateral thrusting heat" 5.95
-	"lateral flare sprite" "effect/ion flare/tiny"
+	"lateral flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
 	description "The RC54 lateral thruster is intended for only the largest of capital ships. These were once commonly used for the largest of early city ships."
@@ -441,7 +442,7 @@ outfit "RC11 Reaction Reverse Thruster"
 	"reverse thrust" 11
 	"reverse thrusting energy" .62
 	"reverse thrusting heat" .92
-	"reverse flare sprite" "effect/ion flare/tiny"
+	"reverse flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"reverse flare sound" "ion tiny"
 	description "Traditionally, ships turn around so that they can use their main thrusters for deceleration. Some ships, however, are too ungainly for such maneuvers to be convenient, or carry sensitive cargo that must not be being swung around quickly. For such ships, a reverse thruster allows them to apply thrust smoothly backwards."
@@ -449,6 +450,7 @@ outfit "RC11 Reaction Reverse Thruster"
 
 
 
+# Ion Propulsion
 outfit "X1050 Ion Engines"
 	plural "X1050 Ion Engines"
 	category "Engines"
@@ -836,6 +838,7 @@ outfit "X1100 Ion Reverse Thruster"
 
 
 
+# Plasma Propulsion
 outfit "Chipmunk Plasma Thruster"
 	category "Engines"
 	series "Human: Plasma"
@@ -1188,6 +1191,7 @@ outfit "Capybara Reverse Thruster"
 
 
 
+# Atomic Propulsion
 outfit "A120 Atomic Thruster"
 	category "Engines"
 	series "Human: Atomic"
