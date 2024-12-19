@@ -2732,6 +2732,104 @@ ship "Hogshead"
 	description `	Unfortunately, only a few decades after introducing the ship, the shipyard went bankrupt and was never heard from again, leaving the Hogshead to history as their one-hit-wonder. In the current era, Hogsheads are much less common; they are considered "unsightly" compared to modern vessels such as the Star Queen, though a few places in human space still sell them.`
 
 
+ship "Lampyrid Mk. II"
+	sprite "ship/lampyrid"
+	thumbnail "thumbnail/lampyrid"
+	attributes
+		category "Transport"
+		"cost" 2760000
+		"shields" 5400
+		"hull" 4400
+		"required crew" 5
+		"bunks" 14
+		"mass" 240
+		"drag" 8.5
+		"heat dissipation" .7
+		"fuel capacity" 850
+		"cargo space" 160
+		"outfit space" 309
+		"engine capacity" 139
+		"weapon capacity" 50
+		"reverse thruster slot" 1
+		"lateral thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
+		weapon
+			"blast radius" 100
+			"shield damage" 1000
+			"hull damage" 500
+			"hit force" 1500
+	outfits
+		"Anti-Missile Turret"
+		"KP-6 Photovoltaic Array"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		"Small Radar Jammer"
+		"Ramscoop"
+	
+		"RC32 Reaction Steering"
+		"RC34 Reaction Lateral Thruster"
+		"RC37 Reaction Thruster"
+		"Hyperdrive"
+
+	engine -64 28 0.7
+	engine 0 80 1.8
+	engine 0 100 1.2
+	engine 64 28 0.7
+	"lateral engine" -23 -66
+		angle 90
+		right
+		under
+		zoom 0.3
+	"lateral engine" 23 -66
+		angle 270
+		left
+		under
+		zoom 0.3
+	"lateral engine" -79 0
+		angle 90
+		right
+		under
+		zoom 0.3
+	"lateral engine" 79 0
+		angle 270
+		left
+		under
+		zoom 0.3
+	"lateral engine" -30 68
+		angle 90
+		right
+		under
+		zoom 0.3
+	"lateral engine" 30 68
+		angle 270
+		left
+		under
+		zoom 0.3
+	"reverse engine" -64.5 -31.5 0.7
+	"reverse engine" 64.5 -31.5 0.7
+	"steering engine" -64.5 -31.5 0.7
+		angle -180
+		left
+	"steering engine" 64 28 0.7
+		left
+	"steering engine" -64 28 0.7
+		right
+	"steering engine" 64.5 -31.5 0.7
+		angle -180
+		right
+	turret 0 9 "Anti-Missile Turret"
+	bay "Fighter" -26.5 9.5 under
+	bay "Fighter" 26.5 9.5 under
+	explode "tiny explosion" 10
+	explode "small explosion" 25
+	explode "medium explosion" 30
+	explode "large explosion" 15
+	"final explode" "final explosion medium" 1
+	description `The Lampyrid line of ships date back to the early colonization era, when it was frequently used as a support ship for the great city ships. The distinctive multi-directional rotating thrust pods on the wingtips provided it with much better directional control, allowing it to conduct precision maneuvers and landings without ground control support.`
+	description `	With the advent of advanced ground control systems as well as the development of limited gravitational nullification landing gear, the complex machinery was no longer necessary to facilitate remote landings. This rendered the Lampyrid family of ships obsolete, and are now only legends of an older era when space was still a wild frontier full of explorers and renegades.`
+
+
 
 ship "Lance"
 	sprite "ship/lance"
