@@ -264,8 +264,8 @@ start "lampyrid"
 			"heat dissipation" .7
 			"fuel capacity" 850
 			"cargo space" 160
-			"outfit space" 300
-			"engine capacity" 130
+			"outfit space" 309
+			"engine capacity" 139
 			"weapon capacity" 50
 			"reverse thruster slot" 1
 			"lateral thruster slot" 1
@@ -284,9 +284,9 @@ start "lampyrid"
 			"Large Radar Jammer"
 			"Ramscoop"
 		
-			"X3200 Ion Steering"
-			"X3400 Ion Lateral Thruster"
-			"X3700 Ion Thruster"
+			"RC32 Reaction Steering"
+			"RC34 Reaction Lateral Thruster"
+			"RC37 Reaction Thruster"
 			"Hyperdrive"
 
 		engine -64 28 0.7

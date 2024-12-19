@@ -175,7 +175,7 @@ ship "Arrow"
 		"heat dissipation" .74
 		"fuel capacity" 500
 		"cargo space" 10
-		"outfit space" 180
+		"outfit space" 185
 		"weapon capacity" 50
 		"engine capacity" 75
 		"lateral thruster slot" 1
@@ -198,8 +198,9 @@ ship "Arrow"
 		"Small Radar Jammer"
 		"Luxury Accommodations"
 		
-		"A250 Atomic Thruster"
-		"A255 Atomic Steering"
+		"RC27 Reaction Thruster"
+		"RC24 Reaction Lateral Thruster"
+		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
 	engine -8 56
@@ -1051,7 +1052,7 @@ ship "Class C Freighter"
 		"heat dissipation" .27
 		"fuel capacity" 3300
 		"cargo space" 20
-		"outfit space" 410
+		"outfit space" 425
 		"weapon capacity" 150
 		"engine capacity" 85
 		"lateral thruster slot" 1
@@ -1081,8 +1082,9 @@ ship "Class C Freighter"
 		"Brig"
 		"Interference Plating"
 		
-		"A250 Atomic Thruster"
-		"A255 Atomic Steering"
+		"RC27 Reaction Thruster"
+		"RC24 Reaction Lateral Thruster"
+		"RC22 Reaction Steering"
 		"Scram Drive"
 		
 	engine -20 195.5
@@ -1491,9 +1493,9 @@ ship "Cutthroat"
 		"heat dissipation" .7
 		"fuel capacity" 475
 		"cargo space" 27
-		"outfit space" 282
+		"outfit space" 312
 		"weapon capacity" 60
-		"engine capacity" 111
+		"engine capacity" 132
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1515,8 +1517,9 @@ ship "Cutthroat"
 		"D23-QP Shield Generator"
 		"Laser Rifle" 5
 		
-		"A370 Atomic Thruster"
-		"A375 Atomic Steering"
+		"RC37 Reaction Thruster"
+		"RC34 Reaction Lateral Thruster"
+		"RC32 Reaction Steering"
 		"Volcano Afterburner"
 		"Hyperdrive"
 		
@@ -1553,9 +1556,9 @@ ship "Dagger"
 		"mass" 20
 		"drag" .65
 		"heat dissipation" .9
-		"outfit space" 91
+		"outfit space" 100
 		"weapon capacity" 20
-		"engine capacity" 36
+		"engine capacity" 45
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1575,7 +1578,8 @@ ship "Dagger"
 		"D14-RN Shield Generator"
 		"Small Radar Jammer"
 		
-		"A120 Atomic Thruster"
+		"RC17 Reaction Thruster"
+		"RC14 Reaction Lateral Thruster"
 		"RC12 Reaction Steering"
 		
 	engine -8 34
@@ -1998,7 +2002,7 @@ ship "Flivver"
 		"heat dissipation" .86
 		"fuel capacity" 375
 		"cargo space" 15
-		"outfit space" 132
+		"outfit space" 135
 		"weapon capacity" 17
 		"engine capacity" 47
 		"lateral thruster slot" 1
@@ -2017,7 +2021,8 @@ ship "Flivver"
 		"Supercapacitor"
 		"D14-RN Shield Generator"
 		
-		"A120 Atomic Thruster"
+		"RC17 Reaction Thruster"
+		"RC14 Reaction Lateral Thruster"
 		"RC12 Reaction Steering"
 		"RC11 Reaction Reverse Thruster"
 		"Hyperdrive"
@@ -2874,9 +2879,9 @@ ship "Mammoth"
 		"heat dissipation" .21
 		"fuel capacity" 3250
 		"cargo space" 400
-		"outfit space" 536
+		"outfit space" 556
 		"weapon capacity" 294
-		"engine capacity" 114
+		"engine capacity" 132
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -2904,8 +2909,9 @@ ship "Mammoth"
 		
 		"Volcano Afterburner" # Extra afterburner
 		"AR120 Reverse Thruster"
-		"A370 Atomic Thruster"
-		"A375 Atomic Steering"
+		"RC37 Reaction Thruster"
+		"RC34 Reaction Lateral Thruster"
+		"RC32 Reaction Steering"
 		"Scram Drive"
 		
 	engine 17 147 0.8
