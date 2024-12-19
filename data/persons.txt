@@ -146,7 +146,7 @@ person "Cap'n Pester"
 			"Wanderer Ramscoop"
 			
 			"Medium Graviton Thruster"
-			"Medium Graviton Lateral Thruster"
+			"Medium Graviton LTC"
 			"Medium Graviton Steering"
 			"Scram Drive"
 

@@ -284,7 +284,7 @@ start "lampyrid"
 			"Small Radar Jammer"
 		
 			"RC32 Reaction Steering"
-			"RC34 Reaction Lateral Thruster"
+			"RC34 Reaction LTC"
 			"RC37 Reaction Thruster"
 			"Hyperdrive"
 

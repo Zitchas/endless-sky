@@ -50,7 +50,7 @@ ship "Pug Zibruka"
 		"Pug Peacekeeping Staff" 4
 		
 		"Pug Akfar Thruster"
-		"Pug Akfar Lateral Thruster"
+		"Pug Akfar LTC"
 		"Pug Akfar Steering"
 		"Jump Drive"
 		
@@ -107,7 +107,7 @@ ship "Pug Enfolta"
 		"Pug Peacekeeping Staff" 19
 		
 		"Pug Cormet Thruster"
-		"Pug Cormet Lateral Thruster"
+		"Pug Cormet LTC"
 		"Pug Cormet Steering"
 		"Jump Drive"
 		
@@ -167,7 +167,7 @@ ship "Pug Maboro"
 		"Pug Peacekeeping Staff" 54
 		
 		"Pug Lohmar Thruster"
-		"Pug Lohmar Lateral Thruster"
+		"Pug Lohmar LTC"
 		"Pug Lohmar Steering"
 		"Jump Drive"
 		

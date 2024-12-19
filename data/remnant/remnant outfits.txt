@@ -885,7 +885,7 @@ outfit "Smelter-Class Steering"
 # Note that the Remnant do not have a huge thruster currently.
 # This percentage is applied equally to mass, outfit space, engine capacity, lateral thrust, lateral thrusting energy, and lateral thrusting heat; although an additional 20% reduction to mass, outfit space, and engine capacity was applied since, unlike the thrusters, these do not have the reverse thrust capability.
 
-outfit "Crucible-Class Lateral Thruster"
+outfit "Crucible-Class LTC"
 	category "Engines"
 	licenses
 		Remnant
@@ -904,7 +904,7 @@ outfit "Crucible-Class Lateral Thruster"
 	"lateral flare sound" "plasma tiny"
 	description "These small but powerful lateral engines bear a superficial appearance of being classic ion thrusters, albeit very advanced ones."
 
-outfit "Forge-Class Lateral Thruster"
+outfit "Forge-Class LTC"
 	category "Engines"
 	licenses
 		Remnant
@@ -923,7 +923,7 @@ outfit "Forge-Class Lateral Thruster"
 	"lateral flare sound" "plasma small"
 	description "The capabilities of what are described as very advanced forms of the basic ionic lateral thrusters suggest that there is much more to these than meets the eye."
 
-outfit "Smelter-Class Lateral Thruster"
+outfit "Smelter-Class LTC"
 	category "Engines"
 	licenses
 		Remnant
@@ -940,7 +940,7 @@ outfit "Smelter-Class Lateral Thruster"
 	"lateral flare sprite" "effect/remnant flare/medium"
 		"frame rate" 5
 	"lateral flare sound" "plasma medium"
-	description "These lateral thrusters, found on many of their largest ships, demonstrates the Remnant preference for mobility and avoiding damage instead of merely absorbing it."
+	description "These lateral thruster components, found on many of their largest ships, demonstrates the Remnant preference for mobility and avoiding damage instead of merely absorbing it."
 
 
 

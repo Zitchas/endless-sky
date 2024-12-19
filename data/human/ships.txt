@@ -52,7 +52,7 @@ ship "Aerie"
 		"Laser Rifle" 3
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -127,7 +127,7 @@ ship "Argosy"
 		"D23-QP Shield Generator"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"RC11 Reaction Reverse Thruster"
 		"Hyperdrive"
@@ -199,7 +199,7 @@ ship "Arrow"
 		"Luxury Accommodations"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
@@ -267,7 +267,7 @@ ship "Auxiliary"
 		"Ramscoop"
 		
 		"RC47 Reaction Thruster"
-		"RC44 Reaction Lateral Thruster"
+		"RC44 Reaction LTC"
 		# "RC17 Reaction Thruster" # Extra thruster
 		"RC52 Reaction Steering"
 		"Scram Drive"
@@ -346,7 +346,7 @@ ship "Bactrian"
 		"Laser Rifle" 15
 		
 		"RC47 Reaction Thruster"
-		"RC44 Reaction Lateral Thruster"
+		"RC44 Reaction LTC"
 		"RC52 Reaction Steering"
 		"Hyperdrive"
 		
@@ -482,7 +482,7 @@ ship "Bastion"
 		"Laser Rifle" 7
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -547,7 +547,7 @@ ship "Behemoth"
 		"Laser Rifle" 3
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"RC11 Reaction Reverse Thruster" 1 # Extra reverse thruster
 		"Scram Drive"
@@ -613,7 +613,7 @@ ship "Berserker"
 		"D23-QP Shield Generator"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -675,7 +675,7 @@ ship "Blackbird"
 		"Luxury Accommodations"
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -730,7 +730,7 @@ ship "Bounder"
 		"D14-RN Shield Generator"
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -828,7 +828,7 @@ ship "Bulk Freighter"
 		"Laser Rifle"
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"RC11 Reaction Reverse Thruster"
 		"Scram Drive"
@@ -902,7 +902,7 @@ ship "Bulwark"
 		"Nerve Gas" 3
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -1083,7 +1083,7 @@ ship "Class C Freighter"
 		"Interference Plating"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Scram Drive"
 		
@@ -1172,7 +1172,7 @@ ship "Clipper"
 		"D23-QP Shield Generator"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
@@ -1228,7 +1228,7 @@ ship "Combat Drone"
 		"Supercapacitor"
 		
 		"RC17 Reaction Thruster"
-		"RC14 Reaction Lateral Thruster"
+		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
 	engine -8.5 28.5 0.9
@@ -1284,7 +1284,7 @@ ship "Container Transport"
 		"Laser Rifle"
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"RC11 Reaction Reverse Thruster"
 		"Scram Drive"
@@ -1354,7 +1354,7 @@ ship "Corvette"
 		"Laser Rifle" 3
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -1431,7 +1431,7 @@ ship "Cruiser"
 		"Tactical Scanner"
 		
 		"RC47 Reaction Thruster"
-		"RC44 Reaction Lateral Thruster"
+		"RC44 Reaction LTC"
 		"RC42 Reaction Steering"
 		"Hyperdrive"
 		
@@ -1518,7 +1518,7 @@ ship "Cutthroat"
 		"Laser Rifle" 5
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Volcano Afterburner"
 		"Hyperdrive"
@@ -1579,7 +1579,7 @@ ship "Dagger"
 		"Small Radar Jammer"
 		
 		"RC17 Reaction Thruster"
-		"RC14 Reaction Lateral Thruster"
+		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
 	engine -8 34
@@ -1643,7 +1643,7 @@ ship "Dreadnought"
 		"Laser Rifle" 25
 		
 		"RC47 Reaction Thruster"
-		"RC44 Reaction Lateral Thruster"
+		"RC44 Reaction LTC"
 		"RC42 Reaction Steering"
 		"Hyperdrive"
 		
@@ -1711,7 +1711,7 @@ ship "Dropship"
 		"Small Radar Jammer"
 		
 		"RC17 Reaction Thruster"
-		"RC14 Reaction Lateral Thruster"
+		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 	
 	engine 13 26
@@ -1764,7 +1764,7 @@ ship "Enforcer"
 		"D14-RN Shield Generator"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 
@@ -1830,7 +1830,7 @@ ship "Falcon"
 		"Laser Rifle" 15
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -1897,7 +1897,7 @@ ship "Finch"
 		"D14-RN Shield Generator"
 		
 		"RC17 Reaction Thruster"
-		"RC14 Reaction Lateral Thruster"
+		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
 	engine -5 32
@@ -1956,7 +1956,7 @@ ship "Firebird"
 		"Laser Rifle" 3
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -2022,7 +2022,7 @@ ship "Flivver"
 		"D14-RN Shield Generator"
 		
 		"RC17 Reaction Thruster"
-		"RC14 Reaction Lateral Thruster"
+		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		"RC11 Reaction Reverse Thruster"
 		"Hyperdrive"
@@ -2076,7 +2076,7 @@ ship "Freighter"
 		"D14-RN Shield Generator"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"RC11 Reaction Reverse Thruster"
 		"Scram Drive"
@@ -2143,7 +2143,7 @@ ship "Frigate"
 		"Security Station"
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -2209,7 +2209,7 @@ ship "Fury"
 		"Small Radar Jammer" 2
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
@@ -2277,7 +2277,7 @@ ship "Gunboat"
 		"Brig"
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
@@ -2339,7 +2339,7 @@ ship "Hauler"
 		"Small Radar Jammer"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC32 Reaction Steering"
 		"RC11 Reaction Reverse Thruster"
 		"Hyperdrive"
@@ -2407,7 +2407,7 @@ ship "Hauler II"
 		"Laser Rifle"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC32 Reaction Steering"
 		"RC11 Reaction Reverse Thruster"
 		"Hyperdrive"
@@ -2475,7 +2475,7 @@ ship "Hauler III"
 		"Laser Rifle"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC32 Reaction Steering"
 		"RC11 Reaction Reverse Thruster"
 		"Hyperdrive"
@@ -2539,7 +2539,7 @@ ship "Hawk"
 		"Small Radar Jammer"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
@@ -2594,7 +2594,7 @@ ship "Headhunter"
 		"D23-QP Shield Generator"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 	
@@ -2656,7 +2656,7 @@ ship "Heavy Shuttle"
 		"D14-RN Shield Generator"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
@@ -2711,7 +2711,7 @@ ship "Hogshead"
 		"Luxury Accommodations"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 
@@ -2768,7 +2768,7 @@ ship "Lampyrid Mk. II"
 		"Ramscoop"
 	
 		"RC32 Reaction Steering"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC37 Reaction Thruster"
 		"Hyperdrive"
 
@@ -2868,7 +2868,7 @@ ship "Lance"
 		"Small Radar Jammer" 2
 		
 		"RC17 Reaction Thruster"
-		"RC14 Reaction Lateral Thruster"
+		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
 	engine -14.5 30.5
@@ -2924,7 +2924,7 @@ ship "Leviathan"
 		"Laser Rifle" 15
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC42 Reaction Steering"
 		"Hyperdrive"
 		
@@ -3008,7 +3008,7 @@ ship "Mammoth"
 		"Volcano Afterburner" # Extra afterburner
 		"AR120 Reverse Thruster"
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Scram Drive"
 		
@@ -3083,7 +3083,7 @@ ship "Manta"
 		"Laser Rifle"
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -3135,7 +3135,7 @@ ship "Mining Drone"
 		"Supercapacitor"
 
 		"RC17 Reaction Thruster"
-		"RC14 Reaction Lateral Thruster"
+		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
 	engine 0 22 0.9
@@ -3189,7 +3189,7 @@ ship "Modified Argosy"
 		"Laser Rifle" 12
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -3263,7 +3263,7 @@ ship "Mule"
 		"Laser Rifle"
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"RC11 Reaction Reverse Thruster"
 		"Hyperdrive"
@@ -3333,7 +3333,7 @@ ship "Nest"
 		"Laser Rifle" 2
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -3402,7 +3402,7 @@ ship "Nighthawk"
 		"Nerve Gas" 10
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -3464,7 +3464,7 @@ ship "Osprey"
 		"Laser Rifle" 3
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -3536,7 +3536,7 @@ ship "Protector"
 		"Laser Rifle" 6
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -3598,7 +3598,7 @@ ship "Quicksilver"
 
 		"RC11 Reaction Reverse Thruster"
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
@@ -3656,7 +3656,7 @@ ship "Rainmaker"
 		"Tactical Scanner"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
@@ -3720,7 +3720,7 @@ ship "Raven"
 		"Laser Rifle" 2
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -3784,7 +3784,7 @@ ship "Roost"
 		"Laser Rifle" 2
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -3855,7 +3855,7 @@ ship "Saber"
 		"D23-QP Shield Generator"
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 
@@ -3920,7 +3920,7 @@ ship "Scout"
 		"Ramscoop"
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -3975,7 +3975,7 @@ ship "Scrapper"
 		"LP036a Battery Pack"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
@@ -4025,7 +4025,7 @@ ship "Shuttle"
 		"D14-RN Shield Generator"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
@@ -4084,7 +4084,7 @@ ship "Skein"
 		"Laser Rifle" 4
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC32 Reaction Steering"
 		"RC11 Reaction Reverse Thruster"
 		"Hyperdrive"
@@ -4156,7 +4156,7 @@ ship "Sparrow"
 		"D14-RN Shield Generator"
 		
 		"RC17 Reaction Thruster"
-		"RC14 Reaction Lateral Thruster"
+		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		"Hyperdrive"
 		
@@ -4218,7 +4218,7 @@ ship "Splinter"
 		"Laser Rifle"
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
@@ -4278,7 +4278,7 @@ ship "Star Barge"
 		"D14-RN Shield Generator"
 		
 		"RC17 Reaction Thruster"
-		"RC14 Reaction Lateral Thruster"
+		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		"Hyperdrive"
 		
@@ -4332,7 +4332,7 @@ ship "Star Queen"
 		"Luxury Accommodations"
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC22 Reaction Steering"
 		"AR120 Reverse Thruster"
 		"Hyperdrive"
@@ -4398,7 +4398,7 @@ ship "Sunder"
 		"D23-QP Shield Generator"
 
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 
@@ -4455,7 +4455,7 @@ ship "Surveillance Drone"
 		"Surveillance Pod"
 		
 		"RC17 Reaction Thruster"
-		"RC14 Reaction Lateral Thruster"
+		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
 	engine -3 29
@@ -4508,7 +4508,7 @@ ship "Valkyrie"
 		"Nerve Gas" 3
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
@@ -4574,7 +4574,7 @@ ship "Vanguard"
 		"Laser Rifle" 4
 		
 		"RC37 Reaction Thruster"
-		"RC34 Reaction Lateral Thruster"
+		"RC34 Reaction LTC"
 		"RC42 Reaction Steering"
 		"Hyperdrive"
 	
@@ -4651,7 +4651,7 @@ ship "Wasp"
 		"Small Radar Jammer"
 		
 		"RC27 Reaction Thruster"
-		"RC24 Reaction Lateral Thruster"
+		"RC24 Reaction LTC"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		

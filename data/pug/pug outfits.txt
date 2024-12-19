@@ -360,7 +360,7 @@ outfit "Pug Lohmar Steering"
 
 
 
-outfit "Pug Akfar Lateral Thruster"
+outfit "Pug Akfar LTC"
 	category "Engines"
 	"cost" 608000
 	thumbnail "outfit/pug akfar thruster"
@@ -374,9 +374,9 @@ outfit "Pug Akfar Lateral Thruster"
 	"lateral flare sprite" "effect/pug flare/medium"
 		"frame rate" 20
 	"lateral flare sound" "ion medium"
-	description "This is a small lateral thruster designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
+	description "This is a small lateral thruster component designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
 
-outfit "Pug Cormet Lateral Thruster"
+outfit "Pug Cormet LTC"
 	category "Engines"
 	"cost" 1050000
 	thumbnail "outfit/pug cormet thruster"
@@ -390,9 +390,9 @@ outfit "Pug Cormet Lateral Thruster"
 	"lateral flare sprite" "effect/pug flare/medium"
 		"frame rate" 22
 	"lateral flare sound" "ion medium"
-	description "This is a medium-sized lateral thruster designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
+	description "This is a medium-sized lateral thruster component designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
 
-outfit "Pug Lohmar Lateral Thruster"
+outfit "Pug Lohmar LTC"
 	category "Engines"
 	"cost" 1740000
 	thumbnail "outfit/pug lohmar thruster"
@@ -406,7 +406,7 @@ outfit "Pug Lohmar Lateral Thruster"
 	"lateral flare sprite" "effect/pug flare/large"
 		"frame rate" 23
 	"lateral flare sound" "ion large"
-	description "This is a large lateral thruster designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
+	description "This is a large lateral thruster component designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
 
 
 

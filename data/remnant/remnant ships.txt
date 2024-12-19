@@ -71,7 +71,7 @@ ship "Albatross"
 		"Quantum Key Stone"
 
 		"Smelter-Class Thruster"
-		"Smelter-Class Lateral Thruster"
+		"Smelter-Class LTC"
 		"Smelter-Class Steering"
 		"Scram Drive"
 
@@ -129,7 +129,7 @@ ship "Albatross" "Albatross (Sniper)"
 		"Tuning Rifle" 57
 
 		"Forge-Class Thruster"
-		"Smelter-Class Lateral Thruster"
+		"Smelter-Class LTC"
 		# "Crucible-Class Thruster" # Extra thruster
 		"Smelter-Class Steering"
 		"Scram Drive"
@@ -168,7 +168,7 @@ ship "Albatross" "Albatross (Turret)"
 		"Tuning Rifle" 49
 
 		"Smelter-Class Thruster"
-		"Smelter-Class Lateral Thruster"
+		"Smelter-Class LTC"
 		"Smelter-Class Steering"
 		"Scram Drive"
 
@@ -194,7 +194,7 @@ ship "Albatross" "Albatross (Heavy)"
 		"Tuning Rifle" 65
 
 		"Forge-Class Thruster"
-		"Smelter-Class Lateral Thruster"
+		"Smelter-Class LTC"
 		# "Crucible-Class Thruster" # Extra thruster
 		"Smelter-Class Steering"
 		# "Forge-Class Steering" # Extra steering
@@ -230,7 +230,7 @@ ship "Albatross" "Albatross (Shield)"
 		"Tuning Rifle" 75
 
 		"Crucible-Class Thruster"
-		"Forge-Class Lateral Thruster"
+		"Forge-Class LTC"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -257,7 +257,7 @@ ship "Albatross" "Albatross (Ember Shield)"
 		"Tuning Rifle" 47
 
 		"Crucible-Class Thruster"
-		"Crucible-Class Lateral Thruster"
+		"Crucible-Class LTC"
 		"Crucible-Class Steering"
 		"Hyperdrive"
 
@@ -285,7 +285,7 @@ ship "Albatross" "Albatross (Sniper II)"
 		"Tuning Rifle" 57
 
 		"Forge-Class Thruster"
-		"Smelter-Class Lateral Thruster"
+		"Smelter-Class LTC"
 		# "Crucible-Class Thruster" # Extra thruster
 		"Smelter-Class Steering"
 		"Scram Drive"
@@ -366,7 +366,7 @@ ship "Modified Dromedary"
 		"Tuning Rifle" 95
 
 		"Smelter-Class Thruster"
-		"Smelter-Class Lateral Thruster"
+		"Smelter-Class LTC"
 		"Smelter-Class Steering"
 		"Hyperdrive"
 		"Scram Drive"
@@ -460,7 +460,7 @@ ship "Modified Dromedary" "Modified Dromedary Ghost"
 		"Laser Rifle" 100
 		
 		"X4700 Ion Thruster"
-		"X5400 Ion Lateral Thruster"
+		"X5400 Ion LTC"
 		"X5200 Ion Steering"
 		"Hyperdrive"
 		
@@ -501,7 +501,7 @@ ship "Modified Dromedary" "Modified Dromedary Specter"
 		"Laser Rifle" 15
 		
 		"X4700 Ion Thruster"
-		"X5400 Ion Lateral Thruster"
+		"X5400 Ion LTC"
 		"X5200 Ion Steering"
 		"Hyperdrive"
 
@@ -538,7 +538,7 @@ ship "Modified Dromedary" "Modified Dromedary Wreck"
 		"Laser Rifle" 150
 		
 		"X4700 Ion Thruster"
-		"X5400 Ion Lateral Thruster"
+		"X5400 Ion LTC"
 		"X5200 Ion Steering"
 		"Hyperdrive"
 	turret "Laser Turret"
@@ -614,7 +614,7 @@ ship "Gull"
 		"Tuning Rifle" 3
 
 		"Forge-Class Thruster"
-		"Forge-Class Lateral Thruster"
+		"Forge-Class LTC"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -673,7 +673,7 @@ ship "Gull" "Gull (Support)"
 		"Tuning Rifle" 3
 
 		"Forge-Class Thruster"
-		"Forge-Class Lateral Thruster"
+		"Forge-Class LTC"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -695,7 +695,7 @@ ship "Gull" "Gull (Support II)"
 		"Tuning Rifle" 3
 
 		"Forge-Class Thruster"
-		"Forge-Class Lateral Thruster"
+		"Forge-Class LTC"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -711,7 +711,7 @@ ship "Gull" "Gull (Cargo)"
 		"Tuning Rifle" 3
 
 		"Forge-Class Thruster"
-		"Forge-Class Lateral Thruster"
+		"Forge-Class LTC"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -727,7 +727,7 @@ ship "Gull" "Gull (Bunks)"
 		"Tuning Rifle" 3
 
 		"Forge-Class Thruster"
-		"Forge-Class Lateral Thruster"
+		"Forge-Class LTC"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -806,7 +806,7 @@ ship "Heron"
 		
 		"Bellows-Class Afterburner" 3
 		"Smelter-Class Thruster" 4
-		"Smelter-Class Lateral Thruster" 4
+		"Smelter-Class LTC" 4
 		"Smelter-Class Steering" 5
 		"Hyperdrive"
 		"Jump Drive"
@@ -990,7 +990,7 @@ ship "Ibis"
 		"Tuning Rifle" 20
 		
 		"Forge-Class Thruster"
-		"Forge-Class Lateral Thruster"
+		"Forge-Class LTC"
 		"Forge-Class Steering" # Extra steering
 		"Scram Drive"
 		
@@ -1213,7 +1213,7 @@ ship "Pelican"
 		"Tuning Rifle" 15
 
 		"Smelter-Class Thruster"
-		"Smelter-Class Lateral Thruster"
+		"Smelter-Class LTC"
 		"Smelter-Class Steering"
 		"Scram Drive"
 
@@ -1245,7 +1245,7 @@ ship "Pelican" "Pelican (Heavy Lift)"
 		"Cargo Expansion" 5
 		"Scram Drive"
 		"Smelter-Class Thruster"
-		"Smelter-Class Lateral Thruster"
+		"Smelter-Class LTC"
 		"Smelter-Class Steering"
 		"Crystal Capacitor" 2
 		"Quantum Key Stone"
@@ -1342,7 +1342,7 @@ ship "Penguin"
 		"Tuning Rifle" 1
 		
 		"Crucible-Class Thruster"
-		"Crucible-Class Lateral Thruster"
+		"Crucible-Class LTC"
 		"Crucible-Class Steering"
 		"Hyperdrive"
 	
@@ -1460,7 +1460,7 @@ ship "Peregrine"
 		
 		"Bellows-Class Afterburner"
 		"Smelter-Class Thruster"
-		"Smelter-Class Lateral Thruster"
+		"Smelter-Class LTC"
 		"Smelter-Class Steering"
 		"Scram Drive"
 		
@@ -1507,7 +1507,7 @@ ship "Peregrine" "Peregrine (II)"
 		
 		"Bellows-Class Afterburner"
 		"Smelter-Class Thruster"
-		"Smelter-Class Lateral Thruster"
+		"Smelter-Class LTC"
 		"Smelter-Class Steering"
 		"Scram Drive"
 		
@@ -1822,7 +1822,7 @@ ship "Starling"
 		"Thermoelectric Cooler"
 		
 		"Forge-Class Thruster"
-		"Forge-Class Lateral Thruster"
+		"Forge-Class LTC"
 		"Forge-Class Steering"
 		# "Crucible-Class Steering" # Extra steering
 		"Hyperdrive"
@@ -1862,7 +1862,7 @@ ship "Starling" "Starling (Heavy)"
 		"Tuning Rifle" 10
 
 		"Forge-Class Thruster"
-		"Forge-Class Lateral Thruster"
+		"Forge-Class LTC"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -1882,7 +1882,7 @@ ship "Starling" "Starling (Sniper)"
 		"Tuning Rifle" 9
 
 		"Forge-Class Thruster"
-		"Forge-Class Lateral Thruster"
+		"Forge-Class LTC"
 		"Smelter-Class Steering"
 		"Hyperdrive"
 
@@ -1910,7 +1910,7 @@ ship "Starling" "Starling (Hunter)"
 		"Tuning Rifle" 11
 
 		"Forge-Class Thruster"
-		"Forge-Class Lateral Thruster"
+		"Forge-Class LTC"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
@@ -1933,7 +1933,7 @@ ship "Starling" "Starling (Thrasher)"
 		"Tuning Rifle" 8
 
 		"Forge-Class Thruster"
-		"Forge-Class Lateral Thruster"
+		"Forge-Class LTC"
 		"Forge-Class Steering"
 		"Hyperdrive"
 

@@ -132,7 +132,7 @@ outfit "Medium Graviton Thruster"
 	description "Quarg thrusters are quite powerful for their size and produce very little heat, but at the cost of consuming immense amounts of energy."
 	description "	They also have strange capabilities which seem to violate the laws of physics as humanity understands them. Ships with these engines accelerate faster under their own power than one would expect given the thrust of their engines, while also taking less impact from external forces."
 
-outfit "Medium Graviton Lateral Thruster"
+outfit "Medium Graviton LTC"
 	category "Engines"
 	"cost" 20000000
 	thumbnail "outfit/medium quarg thruster"
@@ -146,7 +146,7 @@ outfit "Medium Graviton Lateral Thruster"
 	"force protection" 0.15
 	"inertia reduction" 0.15
 	"lateral flare sprite" "effect/medium graviton flare"
-	description "Quarg lateral thrusters are quite powerful for their size and produce very little heat, but at the cost of consuming immense amounts of energy."
+	description "Quarg lateral thruster components are quite powerful for their size and produce very little heat, but at the cost of consuming immense amounts of energy."
 	description "	They also have strange capabilities which seem to violate the laws of physics as humanity understands them. Ships with these engines accelerate faster under their own power than one would expect given the thrust of their engines, while also taking less impact from external forces."
 
 outfit "Medium Graviton Steering"

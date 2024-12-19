@@ -332,7 +332,7 @@ outfit "RC52 Reaction Steering"
 # So the tiny lateral has values equivalent to about 90% of a tiny thruster. The small lateral thruster is roughly 80% of a small thruster, etc.
 # This continues by 10% increments down to the Huge lateral thrusters that are equivalent of 50% of the huge thrusters.
 # This percentage is applied equally to mass, outfit space, engine capacity, lateral thrust, lateral thrusting energy, and lateral thrusting heat.
-outfit "RC14 Reaction Lateral Thruster"
+outfit "RC14 Reaction LTC"
 	category "Engines"
 	series "Human: Reaction"
 	index 17
@@ -349,10 +349,10 @@ outfit "RC14 Reaction Lateral Thruster"
 	"lateral flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
-	description "This is the smallest thruster that you can buy, so weak that anything larger than a drone will accelerate quite slowly when using this engine. On the other hand, it is also very energy-efficient."
+	description "This is the smallest lateral thruster component that you can buy, so weak that anything larger than a drone will accelerate quite slowly when using this engine. On the other hand, it is also very energy-efficient."
 	description "	Reaction engines are widely used and renown for their legendary reliability and ease of construction. Although superseded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
 
-outfit "RC24 Reaction Lateral Thruster"
+outfit "RC24 Reaction LTC"
 	category "Engines"
 	series "Human: Reaction"
 	index 27
@@ -368,10 +368,10 @@ outfit "RC24 Reaction Lateral Thruster"
 	"lateral flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
-	description "The RC24 Reaction Thruster is intended mostly for use in small, single-person or two-person ships, as well as in fighters. It is also used in larger ships, such as freighters, that have very little space for propulsion systems or energy to drive them. But these larger ships move unbearably slowly as a result."
+	description "The RC24 Reaction Lateral Thruster Component is intended mostly for use in small, single-person or two-person ships, as well as in fighters. It is also used in larger ships, such as freighters, that have very little space for propulsion systems or energy to drive them. But these larger ships move unbearably slowly as a result."
 	description "	Reaction engines are widely used and renown for their legendary reliability and ease of construction. Although superseded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
 
-outfit "RC34 Reaction Lateral Thruster"
+outfit "RC34 Reaction LTC"
 	category "Engines"
 	series "Human: Reaction"
 	index 37
@@ -387,10 +387,10 @@ outfit "RC34 Reaction Lateral Thruster"
 	"lateral flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
-	description "The RC34 Reaction Thruster is designed for heavy freighters and small capital ships. In theory, it could be installed in smaller ships too, if they have enough engine space, to attain better maneuverability."
+	description "The RC34 Reaction Lateral Thruster Component is designed for heavy freighters and small capital ships. In theory, it could be installed in smaller ships too, if they have enough engine space, to attain better maneuverability."
 	description "	Reaction engines are widely used and renown for their legendary reliability and ease of construction. Although superseded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
 
-outfit "RC44 Reaction Lateral Thruster"
+outfit "RC44 Reaction LTC"
 	category "Engines"
 	series "Human: Reaction"
 	index 47
@@ -406,10 +406,10 @@ outfit "RC44 Reaction Lateral Thruster"
 	"lateral flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
-	description "The RC44 Reaction Thruster was developed when the Republic Navy began building warships so large that the X3700 was not sufficient for them. It allows even a capital ship to move at a respectable speed."
+	description "The RC44 Reaction Lateral Thruster Component was developed when the Republic Navy began building warships so large that the X3700 was not sufficient for them. It allows even a capital ship to move at a respectable speed."
 	description "	Reaction engines are widely used and renown for their legendary reliability and ease of construction. Although superseded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
 
-outfit "RC54 Reaction Lateral Thruster"
+outfit "RC54 Reaction LTC"
 	category "Engines"
 	series "Human: Reaction"
 	index 57
@@ -425,7 +425,7 @@ outfit "RC54 Reaction Lateral Thruster"
 	"lateral flare sprite" "effect/reaction flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
-	description "The RC54 lateral thruster is intended for only the largest of capital ships. These were once commonly used for the largest of early city ships."
+	description "The RC54 lateral Lateral Thruster Component is intended for only the largest of capital ships. These were once commonly used for the largest of early city ships."
 	description "	Reaction engines are widely used and renown for their legendary reliability and ease of construction. Although superseded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
 
 
@@ -720,7 +720,7 @@ outfit "X5200 Ion Steering"
 # So the tiny lateral has values equivalent to about 90% of a tiny thruster. The small lateral thruster is roughly 80% of a small thruster, etc.
 # This continues by 10% increments down to the Huge lateral thrusters that are equivalent of 50% of the huge thrusters.
 # This percentage is applied equally to mass, outfit space, engine capacity, lateral thrust, lateral thrusting energy, and lateral thrusting heat.
-outfit "X1400 Ion Lateral Thruster"
+outfit "X1400 Ion LTC"
 	category "Engines"
 	series "Human: Ion"
 	index 17
@@ -737,10 +737,10 @@ outfit "X1400 Ion Lateral Thruster"
 	"lateral flare sprite" "effect/ion flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
-	description "This is the smallest thruster that you can buy, so weak that anything larger than a drone will accelerate quite slowly when using this engine. On the other hand, it is also very energy-efficient."
+	description "This is the smallest lateral thruster component that you can buy, so weak that anything larger than a drone will adjust their position laterally quite slowly when using this engine. On the other hand, it is also very energy-efficient. It is sometimes used by pilots who do not feel they need lateral thrust, but want to keep some around just in case."
 	description "	Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space for the same amount of thrust."
 
-outfit "X2400 Ion Lateral Thruster"
+outfit "X2400 Ion LTC"
 	category "Engines"
 	series "Human: Ion"
 	index 27
@@ -756,10 +756,10 @@ outfit "X2400 Ion Lateral Thruster"
 	"lateral flare sprite" "effect/ion flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
-	description "The X2700 Ion Thruster is intended mostly for use in small, single-person or two-person ships, as well as in fighters. It is also used in larger ships, such as freighters, that have very little space for propulsion systems or energy to drive them. But these larger ships move unbearably slowly as a result."
+	description "The X2700 Ion Lateral Thruster Component is intended mostly for use in small, single-person or two-person ships, as well as in fighters. It is also used in larger ships, such as freighters, that have very little space for propulsion systems or energy to drive them. But these larger ships move unbearably slowly as a result."
 	description "	Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space for the same amount of thrust."
 
-outfit "X3400 Ion Lateral Thruster"
+outfit "X3400 Ion LTC"
 	category "Engines"
 	series "Human: Ion"
 	index 37
@@ -775,10 +775,10 @@ outfit "X3400 Ion Lateral Thruster"
 	"lateral flare sprite" "effect/ion flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
-	description "The X3700 Ion Thruster is designed for heavy freighters and small capital ships. In theory, it could be installed in smaller ships too, if they have enough engine space, to attain almost ridiculous speeds."
+	description "The X3700 Ion Lateral Thruster Component is designed for heavy freighters and small capital ships. In theory, it could be installed in smaller ships too, if they have enough engine space, to attain almost ridiculous speeds."
 	description "	Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space for the same amount of thrust."
 
-outfit "X4400 Ion Lateral Thruster"
+outfit "X4400 Ion LTC"
 	category "Engines"
 	series "Human: Ion"
 	index 47
@@ -794,10 +794,10 @@ outfit "X4400 Ion Lateral Thruster"
 	"lateral flare sprite" "effect/ion flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
-	description "The X4700 Ion Thruster was developed when the Republic Navy began building warships so large that the X3700 was not sufficient for them. It allows even a capital ship to move at a respectable speed."
+	description "The X4700 Ion Lateral Thruster Component was developed when the Republic Navy began building warships so large that the X3700 was not sufficient for them. It allows even a capital ship to move at a respectable speed."
 	description "	Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space for the same amount of thrust."
 
-outfit "X5400 Ion Lateral Thruster"
+outfit "X5400 Ion LTC"
 	category "Engines"
 	series "Human: Ion"
 	index 57
@@ -813,7 +813,7 @@ outfit "X5400 Ion Lateral Thruster"
 	"lateral flare sprite" "effect/ion flare/tiny"
 		"frame rate" 1.2
 	"lateral flare sound" "ion tiny"
-	description "The X5700 thruster is intended for only the largest of capital ships. When the Syndicate first began producing them, these engines were considered little more than a publicity stunt, because no ship at the time was large enough to hold one."
+	description "The X5700 Lateral Thruster Component is intended for only the largest of capital ships. When the Syndicate first began producing them, these engines were considered little more than a publicity stunt, because no ship at the time was large enough to hold one."
 	description "	Ion engines consume less energy than plasma engines and produce less heat, but they also take up more space for the same amount of thrust."
 
 
@@ -1073,7 +1073,7 @@ outfit "Tyrant Plasma Steering"
 
 
 
-outfit "Chipmunk Plasma Lateral Thruster"
+outfit "Chipmunk Plasma LTC"
 	category "Engines"
 	series "Human: Plasma"
 	index 15
@@ -1092,7 +1092,7 @@ outfit "Chipmunk Plasma Lateral Thruster"
 	description "This is the smallest of the plasma lateral propulsion systems produced by Delta V Corporation, suitable for very light fighters and interceptors."
 	description "	Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
 
-outfit "Greyhound Plasma Lateral Thruster"
+outfit "Greyhound Plasma LTC"
 	category "Engines"
 	series "Human: Plasma"
 	index 25
@@ -1108,10 +1108,10 @@ outfit "Greyhound Plasma Lateral Thruster"
 	"lateral flare sprite" "effect/plasma flare/small"
 		"frame rate" 6
 	"lateral flare sound" "plasma small"
-	description "This lateral thruster is intended for small ships and for freighters. It comes in a crate decorated with a stylized cartoon of a running greyhound."
+	description "This lateral lateral thruster component is intended for small ships and for freighters. It comes in a crate decorated with a stylized cartoon of a running greyhound."
 	description "	Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
 
-outfit "Impala Plasma Lateral Thruster"
+outfit "Impala Plasma LTC"
 	category "Engines"
 	series "Human: Plasma"
 	index 35
@@ -1127,10 +1127,10 @@ outfit "Impala Plasma Lateral Thruster"
 	"lateral flare sprite" "effect/plasma flare/medium"
 		"frame rate" 7
 	"lateral flare sound" "plasma medium"
-	description "Impala class lateral thrusters produce a significant amount of force, and are suitable for smaller capital ships. But, your ship may need extra cooling systems in order to handle them."
+	description "Impala class lateral thruster components produce a significant amount of force, and are suitable for smaller capital ships. But, your ship may need extra cooling systems in order to handle them."
 	description "	Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
 
-outfit "Orca Plasma Lateral Thruster"
+outfit "Orca Plasma LTC"
 	category "Engines"
 	series "Human: Plasma"
 	index 45
@@ -1146,10 +1146,10 @@ outfit "Orca Plasma Lateral Thruster"
 	"lateral flare sprite" "effect/plasma flare/large"
 		"frame rate" 8
 	"lateral flare sound" "plasma large"
-	description "This lateral thruster draws enough power that a ship with anything short of a full-fledged nuclear reactor is unlikely to be able to use it, but the thrust it generates is impressive."
+	description "This lateral thruster component draws enough power that a ship with anything short of a full-fledged nuclear reactor is unlikely to be able to use it, but the thrust it generates is impressive."
 	description "	Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
 
-outfit "Tyrant Plasma Lateral Thruster"
+outfit "Tyrant Plasma LTC"
 	category "Engines"
 	series "Human: Plasma"
 	index 55
@@ -1165,7 +1165,7 @@ outfit "Tyrant Plasma Lateral Thruster"
 	"lateral flare sprite" "effect/plasma flare/huge"
 		"frame rate" 9
 	"lateral flare sound" "plasma huge"
-	description "The enormous crate that this lateral thruster is sold in comes decorated with a picture of a grinning Tyrannosaurus Rex with an improbable number of teeth. Only a handful of ships are large enough to require an engine of this size... or to have the capacity for one."
+	description "The enormous crate that this lateral thruster component is sold in comes decorated with a picture of a grinning Tyrannosaurus Rex with an improbable number of teeth. Only a handful of ships are large enough to require an engine of this size... or to have the capacity for one."
 	description "	Plasma engines are a bit more powerful than ion engines of the same size, but they are less energy efficient and produce more heat."
 
 
@@ -1416,7 +1416,7 @@ outfit "A865 Atomic Steering"
 
 
 
-outfit "AL129 Atomic Lateral Thruster"
+outfit "AL129 Atomic LTC"
 	category "Engines"
 	series "Human: Atomic"
 	index 15
@@ -1432,9 +1432,9 @@ outfit "AL129 Atomic Lateral Thruster"
 	"lateral flare sprite" "effect/atomic flare/tiny"
 		"frame rate" 14
 	"lateral flare sound" "atomic tiny"
-	description "If you're looking for the most powerful lateral thruster that will fit into your ship, and have plenty of money to burn, Deep Sky's atomic lateral thrusters are your answer. Of course, the extra energy and cooling they require can easily offset the benefit of their small size."
+	description "If you're looking for the most powerful lateral thruster component that will fit into your ship, and have plenty of money to burn, Deep Sky's atomic lateral thrusters are your answer. Of course, the extra energy and cooling they require can easily offset the benefit of their small size."
 
-outfit "AL259 Atomic Lateral Thruster"
+outfit "AL259 Atomic LTC"
 	category "Engines"
 	series "Human: Atomic"
 	index 25
@@ -1450,9 +1450,9 @@ outfit "AL259 Atomic Lateral Thruster"
 	"lateral flare sprite" "effect/atomic flare/small"
 		"frame rate" 13
 	"lateral flare sound" "atomic small"
-	description "Deep Sky's atomic lateral thrusters have been in production for centuries, but remain a niche product due to their high prices and high energy requirements."
+	description "Deep Sky's atomic lateral thruster components have been in production for centuries, but remain a niche product due to their high prices and high energy requirements."
 
-outfit "AL379 Atomic Lateral Thruster"
+outfit "AL379 Atomic LTC"
 	category "Engines"
 	series "Human: Atomic"
 	index 35
@@ -1468,9 +1468,9 @@ outfit "AL379 Atomic Lateral Thruster"
 	"lateral flare sprite" "effect/atomic flare/medium"
 		"frame rate" 12
 	"lateral flare sound" "atomic medium"
-	description "This lateral thruster is small enough to fit in a light warship or freighter, but powerful enough to move any but the largest of ships. Naturally, such performance comes at an exorbitant price."
+	description "This lateral thruster component is small enough to fit in a light warship or freighter, but powerful enough to move any but the largest of ships. Naturally, such performance comes at an exorbitant price."
 
-outfit "AL529 Atomic Lateral Thruster"
+outfit "AL529 Atomic LTC"
 	category "Engines"
 	series "Human: Atomic"
 	index 45
@@ -1486,9 +1486,9 @@ outfit "AL529 Atomic Lateral Thruster"
 	"lateral flare sprite" "effect/atomic flare/large"
 		"frame rate" 11
 	"lateral flare sound" "atomic large"
-	description "If your ship is sporting a set of Deep Sky's atomic lateral thrusters, you will be the envy of every pilot in the galaxy. No other form of propulsion that humanity has discovered produces so much lateral thrust from such a small engine."
+	description "If your ship is sporting a set of Deep Sky's atomic lateral thruster components, you will be the envy of every pilot in the galaxy. No other form of propulsion that humanity has discovered produces so much lateral thrust from such a small engine."
 
-outfit "AL869 Atomic Lateral Thruster"
+outfit "AL869 Atomic LTC"
 	category "Engines"
 	series "Human: Atomic"
 	index 55
@@ -1504,7 +1504,7 @@ outfit "AL869 Atomic Lateral Thruster"
 	"lateral flare sprite" "effect/atomic flare/huge"
 		"frame rate" 10
 	"lateral flare sound" "atomic huge"
-	description "The A860 Atomic Lateral Thruster is the most powerful lateral thruster sold in human space, and is much more compact than any of the alternatives. But, you may need to upgrade your ship's power and cooling systems to handle it."
+	description "The A860 Atomic Lateral Thruster is the most powerful lateral thruster component sold in human space, and is much more compact than any of the alternatives. But, you may need to upgrade your ship's power and cooling systems to handle it."
 
 
 outfit "AR120 Reverse Thruster"
