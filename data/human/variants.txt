@@ -83,7 +83,7 @@ ship "Argosy" "Argosy (Missile)"
 		"D41-HY Shield Generator"
 		"Outfits Expansion" 2
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A255 Atomic Steering"
 		"Hyperdrive"
 	turret "Anti-Missile Turret"
@@ -540,7 +540,7 @@ ship "Bastion" "Bastion (Laser)"
 		"Laser Rifle" 6
 		"Outfits Expansion"
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A525 Atomic Steering"
 		"Hyperdrive"
 	turret "Heavy Anti-Missile Turret"
@@ -827,7 +827,7 @@ ship "Bounder" "Bounder (Hai Trafficker)"
 		"Outfits Expansion"
 		"Pulse Rifle" 7
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A255 Atomic Steering"
 		"Scram Drive"
 
@@ -1121,7 +1121,7 @@ ship "Clipper" "Clipper (Speedy)"
 		"D41-HY Shield Generator"
 		"Cooling Ducts"
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A255 Atomic Steering"
 		"Hyperdrive"
 
@@ -1147,7 +1147,7 @@ ship "Clipper" "Clipper (Hai Trafficker)"
 		"Breeder Reactor"
 		"Security Station" 2
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A255 Atomic Steering"
 		Hyperdrive
 
@@ -1305,7 +1305,7 @@ ship "Corvette" "Corvette (Missile)"
 		"Cooling Ducts"
 		"Laser Rifle" 4
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A375 Atomic Steering"
 		"Hyperdrive"
 	gun
@@ -1368,7 +1368,7 @@ ship "Corvette" "Corvette (Speedy)"
 		"Cooling Ducts"
 		"Laser Rifle" 2
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A375 Atomic Steering"
 		"Hyperdrive"
 
@@ -1384,7 +1384,7 @@ ship "Corvette" "Corvette (Particle Chaser)"
 		"Water Coolant System"
 		"Laser Rifle" 2
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A375 Atomic Steering"
 		"Hyperdrive"
 		"Fuel Pod"
@@ -1433,7 +1433,7 @@ ship "Corvette" "Corvette (Flamethrower Electron Anti-Missile)"
 		"Outfits Expansion" 2
 		"Liquid Nitrogen Cooler"
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A375 Atomic Steering"
 		Flamethrower 2
 		"Electron Beam" 2
@@ -1648,7 +1648,7 @@ ship "Cruiser" "Cruiser (Jump Plasma Anti-Missile)"
 		"Outfits Expansion" 2
 		
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A525 Atomic Steering"
 		"Volcano Afterburner"
 		
@@ -1881,7 +1881,7 @@ ship "Falcon" "Falcon (Laser Chaser)"
 		"Heavy Laser" 4
 		"Armageddon Core"
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A525 Atomic Steering"
 		Hyperdrive
 
@@ -2297,7 +2297,7 @@ ship "Frigate" "Frigate (Republic Intelligence)"
 		"Torpedo Launcher"
 		"Water Coolant System"
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"Impala Plasma Steering"
 		Hyperdrive
 
@@ -2934,7 +2934,7 @@ ship "Leviathan" "Leviathan (Laser)"
 		"Ramscoop"
 		"Laser Rifle" 18
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A525 Atomic Steering"
 		"Hyperdrive"
 	turret "Heavy Laser Turret"
@@ -2973,7 +2973,7 @@ ship "Leviathan" "Leviathan (Particle Chaser)"
 		"Scram Drive"
 		"Outfits Expansion" 3
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A525 Atomic Steering"
 		"D94-YV Shield Generator"
 		"Heavy Anti-Missile Turret"
@@ -3327,7 +3327,7 @@ ship "Mule" "Mule (Hai Weapons)"
 		"Ramscoop"
 		"Pulse Rifle" 2
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A375 Atomic Steering"
 		"Hyperdrive"
 
@@ -3347,7 +3347,7 @@ ship "Mule" "Mule (Heavy)"
 		"Ramscoop"
 		"Laser Rifle" 2
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A375 Atomic Steering"
 		"Hyperdrive"
 
@@ -3416,7 +3416,7 @@ ship "Nighthawk" "Nighthawk (New Tortuga)"
 		"Tactical Scanner"
 		"Water Coolant System"
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"Impala Plasma Steering"
 		Hyperdrive
 	description `This expensive modification of the Blackbird was not invented at New Tortuga, but is a reproduction. The first New Tortuga Nighthawk was seized from slavers who used it for kidnappings. Seeing the obvious uses for smuggling, the local shipyards reproduced them for their own purposes. Ironically, this means the Nighthawks, originally designed for enslavement, are used just as often for freeing slaves.`
@@ -3541,7 +3541,7 @@ ship "Osprey" "Osprey (Particle Anti-Missile)"
 		"Liquid Nitrogen Cooler"
 		"Particle Cannon" 4
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A375 Atomic Steering"
 		"Laser Rifle" 3
 		"Water Coolant System"
@@ -3562,7 +3562,7 @@ ship "Protector" "Protector (Laser)"
 		"Water Coolant System"
 		"Laser Rifle" 8
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A375 Atomic Steering"
 		"Hyperdrive"
 	pylon
@@ -3590,7 +3590,7 @@ ship "Protector" "Protector (Proton)"
 		"Water Coolant System"
 		"Laser Rifle" 4
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A375 Atomic Steering"
 		"Hyperdrive"
 	pylon
@@ -3837,7 +3837,7 @@ ship "Scout" "Scout (Speedy)"
 		"Cooling Ducts"
 		"Outfits Expansion"
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A255 Atomic Steering"
 		"Hyperdrive"
 
@@ -4028,7 +4028,7 @@ ship "Splinter" "Splinter (Flamethrower Blaster)"
 		"Outfits Expansion" 3
 		"Liquid Nitrogen Cooler"
 		"A370 Atomic Thruster"
-		"LA379 Atomic LTC"
+		"AL379 Atomic LTC"
 		"A375 Atomic Steering"
 		Flamethrower 2
 		"Quad Blaster Turret" 2
