@@ -516,6 +516,7 @@ outfit "Reverser (Stellar Class)"
 	description "	This Korath engine has been modified to be partially installed in a ship's weapon space, allowing it to push the ship in reverse."
 
 
+
 outfit "Thruster (Asteroid Class)"
 	plural "Thrusters (Asteroid Class)"
 	category "Engines"
@@ -636,6 +637,8 @@ outfit "Thruster (Stellar Class)"
 	"reverse flare sound" "plasma tiny"
 	description "A legend among the Korath claims that when they were first testing out their latest generation of plasma thrusters, a concerned Quarg fleet approached and volunteered to help evacuate the Korath crew from what they assumed was a dying ship. The Quarg were surprised to learn that the flames shooting out the back of the ship were in fact its intended mode of propulsion."
 
+
+
 outfit "Steering (Asteroid Class)"
 	plural "Steerings (Asteroid Class)"
 	category "Engines"
@@ -720,6 +723,95 @@ outfit "Steering (Stellar Class)"
 		"frame rate" 6
 	"steering flare sound" "plasma huge"
 	description "After millennia of war, the Korath have developed some truly enormous warships. These steering systems give even their largest warships a reasonable amount of agility in combat."
+
+
+
+outfit "Lateral (Asteroid Class)"
+	plural "Laterals (Asteroid Class)"
+	category "Engines"
+	"cost" 113000
+	thumbnail "outfit/tiny korath thruster"
+	"lateral thruster slot" -1
+	"mass" 12
+	"outfit space" -12
+	"engine capacity" -12
+	"lateral thrust" 19
+	"lateral thrusting energy" 1.35
+	"lateral thrusting heat" 3.06
+	"lateral flare sprite" "effect/korath flare/tiny"
+		"frame rate" 8
+	"lateral flare sound" "plasma tiny"
+	description "Given its size, this tiny Korath thruster produces quite a kick. But, it also draws a considerable amount of power."
+
+outfit "Lateral (Comet Class)"
+	plural "Laterals (Comet Class)"
+	category "Engines"
+	"cost" 249000
+	thumbnail "outfit/small korath thruster"
+	"lateral thruster slot" -1
+	"mass" 19
+	"outfit space" -19
+	"engine capacity" -19
+	"lateral thrust" 30
+	"lateral thrusting energy" 2.24
+	"lateral thrusting heat" 5.20
+	"lateral flare sprite" "effect/korath flare/small"
+		"frame rate" 7.5
+	"lateral flare sound" "plasma small"
+	description "Like most Korath technology, this thruster's power is offset by its energy requirements and heat output."
+
+outfit "Lateral (Lunar Class)"
+	plural "Laterals (Lunar Class)"
+	category "Engines"
+	"cost" 539000
+	thumbnail "outfit/medium korath thruster"
+	"lateral thruster slot" -1
+	"mass" 28
+	"outfit space" -28
+	"engine capacity" -28
+	"lateral thrust" 47
+	"lateral thrusting energy" 3.43
+	"lateral thrusting heat" 8.33
+	"lateral flare sprite" "effect/korath flare/medium"
+		"frame rate" 7
+	"lateral flare sound" "plasma medium"
+	description "The Korath have the dubious distinction of relying on propulsion systems that produce more waste heat than the weapon systems of most other species."
+
+outfit "Lateral (Planetary Class)"
+	plural "Laterals (Planetary Class)"
+	category "Engines"
+	"cost" 1216000
+	thumbnail "outfit/large korath thruster"
+	"lateral thruster slot" -1
+	"mass" 40
+	"outfit space" -40
+	"engine capacity" -40
+	"lateral thrust" 72
+	"lateral thrusting energy" 5.34
+	"lateral thrusting heat" 13.62
+	"lateral flare sprite" "effect/korath flare/large"
+		"frame rate" 6.5
+	"lateral flare sound" "plasma large"
+	description "The Quarg, who do all things efficiently, view the Korath propulsion systems with particular distaste."
+
+outfit "Lateral (Stellar Class)"
+	plural "Laterals (Stellar Class)"
+	category "Engines"
+	"cost" 2733000
+	thumbnail "outfit/huge korath thruster"
+	"lateral thruster slot" -1
+	"mass" 59
+	"outfit space" -59
+	"engine capacity" -59
+	"lateral thrust" 112
+	"lateral thrusting energy" 7.90
+	"lateral thrusting heat" 21.30
+	"lateral flare sprite" "effect/korath flare/huge"
+		"frame rate" 6
+	"lateral flare sound" "plasma huge"
+	description "A legend among the Korath claims that when they were first testing out their latest generation of plasma thrusters, a concerned Quarg fleet approached and volunteered to help evacuate the Korath crew from what they assumed was a dying ship. The Quarg were surprised to learn that the flames shooting out the back of the ship were in fact its intended mode of propulsion."
+
+
 
 outfit "Arkrof GP Hybrid Thruster"
 	category "Engines"
