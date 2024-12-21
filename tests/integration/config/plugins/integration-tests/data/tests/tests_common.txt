@@ -50,6 +50,7 @@ test-data "Three Earthly Barges Save"
 				"thruster slot" 1
 			outfits
 				"X1700 Ion Thruster"
+				"X1400 Ion LTC"
 				"X1200 Ion Steering"
 				Hyperdrive
 				"Anti-Missile Turret"
@@ -93,6 +94,7 @@ test-data "Three Earthly Barges Save"
 				"thruster slot" 1
 			outfits
 				"X1700 Ion Thruster"
+				"X1400 Ion LTC"
 				"X1200 Ion Steering"
 				Hyperdrive
 				"Anti-Missile Turret"
@@ -136,6 +138,7 @@ test-data "Three Earthly Barges Save"
 				"thruster slot" 1
 			outfits
 				"X1700 Ion Thruster"
+				"X1400 Ion LTC"
 				"X1200 Ion Steering"
 				Hyperdrive
 				"Anti-Missile Turret"
@@ -215,6 +218,7 @@ test-data "Fighters and Carriers and Escorts Save"
 				"Millennium Cell"
 				"Small Heat Shunt"
 				"Small Steering Module"
+				"X1400 Ion LTC"
 				Supercapacitor
 				"Thruster (Comet Class)"
 			crew 1
@@ -274,6 +278,7 @@ test-data "Fighters and Carriers and Escorts Save"
 				"Small Steering Module"
 				Supercapacitor
 				"Thruster (Comet Class)"
+				"X1400 Ion LTC"
 				Torpedo 3
 				"Torpedo Pod"
 			crew 1
@@ -342,6 +347,7 @@ test-data "Fighters and Carriers and Escorts Save"
 				"Systems Core (Large)"
 				"Tier 3 Anti-Missile"
 				"X4700 Ion Thruster"
+				"X4400 Ion LTC"
 				"X5200 Ion Steering"
 			crew 72
 			fuel 2950
@@ -446,6 +452,7 @@ test-data "Fighters and Carriers and Escorts Save"
 				"Laser Rifle" 3
 
 				"X3700 Ion Thruster"
+				"X3400 Ion LTC"
 				"X3200 Ion Steering"
 				"Hyperdrive"
 			crew 10
@@ -509,6 +516,7 @@ test-data "Fighters and Carriers and Escorts Save"
 			outfits
 				"Beam Laser" 2
 				"Chipmunk Plasma Steering"
+				"X1400 Ion LTC"
 				"Chipmunk Plasma Thruster"
 				"D14-RN Shield Generator"
 				Hyperdrive
@@ -567,6 +575,7 @@ test-data "Fighters and Carriers and Escorts Save"
 			outfits
 				"Beam Laser" 2
 				"Chipmunk Plasma Steering"
+				"X1400 Ion LTC"
 				"Chipmunk Plasma Thruster"
 				"D14-RN Shield Generator"
 				Hyperdrive

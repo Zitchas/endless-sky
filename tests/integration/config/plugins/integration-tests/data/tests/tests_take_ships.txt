@@ -180,11 +180,11 @@ test-data "Taking Ship With Outfits And Unconstrained Test Save"
 				bunks 3
 				"cargo space" 50
 				drag 2.1
-				"engine capacity" 40
+				"engine capacity" 57
 				"fuel capacity" 300
 				"heat dissipation" 0.8
 				hull 1000
-				"outfit space" 130
+				"outfit space" 147
 				"required crew" 1
 				shields 600
 				"turret mounts" 1
@@ -195,6 +195,7 @@ test-data "Taking Ship With Outfits And Unconstrained Test Save"
 				"thruster slot" 1
 			outfits
 				"X1700 Ion Thruster"
+				"X1400 Ion LTC"
 				"X1200 Ion Steering"
 				Hyperdrive
 				"Anti-Missile Turret"
@@ -223,11 +224,11 @@ test-data "Taking Ship With Outfits And Unconstrained Test Save"
 				bunks 3
 				"cargo space" 50
 				drag 2.1
-				"engine capacity" 40
+				"engine capacity" 57
 				"fuel capacity" 300
 				"heat dissipation" 0.8
 				hull 1000
-				"outfit space" 130
+				"outfit space" 147
 				"required crew" 1
 				shields 600
 				"turret mounts" 1
@@ -243,6 +244,7 @@ test-data "Taking Ship With Outfits And Unconstrained Test Save"
 				"D14-RN Shield Generator"
 				"Laser Rifle"
 				"Chipmunk Plasma Thruster"
+				"Chipmunk Plasma LTC"
 				"Chipmunk Plasma Steering"
 				"Hyperdrive"
 			crew 1
