@@ -28,7 +28,7 @@ ship "Rano'erek"
 		"heat dissipation" .24
 		"fuel capacity" 5475
 		"cargo space" 675
-		"outfit space" 763
+		"outfit space" 800
 		"weapon capacity" 276
 		"engine capacity" 206
 		"lateral thruster slot" 1
@@ -56,6 +56,7 @@ ship "Rano'erek"
 		"Reverser (Lunar Class)"
 		"Steering (Planetary Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Scram Drive"
 		"Jump Drive"
 		
@@ -115,9 +116,9 @@ ship "Palavret"
 		"heat dissipation" .3
 		"fuel capacity" 1325
 		"cargo space" 175
-		"outfit space" 777
+		"outfit space" 813
 		"weapon capacity" 339
-		"engine capacity" 159
+		"engine capacity" 175
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -144,6 +145,7 @@ ship "Palavret"
 		"Thermal Repeater Rifle" 196
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Bow Drive (Meteor Class)"
 		"Jump Drive"
@@ -224,6 +226,7 @@ ship "Tubfalet"
 		"Thermal Repeater Rifle" 196
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		# "Thruster (Lunar Class)" # Extra thrustera
 		"Steering (Planetary Class)"
 		"Jump Drive"
@@ -314,9 +317,9 @@ ship "'nra'ret"
 		"heat dissipation" .39
 		"fuel capacity" 3800
 		"cargo space" 50
-		"outfit space" 943
+		"outfit space" 976
 		"weapon capacity" 407
-		"engine capacity" 177
+		"engine capacity" 193
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -344,6 +347,7 @@ ship "'nra'ret"
 		"Afterburner (Planetary Class)"
 		"Steering (Lunar Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Jump Drive"
 
 	engine -29 96
@@ -391,9 +395,9 @@ ship "'olofez"
 		"mass" 40
 		"drag" .9
 		"heat dissipation" .9
-		"outfit space" 92
+		"outfit space" 104
 		"weapon capacity" 25
-		"engine capacity" 30
+		"engine capacity" 36
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -411,6 +415,7 @@ ship "'olofez"
 		"Thermal Repeater Rifle"
 		
 		"Thruster (Asteroid Class)"
+		"Lateral (Asteroid Class)"
 		"Steering (Asteroid Class)"
 	
 	engine -7 23
@@ -484,9 +489,9 @@ ship "Rai'alorej"
 		"fuel capacity" 4550
 
 		"cargo space" 351
-		"outfit space" 856
+		"outfit space" 896
 		"weapon capacity" 237
-		"engine capacity" 195
+		"engine capacity" 235
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -514,6 +519,7 @@ ship "Rai'alorej"
 		"Afterburner (Planetary Class)"
 		"Reverser (Lunar Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Scram Drive"
 		"Jump Drive"
@@ -569,9 +575,9 @@ ship "Ikatila'ej"
 		"heat dissipation" .13
 		"fuel capacity" 11650
 		"cargo space" 845
-		"outfit space" 1314
+		"outfit space" 1373
 		"weapon capacity" 440
-		"engine capacity" 259
+		"engine capacity" 318
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -599,6 +605,7 @@ ship "Ikatila'ej"
 		"Reverser (Lunar Class)"
 		"Steering (Stellar Class)"
 		"Thruster (Stellar Class)"
+		"Lateral (Stellar Class)"
 		"Scram Drive"
 
 	"reverse engine" -105 -190.5
@@ -651,7 +658,7 @@ ship "Lor'kas Ik 577"
 		"heat dissipation" .2
 		"fuel capacity" 7650
 		"cargo space" 1375
-		"outfit space" 883
+		"outfit space" 940
 		"weapon capacity" 338
 		"engine capacity" 238
 		"lateral thruster slot" 1
@@ -678,6 +685,7 @@ ship "Lor'kas Ik 577"
 		"Microbot Defense Station" 15
 		
 		"Thruster (Stellar Class)"
+		"Lateral (Stellar Class)"
 		"Steering (Planetary Class)"
 		"Scram Drive"
 	
@@ -736,9 +744,9 @@ ship "Ra'gru Ik 618"
 		"heat dissipation" .23
 		"fuel capacity" 6900
 		"cargo space" 191
-		"outfit space" 1278
+		"outfit space" 1337
 		"weapon capacity" 633
-		"engine capacity" 263
+		"engine capacity" 266
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -769,6 +777,7 @@ ship "Ra'gru Ik 618"
 		"Thermal Repeater Rifle" 794
 		
 		"Thruster (Stellar Class)"
+		"Lateral (Stellar Class)"
 		"Steering (Stellar Class)"
 		"Jump Drive"
 	
@@ -830,7 +839,7 @@ ship "Kas'lor Ik 582"
 		"solar collection" 3.8
 		"fuel capacity" 242650
 		"cargo space" 734
-		"outfit space" 839
+		"outfit space" 879
 		"weapon capacity" 321
 		"engine capacity" 241
 		"lateral thruster slot" 1
@@ -855,6 +864,7 @@ ship "Kas'lor Ik 582"
 		"Microbot Defense Station" 4
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Scram Drive"
 	
@@ -912,7 +922,7 @@ ship "Lor'nag Ik 590"
 		"solar collection" 5.6
 		"fuel capacity" 7350
 		"cargo space" 264
-		"outfit space" 856
+		"outfit space" 900
 		"weapon capacity" 321
 		"engine capacity" 241
 		"lateral thruster slot" 1
@@ -940,6 +950,7 @@ ship "Lor'nag Ik 590"
 		"Thermal Repeater Rifle" 272
 		
 		"Thruster (Stellar Class)"
+		"Lateral (Stellar Class)"
 		"Steering (Planetary Class)"
 		"Scram Drive"
 	
@@ -996,9 +1007,9 @@ ship "Ra'at Ik 621"
 		"heat dissipation" .2
 		"fuel capacity" 6825
 		"cargo space" 228
-		"outfit space" 999
+		"outfit space" 1058
 		"weapon capacity" 407
-		"engine capacity" 277
+		"engine capacity" 286
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1024,6 +1035,7 @@ ship "Ra'at Ik 621"
 		
 		"Reverser (Lunar Class)"
 		"Thruster (Stellar Class)"
+		"Lateral (Stellar Class)"
 		"Steering (Stellar Class)"
 		"Jump Drive"
 	
@@ -1093,9 +1105,9 @@ ship "Kasichara A'awoj"
 		"solar collection" 12.7
 		"fuel capacity" 4850
 		"cargo space" 532
-		"outfit space" 1038
+		"outfit space" 1096
 		"weapon capacity" 331
-		"engine capacity" 251
+		"engine capacity" 268
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1123,6 +1135,7 @@ ship "Kasichara A'awoj"
 		"Afterburner (Comet Class)"
 		"Reverser (Lunar Class)"
 		"Thruster (Stellar Class)"
+		"Lateral (Stellar Class)"
 		"Steering (Planetary Class)"
 		"Scram Drive"
 	
@@ -1167,9 +1180,9 @@ ship "Korsmanath A'awoj"
 		"solar collection" 4.2
 		"fuel capacity" 26925
 		"cargo space" 1864
-		"outfit space" 3180
+		"outfit space" 3279
 		"weapon capacity" 1148
-		"engine capacity" 480
+		"engine capacity" 579
 		"reverse thruster slot" 2
 		"steering slot" 2
 		"thruster slot" 2
@@ -1200,7 +1213,9 @@ ship "Korsmanath A'awoj"
 		"Afterburner (Stellar Class)"
 		"Reverser (Stellar Class)"
 		"Thruster (Stellar Class)"
+		"Lateral (Stellar Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Stellar Class)"
 		"Steering (Planetary Class)"
 		"Scram Drive"
@@ -1405,9 +1420,9 @@ ship "Echo-Galleon"
 		"heat dissipation" .3
 		"fuel capacity" 3725
 		"cargo space" 734
-		"outfit space" 721
+		"outfit space" 768
 		"weapon capacity" 285
-		"engine capacity" 155
+		"engine capacity" 204
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1431,6 +1446,7 @@ ship "Echo-Galleon"
 		"Thermal Repeater Rifle" 246
 		
 		"Nelmeb GP Hybrid Thruster"
+		"Nelmeb GP Hybrid Lateral"
 		"Nelmeb GP Hybrid Steering"
 		"Scram Drive"
 
@@ -1499,6 +1515,7 @@ ship "Arch-Carrack"
 		"Thermal Repeater Rifle" 55
 		
 		"Gaktem GP Hybrid Thruster"
+		"Gaktem GP Hybrid Lateral"
 		# "Farves GP Hybrid Thruster" # Extra thruster
 		"Gaktem GP Hybrid Steering"
 		"Scram Drive"
@@ -1539,9 +1556,9 @@ ship "Charm-Shallop"
 		"heat dissipation" .5
 		"fuel capacity" 675
 		"cargo space" 194
-		"outfit space" 473
+		"outfit space" 474
 		"weapon capacity" 158
-		"engine capacity" 129
+		"engine capacity" 138
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1567,6 +1584,7 @@ ship "Charm-Shallop"
 		"Thermal Repeater Rifle" 66
 		
 		"Gaktem GP Hybrid Thruster"
+		"Gaktem GP Hybrid Lateral"
 		"Gaktem GP Hybrid Steering"
 		"Scram Drive"
 
@@ -1602,9 +1620,9 @@ ship "Kar Ik Vot 349"
 		"heat dissipation" .25
 		"fuel capacity" 2200
 		"cargo space" 87
-		"outfit space" 1054
+		"outfit space" 1092
 		"weapon capacity" 447
-		"engine capacity" 173
+		"engine capacity" 197
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1632,6 +1650,7 @@ ship "Kar Ik Vot 349"
 		"Control Transceiver"
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Stellar Class)"
 		Hyperdrive
 	
@@ -1682,7 +1701,7 @@ ship "Tek Far 71 - Lek"
 		"heat dissipation" .39
 		"fuel capacity" 750
 		"cargo space" 36
-		"outfit space" 533
+		"outfit space" 555
 		"weapon capacity" 235
 		"engine capacity" 102
 		"lateral thruster slot" 1
@@ -1710,6 +1729,7 @@ ship "Tek Far 71 - Lek"
 		"Control Transceiver"
 		
 		"Thruster (Lunar Class)"
+		"Lateral (Lunar Class)"
 		"Steering (Lunar Class)"
 		"Hyperdrive"
 	
@@ -1779,9 +1799,9 @@ ship "Tek Far 78 - Osk"
 		"heat dissipation" .35
 		"fuel capacity" 825
 		"cargo space" 43
-		"outfit space" 611
+		"outfit space" 636
 		"weapon capacity" 272
-		"engine capacity" 117
+		"engine capacity" 120
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1807,6 +1827,7 @@ ship "Tek Far 78 - Osk"
 		"Control Transceiver"
 		
 		"Thruster (Lunar Class)"
+		"Lateral (Lunar Class)"
 		"Steering (Planetary Class)"
 		Hyperdrive
 	
@@ -1872,9 +1893,9 @@ ship "Tek Far 109"
 		"heat dissipation" .44
 		"fuel capacity" 700
 		"cargo space" 31
-		"outfit space" 491
+		"outfit space" 513
 		"weapon capacity" 217
-		"engine capacity" 98
+		"engine capacity" 120
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1898,6 +1919,7 @@ ship "Tek Far 109"
 		"Control Transceiver"
 		
 		"Thruster (Lunar Class)"
+		"Lateral (Lunar Class)"
 		"Steering (Planetary Class)"
 		Hyperdrive
 	
@@ -1969,9 +1991,9 @@ ship "Met Par Tek 53"
 		"heat dissipation" .54
 		"fuel capacity" 500
 		"cargo space" 26
-		"outfit space" 610
+		"outfit space" 637
 		"weapon capacity" 213
-		"engine capacity" 110
+		"engine capacity" 120
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1994,6 +2016,7 @@ ship "Met Par Tek 53"
 		"Control Transceiver"
 		
 		"Thruster (Lunar Class)"
+		"Lateral (Lunar Class)"
 		"Steering (Planetary Class)"
 		"Hyperdrive"
 	
@@ -2035,9 +2058,9 @@ ship "Far Lek 14"
 		"mass" 26
 		"drag" .8
 		"heat dissipation" 1.1
-		"outfit space" 65
+		"outfit space" 77
 		"weapon capacity" 11
-		"engine capacity" 24
+		"engine capacity" 36
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -2055,6 +2078,7 @@ ship "Far Lek 14"
 		"Small Heat Shunt"
 		
 		"Thruster (Asteroid Class)"
+		"Lateral (Asteroid Class)"
 		"Steering (Asteroid Class)"
 		
 	engine -2 28
@@ -2080,9 +2104,9 @@ ship "Far Osk 27"
 		"mass" 34
 		"drag" 1.1
 		"heat dissipation" 1.0
-		"outfit space" 99
+		"outfit space" 111
 		"weapon capacity" 33
-		"engine capacity" 24
+		"engine capacity" 36
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -2100,6 +2124,7 @@ ship "Far Osk 27"
 		"Small Heat Shunt" 2
 		
 		"Thruster (Asteroid Class)"
+		"Lateral (Asteroid Class)"
 		"Steering (Asteroid Class)"
 		
 	engine -4 37
@@ -2128,9 +2153,9 @@ ship "Model 8"
 		"heat dissipation" 1.3
 		"fuel capacity" 175
 		"cargo space" 29
-		"outfit space" 220
+		"outfit space" 233
 		"weapon capacity" 49
-		"engine capacity" 60
+		"engine capacity" 73
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -2151,6 +2176,7 @@ ship "Model 8"
 		"Reasoning Node"
 		
 		"Thruster (Comet Class)"
+		"Lateral (Comet Class)"
 		"Steering (Lunar Class)"
 		Hyperdrive
 	
@@ -2180,9 +2206,9 @@ ship "Model 16"
 		"heat dissipation" 1.09
 		"fuel capacity" 425
 		"cargo space" 7
-		"outfit space" 426
+		"outfit space" 464
 		"weapon capacity" 149
-		"engine capacity" 107
+		"engine capacity" 138
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -2207,6 +2233,7 @@ ship "Model 16"
 		"Reasoning Node"
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Lunar Class)"
 		Hyperdrive
 	
@@ -2241,9 +2268,9 @@ ship "Model 32"
 		"heat dissipation" 1.0
 		"fuel capacity" 475
 		"cargo space" 16
-		"outfit space" 481
+		"outfit space" 514
 		"weapon capacity" 205
-		"engine capacity" 110
+		"engine capacity" 138
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -2268,6 +2295,7 @@ ship "Model 32"
 		"Reasoning Node"
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Lunar Class)"
 		Hyperdrive
 
@@ -2303,9 +2331,9 @@ ship "Model 64"
 		"heat dissipation" .76
 		"fuel capacity" 750
 		"cargo space" 34
-		"outfit space" 567
+		"outfit space" 581
 		"weapon capacity" 263
-		"engine capacity" 114
+		"engine capacity" 120
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -2330,6 +2358,7 @@ ship "Model 64"
 		"Reasoning Node" 2
 		
 		"Thruster (Lunar Class)"
+		"Lateral (Lunar Class)"
 		# "Thruster (Asteroid Class)" # Extra thruster
 		"Steering (Planetary Class)"
 		Hyperdrive
@@ -2369,9 +2398,9 @@ ship "Model 128"
 		"heat dissipation" .65
 		"fuel capacity" 900
 		"cargo space" 53
-		"outfit space" 713
+		"outfit space" 742
 		"weapon capacity" 344
-		"engine capacity" 132
+		"engine capacity" 160
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -2395,6 +2424,7 @@ ship "Model 128"
 		"Reasoning Node" 2
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		# "Steering (Asteroid Class)" # Extra steering
 		Hyperdrive
@@ -2436,9 +2466,9 @@ ship "Model 256"
 		"heat dissipation" .52
 		"fuel capacity" 1675
 		"cargo space" 78
-		"outfit space" 857
+		"outfit space" 872
 		"weapon capacity" 393
-		"engine capacity" 145
+		"engine capacity" 160
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -2463,6 +2493,7 @@ ship "Model 256"
 		"Reasoning Node" 3
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		# "Steering (Comet Class)" # Extra steering
 		Hyperdrive
@@ -2507,9 +2538,9 @@ ship "Model 512"
 		"heat dissipation" .42
 		"fuel capacity" 1925
 		"cargo space" 107
-		"outfit space" 994
+		"outfit space" 1027
 		"weapon capacity" 440
-		"engine capacity" 161
+		"engine capacity" 197
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -2536,6 +2567,7 @@ ship "Model 512"
 		"Reasoning Node" 3
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Stellar Class)"
 		Hyperdrive
 
