@@ -30,7 +30,7 @@ ship "Rano'erek"
 		"cargo space" 675
 		"outfit space" 802
 		"weapon capacity" 276
-		"engine capacity" 206
+		"engine capacity" 244
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -317,9 +317,9 @@ ship "'nra'ret"
 		"heat dissipation" .39
 		"fuel capacity" 3800
 		"cargo space" 50
-		"outfit space" 976
+		"outfit space" 995
 		"weapon capacity" 407
-		"engine capacity" 193
+		"engine capacity" 203
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -658,9 +658,9 @@ ship "Lor'kas Ik 577"
 		"heat dissipation" .2
 		"fuel capacity" 7650
 		"cargo space" 1375
-		"outfit space" 940
+		"outfit space" 941
 		"weapon capacity" 338
-		"engine capacity" 238
+		"engine capacity" 282
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1701,7 +1701,7 @@ ship "Tek Far 71 - Lek"
 		"heat dissipation" .39
 		"fuel capacity" 750
 		"cargo space" 36
-		"outfit space" 555
+		"outfit space" 557
 		"weapon capacity" 235
 		"engine capacity" 102
 		"lateral thruster slot" 1
@@ -1799,7 +1799,7 @@ ship "Tek Far 78 - Osk"
 		"heat dissipation" .35
 		"fuel capacity" 825
 		"cargo space" 43
-		"outfit space" 636
+		"outfit space" 639
 		"weapon capacity" 272
 		"engine capacity" 120
 		"lateral thruster slot" 1
