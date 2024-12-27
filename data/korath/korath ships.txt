@@ -28,7 +28,7 @@ ship "Rano'erek"
 		"heat dissipation" .24
 		"fuel capacity" 5475
 		"cargo space" 675
-		"outfit space" 800
+		"outfit space" 802
 		"weapon capacity" 276
 		"engine capacity" 206
 		"lateral thruster slot" 1
@@ -116,9 +116,9 @@ ship "Palavret"
 		"heat dissipation" .3
 		"fuel capacity" 1325
 		"cargo space" 175
-		"outfit space" 813
+		"outfit space" 816
 		"weapon capacity" 339
-		"engine capacity" 175
+		"engine capacity" 180
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -397,7 +397,7 @@ ship "'olofez"
 		"heat dissipation" .9
 		"outfit space" 104
 		"weapon capacity" 25
-		"engine capacity" 36
+		"engine capacity" 41
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1

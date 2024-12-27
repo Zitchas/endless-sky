@@ -379,12 +379,18 @@ outfit "Engine (Meteor Class)"
 	"thrust" 16
 	"thrusting energy" 1.35
 	"thrusting heat" 2.9
+	"lateral thrust" 15 #90%
+	"lateral thrusting energy" 1.21
+	"lateral thrusting heat" 2.6
 	"turn" 360
 	"turning energy" 0.65
 	"turning heat" 1.95
 	"flare sprite" "effect/korath flare/tiny"
 		"frame rate" 8
 	"flare sound" "plasma tiny"
+	"lateral flare sprite" "effect/korath flare/tiny"
+		"frame rate" 8
+	"lateral flare sound" "plasma tiny"
 	"steering flare sprite" "effect/korath flare/tiny"
 		"frame rate" 8
 	"steering flare sound" "plasma tiny"
