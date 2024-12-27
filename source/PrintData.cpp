@@ -189,14 +189,17 @@ namespace {
 
 				int numTurrets = 0;
 				int numGuns = 0;
+				int numPylons = 0;
 				for(auto &hardpoint : ship.Weapons())
 				{
 					if(hardpoint.IsTurret())
 						++numTurrets;
+					else if(hardpoint.IsPylon())
+						++numPylons;
 					else
 						++numGuns;
 				}
-				cout << numGuns << ',' << numTurrets << ',';
+				cout << numGuns << ',' << numTurrets << ',' << numPylons << ',';
 
 				int numFighters = ship.BaysTotal("Fighter");
 				int numDrones = ship.BaysTotal("Drone");
@@ -291,14 +294,17 @@ namespace {
 
 				int numTurrets = 0;
 				int numGuns = 0;
+				int numPylons = 0;
 				for(auto &hardpoint : ship.Weapons())
 				{
 					if(hardpoint.IsTurret())
 						++numTurrets;
+					else if(hardpoint.IsPylon())
+						++numPylons;
 					else
 						++numGuns;
 				}
-				cout << numGuns << ',' << numTurrets << ',';
+				cout << numGuns << ',' << numTurrets << ',' << numPylons << ',';
 
 				int numFighters = ship.BaysTotal("Fighter");
 				int numDrones = ship.BaysTotal("Drone");
