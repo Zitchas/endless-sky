@@ -760,8 +760,8 @@ ship "Boxwing"
 		"mass" 54
 		"drag" .65
 		"heat dissipation" .25
-		"outfit space" 45
-		"engine capacity" 28
+		"outfit space" 58
+		"engine capacity" 42
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -946,9 +946,9 @@ ship "Carrier"
 		"heat dissipation" .23
 		"fuel capacity" 2875 # will need to adjust this for carried ships
 		"cargo space" 100
-		"outfit space" 879
+		"outfit space" 944
 		"weapon capacity" 240
-		"engine capacity" 250
+		"engine capacity" 254
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -980,6 +980,7 @@ ship "Carrier"
 		"Tactical Scanner"
 		
 		"RC57 Reaction Thruster"
+		"RC54 Reaction LTC"
 		"RC42 Reaction Steering"
 		"Hyperdrive"
 

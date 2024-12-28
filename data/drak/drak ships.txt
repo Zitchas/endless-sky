@@ -51,6 +51,9 @@ ship "Archon"
 		"thrust" 120
 		"thrusting energy" 20
 		"thrusting heat" 10
+		"lateral thrust" 60
+		"lateral thrusting energy" 10
+		"lateral thrusting heat" 5
 		"turn" 2400
 		"turning energy" 10
 		"turning heat" 5

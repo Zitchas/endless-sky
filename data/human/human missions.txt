@@ -2041,6 +2041,7 @@ ship "Asteroid"
 		"automaton" 1
 		"bunks" 0
 		"thrust" 10
+		"lateral thrust" 5
 		"turn" 100
 		"thrusting energy" 1
 		"turning energy" 1

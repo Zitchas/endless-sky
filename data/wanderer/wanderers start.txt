@@ -1196,6 +1196,7 @@ ship "Carrier" "Carrier (Alpha)"
 		"Laser Rifle" 120
 		
 		`"Bondir" Atomic Thruster`
+		`"Bondir" Atomic LTC`
 		"Steering (Stellar Class)"
 		"Jump Drive"
 	
