@@ -305,7 +305,7 @@ outfit "RC42 Reaction Steering"
 	"steering flare sprite" "effect/reaction flare/large"
 		"frame rate" 0.9
 	"steering flare sound" "ion large"
-	description "While never confirmed, the nearly universal use of the Reaction line of engines has long been rumored to be the result of agressive and sometimes dubiously legal efforts by the Syndicate. When pressed, Syndicate representatives demur with statements about how the reliability and cost-effectiveness of their system speaks for itself."
+	description "While never confirmed, the nearly universal use of the Reaction line of engines has long been rumored to be the result of aggressive and sometimes dubiously legal efforts by the Syndicate. When pressed, Syndicate representatives demur with statements about how the reliability and cost-effectiveness of their system speaks for itself."
 	description "	Reaction engines are widely used and renown for their legendary reliability and ease of construction. Although superseded in every way by more modern engines, reaction engines are the cheapest to produce, and have the fewest warranty complaints. As such, they continue to be the default used in most shipyards."
 
 outfit "RC52 Reaction Steering"
