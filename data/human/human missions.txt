@@ -1332,6 +1332,7 @@ ship "Hallucination"
 		"jump drive" 1
 		"automaton" 1
 		"thrust" 30
+		"lateral thrust" 15
 		"turn" 500
 		"energy generation" 1
 	outfits

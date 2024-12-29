@@ -30,9 +30,9 @@ ship "Shale"
 		"heat dissipation" 0.73
 		"fuel capacity" 325
 		"cargo space" 54
-		"outfit space" 113
+		"outfit space" 134
 		"weapon capacity" 0
-		"engine capacity" 58
+		"engine capacity" 77
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -381,7 +381,7 @@ ship "Protolith"
 		"cargo space" 1160
 		"outfit space" 942
 		"weapon capacity" 0
-		"engine capacity" 480
+		"engine capacity" 501
 		"reverse thruster slot" 1
 		"steering slot" 2 # Extra steering not removed as this sounds like verging on a superheavy that justifies it.
 		"thruster slot" 4 # Extra thruster not removed
@@ -625,9 +625,9 @@ ship "Slate"
 		"heat dissipation" 0.73
 		"fuel capacity" 325
 		"cargo space" 81
-		"outfit space" 122
+		"outfit space" 134
 		"weapon capacity" 0
-		"engine capacity" 58
+		"engine capacity" 77
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -671,9 +671,9 @@ ship "Schist"
 		"heat dissipation" 0.5
 		"fuel capacity" 875
 		"cargo space" 140
-		"outfit space" 298
+		"outfit space" 305
 		"weapon capacity" 100
-		"engine capacity" 96
+		"engine capacity" 120
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -756,9 +756,9 @@ ship "Rhyolite"
 		"heat dissipation" 0.64
 		"fuel capacity" 350
 		"cargo space" 30
-		"outfit space" 220
+		"outfit space" 250
 		"weapon capacity" 78
-		"engine capacity" 100
+		"engine capacity" 120
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -812,9 +812,9 @@ ship "Eclogite"
 		"heat dissipation" 0.56
 		"fuel capacity" 425
 		"cargo space" 70
-		"outfit space" 285
-		"weapon capacity" 96
-		"engine capacity" 94
+		"outfit space" 305
+		"weapon capacity" 122
+		"engine capacity" 120
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -945,9 +945,9 @@ ship "Hornfel"
 		"heat dissipation" 0.38
 		"fuel capacity" 1275
 		"cargo space" 120
-		"outfit space" 508
+		"outfit space" 530
 		"weapon capacity" 240
-		"engine capacity" 94
+		"engine capacity" 120
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1080,9 +1080,9 @@ ship "Gneiss"
 		"heat dissipation" 0.22
 		"fuel capacity" 2200
 		"cargo space" 95
-		"outfit space" 841
+		"outfit space" 878
 		"weapon capacity" 504
-		"engine capacity" 150
+		"engine capacity" 188
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1295,7 +1295,7 @@ ship "Mica"
 		"cargo space" 36
 		"outfit space" 118
 		"weapon capacity" 0
-		"engine capacity" 50
+		"engine capacity" 61
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1402,7 +1402,7 @@ ship "Tridymite"
 		"cargo space" 56
 		"outfit space" 200
 		"weapon capacity" 0
-		"engine capacity" 86
+		"engine capacity" 106
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -1520,7 +1520,7 @@ ship "Feldspar"
 		"cargo space" 82
 		"outfit space" 566
 		"weapon capacity" 234
-		"engine capacity" 172
+		"engine capacity" 173
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1

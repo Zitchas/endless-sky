@@ -99,7 +99,7 @@ ship "Finch" "Finch (MZ)"
 		"hull" 1800
 		"outfit space" 140
 		"weapon capacity" 22
-		"engine capacity" 22
+		"engine capacity" 28
 	outfits
 		"Electron Beam" 2
 		
@@ -113,6 +113,7 @@ ship "Finch" "Finch (MZ)"
 		"Fission Reactor"
 		
 		"A125 Atomic Steering"
+		"AL129 Atomic LTC"
 		"A120 Atomic Thruster"
 		"Ionic Afterburner"
 	gun
@@ -828,9 +829,9 @@ ship "Ursa Polaris"
 		"tactical scan power" 99
 		"asteroid scan power" 69
 		"cargo space" 1408
-		"outfit space" 1768
+		"outfit space" 1808
 		"weapon capacity" 861
-		"engine capacity" 301
+		"engine capacity" 341
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -852,6 +853,7 @@ ship "Ursa Polaris"
 		"Systems Core (Large)" 2
 		"Thermal Repeater Rifle" 600
 		"Thruster (Stellar Class)"
+		"Lateral (Stellar Class)"
 		"Smelter-Class Thruster"
 		`"Basrem" Atomic Thruster`
 	engine 26 219 0.9
@@ -2438,6 +2440,7 @@ ship "Cicada" "Cicada (Sanujab)"
 		"Hai Diamond Regenerator"
 		"Quantum Keystone" 3
 		`"Benga" Atomic Thruster`
+		`"Benga" Atomic LTC`
 		`"Benga" Atomic Steering`
 		"Hyperdrive"
 	gun "Ion Cannon"

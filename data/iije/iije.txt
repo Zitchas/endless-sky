@@ -46,6 +46,7 @@ ship "Jje"
 		"energy generation" 4
 		
 		"thrust" 12
+		"thrust" 10
 		"flare sound" "jje"
 		"turn" 90
 		"steering flare sound" "jje"
@@ -104,6 +105,7 @@ ship "Ayym"
 		"inscrutable" 1
 		
 		"thrust" 21
+		"lateral thrust" 18
 		"flare sound" "ayym"
 		"turn" 120
 		"steering flare sound" "ayym"

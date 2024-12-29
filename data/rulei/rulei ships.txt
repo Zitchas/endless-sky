@@ -50,6 +50,10 @@ ship "vyu-Ir"
 		"thrusting energy" 20
 		"thrusting heat" 10
 		"flare sound" "impulse engine"
+		"lateral thrust" 37
+		"lateral thrusting energy" 10
+		"lateral thrusting heat" 5
+		"flare sound" "impulse engine"
 		"reverse thrust" 75
 		"reverse thrusting energy" 20
 		"reverse thrusting heat" 10
