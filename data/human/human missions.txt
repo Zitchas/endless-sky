@@ -3726,7 +3726,8 @@ ship "Vanguard" "Vanguard (Plasma Slow)"
 		"Interference Plating" 4
 		"Cargo Expansion" 3
 		"Laser Rifle" 11
-		"X3700 Ion Thruster"
+		"X2700 Ion Thruster"
+		"X3400 Ion LTC"
 		"X3200 Ion Steering"
 		"Scram Drive"
 

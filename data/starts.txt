@@ -197,7 +197,8 @@ conversation "hai intro"
 ship "Grasshopper" "Grasshopper (Hai Start)"
 	outfits
 		`"Benga" Atomic Thruster`
-		`"Biroo" Atomic Steering`
+		`"Benga" Atomic LTC`
+		`"Benga" Atomic Steering`
 		"Fuel Pod"
 		"Hai Chasm Batteries"
 		"Hai Corundum Regenerator"
@@ -265,7 +266,7 @@ start "lampyrid"
 			"fuel capacity" 850
 			"cargo space" 160
 			"outfit space" 309
-			"engine capacity" 139
+			"engine capacity" 141
 			"weapon capacity" 50
 			"reverse thruster slot" 1
 			"lateral thruster slot" 1

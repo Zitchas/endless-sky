@@ -1570,6 +1570,7 @@ ship "Heliarch Punisher" "Heliarch Punisher (Missile)"
 		"Enforcer Confrontation Gear" 40
 		
 		"Large Thrust Module" 3 # Extra thrust
+		"Large Lateral Thrust Module" 3
 		"Large Steering Module" 2
 		"Small Steering Module"
 		"Hyperdrive"
@@ -1596,6 +1597,7 @@ ship "Heliarch Punisher" "Heliarch Punisher (Pure Finishers)"
 		"Enforcer Confrontation Gear" 40
 
 		"Large Thrust Module" 3 # Extra thruster
+		"Large Lateral Thrust Module" 3
 		# "Small Thrust Module" # Extra thruster
 		"Large Steering Module" 2
 		"Hyperdrive"
@@ -1786,6 +1788,9 @@ ship "Heliarch Stalker"
 		"thrust" 4
 		"thrusting energy" 1.7
 		"thrusting heat" 11
+		"lateral thrust" 3
+		"lateral thrusting energy" 1.3
+		"lateral thrusting heat" 8.3
 		"turn" 178.8
 		"turning energy" 0.26
 		"turning heat" 1.8

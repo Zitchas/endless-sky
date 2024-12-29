@@ -46,8 +46,9 @@ ship "Jje"
 		"energy generation" 4
 		
 		"thrust" 12
-		"thrust" 10
+		"lateral thrust" 10
 		"flare sound" "jje"
+		"lateral flare sound" "jje"
 		"turn" 90
 		"steering flare sound" "jje"
 		

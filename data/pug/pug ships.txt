@@ -239,6 +239,7 @@ ship "Pug Arfecta"
 		"Pug Peacekeeping Staff" 36
 		
 		"Pug Lohmar Thruster"
+		"Pug Lohmar LTC"
 		"Pug Lohmar Steering" # Extra steering
 		"Jump Drive"
 	

@@ -2262,6 +2262,7 @@ ship "Star Queen" "Star Queen (Unarmed)"
 		"D94-YV Shield Generator"
 		"Small Radar Jammer" 3
 		"X3700 Ion Thruster"
+		"X3400 Ion LTC"
 		"X3200 Ion Steering"
 		"Hyperdrive"
 

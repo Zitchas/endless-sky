@@ -387,6 +387,7 @@ ship "Korath Dredger" "Korath Dredger (Digger)"
 		"Reverser (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Thruster (Stellar Class)"
+		"Lateral (Planetary Class)"
 		"Jump Drive"
 		"Scram Drive"
 	

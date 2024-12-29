@@ -2978,7 +2978,7 @@ ship "Mammoth"
 		"heat dissipation" .21
 		"fuel capacity" 3250
 		"cargo space" 400
-		"outfit space" 556
+		"outfit space" 559
 		"weapon capacity" 294
 		"engine capacity" 132
 		"lateral thruster slot" 1

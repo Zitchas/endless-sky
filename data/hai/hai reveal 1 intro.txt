@@ -1123,6 +1123,7 @@ ship "Geodesic Geocoris" "Geodesic Geocoris (Phylactery)"
 		"Quantum Keystone"
 		"Pulse Rifle" 14
 		`"Benga" Atomic Thruster`
+		`"Benga" Atomic LTC`
 		`"Bufaer" Atomic Steering`
 		"Jump Drive"
 		Hyperdrive
