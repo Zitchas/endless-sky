@@ -226,6 +226,7 @@ outfitter "Basic Outfits"
 	"Cargo Scanner"
 	"Local Map"
 	"Pilot's License"
+	"LD11 Lateral Ducting"
 
 outfitter "Common Outfits"
 	"Energy Blaster"

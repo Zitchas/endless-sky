@@ -1525,3 +1525,18 @@ outfit "AR120 Reverse Thruster"
 	"reverse flare sound" "atomic tiny"
 	description "For pilots who want to pull fancy tricks that most are not capable of duplicating, a reverse thruster allows a ship to accelerate backwards, without needing to turn around."
 	description "	Because a reverse thruster must be facing forwards, it must be installed in the weapon section of your ship instead of the engine section."
+
+outfit "LD11 Lateral Ducting"
+	category "Engines"
+	series "Human: Modifications"
+	index 17
+	"cost" 6000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.5
+	"mass" 5
+	"outfit space" -5
+	"engine capacity" -5
+	"flare sound" "ion tiny"
+	"lateral thrust ratio" 0.5
+	"thrust reduction ratio" 0.6
+	description "This ducting allows the ship to divert some of its forward thrust into lateral thrust. It is popular with captains who wish to avoid duplicating systems within their ship; but it does tend to result in lower overall acceleration potential."
