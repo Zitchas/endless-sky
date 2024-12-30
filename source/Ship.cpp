@@ -4976,7 +4976,7 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 				"thrusting heat" : "reverse thrusting heat");
 			if(cost > 0. && heat < cost * fabs(thrustCommand))
 			thrustCommand = copysign(heat / cost, thrustCommand);
-	
+
 			// The thrust reduction ratio is a percentage-as-decimal value that indicates how much the thrust will be reduced.
 			// It is intended to be paired with the lateral thrust ratio to create outfits that split a thruster's propulsion
 			// between pointing to the rear and to the sides. Ex. 50% to forward thrust, 50% to lateral thrust.
@@ -4993,10 +4993,9 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 				// If a reverse thrust is commanded and the capability does not
 				// exist, ignore it (do not even slow under drag).
 				isThrusting = (thrustCommand > 0.);
-				
 				isReversing = !isThrusting && attributes.Get("reverse thrust");
 				thrust = attributes.Get(isThrusting ? "thrust" : "reverse thrust");
-				
+
 				if(thrust)
 				{
 					double scale = fabs(thrustCommand);
@@ -5030,7 +5029,7 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 		double lateralRatioEnergy = 0.;
 		double lateralRatioHeat = 0.;
 		latRatio = attributes.Get("lateral thrust ratio");
-		
+
 		if(attributes.Get("lateral thrust ratio"))
 		{
 			lateralRatioThrust = latRatio * attributes.Get("thrust");

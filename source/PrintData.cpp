@@ -247,7 +247,6 @@ namespace {
 				{
 					lateralThrustRatio = attributes.Get("lateral thrust ratio");
 					lateralRatioThrust = lateralThrustRatio * attributes.Get("thrust");
-					
 				}
 				lateralCombinedThrust = attributes.Get("lateral thrust") + lateralRatioThrust;
 
@@ -279,7 +278,7 @@ namespace {
 				cout << lateralThrustRatio << ',';
 				cout << thrustReductionPercent << ',';
 				cout << (attributes.Get("drag") ? (60. * attributes.Get("thrust") / attributes.Get("drag")) : 0) << ',';
-	
+
 				cout << 3600. * attributes.Get("thrust") * thrustReductionRatio / mass << ',';
 				cout << 3600. * lateralCombinedThrust / mass << ',';
 				cout << 60. * attributes.Get("turn") / mass << ',';
