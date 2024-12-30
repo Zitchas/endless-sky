@@ -736,11 +736,23 @@ void ShipInfoDisplay::DrawShipManeuverStats(const Ship &ship, const Rectangle & 
 	// currentMass /= reduction;
 	fullMass /= reduction;
 
+	double lateralRatioThrust = 0.;
+	double lateralRatioEnergy = 0.;
+	double lateralRatioHeat = 0.;
+	double lateralCombinedThrust = 0.;
+	if(attributes.Get("lateral thrust ratio"))
+	{
+		lateralRatioThrust = attributes.Get("lateral thrust ratio") * attributes.Get("thrust");
+		lateralRatioEnergy = attributes.Get("lateral thrust ratio") * attributes.Get("thrusting energy");
+		lateralRatioHeat = attributes.Get("lateral thrust ratio") * attributes.Get("thrusting heat");
+	}
+	double lateralCombinedThrust = (attributes.Get("lateral thrust") + lateralRatioThrust);
+
 	double baseAccel = 3600. * attributes.Get("thrust") * (1. + attributes.Get("acceleration multiplier"));
 	double afterburnerAccel = 3600. * attributes.Get("afterburner thrust") * (1. +
 		attributes.Get("acceleration multiplier"));
 	double reverseAccel = 3600. * attributes.Get("reverse thrust") * (1. + attributes.Get("acceleration multiplier"));
-	double lateralAccel = 3600. * attributes.Get("lateral thrust") * (1. + attributes.Get("acceleration multiplier"));
+	double lateralAccel = 3600. * lateralCombinedThrust * (1. + attributes.Get("acceleration multiplier"));
 
 	double baseTurn = (60. * attributes.Get("turn") * (1. + attributes.Get("turn multiplier"))) / emptyMass;
 	double minTurn = (60. * attributes.Get("turn") * (1. + attributes.Get("turn multiplier"))) / fullMass;

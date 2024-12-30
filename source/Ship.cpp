@@ -5011,13 +5011,23 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 		}
 		// Lateral Thrust functionality.
 		// This pulls "lateral thrust" from the ship definition,
+		// WIP: also needs to pull the ratio, if one is present. This is restoring the previous ratio functionality.
 		double latThrustCommand = commands.LateralThrust();
 		double latThrust = 0.;
+		double lateralRatioThrust = 0.;
+		double lateralRatioEnergy = 0.;
+		double lateralRatioHeat = 0.;
+		if(attributes.Get("lateral thrust ratio"))
+		{
+			lateralRatioThrust = attributes.Get("lateral thrust ratio") * attributes.Get("thrust");
+			lateralRatioEnergy = attributes.Get("lateral thrust ratio") * attributes.Get("thrusting energy");
+			lateralRatioHeat = attributes.Get("lateral thrust ratio") * attributes.Get("thrusting heat");
+		}
 
 		if(latThrustCommand)
 		{
 			// Check if we are able to apply this thrust.
-			double cost = attributes.Get("lateral thrusting energy");
+			double cost = attributes.Get("lateral thrusting energy") + lateralRatioEnergy;
 			if(energy < cost)
 				latThrustCommand *= energy / cost;
 
@@ -5026,12 +5036,12 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 				// These area used for lateral thrusting flares.
 				isLatThrusting = true;
 				lateralDirection = latThrustCommand;
-				latThrust = attributes.Get("lateral thrust");
+				latThrust = attributes.Get("lateral thrust") + lateralRatioThrust;
 				if(latThrust)
 				{
 					double scale = fabs(latThrustCommand);
 					energy -= scale * cost;
-					heat += scale * attributes.Get("lateral thrusting heat");
+					heat += scale * (attributes.Get("lateral thrusting heat") + lateralRatioHeat);
 					Point lateral(-angle.Unit().Y(), angle.Unit().X());
 					acceleration += lateral * (latThrustCommand * latThrust / mass);
 				}
