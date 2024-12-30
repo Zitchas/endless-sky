@@ -4975,17 +4975,28 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 			cost = -attributes.Get((thrustCommand > 0.) ?
 				"thrusting heat" : "reverse thrusting heat");
 			if(cost > 0. && heat < cost * fabs(thrustCommand))
-				thrustCommand = copysign(heat / cost, thrustCommand);
+			thrustCommand = copysign(heat / cost, thrustCommand);
+	
+			// The thrust reduction ratio is a percentage-as-decimal value that indicates how much the thrust will be reduced.
+			// It is intended to be paired with the lateral thrust ratio to create outfits that split a thruster's propulsion
+			// between pointing to the rear and to the sides. Ex. 50% to forward thrust, 50% to lateral thrust.
+			// The two are separate values, however, to give content creators full control. As such, for instance, it is fully
+			// acceptable to have lateral thrust ratio of 0.4 (40%) and a thrust reduction ratio of 0.5 (50%) which would
+			// be a situation where 50% of the thrust is completely diverted into lateral thrust, but with a 10% inefficiency.
+			double thrustReductionRatio = 0.;
+			thrustReductionRatio = 1. - attributes.Get("thrust reduction ratio");
 
-			thrustMagnitude = thrustCommand * slowMultiplier;
+			thrustMagnitude = thrustCommand * slowMultiplier * thrustReductionRatio;
 
 			if(thrustCommand)
 			{
 				// If a reverse thrust is commanded and the capability does not
 				// exist, ignore it (do not even slow under drag).
 				isThrusting = (thrustCommand > 0.);
+				
 				isReversing = !isThrusting && attributes.Get("reverse thrust");
 				thrust = attributes.Get(isThrusting ? "thrust" : "reverse thrust");
+				
 				if(thrust)
 				{
 					double scale = fabs(thrustCommand);
@@ -5011,17 +5022,20 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 		}
 		// Lateral Thrust functionality.
 		// This pulls "lateral thrust" from the ship definition,
-		// WIP: also needs to pull the ratio, if one is present. This is restoring the previous ratio functionality.
+		// This also pulls the lateral thrust ratio, if one is present, as well as the thrust reduction ratio.
 		double latThrustCommand = commands.LateralThrust();
 		double latThrust = 0.;
+		double latRatio = 0.;
 		double lateralRatioThrust = 0.;
 		double lateralRatioEnergy = 0.;
 		double lateralRatioHeat = 0.;
+		latRatio = attributes.Get("lateral thrust ratio");
+		
 		if(attributes.Get("lateral thrust ratio"))
 		{
-			lateralRatioThrust = attributes.Get("lateral thrust ratio") * attributes.Get("thrust");
-			lateralRatioEnergy = attributes.Get("lateral thrust ratio") * attributes.Get("thrusting energy");
-			lateralRatioHeat = attributes.Get("lateral thrust ratio") * attributes.Get("thrusting heat");
+			lateralRatioThrust = latRatio * attributes.Get("thrust");
+			lateralRatioEnergy = latRatio * attributes.Get("thrusting energy");
+			lateralRatioHeat = latRatio * attributes.Get("thrusting heat");
 		}
 
 		if(latThrustCommand)

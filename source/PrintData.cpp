@@ -236,6 +236,30 @@ namespace {
 				cout << DataWriter::Quote(attributes.Category()) << ',';
 				cout << ship.Cost() << ',';
 
+				// This section checks to see if a ship or an outfit on that ship has the lateral thrust ratio attribute.
+				// If it does, it will get that amount and add it to the "lateralCombinedThrust" variable.
+				double lateralRatioThrust = 0.; // This is the thrust received via the ratio.
+				double lateralThrustRatio = 0.; // This is the ratio itself.
+				double lateralCombinedThrust = 0.;
+				double thrustReductionRatio = 0.;
+				double thrustReductionPercent = 0.;
+				if(attributes.Get("lateral thrust ratio"))
+				{
+					lateralThrustRatio = attributes.Get("lateral thrust ratio");
+					lateralRatioThrust = lateralThrustRatio * attributes.Get("thrust");
+					
+				}
+				lateralCombinedThrust = attributes.Get("lateral thrust") + lateralRatioThrust;
+
+				// The thrust reduction ratio is a percentage-as-decimal value that indicates how much the thrust will be reduced.
+				// It is intended to be paired with the lateral thrust ratio to create outfits that split a thruster's propulsion
+				// between pointing to the rear and to the sides. Ex. 50% to forward thrust, 50% to lateral thrust.
+				// The two are separate values, however, to give content creators full control. As such, for instance, it is fully
+				// acceptable to have lateral thrust ratio of 0.4 (40%) and a thrust reduction ratio of 0.5 (50%) which would
+				// be a situation where 50% of the thrust is completely diverted into lateral thrust, but with a 10% inefficiency.
+				thrustReductionPercent = attributes.Get("thrust reduction ratio");
+				thrustReductionRatio = 1. - thrustReductionPercent;
+
 				auto mass = attributes.Mass() ? attributes.Mass() : 1.;
 				cout << ship.MaxShields() << ',';
 				cout << ship.MaxHull() << ',';
@@ -252,9 +276,12 @@ namespace {
 				cout << ship.BaseAttributes().Get("reverse thruster slot") << ',';
 				cout << ship.BaseAttributes().Get("steering slot") << ',';
 				cout << ship.BaseAttributes().Get("thruster slot") << ',';
+				cout << lateralThrustRatio << ',';
+				cout << thrustReductionPercent << ',';
 				cout << (attributes.Get("drag") ? (60. * attributes.Get("thrust") / attributes.Get("drag")) : 0) << ',';
-				cout << 3600. * attributes.Get("thrust") / mass << ',';
-				cout << 3600. * attributes.Get("lateral thrust") / mass << ',';
+	
+				cout << 3600. * attributes.Get("thrust") * thrustReductionRatio / mass << ',';
+				cout << 3600. * lateralCombinedThrust / mass << ',';
 				cout << 60. * attributes.Get("turn") / mass << ',';
 
 				double energyConsumed = attributes.Get("energy consumption")

@@ -65,6 +65,7 @@ namespace {
 		{"thrusting disruption", 0.},
 		{"thrusting slowing", 0.},
 		{"lateral thrust ratio", 0.},
+		{"lateral thrust ratio", 0.},
 
 		{"turning shields", 0.},
 		{"turning hull", 0.},

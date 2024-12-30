@@ -736,13 +736,24 @@ void ShipInfoDisplay::DrawShipManeuverStats(const Ship &ship, const Rectangle & 
 	// currentMass /= reduction;
 	fullMass /= reduction;
 
+	// This section checks to see if a ship or an outfit on that ship has the lateral thrust ratio attribute.
+	// If it does, it will get that amount and add it to the "lateralCombinedThrust" variable.
 	double lateralRatioThrust = 0.;
 	double lateralCombinedThrust = 0.;
+	double thrustReductionRatio = 0.;
 	if(attributes.Get("lateral thrust ratio"))
 		lateralRatioThrust = attributes.Get("lateral thrust ratio") * attributes.Get("thrust");
-	lateralCombinedThrust = (attributes.Get("lateral thrust") + lateralRatioThrust);
+	lateralCombinedThrust = attributes.Get("lateral thrust") + lateralRatioThrust;
 
-	double baseAccel = 3600. * attributes.Get("thrust") * (1. + attributes.Get("acceleration multiplier"));
+	// The thrust reduction ratio is a percentage-as-decimal value that indicates how much the thrust will be reduced.
+	// It is intended to be paired with the lateral thrust ratio to create outfits that split a thruster's propulsion
+	// between pointing to the rear and to the sides. Ex. 50% to forward thrust, 50% to lateral thrust.
+	// The two are separate values, however, to give content creators full control. As such, for instance, it is fully
+	// acceptable to have lateral thrust ratio of 0.4 (40%) and a thrust reduction ratio of 0.5 (50%) which would
+	// be a situation where 50% of the thrust is completely diverted into lateral thrust, but with a 10% inefficiency.
+	thrustReductionRatio = 1. - attributes.Get("thrust reduction ratio");
+
+	double baseAccel = 3600. * attributes.Get("thrust") * thrustReductionRatio * (1. + attributes.Get("acceleration multiplier"));
 	double afterburnerAccel = 3600. * attributes.Get("afterburner thrust") * (1. +
 		attributes.Get("acceleration multiplier"));
 	double reverseAccel = 3600. * attributes.Get("reverse thrust") * (1. + attributes.Get("acceleration multiplier"));
