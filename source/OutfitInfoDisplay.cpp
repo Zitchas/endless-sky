@@ -129,9 +129,6 @@ namespace {
 		{"turning fuel", 0},
 		{"turning heat", 0},
 
-		{"lateral thrust ratio", 0},
-		{"thrust reduction ratio", 0},
-
 		{"thrust", 1},
 		{"reverse thrust", 1},
 		{"lateral thrust", 1},

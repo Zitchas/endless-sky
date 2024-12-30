@@ -1529,7 +1529,7 @@ outfit "AR120 Reverse Thruster"
 outfit "LD11 Lateral Ducting"
 	category "Engines"
 	series "Human: Modifications"
-	index 17
+	index 2
 	"cost" 6000
 	thumbnail "outfit/blue screwdriver"
 	"engine mod space" -0.5
