@@ -753,7 +753,7 @@ void ShipInfoDisplay::DrawShipManeuverStats(const Ship &ship, const Rectangle & 
 	// acceptable to have lateral thrust ratio of 0.4 (40%) and a thrust reduction ratio of 0.5 (50%) which would
 	// be a situation where 50% of the thrust is completely diverted into lateral thrust, but with a 10% inefficiency.
 	thrustReductionRatio = 1. - attributes.Get("thrust reduction ratio");
-	thrustCombinedModifiers = thrustReductionRatio * ( 1. + attributes.Get("acceleration multiplier"));
+	thrustCombinedModifiers = thrustReductionRatio * (1. + attributes.Get("acceleration multiplier"));
 
 	double baseAccel = 3600. * attributes.Get("thrust") * thrustCombinedModifiers;
 	double afterburnerAccel = 3600. * attributes.Get("afterburner thrust") * (1. +
