@@ -751,7 +751,7 @@ void ShipInfoDisplay::DrawShipManeuverStats(const Ship &ship, const Rectangle & 
 	// The "/30" is an arbitrary value used to reduce the size of the turn amount, as turn seems to use different
 	// units than thrust. 30 was picked because dividing the largest turn amount of human steering by it gave a result
 	// that was close to the largest thrust amount of any human thruster; and dividing the weakest human steering by it
-	// gave a result that was very close to the weakest human thruster. 
+	// gave a result that was very close to the weakest human thruster.
 	if(attributes.Get("lateral turn ratio"))
 		lateralRatioTurn = attributes.Get("lateral turn ratio") * attributes.Get("turn") / 25;
 	lateralCombinedThrust = attributes.Get("lateral thrust") + lateralRatioThrust + lateralRatioTurn;
