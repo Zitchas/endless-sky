@@ -5051,7 +5051,7 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 		latRatioTurn = attributes.Get("lateral turn ratio");
 		if(attributes.Get("lateral turn ratio"))
 		{
-			lateralRatioTurn = latRatioTurn * (attributes.Get("turn") / 30);
+			lateralRatioTurn = latRatioTurn * (attributes.Get("turn") / 25);
 			latRatioTurnEnergy = latRatioTurn* attributes.Get("turn energy");
 			latRatioTurnHeat = latRatioTurn * attributes.Get("turn heat");
 		}

@@ -753,7 +753,7 @@ void ShipInfoDisplay::DrawShipManeuverStats(const Ship &ship, const Rectangle & 
 	// that was close to the largest thrust amount of any human thruster; and dividing the weakest human steering by it
 	// gave a result that was very close to the weakest human thruster. 
 	if(attributes.Get("lateral turn ratio"))
-		lateralRatioTurn = attributes.Get("lateral turn ratio") * attributes.Get("turn") / 30;
+		lateralRatioTurn = attributes.Get("lateral turn ratio") * attributes.Get("turn") / 25;
 	lateralCombinedThrust = attributes.Get("lateral thrust") + lateralRatioThrust + lateralRatioTurn;
 
 	// The thrust reduction ratio is a percentage-as-decimal value that indicates how much the thrust will be reduced.
