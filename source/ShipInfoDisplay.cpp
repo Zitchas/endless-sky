@@ -736,15 +736,25 @@ void ShipInfoDisplay::DrawShipManeuverStats(const Ship &ship, const Rectangle & 
 	// currentMass /= reduction;
 	fullMass /= reduction;
 
-	// This section checks to see if a ship or an outfit on that ship has the lateral thrust ratio attribute.
-	// If it does, it will get that amount and add it to the "lateralCombinedThrust" variable.
+	// This section checks to see if a ship or an outfit on that ship has the lateral thrust ratio attribute
+	// or the lateral steering ratio attribute. If it does, it will get that amount and add it to
+	// the "lateralCombinedThrust" variable.
 	double lateralRatioThrust = 0.;
+	double lateralRatioTurn = 0.;
 	double lateralCombinedThrust = 0.;
 	double thrustReductionRatio = 0.;
+	double turnReductionRatio = 0.;
 	double thrustCombinedModifiers = 0.;
+	double turnCombinedModifiers = 0.;
 	if(attributes.Get("lateral thrust ratio"))
 		lateralRatioThrust = attributes.Get("lateral thrust ratio") * attributes.Get("thrust");
-	lateralCombinedThrust = attributes.Get("lateral thrust") + lateralRatioThrust;
+	// The "/30" is an arbitrary value used to reduce the size of the turn amount, as turn seems to use different
+	// units than thrust. 30 was picked because dividing the largest turn amount of human steering by it gave a result
+	// that was close to the largest thrust amount of any human thruster; and dividing the weakest human steering by it
+	// gave a result that was very close to the weakest human thruster. 
+	if(attributes.Get("lateral turn ratio"))
+		lateralRatioTurn = attributes.Get("lateral turn ratio") * attributes.Get("turn") / 30;
+	lateralCombinedThrust = attributes.Get("lateral thrust") + lateralRatioThrust + lateralRatioTurn;
 
 	// The thrust reduction ratio is a percentage-as-decimal value that indicates how much the thrust will be reduced.
 	// It is intended to be paired with the lateral thrust ratio to create outfits that split a thruster's propulsion
@@ -752,8 +762,12 @@ void ShipInfoDisplay::DrawShipManeuverStats(const Ship &ship, const Rectangle & 
 	// The two are separate values, however, to give content creators full control. As such, for instance, it is fully
 	// acceptable to have lateral thrust ratio of 0.4 (40%) and a thrust reduction ratio of 0.5 (50%) which would
 	// be a situation where 50% of the thrust is completely diverted into lateral thrust, but with a 10% inefficiency.
+	// A content creator could also use it to simulate damage or hinderance to the player. For instance, giving them
+	// an outfit called "gummed up fuel" that has "thrust reduction ratio 0.1 to give them a 10% thrust penalty.
 	thrustReductionRatio = 1. - attributes.Get("thrust reduction ratio");
 	thrustCombinedModifiers = thrustReductionRatio * (1. + attributes.Get("acceleration multiplier"));
+	turnReductionRatio = 1. - attributes.Get("turn reduction ratio");
+	turnCombinedModifiers = turnReductionRatio * (1. + attributes.Get("turn multiplier"));
 
 	double baseAccel = 3600. * attributes.Get("thrust") * thrustCombinedModifiers;
 	double afterburnerAccel = 3600. * attributes.Get("afterburner thrust") * (1. +
@@ -761,8 +775,8 @@ void ShipInfoDisplay::DrawShipManeuverStats(const Ship &ship, const Rectangle & 
 	double reverseAccel = 3600. * attributes.Get("reverse thrust") * (1. + attributes.Get("acceleration multiplier"));
 	double lateralAccel = 3600. * lateralCombinedThrust * (1. + attributes.Get("acceleration multiplier"));
 
-	double baseTurn = (60. * attributes.Get("turn") * (1. + attributes.Get("turn multiplier"))) / emptyMass;
-	double minTurn = (60. * attributes.Get("turn") * (1. + attributes.Get("turn multiplier"))) / fullMass;
+	double baseTurn = (60. * attributes.Get("turn") * turnCombinedModifiers) / emptyMass;
+	double minTurn = (60. * attributes.Get("turn") * turnCombinedModifiers) / fullMass;
 
 	CheckHover(table, "max speed (w/AB):");
 	table.DrawTruncatedPair("max speed (w/AB):", dim, Format::Number(60. * attributes.Get("thrust") / ship.Drag()) + " (" +

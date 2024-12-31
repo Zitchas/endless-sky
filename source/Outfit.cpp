@@ -66,6 +66,8 @@ namespace {
 		{"thrusting slowing", 0.},
 		{"lateral thrust ratio", 0.},
 		{"thrust reduction ratio", 0.},
+		{"lateral turn ratio", 0.},
+		{"turn reduction ratio", 0.},
 
 		{"turning shields", 0.},
 		{"turning hull", 0.},

@@ -227,6 +227,7 @@ outfitter "Basic Outfits"
 	"Local Map"
 	"Pilot's License"
 	"LD11 Lateral Ducting"
+	"LD22 Lateral Reconfiguration"
 
 outfitter "Common Outfits"
 	"Energy Blaster"

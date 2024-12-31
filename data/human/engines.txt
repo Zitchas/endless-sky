@@ -1529,7 +1529,7 @@ outfit "AR120 Reverse Thruster"
 outfit "LD11 Lateral Ducting"
 	category "Engines"
 	series "Human: Modifications"
-	index 2
+	index 1
 	"cost" 6000
 	thumbnail "outfit/blue screwdriver"
 	"engine mod space" -0.5
@@ -1540,3 +1540,17 @@ outfit "LD11 Lateral Ducting"
 	"lateral thrust ratio" 0.5
 	"thrust reduction ratio" 0.6
 	description "This ducting allows the ship to divert some of its forward thrust into lateral thrust. It is popular with captains who wish to avoid duplicating systems within their ship; but it does tend to result in lower overall acceleration potential."
+
+outfit "LD22 Lateral Reconfiguration"
+	category "Engines"
+	series "Human: Modifications"
+	index 1
+	"cost" 6000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.2
+	"mass" 5
+	"outfit space" -5
+	"engine capacity" -5
+	"flare sound" "ion tiny"
+	"lateral turn ratio" 1
+	description "This ducting allows the ship to divert some of its steering thrust into lateral thrust. It is popular with captains who wish to avoid duplicating systems within their ship."
