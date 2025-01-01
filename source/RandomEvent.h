@@ -67,3 +67,4 @@ bool RandomEvent<T>::CanTrigger(const ConditionsStore &tester) const
 {
 	return conditions.IsEmpty() || conditions.Test(tester);
 }
+
