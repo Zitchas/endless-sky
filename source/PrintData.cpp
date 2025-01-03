@@ -263,7 +263,7 @@ namespace {
 				thrustReductionPercent = attributes.Get("thrust reduction ratio");
 				thrustReductionRatio = 1. - thrustReductionPercent;
 				reducedThrust = thrustReductionRatio * attributes.Get("thrust");
-				
+
 				turnReductionPercent = attributes.Get("turn reduction ratio");
 				turnReductionRatio = 1. - turnReductionPercent;
 				reducedTurn = turnReductionRatio * attributes.Get("turn");
