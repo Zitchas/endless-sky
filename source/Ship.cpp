@@ -3276,8 +3276,9 @@ double Ship::TrueTurnRate() const
 double Ship::Acceleration() const
 {
 	double thrust = attributes.Get("thrust");
+	double thrustReductionRatio = 1 - attributes.Get("thrust reduction ratio");
 	return (thrust ? thrust : attributes.Get("afterburner thrust")) / InertialMass()
-		* (1. + attributes.Get("acceleration multiplier"));
+		* (1. + attributes.Get("acceleration multiplier")) * thrustReductionRatio;
 }
 
 
@@ -4979,7 +4980,7 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 			cost = -attributes.Get((thrustCommand > 0.) ?
 				"thrusting heat" : "reverse thrusting heat");
 			if(cost > 0. && heat < cost * fabs(thrustCommand))
-			thrustCommand = copysign(heat / cost, thrustCommand);
+				thrustCommand = copysign(heat / cost, thrustCommand);
 
 			// The thrust reduction ratio is a percentage-as-decimal value that indicates how much the thrust will be reduced.
 			// It is intended to be paired with the lateral thrust ratio to create outfits that split a thruster's propulsion

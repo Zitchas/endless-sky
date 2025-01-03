@@ -259,7 +259,9 @@ void ShipInfoDisplay::UpdateAttributes(const Ship &ship, const PlayerInfo &playe
 
 	double fullMass = emptyMass + attributes.Get("cargo space");
 	isGeneric &= (fullMass != emptyMass);
-	double forwardThrust = attributes.Get("thrust") ? attributes.Get("thrust") : attributes.Get("afterburner thrust");
+	double thrustModified = 0.;
+	thrustModified = attributes.Get("thrust") * (1 - attributes.Get("thrust reduction ratio"));
+	double forwardThrust = thrustModified ? thrustModified : attributes.Get("afterburner thrust");
 	attributeLabels.push_back(string());
 	attributeValues.push_back(string());
 	attributesHeight += 10;
@@ -748,7 +750,7 @@ void ShipInfoDisplay::DrawShipManeuverStats(const Ship &ship, const Rectangle & 
 	double turnCombinedModifiers = 0.;
 	if(attributes.Get("lateral thrust ratio"))
 		lateralRatioThrust = attributes.Get("lateral thrust ratio") * attributes.Get("thrust");
-	// The "/30" is an arbitrary value used to reduce the size of the turn amount, as turn seems to use different
+	// The "/25" is an arbitrary value used to reduce the size of the turn amount, as turn seems to use different
 	// units than thrust. 30 was picked because dividing the largest turn amount of human steering by it gave a result
 	// that was close to the largest thrust amount of any human thruster; and dividing the weakest human steering by it
 	// gave a result that was very close to the weakest human thruster.

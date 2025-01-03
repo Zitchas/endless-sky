@@ -243,6 +243,10 @@ namespace {
 				double lateralCombinedThrust = 0.;
 				double thrustReductionRatio = 0.;
 				double thrustReductionPercent = 0.;
+				double reducedThrust = 0.;
+				double turnReductionRatio = 0.;
+				double turnReductionPercent = 0.;
+				double reducedTurn = 0.;
 				if(attributes.Get("lateral thrust ratio"))
 				{
 					lateralThrustRatio = attributes.Get("lateral thrust ratio");
@@ -258,6 +262,11 @@ namespace {
 				// be a situation where 50% of the thrust is completely diverted into lateral thrust, but with a 10% inefficiency.
 				thrustReductionPercent = attributes.Get("thrust reduction ratio");
 				thrustReductionRatio = 1. - thrustReductionPercent;
+				reducedThrust = thrustReductionRatio * attributes.Get("thrust");
+				
+				turnReductionPercent = attributes.Get("turn reduction ratio");
+				turnReductionRatio = 1. - turnReductionPercent;
+				reducedTurn = turnReductionRatio * attributes.Get("turn");
 
 				auto mass = attributes.Mass() ? attributes.Mass() : 1.;
 				cout << ship.MaxShields() << ',';
@@ -277,11 +286,11 @@ namespace {
 				cout << ship.BaseAttributes().Get("thruster slot") << ',';
 				cout << lateralThrustRatio << ',';
 				cout << thrustReductionPercent << ',';
-				cout << (attributes.Get("drag") ? (60. * attributes.Get("thrust") / attributes.Get("drag")) : 0) << ',';
+				cout << (attributes.Get("drag") ? (60. * reducedThrust / attributes.Get("drag")) : 0) << ',';
 
-				cout << 3600. * attributes.Get("thrust") * thrustReductionRatio / mass << ',';
+				cout << 3600. * reducedThrust / mass << ',';
 				cout << 3600. * lateralCombinedThrust / mass << ',';
-				cout << 60. * attributes.Get("turn") / mass << ',';
+				cout << 60. * reducedTurn / mass << ',';
 
 				double energyConsumed = attributes.Get("energy consumption")
 					+ max(attributes.Get("thrusting energy"), attributes.Get("reverse thrusting energy"))
