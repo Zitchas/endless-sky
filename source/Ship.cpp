@@ -3260,8 +3260,9 @@ double Ship::InertialMass() const
 
 double Ship::TurnRate() const
 {
+	double turnReductionRatio = 1. - attributes.Get("turn reduction ratio");
 	return attributes.Get("turn") / InertialMass()
-		* (1. + attributes.Get("turn multiplier"));
+		* (1. + attributes.Get("turn multiplier")) * turnReductionRatio;
 }
 
 
