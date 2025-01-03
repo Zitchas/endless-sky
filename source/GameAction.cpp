@@ -380,6 +380,7 @@ const vector<ShipManager> &GameAction::Ships() const noexcept
 // Perform the specified tasks.
 void GameAction::Do(PlayerInfo &player, UI *ui, const Mission *caller) const
 {
+	// Log entries
 	if(!logText.empty())
 		player.AddLogEntry(logText);
 	for(auto &&it : specialLogText)
@@ -396,15 +397,19 @@ void GameAction::Do(PlayerInfo &player, UI *ui, const Mission *caller) const
 
 	// If multiple outfits, ships are being transferred, first remove the ships,
 	// then the outfits, before adding any new ones.
+	// Removing ships.
 	for(auto &&it : giftShips)
 		if(!it.Giving())
 			it.Do(player);
+	// Take outfits.
 	for(auto &&it : giftOutfits)
 		if(it.second < 0)
 			DoGift(player, it.first, it.second, ui);
+	// Give outfits.
 	for(auto &&it : giftOutfits)
 		if(it.second > 0)
 			DoGift(player, it.first, it.second, ui);
+	// Give ships.
 	for(auto &&it : giftShips)
 		if(it.Giving())
 			it.Do(player);
@@ -425,14 +430,17 @@ void GameAction::Do(PlayerInfo &player, UI *ui, const Mission *caller) const
 		// then this action won't offer, so MissionAction payment behavior
 		// is unchanged.
 	}
+	// giving the player a fine.
 	if(fine)
 		player.Accounts().AddFine(fine);
 	for(const auto &debtEntry : debt)
 		player.Accounts().AddDebt(debtEntry.amount, debtEntry.interest, debtEntry.term);
 
+	// Trigger events.
 	for(const auto &it : events)
 		player.AddEvent(*it.first, player.GetDate() + it.second.first);
 
+	// Mark and unmark systems.
 	for(const System *system : mark)
 		caller->Mark(system);
 	for(const System *system : unmark)
