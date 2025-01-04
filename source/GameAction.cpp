@@ -226,6 +226,24 @@ void GameAction::LoadSingle(const DataNode &child)
 		fail.insert(child.Token(1));
 	else if(key == "fail")
 		failCaller = true;
+	else if(key == "attributes")
+	{
+		// Current expected format is attributes add/set <attribute name> <value>
+		if(child.size == 4)
+		{
+			if(child.Token(1) == "add")
+			{
+				double valueChange = static_cast<double>(child.Value(3));
+				modifyAttributes[Get(child.Token(2))] = valueChange;
+			}
+		}
+		else if(child.size > 4)
+			child.PrintTrace("Error: Skipping \"attributes\" as >4 values is not yet supported:");
+		else
+			child.PrintTrace("Error: Skipping invalid values for \"attributes\":");
+		/*else if(child.Token(1) == "set")*/
+		/* < code to put the attributes into the set map, to be done after the add is working > ;*/
+	}
 	else
 		conditions.Add(child);
 }
@@ -373,6 +391,13 @@ const map<const Outfit *, int> &GameAction::Outfits() const noexcept
 const vector<ShipManager> &GameAction::Ships() const noexcept
 {
 	return giftShips;
+}
+
+
+
+const map<std::string, double> &GameAction::ModifyAttributes() const noexcept
+{
+	return modifyAttributes;
 }
 
 
