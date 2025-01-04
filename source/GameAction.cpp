@@ -229,7 +229,7 @@ void GameAction::LoadSingle(const DataNode &child)
 	else if(key == "attributes")
 	{
 		// Current expected format is attributes add/set <attribute name> <value>
-		if(child.size == 4)
+		if(child.Size == 4)
 		{
 			if(child.Token(1) == "add")
 			{
@@ -237,7 +237,7 @@ void GameAction::LoadSingle(const DataNode &child)
 				modifyAttributes[Get(child.Token(2))] = valueChange;
 			}
 		}
-		else if(child.size > 4)
+		else if(child.Size > 4)
 			child.PrintTrace("Error: Skipping \"attributes\" as >4 values is not yet supported:");
 		else
 			child.PrintTrace("Error: Skipping invalid values for \"attributes\":");
