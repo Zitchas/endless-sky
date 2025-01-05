@@ -5111,3 +5111,20 @@ mission "Banned Syndicate Items [4]"
 	on complete
 		payment 40000 170
 		dialog phrase "generic passenger dropoff payment"
+
+
+
+mission "AAA Outfit Give Testing 9"
+	name "AAA Outfit Give Testing v9"
+	description "Testing mission v9!"
+	job
+	repeat
+	source
+	on accept
+		conversation
+			`Test text v9`
+
+	on complete
+		attributes add hull 500
+		payment 500
+		dialog `v9`
