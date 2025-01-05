@@ -243,7 +243,7 @@ void GameAction::LoadSingle(const DataNode &child)
 			child.PrintTrace("Error: Skipping \"attributes\" as >4 values is not yet supported:");
 		else
 			child.PrintTrace("Error: Skipping invalid values for \"attributes\":");
-		//else if(child.Token(1) == "set")
+		// else if(child.Token(1) == "set")
 		// < code to put the attributes into the set map, to be done after the add is working > ;
 	}
 	else
