@@ -236,7 +236,7 @@ void GameAction::LoadSingle(const DataNode &child)
 				double valueChange = static_cast<double>(child.Value(3));
 				string attributeTarget = child.Token(2);
 				child.PrintTrace("Error: Test Data output: " + attributeTarget + to_string(valueChange));
-				// modifyAttributes[Get(child.Token(2))] = valueChange;
+				modifyAttributes[child.Token(2)] = valueChange; // giftOutfits[GameData::Outfits().Get(child.Token(1))] = count;
 			}
 		}
 		else if(child.Size() > 4)
