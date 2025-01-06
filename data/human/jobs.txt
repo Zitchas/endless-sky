@@ -5114,17 +5114,18 @@ mission "Banned Syndicate Items [4]"
 
 
 
-mission "AAA Outfit Give Testing 9"
-	name "AAA Outfit Give Testing v9"
-	description "Testing mission v9!"
+mission "AAA Outfit Give Testing 11"
+	name "AAA Outfit Give Testing v11"
+	description "Testing mission v11!"
 	job
 	repeat
 	source
 	on accept
 		conversation
-			`Test text v9`
+			`Test text v11`
 
 	on complete
 		attributes add hull 500
 		payment 500
-		dialog `v9`
+		outfit "Supercapacitor"
+		dialog `Concluding v11`

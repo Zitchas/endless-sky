@@ -236,7 +236,7 @@ void GameAction::LoadSingle(const DataNode &child)
 				double valueChange = static_cast<double>(child.Value(3));
 				string attributeTarget = child.Token(2);
 				child.PrintTrace("Error: Test Data output: " + attributeTarget + to_string(valueChange));
-				modifyAttributes[child.Token(2)] = valueChange; // giftOutfits[GameData::Outfits().Get(child.Token(1))] = count;
+				modifyAttributes[child.Token(2)] = valueChange;
 			}
 		}
 		else if(child.Size() > 4)
@@ -321,6 +321,8 @@ void GameAction::Save(DataWriter &out) const
 		else
 			out.Write("music", music.value());
 	}
+	for(auto &&it : modifyAttributes)
+		out.Write("attributes add", it.first, it.second);
 
 	conditions.Save(out);
 }
