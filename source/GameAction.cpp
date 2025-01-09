@@ -250,8 +250,8 @@ void GameAction::LoadSingle(const DataNode &child)
 			{
 				double valueChange = static_cast<double>(child.Value(3));
 				string attributeTarget = child.Token(2);
+				modifyAttributes[attributeTarget] = valueChange;
 				child.PrintTrace("Trace: Test Data output L253: " + attributeTarget + " " + to_string(valueChange));
-				modifyAttributes[child.Token(2)] = valueChange;
 			}
 		}
 		else if(child.Size() > 4)
@@ -336,19 +336,9 @@ void GameAction::Save(DataWriter &out) const
 		else
 			out.Write("music", music.value());
 	}
-	out.Write("log");
-	out.BeginChild();
-	{
-		out.Write("l342, right after the attributes add write line.");
-	}
 	for(auto &&it : modifyAttributes)
 	{
 		out.Write("attributes add", it.first, it.second);
-		out.Write("log");
-		out.BeginChild();
-		{
-			out.Write("l350, right after the attributes add write line.");
-		}
 	}
 
 	conditions.Save(out);
@@ -527,7 +517,7 @@ void GameAction::Do(PlayerInfo &player, UI *ui, const Mission *caller) const
 	}
 
 	// Modify attributes.
-	player.AddLogEntry("GameAction L530");
+	player.AddLogEntry("GameAction L530 " + to_string(modifyAttributes.size()));
 	for(auto &&it : modifyAttributes)
 	{
 		player.AddLogEntry("GameAction L533");
