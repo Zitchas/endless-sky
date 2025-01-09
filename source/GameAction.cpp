@@ -250,7 +250,7 @@ void GameAction::LoadSingle(const DataNode &child)
 			{
 				double valueChange = static_cast<double>(child.Value(3));
 				string attributeTarget = child.Token(2);
-				child.PrintTrace("Trace: Test Data output L267: " + attributeTarget + " " + to_string(valueChange));
+				child.PrintTrace("Trace: Test Data output L253: " + attributeTarget + " " + to_string(valueChange));
 				modifyAttributes[child.Token(2)] = valueChange;
 			}
 		}
