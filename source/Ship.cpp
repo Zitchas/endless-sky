@@ -3760,6 +3760,45 @@ void Ship::AddOutfit(const Outfit *outfit, int count)
 
 
 
+// Add or reduce an attribute. (To reduce, pass a negative number.)
+// Ref from ship.h: Get the current attributes of this ship.
+// Ref from ship.h: const Outfit &Attributes() const;
+// Ref from ship.h: Get the attributes of this ship chassis before any outfits were added.
+// Ref from ship.h: const Outfit &BaseAttributes() const;
+void Ship::ChangeAttribute(string targetAttribute, double modifyAmount)
+{
+	Logger::LogError("Ship.cpp L3770");
+	if(!targetAttribute.empty())
+	{
+		// If the attribute is hull, then add the modifyAmount.
+		if(targetAttribute == "hull")
+			hull += modifyAmount;
+
+		// attributes.Add(*outfit, count);
+
+		if(targetAttribute == "cargo space")
+		{
+			cargo.SetSize(attributes.Get("cargo space"));
+
+			// Only the player's ships make use of attraction and deterrence.
+			if(isYours)
+				attraction = CalculateAttraction();
+		}
+
+		// If the added or removed attribute is hyperdrive, scram drive, or jump drive capability, then
+		// recalibrate the navigation.
+		if((targetAttribute == "hyperdrive" || targetAttribute == "scram drive" || targetAttribute == "jump drive"))
+			navigation.Calibrate(*this);
+		// Navigation may still need to be recalibrated depending on the drives a ship has.
+		// Only do this for player ships as to display correct information on the map.
+		// Non-player ships will recalibrate before they jump.
+		else if(isYours)
+			navigation.Recalibrate(*this);
+	}
+}
+
+
+
 // Get the list of weapons.
 Armament &Ship::GetArmament()
 {

@@ -120,7 +120,22 @@ namespace {
 			message += "flagship.";
 		Messages::Add(message, Messages::Importance::High);
 	}
+
+	void DoModify(PlayerInfo &player, string targetAttribute, double modifyAmount)
+	{
+		// Get the player's flagship
+		Ship *flagship = player.Flagship();
+
+		// Check if the player has a flagship, and if the attribute, and amount exist.
+		// If the player does not have one of these things, return without doing anything.
+		if(!flagship || !targetAttribute.empty() || !modifyAmount)
+			return;
+
+		flagship->ChangeAttribute(targetAttribute, modifyAmount);
+	}
 }
+
+
 
 
 
@@ -235,7 +250,7 @@ void GameAction::LoadSingle(const DataNode &child)
 			{
 				double valueChange = static_cast<double>(child.Value(3));
 				string attributeTarget = child.Token(2);
-				child.PrintTrace("Error: Test Data output: " + attributeTarget + to_string(valueChange));
+				child.PrintTrace("Trace: Test Data output L267: " + attributeTarget + " " + to_string(valueChange));
 				modifyAttributes[child.Token(2)] = valueChange;
 			}
 		}
@@ -321,8 +336,20 @@ void GameAction::Save(DataWriter &out) const
 		else
 			out.Write("music", music.value());
 	}
+	out.Write("log");
+	out.BeginChild();
+	{
+		out.Write("l342, right after the attributes add write line.");
+	}
 	for(auto &&it : modifyAttributes)
+	{
 		out.Write("attributes add", it.first, it.second);
+		out.Write("log");
+		out.BeginChild();
+		{
+			out.Write("l350, right after the attributes add write line.");
+		}
+	}
 
 	conditions.Save(out);
 }
@@ -497,6 +524,18 @@ void GameAction::Do(PlayerInfo &player, UI *ui, const Mission *caller) const
 		}
 		else
 			Audio::PlayMusic(music.value());
+	}
+
+	// Modify attributes.
+	player.AddLogEntry("GameAction L530");
+	for(auto &&it : modifyAttributes)
+	{
+		player.AddLogEntry("GameAction L533");
+		if(it.second)
+		{
+			DoModify(player, it.first, it.second);
+			player.AddLogEntry("GameAction L537");
+		}
 	}
 
 	// Check if applying the conditions changes the player's reputations.

@@ -474,6 +474,8 @@ public:
 	// Add or remove outfits. (To remove, pass a negative number.)
 	void AddOutfit(const Outfit *outfit, int count);
 
+	void ChangeAttribute(std::string targetAttribute, double modifyAmount);
+
 	// Get the list of weapons.
 	Armament &GetArmament();
 	const std::vector<Hardpoint> &Weapons() const;
