@@ -126,9 +126,13 @@ namespace {
 		// Get the player's flagship
 		Ship *flagship = player.Flagship();
 
+		string message;
+		message = "DoModify Has Been reached: " + targetAttribute + " " + to_string(modifyAmount);
+		Messages::Add(message, Messages::Importance::High);
+
 		// Check if the player has a flagship, and if the attribute, and amount exist.
 		// If the player does not have one of these things, return without doing anything.
-		if(!flagship || !targetAttribute.empty() || !modifyAmount)
+		if(!flagship || targetAttribute.empty() || !modifyAmount)
 			return;
 
 		flagship->ChangeAttribute(targetAttribute, modifyAmount);
@@ -338,7 +342,7 @@ void GameAction::Save(DataWriter &out) const
 	}
 	for(auto &&it : modifyAttributes)
 	{
-		out.Write("attributes add", it.first, it.second);
+		out.Write("attributes", "add", it.first, it.second);
 	}
 
 	conditions.Save(out);
@@ -517,14 +521,14 @@ void GameAction::Do(PlayerInfo &player, UI *ui, const Mission *caller) const
 	}
 
 	// Modify attributes.
-	player.AddLogEntry("GameAction L530 " + to_string(modifyAttributes.size()));
+	player.AddLogEntry("GameAction L520 " + to_string(modifyAttributes.size()));
 	for(auto &&it : modifyAttributes)
 	{
-		player.AddLogEntry("GameAction L533");
+		player.AddLogEntry("GameAction L523");
 		if(it.second)
 		{
 			DoModify(player, it.first, it.second);
-			player.AddLogEntry("GameAction L537");
+			player.AddLogEntry("GameAction L527");
 		}
 	}
 
@@ -551,6 +555,7 @@ GameAction GameAction::Instantiate(map<string, string> &subs, int jumps, int pay
 	for(auto &&it : giftShips)
 		result.giftShips.push_back(it.Instantiate(subs));
 	result.giftOutfits = giftOutfits;
+	result.modifyAttributes = modifyAttributes;
 
 	result.music = music;
 

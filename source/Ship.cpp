@@ -3767,12 +3767,15 @@ void Ship::AddOutfit(const Outfit *outfit, int count)
 // Ref from ship.h: const Outfit &BaseAttributes() const;
 void Ship::ChangeAttribute(string targetAttribute, double modifyAmount)
 {
-	Logger::LogError("Ship.cpp L3770");
+	Logger::LogError("Ship.cpp L3770" + targetAttribute + " " + to_string(modifyAmount));
 	if(!targetAttribute.empty())
 	{
 		// If the attribute is hull, then add the modifyAmount.
 		if(targetAttribute == "hull")
+		{
 			hull += modifyAmount;
+			Logger::LogError("Ship.cpp L3777" + targetAttribute + " " + to_string(modifyAmount) + to_string(hull));
+		}
 
 		// attributes.Add(*outfit, count);
 
