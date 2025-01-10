@@ -3761,27 +3761,22 @@ void Ship::AddOutfit(const Outfit *outfit, int count)
 
 
 // Add or reduce an attribute. (To reduce, pass a negative number.)
-// Ref from ship.h: Get the current attributes of this ship.
-// Ref from ship.h: const Outfit &Attributes() const;
-// Ref from ship.h: Get the attributes of this ship chassis before any outfits were added.
-// Ref from ship.h: const Outfit &BaseAttributes() const;
 void Ship::ChangeAttribute(string targetAttribute, double modifyAmount)
 {
 	Logger::LogError("Ship.cpp L3770" + targetAttribute + " " + to_string(modifyAmount));
 	if(!targetAttribute.empty())
 	{
-		// If the attribute is hull, then add the modifyAmount.
-		if(targetAttribute == "hull")
-		{
-			hull += modifyAmount;
-			Logger::LogError("Ship.cpp L3777" + targetAttribute + " " + to_string(modifyAmount) + to_string(hull));
-		}
+		double originalValue = attributes.Get(targetAttribute);
+		baseAttributes.Set(targetAttribute.c_str(), originalValue + modifyAmount);
+		attributes.Set(targetAttribute.c_str(), originalValue + modifyAmount);
 
-		// attributes.Add(*outfit, count);
+		// Adds the mmodifyAmount to the current hull too.
+		if(targetAttribute == "hull")
+			hull += modifyAmount;
 
 		if(targetAttribute == "cargo space")
 		{
-			cargo.SetSize(attributes.Get("cargo space"));
+			cargo.SetSize(attributes.Get("cargo space") + modifyAmount);
 
 			// Only the player's ships make use of attraction and deterrence.
 			if(isYours)
