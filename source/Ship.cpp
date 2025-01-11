@@ -901,7 +901,7 @@ void Ship::FinishLoading(bool isNewInstance)
 	// Issue warnings if this ship has is misconfigured, e.g. is missing required values
 	// or has negative outfit, cargo, weapon, or engine capacity.
 	for(auto &&attr : set<string>{"outfit space", "cargo space", "weapon capacity", "engine capacity",
-		"engine mod space", "reverse thruster slot", "steering slot", "thruster slot"})
+		"engine mod space", "reverse thruster slot", "steering slot", "thruster slot", "lateral thruster slot"})
 	{
 		double val = attributes.Get(attr);
 		if(val < 0)
@@ -3766,17 +3766,59 @@ void Ship::ChangeAttribute(string targetAttribute, double modifyAmount)
 	Logger::LogError("Ship.cpp L3770" + targetAttribute + " " + to_string(modifyAmount));
 	if(!targetAttribute.empty())
 	{
+		double limiter = 0.;
+		double minAttributeValue = 0.;
+		double originalBaseValue = baseAttributes.Get(targetAttribute);
 		double originalValue = attributes.Get(targetAttribute);
-		baseAttributes.Set(targetAttribute.c_str(), originalValue + modifyAmount);
-		attributes.Set(targetAttribute.c_str(), originalValue + modifyAmount);
+		double newBaseValue = originalBaseValue + modifyAmount;
+		double newValue = originalValue + modifyAmount;
 
-		// Adds the mmodifyAmount to the current hull too.
+		// Safety checks to ensure the new value is within parameters.
+		if(newBaseValue < 1. && newValue < 1. && targetAttribute == "hull")
+		{
+			// This means the minimum value for this attribute is 1.0
+			minAttributeValue = 1.;
+			limiter = minAttributeValue - newBaseValue;
+		}
+		else if(newBaseValue < 0.01 && (targetAttribute == "drag" || targetAttribute == "mass"))
+		{
+			// This means the minimum value for these attributes is 0.01
+			minAttributeValue = 0.01;
+			limiter = minAttributeValue - newBaseValue;
+		}
+		// Special handling for attributes that cannot be less than 0.
+		// These values can be 0, just they cannot be negative.
+		else if(newBaseValue < 0. && (targetAttribute == "outfit space" || targetAttribute == "cargo space" ||
+			targetAttribute == "weapon capacity" || targetAttribute == "engine capacity" ||
+			targetAttribute == "engine mod space" || targetAttribute =="shields" || targetAttribute == "reverse thruster slot" ||
+			targetAttribute == "steering slot" || targetAttribute == "thruster slot" ||
+			targetAttribute == "lateral thruster slot" || targetAttribute == "bunks" || targetAttribute == "fuel capacity" ||
+			targetAttribute == "required crew"))
+		{
+			if(newBaseValue < 0.)
+			{
+				minAttributeValue = 0.;
+				limiter = minAttributeValue - newBaseValue;
+			}
+		}
+
+		//Calculations take place herere
+		newBaseValue += limiter;
+		newValue += limiter;
+		baseAttributes.Set(targetAttribute.c_str(), newBaseValue);
+		attributes.Set(targetAttribute.c_str(), newValue);
+
+
+		// Ensuring the current hull value is changed as well.
 		if(targetAttribute == "hull")
-			hull += modifyAmount;
+		{
+			// Adds the modifyAmount and the limiter to the current hull too.
+			hull += modifyAmount + limiter;
+		}
 
 		if(targetAttribute == "cargo space")
 		{
-			cargo.SetSize(attributes.Get("cargo space") + modifyAmount);
+			cargo.SetSize(attributes.Get("cargo space"));
 
 			// Only the player's ships make use of attraction and deterrence.
 			if(isYours)

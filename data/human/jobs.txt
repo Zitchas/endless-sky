@@ -5124,13 +5124,13 @@ mission "AAA Outfit Give Testing 13"
 		conversation
 			`Test text v13`
 	on complete
-		attributes add hull 500
+		attributes add hull 60
 		attributes add "cargo space" 34
 		payment 500
 		outfit "Supercapacitor"
 		conversation
 			action
-				attributes add hull 1300
-				attributes add "cargo space" 41
+				attributes add hull -3300
+				attributes add "cargo space" -410
 			`Concluding v13`
 			
