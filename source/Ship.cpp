@@ -3790,10 +3790,10 @@ void Ship::ChangeAttribute(string targetAttribute, double modifyAmount)
 		// These values can be 0, just they cannot be negative.
 		else if(newBaseValue < 0. && (targetAttribute == "outfit space" || targetAttribute == "cargo space" ||
 			targetAttribute == "weapon capacity" || targetAttribute == "engine capacity" ||
-			targetAttribute == "engine mod space" || targetAttribute =="shields" || targetAttribute == "reverse thruster slot" ||
-			targetAttribute == "steering slot" || targetAttribute == "thruster slot" ||
-			targetAttribute == "lateral thruster slot" || targetAttribute == "bunks" || targetAttribute == "fuel capacity" ||
-			targetAttribute == "required crew"))
+			targetAttribute == "engine mod space" || targetAttribute == "shields" ||
+			targetAttribute == "reverse thruster slot" || targetAttribute == "steering slot" ||
+			targetAttribute == "thruster slot" || targetAttribute == "lateral thruster slot" ||
+			targetAttribute == "bunks" || targetAttribute == "fuel capacity" || targetAttribute == "required crew"))
 		{
 			if(newBaseValue < 0.)
 			{
@@ -3802,7 +3802,7 @@ void Ship::ChangeAttribute(string targetAttribute, double modifyAmount)
 			}
 		}
 
-		//Calculations take place herere
+		// Calculations take place here
 		newBaseValue += limiter;
 		newValue += limiter;
 		baseAttributes.Set(targetAttribute.c_str(), newBaseValue);
