@@ -3848,22 +3848,37 @@ void Ship::SetAttribute(string targetAttribute, double setAmount)
 		double minAttributeValue = 0.;
 		double originalBaseValue = baseAttributes.Get(targetAttribute);
 		double originalValue = attributes.Get(targetAttribute);
+		// This is to account for potential differences between the value in baseAttributes & Attributes.
+		double originalDifference = originalValue - originalBaseValue;
 		double newBaseValue = setAmount;
+		double newValue = setAmount + originalDifference;
+
 		// double intermediaryValue = originalBaseValue - originalValue;
-		double newValue = setAmount; // Just need to incorporate a change to ensure it stays even with base.
 
 		// Safety checks to ensure the new value is within parameters.
-		if(newBaseValue < 1. && newValue < 1. && targetAttribute == "hull")
+		if(newBaseValue < 1. && targetAttribute == "hull")
 		{
 			// This means the minimum value for this attribute is 1.0
 			minAttributeValue = 1.;
 			limiter = minAttributeValue - newBaseValue;
+		}
+		else if(newValue < 1. && targetAttribute == "hull")
+		{
+			// This means the minimum value for this attribute is 1.0
+			minAttributeValue = 1.;
+			limiter = minAttributeValue - newValue;
 		}
 		else if(newBaseValue < 0.01 && (targetAttribute == "drag" || targetAttribute == "mass"))
 		{
 			// This means the minimum value for these attributes is 0.01
 			minAttributeValue = 0.01;
 			limiter = minAttributeValue - newBaseValue;
+		}
+		else if(newValue < 0.01 && (targetAttribute == "drag" || targetAttribute == "mass"))
+		{
+			// This means the minimum value for these attributes is 0.01
+			minAttributeValue = 0.01;
+			limiter = minAttributeValue - newValue;
 		}
 		// Special handling for attributes that cannot be less than 0.
 		// These values can be 0, just they cannot be negative.
@@ -3881,9 +3896,14 @@ void Ship::SetAttribute(string targetAttribute, double setAmount)
 			}
 		}
 
-		// Calculations take place here
+		// This increases the value that baseAttributes and attributes are set to if they were below the
+		// minimum value. The way the if/else if statements are setup, if for some reason the player's
+		// current value is lower than the base value, then the amount they are reduced is itself reduced
+		// sufficiently that it does not drop it below the minimum value.
+		// If they are not special values with restrictions, this limiter should just be 0 and thus no effect.
 		newBaseValue += limiter;
 		newValue += limiter;
+		// These two lines are what actually sets the attributes.
 		baseAttributes.Set(targetAttribute.c_str(), newBaseValue);
 		attributes.Set(targetAttribute.c_str(), newValue);
 
@@ -3894,6 +3914,7 @@ void Ship::SetAttribute(string targetAttribute, double setAmount)
 			hull += setAmount + limiter;
 		}
 
+		// This just ensures the cargo is refreshed to be equal to the new attribute value.
 		if(targetAttribute == "cargo space")
 		{
 			cargo.SetSize(attributes.Get("cargo space"));

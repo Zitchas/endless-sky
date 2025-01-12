@@ -5152,4 +5152,89 @@ mission "AAA set Attribute Testing 15"
 			action
 				attributes set "bunks" 31
 			`Concluding v15. Flagship should have shields set to 586, and bunks set to 31.`
+
+
+
+mission "AAA set Attribute Testing 16"
+	name "AAA set Attribute Testing v16"
+	description "Testing mission v16! This will REDUCE hull by 200, shields by 300, and cargo space by 400. It will also try to set mass to -3, which should be caught and bumped up to 0.01 instead."
+	job
+	repeat
+	source
+	on accept
+		conversation
+			`Test text v15.`
+	on complete
+		attributes add "cargo space" -400
+		payment 500
+		outfit "Supercapacitor"
+		conversation
+			action
+				attributes set "mass" -3
+				attributes add "hull" -200
+				attributes add "shields" -300
+			`Concluding v16. Flagship should have hull REDUCED by 200, shields by 300, and cargo space by 400. It will also try to set mass to -3, which should be caught and bumped up to 0.01 instead.`
+
+
+
+mission "AAA set Attribute Testing 17"
+	name "AAA set Attribute Testing v17"
+	description "Testing mission v17! This will set hull, shields, cargo space, and bunks to 100."
+	job
+	repeat
+	source
+	on accept
+		conversation
+			`Test text v15. Hull, shields, cargo space, and bunks will be set to 100 after you take off and land.`
+	on complete
+		attributes set hull 100
+		attributes set shields 100
+		payment 500
+		outfit "Supercapacitor"
+		conversation
+			action
+				attributes set "bunks" 100
+				attributes set "cargo space" 100
+			`Concluding v17. Flagship should have bunks and cargo space set to 100; followed by hull and shields being set to 100.`
+			
+
+
+
+mission "AAA set Attribute Testing 18"
+	name "AAA set Attribute Testing v18"
+	description "Testing mission v18! This will set hmass to 123 and drag to 2.36."
+	job
+	repeat
+	source
+	on accept
+		conversation
+			`Test text v18. Sets drag to 2.36, and mass to 123. after you take off and land.`
+	on complete
+		attributes set mass 123
+		payment 500
+		outfit "Supercapacitor"
+		conversation
+			action
+				attributes set "drag" 2.36
+			
+
+
+
+mission "AAA set Attribute Testing 19"
+	name "AAA set Attribute Testing v19"
+	description "Testing mission v18! This will set hmass to -45 and drag to 5.11."
+	job
+	repeat
+	source
+	on accept
+		conversation
+			`Test text v18. Sets drag to 5.11 and mass to -45. after you take off and land.`
+	on complete
+		attributes set mass -45
+		payment 500
+		outfit "Supercapacitor"
+		conversation
+			action
+				attributes set "drag" 5.11
+			`Concluding v19. Sets drag to 5.11 and mass to -45.`
 			
