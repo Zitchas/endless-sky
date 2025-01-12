@@ -3848,8 +3848,9 @@ void Ship::SetAttribute(string targetAttribute, double setAmount)
 		double minAttributeValue = 0.;
 		double originalBaseValue = baseAttributes.Get(targetAttribute);
 		double originalValue = attributes.Get(targetAttribute);
-		double newBaseValue = originalBaseValue + setAmount;
-		double newValue = originalValue + setAmount;
+		double newBaseValue = setAmount;
+		// double intermediaryValue = originalBaseValue - originalValue;
+		double newValue = setAmount; // Just need to incorporate a change to ensure it stays even with base.
 
 		// Safety checks to ensure the new value is within parameters.
 		if(newBaseValue < 1. && newValue < 1. && targetAttribute == "hull")

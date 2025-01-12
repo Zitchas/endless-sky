@@ -5137,7 +5137,7 @@ mission "AAA modify Attribute Testing 14"
 
 mission "AAA set Attribute Testing 15"
 	name "AAA set Attribute Testing v15"
-	description "Testing mission v15! This will add 1300 hull, then 500."
+	description "Testing mission v15! This will set shields to 586, and bunks to 31."
 	job
 	repeat
 	source
