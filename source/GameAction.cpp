@@ -137,6 +137,23 @@ namespace {
 
 		flagship->ChangeAttribute(targetAttribute, modifyAmount);
 	}
+
+	void DoSet(PlayerInfo &player, string targetAttribute, double setAmount)
+	{
+		// Get the player's flagship
+		Ship *flagship = player.Flagship();
+
+		string message;
+		message = "DoSet Has Been reached: " + targetAttribute + " " + to_string(setAmount);
+		Messages::Add(message, Messages::Importance::High);
+
+		// Check if the player has a flagship, and if the attribute, and amount exist.
+		// If the player does not have one of these things, return without doing anything.
+		if(!flagship || targetAttribute.empty() || !setAmount)
+			return;
+
+		flagship->SetAttribute(targetAttribute, setAmount);
+	}
 }
 
 
@@ -255,15 +272,20 @@ void GameAction::LoadSingle(const DataNode &child)
 				double valueChange = static_cast<double>(child.Value(3));
 				string attributeTarget = child.Token(2);
 				modifyAttributes[attributeTarget] = valueChange;
-				child.PrintTrace("Trace: Test Data output L253: " + attributeTarget + " " + to_string(valueChange));
+				child.PrintTrace("Trace: Test Data output L275: " + attributeTarget + " " + to_string(valueChange));
+			}
+			else if(child.Token(1) == "set")
+			{
+				double valueChange = static_cast<double>(child.Value(3));
+				string attributeTarget = child.Token(2);
+				setAttributes[attributeTarget] = valueChange;
+				child.PrintTrace("Trace: Test Data output L282 (set): " + attributeTarget + " " + to_string(valueChange));
 			}
 		}
 		else if(child.Size() > 4)
 			child.PrintTrace("Error: Skipping \"attributes\" as >4 values is not yet supported:");
 		else
 			child.PrintTrace("Error: Skipping invalid values for \"attributes\":");
-		// else if(child.Token(1) == "set")
-		// < code to put the attributes into the set map, to be done after the add is working > ;
 	}
 	else
 		conditions.Add(child);
@@ -344,6 +366,10 @@ void GameAction::Save(DataWriter &out) const
 	{
 		out.Write("attributes", "add", it.first, it.second);
 	}
+	for(auto &&it : setAttributes)
+	{
+		out.Write("attributes", "set", it.first, it.second);
+	}
 
 	conditions.Save(out);
 }
@@ -423,6 +449,13 @@ const vector<ShipManager> &GameAction::Ships() const noexcept
 const map<std::string, double> &GameAction::ModifyAttributes() const noexcept
 {
 	return modifyAttributes;
+}
+
+
+
+const map<std::string, double> &GameAction::SetAttributes() const noexcept
+{
+	return setAttributes;
 }
 
 
@@ -532,6 +565,18 @@ void GameAction::Do(PlayerInfo &player, UI *ui, const Mission *caller) const
 		}
 	}
 
+	// Set attributes.
+	player.AddLogEntry("GameAction L569 " + to_string(setAttributes.size()));
+	for(auto &&it : setAttributes)
+	{
+		player.AddLogEntry("GameAction L572");
+		if(it.second)
+		{
+			DoSet(player, it.first, it.second);
+			player.AddLogEntry("GameAction L576");
+		}
+	}
+
 	// Check if applying the conditions changes the player's reputations.
 	conditions.Apply(player.Conditions());
 }
@@ -556,6 +601,7 @@ GameAction GameAction::Instantiate(map<string, string> &subs, int jumps, int pay
 		result.giftShips.push_back(it.Instantiate(subs));
 	result.giftOutfits = giftOutfits;
 	result.modifyAttributes = modifyAttributes;
+	result.setAttributes = setAttributes;
 
 	result.music = music;
 

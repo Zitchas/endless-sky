@@ -5114,15 +5114,15 @@ mission "Banned Syndicate Items [4]"
 
 
 
-mission "AAA Outfit Give Testing 13"
-	name "AAA Outfit Give Testing v13"
-	description "Testing mission v13!"
+mission "AAA modify Attribute Testing 14"
+	name "AAA modify Attribute Testing v14"
+	description "Testing mission v14! This will add 1300 hull, then 500."
 	job
 	repeat
 	source
 	on accept
 		conversation
-			`Test text v13`
+			`Test text v14.`
 	on complete
 		attributes add hull 60
 		attributes add "cargo space" 34
@@ -5130,7 +5130,26 @@ mission "AAA Outfit Give Testing 13"
 		outfit "Supercapacitor"
 		conversation
 			action
-				attributes add hull -3300
-				attributes add "cargo space" -410
-			`Concluding v13`
+				attributes add hull 1300
+			`Concluding v14. Flagship should have received 1300 hull, then 500. Cargo space increased by 34.`
+
+
+
+mission "AAA set Attribute Testing 15"
+	name "AAA set Attribute Testing v15"
+	description "Testing mission v15! This will add 1300 hull, then 500."
+	job
+	repeat
+	source
+	on accept
+		conversation
+			`Test text v15.`
+	on complete
+		attributes set shields 586
+		payment 500
+		outfit "Supercapacitor"
+		conversation
+			action
+				attributes set "bunks" 31
+			`Concluding v15. Flagship should have shields set to 586, and bunks set to 31.`
 			

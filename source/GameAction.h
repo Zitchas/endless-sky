@@ -69,6 +69,7 @@ public:
 
 	// references the map of attributes to be changed.
 	const std::map<std::string, double> &ModifyAttributes() const noexcept;
+	const std::map<std::string, double> &SetAttributes() const noexcept;
 
 	// Perform this action.
 	void Do(PlayerInfo &player, UI *ui, const Mission *caller) const;
@@ -98,6 +99,7 @@ private:
 	std::vector<ShipManager> giftShips;
 	std::map<const Outfit *, int> giftOutfits;
 	std::map<std::string, double> modifyAttributes;
+	std::map<std::string, double> setAttributes;
 
 	int64_t payment = 0;
 	int64_t paymentMultiplier = 0;

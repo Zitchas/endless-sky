@@ -475,6 +475,7 @@ public:
 	void AddOutfit(const Outfit *outfit, int count);
 
 	void ChangeAttribute(std::string targetAttribute, double modifyAmount);
+	void SetAttribute(std::string targetAttribute, double setAmount);
 
 	// Get the list of weapons.
 	Armament &GetArmament();
