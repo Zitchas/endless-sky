@@ -5252,7 +5252,7 @@ mission "AAA 75 add various 75"
 
 mission "AAA 75 add various -75"
 	name "AAA 75 add various -75"
-	description "Testing mission 25! This will add 75 to fuel capacity, cost, mass, drag, engine capacity, weapon capacity, outfit space, heat dissipation, hull, bunks, and cargo space."
+	description "Testing mission 25! This will add 75 to fuel capacity, cost, mass, drag, engine capacity, weapon capacity, outfit space, heat dissipation, hull, shields, bunks, and cargo space."
 	job
 	repeat
 	source
@@ -5269,6 +5269,7 @@ mission "AAA 75 add various -75"
 		attributes add "outfit space" -75
 		attributes add "heat dissipation" -75
 		attributes add hull -75
+		attributes set shields -75
 		attributes add bunks -75
 		attributes add "cargo space" -75
 		payment 500000
@@ -5280,7 +5281,7 @@ mission "AAA 75 add various -75"
 
 mission "AAA 75 set various 100"
 	name "AAA 75 set various 100"
-	description "Testing mission 25! This will set 100 to fuel capacity, cost, mass, drag, engine capacity, weapon capacity, outfit space, heat dissipation, hull, bunks, and cargo space."
+	description "Testing mission 25! This will set 100 to fuel capacity, cost, mass, drag, engine capacity, weapon capacity, outfit space, heat dissipation, hull, shields, bunks, and cargo space."
 	job
 	repeat
 	source
@@ -5297,18 +5298,19 @@ mission "AAA 75 set various 100"
 		attributes set "outfit space" 100
 		attributes set "heat dissipation" 100
 		attributes set hull 100
+		attributes set shields 100
 		attributes set bunks 100
 		attributes set "cargo space" 100
 		payment 500000
 		outfit "Supercapacitor"
 		conversation
-			`Concluding v75. This sets 100 to fuel capacity, cost, mass, drag, engine capacity, weapon capacity, outfit space, heat dissipation, hull, bunks, and cargo space."`
+			`Concluding v75. This sets 100 to fuel capacity, cost, mass, drag, engine capacity, weapon capacity, outfit space, heat dissipation, hull, bunks, shields, and cargo space."`
 
 
 
 mission "AAA 75 set various -100"
 	name "AAA 75 set various -100"
-	description "Testing mission 25! This will set -100 to fuel capacity, cost, mass, drag, engine capacity, weapon capacity, outfit space, heat dissipation, hull, bunks, and cargo space."
+	description "Testing mission 25! This will set -100 to fuel capacity, cost, mass, drag, engine capacity, weapon capacity, outfit space, heat dissipation, hull, shields, bunks, and cargo space."
 	job
 	repeat
 	source
@@ -5325,6 +5327,7 @@ mission "AAA 75 set various -100"
 		attributes set "outfit space" -100
 		attributes set "heat dissipation" -100
 		attributes set hull -100
+		attributes set shields -100
 		attributes set bunks -100
 		attributes set "cargo space" -100
 		payment 500000
