@@ -5216,6 +5216,7 @@ mission "AAA set Attribute Testing 18"
 		conversation
 			action
 				attributes set "drag" 2.36
+			`Concluding V18. Drag should be 2.36 and mass 123`
 			
 
 
