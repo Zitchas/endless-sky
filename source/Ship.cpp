@@ -3814,6 +3814,13 @@ void Ship::ChangeAttribute(string targetAttribute, double modifyAmount)
 			// Adds the modifyAmount and the limiter to the current hull too.
 			hull += modifyAmount + limiter;
 		}
+		// Ensuring the current hull value is changed as well.
+		if(targetAttribute == "shields")
+		{
+			// Adds the modifyAmount and the limiter to the current shields too.
+			shields += modifyAmount + limiter;
+		}
+		// Ensuring the current shield value is changed as well.
 
 		if(targetAttribute == "cargo space")
 		{
