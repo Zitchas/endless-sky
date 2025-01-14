@@ -384,6 +384,7 @@ ship "'nra'ret"
 ship "'olofez"
 	plural "'olofezes"
 	sprite "ship/chaser"
+		"scale" 0.6
 	thumbnail "thumbnail/chaser"
 	attributes
 		category "Fighter"
@@ -429,6 +430,7 @@ ship "'olofez"
 
 ship "Kas'ik Tek 7"
 	sprite "ship/kas-ik tek 7"
+		"scale" 0.4
 	thumbnail "thumbnail/kas-ik tek 7"
 	attributes
 		category "Drone"
@@ -2047,6 +2049,7 @@ ship "Met Par Tek 53"
 
 ship "Far Lek 14"
 	sprite "ship/far lek 14"
+		"scale" 0.4
 	thumbnail "thumbnail/far lek 14"
 	attributes
 		category "Drone"
@@ -2093,6 +2096,7 @@ ship "Far Lek 14"
 
 ship "Far Osk 27"
 	sprite "ship/far osk 27"
+		"scale" 0.6
 	thumbnail "thumbnail/far osk 27"
 	attributes
 		category "Fighter"
@@ -2140,6 +2144,7 @@ ship "Far Osk 27"
 
 ship "Model 8"
 	sprite "ship/model 8"
+		"scale" 0.75
 	thumbnail "thumbnail/model 8"
 	attributes
 		category "Interceptor"

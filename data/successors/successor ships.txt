@@ -388,6 +388,7 @@ ship "Kvelqde" "Kvelqde (Naive)"
 ship "Kvelqde-Khora"
 	plural "Kvelqden-Khora"
 	sprite "ship/kvelqde-khora"
+		"scale" 0.75
 	thumbnail "thumbnail/kvelqde-khora"
 	attributes
 		licenses
@@ -904,6 +905,7 @@ ship "Seiitej"
 ship "Stolsaqra"
 	plural "Stolsaqran"
 	sprite "ship/stolsaqra"
+		"scale" 0.75
 	thumbnail "thumbnail/stolsaqra"
 	attributes
 		licenses

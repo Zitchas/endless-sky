@@ -314,6 +314,7 @@ ship "Cicada"
 
 ship "Flea"
 	sprite "ship/hai flea"
+		"scale" 0.4
 	thumbnail "thumbnail/hai flea"
 	attributes
 		category "Drone"
@@ -457,6 +458,7 @@ ship "Geocoris" "Geocoris (Tracker)"
 
 ship "Grasshopper"
 	sprite "ship/hai grasshopper"
+		"scale" 0.75
 	thumbnail "thumbnail/hai grasshopper"
 	attributes
 		category "Interceptor"
@@ -2080,6 +2082,7 @@ ship "Solifuge" "Solifuge (Tracker)"
 
 ship "Violin Spider"
 	sprite "ship/hai violin spider"
+		"scale" 0.6
 	thumbnail "thumbnail/hai violin spider"
 	attributes
 		category "Fighter"

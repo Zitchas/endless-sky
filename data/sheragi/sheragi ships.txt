@@ -170,6 +170,7 @@ ship "Emerald Sword" "Emerald Sword (Fixed)"
 
 ship "Black Diamond"
 	sprite "ship/blackdiamond"
+		"scale" 0.6
 	thumbnail "thumbnail/blackdiamond"
 	swizzle 9
 	attributes
