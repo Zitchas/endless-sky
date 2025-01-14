@@ -5204,6 +5204,24 @@ mission "AAA 25 add fuel capacity 50"
 
 
 
+mission "AAA 25 set mass 75"
+	name "AAA 25 set mass 75"
+	description "Testing mission 25! This will set mass 75"
+	job
+	repeat
+	source
+	on accept
+		dialog
+			`Test text v25.`
+	on complete
+		attributes set mass 75
+		payment 500000
+		outfit "Supercapacitor"
+		conversation
+			`Concluding v25. Set mass 75.`
+
+
+
 mission "AAA 25 add fuel capacity -50"
 	name "AAA 25 add fuel capacity -50"
 	description "Testing mission 25! This will add -50 fuel capacity."
@@ -5461,4 +5479,21 @@ mission "AAA set Attribute Testing 20"
 			action
 				attributes add "drag" -5.11
 			`Concluding v19. Adds drag -5.11 and mass to -45.`
+
+
+
+mission "AAA 30 set drag 1"
+	name "AAA 25 set drag 1"
+	description "Testing mission 25! This will set drag 1"
+	job
+	repeat
+	source
+	on accept
+		dialog
+			`Test text v30.`
+	on complete
+		attributes set drag 1
+		payment 500000
+		conversation
+			`Concluding v30. Set drag 1.`
 			

@@ -3805,7 +3805,7 @@ void Ship::ChangeAttribute(string targetAttribute, double modifyAmount)
 		newBaseValue += limiter;
 		newValue += limiter;
 		baseAttributes.Set(targetAttribute.c_str(), newBaseValue);
-		attributes.Set(targetAttribute.c_str(), newValue);
+		// attributes.Set(targetAttribute.c_str(), newValue);
 
 
 		// Ensuring the current hull value is changed as well.
@@ -3912,7 +3912,7 @@ void Ship::SetAttribute(string targetAttribute, double setAmount)
 		newValue += limiter;
 		// These two lines are what actually sets the attributes.
 		baseAttributes.Set(targetAttribute.c_str(), newBaseValue);
-		attributes.Set(targetAttribute.c_str(), newValue);
+		// attributes.Set(targetAttribute.c_str(), newValue);
 
 		// Ensuring the current hull value is changed as well.
 		if(targetAttribute == "hull")
