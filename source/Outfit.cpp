@@ -747,3 +747,13 @@ void Outfit::AddLicense(const string &name)
 	if(it == licenses.end())
 		licenses.push_back(name);
 }
+
+
+
+// Modify this outfit's attributes.
+void Outfit::ModifyMass(double value)
+{
+	mass += value;
+	// Don't allow mass to go to zero or less.
+	mass = (mass <= 0 ? 0.01 : mass);
+}

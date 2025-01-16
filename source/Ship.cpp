@@ -3804,9 +3804,18 @@ void Ship::ChangeAttribute(string targetAttribute, double modifyAmount)
 		// Calculations take place here
 		newBaseValue += limiter;
 		newValue += limiter;
-		baseAttributes.Set(targetAttribute.c_str(), newBaseValue);
-		// attributes.Set(targetAttribute.c_str(), newValue);
 
+		if(targetAttribute == "mass")
+		{
+			// Call the special method just for mass.
+			baseAttributes.ModifyMass(newBaseValue);
+			attributes.ModifyMass(newValue);
+		}
+		else
+			{
+				baseAttributes.Set(targetAttribute.c_str(), newBaseValue);
+				attributes.Set(targetAttribute.c_str(), newValue);
+			}
 
 		// Ensuring the current hull value is changed as well.
 		if(targetAttribute == "hull")

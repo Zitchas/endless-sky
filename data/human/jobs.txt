@@ -5133,7 +5133,7 @@ mission "AAA 25 add hull 50"
 
 
 mission "AAA 25 add hull -50"
-	name "AAA 25 add mass -50"
+	name "AAA 25 add hull -50"
 	description "Testing mission v14! This will add -50 hull."
 	job
 	repeat
@@ -5152,7 +5152,7 @@ mission "AAA 25 add hull -50"
 
 mission "AAA 25 add mass 50"
 	name "AAA 25 add mass 50"
-	description "Testing mission 25! This will add 50 hull."
+	description "Testing mission 25! This will add 50 mass."
 	job
 	repeat
 	source
