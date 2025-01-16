@@ -3854,18 +3854,15 @@ void Ship::ChangeAttribute(string targetAttribute, double modifyAmount)
 
 
 
-// Add or reduce an attribute. (To reduce, pass a negative number.)
+// Sets an attribute to a specific value. Certain values (mass, drag, space, etc.) have limits.
 void Ship::SetAttribute(string targetAttribute, double setAmount)
 {
-	Logger::LogError("Ship.cpp L3770" + targetAttribute + " " + to_string(setAmount));
 	if(!targetAttribute.empty())
 	{
 		double limiter = 0.;
 		double minAttributeValue = 0.;
 		double originalBaseValue = baseAttributes.Get(targetAttribute);
 		double originalValue = attributes.Get(targetAttribute);
-		Logger::LogError("Ship.cpp L3867 originalBaseValue is " + targetAttribute + " " + to_string(originalBaseValue));
-		Logger::LogError("Ship.cpp L3868 originalValue is " + targetAttribute + " " + to_string(originalValue));
 		// This is to account for potential differences between the value in baseAttributes & Attributes.
 		double originalDifference = originalValue - originalBaseValue;
 		double newBaseValue = setAmount;

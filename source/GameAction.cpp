@@ -126,10 +126,6 @@ namespace {
 		// Get the player's flagship
 		Ship *flagship = player.Flagship();
 
-		string message;
-		message = "DoModify Has Been reached: " + targetAttribute + " " + to_string(modifyAmount);
-		Messages::Add(message, Messages::Importance::High);
-
 		// Check if the player has a flagship, and if the attribute, and amount exist.
 		// If the player does not have one of these things, return without doing anything.
 		if(!flagship || targetAttribute.empty() || !modifyAmount)
@@ -142,10 +138,6 @@ namespace {
 	{
 		// Get the player's flagship
 		Ship *flagship = player.Flagship();
-
-		string message;
-		message = "DoSet Has Been reached: " + targetAttribute + " " + to_string(setAmount);
-		Messages::Add(message, Messages::Importance::High);
 
 		// Check if the player has a flagship, and if the attribute, and amount exist.
 		// If the player does not have one of these things, return without doing anything.
@@ -272,14 +264,12 @@ void GameAction::LoadSingle(const DataNode &child)
 				double valueChange = static_cast<double>(child.Value(3));
 				string attributeTarget = child.Token(2);
 				modifyAttributes[attributeTarget] = valueChange;
-				child.PrintTrace("Trace: Test Data output L275: " + attributeTarget + " " + to_string(valueChange));
 			}
 			else if(child.Token(1) == "set")
 			{
 				double valueChange = static_cast<double>(child.Value(3));
 				string attributeTarget = child.Token(2);
 				setAttributes[attributeTarget] = valueChange;
-				child.PrintTrace("Trace: Test Data output L282 (set): " + attributeTarget + " " + to_string(valueChange));
 			}
 		}
 		else if(child.Size() > 4)
@@ -554,26 +544,20 @@ void GameAction::Do(PlayerInfo &player, UI *ui, const Mission *caller) const
 	}
 
 	// Modify attributes.
-	player.AddLogEntry("GameAction L520 " + to_string(modifyAttributes.size()));
 	for(auto &&it : modifyAttributes)
 	{
-		player.AddLogEntry("GameAction L523");
 		if(it.second)
 		{
 			DoModify(player, it.first, it.second);
-			player.AddLogEntry("GameAction L527");
 		}
 	}
 
 	// Set attributes.
-	player.AddLogEntry("GameAction L569 " + to_string(setAttributes.size()));
 	for(auto &&it : setAttributes)
 	{
-		player.AddLogEntry("GameAction L572");
 		if(it.second)
 		{
 			DoSet(player, it.first, it.second);
-			player.AddLogEntry("GameAction L576");
 		}
 	}
 
