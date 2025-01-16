@@ -3864,6 +3864,8 @@ void Ship::SetAttribute(string targetAttribute, double setAmount)
 		double minAttributeValue = 0.;
 		double originalBaseValue = baseAttributes.Get(targetAttribute);
 		double originalValue = attributes.Get(targetAttribute);
+		Logger::LogError("Ship.cpp L3867 originalBaseValue is " + targetAttribute + " " + to_string(originalBaseValue));
+		Logger::LogError("Ship.cpp L3868 originalValue is " + targetAttribute + " " + to_string(originalValue));
 		// This is to account for potential differences between the value in baseAttributes & Attributes.
 		double originalDifference = originalValue - originalBaseValue;
 		double newBaseValue = setAmount;
@@ -3884,13 +3886,13 @@ void Ship::SetAttribute(string targetAttribute, double setAmount)
 			minAttributeValue = 1.;
 			limiter = minAttributeValue - newValue;
 		}
-		else if(newBaseValue < 0.01 && (targetAttribute == "drag" || targetAttribute == "mass"))
+		else if(newBaseValue < 0.01 && targetAttribute == "drag")
 		{
 			// This means the minimum value for these attributes is 0.01
 			minAttributeValue = 0.01;
 			limiter = minAttributeValue - newBaseValue;
 		}
-		else if(newValue < 0.01 && (targetAttribute == "drag" || targetAttribute == "mass"))
+		else if(newValue < 0.01 && targetAttribute == "drag")
 		{
 			// This means the minimum value for these attributes is 0.01
 			minAttributeValue = 0.01;
@@ -3919,9 +3921,25 @@ void Ship::SetAttribute(string targetAttribute, double setAmount)
 		// If they are not special values with restrictions, this limiter should just be 0 and thus no effect.
 		newBaseValue += limiter;
 		newValue += limiter;
-		// These two lines are what actually sets the attributes.
-		baseAttributes.Set(targetAttribute.c_str(), newBaseValue);
-		// attributes.Set(targetAttribute.c_str(), newValue);
+
+		if(targetAttribute == "mass")
+		{
+			// Call the special method just for mass.
+			// double dummyValue = 0.;
+			double OriginalBaseMass = baseAttributes.GetMass();
+			double OriginalMass = attributes.GetMass();
+			double MassDif = setAmount - OriginalBaseMass;
+			Logger::LogError("Ship.cpp L3926 OriginalBaseMass is " + targetAttribute + " " + to_string(OriginalBaseMass));
+			Logger::LogError("Ship.cpp L3927 OriginalMass is " + targetAttribute + " " + to_string(OriginalMass));
+			baseAttributes.SetMass(MassDif);
+			attributes.SetMass(MassDif);
+		}
+		else
+		{
+			// These two lines are what actually sets the attributes.
+			baseAttributes.Set(targetAttribute.c_str(), newBaseValue);
+			attributes.Set(targetAttribute.c_str(), newValue);
+		}
 
 		// Ensuring the current hull value is changed as well.
 		if(targetAttribute == "hull")
