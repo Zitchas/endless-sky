@@ -3812,10 +3812,10 @@ void Ship::ChangeAttribute(string targetAttribute, double modifyAmount)
 			attributes.ModifyMass(newValue);
 		}
 		else
-			{
-				baseAttributes.Set(targetAttribute.c_str(), newBaseValue);
-				attributes.Set(targetAttribute.c_str(), newValue);
-			}
+		{
+			baseAttributes.Set(targetAttribute.c_str(), newBaseValue);
+			attributes.Set(targetAttribute.c_str(), newValue);
+		}
 
 		// Ensuring the current hull value is changed as well.
 		if(targetAttribute == "hull")
@@ -3925,14 +3925,22 @@ void Ship::SetAttribute(string targetAttribute, double setAmount)
 		if(targetAttribute == "mass")
 		{
 			// Call the special method just for mass.
-			// double dummyValue = 0.;
-			double OriginalBaseMass = baseAttributes.GetMass();
-			double OriginalMass = attributes.GetMass();
-			double MassDif = setAmount - OriginalBaseMass;
-			Logger::LogError("Ship.cpp L3926 OriginalBaseMass is " + targetAttribute + " " + to_string(OriginalBaseMass));
-			Logger::LogError("Ship.cpp L3927 OriginalMass is " + targetAttribute + " " + to_string(OriginalMass));
-			baseAttributes.SetMass(MassDif);
-			attributes.SetMass(MassDif);
+			double OriginalBaseMass = baseAttributes.Mass();
+			double OriginalMass = attributes.Mass();
+			double MassDif = OriginalMass - OriginalBaseMass;
+			if(setAmount < 0.01)
+			{
+				setAmount = 0.01;
+			}
+			double NewBaseMass = setAmount;
+			double NewMass = setAmount + MassDif;
+			if(NewMass < 0.01)
+			{
+				NewMass = 0.01;
+				NewBaseMass = NewMass - MassDif;
+			}
+			baseAttributes.SetMass(NewBaseMass);
+			attributes.SetMass(NewMass);
 		}
 		else
 		{
