@@ -90,6 +90,7 @@ public:
 	// Modify or set this outfit's mass.
 	void ModifyMass(double value);
 	void SetMass(double value);
+	void ModifyCost(double value);
 
 	// Get this outfit's engine flare sprites, if any.
 	const std::vector<std::pair<Body, int>> &FlareSprites() const;

@@ -767,3 +767,11 @@ void Outfit::SetMass(double MassDif)
 	// Don't allow mass to go to zero or less.
 	mass = (mass <= 0 ? 0.01 : mass);
 }
+
+
+
+// Set this outfit's cost.
+void Outfit::ModifyCost(double ReplaceCost)
+{
+	cost = ReplaceCost;
+}

@@ -3805,6 +3805,16 @@ void Ship::ChangeAttribute(string targetAttribute, double modifyAmount)
 		newBaseValue += limiter;
 		newValue += limiter;
 
+		if(targetAttribute == "cost")
+		{
+			double OriginalBaseCost = baseAttributes.Cost();
+			double OriginalCost = attributes.Cost();
+			double NewBaseCost = OriginalBaseCost + modifyAmount;
+			double NewCost = OriginalCost + modifyAmount;
+			baseAttributes.ModifyCost(NewBaseCost);
+			attributes.ModifyCost(NewCost);
+		}
+
 		if(targetAttribute == "mass")
 		{
 			// Call the special method just for mass.
@@ -3918,6 +3928,17 @@ void Ship::SetAttribute(string targetAttribute, double setAmount)
 		// If they are not special values with restrictions, this limiter should just be 0 and thus no effect.
 		newBaseValue += limiter;
 		newValue += limiter;
+
+		if(targetAttribute == "cost")
+		{
+			double OriginalBaseCost = baseAttributes.Cost();
+			double OriginalCost = attributes.Cost();
+			double CostDif = OriginalCost - OriginalBaseCost;
+			double NewBaseCost = setAmount;
+			double NewCost = setAmount + CostDif;
+			baseAttributes.ModifyCost(NewBaseCost);
+			attributes.ModifyCost(NewCost);
+		}
 
 		if(targetAttribute == "mass")
 		{
