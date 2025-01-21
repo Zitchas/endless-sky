@@ -1236,10 +1236,10 @@ ship "Combat Drone"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine -8.5 28.5 0.9
-	engine 8.5 28.5 0.9
-	gun 0 -29 "Beam Laser"
-	pylon 0 -29
+	engine -3.4 11.4 0.8
+	engine 3.4 11.4 0.8
+	gun 0 -11.6 "Beam Laser"
+	pylon 0 -11
 	explode "tiny explosion" 15
 	description "Combat drones are pilotless attack ships used primarily by the Republic Navy. Although very weak and easy to destroy, they can be very effective in large numbers. Because drones do not need a cockpit, they can be filled entirely with equipment and solid metal, which makes their hulls stronger than other small ships."
 	description "	Drones do not come equipped with a hyperdrive. You cannot carry a drone unless you have a ship in your fleet with a drone bay."
@@ -3150,8 +3150,8 @@ ship "Mining Drone"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine 0 22 0.9
-	gun 0 -22
+	engine 0 8.8 0.8
+	gun 0 -8.8
 	explode "tiny explosion" 10
 	description "The semi-autonomous Mining Drone is used by the Syndicate alongside the Sunder mining vessel in a supportive role. Not being much more than a Mining Laser with an engine stuck to the rear of it, these drones do not last long in combat with other ships due to how fragile they are."
 	description "	Drones do not come equipped with a hyperdrive. You cannot carry a drone unless you have a ship in your fleet with a drone bay."
@@ -4473,8 +4473,8 @@ ship "Surveillance Drone"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine -3 29
-	engine 3 29
+	engine -1.2 11.6
+	engine 1.2 11.6
 	explode "tiny explosion" 15
 	description "Surveillance drones are unarmed drones used by the Republic navy to scan ships and planets in a star system."
 	description "	Drones do not come equipped with a hyperdrive. You cannot carry a drone unless you have a ship in your fleet with a drone bay."
