@@ -391,7 +391,7 @@ ship "Bactrian"
 
 ship "Barb"
 	sprite "ship/barb"
-		"scale" 0.6
+		"scale" 0.5
 	thumbnail "thumbnail/barb"
 	attributes
 		category "Fighter"
@@ -425,11 +425,11 @@ ship "Barb"
 
 		"RC10 Reaction Engines"
 		
-	engine 9 25
-	engine -8 25
-	gun -7.5 -24.5 "Energy Blaster"
-	pylon -7.5 -24.5
-	turret 9.5 8.5 "Blaster Turret"
+	engine 4.5 12.5
+	engine -4 12.5
+	gun -3.75 -12.25 "Energy Blaster"
+	pylon -3.75 -12.25
+	turret 4.75 4.25 "Blaster Turret"
 	leak "leak" 60 50
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -751,7 +751,7 @@ ship "Bounder"
 
 ship "Boxwing"
 	sprite "ship/boxwing"
-		"scale" 0.6
+		"scale" 0.5
 	thumbnail "thumbnail/boxwing"
 	attributes
 		category "Fighter"
@@ -780,10 +780,10 @@ ship "Boxwing"
 
 		"RC10 Reaction Engines"
 
-	engine 23 -1
-	engine -23 -1
-	engine 19 29
-	engine -19 29
+	engine 11.5 -0.5
+	engine -11.5 -0.5
+	engine 9.5 14.5
+	engine -9.5 14.5
 	leak "leak" 70 50
 	leak "flame" 50 80
 	explode "tiny explosion" 15
@@ -1550,7 +1550,7 @@ ship "Cutthroat"
 
 ship "Dagger"
 	sprite "ship/dagger"
-		"scale" 0.6
+		"scale" 0.5
 	thumbnail "thumbnail/dagger"
 	attributes
 		category "Fighter"
@@ -1588,13 +1588,13 @@ ship "Dagger"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine -8 34
-	engine 8 34
-	gun 0 -35 "Beam Laser"
-	gun -11 -21
-	gun 11 -21
-	pylon -15 -19 "Javelin Mini Pod"
-	pylon 15 -19 "Javelin Mini Pod"
+	engine -4 17
+	engine 4 17
+	gun 0 -17.5 "Beam Laser"
+	gun -5.5 -10.5
+	gun 5.5 -10.5
+	pylon -7.5 -9.5 "Javelin Mini Pod"
+	pylon 7.5 -9.5 "Javelin Mini Pod"
 	leak "leak" 60 50
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -1682,7 +1682,7 @@ ship "Dreadnought"
 
 ship "Dropship"
 	sprite "ship/dropship"
-		"scale" 0.6
+		"scale" 0.5
 	thumbnail "thumbnail/dropship"
 	attributes
 		category "Fighter"
@@ -1721,12 +1721,12 @@ ship "Dropship"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 	
-	engine 13 26
-	engine -13 26
-	gun 2 -27 "Beam Laser"
-	gun -2 -27 "Beam Laser"
-	pylon 2 -27
-	pylon -2 -27
+	engine 6.5 13
+	engine -6.5 13
+	gun 1 -13.5 "Beam Laser"
+	gun -1 -13.5 "Beam Laser"
+	pylon 1 -13
+	pylon -1 -13
 	leak "leak" 60 50
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -1870,7 +1870,7 @@ ship "Falcon"
 ship "Finch"
 	plural "Finches"
 	sprite "ship/finch"
-		"scale" 0.6
+		"scale" 0.5
 	thumbnail "thumbnail/finch"
 	attributes
 		category "Fighter"
@@ -1908,13 +1908,13 @@ ship "Finch"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine -5 32
-	engine 5 32
-	gun 0 -31.5 "Beam Laser"
-	gun -7 -14
-	gun 7 -14
-	pylon -23 3 "Javelin Mini Pod"
-	pylon 23 3 "Javelin Mini Pod"
+	engine -2.5 16
+	engine 2.5 16
+	gun 0 -15.75 "Beam Laser"
+	gun -3.5 -7
+	gun 3.5 -7
+	pylon -11.5 1.5 "Javelin Mini Pod"
+	pylon 11.5 1.5 "Javelin Mini Pod"
 	leak "flame" 60 80
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -2843,7 +2843,7 @@ ship "Lampyrid Mk. II"
 
 ship "Lance"
 	sprite "ship/lance"
-		"scale" 0.6
+		"scale" 0.5
 	thumbnail "thumbnail/lance"
 	attributes
 		category "Fighter"
@@ -2882,13 +2882,13 @@ ship "Lance"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine -14.5 30.5
-	engine 14.5 30.5
-	gun 0 -34 "Energy Blaster"
-	gun -13.5 -6.5
-	gun 13.5 -6.5
-	pylon -19 18 "Sidewinder Missile Pod"
-	pylon 19 18 "Sidewinder Missile Pod"
+	engine -7.25 15.25
+	engine 7.25 15.25
+	gun 0 -17 "Energy Blaster"
+	gun -6.75 -3.25
+	gun 6.75 -3.25
+	pylon -9.5 9 "Sidewinder Missile Pod"
+	pylon 9.5 9 "Sidewinder Missile Pod"
 	explode "tiny explosion" 15
 	explode "small explosion" 5
 	description "The Lance is the primary fighter used by the Republic Navy. As with all fighters, it is weak by itself but very effective as part of a larger squadron."
