@@ -579,7 +579,7 @@ ship "Behemoth"
 
 ship "Berserker"
 	sprite "ship/berserker"
-		"scale" 0.75
+		"scale" 0.6
 	thumbnail "thumbnail/berserker"
 	attributes
 		category "Interceptor"
@@ -619,15 +619,15 @@ ship "Berserker"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
-	engine -10 45
-	engine 10 45
-	gun -20 12 "Energy Blaster"
-	gun 20 12 "Energy Blaster"
-	gun -44 10
-	gun 44 10
-	pylon -20 23 "Javelin Mini Pod"
+	engine -6 27
+	engine 6 27
+	gun -12 7.2 "Energy Blaster"
+	gun 12 7.2 "Energy Blaster"
+	gun -26.4 6
+	gun 26.4 6
+	pylon -26 6 "Javelin Mini Pod"
 		over
-	pylon 20 23 "Javelin Mini Pod"
+	pylon 26 6 "Javelin Mini Pod"
 		over
 	leak "leak" 60 50
 	leak "flame" 80 80
