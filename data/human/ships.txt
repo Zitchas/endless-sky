@@ -627,7 +627,7 @@ ship "Berserker"
 	gun 30.6 7
 	pylon -30 7 "Javelin Mini Pod"
 		over
-	pylon 30 7"Javelin Mini Pod"
+	pylon 30 7 "Javelin Mini Pod"
 		over
 	leak "leak" 60 50
 	leak "flame" 80 80
