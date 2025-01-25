@@ -150,8 +150,6 @@ namespace {
 
 
 
-
-
 // Construct and Load() at the same time.
 GameAction::GameAction(const DataNode &node)
 {
