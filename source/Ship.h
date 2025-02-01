@@ -347,6 +347,8 @@ public:
 	bool DisplayJumpFuelCost() const;
 	double DisplaySolar() const;
 	double DisplayRamScoop() const;
+	double DisplaySystemSolar() const;
+	double DisplaySystemWind() const;
 	// These are for the thruster activity bars
 	double DisplayThrust() const;
 	double DisplayTurn() const;
@@ -473,6 +475,9 @@ public:
 	int OutfitCount(const Outfit *outfit) const;
 	// Add or remove outfits. (To remove, pass a negative number.)
 	void AddOutfit(const Outfit *outfit, int count);
+
+	void ChangeAttribute(std::string targetAttribute, double modifyAmount);
+	void SetAttribute(std::string targetAttribute, double setAmount);
 
 	// Get the list of weapons.
 	Armament &GetArmament();
