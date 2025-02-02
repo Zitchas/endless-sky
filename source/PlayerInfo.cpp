@@ -3007,7 +3007,6 @@ void PlayerInfo::Harvest(const Outfit *type)
 
 
 const set<pair<const System *, const Outfit *>> &PlayerInfo::Harvested() const
-
 {
 	return harvested;
 }
