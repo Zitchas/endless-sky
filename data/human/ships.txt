@@ -2555,12 +2555,12 @@ ship "Hawk"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
-	engine -23.5 41
-	engine 23.5 41
-	gun -8.5 -17.5
-	gun 8.5 -17.5
-	pylon -38 26
-	pylon 38 26
+	engine -17.6 30.7
+	engine 17.6 30.7
+	gun -6.4 -13.1
+	gun 6.4 -13.1
+	pylon -28.5 19.5
+	pylon 28.5 19.5
 	leak "leak" 60 50
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -2884,13 +2884,13 @@ ship "Lance"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine -7.25 15.25
-	engine 7.25 15.25
-	gun 0 -17 "Energy Blaster"
-	gun -6.75 -3.25
-	gun 6.75 -3.25
-	pylon -9.5 9 "Sidewinder Missile Pod"
-	pylon 9.5 9 "Sidewinder Missile Pod"
+	engine -3.6 7.6
+	engine 3.6 7.6
+	gun 0 -8.5 "Energy Blaster"
+	gun -3.4 -1.6
+	gun 3.4 -1.6
+	pylon -4.7 4.5 "Sidewinder Missile Pod"
+	pylon 4.7 4.5 "Sidewinder Missile Pod"
 	explode "tiny explosion" 15
 	explode "small explosion" 5
 	description "The Lance is the primary fighter used by the Republic Navy. As with all fighters, it is weak by itself but very effective as part of a larger squadron."
@@ -4000,9 +4000,9 @@ ship "Scrapper"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
-	engine -6 30
-	engine 6 30
-	gun 0 -31
+	engine -4.5 22.5
+	engine 4.5 22.5
+	gun 0 -23
 	leak "leak" 60 50
 	explode "tiny explosion" 10
 	explode "small explosion" 5
