@@ -2622,6 +2622,7 @@ mission "Terminus exploration"
 
 ship "Science Drone"
 	sprite "ship/science drone"
+		"scale" 0.75 # Not scaled as much because needs to be found by players, and science collection prioritizes antenna size over combat compactness.
 	attributes
 		category "Drone"
 		hull 200

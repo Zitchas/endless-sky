@@ -240,6 +240,7 @@ phrase "MMK subphrase 2"
 ship "Marauder Fury"
 	plural "Marauder Furies"
 	sprite "ship/mfury"
+		"scale" 0.75
 	thumbnail "thumbnail/mfury"
 	attributes
 		category "Interceptor"
@@ -1456,6 +1457,7 @@ person "Brick"
 
 ship "Modified Boxwing"
 	sprite "ship/modified boxwing"
+		"scale" 0.75
 	thumbnail "thumbnail/modified boxwing"
 	attributes
 		category "Interceptor"

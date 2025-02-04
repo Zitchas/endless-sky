@@ -384,6 +384,7 @@ ship "'nra'ret"
 ship "'olofez"
 	plural "'olofezes"
 	sprite "ship/chaser"
+		"scale" 0.5
 	thumbnail "thumbnail/chaser"
 	attributes
 		category "Fighter"
@@ -418,9 +419,9 @@ ship "'olofez"
 		"Lateral (Asteroid Class)"
 		"Steering (Asteroid Class)"
 	
-	engine -7 23
-	engine 7 23
-	gun 0 -28 "Fire-Lance"
+	engine -3.5 11.5
+	engine 3.5 11.5
+	gun 0 -14 "Fire-Lance"
 	explode "tiny explosion" 20
 	description "The 'olofez-Class Carried Chaser, named for a renowned artist who painted their visions of ancient hunts, is a fighter carried by most Exile capital ships."
 	description "	Fighters do not come equipped with a hyperdrive. You cannot carry a fighter unless you have a ship in your fleet with a fighter bay."
@@ -429,6 +430,7 @@ ship "'olofez"
 
 ship "Kas'ik Tek 7"
 	sprite "ship/kas-ik tek 7"
+		"scale" 0.4
 	thumbnail "thumbnail/kas-ik tek 7"
 	attributes
 		category "Drone"
@@ -463,9 +465,9 @@ ship "Kas'ik Tek 7"
 		"Generator (Candle Class)"
 		"Small Heat Shunt"
 		"Engine (Meteor Class)"
-	engine 0 22.5
-	engine -8.5 25
-	engine 8.5 25
+	engine 0 9
+	engine -3.4 10
+	engine 3.4 10
 	explode "tiny explosion" 9
 	explode "small explosion" 6
 	description `These small probes are primarily deployed by larger Korath Exile ships to scan for intruders, evaluate foreign vessels, and analyze system bodies. Their secondary function is to retrieve small debris and deactivated microbots spread across Korath space which have fallen off their ships, been fired from Shunt-Strikes, or were even deliberately deployed. Although the data observed and logged by an individual microbot is extremely limited, processing them in bulk yields a valuable gestalt of information. More importantly, the microbots can be recycled for use afterwards.`
@@ -2048,6 +2050,7 @@ ship "Met Par Tek 53"
 
 ship "Far Lek 14"
 	sprite "ship/far lek 14"
+		"scale" 0.4
 	thumbnail "thumbnail/far lek 14"
 	attributes
 		category "Drone"
@@ -2082,9 +2085,9 @@ ship "Far Lek 14"
 		"Lateral (Asteroid Class)"
 		"Steering (Asteroid Class)"
 		
-	engine -2 28
-	engine 8 28
-	gun 0 -30
+	engine -0.8 11.2
+	engine 3.2 11.2
+	gun 0 -12
 	explode "tiny explosion" 20
 	explode "small explosion" 10
 	description "At the peak of their recent civil war, the Kor Sestor faction developed these automated attack drones, easy to manufacture and encased in an ultra-dense hull that can absorb a significant amount of damage."
@@ -2094,6 +2097,7 @@ ship "Far Lek 14"
 
 ship "Far Osk 27"
 	sprite "ship/far osk 27"
+		"scale" 0.5
 	thumbnail "thumbnail/far osk 27"
 	attributes
 		category "Fighter"
@@ -2128,10 +2132,10 @@ ship "Far Osk 27"
 		"Lateral (Asteroid Class)"
 		"Steering (Asteroid Class)"
 		
-	engine -4 37
-	engine 4 37
-	gun 7 -15
-	gun 13 -8
+	engine -2 18.5
+	engine 2 18.5
+	gun 3.5 -7.5
+	gun 6.5 -4
 	explode "tiny explosion" 25
 	explode "small explosion" 15
 	description "Because it is piloted by a computer and has no need for a cockpit or life support systems, the FS27 fighter is able to support a thicker hull, more shields, and more weaponry than any comparable human ship."
@@ -2141,6 +2145,7 @@ ship "Far Osk 27"
 
 ship "Model 8"
 	sprite "ship/model 8"
+		"scale" 0.6
 	thumbnail "thumbnail/model 8"
 	attributes
 		category "Interceptor"
@@ -2181,10 +2186,10 @@ ship "Model 8"
 		"Steering (Lunar Class)"
 		Hyperdrive
 	
-	engine -11 49
-	engine 11 49
-	gun 9 -36 "Husk-Slice"
-	gun -11 -15
+	engine -6.6 29.4
+	engine 6.6 29.4
+	gun 5.4 -21.6 "Husk-Slice"
+	gun -6.6 -9
 	explode "tiny explosion" 30
 	explode "small explosion" 10
 	"final explode" "final explosion small"

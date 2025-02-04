@@ -404,6 +404,7 @@ ship "Cicada"
 
 ship "Flea"
 	sprite "ship/hai flea"
+		"scale" 0.4
 	thumbnail "thumbnail/hai flea"
 	attributes
 		category "Drone"
@@ -433,10 +434,10 @@ ship "Flea"
 		"Supercapacitor" 2
 		`"Baellie" Atomic Engines`
 
-	engine 0 27 1.4
-	gun 0 -27 "Railgun"
-	gun 0 -27 "Railgun"
-	gun 0 -27 "Railgun"
+	engine 0 10.8 1.4
+	gun 0 -10.8 "Railgun"
+	gun 0 -10.8 "Railgun"
+	gun 0 -10.8 "Railgun"
 	leak "leak" 60 50
 	explode "tiny explosion" 15
 	description `This combat drone is built to amplify the strength of any combat force for as few credits as possible. It was designed in conjunction with the tactical recoil of the Skipper Railgun to allow it to kite its targets, prolonging its combat efficacy while it supports its allies with debilitating ion damage.`
@@ -547,6 +548,7 @@ ship "Geocoris" "Geocoris (Tracker)"
 
 ship "Grasshopper"
 	sprite "ship/hai grasshopper"
+		"scale" 0.6
 	thumbnail "thumbnail/hai grasshopper"
 	attributes
 		category "Interceptor"
@@ -585,11 +587,11 @@ ship "Grasshopper"
 		`"Benga" Atomic Steering`
 		Hyperdrive
 
-	engine 0 36
-	gun -6 -34 "Pulse Cannon"
-	gun 6 -34 "Pulse Cannon"
-	pylon -15 -10
-	pylon 15 -10
+	engine 0 21.6
+	gun -3.6 20.4 "Pulse Cannon"
+	gun 3.6 20.4 "Pulse Cannon"
+	pylon -9 -6
+	pylon 9 -6
 	leak "leak" 60 50
 	explode "tiny explosion" 10
 	explode "small explosion" 20
@@ -2214,6 +2216,7 @@ ship "Solifuge" "Solifuge (Tracker)"
 
 ship "Violin Spider"
 	sprite "ship/hai violin spider"
+		"scale" 0.5
 	thumbnail "thumbnail/hai violin spider"
 	attributes
 		category "Fighter"
@@ -2248,15 +2251,15 @@ ship "Violin Spider"
 		`"Basrem" Atomic Thruster`
 		`"Basrem" Atomic LTC`
 
-	engine -15 30
-	engine 15 30
-	gun 0 -31
-	pylon 0 -20 "Hai Tracker Pod"
-	pylon -7 -20
+	engine -7.5 15
+	engine 7.5 15
+	gun 0 -15.5
+	pylon 0 -10 "Hai Tracker Pod"
+	pylon -3.5 -10
 		angle 350
-	pylon 7 -20
+	pylon 3.5 -10
 		angle 10
-	turret 0 5
+	turret 0 2.5
 	leak "leak" 60 50
 	explode "tiny explosion" 15
 	explode "small explosion" 5

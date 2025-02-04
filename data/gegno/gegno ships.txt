@@ -431,6 +431,7 @@ ship "Protolith"
 
 ship "Dunite"
 	sprite "ship/gegno dunite"
+		"scale" 0.75
 	thumbnail "thumbnail/gegno dunite"
 	attributes
 		category "Interceptor"
@@ -741,6 +742,7 @@ ship "Schist" "Schist (Heavy Load)"
 
 ship "Rhyolite"
 	sprite "ship/gegno rhyolite"
+		"scale" 0.75
 	thumbnail "thumbnail/gegno rhyolite"
 	attributes
 		category "Interceptor"
@@ -1230,6 +1232,7 @@ ship "Granulite"
 
 ship "Halite"
 	sprite "ship/gegno halite"
+		"scale" 0.6
 	thumbnail "thumbnail/gegno halite"
 	attributes
 		category "Fighter"

@@ -391,6 +391,7 @@ ship "Bactrian"
 
 ship "Barb"
 	sprite "ship/barb"
+		"scale" 0.5
 	thumbnail "thumbnail/barb"
 	attributes
 		category "Fighter"
@@ -424,11 +425,11 @@ ship "Barb"
 
 		"RC10 Reaction Engines"
 		
-	engine 9 25
-	engine -8 25
-	gun -7.5 -24.5 "Energy Blaster"
-	pylon -7.5 -24.5
-	turret 9.5 8.5 "Blaster Turret"
+	engine 4.5 12.5
+	engine -4 12.5
+	gun -3.75 -12.25 "Energy Blaster"
+	pylon -3.75 -12.25
+	turret 4.75 4.25 "Blaster Turret"
 	leak "leak" 60 50
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -578,6 +579,7 @@ ship "Behemoth"
 
 ship "Berserker"
 	sprite "ship/berserker"
+		"scale" 0.7
 	thumbnail "thumbnail/berserker"
 	attributes
 		category "Interceptor"
@@ -617,15 +619,15 @@ ship "Berserker"
 		"RC32 Reaction Steering"
 		"Hyperdrive"
 		
-	engine -10 45
-	engine 10 45
-	gun -20 12 "Energy Blaster"
-	gun 20 12 "Energy Blaster"
-	gun -44 10
-	gun 44 10
-	pylon -20 23 "Javelin Mini Pod"
+	engine -7 31
+	engine 7 31
+	gun -13.9 8.4 "Energy Blaster"
+	gun 13.9 8.4 "Energy Blaster"
+	gun -30.6 7
+	gun 30.6 7
+	pylon -30 7 "Javelin Mini Pod"
 		over
-	pylon 20 23 "Javelin Mini Pod"
+	pylon 30 7 "Javelin Mini Pod"
 		over
 	leak "leak" 60 50
 	leak "flame" 80 80
@@ -749,6 +751,7 @@ ship "Bounder"
 
 ship "Boxwing"
 	sprite "ship/boxwing"
+		"scale" 0.5
 	thumbnail "thumbnail/boxwing"
 	attributes
 		category "Fighter"
@@ -777,10 +780,10 @@ ship "Boxwing"
 
 		"RC10 Reaction Engines"
 
-	engine 23 -1
-	engine -23 -1
-	engine 19 29
-	engine -19 29
+	engine 11.5 -0.5
+	engine -11.5 -0.5
+	engine 9.5 14.5
+	engine -9.5 14.5
 	leak "leak" 70 50
 	leak "flame" 50 80
 	explode "tiny explosion" 15
@@ -1199,6 +1202,7 @@ ship "Clipper"
 
 ship "Combat Drone"
 	sprite "ship/combat drone"
+		"scale" 0.4
 	thumbnail "thumbnail/combat drone"
 	attributes
 		category "Drone"
@@ -1232,10 +1236,10 @@ ship "Combat Drone"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine -8.5 28.5 0.9
-	engine 8.5 28.5 0.9
-	gun 0 -29 "Beam Laser"
-	pylon 0 -29
+	engine -3.4 11.4 0.8
+	engine 3.4 11.4 0.8
+	gun 0 -11.6 "Beam Laser"
+	pylon 0 -11
 	explode "tiny explosion" 15
 	description "Combat drones are pilotless attack ships used primarily by the Republic Navy. Although very weak and easy to destroy, they can be very effective in large numbers. Because drones do not need a cockpit, they can be filled entirely with equipment and solid metal, which makes their hulls stronger than other small ships."
 	description "	Drones do not come equipped with a hyperdrive. You cannot carry a drone unless you have a ship in your fleet with a drone bay."
@@ -1546,6 +1550,7 @@ ship "Cutthroat"
 
 ship "Dagger"
 	sprite "ship/dagger"
+		"scale" 0.5
 	thumbnail "thumbnail/dagger"
 	attributes
 		category "Fighter"
@@ -1583,13 +1588,13 @@ ship "Dagger"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine -8 34
-	engine 8 34
-	gun 0 -35 "Beam Laser"
-	gun -11 -21
-	gun 11 -21
-	pylon -15 -19 "Javelin Mini Pod"
-	pylon 15 -19 "Javelin Mini Pod"
+	engine -4 17
+	engine 4 17
+	gun 0 -17.5 "Beam Laser"
+	gun -5.5 -10.5
+	gun 5.5 -10.5
+	pylon -7.5 -9.5 "Javelin Mini Pod"
+	pylon 7.5 -9.5 "Javelin Mini Pod"
 	leak "leak" 60 50
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -1677,6 +1682,7 @@ ship "Dreadnought"
 
 ship "Dropship"
 	sprite "ship/dropship"
+		"scale" 0.5
 	thumbnail "thumbnail/dropship"
 	attributes
 		category "Fighter"
@@ -1715,12 +1721,12 @@ ship "Dropship"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 	
-	engine 13 26
-	engine -13 26
-	gun 2 -27 "Beam Laser"
-	gun -2 -27 "Beam Laser"
-	pylon 2 -27
-	pylon -2 -27
+	engine 6.5 13
+	engine -6.5 13
+	gun 1 -13.5 "Beam Laser"
+	gun -1 -13.5 "Beam Laser"
+	pylon 1 -13
+	pylon -1 -13
 	leak "leak" 60 50
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -1864,6 +1870,7 @@ ship "Falcon"
 ship "Finch"
 	plural "Finches"
 	sprite "ship/finch"
+		"scale" 0.5
 	thumbnail "thumbnail/finch"
 	attributes
 		category "Fighter"
@@ -1901,13 +1908,13 @@ ship "Finch"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine -5 32
-	engine 5 32
-	gun 0 -31.5 "Beam Laser"
-	gun -7 -14
-	gun 7 -14
-	pylon -23 3 "Javelin Mini Pod"
-	pylon 23 3 "Javelin Mini Pod"
+	engine -2.5 16
+	engine 2.5 16
+	gun 0 -15.75 "Beam Laser"
+	gun -3.5 -7
+	gun 3.5 -7
+	pylon -11.5 1.5 "Javelin Mini Pod"
+	pylon 11.5 1.5 "Javelin Mini Pod"
 	leak "flame" 60 80
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -2178,6 +2185,7 @@ ship "Frigate"
 ship "Fury"
 	plural "Furies"
 	sprite "ship/fury"
+		"scale" 0.7
 	thumbnail "thumbnail/fury"
 	attributes
 		category "Interceptor"
@@ -2216,16 +2224,16 @@ ship "Fury"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
-	engine -11 35 0.8
-	engine 11 35 0.8
-	engine -18 37 0.6
-	engine 18 37 0.6
-	gun -11 -28
-	gun 11 -28
-	gun -17 -19.5
-	gun 17 -19.5
-	gun -5.5 -33
-	gun 5.5 -33
+	engine -7.7 24.5 0.7
+	engine 7.7 24.5 0.7
+	engine -12.6 25.9 0.5
+	engine 12.6 25.9 0.5
+	gun -7.7 -19.6
+	gun 7.7 -19.6
+	gun -11.9 -13.6
+	gun 11.9 -13.6
+	gun -3.85 -23.1
+	gun 3.85 -23.1
 	pylon -37 27
 	pylon 37 27
 	pylon -13 -2
@@ -2507,6 +2515,7 @@ ship "Hauler III"
 
 ship "Hawk"
 	sprite "ship/hawk"
+		"scale" 0.75
 	thumbnail "thumbnail/hawk"
 	attributes
 		category "Interceptor"
@@ -2546,12 +2555,12 @@ ship "Hawk"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
-	engine -23.5 41
-	engine 23.5 41
-	gun -8.5 -17.5
-	gun 8.5 -17.5
-	pylon -38 26
-	pylon 38 26
+	engine -17.6 30.7
+	engine 17.6 30.7
+	gun -6.4 -13.1
+	gun 6.4 -13.1
+	pylon -28.5 19.5
+	pylon 28.5 19.5
 	leak "leak" 60 50
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -2836,6 +2845,7 @@ ship "Lampyrid Mk. II"
 
 ship "Lance"
 	sprite "ship/lance"
+		"scale" 0.5
 	thumbnail "thumbnail/lance"
 	attributes
 		category "Fighter"
@@ -2874,13 +2884,13 @@ ship "Lance"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine -14.5 30.5
-	engine 14.5 30.5
-	gun 0 -34 "Energy Blaster"
-	gun -13.5 -6.5
-	gun 13.5 -6.5
-	pylon -19 18 "Sidewinder Missile Pod"
-	pylon 19 18 "Sidewinder Missile Pod"
+	engine -3.6 7.6
+	engine 3.6 7.6
+	gun 0 -8.5 "Energy Blaster"
+	gun -3.4 -1.6
+	gun 3.4 -1.6
+	pylon -4.7 4.5 "Sidewinder Missile Pod"
+	pylon 4.7 4.5 "Sidewinder Missile Pod"
 	explode "tiny explosion" 15
 	explode "small explosion" 5
 	description "The Lance is the primary fighter used by the Republic Navy. As with all fighters, it is weak by itself but very effective as part of a larger squadron."
@@ -3115,6 +3125,7 @@ ship "Manta"
 
 ship "Mining Drone"
 	sprite "ship/mining drone"
+		"scale" 0.4
 	thumbnail "thumbnail/mining drone"
 	attributes
 		category "Drone"
@@ -3146,8 +3157,8 @@ ship "Mining Drone"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine 0 22 0.9
-	gun 0 -22
+	engine 0 8.8 0.8
+	gun 0 -8.8
 	explode "tiny explosion" 10
 	description "The semi-autonomous Mining Drone is used by the Syndicate alongside the Sunder mining vessel in a supportive role. Not being much more than a Mining Laser with an engine stuck to the rear of it, these drones do not last long in combat with other ships due to how fragile they are."
 	description "	Drones do not come equipped with a hyperdrive. You cannot carry a drone unless you have a ship in your fleet with a drone bay."
@@ -3952,6 +3963,7 @@ ship "Scout"
 
 ship "Scrapper"
 	sprite "ship/pirate scrapper"
+		"scale" 0.75
 	thumbnail "thumbnail/pirate scrapper"
 	attributes
 		category "Interceptor"
@@ -3988,9 +4000,9 @@ ship "Scrapper"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
-	engine -6 30
-	engine 6 30
-	gun 0 -31
+	engine -4.5 22.5
+	engine 4.5 22.5
+	gun 0 -23
 	leak "leak" 60 50
 	explode "tiny explosion" 10
 	explode "small explosion" 5
@@ -4132,6 +4144,7 @@ ship "Skein"
 
 ship "Sparrow"
 	sprite "ship/sparrow"
+		"scale" 0.6
 	thumbnail "thumbnail/sparrow"
 	attributes
 		category "Interceptor"
@@ -4169,16 +4182,16 @@ ship "Sparrow"
 		"RC12 Reaction Steering"
 		"Hyperdrive"
 		
-	engine -5 35
-	engine 5 35
-	gun -7 -10
-	gun 7 -10
-	gun -10.5 -8.5
-	gun 10.5 -8.5
-	pylon -20 -3.5
-	pylon 20 -3.5
-	pylon -29 -3
-	pylon 29 -3
+	engine -3 21
+	engine 3 21
+	gun -4.2 -6
+	gun 4.2 -6
+	gun -6.3 -5.1
+	gun 6.3 -5.1
+	pylon -12 -2.1
+	pylon 12 -2.1
+	pylon -17.4 -1.8
+	pylon 17.4 -1.8
 	leak "flame" 60 80
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -4436,6 +4449,7 @@ ship "Sunder"
 
 ship "Surveillance Drone"
 	sprite "ship/surveillance drone"
+		"scale" 0.4
 	thumbnail "thumbnail/surveillance drone"
 	attributes
 		category "Drone"
@@ -4467,8 +4481,8 @@ ship "Surveillance Drone"
 		"RC14 Reaction LTC"
 		"RC12 Reaction Steering"
 		
-	engine -3 29
-	engine 3 29
+	engine -1.2 11.6
+	engine 1.2 11.6
 	explode "tiny explosion" 15
 	description "Surveillance drones are unarmed drones used by the Republic navy to scan ships and planets in a star system."
 	description "	Drones do not come equipped with a hyperdrive. You cannot carry a drone unless you have a ship in your fleet with a drone bay."
@@ -4624,6 +4638,7 @@ ship "Vanguard"
 
 ship "Wasp"
 	sprite "ship/wasp"
+		"scale" 0.6
 	thumbnail "thumbnail/wasp"
 	attributes
 		category "Interceptor"
@@ -4664,15 +4679,15 @@ ship "Wasp"
 		"RC22 Reaction Steering"
 		"Hyperdrive"
 		
-	engine -5.5 32.5
-	engine 5.5 32.5
-	gun 0 -41
-	gun -13.5 -35 "Energy Blaster"
-	gun 13.5 -35 "Energy Blaster"
-	gun -18.5 -27
-	gun 18.5 -27
-	pylon -19 -14.5 "Sidewinder Missile Pod"
-	pylon 19 -14.5
+	engine -3.3 19.5
+	engine 3.3 19.5
+	gun 0 -24.6
+	gun -8.1 -21 "Energy Blaster"
+	gun 8.1 -21 "Energy Blaster"
+	gun -11.1 -16.2
+	gun 11.1 -16.2
+	pylon -11.4 -8.7 "Sidewinder Missile Pod"
+	pylon 11.4 -8.7
 	leak "leak" 60 50
 	explode "tiny explosion" 20
 	explode "small explosion" 10

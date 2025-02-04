@@ -56,6 +56,7 @@ ship "Earth Shaper"
 
 ship "Flycatcher"
 	sprite "ship/flycatcher"
+		"scale" 0.4
 	thumbnail "thumbnail/flycatcher"
 	attributes
 		category "Drone"
@@ -88,9 +89,9 @@ ship "Flycatcher"
 		"Type 1 Radiant LTC"
 		"Type 1 Radiant Steering"
 		
-	engine -9 28
-	engine 9 28
-	turret 0 4
+	engine -3.6 11.2
+	engine 3.6 11.2
+	turret 0 1.6
 	explode "tiny explosion" 30
 	explode "small explosion" 20
 	description "Flycatcher drones are used by the Wanderers to keep their star systems safe. Rather than carrying weapons of its own, a stock Flycatcher just carries an anti-missile turret for defending other ships."
@@ -726,6 +727,7 @@ ship "Hurricane" "Hurricane (Moonbeam)"
 
 ship "Cool Breeze"
 	sprite "ship/cool breeze"
+		"scale" 0.75
 	thumbnail "thumbnail/cool breeze"
 	attributes
 		category "Interceptor"
@@ -764,12 +766,12 @@ ship "Cool Breeze"
 		"Type 3 Radiant Steering"
 		"Hyperdrive"
 	
-	engine -10 47
-	engine 10 47
-	gun -15 -10
-	gun 15 -10
-	pylon -23 15
-	pylon 23 15
+	engine -7.5 35.25
+	engine 7.5 35.25
+	gun -11.25 -7.5
+	gun 11.25 -7.5
+	pylon -17.25 11.25
+	pylon 17.25 11.25
 	explode "tiny explosion" 30
 	explode "small explosion" 10
 	"final explode" "final explosion small"

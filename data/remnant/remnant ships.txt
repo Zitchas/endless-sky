@@ -1032,6 +1032,7 @@ ship "Ibis"
 
 ship "Merganser"
 	sprite "ship/merganser"
+		"scale" 0.60
 	thumbnail "thumbnail/merganser"
 	attributes
 		category "Interceptor"
@@ -1117,15 +1118,15 @@ ship "Merganser"
 		"Bellows-Class Afterburner"
 		"Scram Drive"
 		
-	gun 0 -48.5
-	gun -6 -41 "Inhibitor Cannon"
-	gun 6 -41 "Inhibitor Cannon"
-	pylon -17 -12
-	pylon 17 -12
+	gun 0 -29.1
+	gun -3.6 -24.6 "Inhibitor Cannon"
+	gun 3.6 -24.6 "Inhibitor Cannon"
+	pylon -10.2 -7.2
+	pylon 10.2 -7.2
 	turret 0 0
-	engine 0 45
-	engine -10 49
-	engine 10 49
+	engine 0 27
+	engine -6 29.4
+	engine 6 29.4
 	explode "tiny explosion" 30
 	explode "small explosion" 20
 	description "The Merganser is the first production ship the Remnant deem to be truly alive, and are considered to be equivalent to dolphins in reasoning tests. These interceptors, deemed for short range operations by Remnant standards, are designed to patrol the upper atmosphere of gas giants and use their decisive speed advantage to conduct hit-and-run attacks on threats in nearby systems."
@@ -1258,6 +1259,7 @@ ship "Pelican" "Pelican (Heavy Lift)"
 
 ship "Penguin"
 	sprite "ship/penguin/penguin"
+		"scale" 0.6
 		"frame rate" 3
 	thumbnail "thumbnail/penguin"
 	attributes
@@ -1347,36 +1349,36 @@ ship "Penguin"
 		"Crucible-Class Steering"
 		"Hyperdrive"
 	
-	engine 0 30
-	"reverse engine" -11 -17
+	gun 0 -19.8
+	pylon 0 -19.8
+	turret 0 3.3
+	engine 0 18
+	"reverse engine" -6.6 -10.2
 		zoom 0.25
 		angle 350
-	"reverse engine" 11 -17
+	"reverse engine" 6.6 -10.2
 		zoom 0.25
 		angle 10
-	"steering engine" -11 -17
+	"steering engine" -6.6 -10.2
 		"zoom" 0.15
 		angle 90
 		under
 		right
-	"steering engine" 11 -17
+	"steering engine" 6.6 -10.2
 		"zoom" 0.15
 		angle 270
 		under
 		left
-	"steering engine" -11 17
+	"steering engine" -6.6 10.2
 		"zoom" 0.15
 		angle 90
 		under
 		left
-	"steering engine" 11 17
+	"steering engine" 6.6 10.2
 		"zoom" 0.15
 		angle 270
 		under
 		right
-	gun 0 -33
-	pylon 0 -20
-	turret 0 5.5
 	leak "remnant leak sparkle" 30 2
 	explode "tiny explosion" 8
 	explode "small explosion" 7
@@ -1527,6 +1529,7 @@ ship "Peregrine" "Peregrine (II)"
 
 ship "Petrel"
 	sprite "ship/petrel"
+		"scale" 0.5
 	thumbnail "thumbnail/petrel"
 	attributes
 		category "Fighter"
@@ -1582,13 +1585,13 @@ ship "Petrel"
 		
 		"Anvil-Class Engine"
 		
-	gun 0 -38.5
-	gun -10.5 -24 "Inhibitor Cannon"
-	gun 10.5 -24 "Inhibitor Cannon"
-	pylon -14 -13
-	pylon 14 -13
-	turret 0 2.5
-	engine 0 41.5
+	gun 0 -19.25
+	gun -5.25 -12 "Inhibitor Cannon"
+	gun 5.25 -12 "Inhibitor Cannon"
+	pylon -7 -6.5
+	pylon 7 -6.5
+	turret 0 1.25
+	engine 0 20.75
 	leak "remnant leak sparkle" 20 3
 	explode "tiny explosion" 30
 	explode "small explosion" 20
@@ -1600,6 +1603,7 @@ ship "Petrel"
 
 ship "Puffin"
 	sprite "ship/puffin"
+		scale 0.5
 	thumbnail "thumbnail/puffin"
 	attributes
 		category Transport
@@ -1655,7 +1659,7 @@ ship "Puffin"
 		"Anvil-Class Engine"
 		"Hyperdrive"
 		
-	engine 0 30
+	engine 0 15
 	leak "remnant leak sparkle" 20 2
 	explode "tiny explosion" 8
 	explode "small explosion" 7
@@ -1665,6 +1669,7 @@ ship "Puffin"
 
 ship "Smew"
 	sprite "ship/smew"
+		"scale" 0.5
 	thumbnail "thumbnail/smew"
 	attributes
 		category "Fighter"
@@ -1719,9 +1724,9 @@ ship "Smew"
 		
 		"Anvil-Class Engine"
 
-	engine 0 48.5
-	gun 0 -47.5
-	pylon 0 -46.5
+	gun 0 -23.75
+	pylon 0 -23
+	engine 0 24.25
 	leak "remnant leak sparkle" 22 3
 	explode "tiny explosion" 35
 	explode "small explosion" 24
@@ -1948,6 +1953,7 @@ ship "Starling" "Starling (Thrasher)"
 
 ship "Tern"
 	sprite "ship/tern"
+		"scale" 0.4
 	thumbnail "thumbnail/tern"
 	attributes
 		category "Drone"
@@ -2004,10 +2010,10 @@ ship "Tern"
 		
 		"Anvil-Class Engine"
 		
-	gun 0 -22 "Inhibitor Cannon"
-	pylon 0 -20
-	engine -5 20.5
-	engine 5 20.5
+	gun 0 -8.8 "Inhibitor Cannon"
+	pylon 0 -8.0
+	engine -2 8.2
+	engine 2 8.2
 	leak "remnant leak sparkle" 30 2
 	explode "tiny explosion" 30
 	explode "small explosion" 20

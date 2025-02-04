@@ -13,6 +13,7 @@
 
 ship "Kaiken"
 	sprite "ship/kaiken"
+		"scale" 0.6
 	thumbnail "thumbnail/kaiken"
 	attributes
 		category "Fighter"
