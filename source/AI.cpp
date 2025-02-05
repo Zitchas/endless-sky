@@ -1853,7 +1853,11 @@ void AI::MoveIndependent(Ship &ship, Command &command) const
 			{
 				MoveTo(ship, command, Point(), Point(), 40., .8);
 				if(ship.Velocity().Dot(ship.Position()) > 0.)
+				{
 					command.SetThrust(1.);
+					double deviation = ship.Velocity().Unit().Cross(ship.Facing().Unit());
+					command.SetLateralThrust(deviation * 5);
+				}
 				return;
 			}
 		}
@@ -2449,11 +2453,18 @@ bool AI::MoveTo(Ship &ship, Command &command, const Point &targetPosition,
 	double maxVelocity = ship.MaxVelocity(ShouldUseAfterburner(ship)) * .99;
 	if(isFacing && (velocity.LengthSquared() <= maxVelocity * maxVelocity
 			|| dp.Unit().Dot(velocity.Unit()) < .95))
+	{
 		command.SetThrust(1.);
+		double deviation = ship.Velocity().Unit().Cross(ship.Facing().Unit());
+		command.SetLateralThrust(deviation * 5);
+	}
+
 	else if(shouldReverse)
 	{
 		command.SetTurn(TurnToward(ship, velocity));
 		command.SetThrust(-1.);
+		double deviation = ship.Velocity().Unit().Cross(ship.Facing().Unit());
+		command.SetLateralThrust(deviation * 5);
 	}
 
 	return false;
@@ -2513,14 +2524,22 @@ bool AI::Stop(Ship &ship, Command &command, double maxSpeed, const Point directi
 		{
 			command.SetTurn(TurnToward(ship, velocity));
 			if(velocity.Unit().Dot(angle.Unit()) > limit)
+			{
 				command.SetThrust(-1.);
+				double deviation = ship.Velocity().Unit().Cross(ship.Facing().Unit());
+				command.SetLateralThrust(deviation * 5);
+			}
 			return false;
 		}
 	}
 
 	command.SetTurn(TurnBackward(ship));
 	if(velocity.Unit().Dot(angle.Unit()) < -limit)
+	{
 		command.SetThrust(1.);
+		double deviation = ship.Velocity().Unit().Cross(ship.Facing().Unit());
+		command.SetLateralThrust(deviation * 5);
+	}
 
 	return false;
 }
@@ -2704,6 +2723,8 @@ void AI::KeepStation(Ship &ship, Command &command, const Body &target)
 		if(direction > THRUST_DEADBAND)
 		{
 			command.SetThrust(-1.);
+			double deviation = ship.Velocity().Unit().Cross(ship.Facing().Unit());
+			command.SetLateralThrust(deviation * 5);
 			return;
 		}
 	}
@@ -2711,7 +2732,11 @@ void AI::KeepStation(Ship &ship, Command &command, const Body &target)
 	double direction = positionWeight * positionDelta.Dot(a) / POSITION_DEADBAND
 		+ velocityWeight * velocityDelta.Dot(a) / VELOCITY_DEADBAND;
 	if(direction > THRUST_DEADBAND)
+	{
 		command.SetThrust(1.);
+		double deviation = ship.Velocity().Unit().Cross(ship.Facing().Unit());
+		command.SetLateralThrust(deviation * 5);
+	}
 }
 
 
