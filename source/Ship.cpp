@@ -5297,6 +5297,7 @@ void Ship::DoMovement(bool &isUsingAfterburner)
 			latRatioTurnEnergy = latRatioTurn * attributes.Get("turn energy");
 			latRatioTurnHeat = latRatioTurn * attributes.Get("turn heat");
 		}
+
 		if(latThrustCommand)
 		{
 			// Check if we are able to apply this thrust.
