@@ -129,6 +129,10 @@ namespace {
 
 
 
+const string PlayerInfo::UPDATE_FLEET_COUNTERS_CONDITION_NAME = "update fleet counters";
+
+
+
 // Completely clear all loaded information, to prepare for loading a file or
 // creating a new pilot.
 void PlayerInfo::Clear()
@@ -1115,7 +1119,7 @@ map<const shared_ptr<Ship>, vector<string>> PlayerInfo::FlightCheck() const
 
 	auto flightChecks = map<const shared_ptr<Ship>, vector<string>>{};
 	for(const auto &ship : ships)
-		if(ship->GetSystem() && !ship->IsDisabled() && !ship->IsParked())
+		if(ship->GetSystem() && !ship->IsDisabled() && !ship->IsParked() && !ship->Attributes().Get("intrasolar"))
 		{
 			auto checks = ship->FlightCheck();
 			if(!checks.empty())
@@ -3073,6 +3077,21 @@ set<string> &PlayerInfo::Collapsed(const string &name)
 
 
 
+unordered_map<string, int64_t> &PlayerInfo::FleetCounters()
+{
+	return fleetCounters;
+}
+
+
+
+const unordered_map<string, int64_t> &PlayerInfo::FleetCounters() const
+{
+	return fleetCounters;
+}
+
+
+
+
 // Apply any "changes" saved in this player info to the global game state.
 void PlayerInfo::ApplyChanges()
 {
@@ -3945,6 +3964,28 @@ void PlayerInfo::RegisterDerivedConditions()
 		return Random::Int(100);
 	};
 	randomProvider.SetGetFunction(randomFun);
+
+	auto &&fleetCountProvider = conditions.GetProviderPrefixed("fleet count by name: ");
+	fleetCountProvider.SetGetFunction([this](const string &name) -> int64_t
+	{
+		string fleetName = name.substr(strlen("fleet count by name: "));
+		auto found = fleetCounters.find(fleetName);
+		return found == fleetCounters.end() ? 0 : found->second;
+	});
+	fleetCountProvider.SetSetFunction([this](const string &name, int64_t value) -> bool
+	{
+		string fleetName = name.substr(strlen("fleet count by name: "));
+		fleetCounters[fleetName] = value;
+		return true;
+	});
+	// Following code was broken by upstream's removal of erase support. Commenting
+	// it out for now to verify that it doesn't actually remove any functionality.
+	// fleetCountProvider.SetEraseFunction([this](const string &name) -> bool
+	// {
+	// 	string fleetName = name.substr(strlen("fleet count by name: "));
+	// 	fleetCounters.erase(fleetName);
+	// 	return true;
+	// });
 
 	// A condition for returning a random integer in the range [0, input). Input may be a number,
 	// or it may be the name of a condition. For example, "roll: 100" would roll a random
