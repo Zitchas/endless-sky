@@ -208,6 +208,7 @@ mission "Intro [3 Transport]"
 		payment 30000
 		log "Dropped James off on Hestia after running a few missions with him. Met a few spoiled tourists and got to visit Earth along the way."
 		conversation "end of intro missions"
+		outfit "James' Engine Mod"
 
 
 
@@ -340,6 +341,7 @@ mission "Intro [3 Freighter]"
 		payment 30000
 		log "Dropped James off on Hestia after running a few missions with him. Ship still smells like fish."
 		conversation "end of intro missions"
+		outfit "James' Engine Mod"
 
 
 
