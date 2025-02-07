@@ -1532,7 +1532,7 @@ outfit "AR120 Reverse Thruster"
 
 
 # Engine Mods
-# These are things that cannot be installed on their own, but instead are installed onto thrusters and engines. They often modify the performance of the propulsion systems in some way, but may just have some totally unrelated effect and just happen to be things that install on the engine. Due to the very limited amount of space to install things on the engine, these times typically have much lower mass & space requirements than something of their impact would have; but in exchange take up engine mod space.
+# These are things that cannot be installed on their own, but instead are installed onto thrusters and engines. They often modify the performance of the propulsion systems in some way, but may simply have some totally unrelated effect and just happen to be things that install on the engine. Due to the very limited amount of space to install things on the engine, these outfits typically have much lower mass & space requirements than something of their impact would normally have; but in exchange take up engine mod space, which is a very limited resource.
 
 outfit "James' Engine Mod"
 	category "Engine Modifications"
@@ -1544,4 +1544,4 @@ outfit "James' Engine Mod"
 	"turn multiplier" 0.1
 	"unique" 1
 	description "James gave you this engine mod, along with a story about having been given it by some salvagers that he saved from pirates. He considers it a good luck charm, and noted that his ship always seemed to perform a little better when he had it installed."
-	description "	This engine modification is hard to figure out: It has no seams, no obvious method of construction, doesn't match the styling of any known manufacturer, and doesn't quite feel like any material you know of. It does fit right onto your engine, though, and connects nicely with the power and control systems."
+	description "	This engine modification is hard to figure out: It has no seams, no obvious method of construction, doesn't match the styling of any known manufacturer, and doesn't quite feel like any material you know of. It does fit right onto your engine, though, and connects nicely with the regulator, power, and control systems."
