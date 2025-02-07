@@ -1539,6 +1539,7 @@ outfit "James' Engine Mod"
 	cost 250000
 	thumbnail "outfit/blue screwdriver"
 	"engine mod space" -0.2
+	"mass" 0.01
 	"acceleration multiplier" 0.1
 	"turn multiplier" 0.1
 	"unique" 1
