@@ -715,3 +715,16 @@ outfit "AR120 Reverse Thruster"
 	"reverse flare sound" "atomic tiny"
 	description "For pilots who want to pull fancy tricks that most are not capable of duplicating, a reverse thruster allows a ship to accelerate backwards, without needing to turn around."
 	description "	Because a reverse thruster must be facing forwards, it must be installed in the weapon section of your ship instead of the engine section."
+
+
+
+# Engine Mods
+# These are things that cannot be installed on their own, but instead are installed onto thrusters and engines. They often modify the performance of the propulsion systems in some way, but may just have some totally unrelated effect and just happen to be things that install on the engine. Due to the very limited amount of space to install things on the engine, these times typically have much lower mass & space requirements than something of their impact would have; but in exchange take up engine mod space.
+
+outfit "James' Engine Mod"
+	category "Engine Modifications"
+	cost 250000
+	thumbnail "outfit/blue screwdriver"
+	"acceleration multiplier" 0.1
+	"turn multiplier" 0.1
+	"unique" 1
