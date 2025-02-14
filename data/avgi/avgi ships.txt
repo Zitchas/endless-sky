@@ -33,10 +33,10 @@ ship "Koryfi"
 		"outfit space" 144
 		"weapon capacity" 36
 		"engine capacity" 42
-		"lateral thruster slot" 1
-		"reverse thruster slot" 1
-		"steering slot" 1
-		"thruster slot" 1
+		"lateral thruster slot" 1.5
+		"reverse thruster slot" 1.5
+		"steering slot" 1.5
+		"thruster slot" 1.5
 		"solar collection" 6
 		"solar heat" 2.4
 		"anchor point" 1
@@ -295,10 +295,10 @@ ship "Avlaki"
 		"outfit space" 144
 		"weapon capacity" 36
 		"engine capacity" 42
-		"lateral thruster slot" 1
-		"reverse thruster slot" 1
-		"steering slot" 1
-		"thruster slot" 1
+		"lateral thruster slot" 1.5
+		"reverse thruster slot" 1.5
+		"steering slot" 1.5
+		"thruster slot" 1.5
 		"solar collection" 6
 		"solar heat" 2.4
 		"anchor point" 1
@@ -786,10 +786,10 @@ ship "Entasi"
 		"outfit space" 420
 		"weapon capacity" 120
 		"engine capacity" 42
-		"lateral thruster slot" 1
-		"reverse thruster slot" 1
-		"steering slot" 1
-		"thruster slot" 1
+		"lateral thruster slot" 1.5
+		"reverse thruster slot" 1.5
+		"steering slot" 1.5
+		"thruster slot" 1.5
 		"solar collection" 18
 		"solar heat" 7.2
 		"anchor point" 1
@@ -1783,10 +1783,10 @@ ship "Difraktos"
 		"outfit space" 540
 		"weapon capacity" 252
 		"engine capacity" 144
-		"lateral thruster slot" 1
-		"reverse thruster slot" 1
-		"steering slot" 1
-		"thruster slot" 1
+		"lateral thruster slot" 2.0
+		"reverse thruster slot" 2.0
+		"steering slot" 2.0
+		"thruster slot" 2.0
 		"anchor point" 1
 		weapon
 			"blast radius" 420
