@@ -18,6 +18,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "text/alignment.hpp"
 #include "comparators/BySeriesAndIndex.h"
 #include "Color.h"
+#include "CustomSaleManager.h"
 #include "Dialog.h"
 #include "text/DisplayText.h"
 #include "text/Font.h"
@@ -237,6 +238,11 @@ void OutfitterPanel::DrawItem(const string &name, const Point &point)
 		message = "in stock: " + to_string(stock);
 	else if(!outfitter.Has(outfit))
 		message = "(not sold here)";
+
+	// For now there is only default or import.
+	if(!CustomSaleManager::CanBuy(*outfit))
+		message += " (" + CustomSale::GetShown(CustomSale::SellType::IMPORT) + ")";
+
 	if(!message.empty())
 	{
 		Point pos = point + Point(
@@ -347,6 +353,7 @@ ShopPanel::BuyResult OutfitterPanel::CanBuy(bool onlyOwned) const
 		return "You already have one of these licenses, "
 			"so there is no reason to buy another.";
 
+
 	// Check that the player has any necessary licenses.
 	int64_t licenseCost = LicenseCost(selectedOutfit, onlyOwned);
 	if(licenseCost < 0)
@@ -355,7 +362,8 @@ ShopPanel::BuyResult OutfitterPanel::CanBuy(bool onlyOwned) const
 	// Check if the outfit is available to get at all.
 	bool isInCargo = player.Cargo().Get(selectedOutfit);
 	bool isInStorage = player.Storage().Get(selectedOutfit);
-	bool isInStore = outfitter.Has(selectedOutfit) || player.Stock(selectedOutfit) > 0;
+	bool isSold = CustomSaleManager::CanBuy(*selectedOutfit);
+	bool isInStore = (outfitter.Has(selectedOutfit) && isSold) || player.Stock(selectedOutfit) > 0;
 	if(isInStorage && (onlyOwned || isInStore || playerShip))
 	{
 		// In storage, the outfit is certainly available to get,
@@ -387,10 +395,16 @@ ShopPanel::BuyResult OutfitterPanel::CanBuy(bool onlyOwned) const
 	}
 	else if(!isInStore)
 	{
-		// The store doesn't have it.
-		return "You cannot buy this outfit here. "
-			"It is being shown in the list because you have one, "
-			"but this " + planet->Noun() + " does not sell them.";
+		if(isSold)
+			// The store doesn't have it.
+			return "You cannot buy this outfit here. "
+				"It is being shown in the list because you have one, "
+				"but this " + planet->Noun() + " does not sell them.";
+		else
+			// The store has it but you can't buy it.
+			return "You can only sell this outfit here. "
+				"It is being shown in the list because it is an imported item, typically "
+				"sold at a higher price then normal.";
 	}
 	// Add system to accumulate reasons why an outfit cannot be bought
 	vector<string> errors;
@@ -582,7 +596,8 @@ void OutfitterPanel::Buy(bool onlyOwned)
 			else
 			{
 				// Check if the outfit is for sale or in stock so that we can actually buy it.
-				if(!outfitter.Has(selectedOutfit) && player.Stock(selectedOutfit) <= 0)
+				if((!outfitter.Has(selectedOutfit) && player.Stock(selectedOutfit) <= 0) ||
+									!CustomSaleManager::CanBuy(*selectedOutfit))
 					continue;
 				player.Cargo().Add(selectedOutfit);
 				int64_t price = player.StockDepreciation().Value(selectedOutfit, day);

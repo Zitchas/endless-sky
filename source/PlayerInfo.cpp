@@ -18,6 +18,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "AI.h"
 #include "audio/Audio.h"
 #include "ConversationPanel.h"
+#include "CustomSaleManager.h"
 #include "DataFile.h"
 #include "DataWriter.h"
 #include "Dialog.h"
@@ -757,6 +758,8 @@ void PlayerInfo::AdvanceDate(int amount)
 			if(!mission.IsFailed(*this))
 				mission.Do(Mission::DAILY, *this);
 		}
+	// The standard prices will be used to query the value of the fleet of the player, instead of the local prices.
+	CustomSaleManager::Clear();
 
 		DoAccounting();
 	}
