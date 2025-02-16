@@ -1,6 +1,6 @@
 Welcome to Endless Sky Delta!
 
-version 0.10.11.5-delta
+version 0.10.11.6-delta
 
 The player's manual and other
 resources are available at:
