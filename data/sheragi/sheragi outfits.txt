@@ -103,6 +103,8 @@ outfit "Fusion Drive"
 	"jump fuel" 100
 	"jump speed" 0.2
 	"hyperdrive" 1
+	"jump mass cost" 3
+	"jump base mass" 1800
 	"energy generation" 54
 	"heat generation" 156
 	"turn" 3744.0
