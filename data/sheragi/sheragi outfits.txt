@@ -191,7 +191,7 @@ outfit "Dragonflame Cannon"
 		"lifetime" 1
 		"reload" 180
 		"firing energy" 16000
-		"firing fuel" 200
+		"firing fuel" 1200
 		"firing heat" 40000
 		"firing force" 1500
 		"hit force" 3000
