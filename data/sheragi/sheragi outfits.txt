@@ -114,9 +114,11 @@ outfit "Fusion Drive"
 	"outfit space" -480
 	"engine capacity" -230
 	"unique" 1
-	"jump fuel" 100
+	"jump fuel" 218
 	"jump speed" 0.2
 	"hyperdrive" 1
+	"jump mass cost" 3
+	"jump base mass" 1800
 	"energy generation" 54
 	"heat generation" 156
 	"turn" 3744
@@ -189,7 +191,7 @@ outfit "Dragonflame Cannon"
 		"lifetime" 1
 		"reload" 180
 		"firing energy" 16000
-		"firing fuel" 200
+		"firing fuel" 1200
 		"firing heat" 40000
 		"firing force" 1500
 		"hit force" 3000
