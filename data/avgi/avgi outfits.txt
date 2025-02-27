@@ -282,12 +282,20 @@ outfit "Magnetoplasma Drive"
 	"mass" 12
 	"outfit space" -12
 	"engine capacity" -12
+	"lateral thruster slot" -0.5
+	"reverse thruster slot" -0.5
+	"steering slot" -0.5
+	"thruster slot" -0.5
+	"engine mod space" 0.5
 	"thrust" 9
 	"thrusting energy" 0.6
 	"thrusting heat" 0.3
 	"reverse thrust" 9
 	"reverse thrusting energy" 0.6
 	"reverse thrusting heat" 0.3
+	"lateral thrust" 9
+	"lateral thrusting energy" 0.6
+	"lateral thrusting heat" 0.3
 	"turn" 270
 	"turning energy" 0.6
 	"turning heat" 0.3
@@ -316,6 +324,8 @@ outfit `Z-333 "Spark" Fusion Torch`
 	"mass" 333
 	"outfit space" -33
 	"engine capacity" -33
+	"thruster slot" -1
+	"engine mod space" 0.8
 	"thrust" 120
 	"thrusting energy" 9
 	"thrusting heat" 45
@@ -342,6 +352,8 @@ outfit `Z-666 "Zap" Fusion Torch`
 	"mass" 666
 	"outfit space" -66
 	"engine capacity" -66
+	"thruster slot" -1
+	"engine mod space" 1
 	"thrust" 270
 	"thrusting energy" 18
 	"thrusting heat" 90
@@ -367,6 +379,8 @@ outfit `Z-999 "Arc" Fusion Torch`
 	"mass" 999
 	"outfit space" -99
 	"engine capacity" -99
+	"thruster slot" -1
+	"engine mod space" 1.2
 	"thrust" 450
 	"thrusting energy" 27
 	"thrusting heat" 135
@@ -414,6 +428,7 @@ outfit "Remass Injector"
 	"mass" 6
 	"outfit space" -6
 	"engine capacity" -6
+	"engine mod space" -0.2
 	"afterburner thrust" 90
 	"afterburner energy" 3
 	"afterburner heat" -18
@@ -434,6 +449,7 @@ outfit "Inductive Extractor"
 	"mass" 12
 	"outfit space" -12
 	"engine capacity" -6
+	"engine mod space" -0.2
 	"energy generation" 1.5
 	"heat generation" 1.5
 	"thrust" -12
@@ -454,12 +470,19 @@ outfit "R-180 RCS Thrusters"
 	"mass" 18
 	"outfit space" -18
 	"engine capacity" -18
+	"lateral thruster slot" -1
+	"reverse thruster slot" -1
+	"steering slot" -1
+	"engine mod space" 0.9
 	"turn" 750
 	"turning energy" 1.5
 	"turning heat" -3
 	"reverse thrust" 9
 	"reverse thrusting energy" 1.5
 	"reverse thrusting heat" -3
+	"lateral thrust" 9
+	"lateral thrusting energy" 1.5
+	"lateral thrusting heat" -3
 	"steering flare sprite" "effect/avgi flare/rcs"
 		"frame rate" 30
 		"scale" 0.0625
@@ -468,6 +491,10 @@ outfit "R-180 RCS Thrusters"
 		"frame rate" 30
 		"scale" 0.125
 	"reverse flare sound" "plasma small"
+	"lateral flare sprite" "effect/avgi flare/rcs"
+		"frame rate" 30
+		"scale" 0.125
+	"lateral flare sound" "plasma small"
 	description "Avgi reaction control thrusters are hybrid thermal-electric thrusters, designed to allow translation in any direction. By using reactor heat to expel superheated water vapor out of a set of nozzles, they can help a ship cool off, but require the ship to have excess heat in order to function."
 
 
@@ -481,12 +508,19 @@ outfit "R-360 RCS Thrusters"
 	"mass" 36
 	"outfit space" -36
 	"engine capacity" -36
+	"lateral thruster slot" -1
+	"reverse thruster slot" -1
+	"steering slot" -1
+	"engine mod space" 1
 	"turn" 1710
 	"turning energy" 3
 	"turning heat" -6
 	"reverse thrust" 18
 	"reverse thrusting energy" 3
 	"reverse thrusting heat" -6
+	"lateral thrust" 18
+	"lateral thrusting energy" 3
+	"lateral thrusting heat" -6
 	"steering flare sprite" "effect/avgi flare/rcs"
 		"frame rate" 30
 		"scale" 0.125
@@ -495,6 +529,10 @@ outfit "R-360 RCS Thrusters"
 		"frame rate" 30
 		"scale" 0.25
 	"reverse flare sound" "plasma small"
+	"lateral flare sprite" "effect/avgi flare/rcs"
+		"frame rate" 30
+		"scale" 0.25
+	"lateral flare sound" "plasma small"
 	description "The Avgi have designed their reaction control thrusters to synergize with their fusion torches, tapping off high temperature waste heat and using it to superheat water for use in their reaction control systems. An additional magnetohydrodynamic accelerator around each thruster's nozzle improves specific impulse at the cost of significant energy use. These thrusters allow Avgi starships to easily dock with stations or other ships without igniting their highly radioactive fusion torches."
 
 
@@ -508,12 +546,19 @@ outfit "R-720 RCS Thrusters"
 	"mass" 72
 	"outfit space" -72
 	"engine capacity" -72
+	"lateral thruster slot" -1
+	"reverse thruster slot" -1
+	"steering slot" -1
+	"engine mod space" 1.1
 	"turn" 3690
 	"turning energy" 6
 	"turning heat" -9
 	"reverse thrust" 36
 	"reverse thrusting energy" 6
 	"reverse thrusting heat" -9
+	"lateral thrust" 36
+	"lateral thrusting energy" 6
+	"lateral thrusting heat" -9
 	"steering flare sprite" "effect/avgi flare/rcs"
 		"frame rate" 30
 		"scale" 0.25
@@ -522,6 +567,10 @@ outfit "R-720 RCS Thrusters"
 		"frame rate" 30
 		"scale" 0.5
 	"reverse flare sound" "plasma small"
+	"lateral flare sprite" "effect/avgi flare/rcs"
+		"frame rate" 30
+		"scale" 0.5
+	"lateral flare sound" "plasma small"
 	description "This large set of 'teakettle' style reaction control thrusters can allow even the largest of Avgi starships to maneuver with ease, or even reverse course without needing to fully turn around. They also can be used to reject considerable amounts of waste heat by expelling superheated water vapor, boosted by an electromagnetic accelerator."
 
 
@@ -535,6 +584,9 @@ outfit `Z-3600 "Beam" Amat Torch`
 	"mass" 3600
 	"outfit space" -360
 	"engine capacity" -360
+	"thruster slot" -1
+	"steering slot" -1
+	"engine mod space" 1.4
 	"thrust" 600
 	"thrusting energy" 15
 	"thrusting heat" 90

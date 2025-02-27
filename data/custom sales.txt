@@ -1,0 +1,78 @@
+# Copyright (c) 2024 by Loymdayddaud and Zitchas
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+pricing outfits "Quarg Technology Friendly Groups"
+	location
+		government "Free Worlds" "Hai" "Neutral" "Republic" "Syndicate"
+	offset
+		"Nanotech Battery" -0.9 %
+		"Antimatter Core" -0.9 %
+		"Quarg Skylance" -0.9 %
+		"Quarg Anti-Missile" -0.9 %
+		"Intrusion Countermeasures" -0.9 %
+		"Medium Graviton Thruster" -0.9 %
+		"Medium Graviton Steering" -0.9 %
+		"Quantum Shield Generator" -0.9 %
+
+pricing outfits "Quarg Technology Hostile Groups"
+	location
+		government "Hai (Unfettered)" "Independent" "Pirate"
+	offset
+		"Nanotech Battery" 3 %
+		"Antimatter Core" 3 %
+		"Quarg Skylance" 3 %
+		"Quarg Anti-Missile" 3 %
+		"Intrusion Countermeasures" 3 %
+		"Medium Graviton Thruster" 3 %
+		"Medium Graviton Steering" 3 %
+		"Quantum Shield Generator" 3 %
+
+
+pricing outfits "Remnant Hai Keystones"
+	import
+	location
+		government "Remnant"
+	conditions
+		or
+			has "Remnant: Key Stones: done"
+			has "Remnant: Key Stones (Pre-Hai) 2: done"
+	value
+		"Quantum Keystone" 200000
+
+# These are outfits that the Remnant value and want to see imported.
+pricing outfits "Remnant Valued Tech"
+	import
+	location
+		government "Remnant"
+	value
+		"Jump Drive" 2500000
+	offset
+		"Nanotech Battery" 3.5 %
+		"Antimatter Core" 3.5 %
+		"Quarg Skylance" 3.5 %
+		"Quarg Anti-Missile" 3.5 %
+		"Intrusion Countermeasures" 3 %
+		"Medium Graviton Thruster" 3.5 %
+		"Medium Graviton Steering" 3.5 %
+		"Quantum Shield Generator" 3.5 %
+
+# These are old outfits that the Remnant do not use much, and thus do not value as much as elsewhere.
+pricing outfits "Remnant Old Tech"
+	location
+		government "Remnant"
+	value
+		"Cargo Scanner" 5000
+		"Outfit Scanner" 18000
+		"Hyperdrive" 30000
+	
