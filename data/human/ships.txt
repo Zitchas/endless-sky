@@ -40,7 +40,7 @@ ship "Aerie"
 			"hit force" 1200
 	outfits
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 90
+		"Sidewinder Missile" 45
 		"Heavy Laser Turret" 2
 		"Heavy Anti-Missile Turret"
 		
@@ -118,7 +118,7 @@ ship "Argosy"
 	outfits
 		"Energy Blaster" 2
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 31
 		"Blaster Turret"
 		"Anti-Missile Turret"
 		
@@ -189,7 +189,7 @@ ship "Arrow"
 			"hit force" 360
 	outfits
 		"Sidewinder Missile Pod" 2
-		"Sidewinder Missile" 12
+		"Sidewinder Missile" 6
 		"Anti-Missile Turret"
 		
 		"Dwarf Core"
@@ -253,7 +253,7 @@ ship "Auxiliary"
 			"hit force" 4200
 	outfits
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 90
+		"Sidewinder Missile" 45
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -330,9 +330,9 @@ ship "Bactrian"
 			"hit force" 3900
 	outfits
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 90
+		"Sidewinder Missile" 45
 		"Torpedo Launcher"
-		"Torpedo" 30
+		"Torpedo" 16
 		"Heavy Laser Turret" 4
 		"Heavy Anti-Missile Turret" 2
 		
@@ -467,7 +467,7 @@ ship "Bastion"
 	outfits
 		"Plasma Cannon" 2
 		"Heavy Rocket Launcher" 2
-		"Heavy Rocket" 60
+		"Heavy Rocket" 31
 		"Heavy Rocket Rack" 2
 		"Blaster Turret" 2
 		"Anti-Missile Turret"
@@ -605,7 +605,7 @@ ship "Berserker"
 	outfits
 		"Energy Blaster" 2
 		"Javelin Mini Pod" 2
-		"Javelin" 60
+		"Javelin" 31
 		
 		"nGVF-CC Fuel Cell"
 		"LP072a Battery Pack"
@@ -816,7 +816,7 @@ ship "Bulk Freighter"
 			"hit force" 1800
 	outfits
 		"Sidewinder Missile Launcher"
-		"Sidewinder Missile" 45
+		"Sidewinder Missile" 23
 		"Laser Turret" 3
 		"Heavy Anti-Missile Turret" 2
 		
@@ -885,7 +885,7 @@ ship "Bulwark"
 	outfits
 		"Plasma Cannon" 2
 		"Heavy Rocket Launcher" 2
-		"Heavy Rocket" 60
+		"Heavy Rocket" 31
 		"Heavy Rocket Rack" 2
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret"
@@ -957,11 +957,11 @@ ship "Carrier"
 			"hit force" 4500
 	outfits
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 31
 		"Sidewinder Missile Rack" 8
-		"Sidewinder Missile" 184
+		"Sidewinder Missile" 97
 		"Torpedo Launcher" 2
-		"Torpedo" 60
+		"Torpedo" 31
 		"Heavy Laser Turret"
 		"Heavy Anti-Missile Turret" 2
 		
@@ -1068,7 +1068,7 @@ ship "Class C Freighter"
 		"Heavy Anti-Missile Turret"
 		"Anti-Missile Turret"
 		"Sidewinder Missile Launcher"
-		"Sidewinder Missile" 45
+		"Sidewinder Missile" 23
 		
 		"Fusion Reactor"
 		"LP036a Battery Pack"
@@ -1163,7 +1163,7 @@ ship "Clipper"
 	outfits
 		"Beam Laser" 2
 		"Javelin Mini Pod" 2
-		"Javelin" 60
+		"Javelin" 31
 		
 		"nGVF-DD Fuel Cell"
 		"LP072a Battery Pack"
@@ -1272,7 +1272,7 @@ ship "Container Transport"
 			"hit force" 1800
 	outfits
 		"Sidewinder Missile Launcher"
-		"Sidewinder Missile" 45
+		"Sidewinder Missile" 23
 		"Laser Turret" 3
 		"Heavy Anti-Missile Turret" 2
 		
@@ -1338,7 +1338,7 @@ ship "Corvette"
 	outfits
 		"Heavy Laser" 2
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 90
+		"Sidewinder Missile" 45
 		"Heavy Laser Turret"
 		"Anti-Missile Turret"
 		
@@ -1413,7 +1413,7 @@ ship "Cruiser"
 	outfits
 		"Particle Cannon" 4
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 90
+		"Sidewinder Missile" 45
 		"Heavy Laser Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -1506,7 +1506,7 @@ ship "Cutthroat"
 		"Twin Modified Blaster" 2
 		"Torpedo Pod" 2
 		"Torpedo Storage Rack"
-		"Torpedo" 21
+		"Torpedo" 11
 		
 		"Fission Reactor"
 		"LP036a Battery Pack"
@@ -1568,7 +1568,7 @@ ship "Dagger"
 	outfits
 		"Beam Laser"
 		"Javelin Mini Pod" 2
-		"Javelin" 60
+		"Javelin" 31
 		
 		"nGVF-AA Fuel Cell"
 		"Supercapacitor"
@@ -1626,7 +1626,7 @@ ship "Dreadnought"
 			"hit force" 3900
 	outfits
 		"Torpedo Launcher" 4
-		"Torpedo" 120
+		"Torpedo" 61
 		"Plasma Turret" 3
 		"Heavy Anti-Missile Turret" 2
 		
@@ -1814,7 +1814,7 @@ ship "Falcon"
 	outfits
 		"Plasma Cannon" 2
 		"Torpedo Launcher" 2
-		"Torpedo" 60
+		"Torpedo" 31
 		"Quad Blaster Turret" 3
 		"Heavy Anti-Missile Turret"
 		
@@ -1889,7 +1889,7 @@ ship "Finch"
 		"Beam Laser"
 		"Javelin Mini Pod" 2
 		"Javelin Storage Crate"
-		"Javelin" 160
+		"Javelin" 81
 		
 		"nGVF-BB Fuel Cell"
 		"LP036a Battery Pack"
@@ -1944,9 +1944,9 @@ ship "Firebird"
 	outfits
 		"Twin Blaster" 2
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 31
 		"Torpedo Launcher" 2
-		"Torpedo" 60
+		"Torpedo" 31
 		"Quad Blaster Turret"
 		"Anti-Missile Turret"
 		
@@ -2128,7 +2128,7 @@ ship "Frigate"
 	outfits
 		"Particle Cannon" 2
 		"Torpedo Launcher" 2
-		"Torpedo" 60
+		"Torpedo" 31
 		"Blaster Turret" 2
 		"Anti-Missile Turret"
 		
@@ -2329,7 +2329,7 @@ ship "Hauler"
 			"hit force" 900
 	outfits
 		"Meteor Missile Pod" 2
-		"Meteor Missile" 14
+		"Meteor Missile" 7
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -2394,7 +2394,7 @@ ship "Hauler II"
 			"hit force" 1200
 	outfits
 		"Meteor Missile Pod" 2
-		"Meteor Missile" 59
+		"Meteor Missile" 15
 		"Meteor Missile Box" 3
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
@@ -2461,7 +2461,7 @@ ship "Hauler III"
 			"hit force" 1500
 	outfits
 		"Meteor Missile Pod" 2
-		"Meteor Missile" 59
+		"Meteor Missile" 15
 		"Meteor Missile Box" 3
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
@@ -2855,7 +2855,7 @@ ship "Lance"
 	outfits
 		"Energy Blaster"
 		"Sidewinder Missile Pod" 2
-		"Sidewinder Missile" 12
+		"Sidewinder Missile" 6
 		
 		"nGVF-AA Fuel Cell"
 		"Supercapacitor" 4
@@ -2912,9 +2912,9 @@ ship "Leviathan"
 		"Quad Blaster Turret" 3
 		"Anti-Missile Turret"
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 31
 		"Torpedo Launcher" 2
-		"Torpedo" 60
+		"Torpedo" 31
 		
 		"Breeder Reactor"
 		"KP-6 Photovoltaic Panel" 2
@@ -2992,7 +2992,7 @@ ship "Mammoth"
 			"hit force" 2100
 	outfits
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 90
+		"Sidewinder Missile" 45
 		"Proton Turret" 2
 		"Quad Blaster Turret" 2
 		"Anti-Missile Turret" 4
@@ -3074,7 +3074,7 @@ ship "Manta"
 	outfits
 		"Particle Cannon" 4
 		"Torpedo Storage Rack"
-		"Torpedo" 21
+		"Torpedo" 11
 		"Torpedo Pod" 2
 		
 		"RT-I Radiothermal"
@@ -3178,7 +3178,7 @@ ship "Modified Argosy"
 	outfits
 		"Heavy Laser" 2
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 31
 		"Heavy Laser Turret"
 		"Heavy Anti-Missile Turret"
 		
@@ -3250,7 +3250,7 @@ ship "Mule"
 			"hit force" 1500
 	outfits
 		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile" 136
+		"Sidewinder Missile" 68
 		"Sidewinder Missile Rack" 2
 		"Heavy Laser Turret" 2
 		"Anti-Missile Turret" 2
@@ -3323,7 +3323,7 @@ ship "Nest"
 			"hit force" 900
 	outfits
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 31
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -3524,7 +3524,7 @@ ship "Protector"
 			"hit force" 2400
 	outfits
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 31
 		"Quad Blaster Turret" 6
 		"Heavy Anti-Missile Turret"
 		"Anti-Missile Turret"
@@ -3648,7 +3648,7 @@ ship "Rainmaker"
 	outfits
 		"Energy Blaster" 2
 		"Meteor Missile Launcher" 4
-		"Meteor Missile" 180
+		"Meteor Missile" 91
 		"Meteor Missile Box" 4
 		
 		"nGVF-CC Fuel Cell"
@@ -3710,9 +3710,9 @@ ship "Raven"
 	outfits
 		"Heavy Laser" 2
 		"Torpedo Launcher"
-		"Torpedo" 30
+		"Torpedo" 16
 		"Sidewinder Missile Launcher"
-		"Sidewinder Missile" 45
+		"Sidewinder Missile" 23
 		
 		"RT-I Radiothermal"
 		"KP-6 Photovoltaic Panel" 2
@@ -3773,7 +3773,7 @@ ship "Roost"
 			"hit force" 1200
 	outfits
 		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
+		"Meteor Missile" 31
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -3847,7 +3847,7 @@ ship "Saber"
 	outfits
 		"Beam Laser" 3
 		"Javelin Pod" 2
-		"Javelin" 600
+		"Javelin" 310
 		"Javelin Storage Crate" 2
 		"Blaster Turret"
 		
@@ -4071,7 +4071,7 @@ ship "Skein"
 			"hit force" 1500
 	outfits
 		"Meteor Missile Pod" 2
-		"Meteor Missile" 29
+		"Meteor Missile" 15
 		"Meteor Missile Box"
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret"
@@ -4322,7 +4322,7 @@ ship "Star Queen"
 			"hit force" 900
 	outfits
 		"Sidewinder Missile Launcher"
-		"Sidewinder Missile" 45
+		"Sidewinder Missile" 23
 		"Heavy Anti-Missile Turret" 2
 		
 		"KP-6 Photovoltaic Array" 4
@@ -4496,7 +4496,7 @@ ship "Valkyrie"
 		"Quad Blaster Turret" 2
 		"Particle Cannon" 2
 		"Torpedo Launcher" 2
-		"Torpedo" 60
+		"Torpedo" 31
 		
 		"NT-200 Nucleovoltaic"
 		"KP-6 Photovoltaic Panel" 3
@@ -4643,7 +4643,7 @@ ship "Wasp"
 	outfits
 		"Energy Blaster" 2
 		"Sidewinder Missile Pod"
-		"Sidewinder Missile" 6
+		"Sidewinder Missile" 3
 		
 		"nGVF-BB Fuel Cell"
 		"LP036a Battery Pack"
