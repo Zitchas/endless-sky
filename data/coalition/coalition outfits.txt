@@ -120,7 +120,7 @@ outfit "Small Shield Module"
 	"shield generation" .28
 	"shield energy" .28
 	"shield heat" .1
-	description "Although combat is almost unheard of in Coalition space, almost all of their ships are able to recharge their shields when necessary."
+	description "Although combat is almost unheard of in Coalition space, many captains find it useful to be able to have their ships recharge their shields when necessary."
 
 outfit "Large Shield Module"
 	category "Systems"
