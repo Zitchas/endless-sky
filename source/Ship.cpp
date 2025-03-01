@@ -4386,7 +4386,7 @@ int Ship::StepDestroyed(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flot
 				// Negative values override the default chance for ammunition
 				// so the outfit cannot be dropped as flotsam.
 				else if(it.first->Category() == "Ammunition" && !flotsamChance)
-					Jettison(it.first, Random::Binomial(it.second, .05));
+					Jettison(it.first, Random::Binomial(it.second, .10));
 			}
 			for(shared_ptr<Flotsam> &it : jettisoned)
 				it->Place(*this);
