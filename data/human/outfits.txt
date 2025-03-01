@@ -57,7 +57,7 @@ outfit "D14-RN Shield Generator"
 	"outfit space" -15
 	"shield generation" .2
 	"shield energy" .2
-	description "This is the standard shield generator for fighters and interceptors, as well as for many non-combat starships. Although it is possible for a ship to have no shield generator at all, recharging its shield matrix only when landed in a hospitable spaceport, life in deep space is unpredictable enough that most pilots find shield generators to be well worth the space they take up."
+	description "This is the shield generator most commonly used as an upgrade for fighters and interceptors, as well as for many non-combat starships. Although most ships are sold with no shield generator at all, recharging its shield matrix only when landed in a hospitable spaceport, life in deep space is unpredictable enough that many pilots find shield generators to be well worth the space they take up."
 
 outfit "D23-QP Shield Generator"
 	category "Systems"
@@ -67,7 +67,7 @@ outfit "D23-QP Shield Generator"
 	"outfit space" -22
 	"shield generation" .32
 	"shield energy" .32
-	description "This is a slightly more powerful shield generator than the standard model installed in most small ships. If combat lasts long enough, the increased recharge rate is enough to give you an edge, but recharging your shields completely will still take a long time."
+	description "This is a slightly more powerful shield generator than the model installed in many small ships. If combat lasts long enough, the increased recharge rate is enough to give you an edge, but recharging your shields completely will still take a long time."
 
 outfit "D41-HY Shield Generator"
 	category "Systems"
