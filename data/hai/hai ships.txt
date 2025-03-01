@@ -47,7 +47,6 @@ ship "Anomalocaris"
 		"Boulder Reactor"
 		"Pebble Core"
 		"Hai Ravine Batteries"
-		"Hai Diamond Regenerator"
 		"Hai Williwaw Cooling" 3
 		"Quantum Keystone"
 		"Pulse Rifle" 20
@@ -132,7 +131,6 @@ ship "Aphid"
 		"Chameleon Anti-Missile"
 		"Sand Cell" 2
 		"Hai Fissure Batteries"
-		"Hai Corundum Regenerator"
 		`"Basrem" Atomic Thruster`
 		`"Basrem" Atomic LTC`
 		`"Basrem" Atomic Steering`
@@ -224,10 +222,9 @@ ship "Centipede"
 			"hit force" 900
 	outfits
 		"Hai Tracker Pod" 2
-		"Hai Tracker" 112
+		"Hai Tracker" 56
 		"Bullfrog Anti-Missile" 3
 		"Geode Reactor"
-		"Hai Corundum Regenerator"
 		"Hai Ravine Batteries"
 		"Hai Williwaw Cooling" 3
 		"Hai Cuttlefish Jammer" 2
@@ -262,7 +259,7 @@ ship "Centipede"
 ship "Centipede" "Centipede (Holovid)"
 	outfits
 		"Hai Tracker Pod" 2
-		"Hai Tracker" 112
+		"Hai Tracker" 56
 		"Bullfrog Anti-Missile" 3
 		"Geode Reactor"
 		"Hai Corundum Regenerator"
@@ -310,7 +307,7 @@ ship "Centipede" "Centipede (Durable)"
 		`"Biroo" Atomic Steering`
 		"Hai Gorge Batteries"
 		"Hai Williwaw Cooling" 3
-		"Hai Tracker" 168
+		"Hai Tracker" 84
 		`"Biroo" Atomic Thruster`
 		`"Biroo" Atomic LTC`
 		"Boulder Reactor"
@@ -331,7 +328,7 @@ ship "Centipede" "Centipede (Refugees)"
 		`"Biroo" Atomic Steering`
 		"Hai Gorge Batteries"
 		"Hai Williwaw Cooling" 3
-		"Hai Tracker" 168
+		"Hai Tracker" 84
 		`"Biroo" Atomic Thruster`
 		`"Biroo" Atomic LTC`
 		"Boulder Reactor"
@@ -369,13 +366,11 @@ ship "Cicada"
 			"hit force" 1280
 	outfits
 		"Hai Tracker Pod"
-		"Hai Tracker" 84
-		"Tracker Storage Pod"
+		"Hai Tracker" 28
 		"Bullfrog Anti-Missile" 2
 		"Chameleon Anti-Missile" 2
 		"Geode Reactor"
 		"Hai Gorge Batteries"
-		"Hai Diamond Regenerator"
 		"Hai Williwaw Cooling"
 		"Quantum Keystone"
 		`"Benga" Atomic Thruster`
@@ -488,7 +483,6 @@ ship "Geocoris"
 		"Hai Cuttlefish Jammer" 4
 		"Geode Reactor" 2
 		"Hai Valley Batteries"
-		"Hai Diamond Regenerator"
 		"Hai Williwaw Cooling" 4
 		`"Biroo" Reverse Thruster`
 		`"Biroo" Atomic Thruster`
@@ -522,7 +516,7 @@ ship "Geocoris"
 ship "Geocoris" "Geocoris (Tracker)"
 	outfits
 		"Hai Tracker Pod" 2
-		"Hai Tracker" 196
+		"Hai Tracker" 98
 		"Pulse Turret" 2
 		"Bullfrog Anti-Missile" 2
 		"Chameleon Anti-Missile"
@@ -578,7 +572,6 @@ ship "Grasshopper"
 		"Pulse Cannon" 2
 		"Sand Cell" 2
 		"Hai Fissure Batteries"
-		"Hai Corundum Regenerator"
 		"Hai Williwaw Cooling"
 		"Quantum Keystone"
 		"Pulse Rifle"
@@ -603,7 +596,7 @@ ship "Grasshopper"
 ship "Grasshopper" "Grasshopper (Tracker)"
 	outfits
 		"Hai Tracker Pod" 2
-		"Hai Tracker" 112
+		"Hai Tracker" 56
 		"Pebble Core"
 		"Hai Fissure Batteries"
 		"Hai Corundum Regenerator"
@@ -683,7 +676,6 @@ ship "Lightning Bug"
 		"Hai Cuttlefish Jammer"
 		"Geode Reactor"
 		"Hai Gorge Batteries"
-		"Hai Corundum Regenerator"
 		"Hai Williwaw Cooling"
 		"Quantum Keystone"
 		"Pulse Rifle" 2
@@ -729,7 +721,7 @@ ship "Lightning Bug" "Lightning Bug (Phantom Pallet)"
 ship "Lightning Bug" "Lightning Bug (Pulse)"
 	outfits
 		"Hai Tracker Pod"
-		"Hai Tracker" 56
+		"Hai Tracker" 28
 		"Pulse Turret" 2
 		"Geode Reactor"
 		"Hai Gorge Batteries"
@@ -744,7 +736,7 @@ ship "Lightning Bug" "Lightning Bug (Pulse)"
 ship "Lightning Bug" "Lightning Bug (Surveillance)"
 	outfits
 		"Hai Tracker Pod"
-		"Hai Tracker" 56
+		"Hai Tracker" 28
 		"Pulse Turret"
 		"Bullfrog Anti-Missile"
 		"Geode Reactor"
@@ -820,11 +812,10 @@ ship "Ladybug"
 	outfits
 		"Ion Cannon" 2
 		"Hai Tracker Pod" 1
-		"Hai Tracker" 56
+		"Hai Tracker" 28
 		"Chameleon Anti-Missile"
 		"Pulse Turret"
 
-		"Hai Diamond Regenerator"
 		"Hai Williwaw Cooling" 2
 		"Hai Fissure Batteries"
 		"Hai Chasm Batteries"
@@ -917,7 +908,7 @@ ship "Ladybug" "Ladybug (Tracker)"
 	outfits
 		"Hai Tracker Pod" 3
 		"Tracker Storage Pod" 5
-		"Hai Tracker" 308
+		"Hai Tracker" 154
 		"Pulse Turret"
 		"Chameleon Anti-Missile"
 
@@ -1029,7 +1020,7 @@ ship "Pond Strider"
 ship "Pond Strider" "Pond Strider (Tracker)"
 	outfits
 		"Hai Tracker Pod"
-		"Hai Tracker" 112
+		"Hai Tracker" 56
 		"Railgun" 2
 		"Railgun Slug" 2000
 		"Tracker Storage Pod" 2
@@ -1140,9 +1131,8 @@ ship "Sea Scorpion"
 		"Chameleon Anti-Missile"
 		"Fuel Pod"
 		"Geode Reactor"
-		"Hai Diamond Regenerator"
 		"Hai Ravine Batteries"
-		"Hai Tracker" 336
+		"Hai Tracker" 168
 		"Hai Tracker Pod" 4
 		"Hai Williwaw Cooling"
 		"Pulse Rifle" 15
@@ -1196,7 +1186,7 @@ ship "Sea Scorpion" "Sea Scorpion (Tracker)"
 		"Hai Tracker Pod" 4
 		"Chameleon Anti-Missile" 2
 		"Tracker Storage Pod" 4
-		"Hai Tracker" 336
+		"Hai Tracker" 168
 		"Hai Williwaw Cooling" 2
 		"Hai Octopus Jammer"
 		"Boulder Reactor"
@@ -1231,7 +1221,7 @@ ship "Sea Scorpion" "Sea Scorpion (Ion)"
 		"Ion Cannon" 3
 		"Hai Tracker Pod"
 		"Tracker Storage Pod"
-		"Hai Tracker" 84
+		"Hai Tracker" 42
 		"Boulder Reactor"
 		"Hai Fissure Batteries"
 		"Hai Diamond Regenerator" 2
@@ -1332,7 +1322,6 @@ ship "Scarab"
 		"Chameleon Anti-Missile"
 		"Pebble Core"
 		"Hai Fissure Batteries"
-		"Hai Corundum Regenerator"
 		"Hai Williwaw Cooling"
 		"Quantum Keystone"
 		"Pulse Rifle"
@@ -1386,14 +1375,12 @@ ship "Shield Beetle"
 	outfits
 		"Ion Cannon" 4
 		"Hai Tracker Pod" 4
-		"Hai Tracker" 280
-		"Tracker Storage Pod" 2
+		"Hai Tracker" 112
 		"Bullfrog Anti-Missile" 4
 		"Hai Cuttlefish Jammer" 3
 		"Boulder Reactor"
 		"Geode Reactor"
 		"Hai Valley Batteries"
-		"Hai Diamond Regenerator"
 		"Hai Williwaw Cooling" 3
 		"Quantum Keystone"
 		"Pulse Rifle" 55
@@ -1447,7 +1434,7 @@ ship "Shield Beetle" "Shield Beetle (Police)"
 	outfits
 		"Ion Cannon" 4
 		"Hai Tracker Pod" 4
-		"Hai Tracker" 224
+		"Hai Tracker" 112
 		"Chameleon Anti-Missile" 2
 		"Boulder Reactor" 2
 		"Hai Chasm Batteries" 2
@@ -1490,7 +1477,7 @@ ship "Shield Beetle" "Shield Beetle (Unfettered)"
 	outfits
 		"Ion Cannon" 4
 		"Hai Tracker Pod" 4
-		"Hai Tracker" 252
+		"Hai Tracker" 126
 		"Tracker Storage Pod"
 		"Bullfrog Anti-Missile" 4
 		"Hai Octopus Jammer" 3
@@ -1511,7 +1498,7 @@ ship "Shield Beetle" "Shield Beetle (Unfettered)"
 ship "Shield Beetle" "Shield Beetle (Unfettered Shipyards)"
 	outfits
 		"Ion Cannon" 2
-		"Hai Tracker" 420
+		"Hai Tracker" 210
 		"Hai Tracker Pod" 6
 		"Tracker Storage Pod" 3
 		"Pulse Turret" 3
@@ -1538,7 +1525,7 @@ ship "Shield Beetle" "Shield Beetle (Pulse Tracker)"
 	outfits
 		"Hai Tracker Pod" 8
 		"Tracker Storage Pod" 7
-		"Hai Tracker" 644
+		"Hai Tracker" 322
 		"Chameleon Anti-Missile" 2
 		"Pulse Turret" 2
 		
@@ -1579,7 +1566,7 @@ ship "Shield Beetle" "Shield Beetle (Jump)"
 	outfits
 		"Ion Cannon" 4
 		"Hai Tracker Pod" 4
-		"Hai Tracker" 224
+		"Hai Tracker" 112
 		"Chameleon Anti-Missile" 2
 		"Boulder Reactor" 2
 		"Hai Chasm Batteries" 2
@@ -1659,7 +1646,7 @@ ship "Shield Beetle" "Shield Beetle (Fuel Jump)"
 	outfits
 		"Ion Cannon" 4
 		"Hai Tracker Pod" 4
-		"Hai Tracker" 280
+		"Hai Tracker" 140
 		"Jump Drive"
 		"Quantum Keystone"
 		"Outfits Expansion" 4
@@ -1739,7 +1726,7 @@ ship "Shield Beetle" "Shield Beetle (Plasma Blaster Jump)"
 ship "Shield Beetle" "Shield Beetle (Jump, Tracker)"
 	outfits
 		"Hai Tracker Pod" 8
-		"Hai Tracker" 448
+		"Hai Tracker" 224
 		"Pulse Turret" 4
 		"Boulder Reactor" 2
 		"Hai Ravine Batteries"
@@ -1820,7 +1807,7 @@ ship "Shield Beetle" "Shield Beetle (Durable Pulse)"
 ship "Shield Beetle" "Shield Beetle (Tracker)"
 	outfits
 		"Hai Tracker Pod" 8
-		"Hai Tracker" 560
+		"Hai Tracker" 280
 		"Tracker Storage Pod" 4
 		"Pulse Turret" 4
 		"Boulder Reactor"
@@ -1843,7 +1830,7 @@ ship "Shield Beetle" "Shield Beetle (Tripulse Ionic Turret)"
 		"Pulse Cannon" 2
 		"Pulse Turret"
 		"Tripulse Shredder" 2
-		"Hai Tracker" 112
+		"Hai Tracker" 56
 		"Hai Tracker Pod" 2
 		"Chameleon Anti-Missile" 2
 		"Bullfrog Anti-Missile"
@@ -2017,7 +2004,7 @@ ship "Solifuge"
 			"hit force" 3500
 	outfits
 		"Hai Tracker Pod"
-		"Hai Tracker" 56
+		"Hai Tracker" 28
 		"Ion Cannon" 4
 		"Pulse Turret" 2
 		"Chameleon Anti-Missile"
@@ -2084,7 +2071,7 @@ ship "Solifuge"
 ship "Solifuge" "Solifuge (Jump)"
 	outfits
 		"Hai Tracker Pod"
-		"Hai Tracker" 56
+		"Hai Tracker" 28
 		"Ion Cannon" 4
 		"Pulse Turret" 2
 		"Chameleon Anti-Missile"
@@ -2140,7 +2127,7 @@ ship "Solifuge" "Solifuge (Jump, Pulse)"
 ship "Solifuge" "Solifuge (Jump, Tracker)"
 	outfits
 		"Hai Tracker Pod" 5
-		"Hai Tracker" 280
+		"Hai Tracker" 140
 		"Pulse Turret" 4
 		"Chameleon Anti-Missile"
 		"Bullfrog Anti-Missile" 2
@@ -2196,7 +2183,7 @@ ship "Solifuge" "Solifuge (Pulse)"
 ship "Solifuge" "Solifuge (Tracker)"
 	outfits
 		"Hai Tracker Pod" 5
-		"Hai Tracker" 280
+		"Hai Tracker" 140
 		"Pulse Turret" 4
 		"Chameleon Anti-Missile"
 		"Bullfrog Anti-Missile" 2
@@ -2242,7 +2229,7 @@ ship "Violin Spider"
 			"hit force" 180
 	outfits
 		"Hai Tracker Pod"
-		"Hai Tracker" 56
+		"Hai Tracker" 28
 		"Pebble Core"
 		Supercapacitor
 		"Hai Williwaw Cooling"
@@ -2310,13 +2297,11 @@ ship "Water Bug"
 			"hit force" 1860
 	outfits
 		"Hai Tracker Pod" 2
-		"Hai Tracker" 168
-		"Tracker Storage Pod" 2
+		"Hai Tracker" 56
 		"Pulse Turret"
 		"Chameleon Anti-Missile" 2
 		"Geode Reactor"
 		"Hai Gorge Batteries"
-		"Hai Diamond Regenerator"
 		"Hai Williwaw Cooling"
 		"Quantum Keystone"
 		`"Basrem" Reverse Thruster`
@@ -2345,7 +2330,7 @@ ship "Water Bug"
 ship "Water Bug" "Water Bug (Phantom Pallet)"
 	outfits
 		"Hai Tracker Pod" 2
-		"Hai Tracker" 168
+		"Hai Tracker" 84
 		"Tracker Storage Pod" 2
 		"Pulse Turret"
 		"Chameleon Anti-Missile" 2
@@ -2365,7 +2350,7 @@ ship "Water Bug" "Water Bug (Phantom Pallet)"
 ship "Water Bug" "Water Bug (Jump)"
 	outfits
 		"Hai Tracker Pod" 2
-		"Hai Tracker" 112
+		"Hai Tracker" 56
 		"Pulse Turret"
 		"Chameleon Anti-Missile" 2
 		"Geode Reactor"
@@ -2384,7 +2369,7 @@ ship "Water Bug" "Water Bug (Jump)"
 ship "Water Bug" "Water Bug (Pulse)"
 	outfits
 		"Hai Tracker Pod" 2
-		"Hai Tracker" 112
+		"Hai Tracker" 56
 		"Pulse Turret" 3
 		"Geode Reactor"
 		"Hai Gorge Batteries"
