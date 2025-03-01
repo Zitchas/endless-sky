@@ -134,7 +134,6 @@ ship "Summer Leaf"
 		
 		"Yellow Sun Reactor"
 		"Small Biochemical Cell"
-		"Bright Cloud Shielding"
 		"Wanderer Ramscoop"
 		
 		"Type 3 Radiant Thruster"
@@ -191,7 +190,6 @@ ship "Autumn Leaf"
 		"Wanderer Anti-Missile"
 		
 		"White Sun Reactor"
-		"Bright Cloud Shielding"
 		"Wanderer Ramscoop"
 		
 		"Type 3 Radiant Thruster"
@@ -262,11 +260,9 @@ ship "Strong Wind"
 	outfits
 		"Sunbeam" 4
 		"Thunderhead Launcher" 2
-		"Thunderhead Missile" 100
-		"Thunderhead Storage Array"
+		"Thunderhead Missile" 40
 		
 		"White Sun Reactor"
-		"Dark Storm Shielding"
 		"Wanderer Ramscoop" 2
 		
 		"Type 3 Radiant Thruster"
@@ -322,12 +318,11 @@ ship "Tempest"
 	outfits
 		"Sunbeam" 2
 		"Thunderhead Launcher" 2
-		"Thunderhead Missile" 80
+		"Thunderhead Missile" 40
 		"Dual Sunbeam Turret"
 		"Wanderer Anti-Missile" 2
 		
 		"Yellow Sun Reactor" 2
-		"Dark Storm Shielding"
 		"Wanderer Ramscoop"
 		
 		"Type 4 Radiant Thruster"
@@ -379,7 +374,7 @@ ship "Tempest" "Tempest (Heavy)"
 ship "Tempest" "Tempest (Missile)"
 	outfits
 		"Thunderhead Launcher" 4
-		"Thunderhead Missile" 220
+		"Thunderhead Missile" 110
 		"Thunderhead Storage Array" 3
 		"Dual Sunbeam Turret" 2
 		
@@ -457,14 +452,12 @@ ship "Derecho"
 	outfits
 		"Sunbeam" 2
 		"Thunderhead Launcher" 2
-		"Thunderhead Missile" 80
+		"Thunderhead Missile" 40
 		"Dual Sunbeam Turret" 2
 		"Wanderer Anti-Missile" 2
 		
 		"Blue Sun Reactor"
 		"Red Sun Reactor"
-		"Dark Storm Shielding"
-		"Bright Cloud Shielding"
 		"Wanderer Heat Sink"
 		"Wanderer Ramscoop"
 		
@@ -601,7 +594,6 @@ ship "Hurricane"
 		
 		"Blue Sun Reactor"
 		"White Sun Reactor"
-		"Dark Storm Shielding" 2
 		"Wanderer Heat Sink"
 		"Wanderer Ramscoop"
 		
@@ -655,7 +647,7 @@ ship "Hurricane" "Hurricane (Tough)"
 	outfits
 		"Sunbeam" 2
 		"Thunderhead Launcher" 4
-		"Thunderhead Missile" 160
+		"Thunderhead Missile" 80
 		"Dual Sunbeam Turret" 2
 		"Wanderer Anti-Missile" 2
 		
@@ -759,7 +751,6 @@ ship "Cool Breeze"
 		"Moonbeam" 2
 		
 		"Red Sun Reactor"
-		"Bright Cloud Shielding"
 		
 		"Type 2 Radiant Thruster"
 		"Type 2 Radiant LTC"
@@ -826,7 +817,6 @@ ship "Winter Gale"
 		"Wanderer Anti-Missile"
 		
 		"White Sun Reactor"
-		"Dark Storm Shielding"
 		
 		"Type 3 Radiant Thruster"
 		"Type 3 Radiant LTC"
@@ -881,7 +871,7 @@ ship "Winter Gale" "Winter Gale (Heavy)"
 ship "Winter Gale" "Winter Gale (Missile)"
 	outfits
 		"Thunderhead Launcher" 4
-		"Thunderhead Missile" 160
+		"Thunderhead Missile" 80
 		"Moonbeam" 2
 		"Wanderer Anti-Missile"
 		
@@ -940,11 +930,9 @@ ship "Deep River"
 			"hit force" 4200
 	outfits
 		"Thunderhead Launcher" 6
-		"Thunderhead Missile" 320
-		"Thunderhead Storage Array" 4
+		"Thunderhead Missile" 120
 		
 		"Large Biochemical Cell"
-		"Bright Cloud Shielding"
 		"Wanderer Ramscoop"
 		
 		"Type 2 Radiant Thruster"
@@ -1044,7 +1032,6 @@ ship "Deep River Transport"
 		"Wanderer Anti-Missile" 4
 		
 		"Yellow Sun Reactor"
-		"Dark Storm Shielding"
 		"Wanderer Ramscoop"
 		
 		"Type 2 Radiant Thruster"
@@ -1116,7 +1103,6 @@ ship "Riptide"
 		"Wanderer Anti-Missile" 2
 		
 		"White Sun Reactor"
-		"Bright Cloud Shielding"
 		"Wanderer Ramscoop"
 		
 		"Type 4 Radiant Thruster"
