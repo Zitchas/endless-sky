@@ -1,0 +1,164 @@
+# Copyright (c) 2025 by Zitchas
+# Contains data imported from other files (c) 2024 by Loymdayddaud and Zitchas and (c) 2017 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+
+# This is the standard Remnant shipyard.
+shipyard "Remnant"
+	"Starling"
+	"Gull"
+	"Albatross"
+	"Ibis"
+	"Pelican"
+	"Petrel"
+	"Smew"
+	"Tern"
+
+# This shipyard is to make the limited-availability Puffin available in a specific shipyard.
+shipyard "Remnant Puffin"
+	"Puffin"
+
+# This shipyard is added at a specific point to make ships that the Remnant have acquired in such quantity that they can sell them in quantity.
+shipyard "Remnant Salvage Ships"
+	"'olofez"
+
+
+
+# This is the standard Remnant outfitter.
+outfitter "Remnant"
+	"Inhibitor Cannon"
+	"Thrasher Cannon"
+	"Thrasher Turret"
+	"Point Defense Turret"
+	"Supercapacitor"
+	"Crystal Capacitor"
+	"Millennium Cell"
+	"Epoch Cell"
+	"Aeon Cell"
+	"Cooling Ducts"
+	"Thermoelectric Cooler"
+	"EMP Torpedo"
+	"EMP Torpedo Bay"
+	"EMP Torpedo Storage Bay"
+	"Emergency Ramscoop"
+	"Quantum Key Stone"
+	"Anvil-Class Engine"
+	"Crucible-Class Thruster"
+	"Forge-Class Thruster"
+	"Smelter-Class Thruster"
+	"Crucible-Class LTC"
+	"Forge-Class LTC"
+	"Smelter-Class LTC"
+	"Crucible-Class Steering"
+	"Forge-Class Steering"
+	"Smelter-Class Steering"
+	"Outfits Expansion"
+	"Cargo Expansion"
+	"Small Bunk Room"
+	"Bunk Room"
+	"Local Map"
+	"Hyperdrive"
+	"Scram Drive"
+	"Fuel Pod"
+	"Cargo Scanner"
+	"Outfit Scanner"
+	"Tuning Rifle"
+	"Salvage Scanner"
+	"In-flight Mass Display"
+	"Hyperjump Fuel Display"
+	"Fuel Bar Hyperjump Display"
+	"Scram Drive Fuel Display"
+	"Fuel Bar Scram Display"
+
+# This outfitter is specifically for Remnant bases and outposts that, due to circumstances, do not have a normal outfitter.
+outfitter "Remnant Core"
+	"Crystal Capacitor"
+	"Millennium Cell"
+	"Thermoelectric Cooler"
+	"Emergency Ramscoop"
+	"Quantum Key Stone"
+	"Anvil-Class Engine"
+	"Crucible-Class Thruster"
+	"Crucible-Class Steering"
+	"Hyperdrive"
+	"Fuel Pod"
+	"Tuning Rifle"
+	"Salvage Scanner"
+	"EMP Torpedo"
+
+# This outfitter contains a selection of outfits that the Remnant have in sufficient abundance to list for sale or are only relevant once the player has built up some trust with them.
+outfitter "Remnant Salvage"
+	"Generator (Furnace Class)"
+	"Small Heat Shunt"
+	"Systems Core (Small)"
+	"Thruster (Asteroid Class)"
+	"Thruster (Planetary Class)"
+	"Steering (Asteroid Class)"
+	"Steering (Planetary Class)"
+	"Fire-Lance"
+	"Jump Drive Fuel Display"
+	"Fuel Bar Jump Display"
+
+# This is an outfitter to provide the list of outfits that hunter fleets in chapter 2 Cognizance drop.
+outfitter "Void Sprite Parts"
+	"Void Sprite Parts"
+
+
+
+# This modifies the price that the Remnant will pay for Quantum Keystones after one of the specified missions are completed.
+pricing outfits "Remnant Hai Keystones"
+	import
+	location
+		government "Remnant"
+	conditions
+		or
+			has "Remnant: Key Stones: done"
+			has "Remnant: Key Stones (Pre-Hai) 2: done"
+	value
+		"Quantum Keystone" 200000
+
+
+
+# These are outfits that the Remnant value and will extra for.
+# By default, this list includes all Bunrodea, Coalition, Heliarch, Korath, Quarg
+pricing outfits "Remnant Valued Tech"
+	import
+	location
+		government "Remnant"
+	value
+		"Jump Drive" 2500000
+	offset
+		"Nanotech Battery" 3.5 %
+		"Antimatter Core" 3.5 %
+		"Quarg Skylance" 3.5 %
+		"Quarg Anti-Missile" 3.5 %
+		"Intrusion Countermeasures" 3 %
+		"Medium Graviton Thruster" 3.5 %
+		"Medium Graviton Steering" 3.5 %
+		"Quantum Shield Generator" 3.5 %
+
+
+
+# These are old outfits that the Remnant do not use much, and thus do not value as much as elsewhere.
+# This list represents human tech that those who became the Remnant had with them when they left humanity.
+pricing outfits "Remnant Old Tech"
+	location
+		government "Remnant"
+	value
+		"Cargo Scanner" 5000
+		"Cooling Ducts" 5000
+		"Outfit Scanner" 18000
+		"Hyperdrive" 30000
+		"Supercapacitor" 750
+	
