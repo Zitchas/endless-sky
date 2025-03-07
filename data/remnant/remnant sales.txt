@@ -1,5 +1,4 @@
 # Copyright (c) 2025 by Zitchas
-# Contains data imported from other files (c) 2024 by Loymdayddaud and Zitchas and (c) 2017 by Michael Zahniser
 #
 # Endless Sky is free software: you can redistribute it and/or modify it under the
 # terms of the GNU General Public License as published by the Free Software
@@ -11,7 +10,8 @@
 #
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
-
+#
+# Derived from files (c) 2024 by Loymdayddaud and Zitchas and (c) 2017 by Michael Zahniser
 
 
 # This is the standard Remnant shipyard.
