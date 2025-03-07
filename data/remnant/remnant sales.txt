@@ -11,8 +11,6 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
-# Derived from files (c) 2024 by Loymdayddaud and Zitchas and (c) 2017 by Michael Zahniser
-
 
 
 # This is the standard Remnant shipyard.
