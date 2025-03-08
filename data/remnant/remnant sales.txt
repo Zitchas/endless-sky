@@ -139,9 +139,7 @@ pricing outfits "Remnant Valued Tech"
 		"Jump Drive" 2500000
 		# Rulei Outfits
 		"Fate Sealer" 25000000
-		"Fate Sealer Activated" 25000
 		"Fate Divider" 25000000
-		"Fate Divider Activated" 25000
 		"Abyssal Composer" 25000000
 		# Successor Outfits
 		"Multimodal Armor: Heavy" 25000
@@ -378,7 +376,6 @@ pricing outfits "Remnant Valued Tech"
 		"Sheragi Anti-Missile" 20 %
 		"Particle Waveform Turret" 20 %
 		"Shard Fabricator" 20 %
-		"Shard inactive" 25000
 		"Heavy Ion Cyclotron" 20 %
 		"Heavy Ion Fragment" 25000
 		# Successors Outfits
