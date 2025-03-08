@@ -109,7 +109,7 @@ outfitter "Remnant Salvage"
 	"Jump Drive Fuel Display"
 	"Fuel Bar Jump Display"
 
-# This is an outfitter to provide the list of outfits that hunter fleets in chapter 2 Cognizance drop.
+# This is an outfitter to provide the list of outfits that hunter fleets in Chapter 2 Cognizance drop.
 outfitter "Void Sprite Parts"
 	"Void Sprite Parts"
 
@@ -129,8 +129,8 @@ pricing outfits "Remnant Hai Keystones"
 
 
 
-# These are outfits that the Remnant will find intriguing and will pay extra for. Think of it like showing up to the Remnant outfitter with some random alien thing. The outfitter may or may not know what it is, or where it is from, but they can tell that it is of alien origin and in working condition. This is enough for them to be very interested in acquiring it.
-# Basically, anything that is not human or pug or wanderer should be on this list. Quarg are at +50% because they are both extremely hard to get and extremely advanced. For the rest, +30% for very interesting stuff (Bunrodea, Coalition, Hai, Successors, etc) and +20% for not as interesting stuff (Avgi, Gegno, Sheragi, etc.)
+# These are outfits that the Remnant find intriguing and will pay extra for. Think of it like showing up to the Remnant outfitter with some random alien thing. The outfitter may or may not know what it is, or where it is from, but they can tell that it is of alien origin and in working condition. This is enough for them to be very interested in acquiring it.
+# Basically, anything that is not human or Pug or Wanderer should be on this list. Quarg are at +50% because they are both extremely hard to get and extremely advanced. For the rest, +30% for very interesting stuff (Bunrodea, Coalition, Hai, Successors, etc) and +20% for not as interesting stuff (Avgi, Gegno, Sheragi, etc.)
 pricing outfits "Remnant Valued Tech"
 	import
 	location
