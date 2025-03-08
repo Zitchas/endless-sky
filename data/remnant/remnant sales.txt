@@ -137,8 +137,18 @@ pricing outfits "Remnant Valued Tech"
 		government "Remnant"
 	value
 		"Jump Drive" 2500000
+		# Rulei Outfits
+		"Fate Sealer" 25000000
+		"Fate Sealer Activated" 25000
+		"Fate Divider" 25000000
+		"Fate Divider Activated" 25000
+		"Abyssal Composer" 25000000
+		# Successor Outfits
+		"Multimodal Armor: Heavy" 25000
+		"Multimodal Armor: Regen" 25000
+		"Multimodal Armor: Resilient" 25000
 	offset
-		# Quarg outfits
+		# Quarg Outfits
 		"Nanotech Battery" 50 %
 		"Antimatter Core" 50 %
 		"Quarg Skylance" 50 %
@@ -147,7 +157,7 @@ pricing outfits "Remnant Valued Tech"
 		"Medium Graviton Thruster" 50 %
 		"Medium Graviton Steering" 50 %
 		"Quantum Shield Generator" 50 %
-		# Avgi
+		# Avgi Outfits
 		`"Nettle" KKV` 20 %
 		`"Ophrys" Nuclear Torpedo` 20 %
 		`"Orchid" Nuclear Missile` 20 %
@@ -191,7 +201,7 @@ pricing outfits "Remnant Valued Tech"
 		"Specular Deflector" 20 %
 		"Ultracapacitor Bank" 20 %
 		"Ultracapacitor Cell" 20 %
-		# Bunrodea outfits
+		# Bunrodea Outfits
 		"Buzzer Anti-Missile" 30 %
 		"Chiisana Rift Steering" 30 %
 		"Chiisana Rift Thruster" 30 %
@@ -356,12 +366,6 @@ pricing outfits "Remnant Valued Tech"
 		"MH Green-Class Steering" 20 %
 		"MH Red-Class Thruster" 20 %
 		"MH Red-Class Steering" 20 %
-		# Rulei Outfits
-		"Fate Sealer" 40%
-		"Fate Sealer Activated" 25000
-		"Fate Divider" 40%
-		"Fate Divider Activated" 25000
-		"Abyssal Composer" 40%
 		# Sheragi Outfits
 		"Small EM Battery" 20 %
 		"Large EM Battery" 20 %
@@ -384,10 +388,7 @@ pricing outfits "Remnant Valued Tech"
 		"High-Velocity Spike Rack" 30 %
 		"High-Velocity Spike" 30 %
 		"Kinetic Rail Rifle" 30 %
-		"Multimodal Armor: Heavy" 25000
 		"Multimodal Armor: Keystone" 30 %
-		"Multimodal Armor: Regen" 25000
-		"Multimodal Armor: Resilient" 25000
 		"Overcharged Laser Turret" 30 %
 		"Overcharged Pulse Laser" 30 %
 		"Primary Power Reserve" 30 %
