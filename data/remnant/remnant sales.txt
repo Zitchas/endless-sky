@@ -129,8 +129,8 @@ pricing outfits "Remnant Hai Keystones"
 
 
 
-# These are outfits that the Remnant value and will extra for.
-# By default, this list includes all Bunrodea, Coalition, Heliarch, Korath, Quarg
+# These are outfits that the Remnant will find intriguing and will pay extra for. Think of it like showing up to the Remnant outfitter with some random alien thing. The outfitter may or may not know what it is, or where it is from, but they can tell that it is of alien origin and in working condition. This is enough for them to be very interested in acquiring it.
+# Basically, anything that is not human or pug or wanderer should be on this list. Quarg are at +50% because they are both extremely hard to get and extremely advanced. For the rest, +30% for very interesting stuff (Bunrodea, Coalition, Hai, Successors, etc) and +20% for not as interesting stuff (Avgi, Gegno, Sheragi, etc.)
 pricing outfits "Remnant Valued Tech"
 	import
 	location
@@ -138,14 +138,365 @@ pricing outfits "Remnant Valued Tech"
 	value
 		"Jump Drive" 2500000
 	offset
-		"Nanotech Battery" 3.5 %
-		"Antimatter Core" 3.5 %
-		"Quarg Skylance" 3.5 %
-		"Quarg Anti-Missile" 3.5 %
-		"Intrusion Countermeasures" 3 %
-		"Medium Graviton Thruster" 3.5 %
-		"Medium Graviton Steering" 3.5 %
-		"Quantum Shield Generator" 3.5 %
+		# Quarg outfits
+		"Nanotech Battery" 50 %
+		"Antimatter Core" 50 %
+		"Quarg Skylance" 50 %
+		"Quarg Anti-Missile" 50 %
+		"Intrusion Countermeasures" 50 %
+		"Medium Graviton Thruster" 50 %
+		"Medium Graviton Steering" 50 %
+		"Quantum Shield Generator" 50 %
+		# Avgi
+		`"Nettle" KKV` 20 %
+		`"Ophrys" Nuclear Torpedo` 20 %
+		`"Orchid" Nuclear Missile` 20 %
+		`Z-333 "Spark" Fusion Torch` 20 %
+		`Z-666 "Zap" Fusion Torch` 20 %
+		`Z-999 "Arc" Fusion Torch` 20 %
+		"Blue Optical Laser" 20 %
+		"Concealment Lamina" 20 %
+		"Concentrating Solar Array" 20 %
+		"Concentrating Solar Cell" 20 %
+		"Cryogenic Deuterium Tank" 20 %
+		"Deuterium Slush Tank" 20 %
+		"Diffuse Deflector" 20 %
+		"External Launch Rail" 20 %
+		"External Launch Tube" 20 %
+		"Green Optical Laser" 20 %
+		"Heatsink Partition" 20 %
+		"Inductive Extractor" 20 %
+		"Lantern Fission Core" 20 %
+		"Luxury Accommodations" 20 %
+		"Magnetic Scoop" 20 %
+		"Magnetoplasma Drive" 20 %
+		"Medium VLS" 20 %
+		"Multispectral Scanner" 20 %
+		"Nettle Magazine" 20 %
+		"Ophrys Stockpile" 20 %
+		"Optical Lasing Generator" 20 %
+		"Orchid Magazine" 20 %
+		"Photoelectric Lamina" 20 %
+		"Plasmadyne Scoop" 20 %
+		"R-180 RCS Thrusters" 20 %
+		"R-360 RCS Thrusters" 20 %
+		"R-720 RCS Thrusters" 20 %
+		"Radiative Lamina" 20 %
+		"Remass Injector" 20 %
+		"Speck Magazine" 20 %
+		"Speck Round" 20 %
+		"Speckle Coilgun" 20 %
+		"Speckle Turret" 20 %
+		"Spectrometer Array" 20 %
+		"Specular Deflector" 20 %
+		"Ultracapacitor Bank" 20 %
+		"Ultracapacitor Cell" 20 %
+		# Bunrodea outfits
+		"Buzzer Anti-Missile" 30 %
+		"Chiisana Rift Steering" 30 %
+		"Chiisana Rift Thruster" 30 %
+		"Dark Reactor" 30 %
+		"Electroweak Reactor" 30 %
+		"Large Nanite Fabricator" 30 %
+		"Large Shield Relay" 30 %
+		"Lasher Pistol" 30 %
+		"Locust Blaster" 30 %
+		"Locust Turret" 30 %
+		"Mandible Cannon" 30 %
+		"Nami Rift Steering" 30 %
+		"Nami Rift Thruster" 30 %
+		"Nanite Enhancer" 30 %
+		"Nanite Limiter" 30 %
+		"Ookii Rift Steering" 30 %
+		"Ookii Rift Thruster" 30 %
+		"Outfits Expansion" 30 %
+		"Quark Reactor" 30 %
+		"Reactor Limiter" 30 %
+		"Reactor Overclocker" 30 %
+		"Shield Relay Booster" 30 %
+		"Shield Relay Limiter" 30 %
+		"Small Bunk Room" 30 %
+		"Small Nanite Fabricator" 30 %
+		"Small Shield Relay" 30 %
+		"Solar Battery" 30 %
+		"Solar Cell" 30 %
+		"Subarashii Rift Steering" 30 %
+		"Subarashii Rift Thruster" 30 %
+		"Swarm Clip" 30 %
+		"Swarm Missile" 30 %
+		"Swarm Pod" 30 %
+		"Thorax Cannon" 30 %
+		# Coalition Outfits
+		"Anti-Materiel Gun" 30 %
+		"Bombardment Cannon" 30 %
+		"Bombardment Turret" 30 %
+		"Cooling Module" 30 %
+		"Decoy Plating" 30 %
+		"Enforcer Confrontation Gear" 30 %
+		"Enforcer Riot Staff" 30 %
+		"Finisher Pod" 30 %
+		"Finisher Torpedo" 30 %
+		"Fuel Module" 30 %
+		"Heliarch Attractor" 30 %
+		"Heliarch Repulsor" 30 %
+		"Ion Hail Turret" 30 %
+		"Ion Rain Gun" 30 %
+		"Large Battery Module" 30 %
+		"Large Cogeneration Module" 30 %
+		"Large Collector Module" 30 %
+		"Large Lateral Thrust Module" 30 %
+		"Large Reactor Module" 30 %
+		"Large Repair Module" 30 %
+		"Large Reverse Module" 30 %
+		"Large Shield Module" 30 %
+		"Large Steering Module" 30 %
+		"Large Thrust Module" 30 %
+		"MCS Extractor" 30 %
+		"Refueling Module" 30 %
+		"Scanning Module" 30 %
+		"Shield Refactor Module" 30 %
+		"Small Battery Module" 30 %
+		"Small Cogeneration Module" 30 %
+		"Small Collector Module" 30 %
+		"Small Lateral Thrust Module" 30 %
+		"Small Reactor Module" 30 %
+		"Small Recovery Module" 30 %
+		"Small Repair Module" 30 %
+		"Small Reverse Module" 30 %
+		"Small Shield Module" 30 %
+		"Small Steering Module" 30 %
+		"Small Thrust Module" 30 %
+		# Gegno Outfits
+		"Acuit Artillery" 20%
+		"Astuit Battery" 20%
+		"Ballistic Cannon Turret" 20%
+		"Ballistic Cannon" 20%
+		"C17 Warzone Core" 20%
+		"C27 Campaign Core" 20%
+		"C3 Scrap Cell" 20%
+		"C7 Brawl Cell" 20%
+		"Choleric Cannon Turret" 20%
+		"Choleric Cannon" 20%
+		"Guile Pulse Laser" 20%
+		"I70 Ameliorate Cell" 20%
+		"Irate Cannon Turret" 20%
+		"Irate Cannon" 20%
+		"R01 Skirmish Battery" 20%
+		"R02 Battlezone Battery" 20%
+		"R03 Warforge Battery" 20%
+		"R04 Crusade Battery" 20%
+		"RG15 Torch Steering" 20%
+		"RG15 Torch Thruster" 20%
+		"RG18 Torch Steering" 20%
+		"RG18 Torch Thruster" 20%
+		"RG3 Torch Steering" 20%
+		"RG3 Torch Thruster" 20%
+		"SC-1 Plasma Engines" 20%
+		"SC-12 Plasma Steering" 20%
+		"SC-12 Plasma Thruster" 20%
+		"SC-14 Plasma Steering" 20%
+		"SC-14 Plasma Thruster" 20%
+		"SC-15 Plasma Thrusters" 20%
+		# Hai Outfits
+		"Boulder Reactor" 30%
+		"Bullfrog Anti-Missile" 30%
+		"Chameleon Anti-Missile" 30%
+		"Geode Reactor" 30%
+		"Hai Chasm Batteries" 30%
+		"Hai Corundum Regenerator" 30%
+		"Hai Cuttlefish Jammer" 30%
+		"Hai Diamond Regenerator" 30%
+		"Hai Fissure Batteries" 30%
+		"Hai Gorge Batteries" 30%
+		"Hai Octopus Jammer" 30%
+		"Hai Ravine Batteries" 30%
+		"Hai Tracker Pod" 30%
+		"Hai Tracker" 30%
+		"Hai Valley Batteries" 30%
+		"Hai Williwaw Cooling" 30%
+		"Holovid Zone" 30%
+		"Ion Cannon" 30%
+		"Pebble Core" 30%
+		"Phantom Pallet" 30%
+		"Pulse Cannon" 30%
+		"Pulse Rifle" 30%
+		"Pulse Turret" 30%
+		"Sand Cell" 30%
+		"Tracker Storage Pod" 30%
+		"Value Detector" 30%
+		`"Basrem" Atomic LTC` 30%
+		`"Basrem" Atomic Steering` 30%
+		`"Basrem" Atomic Thruster` 30%
+		`"Basrem" Reverse Thruster` 30%
+		`"Benga" Atomic LTC` 30%
+		`"Benga" Atomic Steering 30%`
+		`"Benga" Atomic Thruster` 30%
+		`"Benga" Reverse Thruster` 30%
+		`"Biroo" Atomic LTC` 30%
+		`"Biroo" Atomic Steering 30%`
+		`"Biroo" Atomic Thruster` 30%
+		`"Biroo" Reverse Thruster` 30%
+		`"Bondir" Atomic LTC` 30%
+		`"Bondir" Atomic Steering` 30%
+		`"Bondir" Atomic Thruster` 30%
+		`"Bufaer" Atomic LTC` 30%
+		`"Bufaer" Atomic Steering` 30%
+		`"Bufaer" Atomic Thruster` 30%
+		# Incipias Outfits
+		"Plasma Discharger" 20%
+		"Stagnation Beam" 20%
+		"Horizon Grappler" 20%
+		"Gas-Class Shield" 20%
+		"Liquid-Class Shield" 20%
+		"Metallic Hydrogen Cell" 20%
+		"Cloud Piercer" 20%
+		"MH Blue-Class Thruster" 20%
+		"MH Blue-Class Steering" 20%
+		"MH Green-Class Thruster" 20%
+		"MH Green-Class Steering" 20%
+		"MH Red-Class Thruster" 20%
+		"MH Red-Class Steering" 20%
+		# Rulei Outfits
+		"Fate Sealer" 40%
+		"Fate Sealer Activated" 40%
+		"Fate Divider" 40%
+		"Fate Divider Activated" 40%
+		"Abyssal Composer" 40%
+		# Sheragi Outfits
+		"Small EM Battery" 20%
+		"Large EM Battery" 20%
+		"Small Hybrid Cooling" 20%
+		"Large Hybrid Cooling" 20%
+		"Fission Drive" 20%
+		"Fusion Drive" 20%
+		"Electronic Warfare System" 20%
+		"Dragonflame Cannon" 20%
+		"Sheragi Anti-Missile" 20%
+		"Particle Waveform Turret" 20%
+		"Shard Fabricator" 20%
+		"Shard inactive" 20%
+		"Heavy Ion Cyclotron" 20%
+		"Heavy Ion Fragment" 20%
+		# Successors Outfits
+		"Auxiliary Power Reserve" 30%
+		"Bimodal Coilgun Turret" 30%
+		"Drag Cannon" 30%
+		"High-Velocity Spike Rack" 30%
+		"High-Velocity Spike" 30%
+		"Kinetic Rail Rifle" 30%
+		"Multimodal Armor: Heavy" 30%
+		"Multimodal Armor: Keystone" 30%
+		"Multimodal Armor: Regen" 30%
+		"Multimodal Armor: Resilient" 30%
+		"Overcharged Laser Turret" 30%
+		"Overcharged Pulse Laser" 30%
+		"Primary Power Reserve" 30%
+		"Pulse Laser Turret" 30%
+		"Shield Cortex Interface" 30%
+		"Successor Cooling" 30%
+		"Successor Fuel Sail" 30%
+		"Successor Pulse Laser" 30%
+		`"Aqra" Inductive Reverser` 30%
+		`"Aqra" Inductive Steering` 30%
+		`"Aqra" Inductive Thruster` 30%
+		`"Byiaa" Shield Cortex` 30%
+		`"Chyyra" Inductive Reverser` 30%
+		`"Chyyra" Inductive Steering` 30%
+		`"Chyyra" Inductive Thruster` 30%
+		`"Ej" Shield Cortex` 30%
+		`"Jaase" Shield Cortex` 30%
+		`"Jorv" Shield Cortex` 30%
+		`"Niis" Inductive Engines` 30%
+		`"Nnesa" Fusion Core` 30%
+		`"Ojet" Bimodal Coilgun` 30%
+		`"Ryuit" Fusion Core` 30%
+		`"Sjeja" Kinetic Lance` 30%
+		`"Tuur" Scanning Suite` 30%
+		`"Uoret" Fusion Core` 30%
+		`"Veldt" Combat Scanner` 30%
+		`"Veusa" Inductive Reverser` 30%
+		`"Veusa" Inductive Steering` 30%
+		`"Veusa" Inductive Thruster` 30%
+		`1-"Uurau" Betavoltaic Cell` 30%
+		`3-"Kaska" Betavoltaic Cell` 30%
+		`6-"Ruuv" Betavoltaic Cell` 30%
+		`OC-"Mavra" Betavoltaic Cell` 30%
+
+
+
+
+
+# Ka'het and Korath outfits are handled separately due to story reasons.
+pricing outfits "Remnant Ka'het Tech"
+	import
+	location
+		government "Remnant"
+	offset
+		"Ka'het Nullifier" 30%
+		"Ka'het Ravager Beam" 30%
+		"Ka'het Ravager Turret" 30%
+		"Ka'het Annihilator" 30%
+		"Ka'het Annihilator Turret" 30%
+		"Ka'het EMP Deployer" 30%
+		"Ka'het Support Cooling" 30%
+		"Ka'het Primary Cooling" 30%
+		"Ka'het Shield Restorer" 30%
+		"Ka'het Grand Restorer" 30%
+		"Ka'het MHD Generator" 30%
+		"Ka'het Reserve Accumulator" 30%
+		"Maeri Engine Nacelles" 30%
+		"Ka'het Sustainer Nacelles" 30%
+		"Telis Engine Nacelles" 30%
+		"Vareti Engine Block" 30%
+		"Ka'het Compact Engine" 30%
+
+
+pricing outfits "Remnant Korath Tech"
+	import
+	location
+		government "Remnant"
+	offset
+		"Afterburner (Asteroid Class)" 30%
+		"Afterburner (Comet Class)" 30%
+		"Banisher Grav-Turret" 30%
+		"Bow Drive (Meteor Class)" 30%
+		"Cluster Mine Rack" 30%
+		"Command Center" 30%
+		"Digger Mining Beam" 30%
+		"Digger Mining Turret" 30%
+		"Engine (Meteor Class)" 30%
+		"Expeller Grav-Ray" 30%
+		"Fire-Lance" 30%
+		"Firelight Storage Rack" 30%
+		"Firestorm Torpedo Rack" 30%
+		"Fuel Processor" 30%
+		"Generator (Candle Class)" 30%
+		"Generator (Furnace Class)" 30%
+		"Generator (Inferno Class)" 30%
+		"Grab-Strike Turret" 30%
+		"Large Heat Shunt" 30%
+		"Piercer Missile Rack" 30%
+		"Reverser (Asteroid Class)" 30%
+		"Reverser (Comet Class)" 30%
+		"Reverser (Lunar Class)" 30%
+		"Small Heat Shunt" 30%
+		"Steering (Asteroid Class)" 30%
+		"Steering (Comet Class)" 30%
+		"Steering (Lunar Class)" 30%
+		"Steering (Planetary Class)" 30%
+		"Systems Core (Large)" 30%
+		"Systems Core (Medium)" 30%
+		"Systems Core (Small)" 30%
+		"Thermal Repeater Rifle" 30%
+		"Thruster (Asteroid Class)" 30%
+		"Thruster (Comet Class)" 30%
+		"Thruster (Lunar Class)" 30%
+		"Thruster (Planetary Class)" 30%
+		"Triple Plasma Core" 30%
+		"Warder Anti-Missile" 30%
+
+
+
 
 
 
