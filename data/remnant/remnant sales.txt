@@ -339,11 +339,11 @@ pricing outfits "Remnant Valued Tech"
 		`"Basrem" Atomic Thruster` 30 %
 		`"Basrem" Reverse Thruster` 30 %
 		`"Benga" Atomic LTC` 30 %
-		`"Benga" Atomic Steering 30 %`
+		`"Benga" Atomic Steering` 30 %
 		`"Benga" Atomic Thruster` 30 %
 		`"Benga" Reverse Thruster` 30 %
 		`"Biroo" Atomic LTC` 30 %
-		`"Biroo" Atomic Steering 30 %`
+		`"Biroo" Atomic Steering` 30 %
 		`"Biroo" Atomic Thruster` 30 %
 		`"Biroo" Reverse Thruster` 30 %
 		`"Bondir" Atomic LTC` 30 %
