@@ -136,3 +136,17 @@ outfitter "People's Houses"
 	"Overcharged Pulse Laser"
 	"Overcharged Laser Turret"
 	`OC-"Mavra" Betavoltaic Cell`
+
+
+
+# The Successor Multimodal armor isn't actually an outfit being added to the ship, but rather a service being provided by the outfitters to transform the ship's armor. As such, the vast majority of the cost is in outfitter supplies, energy, labor, etc. So while this transformation can be undone anywhere, it won't recover 
+pricing outfits "Successors Multimodal Service Costs"
+	import
+	location
+		not government "Remnant"
+	value
+		"Multimodal Armor: Heavy" 0
+		"Multimodal Armor: Regen" 0
+		"Multimodal Armor: Resilient" 0
+	offset
+		"Multimodal Armor: Keystone" -50 %

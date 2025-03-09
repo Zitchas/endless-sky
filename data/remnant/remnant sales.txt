@@ -141,10 +141,6 @@ pricing outfits "Remnant Valued Tech"
 		"Fate Sealer" 25000000
 		"Fate Divider" 25000000
 		"Abyssal Composer" 25000000
-		# Successor Outfits
-		"Multimodal Armor: Heavy" 25000
-		"Multimodal Armor: Regen" 25000
-		"Multimodal Armor: Resilient" 25000
 	offset
 		# Quarg Outfits
 		"Nanotech Battery" 50 %
@@ -377,7 +373,6 @@ pricing outfits "Remnant Valued Tech"
 		"Particle Waveform Turret" 20 %
 		"Shard Fabricator" 20 %
 		"Heavy Ion Cyclotron" 20 %
-		"Heavy Ion Fragment" 25000
 		# Successors Outfits
 		"Auxiliary Power Reserve" 30 %
 		"Bimodal Coilgun Turret" 30 %
@@ -385,7 +380,11 @@ pricing outfits "Remnant Valued Tech"
 		"High-Velocity Spike Rack" 30 %
 		"High-Velocity Spike" 30 %
 		"Kinetic Rail Rifle" 30 %
+		# Note: the Multimodal armor is not actually an outfit, but rather a mode for successor ship's armor. So the Remnant are paying for the opportunity to watch these forms of armor reset back to their base mode, they are not actually gaining an outfit.
 		"Multimodal Armor: Keystone" 30 %
+		"Multimodal Armor: Heavy" 30 %
+		"Multimodal Armor: Regen" 30 %
+		"Multimodal Armor: Resilient" 30 %
 		"Overcharged Laser Turret" 30 %
 		"Overcharged Pulse Laser" 30 %
 		"Primary Power Reserve" 30 %
