@@ -314,6 +314,8 @@ ship "Embersylph"
 
 outfit "Absorption Organ"
 	category "Turrets"
+	series "Turrets"
+	index 92010
 	thumbnail "outfit/unknown"
 	"turret mounts" -1
 	weapon
@@ -331,6 +333,8 @@ outfit "Absorption Organ"
 
 outfit Mouthparts?
 	category "Guns"
+	series "Guns"
+	index 92020
 	thumbnail "outfit/mouthparts"
 	"gun ports" -1
 	weapon
