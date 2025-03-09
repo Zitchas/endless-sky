@@ -140,14 +140,39 @@ outfitter "People's Houses"
 
 
 # The Successor Multimodal armor isn't actually an outfit being added to the ship, but rather a service being provided by the outfitters to transform the ship's armor. As such, the vast majority of the cost is in outfitter supplies, energy, labor, etc. So while this transformation can be undone anywhere, it won't recover an outfit or money.
-pricing outfits "Successors Multimodal Service Costs"
+pricing outfits "Successors Multimodal Service Costs Heavy"
 	location
 		not government "Remnant"
-	condition
-		"multimodal armor" 0
+	conditions
+		has "outfit (installed): Multimodal Armor: Heavy"
 	value
 		"Multimodal Armor: Heavy" 0
+
+
+pricing outfits "Successors Multimodal Service Costs Regen"
+	location
+		not government "Remnant"
+	conditions
+		has "outfit (installed): Multimodal Armor: Regen"
+	value
 		"Multimodal Armor: Regen" 0
+
+
+
+pricing outfits "Successors Multimodal Service Costs Resilient"
+	location
+		not government "Remnant"
+	conditions
+		has "outfit (installed): Multimodal Armor: Resilient"
+	value
 		"Multimodal Armor: Resilient" 0
+
+
+
+pricing outfits "Successors Multimodal Service Costs Keystone"
+	location
+		not government "Remnant"
+	conditions
+		has "outfit (installed): Multimodal Armor: Keystone"
 	offset
-		"Multimodal Armor: Keystone" -1 %
+		"Multimodal Armor: Keystone" -0.5 %
