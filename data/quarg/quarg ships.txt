@@ -28,9 +28,9 @@ ship "Quarg Lindwyrm"
 		"heat dissipation" .5
 		"fuel capacity" 1000
 		"cargo space" 400
-		"outfit space" 460
+		"outfit space" 485
 		"weapon capacity" 140
-		"engine capacity" 100
+		"engine capacity" 140
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -52,7 +52,7 @@ ship "Quarg Lindwyrm"
 
 		"Small Graviton Thruster"
 		"Medium Graviton Steering"
-    "Small Graviton LTC"
+		"Small Graviton LTC"
 		"Jump Drive"
 		
 	engine -29 125
@@ -85,9 +85,9 @@ ship "Quarg Guivre"
 		"heat dissipation" .3
 		"fuel capacity" 2000
 		"cargo space" 300
-		"outfit space" 720
-		"weapon capacity" 280
-		"engine capacity" 140
+		"outfit space" 769
+		"weapon capacity" 329
+		"engine capacity" 189
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -142,9 +142,9 @@ ship "Quarg Drake"
 		"heat dissipation" .65
 		"fuel capacity" 800
 		"cargo space" 20
-		"outfit space" 450
+		"outfit space" 460
 		"weapon capacity" 140
-		"engine capacity" 80
+		"engine capacity" 120
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -167,7 +167,7 @@ ship "Quarg Drake"
 
 		"Small Graviton Thruster"
 		"Small Graviton Steering"
-    "Small Graviton LTC"
+		"Small Graviton LTC"
 		"Jump Drive"
 		
 	engine -14 59.5
@@ -201,9 +201,9 @@ ship "Quarg Wardragon"
 		"heat dissipation" .6
 		"fuel capacity" 800
 		"cargo space" 30
-		"outfit space" 510
+		"outfit space" 550
 		"weapon capacity" 180
-		"engine capacity" 100
+		"engine capacity" 140
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -225,7 +225,7 @@ ship "Quarg Wardragon"
 
 		"Small Graviton Thruster"
 		"Medium Graviton Steering"
-    "Small Graviton LTC"
+		"Small Graviton LTC"
 		"Jump Drive"
 		
 	engine -17 76.5
@@ -259,9 +259,9 @@ ship "Quarg Wyvern"
 		"heat dissipation" .55
 		"fuel capacity" 1000
 		"cargo space" 20
-		"outfit space" 575
+		"outfit space" 624
 		"weapon capacity" 250
-		"engine capacity" 120
+		"engine capacity" 169
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -318,9 +318,9 @@ ship "Quarg Hydra"
 		"heat dissipation" .4
 		"fuel capacity" 800
 		"cargo space" 80
-		"outfit space" 925
+		"outfit space" 985
 		"weapon capacity" 380
-		"engine capacity" 170
+		"engine capacity" 230
 		"lateral thruster slot" 1
 		"reverse thruster slot" 1
 		"steering slot" 1
@@ -345,7 +345,7 @@ ship "Quarg Hydra"
 
 		"Large Graviton Thruster"
 		"Large Graviton Steering"
-    "Large Graviton LTC"
+		"Large Graviton LTC"
 		"Jump Drive"
 	
 	engine -23.5 135

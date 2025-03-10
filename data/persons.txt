@@ -150,9 +150,13 @@ ship "Wardragon"
 		"heat dissipation" .34
 		"fuel capacity" 800
 		"cargo space" 50
-		"outfit space" 610
-		"weapon capacity" 200
-		"engine capacity" 120
+		"outfit space" 629
+		"weapon capacity" 249
+		"engine capacity" 169
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"hull repair rate" 5
 		"hull energy" 5
 		"ramscoop" 10
@@ -175,6 +179,7 @@ ship "Wardragon"
 			
 		"Medium Graviton Thruster"
 		"Medium Graviton Steering"
+		"Medium Graviton LTC"
 		"Scram Drive"
 		
 	engine -14 47
@@ -190,6 +195,77 @@ ship "Wardragon"
 	explode "huge explosion" 20
 	"final explode" "final explosion medium"
 	description "The origin of this Wardragon is shrouded in mystery. It was said that the Quarg once used this ship as a powerful light warship. Other sources suggest that it was used as a front-line heavy warship. One thing is for certain though, and that's its design is far different than any Quarg ship that exists today, and one can only question where it came from."
+
+
+
+person "Nectar of the Gods"
+	government "Parrot"
+	frequency 600
+	phrase
+		phrase
+			"friendly author"
+	ship "Quarg Skylark" "Quarg Skylark"
+		sprite "ship/skylark"
+
+
+ship "Quarg Skylark"
+	sprite "ship/skylark"
+	thumbnail "thumbnail/skylark"
+	attributes
+		category "Heavy Warship"
+		"cost" 5900000
+		"shields" 120000
+		"hull" 70000
+		"required crew" 120
+		"bunks" 210
+		"mass" 990
+		"drag" 18.5
+		"heat dissipation" .47
+		"fuel capacity" 1000
+		"cargo space" 200
+		"outfit space" 649
+		"weapon capacity" 200
+		"engine capacity" 169
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
+		"hull repair rate" 5
+		"hull energy" 5
+		"ramscoop" 10
+		weapon
+			"blast radius" 250
+			"shield damage" 1000
+			"hull damage" 500
+			"hit force" 1500
+	outfits
+		"Quarg Skylance" 2
+		"Quarg Anti-Missile" 2
+		
+		"Antimatter Core"
+		"Nanotech Battery"
+		"Quantum Shield Generator"
+		"Intrusion Countermeasures" 120
+		
+		"Medium Graviton Thruster"
+		"Medium Graviton Steering"
+		"Medium Graviton LTC"
+		"Jump Drive"
+		
+	engine -15 117
+	engine 15 117
+	turret -12 -80 "Quarg Skylance"
+	turret 12 -80 "Quarg Skylance"
+	turret -34 24 "Quarg Anti-Missile"
+	turret 34 24 "Quarg Anti-Missile"
+	explode "tiny explosion" 12
+	explode "small explosion" 16
+	explode "medium explosion" 30
+	explode "large explosion" 40
+	explode "huge explosion" 20
+	"final explode" "final explosion medium"
+	description "The Skylark is used by the Quarg as a freighter and warship."
+
 
 
 person "Marauding Max"
@@ -2605,3 +2681,4 @@ ship "Splinter" "Splinter (Verdorve)"
 	turret
 	turret "Plasma Turret"
 	turret "Plasma Turret"
+
