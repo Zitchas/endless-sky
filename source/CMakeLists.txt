@@ -66,6 +66,10 @@ target_sources(EndlessSkyLib PRIVATE
 	ConversationPanel.h
 	CoreStartData.cpp
 	CoreStartData.h
+	CustomSale.cpp
+	CustomSale.h
+	CustomSaleManager.cpp
+	CustomSaleManager.h
 	DamageDealt.h
 	DamageProfile.cpp
 	DamageProfile.h
@@ -150,6 +154,7 @@ target_sources(EndlessSkyLib PRIVATE
 	ItemInfoDisplay.cpp
 	ItemInfoDisplay.h
 	JumpTypes.h
+	LimitedEvents.h
 	Logger.cpp
 	Logger.h
 	LoadPanel.cpp
@@ -283,6 +288,8 @@ target_sources(EndlessSkyLib PRIVATE
 	ShopPanel.h
 	SpaceportPanel.cpp
 	SpaceportPanel.h
+	SpawnedFleet.cpp
+	SpawnedFleet.h
 	StartConditions.cpp
 	StartConditions.h
 	StartConditionsPanel.cpp
@@ -314,6 +321,8 @@ target_sources(EndlessSkyLib PRIVATE
 	Visual.h
 	Weapon.cpp
 	Weapon.h
+	HardpointInfoPanel.cpp
+	HardpointInfoPanel.h
 	Weather.cpp
 	Weather.h
 	WeightedList.h
