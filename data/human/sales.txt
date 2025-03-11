@@ -975,7 +975,7 @@ pricing outfits "Human Not Interested in Alien Tech"
 		"High-Velocity Spike Rack" -0.5 %
 		"High-Velocity Spike" -0.5 %
 		"Kinetic Rail Rifle" -0.5 %
-		# Note: the Multimodal armor is not actually an outfit, but rather a mode for successor ship's armor. Thus selling it is just letting it revert to normal, there's no actual thing to sell.
+		# Note: the Multimodal Armor is not actually an outfit, but rather a mode for Successor ships' armor. Thus selling it is just letting it revert to normal; there's no actual thing to sell.
 		"Multimodal Armor: Keystone" -1 %
 		"Multimodal Armor: Heavy" -1 %
 		"Multimodal Armor: Regen" -1 %
