@@ -130,7 +130,7 @@ pricing outfits "Remnant Hai Keystones"
 
 
 # These are outfits that the Remnant find intriguing and will pay extra for. Think of it like showing up to the Remnant outfitter with some random alien thing. The outfitter may or may not know what it is, or where it is from, but they can tell that it is of alien origin and in working condition. This is enough for them to be very interested in acquiring it.
-# Basically, anything that is not human or Pug or Wanderer should be on this list. Quarg are at +50% because they are both extremely hard to get and extremely advanced. For the rest, +30% for very interesting stuff (Bunrodea, Coalition, Hai, Successors, etc) and +20% for not as interesting stuff (Avgi, Gegno, Sheragi, etc.)
+# Basically, anything that is not human or Pug or Wanderer should be on this list. Quarg are at +50% because they are both extremely hard to get and extremely advanced. For the rest, +30% for very interesting stuff (Bunrodea, Coalition, Hai, Successors, etc) and +20% for regular interesting stuff (Avgi, Gegno, Sheragi, etc.)
 pricing outfits "Remnant Valued Tech"
 	import
 	location
@@ -143,14 +143,38 @@ pricing outfits "Remnant Valued Tech"
 		"Abyssal Composer" 25000000
 	offset
 		# Quarg Outfits
-		"Nanotech Battery" 0.5 %
-		"Antimatter Core" 0.5 %
+		"Skydagger" 0.5 %
+		"Skylance" 0.5 %
 		"Quarg Skylance" 0.5 %
+		"Stratospear" 0.5 %
 		"Quarg Anti-Missile" 0.5 %
-		"Intrusion Countermeasures" 0.5 %
+		"Elysian Ranseur" 0.5 %
+		"Celestial Culverin" 0.5 %
+		"Astral Ribault" 0.5 %
+		"Slipstream Projector" 0.5 %
+		"Nanotech Battery" 0.5 %
+		"Quantum Vacuum Battery" 0.5 %
+		"Antimatter Core" 0.5 %
+		"Singularity Core" 0.5 %
+		"Quasar Core" 0.5 %
+		"Antimatter Core" 0.5 %
+		"Aspis Shield Generator" 0.5 %
+		"Ancile Shield Generator" 0.5 %
+		"Aegis Shield Generator" 0.5 %
+		"Peripheral Repair Hub" 0.5 %
+		"Central Repair Hub" 0.5 %
+		"Quantum Shield Generator" 0.5 %
+		"Small Graviton Thruster" 0.5 %
+		"Small Graviton Steering" 0.5 %
+		"Small Graviton LTC" 0.5 %
 		"Medium Graviton Thruster" 0.5 %
 		"Medium Graviton Steering" 0.5 %
-		"Quantum Shield Generator" 0.5 %
+		"Medium Graviton LTC" 0.5 %
+		"Large Graviton Thruster" 0.5 %
+		"Large Graviton Steering" 0.5 %
+		"Large Graviton LTC" 0.5 %
+		"Intrusion Countermeasures" 0.5 %
+		"Phalanx System" 0.5 %
 		# Avgi Outfits
 		`"Nettle" KKV` 0.2 %
 		`"Ophrys" Nuclear Torpedo` 0.2 %
@@ -448,6 +472,7 @@ pricing outfits "Remnant Ka'het Tech"
 		"Ka'het Compact Engine" 0.3 %
 
 
+
 pricing outfits "Remnant Korath Tech"
 	import
 	location
@@ -491,9 +516,6 @@ pricing outfits "Remnant Korath Tech"
 		"Thruster (Planetary Class)" 0.3 %
 		"Triple Plasma Core" 0.3 %
 		"Warder Anti-Missile" 0.3 %
-
-
-
 
 
 
