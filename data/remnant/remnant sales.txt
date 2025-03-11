@@ -195,7 +195,6 @@ pricing outfits "Remnant Valued Tech"
 		"Heatsink Partition" 0.2 %
 		"Inductive Extractor" 0.2 %
 		"Lantern Fission Core" 0.2 %
-		"Luxury Accommodations" 0.2 %
 		"Magnetic Scoop" 0.2 %
 		"Magnetoplasma Drive" 0.2 %
 		"Medium VLS" 0.2 %
