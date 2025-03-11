@@ -16,63 +16,72 @@ pricing outfits "Quarg Technology Friendly Groups"
 	location
 		government "Free Worlds" "Hai" "Neutral" "Republic" "Syndicate"
 	offset
-		"Nanotech Battery" -0.9 %
-		"Antimatter Core" -0.9 %
+		"Skydagger" -0.9 %
+		"Skylance" -0.9 %
 		"Quarg Skylance" -0.9 %
+		"Stratospear" -0.9 %
 		"Quarg Anti-Missile" -0.9 %
-		"Intrusion Countermeasures" -0.9 %
+		"Elysian Ranseur" -0.9 %
+		"Celestial Culverin" -0.9 %
+		"Astral Ribault" -0.9 %
+		"Slipstream Projector" -0.9 %
+		"Nanotech Battery" -0.9 %
+		"Quantum Vacuum Battery" -0.9 %
+		"Antimatter Core" -0.9 %
+		"Singularity Core" -0.9 %
+		"Quasar Core" -0.9 %
+		"Antimatter Core" -0.9 %
+		"Aspis Shield Generator" -0.9 %
+		"Ancile Shield Generator" -0.9 %
+		"Aegis Shield Generator" -0.9 %
+		"Peripheral Repair Hub" -0.9 %
+		"Central Repair Hub" -0.9 %
+		"Quantum Shield Generator" -0.9 %
+		"Small Graviton Thruster" -0.9 %
+		"Small Graviton Steering" -0.9 %
+		"Small Graviton LTC" -0.9 %
 		"Medium Graviton Thruster" -0.9 %
 		"Medium Graviton Steering" -0.9 %
-		"Quantum Shield Generator" -0.9 %
+		"Medium Graviton LTC" -0.9 %
+		"Large Graviton Thruster" -0.9 %
+		"Large Graviton Steering" -0.9 %
+		"Large Graviton LTC" -0.9 %
+		"Intrusion Countermeasures" -0.9 %
+		"Phalanx System" -0.9 %
 
 pricing outfits "Quarg Technology Hostile Groups"
 	location
 		government "Hai (Unfettered)" "Independent" "Pirate"
 	offset
-		"Nanotech Battery" 3 %
-		"Antimatter Core" 3 %
-		"Quarg Skylance" 3 %
-		"Quarg Anti-Missile" 3 %
-		"Intrusion Countermeasures" 3 %
-		"Medium Graviton Thruster" 3 %
-		"Medium Graviton Steering" 3 %
-		"Quantum Shield Generator" 3 %
-
-
-pricing outfits "Remnant Hai Keystones"
-	import
-	location
-		government "Remnant"
-	conditions
-		or
-			has "Remnant: Key Stones: done"
-			has "Remnant: Key Stones (Pre-Hai) 2: done"
-	value
-		"Quantum Keystone" 200000
-
-# These are outfits that the Remnant value and want to see imported.
-pricing outfits "Remnant Valued Tech"
-	import
-	location
-		government "Remnant"
-	value
-		"Jump Drive" 2500000
-	offset
-		"Nanotech Battery" 3.5 %
-		"Antimatter Core" 3.5 %
-		"Quarg Skylance" 3.5 %
-		"Quarg Anti-Missile" 3.5 %
-		"Intrusion Countermeasures" 3 %
-		"Medium Graviton Thruster" 3.5 %
-		"Medium Graviton Steering" 3.5 %
-		"Quantum Shield Generator" 3.5 %
-
-# These are old outfits that the Remnant do not use much, and thus do not value as much as elsewhere.
-pricing outfits "Remnant Old Tech"
-	location
-		government "Remnant"
-	value
-		"Cargo Scanner" 5000
-		"Outfit Scanner" 18000
-		"Hyperdrive" 30000
-	
+		"Skydagger" 2.5 %
+		"Skylance" 2.5 %
+		"Quarg Skylance" 2.5 %
+		"Stratospear" 2.5 %
+		"Quarg Anti-Missile" 2.5 %
+		"Elysian Ranseur" 2.5 %
+		"Celestial Culverin" 2.5 %
+		"Astral Ribault" 2.5 %
+		"Slipstream Projector" 2.5 %
+		"Nanotech Battery" 2.5 %
+		"Quantum Vacuum Battery" 2.5 %
+		"Antimatter Core" 2.5 %
+		"Singularity Core" 2.5 %
+		"Quasar Core" 2.5 %
+		"Antimatter Core" 2.5 %
+		"Aspis Shield Generator" 2.5 %
+		"Ancile Shield Generator" 2.5 %
+		"Aegis Shield Generator" 2.5 %
+		"Peripheral Repair Hub" 2.5 %
+		"Central Repair Hub" 2.5 %
+		"Quantum Shield Generator" 2.5 %
+		"Small Graviton Thruster" 2.5 %
+		"Small Graviton Steering" 2.5 %
+		"Small Graviton LTC" 2.5 %
+		"Medium Graviton Thruster" 2.5 %
+		"Medium Graviton Steering" 2.5 %
+		"Medium Graviton LTC" 2.5 %
+		"Large Graviton Thruster" 2.5 %
+		"Large Graviton Steering" 2.5 %
+		"Large Graviton LTC" 2.5 %
+		"Intrusion Countermeasures" 2.5 %
+		"Phalanx System" 2.5 %
