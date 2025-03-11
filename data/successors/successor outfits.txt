@@ -625,6 +625,7 @@ outfit "Multimodal Armor: Heavy"
 	thumbnail "outfit/successor armor heavy"
 	licenses
 		"High Houses"
+	cost 200000
 	"hull protection" .20
 	"multimodal armor" -1
 	"unplunderable" 1
@@ -653,6 +654,7 @@ outfit "Multimodal Armor: Regen"
 	thumbnail "outfit/successor armor regen"
 	licenses
 		"High Houses"
+	cost 200000
 	"hull repair multiplier" 0.75
 	"multimodal armor" -1
 	"unplunderable" 1
@@ -666,6 +668,7 @@ outfit "Multimodal Armor: Resilient"
 	thumbnail "outfit/successor armor resilient"
 	licenses
 		"High Houses"
+	cost 200000
 	"slowing protection" 0.5
 	"corrosion protection" 0.5
 	"multimodal armor" -1
