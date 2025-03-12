@@ -45,6 +45,7 @@ test-data "Flagship Attribute Autoconditions Save"
 				"hull energy" 0.9
 				"hull repair rate" 2.5
 				"ion protection" 0.25
+				"lateral thruster slot" 1
 				"scramble protection" 0.25
 				"outfit scan power" 18
 				"outfit scan efficiency" 22
@@ -63,10 +64,6 @@ test-data "Flagship Attribute Autoconditions Save"
 				"thruster slot" 2
 				"turret mounts" 2
 				"weapon capacity" 220
-				"lateral thruster slot" 1
-				"reverse thruster slot" 1
-				"steering slot" 1
-				"thruster slot" 1
 			outfits
 				"Aeon Cell"
 				"Bellows-Class Afterburner"
@@ -154,6 +151,7 @@ test "Flagship Attribute Autoconditions"
 			"flagship base attribute: hull energy" == 900
 			"flagship base attribute: hull repair rate" == 2500
 			"flagship base attribute: ion protection" == 250
+			"flagship base attribute: reverse thruster slot" == 1000
 			"flagship base attribute: scramble protection" == 250
 			"flagship base attribute: outfit scan power" == 18000
 			"flagship base attribute: outfit scan efficiency" == 22000
