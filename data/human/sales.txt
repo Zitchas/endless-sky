@@ -1079,8 +1079,9 @@ pricing outfits "Hai outfits in human space"
 	import
 	location
 		government "Free Worlds" "Neutral" "Republic" "Syndicate"
+	conditions
 		not event "hai-human treaty signed"
-	offset		
+	offset
 		# Hai Outfits
 		"Boulder Reactor" -0.5 %
 		"Bullfrog Anti-Missile" -0.5 %
