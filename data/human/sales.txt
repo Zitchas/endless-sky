@@ -785,7 +785,7 @@ pricing outfits "Human Not Interested in Alien Tech"
 	import
 	location
 		government "Free Worlds" "Neutral" "Republic" "Syndicate"
-		not planet "Wayfarer" "New Tortuga" "Rust"
+		not planet "Wayfarer" "New Tortuga" "Rust" "Valhalla"
 	value
 		# Rulei Outfits
 		"Fate Sealer" 1
@@ -1079,6 +1079,7 @@ pricing outfits "Hai outfits in human space"
 	import
 	location
 		government "Free Worlds" "Neutral" "Republic" "Syndicate"
+		not planet "Wayfarer" "New Tortuga" "Rust" "Valhalla"
 	conditions
 		not "event: hai-human treaty signed"
 	offset
