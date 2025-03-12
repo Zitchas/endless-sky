@@ -33,6 +33,10 @@ ship "Koryfi"
 		"outfit space" 144
 		"weapon capacity" 36
 		"engine capacity" 42
+		"lateral thruster slot" 1.5
+		"reverse thruster slot" 1.5
+		"steering slot" 1.5
+		"thruster slot" 1.5
 		"solar collection" 6
 		"solar heat" 2.4
 		"anchor point" 1
@@ -141,6 +145,10 @@ ship "Melodikos"
 		"outfit space" 180
 		"weapon capacity" 42
 		"engine capacity" 90
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"solar collection" 15
 		"solar heat" 6.9
 		"anchor point" 1
@@ -287,6 +295,10 @@ ship "Avlaki"
 		"outfit space" 144
 		"weapon capacity" 36
 		"engine capacity" 42
+		"lateral thruster slot" 1.5
+		"reverse thruster slot" 1.5
+		"steering slot" 1.5
+		"thruster slot" 1.5
 		"solar collection" 6
 		"solar heat" 2.4
 		"anchor point" 1
@@ -394,6 +406,10 @@ ship "Harmonikos"
 		"outfit space" 180
 		"weapon capacity" 42
 		"engine capacity" 90
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"solar collection" 15
 		"solar heat" 6.9
 		"anchor point" 1
@@ -534,6 +550,10 @@ ship "Phononos"
 		"cargo space" 240
 		"outfit space" 72
 		"engine capacity" 24
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"radar jamming" 6
 		weapon
 			"blast radius" 24
@@ -599,6 +619,10 @@ ship "Frequentia"
 		"cargo space" 240
 		"outfit space" 186
 		"engine capacity" 66
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"anchor point" 1
 		weapon
 			"blast radius" 360
@@ -673,6 +697,10 @@ ship "Polari"
 		"outfit space" 312
 		"weapon capacity" 36
 		"engine capacity" 66
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"asteroid scan power" 72
 		"tactical scan power" 72
 		"anchor point" 1
@@ -757,6 +785,10 @@ ship "Entasi"
 		"outfit space" 420
 		"weapon capacity" 120
 		"engine capacity" 42
+		"lateral thruster slot" 1.5
+		"reverse thruster slot" 1.5
+		"steering slot" 1.5
+		"thruster slot" 1.5
 		"solar collection" 18
 		"solar heat" 7.2
 		"anchor point" 1
@@ -896,6 +928,10 @@ ship "Undsyni"
 		"outfit space" 636
 		"weapon capacity" 153
 		"engine capacity" 168
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"spinal mount" 1
 		"anchor point" 1
 		weapon
@@ -1067,6 +1103,10 @@ ship "Modified Tachytia"
 		"outfit space" 1800
 		"weapon capacity" 180
 		"engine capacity" 450
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"self destruct" 0.9
 		"spinal mount" 1
 		"anchor point" 3
@@ -1199,6 +1239,10 @@ ship "Tremoros"
 		"outfit space" 216
 		"weapon capacity" 60
 		"engine capacity" 69
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"anchor point" 1
 		weapon
 			"blast radius" 90
@@ -1278,6 +1322,10 @@ ship "Prismaios"
 		"outfit space" 360
 		"weapon capacity" 120
 		"engine capacity" 96
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"anchor point" 1
 		weapon
 			"blast radius" 240
@@ -1420,6 +1468,10 @@ ship "Interferos"
 		"outfit space" 294
 		"weapon capacity" 99
 		"engine capacity" 66
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"anchor point" 1
 		weapon
 			"blast radius" 210
@@ -1554,6 +1606,10 @@ ship "Diaspersi"
 		"outfit space" 432
 		"weapon capacity" 96
 		"engine capacity" 114
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"anchor point" 1
 		weapon
 			"blast radius" 360
@@ -1709,6 +1765,10 @@ ship "Refraktos"
 		"outfit space" 516
 		"weapon capacity" 150
 		"engine capacity" 168
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"anchor point" 1
 		weapon
 			"blast radius" 420
@@ -1811,6 +1871,10 @@ ship "Difraktos"
 		"outfit space" 540
 		"weapon capacity" 252
 		"engine capacity" 144
+		"lateral thruster slot" 2.0
+		"reverse thruster slot" 2.0
+		"steering slot" 2.0
+		"thruster slot" 2.0
 		"anchor point" 1
 		weapon
 			"blast radius" 420
@@ -1996,6 +2060,10 @@ ship "Atenuatia"
 		"outfit space" 696
 		"weapon capacity" 180
 		"engine capacity" 186
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"anchor point" 1
 		weapon
 			"blast radius" 540
@@ -2206,6 +2274,10 @@ ship "Akoustiki"
 		"outfit space" 96
 		"weapon capacity" 24
 		"engine capacity" 24
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		weapon
 			"blast radius" 12
 			"shield damage" 240
@@ -2275,6 +2347,10 @@ ship "Photikon"
 		"outfit space" 90
 		"weapon capacity" 27
 		"engine capacity" 24
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"radar jamming" 6
 		weapon
 			"blast radius" 24
@@ -2364,6 +2440,10 @@ ship "Vibratia"
 		"outfit space" 75
 		"weapon capacity" 18
 		"engine capacity" 24
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"radar jamming" 3
 		weapon
 			"blast radius" 12
@@ -2429,6 +2509,10 @@ ship "Undulon"
 		"outfit space" 84
 		"weapon capacity" 42
 		"engine capacity" 18
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		weapon
 			"blast radius" 12
 			"shield damage" 180
@@ -2496,6 +2580,10 @@ ship "Optikon"
 		"fuel capacity" 300
 		"outfit space" 60
 		"engine capacity" 24
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		"atmosphere scan" 36
 		"outfit scan power" 42
 		"outfit scan efficiency" 12
@@ -2548,6 +2636,10 @@ ship "Sonikis"
 		"outfit space" 69
 		"weapon capacity" 18
 		"engine capacity" 24
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		weapon
 			"blast radius" 9
 			"shield damage" 180
