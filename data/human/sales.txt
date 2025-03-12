@@ -780,7 +780,7 @@ outfitter "Nuke"
 
 
 
-# Most standard outfitters are regular commercial enterprises that aren't interested in random alien technology. They mostly want to sell the player stuff, not be a source of profit for someone looting weird scrap metal from who knows where. Some, however, particularly R&D and independently-minded places, should be more interested. Wayfarer, New Tortuga, and Cratz come to mind, probably a few others out there too.
+# Most standard outfitters are regular commercial enterprises that aren't interested in random alien technology. They mostly want to sell the player stuff, not be a source of profit for someone looting weird scrap metal from who knows where. Some, however, particularly R&D and independently-minded places, should be more interested. Wayfarer, New Tortuga, and Kraz come to mind, probably a few others out there too.
 pricing outfits "Human Not Interested in Alien Tech"
 	import
 	location
