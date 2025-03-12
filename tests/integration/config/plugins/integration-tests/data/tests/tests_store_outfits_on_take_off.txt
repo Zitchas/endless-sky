@@ -41,9 +41,13 @@ test-data "Outfit Take Off Storage Save"
 				"gun ports" 2
 				"heat dissipation" 0.8
 				hull 300
+				"lateral thruster slot" 1
 				"outfit space" 130
 				"required crew" 1
+				"reverse thruster slot" 1
 				shields 1400
+				"steering slot" 1
+				"thruster slot" 1
 				"weapon capacity" 25
 			outfits
 				"Beam Laser" 2
@@ -93,9 +97,13 @@ test-data "Outfit Take Off Storage Save"
 				"gun ports" 1
 				"heat dissipation" 0.8
 				hull 600
+				"lateral thruster slot" 1
 				"outfit space" 120
 				"required crew" 1
+				"reverse thruster slot" 1
 				shields 500
+				"steering slot" 1
+				"thruster slot" 1
 				"weapon capacity" 10
 			outfits
 				"D14-RN Shield Generator"
@@ -164,9 +172,13 @@ test-data "Outfit Take Off Selling Save"
 				"gun ports" 2
 				"heat dissipation" 0.8
 				hull 300
+				"lateral thruster slot" 1
 				"outfit space" 130
 				"required crew" 1
+				"reverse thruster slot" 1
 				shields 1400
+				"steering slot" 1
+				"thruster slot" 1
 				"weapon capacity" 25
 			outfits
 				"Beam Laser" 2
@@ -216,9 +228,13 @@ test-data "Outfit Take Off Selling Save"
 				"gun ports" 1
 				"heat dissipation" 0.8
 				hull 600
+				"lateral thruster slot" 1
 				"outfit space" 120
 				"required crew" 1
+				"reverse thruster slot" 1
 				shields 500
+				"steering slot" 1
+				"thruster slot" 1
 				"weapon capacity" 10
 			outfits
 				"D14-RN Shield Generator"
