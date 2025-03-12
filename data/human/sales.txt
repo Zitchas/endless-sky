@@ -780,12 +780,12 @@ outfitter "Nuke"
 
 
 
-# Most standard outfitters are regular commercial enterprises that aren't interested in random alien technology. They mostly want to sell the player stuff, not be a source of profit for someone looting scrap metal from who knows where. Some, however, particularly R&D and independently-minded places, should be more interested. Tarazed and New Tortuga come to mind, probably a few others out there too.
+# Most standard outfitters are regular commercial enterprises that aren't interested in random alien technology. They mostly want to sell the player stuff, not be a source of profit for someone looting weird scrap metal from who knows where. Some, however, particularly R&D and independently-minded places, should be more interested. Wayfarer, New Tortuga, and Cratz come to mind, probably a few others out there too.
 pricing outfits "Human Not Interested in Alien Tech"
 	import
 	location
 		government "Free Worlds" "Neutral" "Republic" "Syndicate"
-		not planet "Tarazed" "New Tortuga"
+		not planet "Wayfarer" "New Tortuga" "Rust"
 	value
 		# Rulei Outfits
 		"Fate Sealer" 1
@@ -1074,11 +1074,12 @@ pricing outfits "Human Not Interested in Alien Tech"
 
 
 		
-
+# While the Hai are unknown, regular outfitters shouldn't be interested in them. Once the treaty is signed, though, and trade relations start to normalize, these will start becoming regular things. So this price penalty will apply up until the treaty is signed, and after that, vanish.
 pricing outfits "Hai outfits in human space"
 	import
 	location
-		government "Republic"
+		government "Free Worlds" "Neutral" "Republic" "Syndicate"
+		not event "hai-human treaty signed"
 	offset		
 		# Hai Outfits
 		"Boulder Reactor" -0.5 %
