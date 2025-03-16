@@ -41,7 +41,7 @@ test-data "Wormhole Navigation Save"
 				"mass" 5000
 				"drag" 25
 				"heat dissipation" .80
-				"fuel capacity" 2500
+				"fuel capacity" 45300
 				"ramscoop" 10
 				"cargo space" 1110
 				"outfit space" 21500
@@ -65,6 +65,10 @@ test-data "Wormhole Navigation Save"
 				"scramble resistance" 0.3
 				"slowing resistance" 3
 				"remnant node" 11
+				"lateral thruster slot" 1
+				"reverse thruster slot" 1
+				"steering slot" 1
+				"thruster slot" 1
 				weapon
 					"blast radius" 140
 					"shield damage" 1400
@@ -158,7 +162,7 @@ test-data "Ember Wastes Navigation Save"
 				"mass" 5000
 				"drag" 25
 				"heat dissipation" .80
-				"fuel capacity" 2500
+				"fuel capacity" 45300
 				"ramscoop" 10
 				"cargo space" 1110
 				"outfit space" 2150
@@ -182,6 +186,10 @@ test-data "Ember Wastes Navigation Save"
 				"scramble resistance" 0.3
 				"slowing resistance" 3
 				"remnant node" 11
+				"lateral thruster slot" 1
+				"reverse thruster slot" 1
+				"steering slot" 1
+				"thruster slot" 1
 				weapon
 					"blast radius" 140
 					"shield damage" 1400
