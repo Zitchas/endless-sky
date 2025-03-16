@@ -1,0 +1,47 @@
+# Copyright (c) 2025 by Zitchas
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# This mission marks the end of the Remnant storyline. It is intended that the effects of it could easily be patched out and reset if/when more story is added, but currently  reflects the poor probability of more content being added 
+mission "Remnant: Cognizance End of the Line"
+	landing
+	source
+		government "Remnant"
+	destination
+		government "Remnant"
+	to offer
+		has "Remnant: Visit to Paradise 1: done"
+		has "Remnant: Celebration 1: done"
+		has "Remnant: Shattered Light 6: done"
+		has "Remnant: Scent of Rain 1: done"
+		has "Remnant: Will Not Someone Please Think Of The Children: done"
+	on offer
+		conversation
+			`As you approach <planet> you can see that the Remnant airspace is full of intense activity. Gently settling onto your designated pad, you step outside of the <ship> to see Torza, Taely, Plume, Dawn, and several other of the Remnant you have worked with waiting for you.`
+			`	"Greetings, Captain <first> <last>." They gesture in unison, then with a start they glance at each other, and only Dawn continues.`
+			`	"We have made some discoveries recently, <first>. Terrible discoveries that put the world as we know it in jeapordy. We cannot provide details, those might make it worse, but suffice to say that conditions are becoming inhospitable to continued life."`
+			`	She gestures around her, encompassing the intense activity that is busier than anything you have seen from the Remnant before.`
+			`	"We have a way out. A way to trasncend this existence, based on what we have learned from the ones who came before. Maybe, from there, we will be able to help stabilize this existence. Maybe the laws of the universe will understand that they, too, must sometimes admit failure and ask for forgiveness. Offer trust instead of reacting blindly in fear that everyone else will react as they have reacted when given the choice." Her tone is sorrowful, but then changes to resolve.`
+			`	"But we cannot depend on the universe changing, so we must take steps to ensure that we survive, no matter the path. Our story ending here is but a small price to pay to ensuring that we do, in fact, have a story worth living. We will return, if we can. But if not... Leave here, if you can. We cannot take you with us, but we hope that you will be able to find your own places to write your own stories in universes more tolerant and caring than this one."`
+			`	Torza holds out a small crystal and gestures. "We have a few experimental things that have not yet reached full production, and are largely experimental, but you can have access to them if you wish. They might have some problems, and not make much sense to you, but they were things we had in development. If you want, take them. If you do not wish to have access to these potentially unbalanced things, then we understand. Perhaps you will accept in an alternate life."`
+			choice
+				`	"I accept"`
+					goto reol1_accept
+				`	"No."`
+			`	They all nod in understanding, then step back from you.`
+			`	"It will take some time for everyone to leave, so some will be around for a while yet to provide assistance and some final jobs. For some of us, though, it is time to lead the way." With a nod to the others Chilia, Torza, Taely, Dawn, Plume, and Ruach step forward and join hands. For a moment, everything freezes. Every Remnant stops, every machine freezes, and the lights dim and you feel an intense surge of energy rippling through the air. The trio glow brightly, and then are gone. A heartbeat later, hundreds of thousands of other Remnant across the starport vanish as well. Taely and the others look exhausted, but resolute, and depart in various directions without a word.`
+				decline
+			label reol_accept
+			
+			`	Each of the Remnant step forward and, breaking with their previous behavior, give you a warm hug. "We might not be around here, but you can always reach us outside of the universe." Comments Dawn, as she hands you a small chip of metal with a comm code engraved on it: Discord "Zitchas", email "zitchas.jma@gmail.com". We will always be interested in knowing what you think, and positivity is always welcome."`
+			`	"It will take some time for everyone to leave, so some will be around for a while yet to provide assistance and some final jobs. For some of us, though, it is time to lead the way." Chilia, Torza, Taely, Dawn, Plume, and Ruach. For a moment, everything freezes. Every Remnant stops, every machine freezes, and the lights dim and you feel an intense surge of energy rippling through the air. The trio glow brightly, and then are gone. A heartbeat later, hundreds of thousands of other Remnant across the starport vanish as well. Taely and the others look exhausted, but resolute, and depart in various directions without a word.`
+				decline
