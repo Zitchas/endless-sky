@@ -1573,3 +1573,45 @@ outfit "Flare color Plasma large"
 	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates large exhaust plumes."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
+
+
+outfit "Flare color Ion small"
+	category "Engine Modifications"
+	cost 25000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.05
+	"flare sprite" "effect/plasma flare/small"
+		"frame rate" 1.1
+	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates small exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Ion medium"
+	category "Engine Modifications"
+	cost 35000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.05
+	"flare sprite" "effect/plasma flare/medium"
+		"frame rate" 1.0
+	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates medium exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Ion large"
+	category "Engine Modifications"
+	cost 45000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.05
+	"flare sprite" "effect/plasma flare/large"
+		"frame rate" 0.9
+	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates large exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
