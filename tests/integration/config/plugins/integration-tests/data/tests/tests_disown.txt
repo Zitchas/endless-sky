@@ -38,6 +38,10 @@ test-data "Owned Drone Save"
 				"outfit space" 530
 				"weapon capacity" 100
 				"engine capacity" 280
+				"lateral thruster slot" 1
+				"reverse thruster slot" 1
+				"steering slot" 1
+				"thruster slot" 1
 				weapon
 					"blast radius" 3
 					"shield damage" 30
@@ -88,9 +92,13 @@ test-data "Owned Remote Save"
 				"gun ports" 2
 				"heat dissipation" 0.8
 				hull 300
+				"lateral thruster slot" 1
 				"outfit space" 1300
 				"required crew" 1
+				"reverse thruster slot" 1
 				shields 1200
+				"steering slot" 1
+				"thruster slot" 1
 				"weapon capacity" 200
 			outfits
 				"Beam Laser" 2

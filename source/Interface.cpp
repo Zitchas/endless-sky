@@ -830,6 +830,17 @@ void Interface::BarElement::Draw(const Rectangle &rect, const Information &info,
 
 			LineShader::DrawGradient(from, to, twidth, nFromColor, nToColor);
 		}
+		// draw in the opposite direction.
+		if(value < 0)
+			while(v > value)
+			{
+				Point from = start + v * dimensions;
+				v -= filled;
+				Point to = start + max(v, value) * dimensions;
+				v -= empty;
+
+				LineShader::Draw(from, to, width, *color);
+			}
 	}
 }
 
