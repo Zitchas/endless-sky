@@ -1500,7 +1500,7 @@ outfit "Flare color Atomic small"
 	"acceleration multiplier" 0.05
 	"flare sprite" "effect/atomic flare/tiny"
 		"frame rate" 14
-	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates small exhaust plumes."
+	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates small exhaust plumes."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
 
@@ -1514,7 +1514,7 @@ outfit "Flare color Atomic medium"
 	"acceleration multiplier" 0.05
 	"flare sprite" "effect/atomic flare/medium"
 		"frame rate" 12
-	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates medium exhaust plumes."
+	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates medium exhaust plumes."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
 
@@ -1528,7 +1528,7 @@ outfit "Flare color Atomic large"
 	"acceleration multiplier" 0.05
 	"flare sprite" "effect/atomic flare/large"
 		"frame rate" 11
-	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates large exhaust plumes."
+	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates large exhaust plumes."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
 
@@ -1542,7 +1542,7 @@ outfit "Flare color Plasma small"
 	"acceleration multiplier" 0.05
 	"flare sprite" "effect/plasma flare/small"
 		"frame rate" 6
-	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates small exhaust plumes."
+	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates small exhaust plumes."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
 
@@ -1556,7 +1556,7 @@ outfit "Flare color Plasma medium"
 	"acceleration multiplier" 0.05
 	"flare sprite" "effect/plasma flare/medium"
 		"frame rate" 7
-	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates medium exhaust plumes."
+	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates medium exhaust plumes."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
 
@@ -1570,7 +1570,7 @@ outfit "Flare color Plasma large"
 	"acceleration multiplier" 0.05
 	"flare sprite" "effect/plasma flare/large"
 		"frame rate" 8
-	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates large exhaust plumes."
+	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates large exhaust plumes."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
 
@@ -1584,7 +1584,7 @@ outfit "Flare color Ion small"
 	"acceleration multiplier" 0.05
 	"flare sprite" "effect/plasma flare/small"
 		"frame rate" 1.1
-	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates small exhaust plumes."
+	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, but nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates small exhaust plumes."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
 
@@ -1598,7 +1598,7 @@ outfit "Flare color Ion medium"
 	"acceleration multiplier" 0.05
 	"flare sprite" "effect/plasma flare/medium"
 		"frame rate" 1.0
-	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates medium exhaust plumes."
+	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, but nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates medium exhaust plumes."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
 
@@ -1612,6 +1612,6 @@ outfit "Flare color Ion large"
 	"acceleration multiplier" 0.05
 	"flare sprite" "effect/plasma flare/large"
 		"frame rate" 0.9
-	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates large exhaust plumes."
+	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, but nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates large exhaust plumes."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
