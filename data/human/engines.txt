@@ -1460,7 +1460,7 @@ outfit "Kraz Flight Controls"
 	"engine mod space" -0.2
 	"mass" 5
 	"turn multiplier" 0.1
-	description "Kraz Cybernetics' flight control systems are the keystone of their corporate success. Virtually unknown outside of pilots and vehicle manufacturers, the basic flight control system of most starships is ultimately sourced from them. Building on that success, they created this after-market add-on for those interested in replacing the bare-bones flight control system that shipyards prefer with a more robust system. If this system is what is distributed on a galaxy-wide scale, it is possible they might have more advanced version in the company's home outfitter..."
+	description "Kraz Cybernetics' flight control systems are the keystone of their corporate success. Virtually unknown outside of pilots and vehicle manufacturers, the basic flight control system of most starships is ultimately sourced from them. Building on that success, they created this after-market add-on for those interested in replacing the bare-bones flight control system that shipyards prefer with a more robust system. If this system is what is distributed on a galaxy-wide scale, it is possible they might have a more advanced version in the company's home outfitter..."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
 
@@ -1486,6 +1486,6 @@ outfit "Brute Force Thrust mod"
 	"engine mod space" -0.2
 	"mass" 10
 	"acceleration multiplier" 0.2
-	description "The engineer in front of you looks skeptically at your ship. 'Don't worry, this is a piece of cake. I can have her accelerating ten percent faster with a few hours of work. It'll add a bit 'o mass to your ship, but the kick will more than make up for it.' He scowls. 'Don't expect it to be pretty, though."
+	description `The engineer in front of you looks skeptically at your ship. "Don't worry, this is a piece of cake. I can have her accelerating ten percent faster with a few hours of work. It'll add a bit 'o mass to your ship, but the kick will more than make up for it." He scowls. "Don't expect it to be pretty, though."`
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
