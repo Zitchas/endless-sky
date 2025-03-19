@@ -1453,6 +1453,7 @@ outfit "James' Engine Mod"
 
 
 outfit "Kraz Flight Controls"
+	plural "Kraz Flight Controls"
 	category "Engine Modifications"
 	cost 50000
 	thumbnail "outfit/blue screwdriver"
@@ -1465,6 +1466,7 @@ outfit "Kraz Flight Controls"
 
 
 outfit "Kraz Advanced Control Systems"
+	plural "Kraz Advanced Control Systems"
 	category "Engine Modifications"
 	cost 125000
 	thumbnail "outfit/blue screwdriver"
@@ -1477,6 +1479,7 @@ outfit "Kraz Advanced Control Systems"
 
 
 outfit "Brute Force Thrust mod"
+	plural "Brute Force Thrust mod"
 	category "Engine Modifications"
 	cost 125000
 	thumbnail "outfit/blue screwdriver"
