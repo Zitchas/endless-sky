@@ -11,7 +11,7 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
-# This mission marks the end of the Remnant storyline. It is intended that the effects of it could easily be patched out and reset if/when more story is added, but currently  reflects the poor probability of more content being added 
+# This mission marks the end of the Remnant storyline. It is intended that the effects of it could easily be patched out and reset if/when more story is added, but currently  reflects the poor probability of more content being added.
 mission "Remnant: Cognizance End of the Line"
 	landing
 	source
@@ -38,10 +38,11 @@ mission "Remnant: Cognizance End of the Line"
 					goto reol1_accept
 				`	"No."`
 			`	They all nod in understanding, then step back from you.`
-			`	"It will take some time for everyone to leave, so some will be around for a while yet to provide assistance and some final jobs. For some of us, though, it is time to lead the way." With a nod to the others Chilia, Torza, Taely, Dawn, Plume, and Ruach step forward and join hands. For a moment, everything freezes. Every Remnant stops, every machine freezes, and the lights dim and you feel an intense surge of energy rippling through the air. The trio glow brightly, and then are gone. A heartbeat later, hundreds of thousands of other Remnant across the starport vanish as well. Taely and the others look exhausted, but resolute, and depart in various directions without a word.`
+			`	"It will take some time for everyone to leave, so some will be around for a while yet to provide assistance and some final jobs. For some of us, though, it is time to lead the way." With a nod to the others, Chilia, Torza, Taely, Dawn, Plume, and Ruach step forward and join hands. For a moment, everything freezes. Every Remnant stops, every machine freezes, and the lights dim and you feel an intense surge of energy rippling through the air. The group glow brightly, and then are gone. A heartbeat later, hundreds of thousands of other Remnant across the starport vanish as well. The remaining Remnant look exhausted, but resolute, and depart in various directions without a word.`
 				decline
 			label reol_accept
-			
-			`	Each of the Remnant step forward and, breaking with their previous behavior, give you a warm hug. "We might not be around here, but you can always reach us outside of the universe." Comments Dawn, as she hands you a small chip of metal with a comm code engraved on it: Discord "Zitchas", email "zitchas.jma@gmail.com". We will always be interested in knowing what you think, and positivity is always welcome."`
-			`	"It will take some time for everyone to leave, so some will be around for a while yet to provide assistance and some final jobs. For some of us, though, it is time to lead the way." Chilia, Torza, Taely, Dawn, Plume, and Ruach. For a moment, everything freezes. Every Remnant stops, every machine freezes, and the lights dim and you feel an intense surge of energy rippling through the air. The trio glow brightly, and then are gone. A heartbeat later, hundreds of thousands of other Remnant across the starport vanish as well. Taely and the others look exhausted, but resolute, and depart in various directions without a word.`
+			event "remnant: end of the line access"
+			`	Torza nods in satisfaction. "The Peregrine has not truly entered full production yet, but we will not be needing them, so hopefully you will be able to make use of them." He pauses, and Dawn chimes in. "The rest are purely experimental. Please do not assume too much from them. We made the designs as best we could, and they would need tweaking before reaching production. But you might enjoy using them nonetheless."
+			`	Each of the Remnant step forward and, breaking with their previous behavior, give you a warm hug. "We might not be around here, but you can always reach us outside of the universe." Comments Dawn, as she hands you a small chip of metal with a comm code engraved on it: Discord "Zitchas", email "zitchas.jma@gmail.com". We will always be interested in knowing what you think, and positivity is always welcome." She steps back`
+			`	"It will take some time for everyone to leave, so some will be around for a while yet to provide assistance and some final jobs. For some of us, though, it is time to lead the way." Chilia, Torza, Taely, Dawn, Plume, and Ruach. For a moment, everything freezes. Every Remnant stops, every machine freezes, and the lights dim and you feel an intense surge of energy rippling through the air. The group glow brightly, and then are gone. A heartbeat later, hundreds of thousands of other Remnant across the starport vanish as well. Taely and the others look exhausted, but resolute, and depart in various directions without a word.`
 				decline
