@@ -11,7 +11,7 @@
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
-# This mission marks the end of the Remnant storyline. It is intended that the effects of it could easily be patched out and reset if/when more story is added, but currently  reflects the poor probability of more content being added.
+# This mission marks the end of the Remnant storyline. It is intended that the effects of it could easily be patched out and reset if/when more story is added, but currently reflects the poor probability of more content being added.
 mission "Remnant: Cognizance End of the Line"
 	landing
 	source
@@ -28,13 +28,13 @@ mission "Remnant: Cognizance End of the Line"
 		conversation
 			`As you approach <planet> you can see that the Remnant airspace is full of intense activity. Gently settling onto your designated pad, you step outside of the <ship> to see Torza, Taely, Plume, Dawn, and several other of the Remnant you have worked with waiting for you.`
 			`	"Greetings, Captain <first> <last>." They gesture in unison, then with a start they glance at each other, and only Dawn continues.`
-			`	"We have made some discoveries recently, <first>. Terrible discoveries that put the world as we know it in jeapordy. We cannot provide details, those might make it worse, but suffice to say that conditions are becoming inhospitable to continued life."`
+			`	"We have made some discoveries recently, <first>. Terrible discoveries that put the world as we know it in jeopardy. We cannot provide details, as those might make it worse, but suffice to say that conditions are becoming inhospitable to continued life."`
 			`	She gestures around her, encompassing the intense activity that is busier than anything you have seen from the Remnant before.`
-			`	"We have a way out. A way to trasncend this existence, based on what we have learned from the ones who came before. Maybe, from there, we will be able to help stabilize this existence. Maybe the laws of the universe will understand that they, too, must sometimes admit failure and ask for forgiveness. Offer trust instead of reacting blindly in fear that everyone else will react as they have reacted when given the choice." Her tone is sorrowful, but then changes to resolve.`
+			`	"We have a way out. A way to transcend this existence, based on what we have learned from the ones who came before. Maybe, from there, we will be able to help stabilize this existence. Maybe the laws of the universe will understand that they, too, must sometimes admit failure and ask for forgiveness. Offer trust instead of reacting blindly in fear that everyone else will react as they have reacted when given the choice." Her tone is sorrowful, but then changes to resolve.`
 			`	"But we cannot depend on the universe changing, so we must take steps to ensure that we survive, no matter the path. Our story ending here is but a small price to pay to ensuring that we do, in fact, have a story worth living. We will return, if we can. But if not... Leave here, if you can. We cannot take you with us, but we hope that you will be able to find your own places to write your own stories in universes more tolerant and caring than this one."`
 			`	Torza holds out a small crystal and gestures. "We have a few experimental things that have not yet reached full production, and are largely experimental, but you can have access to them if you wish. They might have some problems, and not make much sense to you, but they were things we had in development. If you want, take them. If you do not wish to have access to these potentially unbalanced things, then we understand. Perhaps you will accept in an alternate life."`
 			choice
-				`	"I accept"`
+				`	"I accept."`
 					goto reotl1_accept
 				`	"No."`
 			`	They all nod in understanding, then step back from you.`
