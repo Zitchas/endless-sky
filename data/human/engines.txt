@@ -1489,3 +1489,87 @@ outfit "Brute Force Thrust mod"
 	description "The engineer in front of you looks skeptically at your ship. 'Don't worry, this is a piece of cake. I can have her accelerating ten percent faster with a few hours of work. It'll add a bit 'o mass to your ship, but the kick will more than make up for it.' He scowls. 'Don't expect it to be pretty, though."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
+
+
+outfit "Flare color Atomic small"
+	category "Engine Modifications"
+	cost 25000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.05
+	"flare sprite" "effect/atomic flare/tiny"
+		"frame rate" 14
+	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, nonetheless some intern dreamed up a way to let people pay for the priviledge of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates small exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Atomic medium"
+	category "Engine Modifications"
+	cost 35000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.05
+	"flare sprite" "effect/atomic flare/medium"
+		"frame rate" 12
+	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, nonetheless some intern dreamed up a way to let people pay for the priviledge of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates medium exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Atomic large"
+	category "Engine Modifications"
+	cost 45000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.05
+	"flare sprite" "effect/atomic flare/large"
+		"frame rate" 11
+	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, nonetheless some intern dreamed up a way to let people pay for the priviledge of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates large exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Plasma small"
+	category "Engine Modifications"
+	cost 25000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.05
+	"flare sprite" "effect/plasma flare/small"
+		"frame rate" 6
+	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, nonetheless some intern dreamed up a way to let people pay for the priviledge of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates small exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Plasma medium"
+	category "Engine Modifications"
+	cost 35000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.05
+	"flare sprite" "effect/plasma flare/medium"
+		"frame rate" 7
+	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, nonetheless some intern dreamed up a way to let people pay for the priviledge of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates medium exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Plasma large"
+	category "Engine Modifications"
+	cost 45000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.05
+	"flare sprite" "effect/plasma flare/large"
+		"frame rate" 8
+	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, nonetheless some intern dreamed up a way to let people pay for the priviledge of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates large exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
