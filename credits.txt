@@ -45,7 +45,7 @@ Potential End of the Line for Delta:
   people and fellow creators just fade
   away or outright abandon the project
   due to problems of various sorts with
-  upstream's leaders, and while it has
+  upstream's leaders, and it has
   taken 3 years of toxicity to reach this
   point, but here we are. I would welcome
   the opportunity to continue this fun
@@ -58,7 +58,7 @@ Potential End of the Line for Delta:
   instead of rehashing the past again.
 
   I am well aware that I made some poor
-  decisions, and have publicly admited
+  decisions, and have publicly admitted
   them and apologized for it. I know I
   am not blameless, but I am also not
   the only one with blame to shoulder.
@@ -192,6 +192,7 @@ Editors & Proofreaders
 Special thanks
   Kiko
   MCOfficer
+  RecursiveParadox
   VitalChip
 
 Artwork
