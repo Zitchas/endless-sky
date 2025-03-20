@@ -325,6 +325,7 @@ outfit `"Niis" Inductive Engines`
 	"outfit space" -28
 	"engine capacity" -28
 	"thruster slot" -1
+	"engine mod space" 0.8
 	"thrust" 16.8
 	"thrusting energy" 0.9
 	"thrusting heat" 0.8
@@ -361,10 +362,11 @@ outfit `"Aqra" Inductive Thruster`
 	"mass" 25
 	"outfit space" -25
 	"engine capacity" -25
+	"thruster slot" -1
+	"engine mod space" 1.01
 	"thrust" 27.0
 	"thrusting energy" 1.74
 	"thrusting heat" 1.1
-	"thruster slot" -1
 	"afterburner thrust" 40.5
 	"afterburner shields" 4.5
 	"afterburner heat" 2.2
@@ -386,6 +388,7 @@ outfit `"Aqra" Inductive Steering`
 	"mass" 18
 	"outfit space" -18
 	"engine capacity" -18
+	"steering slot" -1
 	"afterburner energy" -0.7
 	"turn" 684
 	"turning energy" 1.1
@@ -393,7 +396,6 @@ outfit `"Aqra" Inductive Steering`
 	"steering flare sprite" "effect/successor flare/small"
 		"frame rate" 20
 	"steering flare sound" "ion small"
-	"steering slot" -1
 	description "Since their steering thrusters lack the mode switch emblematic of their linear propulsion, the Successors have invested their efforts into making these thrusters both powerful for their size and relatively efficient. In addition, recurrent power streams from the steering thrusters feed back into the ship's linear engines during afterburning modes, reducing or even reversing the additional energy cost associated with using afterburners."
 
 outfit `"Aqra" Inductive Reverser`
@@ -430,6 +432,7 @@ outfit `"Chyyra" Inductive Thruster`
 	"outfit space" -40
 	"engine capacity" -40
 	"thruster slot" -1
+	"engine mod space" 1.19
 	"thrust" 48.0
 	"thrusting energy" 2.7
 	"thrusting heat" 1.8
@@ -454,6 +457,7 @@ outfit `"Chyyra" Inductive Steering`
 	"mass" 32
 	"outfit space" -32
 	"engine capacity" -32
+	"steering slot" -1
 	"afterburner energy" -1.4
 	"turn" 1357.5
 	"turning energy" 2.3
@@ -461,7 +465,6 @@ outfit `"Chyyra" Inductive Steering`
 	"steering flare sprite" "effect/successor flare/medium"
 		"frame rate" 20
 	"steering flare sound" "ion medium"
-	"steering slot" -1
 	description "While not particularly powerful for its size, this set of inductive steering engines is extraordinarily efficient, allowing large Successor vessels to remain relatively nimble even when equipped with very small generators."
 
 outfit `"Chyyra" Inductive Reverser`
@@ -475,6 +478,7 @@ outfit `"Chyyra" Inductive Reverser`
 	"mass" 24
 	"outfit space" -24
 	"weapon capacity" -24
+	"reverse thrusting slot" -1
 	"reverse thrust" 33.0
 	"reverse thrusting energy" 2.1
 	"reverse thrusting heat" 1.6
@@ -482,7 +486,6 @@ outfit `"Chyyra" Inductive Reverser`
 	"reverse flare sprite" "effect/successor flare/medium"
 		"frame rate" 20
 	"reverse flare sound" "ion medium"
-	"reverse thrusting slot" -1
 	description "This large reverse thruster sees use in both commerce and warfare, speeding up the traversal of trade routes in the former situation and enhancing combat agility in the latter."
 	description "	Because a reverse thruster must be facing forwards, it must be installed in the weapon section of your ship instead of the engine section."
 
@@ -497,10 +500,11 @@ outfit `"Veusa" Inductive Thruster`
 	"mass" 65
 	"outfit space" -65
 	"engine capacity" -65
+	"thruster slot" -1
+	"engine mod space" 1.35
 	"thrust" 82.0
 	"thrusting energy" 4.8
 	"thrusting heat" 3.15
-	"thruster slot" -1
 	"afterburner thrust" 123.0
 	"afterburner shields" 12.2
 	"afterburner heat" 8.3
@@ -522,6 +526,7 @@ outfit `"Veusa" Inductive Steering`
 	"mass" 42
 	"outfit space" -42
 	"engine capacity" -42
+	"steering slot" -1
 	"afterburner energy" -2.4
 	"turn" 1850
 	"turning energy" 3.15
@@ -529,7 +534,6 @@ outfit `"Veusa" Inductive Steering`
 	"steering flare sprite" "effect/successor flare/large"
 		"frame rate" 20
 	"steering flare sound" "ion large"
-	"steering slot" -1
 	description `The Veusa series of Successor steering units is significantly smaller than comparable human engines, allowing the Successors to gain some flexibility in the engine layouts of their large ships.`
 
 outfit `"Veusa" Inductive Reverser`
@@ -543,6 +547,7 @@ outfit `"Veusa" Inductive Reverser`
 	"mass" 35
 	"outfit space" -35
 	"weapon capacity" -35
+	"reverse thrusting slot" -1
 	"afterburner energy" -2.1
 	"reverse thrust" 51.0
 	"reverse thrusting energy" 3.5
@@ -550,7 +555,6 @@ outfit `"Veusa" Inductive Reverser`
 	"reverse flare sprite" "effect/successor flare/large"
 		"frame rate" 20
 	"reverse flare sound" "ion large"
-	"reverse thrusting slot" -1
 	description "While the invertebrate Successors are relatively unaffected, human pilots must take care when using a reverse thruster this large to avoid dangerous g-force stress on the body."
 	description "	Because a reverse thruster must be facing forwards, it must be installed in the weapon section of your ship instead of the engine section."
 

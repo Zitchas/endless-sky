@@ -1442,7 +1442,7 @@ outfit "James' Engine Mod"
 	category "Engine Modifications"
 	cost 250000
 	thumbnail "outfit/blue screwdriver"
-	"engine mod space" -0.2
+	"engine mod space" -0.15
 	"mass" 0.01
 	"acceleration multiplier" 0.2
 	"turn multiplier" 0.2
@@ -1457,7 +1457,7 @@ outfit "Kraz Flight Controls"
 	category "Engine Modifications"
 	cost 50000
 	thumbnail "outfit/blue screwdriver"
-	"engine mod space" -0.2
+	"engine mod space" -0.20
 	"mass" 5
 	"turn multiplier" 0.1
 	description "Kraz Cybernetics' flight control systems are the keystone of their corporate success. Virtually unknown outside of pilots and vehicle manufacturers, the basic flight control system of most starships is ultimately sourced from them. Building on that success, they created this after-market add-on for those interested in replacing the bare-bones flight control system that shipyards prefer with a more robust system. If this system is what is distributed on a galaxy-wide scale, it is possible they might have a more advanced version in the company's home outfitter..."
@@ -1470,7 +1470,7 @@ outfit "Kraz Advanced Control Systems"
 	category "Engine Modifications"
 	cost 125000
 	thumbnail "outfit/blue screwdriver"
-	"engine mod space" -0.2
+	"engine mod space" -0.25
 	"mass" 4
 	"turn multiplier" 0.2
 	description "Kraz Cybernetics' flight control systems are the keystone of their corporate success, and the baseline original equipment manufacturere versions are ubiquous in starships. Here in the poorly regulated fringe territories, Kraz's engineers have been able to dial up the performance and skirt the very edge of the safety margins in order to provide the ultimate in ship reaction times. How exactly they do this is unclear, but according to the packaging these changes are complimentary to those found in their other Kraz Flight Control outfit."
@@ -1483,7 +1483,7 @@ outfit "Brute Force Thrust mod"
 	category "Engine Modifications"
 	cost 125000
 	thumbnail "outfit/blue screwdriver"
-	"engine mod space" -0.2
+	"engine mod space" -0.25
 	"mass" 10
 	"acceleration multiplier" 0.2
 	description `The engineer in front of you looks skeptically at your ship. "Don't worry, this is a piece of cake. I can have her accelerating ten percent faster with a few hours of work. It'll add a bit 'o mass to your ship, but the kick will more than make up for it." He scowls. "Don't expect it to be pretty, though."`
@@ -1497,7 +1497,7 @@ outfit "Flare color Atomic small"
 	thumbnail "outfit/blue screwdriver"
 	"engine mod space" -0.1
 	"mass" 0.1
-	"acceleration multiplier" 0.05
+	"acceleration multiplier" 0.02
 	"flare sprite" "effect/atomic flare/tiny"
 		"frame rate" 14
 	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates small exhaust plumes."
@@ -1511,7 +1511,7 @@ outfit "Flare color Atomic medium"
 	thumbnail "outfit/blue screwdriver"
 	"engine mod space" -0.1
 	"mass" 0.1
-	"acceleration multiplier" 0.05
+	"acceleration multiplier" 0.02
 	"flare sprite" "effect/atomic flare/medium"
 		"frame rate" 12
 	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates medium exhaust plumes."
@@ -1525,7 +1525,7 @@ outfit "Flare color Atomic large"
 	thumbnail "outfit/blue screwdriver"
 	"engine mod space" -0.1
 	"mass" 0.1
-	"acceleration multiplier" 0.05
+	"acceleration multiplier" 0.02
 	"flare sprite" "effect/atomic flare/large"
 		"frame rate" 11
 	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates large exhaust plumes."
@@ -1539,7 +1539,7 @@ outfit "Flare color Plasma small"
 	thumbnail "outfit/blue screwdriver"
 	"engine mod space" -0.1
 	"mass" 0.1
-	"acceleration multiplier" 0.05
+	"acceleration multiplier" 0.02
 	"flare sprite" "effect/plasma flare/small"
 		"frame rate" 6
 	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates small exhaust plumes."
@@ -1553,7 +1553,7 @@ outfit "Flare color Plasma medium"
 	thumbnail "outfit/blue screwdriver"
 	"engine mod space" -0.1
 	"mass" 0.1
-	"acceleration multiplier" 0.05
+	"acceleration multiplier" 0.02
 	"flare sprite" "effect/plasma flare/medium"
 		"frame rate" 7
 	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates medium exhaust plumes."
@@ -1567,7 +1567,7 @@ outfit "Flare color Plasma large"
 	thumbnail "outfit/blue screwdriver"
 	"engine mod space" -0.1
 	"mass" 0.1
-	"acceleration multiplier" 0.05
+	"acceleration multiplier" 0.02
 	"flare sprite" "effect/plasma flare/large"
 		"frame rate" 8
 	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates large exhaust plumes."
@@ -1581,7 +1581,7 @@ outfit "Flare color Ion small"
 	thumbnail "outfit/blue screwdriver"
 	"engine mod space" -0.1
 	"mass" 0.1
-	"acceleration multiplier" 0.05
+	"acceleration multiplier" 0.02
 	"flare sprite" "effect/plasma flare/small"
 		"frame rate" 1.1
 	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, but nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates small exhaust plumes."
@@ -1595,7 +1595,7 @@ outfit "Flare color Ion medium"
 	thumbnail "outfit/blue screwdriver"
 	"engine mod space" -0.1
 	"mass" 0.1
-	"acceleration multiplier" 0.05
+	"acceleration multiplier" 0.02
 	"flare sprite" "effect/plasma flare/medium"
 		"frame rate" 1.0
 	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, but nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates medium exhaust plumes."
@@ -1609,7 +1609,7 @@ outfit "Flare color Ion large"
 	thumbnail "outfit/blue screwdriver"
 	"engine mod space" -0.1
 	"mass" 0.1
-	"acceleration multiplier" 0.05
+	"acceleration multiplier" 0.02
 	"flare sprite" "effect/plasma flare/large"
 		"frame rate" 0.9
 	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, but nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates large exhaust plumes."
