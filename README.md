@@ -5,7 +5,11 @@ This is the Rapid Development and Experimentation fork of the Endless Sky projec
 If you are looking for a stable version of Endless Sky to play, you should go to https://github.com/endless-sky/endless-sky instead.
 If you are looking to try out the cutting edge (and possible failures) of our attempts to make Endless Sky better, this is the place to be. Delta has quite a few tools and mechanics in game that are designed to give content creators more ways to make the game immersive, responsive, and impactful. These range from more detailed HUD and GUI elements that provide information, to attribute modifying code that can be used in missions to permanently affect the player's ship. Everything is designed to be incorporated and used in an in-character format, in ways that make sense to pilot in the universe. (there's no out-of-character editors or anything like that)
 
+# Delta Development Status
+
 Unfortunately, due to conflicts with Upstream's leadership, I (Zitchas) am winding down development for now. I might move Delta development elsewhere, I might return to full acvitity if upstream backs up all the private requests for reconciliation with some solid public actions, but I am not hopefull. In the meantime, there has been too much hurt (on both sides) for me to be able to in good conscience recommend Endless Sky to anyone interested in taking part in development. Too many have been hurt, and I don't see this as likely to change. If it does, though, that is great! I am ever hopeful that things can improve, but I have been hurt too many times, I have to take care of my own health first. Right now, even Delta is too close to those that continue to cause me harm.
+
+Please note, I am not abandonning it completely. I am still contactable, and still have a few things left that I would like to get into it to wrap things up. PRs merging features or content from other forks to unify capabilities and content are welcome.
 
 Best wishes,
 
