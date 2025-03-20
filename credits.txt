@@ -1,6 +1,6 @@
 Welcome to Endless Sky Delta!
 
-version 0.10.11.6-delta
+version 0.10.12.2-delta
 
 The player's manual and other
 resources are available at:
@@ -32,8 +32,80 @@ Credits Wanted!
   please let me know. They deserve
   to be recognized.
 
+Potential End of the Line for Delta:
+  Due to ongoing toxicity & drama with
+  upstream's leadership, I am backing
+  away from being involved with Endless
+  Sky. It is a sad decision for me, as
+  it has been the source for a lot of
+  very positive relationships over the
+  years.
+  
+  Unfortunately, I have seen so many
+  people and fellow creators just fade
+  away or outright abandon the project
+  due to problems of various sorts with
+  upstream's leaders, and while it has
+  taken 3 years of toxicity to reach this
+  point, but here we are. I would welcome
+  the opportunity to continue this fun
+  work, but I have been burned by so
+  many attempts that I am no longer
+  willing to engage unless they can put
+  forth some sort of concrete action
+  that demonstrates their commitment to
+  reconciliation and moving forward
+  instead of rehashing the past again.
+  
+  I am well aware that I made some poor
+  decisions, and have publicly admited
+  them and apologized for it. I know I
+  am not blameless, but I am also not
+  the only one with blame to shoulder.
+  
+  So, I am sorry for the hurt I have
+  caused, and I hope someday those
+  who have been hurt can accept that
+  apology.
+  
+  Best wishes,
+  
+  Zitchas
+
+
+  I would like to dedicate this release
+  to RecursiveParadox, the longest and
+  most vocal player of Delta who has
+  consistently provided me with positive
+  encouragement, requests, and random
+  snippets of their adventures. It is
+  players like you that focus on the
+  positive, on playing the game and
+  enjoying it, that are the real reason
+  I have contributed for as long as I
+  have. You players and positive people
+  who encourage and support and request,
+  you are the most important people in
+  this project. Not me, not MZ, not any
+  of the devs or reviewers or leads.
+  
+  You, the player, the people who
+  struggle to submit a typo or a bug
+  fix. You are the most important
+  people in this project.
+  
+  Thanks, and hugs if you are good
+  with that, to all of you.
+  
+  Zitchas
+  
+  ----
+
 Creator and Lead Programmer
   Michael Zahniser
+
+Delta branch by:
+  Zitchas
 
 Developers
   Amazinite
@@ -119,6 +191,7 @@ Editors & Proofreaders
 
 Special thanks
   Kiko
+  MCOfficer
   VitalChip
 
 Artwork
@@ -521,9 +594,3 @@ contributed to Endless Sky:
   Zitchas
   zlonghofer
   zwparchman
-
-Special thanks to MCOfficer for
-creating, managing, and hosting
-the ESLauncher, nightly, &
-continuous builds that make so
-much of this work possible.
