@@ -426,6 +426,7 @@ outfitter "Lovelace Advanced"
 	"Luxury Accommodations"
 	"Scram Drive Fuel Display"
 	"Fuel Bar Scram Display"
+	"Skipjack Hyperdrive tweak"
 	
 outfitter "Lovelace Security"
 	"KP-6 Photovoltaic Panel"

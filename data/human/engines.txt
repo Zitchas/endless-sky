@@ -1491,6 +1491,18 @@ outfit "Brute Force Thrust mod"
 
 
 
+outfit "Skipjack Hyperdrive tweak"
+	category "Engine Modifications"
+	cost 125000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.2
+	"mass" 1
+	"jump mass cost" 0.75
+	description `The mechanic smiles at your interest "If you have a small ship, then this engine modification is for you! It is a public secret that hyperdrives are calibrated to be one size fits all, but they actually aren't. A bit of tweaking, and they can be made more efficient for small ships by cutting the excess bubble size. Worth noting, though, that this will make hyperjumps more expensive if you ship exceeds 900 metric tons.`
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
 outfit "Flare color Atomic small"
 	category "Engine Modifications"
 	cost 25000
