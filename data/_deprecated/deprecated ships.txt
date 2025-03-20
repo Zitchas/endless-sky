@@ -874,3 +874,4 @@ ship "Korath World-Ship" "Korath World-Ship C (Jump)"
 	turret 70 53 "Banisher Grav-Turret"
 	turret -91 286 "Banisher Grav-Turret"
 	turret 91 286 "Warder Anti-Missile"
+

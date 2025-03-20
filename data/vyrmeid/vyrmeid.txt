@@ -20,7 +20,7 @@ ship "Vyrmeid"
 	swizzle 0
 	"never disabled"
 	attributes
-		category "Fighter"
+		"category" "Unclassified Minor"
 		"cost" 0
 		"shields" 0
 		"hull" 400
@@ -56,6 +56,8 @@ ship "Vyrmeid"
 
 outfit "Plankton Mouth"
 	category "Guns"
+	series "Guns"
+	index 92030
 	thumbnail "outfit/unknown"
 	"gun ports" -1
 	weapon
@@ -78,7 +80,7 @@ ship "Vyrmeid" "Vyrmeid (B)"
 	swizzle 0
 	"never disabled"
 	attributes
-		category "Fighter"
+		"category" "Unclassified Minor"
 		"cost" 0
 		"shields" 0
 		"hull" 1420
@@ -110,6 +112,8 @@ ship "Vyrmeid" "Vyrmeid (B)"
 
 outfit "Boomerang Organ"
 	category "Turrets"
+	series "Turrets"
+	index 92020
 	cost 0
 	thumbnail "outfit/unknown"
 	"mass" 10
@@ -130,7 +134,7 @@ ship "Vyrmeid" "Vyrmeid (C)"
 	swizzle 0
 	"never disabled"
 	attributes
-		category "Fighter"
+		category "Unclassified Minor"
 		"cost" 0
 		"shields" 0
 		"hull" 860
@@ -185,7 +189,7 @@ ship "Astral Cetacean"
 	swizzle 0
 	"never disabled"
 	attributes
-		category "Transport"
+		category "Unclassified"
 		"cost" 0
 		"shields" 0
 		"hull" 11000
@@ -239,6 +243,8 @@ ship "Astral Cetacean"
 
 outfit "Astral Mouth"
 	category "Guns"
+	series "Guns"
+	index 92040
 	thumbnail "outfit/unknown"
 	"gun ports" -1
 	weapon

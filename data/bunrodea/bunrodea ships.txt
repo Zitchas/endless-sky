@@ -42,8 +42,6 @@ ship "Kaiken"
 		
 		"Solar Battery"
 		"Solar Cell" 27
-		"Small Shield Relay"
-		"Shield Relay Limiter" 6
 		
 		"Chiisana Rift Thruster" # Extra thruster
 		"Chiisana Rift LTC"
@@ -97,16 +95,13 @@ ship "Sasumata"
 			"hit force" 1350
 	outfits
 		"Swarm Pod" 2
-		"Swarm Missile" 1000
-		"Swarm Clip"
+		"Swarm Missile" 400
 		"Buzzer Anti-Missile" 2
 		
 		"Quark Reactor"
 		"Reactor Overclocker" 2
 		"Solar Battery" 2
 		"Solar Cell" 30
-		"Large Shield Relay"
-		"Shield Relay Limiter" 10
 		
 		"Subarashii Rift Thruster"
 		"Subarashii Rift LTC"
@@ -167,7 +162,6 @@ ship "Tanto"
 		
 		"Solar Battery" 2
 		"Solar Cell" 42
-		"Small Shield Relay"
 		
 		"Ookii Rift Thruster"
 		"Ookii Rift LTC"
@@ -299,8 +293,6 @@ ship "Tekkan"
 		"Quark Reactor"
 		"Solar Battery"
 		"Solar Cell" 36
-		"Small Shield Relay"
-		"Shield Relay Booster" 5
 		
 		"Ookii Rift Thruster"
 		"Ookii Rift LTC"
@@ -359,9 +351,6 @@ ship "Kunai"
 		"Quark Reactor"
 		"Solar Battery" 2
 		"Solar Cell" 28
-		"Small Shield Relay"
-		"Shield Relay Booster" 4
-		"Small Nanite Fabricator"
 		
 		"Ookii Rift Thruster"
 		"Ookii Rift LTC"
@@ -418,15 +407,12 @@ ship "Kama"
 	outfits
 		"Mandible Cannon" 4
 		"Swarm Pod" 6
-		"Swarm Missile" 2400
+		"Swarm Missile" 1200
 		
 		"Electroweak Reactor"
 		"Reactor Overclocker" 2
 		"Solar Battery"
 		"Solar Cell" 36
-		"Large Shield Relay"
-		"Shield Relay Booster" 6
-		"Outfits Expansion" 2
 		
 		"Ookii Rift Thruster"
 		"Ookii Rift LTC"
@@ -497,15 +483,13 @@ ship "Chigiriki"
 		"Thorax Cannon"
 		"Locust Blaster" 6
 		"Swarm Pod" 10
-		"Swarm Missile" 4000
+		"Swarm Missile" 2000
 		
 		"Dark Reactor"
 		"Reactor Limiter" 3
 		"Solar Battery" 3
 		"Solar Cell" 19
-		"Large Shield Relay"
-		"Shield Relay Booster" 16
-		"Outfits Expansion" 4
+		"Outfits Expansion" 2
 		
 		"Ookii Rift Thruster"
 		"Ookii Rift LTC"

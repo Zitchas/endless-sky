@@ -44,7 +44,6 @@ ship "Arach Courier"
 	outfits
 		"Small Collector Module"
 		"Small Battery Module"
-		"Small Repair Module"
 		
 		"Small Thrust Module" 2
 		"Small Lateral Thrust Module" 2
@@ -112,8 +111,6 @@ ship "Arach Freighter"
 	outfits
 		"Small Collector Module" 3
 		"Small Battery Module" 2
-		"Small Shield Module"
-		"Small Repair Module" 2
 		
 		"Large Thrust Module"
 		"Large Lateral Thrust Module"
@@ -194,8 +191,6 @@ ship "Arach Hulk"
 		"Large Collector Module"
 		"Large Battery Module"
 		"Small Battery Module"
-		"Small Shield Module" 2
-		"Large Repair Module"
 		
 		"Large Thrust Module" 2
 		"Large Lateral Thrust Module" 2
@@ -281,8 +276,6 @@ ship "Arach Spindle"
 		"Large Collector Module"
 		"Large Battery Module"
 		"Small Battery Module"
-		"Small Shield Module" 2
-		"Small Repair Module" 3
 		"Cooling Module"
 		
 		"Large Thrust Module" 2
@@ -407,8 +400,6 @@ ship "Arach Transport"
 	outfits
 		"Small Collector Module" 2
 		"Small Battery Module"
-		"Small Shield Module"
-		"Small Repair Module"
 		
 		"Large Thrust Module"
 		"Large Lateral Thrust Module"
@@ -485,12 +476,10 @@ ship "Heliarch Breacher"
 		"Bombardment Cannon" 2
 		"Bombardment Turret"
 		"Finisher Pod"
-		"Finisher Torpedo" 40
+		"Finisher Torpedo" 20
 		
 		"Small Reactor Module" 2
 		"Small Battery Module"
-		"Overcharged Shield Module"
-		"Overclocked Repair Module"
 		"Cooling Module" 2
 		"Scanning Module"
 		"Enforcer Riot Staff" 8
@@ -544,7 +533,7 @@ ship "Heliarch Breacher" "Heliarch Breacher (Missile)"
 	outfits
 		"Finisher Pod" 3
 		"Finisher Storage Tube" 2
-		"Finisher Torpedo" 160
+		"Finisher Torpedo" 80
 		
 		"Small Reactor Module"
 		"Small Battery Module"
@@ -618,14 +607,12 @@ ship "Heliarch Hunter"
 			"hit force" 3000
 	outfits
 		"Finisher Pod" 3
-		"Finisher Torpedo" 120
+		"Finisher Torpedo" 60
 		"Bombardment Turret"
 		"Heliarch Attractor"
 		
 		"Large Reactor Module"
 		"Small Battery Module" 3
-		"Overcharged Shield Module"
-		"Overclocked Repair Module"
 		"Cooling Module" 2
 		"Scanning Module" 2
 		"Enforcer Riot Staff" 25
@@ -663,7 +650,7 @@ ship "Heliarch Hunter" "Heliarch Hunter (Burst Fire)"
 	outfits
 		"Finisher Maegrolain" 2
 		"Finisher Storage Tube" 2
-		"Finisher Torpedo" 160
+		"Finisher Torpedo" 80
 		
 		"Large Reactor Module"
 		"Small Battery Module" 2
@@ -695,7 +682,7 @@ ship "Heliarch Hunter" "Heliarch Hunter (Interdicting)"
 	outfits
 		"Finisher Pod" 2
 		"Finisher Storage Tube"
-		"Finisher Torpedo" 100
+		"Finisher Torpedo" 50
 		"Heliarch Attractor"
 		"Heliarch Repulsor"
 		
@@ -756,7 +743,7 @@ ship "Heliarch Hunter" "Heliarch Hunter (Missile)"
 	outfits
 		"Finisher Pod" 3
 		"Finisher Storage Tube" 6
-		"Finisher Torpedo" 240
+		"Finisher Torpedo" 120
 		
 		"Large Reactor Module"
 		"Small Battery Module" 2
@@ -835,15 +822,12 @@ ship "Heliarch Interdictor"
 			"hit force" 3800
 	outfits
 		"Finisher Pod" 2
-		"Finisher Storage Tube"
-		"Finisher Torpedo" 100
+		"Finisher Torpedo" 40
 		"Heliarch Attractor"
 		"Heliarch Repulsor"
 		
 		"Large Reactor Module"
 		"Small Battery Module" 4
-		"Overcharged Shield Module"
-		"Overclocked Repair Module"
 		"Cooling Module" 2
 		"Scanning Module" 3
 		"Enforcer Riot Staff" 28
@@ -877,7 +861,7 @@ ship "Heliarch Interdictor" "Heliarch Interdictor (Bombardment)"
 	outfits
 		"Finisher Pod" 2
 		"Finisher Storage Tube" 2
-		"Finisher Torpedo" 120
+		"Finisher Torpedo" 60
 		"Bombardment Turret" 2
 		
 		"Large Reactor Module"
@@ -902,7 +886,7 @@ ship "Heliarch Interdictor" "Heliarch Interdictor (Burst Fire)"
 	outfits
 		"Finisher Maegrolain" 2
 		"Finisher Storage Tube" 4
-		"Finisher Torpedo" 200
+		"Finisher Torpedo" 100
 		
 		"Large Reactor Module"
 		"Small Battery Module" 4
@@ -950,7 +934,7 @@ ship "Heliarch Interdictor" "Heliarch Interdictor (Missile)"
 	outfits
 		"Finisher Pod" 2
 		"Finisher Storage Tube" 13
-		"Finisher Torpedo" 340
+		"Finisher Torpedo" 170
 
 		"Small Reactor Module" 2
 		"Overcharged Shield Module"
@@ -1029,8 +1013,7 @@ ship "Heliarch Judicator"
 			"hit force" 3800
 	outfits
 		"Finisher Pod" 2
-		"Finisher Torpedo" 140
-		"Finisher Storage Tube" 3
+		"Finisher Torpedo" 40
 		"Ion Hail Turret"
 		
 		"Large Reactor Module"
@@ -1131,7 +1114,7 @@ ship "Heliarch Judicator" "Heliarch Judicator (Missile)"
 	outfits
 		"Finisher Pod" 2
 		"Finisher Storage Tube" 14
-		"Finisher Torpedo" 360
+		"Finisher Torpedo" 180
 		
 		"Small Reactor Module" 2
 		"Small Battery Module"
@@ -1155,7 +1138,7 @@ ship "Heliarch Judicator" "Heliarch Judicator (Repulsor)"
 	outfits
 		"Finisher Pod" 2
 		"Finisher Storage Tube" 3
-		"Finisher Torpedo" 140
+		"Finisher Torpedo" 70
 		"Heliarch Repulsor"
 		
 		"Large Reactor Module"
@@ -1239,8 +1222,6 @@ ship "Heliarch Neutralizer"
 		
 		"Small Reactor Module" 2
 		"Small Battery Module" 3
-		"Overcharged Shield Module"
-		"Overclocked Repair Module"
 		"Cooling Module" 2
 		"Scanning Module" 2
 		"Enforcer Riot Staff" 9
@@ -1276,7 +1257,7 @@ ship "Heliarch Neutralizer" "Heliarch Neutralizer (Missile)"
 	outfits
 		"Finisher Pod" 2
 		"Finisher Storage Tube" 4
-		"Finisher Torpedo" 160
+		"Finisher Torpedo" 80
 
 		"Small Reactor Module"
 		"Overcharged Shield Module"
@@ -1382,13 +1363,11 @@ ship "Heliarch Punisher"
 	outfits
 		"Ion Rain Gun" 4
 		"Finisher Pod" 2
-		"Finisher Torpedo" 80
+		"Finisher Torpedo" 40
 		"Bombardment Turret" 4
 		
 		"Large Reactor Module" 2
 		"Large Battery Module"
-		"Overcharged Shield Module" 2
-		"Overclocked Repair Module" 2
 		"Cooling Module" 4
 		"Scanning Module" 4
 		"Enforcer Riot Staff" 78
@@ -1433,7 +1412,7 @@ ship "Heliarch Punisher" "Heliarch Punisher (Burst Fire)"
 	outfits
 		"Finisher Maegrolain" 4
 		"Finisher Storage Tube" 4
-		"Finisher Torpedo" 320
+		"Finisher Torpedo" 160
 		
 		"Large Reactor Module"
 		"Small Reactor Module"
@@ -1464,7 +1443,7 @@ ship "Heliarch Punisher" "Heliarch Punisher (Burst Fire)"
 ship "Heliarch Punisher" "Heliarch Punisher (Fuel)"
 	outfits
 		"Finisher Pod" 2
-		"Finisher Torpedo" 80
+		"Finisher Torpedo" 40
 		"Bombardment Turret" 4
 		
 		"Large Reactor Module" 2
@@ -1490,7 +1469,7 @@ ship "Heliarch Punisher" "Heliarch Punisher (Interdicting)"
 	outfits
 		"Bombardment Cannon" 4
 		"Finisher Pod" 2
-		"Finisher Torpedo" 80
+		"Finisher Torpedo" 40
 		"Heliarch Attractor" 2
 		"Heliarch Repulsor"
 		"Bombardment Turret"
@@ -1556,7 +1535,7 @@ ship "Heliarch Punisher" "Heliarch Punisher (Ions)"
 ship "Heliarch Punisher" "Heliarch Punisher (Missile)"
 	outfits
 		"Finisher Pod" 6
-		"Finisher Torpedo" 240
+		"Finisher Torpedo" 120
 		"Heliarch Repulsor"
 		
 		"Large Reactor Module" 2
@@ -1585,7 +1564,7 @@ ship "Heliarch Punisher" "Heliarch Punisher (Pure Finishers)"
 	outfits
 		"Finisher Pod" 6
 		"Finisher Storage Tube" 21
-		"Finisher Torpedo" 660
+		"Finisher Torpedo" 330
 
 		"Large Reactor Module"
 		"Overcharged Shield Module"
@@ -1662,8 +1641,6 @@ ship "Heliarch Pursuer"
 		"Large Collector Module"
 		"Small Collector Module" 2
 		"Small Battery Module"
-		"Small Shield Module"
-		"Small Repair Module"
 		
 		"Small Steering Module" 2
 		"Small Thrust Module" 2
@@ -1731,8 +1708,6 @@ ship "Heliarch Rover"
 		"Large Collector Module"
 		"Small Battery Module" 2
 		"Small Cogeneration Module"
-		"Small Shield Module"
-		"Small Repair Module" 3
 		
 		"Small Thrust Module" 2
 		"Small Lateral Thrust Module" 2
@@ -1865,7 +1840,6 @@ ship "Kimek Briar"
 	outfits
 		"Small Collector Module" 2
 		"Small Battery Module" 2
-		"Small Shield Module" 2
 		
 		"Large Thrust Module"
 		"Large Lateral Thrust Module"
@@ -1935,8 +1909,6 @@ ship "Kimek Spire"
 		"Large Collector Module"
 		"Small Collector Module"
 		"Large Battery Module"
-		"Large Shield Module"
-		"Small Shield Module"
 		
 		"Large Thrust Module" 2
 		"Large Lateral Thrust Module" 2
@@ -2014,7 +1986,6 @@ ship "Kimek Thistle"
 	outfits
 		"Large Collector Module"
 		"Small Battery Module"
-		"Small Shield Module" 3
 		
 		"Large Thrust Module"
 		"Large Lateral Thrust Module"
@@ -2116,7 +2087,6 @@ ship "Kimek Thorn"
 	outfits
 		"Small Collector Module"
 		"Small Battery Module"
-		"Small Shield Module"
 		
 		"Small Thrust Module" 2
 		"Small Lateral Thrust Module" 2
@@ -2142,7 +2112,6 @@ ship "Kimek Thorn" "Kimek Thorn (Miner)"
 		"Small Cogeneration Module" 2
 		"Small Collector Module"
 		"Small Battery Module"
-		"Small Shield Module"
 		
 		"Small Thrust Module" 2
 		"Small Lateral Thrust Module" 2
@@ -2183,7 +2152,6 @@ ship "Saryd Runabout"
 	outfits
 		"Small Collector Module" 2
 		"Small Battery Module"
-		"Small Shield Module"
 		
 		"Small Thrust Module" 2
 		"Small Lateral Thrust Module" 2
@@ -2358,8 +2326,6 @@ ship "Saryd Traveler"
 	outfits
 		"Small Collector Module" 3
 		"Small Battery Module" 2
-		"Small Shield Module" 2
-		"Small Repair Module"
 		
 		"Large Thrust Module"
 		"Large Lateral Thrust Module"
@@ -2442,8 +2408,6 @@ ship "Saryd Visitor"
 	outfits
 		"Small Collector Module" 2
 		"Small Battery Module" 2
-		"Small Shield Module"
-		"Small Repair Module"
 		
 		"Small Thrust Module" 3
 		"Small Lateral Thrust Module" 3

@@ -323,6 +323,7 @@ test-data "Fighters and Carriers and Escorts Save"
 				"gun ports" 4
 				"heat dissipation" 0.22
 				hull 8600
+				"lateral thruster slot" 1
 				"outfit space" 7400
 				"missile pylons" 4
 				"required crew" 70
@@ -429,6 +430,7 @@ test-data "Fighters and Carriers and Escorts Save"
 				"outfit space" 3900
 				"weapon capacity" 1500
 				"engine capacity" 950
+				"lateral thruster slot" 1
 				"reverse thruster slot" 1
 				"steering slot" 1
 				"thruster slot" 1
@@ -508,6 +510,7 @@ test-data "Fighters and Carriers and Escorts Save"
 				"outfit space" 1300
 				"missile pylons" 4
 				"required crew" 1
+				"lateral thruster slot" 1
 				"reverse thruster slot" 1
 				shields 1200
 				"steering slot" 1
@@ -567,6 +570,7 @@ test-data "Fighters and Carriers and Escorts Save"
 				"outfit space" 1300
 				"missile pylons" 4
 				"required crew" 1
+				"lateral thruster slot" 1
 				"reverse thruster slot" 1
 				shields 1200
 				"steering slot" 1

@@ -31,7 +31,7 @@ ship "Aberrant Latte"
 		"fuel capacity" 300
 		"ramscoop" 0.2
 		"cargo space" 82
-		"outfit space" 202
+		"outfit space" 232
 		"weapon capacity" 64
 		"engine capacity" 66
 		"energy capacity" 12000
@@ -45,7 +45,10 @@ ship "Aberrant Latte"
 		"shield heat" 3.4
 		"shield generation" 1.2
 		"hull repair rate" 0.6
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 300
 			"shield damage" 6400
@@ -117,7 +120,10 @@ ship "Aberrant Chomper"
 		"shield heat" 3.4
 		"shield generation" 1.2
 		"hull repair rate" 0.6
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 300
 			"shield damage" 6400
@@ -164,7 +170,7 @@ ship "Aberrant Chomper" "Aberrant Chomper (Disable-able)"
 
 
 ship "Aberrant Pileup"
-	"display name" "K-IC Pileup"
+	"display name" `K-IC "Pileup"`
 	plural "Pileups"
 	sprite "ship/aberrant pileup"
 	thumbnail "ship/aberrant pileup"
@@ -182,7 +188,7 @@ ship "Aberrant Pileup"
 		"fuel capacity" 300
 		"ramscoop" 0.2
 		"cargo space" 123
-		"outfit space" 229
+		"outfit space" 269
 		"weapon capacity" 94
 		"engine capacity" 66
 		"energy capacity" 17000
@@ -196,7 +202,10 @@ ship "Aberrant Pileup"
 		"shield heat" 3.4
 		"shield generation" 1.2
 		"hull repair rate" 0.6
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 300
 			"shield damage" 6400
@@ -255,7 +264,7 @@ ship "Aberrant Hugger"
 		"fuel capacity" 300
 		"ramscoop" 0.2
 		"cargo space" 82
-		"outfit space" 275
+		"outfit space" 305
 		"weapon capacity" 144
 		"engine capacity" 93
 		"energy capacity" 12000
@@ -269,7 +278,10 @@ ship "Aberrant Hugger"
 		"shield heat" 3.4
 		"shield generation" 1.2
 		"hull repair rate" 0.6
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 300
 			"shield damage" 6400
@@ -344,7 +356,10 @@ ship "Aberrant Longfellow"
 		"shield heat" 3.4
 		"shield generation" 1.2
 		"hull repair rate" 0.6
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 300
 			"shield damage" 6400
@@ -425,7 +440,10 @@ ship "Aberrant Dancer"
 		"shield heat" 3.4
 		"shield generation" 1.2
 		"hull repair rate" 0.6
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 500
 			"shield damage" 11400
@@ -504,7 +522,10 @@ ship "Aberrant Junior"
 		"shield heat" 3.4
 		"shield generation" 0.6
 		"hull repair rate" 1.2
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 300
 			"shield damage" 6400
@@ -566,7 +587,7 @@ ship "Aberrant Icebreaker"
 		"fuel capacity" 300
 		"ramscoop" 0.2
 		"cargo space" 66
-		"outfit space" 293
+		"outfit space" 313
 		"weapon capacity" 103
 		"engine capacity" 73
 		"energy capacity" 15000
@@ -580,7 +601,10 @@ ship "Aberrant Icebreaker"
 		"shield heat" 3.4
 		"shield generation" 0.6
 		"hull repair rate" 1.2
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 300
 			"shield damage" 6400
@@ -595,7 +619,6 @@ ship "Aberrant Icebreaker"
 		"Ka'het MHD Generator"
 		"Ka'het Reserve Accumulator"
 		"Anomalous Shield Restorer"
-		"Anomalous Mass" 22
 
 		"Ka'het Compact Engine" 2
 		"Hyperdrive"
@@ -644,7 +667,7 @@ ship "Aberrant Pike"
 		"fuel capacity" 300
 		"ramscoop" 0.2
 		"cargo space" 66
-		"outfit space" 281
+		"outfit space" 291
 		"weapon capacity" 102
 		"engine capacity" 62
 		"energy capacity" 18000
@@ -658,7 +681,10 @@ ship "Aberrant Pike"
 		"shield heat" 3.4
 		"shield generation" 0.6
 		"hull repair rate" 1.2
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 300
 			"shield damage" 6400
@@ -720,7 +746,7 @@ ship "Aberrant Mole"
 		"fuel capacity" 300
 		"ramscoop" 0.2
 		"cargo space" 66
-		"outfit space" 308
+		"outfit space" 318
 		"weapon capacity" 148
 		"engine capacity" 52
 		"energy capacity" 12000
@@ -734,7 +760,10 @@ ship "Aberrant Mole"
 		"shield heat" 3.4
 		"shield generation" 0.6
 		"hull repair rate" 1.2
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 300
 			"shield damage" 6400
@@ -798,7 +827,7 @@ ship "Aberrant Whiskers"
 		"fuel capacity" 300
 		"ramscoop" 0.2
 		"cargo space" 66
-		"outfit space" 245
+		"outfit space" 265
 		"weapon capacity" 64
 		"engine capacity" 72
 		"energy capacity" 12000
@@ -812,7 +841,10 @@ ship "Aberrant Whiskers"
 		"shield heat" 3.4
 		"shield generation" 0.6
 		"hull repair rate" 1.2
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 300
 			"shield damage" 6400
@@ -883,7 +915,10 @@ ship "Aberrant Trip"
 		"shield heat" 7.6
 		"shield generation" 0.9
 		"hull repair rate" 0.2
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 600
 			"shield damage" 12400
@@ -966,7 +1001,10 @@ ship "Aberrant Triplet"
 		"shield heat" 6.6
 		"shield generation" 1.8
 		"hull repair rate" 1.4
+		"quantum keystone" 1
 		"ka'sei" 1
+		"overheat damage threshold" 0.7
+		"overheat damage rate" 0.7
 		weapon
 			"blast radius" 600
 			"shield damage" 12400

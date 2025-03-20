@@ -26,10 +26,10 @@ category "ship"
 	"Superheavy"
 	"Fighter"
 	"Drone"
+	"Intrasolar"
 	"Unclassified"
 	"Unclassified Minor"
 	"Game Mechanics"
-	"Intrasolar"
 
 
 # Ships of these types can be carried by other ships.
