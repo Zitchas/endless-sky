@@ -1260,3 +1260,13 @@ event "remnant: tubfalet appearance"
 		add variant 3
 			"Tubfalet"
 			"'olofez" 3
+
+
+
+event "remnant: end of the line access"
+	shipyard "Remnant"
+		"Peregrine"
+		"Heron"
+		"Swan"
+	outfitter "Remnant"
+		"Inhibitor Turret"

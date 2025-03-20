@@ -13,6 +13,8 @@
 
 outfit "Pug Zapper"
 	category "Guns"
+	series "Guns"
+	index 90020
 	cost 290000
 	thumbnail "outfit/pug zapper"
 	"mass" 25
@@ -38,6 +40,8 @@ outfit "Pug Zapper"
 
 outfit "Pug Zapper Turret"
 	category "Turrets"
+	series "Turrets"
+	index 90010
 	cost 860000
 	thumbnail "outfit/pug zapper turret"
 	"mass" 66
@@ -75,6 +79,8 @@ effect "zapper impact"
 
 outfit "Pug Seeker"
 	category "Guns"
+	series "Guns"
+	index 90010
 	cost 540000
 	thumbnail "outfit/pug seeker"
 	"mass" 34
@@ -117,6 +123,8 @@ effect "seeker impact"
 
 outfit "Pug Anti-Missile"
 	category "Turrets"
+	series "Anti-Missile"
+	index 90010
 	cost 350000
 	thumbnail "outfit/pug anti-missile"
 	"mass" 41
@@ -147,6 +155,8 @@ effect "pug anti-missile"
 
 outfit "Tier 3 Anti-Missile"
 	category "Turrets"
+	series "Anti-Missile"
+	index 90020
 	cost 12000000
 	thumbnail "outfit/t3 anti missile"
 	"mass" 67
@@ -185,6 +195,8 @@ effect "tier 3 anti-missile die"
 
 outfit "Pug Gridfire Turret"
 	category "Turrets"
+	series "Turrets"
+	index 90020
 	cost 24000000
 	thumbnail "outfit/pug gridfire turret"
 	"mass" 83
@@ -242,6 +254,8 @@ effect "gridfire cloud"
 
 outfit "Pug Akfar Thruster"
 	category "Engines"
+	series "Engines"
+	index 90011
 	"cost" 608000
 	thumbnail "outfit/pug akfar thruster"
 	"thruster slot" -1
@@ -257,8 +271,27 @@ outfit "Pug Akfar Thruster"
 	"flare sound" "ion medium"
 	description "This is a small thruster designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
 
+outfit "Pug Akfar Steering"
+	category "Engines"
+	"cost" 472000
+	index 90010
+	thumbnail "outfit/pug akfar steering"
+	"steering slot" -1
+	"mass" 33
+	"outfit space" -33
+	"engine capacity" -33
+	"turn" 1295
+	"turning energy" 1.3
+	"turning heat" 2.1
+	"steering flare sprite" "effect/pug flare/medium"
+		"frame rate" 20
+	"steering flare sound" "ion medium"
+	description "This is a small steering system designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
+
 outfit "Pug Cormet Thruster"
 	category "Engines"
+	series "Engines"
+	index 90021
 	"cost" 1050000
 	thumbnail "outfit/pug cormet thruster"
 	"thruster slot" -1
@@ -274,43 +307,10 @@ outfit "Pug Cormet Thruster"
 	"flare sound" "ion large"
 	description "This is a medium-sized thruster designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
 
-outfit "Pug Lohmar Thruster"
-	category "Engines"
-	"cost" 1740000
-	thumbnail "outfit/pug lohmar thruster"
-	"thruster slot" -1
-	"engine mod space" 1.39
-	"mass" 84
-	"outfit space" -84
-	"engine capacity" -84
-	"thrust" 104
-	"thrusting energy" 4.9
-	"thrusting heat" 6.9
-	"flare sprite" "effect/pug flare/huge"
-		"frame rate" 23
-	"flare sound" "ion huge"
-	description "This is a large thruster designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
-
-
-
-outfit "Pug Akfar Steering"
-	category "Engines"
-	"cost" 472000
-	thumbnail "outfit/pug akfar steering"
-	"steering slot" -1
-	"mass" 33
-	"outfit space" -33
-	"engine capacity" -33
-	"turn" 1295
-	"turning energy" 1.3
-	"turning heat" 2.1
-	"steering flare sprite" "effect/pug flare/medium"
-		"frame rate" 20
-	"steering flare sound" "ion medium"
-	description "This is a small steering system designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
-
 outfit "Pug Cormet Steering"
 	category "Engines"
+	series "Engines"
+	index 90020
 	"cost" 880000
 	thumbnail "outfit/pug cormet steering"
 	"steering slot" -1
@@ -325,8 +325,28 @@ outfit "Pug Cormet Steering"
 	"steering flare sound" "ion large"
 	description "This is a medium-sized steering system designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
 
+outfit "Pug Lohmar Thruster"
+	category "Engines"
+	"cost" 1740000
+	index 90031
+	thumbnail "outfit/pug lohmar thruster"
+	"thruster slot" -1
+	"engine mod space" 1.39
+	"mass" 84
+	"outfit space" -84
+	"engine capacity" -84
+	"thrust" 104
+	"thrusting energy" 4.9
+	"thrusting heat" 6.9
+	"flare sprite" "effect/pug flare/huge"
+		"frame rate" 23
+	"flare sound" "ion huge"
+	description "This is a large thruster designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
+
 outfit "Pug Lohmar Steering"
 	category "Engines"
+	series "Engines"
+	index 90030
 	"cost" 1580000
 	thumbnail "outfit/pug lohmar steering"
 	"steering slot" -1
@@ -346,6 +366,7 @@ outfit "Pug Lohmar Steering"
 outfit "Pug Akfar LTC"
 	category "Engines"
 	"cost" 608000
+	index 90012
 	thumbnail "outfit/pug akfar thruster"
 	"lateral thruster slot" -1
 	"mass" 34
@@ -362,6 +383,7 @@ outfit "Pug Akfar LTC"
 outfit "Pug Cormet LTC"
 	category "Engines"
 	"cost" 1050000
+	index 90022
 	thumbnail "outfit/pug cormet thruster"
 	"lateral thruster slot" -1
 	"mass" 42
@@ -378,6 +400,7 @@ outfit "Pug Cormet LTC"
 outfit "Pug Lohmar LTC"
 	category "Engines"
 	"cost" 1740000
+	index 90032
 	thumbnail "outfit/pug lohmar thruster"
 	"lateral thruster slot" -1
 	"mass" 50
@@ -396,6 +419,8 @@ outfit "Pug Lohmar LTC"
 outfit "Pug Biodefenses"
 	plural "Pug Biodefenses"
 	category "Hand to Hand"
+	series "Fortifications"
+	index 90020
 	cost 100000
 	thumbnail "outfit/pug biodefenses"
 	"capture defense" 100
@@ -405,6 +430,8 @@ outfit "Pug Biodefenses"
 outfit "Pug Peacekeeping Staff"
 	plural "Pug Peacekeeping Staves"
 	category "Hand to Hand"
+	series "H2H"
+	index 90010
 	cost 123456
 	thumbnail "outfit/pug staff"
 	"capture attack" 2.3

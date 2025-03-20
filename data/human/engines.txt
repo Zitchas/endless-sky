@@ -13,8 +13,8 @@
 
 outfit "Volcano Afterburner"
 	category "Engines"
-	series "Human: Afterburners"
-	index 10
+	series "Afterburners"
+	index 01000
 	"cost" 70000
 	thumbnail "outfit/afterburner"
 	"engine mod space" -0.76
@@ -41,8 +41,8 @@ effect "afterburner"
 
 outfit "Caldera Afterburner"
 	category "Engines"
-	series "Human: Afterburners"
-	index 20
+	series "Afterburners"
+	index 01010
 	"cost" 390000
 	thumbnail "outfit/caldera afterburner"
 	"engine mod space" -1.08
@@ -70,8 +70,8 @@ effect "caldera afterburner"
 
 outfit "Ionic Afterburner"
 	category "Engines"
-	series "Human: Afterburners"
-	index 30
+	series "Afterburners"
+	index 01020
 	"cost" 340000
 	thumbnail "outfit/ionic afterburner"
 	"engine mod space" -0.87
@@ -457,8 +457,8 @@ outfit "RC11 Reaction Reverse Thruster"
 outfit "X1050 Ion Engines"
 	plural "X1050 Ion Engines"
 	category "Engines"
-	series "Human: Ion"
-	index 10
+	series "Engines"
+	index 01000
 	"cost" 20000
 	thumbnail "outfit/tiny ion engines"
 	"steering slot" -1
@@ -488,8 +488,8 @@ outfit "X1050 Ion Engines"
 
 outfit "X1700 Ion Thruster"
 	category "Engines"
-	series "Human: Ion"
-	index 17
+	series "Engines"
+	index 01011
 	"cost" 12000
 	thumbnail "outfit/tiny ion thruster"
 	"thruster slot" -1
@@ -508,8 +508,8 @@ outfit "X1700 Ion Thruster"
 
 outfit "X2700 Ion Thruster"
 	category "Engines"
-	series "Human: Ion"
-	index 27
+	series "Engines"
+	index 01021
 	"cost" 26000
 	thumbnail "outfit/small ion thruster"
 	"thruster slot" -1
@@ -528,8 +528,8 @@ outfit "X2700 Ion Thruster"
 
 outfit "X3700 Ion Thruster"
 	category "Engines"
-	series "Human: Ion"
-	index 37
+	series "Engines"
+	index 01031
 	"cost" 58000
 	thumbnail "outfit/medium ion thruster"
 	"thruster slot" -1
@@ -548,8 +548,8 @@ outfit "X3700 Ion Thruster"
 
 outfit "X4700 Ion Thruster"
 	category "Engines"
-	series "Human: Ion"
-	index 47
+	series "Engines"
+	index 01041
 	"cost" 128000
 	thumbnail "outfit/large ion thruster"
 	"thruster slot" -1
@@ -568,8 +568,8 @@ outfit "X4700 Ion Thruster"
 
 outfit "X5700 Ion Thruster"
 	category "Engines"
-	series "Human: Ion"
-	index 57
+	series "Engines"
+	index 01051
 	"cost" 281000
 	thumbnail "outfit/huge ion thruster"
 	"thruster slot" -1
@@ -589,8 +589,8 @@ outfit "X5700 Ion Thruster"
 
 outfit "X1200 Ion Steering"
 	category "Engines"
-	series "Human: Ion"
-	index 12
+	series "Engines"
+	index 01010
 	"cost" 10000
 	thumbnail "outfit/tiny ion steering"
 	"steering slot" -1
@@ -608,8 +608,8 @@ outfit "X1200 Ion Steering"
 
 outfit "X2200 Ion Steering"
 	category "Engines"
-	series "Human: Ion"
-	index 22
+	series "Engines"
+	index 01020
 	"cost" 21000
 	thumbnail "outfit/small ion steering"
 	"steering slot" -1
@@ -627,8 +627,8 @@ outfit "X2200 Ion Steering"
 
 outfit "X3200 Ion Steering"
 	category "Engines"
-	series "Human: Ion"
-	index 32
+	series "Engines"
+	index 01030
 	"cost" 46000
 	thumbnail "outfit/medium ion steering"
 	"steering slot" -1
@@ -646,8 +646,8 @@ outfit "X3200 Ion Steering"
 
 outfit "X4200 Ion Steering"
 	category "Engines"
-	series "Human: Ion"
-	index 42
+	series "Engines"
+	index 01040
 	"cost" 102000
 	thumbnail "outfit/large ion steering"
 	"steering slot" -1
@@ -665,8 +665,8 @@ outfit "X4200 Ion Steering"
 
 outfit "X5200 Ion Steering"
 	category "Engines"
-	series "Human: Ion"
-	index 52
+	series "Engines"
+	index 01050
 	"cost" 225000
 	thumbnail "outfit/huge ion steering"
 	"steering slot" -1
@@ -786,8 +786,8 @@ outfit "X5400 Ion LTC"
 
 outfit "X1100 Ion Reverse Thruster"
 	category "Engines"
-	series "Human: Ion"
-	index 18
+	series "Engines"
+	index 01012
 	"cost" 12000
 	thumbnail "outfit/reverse thruster ion"
 	"reverse thruster slot" -1
@@ -808,8 +808,8 @@ outfit "X1100 Ion Reverse Thruster"
 # Plasma Propulsion
 outfit "Chipmunk Plasma Thruster"
 	category "Engines"
-	series "Human: Plasma"
-	index 15
+	series "Engines"
+	index 01101
 	"cost" 20000
 	thumbnail "outfit/tiny plasma thruster"
 	"thruster slot" -1
@@ -828,8 +828,8 @@ outfit "Chipmunk Plasma Thruster"
 
 outfit "Greyhound Plasma Thruster"
 	category "Engines"
-	series "Human: Plasma"
-	index 25
+	series "Engines"
+	index 01111
 	"cost" 45000
 	thumbnail "outfit/small plasma thruster"
 	"thruster slot" -1
@@ -848,8 +848,8 @@ outfit "Greyhound Plasma Thruster"
 
 outfit "Impala Plasma Thruster"
 	category "Engines"
-	series "Human: Plasma"
-	index 35
+	series "Engines"
+	index 01121
 	"cost" 99000
 	thumbnail "outfit/medium plasma thruster"
 	"thruster slot" -1
@@ -868,8 +868,8 @@ outfit "Impala Plasma Thruster"
 
 outfit "Orca Plasma Thruster"
 	category "Engines"
-	series "Human: Plasma"
-	index 45
+	series "Engines"
+	index 01131
 	"cost" 217000
 	thumbnail "outfit/large plasma thruster"
 	"thruster slot" -1
@@ -888,8 +888,8 @@ outfit "Orca Plasma Thruster"
 
 outfit "Tyrant Plasma Thruster"
 	category "Engines"
-	series "Human: Plasma"
-	index 55
+	series "Engines"
+	index 01141
 	"cost" 389000
 	thumbnail "outfit/huge plasma thruster"
 	"thruster slot" -1
@@ -909,8 +909,8 @@ outfit "Tyrant Plasma Thruster"
 
 outfit "Chipmunk Plasma Steering"
 	category "Engines"
-	series "Human: Plasma"
-	index 12
+	series "Engines"
+	index 01100
 	"cost" 16000
 	thumbnail "outfit/tiny plasma steering"
 	"steering slot" -1
@@ -928,8 +928,8 @@ outfit "Chipmunk Plasma Steering"
 
 outfit "Greyhound Plasma Steering"
 	category "Engines"
-	series "Human: Plasma"
-	index 22
+	series "Engines"
+	index 01110
 	"cost" 36000
 	thumbnail "outfit/small plasma steering"
 	"steering slot" -1
@@ -947,8 +947,8 @@ outfit "Greyhound Plasma Steering"
 
 outfit "Impala Plasma Steering"
 	category "Engines"
-	series "Human: Plasma"
-	index 32
+	series "Engines"
+	index 01120
 	"cost" 79000
 	thumbnail "outfit/medium plasma steering"
 	"steering slot" -1
@@ -966,8 +966,8 @@ outfit "Impala Plasma Steering"
 
 outfit "Orca Plasma Steering"
 	category "Engines"
-	series "Human: Plasma"
-	index 42
+	series "Engines"
+	index 01130
 	"cost" 174000
 	thumbnail "outfit/large plasma steering"
 	"steering slot" -1
@@ -985,8 +985,8 @@ outfit "Orca Plasma Steering"
 
 outfit "Tyrant Plasma Steering"
 	category "Engines"
-	series "Human: Plasma"
-	index 52
+	series "Engines"
+	index 01140
 	"cost" 324700
 	thumbnail "outfit/huge plasma steering"
 	"steering slot" -1
@@ -1109,8 +1109,8 @@ outfit "Tyrant Plasma LTC"
 
 outfit "Capybara Reverse Thruster"
 	category "Engines"
-	series "Human: Plasma"
-	index 18
+	series "Engines"
+	index 01102
 	"cost" 20000
 	thumbnail "outfit/reverse thruster plasma"
 	"reverse thruster slot" -1
@@ -1131,8 +1131,8 @@ outfit "Capybara Reverse Thruster"
 # Atomic Propulsion
 outfit "A120 Atomic Thruster"
 	category "Engines"
-	series "Human: Atomic"
-	index 15
+	series "Engines"
+	index 01201
 	"cost" 140000
 	thumbnail "outfit/tiny atomic thruster"
 	"thruster slot" -1
@@ -1150,8 +1150,8 @@ outfit "A120 Atomic Thruster"
 
 outfit "A250 Atomic Thruster"
 	category "Engines"
-	series "Human: Atomic"
-	index 25
+	series "Engines"
+	index 01211
 	"cost" 280000
 	thumbnail "outfit/small atomic thruster"
 	"thruster slot" -1
@@ -1169,8 +1169,8 @@ outfit "A250 Atomic Thruster"
 
 outfit "A370 Atomic Thruster"
 	category "Engines"
-	series "Human: Atomic"
-	index 35
+	series "Engines"
+	index 01221
 	"cost" 560000
 	thumbnail "outfit/medium atomic thruster"
 	"thruster slot" -1
@@ -1188,8 +1188,8 @@ outfit "A370 Atomic Thruster"
 
 outfit "A520 Atomic Thruster"
 	category "Engines"
-	series "Human: Atomic"
-	index 45
+	series "Engines"
+	index 01231
 	"cost" 1120000
 	thumbnail "outfit/large atomic thruster"
 	"thruster slot" -1
@@ -1207,8 +1207,8 @@ outfit "A520 Atomic Thruster"
 
 outfit "A860 Atomic Thruster"
 	category "Engines"
-	series "Human: Atomic"
-	index 55
+	series "Engines"
+	index 01241
 	"cost" 2240000
 	thumbnail "outfit/huge atomic thruster"
 	"thruster slot" -1
@@ -1227,8 +1227,8 @@ outfit "A860 Atomic Thruster"
 
 outfit "A125 Atomic Steering"
 	category "Engines"
-	series "Human: Atomic"
-	index 12
+	series "Engines"
+	index 01200
 	"cost" 120000
 	thumbnail "outfit/tiny atomic steering"
 	"steering slot" -1
@@ -1245,8 +1245,8 @@ outfit "A125 Atomic Steering"
 
 outfit "A255 Atomic Steering"
 	category "Engines"
-	series "Human: Atomic"
-	index 22
+	series "Engines"
+	index 01210
 	"cost" 240000
 	thumbnail "outfit/small atomic steering"
 	"steering slot" -1
@@ -1263,8 +1263,8 @@ outfit "A255 Atomic Steering"
 
 outfit "A375 Atomic Steering"
 	category "Engines"
-	series "Human: Atomic"
-	index 32
+	series "Engines"
+	index 01220
 	"cost" 480000
 	thumbnail "outfit/medium atomic steering"
 	"steering slot" -1
@@ -1281,8 +1281,8 @@ outfit "A375 Atomic Steering"
 
 outfit "A525 Atomic Steering"
 	category "Engines"
-	series "Human: Atomic"
-	index 42
+	series "Engines"
+	index 01230
 	"cost" 960000
 	thumbnail "outfit/large atomic steering"
 	"steering slot" -1
@@ -1299,8 +1299,8 @@ outfit "A525 Atomic Steering"
 
 outfit "A865 Atomic Steering"
 	category "Engines"
-	series "Human: Atomic"
-	index 52
+	series "Engines"
+	index 01240
 	"cost" 1920000
 	thumbnail "outfit/huge atomic steering"
 	"steering slot" -1
@@ -1416,8 +1416,8 @@ outfit "AL869 Atomic LTC"
 
 outfit "AR120 Reverse Thruster"
 	category "Engines"
-	series "Human: Atomic"
-	index 18
+	series "Engines"
+	index 01202
 	"cost" 140000
 	thumbnail "outfit/reverse thruster"
 	"reverse thruster slot" -1
@@ -1442,10 +1442,188 @@ outfit "James' Engine Mod"
 	category "Engine Modifications"
 	cost 250000
 	thumbnail "outfit/blue screwdriver"
-	"engine mod space" -0.2
+	"engine mod space" -0.15
 	"mass" 0.01
-	"acceleration multiplier" 0.1
-	"turn multiplier" 0.1
+	"acceleration multiplier" 0.2
+	"turn multiplier" 0.2
 	"unique" 1
 	description "James gave you this engine mod, along with a story about having been given it by some salvagers that he saved from pirates. He considers it a good luck charm, and noted that his ship always seemed to perform a little better when he had it installed."
 	description "	This engine modification is hard to figure out: It has no seams, no obvious method of construction, doesn't match the styling of any known manufacturer, and doesn't quite feel like any material you know of. It does fit right onto your engine, though, and connects nicely with the regulator, power, and control systems."
+
+
+
+outfit "Kraz Flight Controls"
+	plural "Kraz Flight Controls"
+	category "Engine Modifications"
+	cost 50000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.20
+	"mass" 5
+	"turn multiplier" 0.1
+	description "Kraz Cybernetics' flight control systems are the keystone of their corporate success. Virtually unknown outside of pilots and vehicle manufacturers, the basic flight control system of most starships is ultimately sourced from them. Building on that success, they created this after-market add-on for those interested in replacing the bare-bones flight control system that shipyards prefer with a more robust system. If this system is what is distributed on a galaxy-wide scale, it is possible they might have a more advanced version in the company's home outfitter..."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Kraz Advanced Control Systems"
+	plural "Kraz Advanced Control Systems"
+	category "Engine Modifications"
+	cost 125000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.25
+	"mass" 4
+	"turn multiplier" 0.2
+	description "Kraz Cybernetics' flight control systems are the keystone of their corporate success, and the baseline original equipment manufacturere versions are ubiquous in starships. Here in the poorly regulated fringe territories, Kraz's engineers have been able to dial up the performance and skirt the very edge of the safety margins in order to provide the ultimate in ship reaction times. How exactly they do this is unclear, but according to the packaging these changes are complimentary to those found in their other Kraz Flight Control outfit."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Brute Force Thrust mod"
+	plural "Brute Force Thrust mod"
+	category "Engine Modifications"
+	cost 125000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.25
+	"mass" 10
+	"acceleration multiplier" 0.2
+	description `The engineer in front of you looks skeptically at your ship. "Don't worry, this is a piece of cake. I can have her accelerating ten percent faster with a few hours of work. It'll add a bit 'o mass to your ship, but the kick will more than make up for it." He scowls. "Don't expect it to be pretty, though."`
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Skipjack Hyperdrive tweak"
+	category "Engine Modifications"
+	cost 125000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.2
+	"mass" 1
+	"jump mass cost" 0.75
+	description `The mechanic smiles at your interest "If you have a small ship, then this engine modification is for you! It is a public secret that hyperdrives are calibrated to be one size fits all, but they actually aren't. A bit of tweaking, and they can be made more efficient for small ships by cutting the excess bubble size. Worth noting, though, that this will make hyperjumps more expensive if you ship exceeds 900 metric tons.`
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Atomic small"
+	category "Engine Modifications"
+	cost 25000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.02
+	"flare sprite" "effect/atomic flare/tiny"
+		"frame rate" 14
+	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates small exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Atomic medium"
+	category "Engine Modifications"
+	cost 35000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.02
+	"flare sprite" "effect/atomic flare/medium"
+		"frame rate" 12
+	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates medium exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Atomic large"
+	category "Engine Modifications"
+	cost 45000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.02
+	"flare sprite" "effect/atomic flare/large"
+		"frame rate" 11
+	description "Making pretty colors in the sky is not the main focus of the Deep's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using atomic thrusters. This version creates large exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Plasma small"
+	category "Engine Modifications"
+	cost 25000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.02
+	"flare sprite" "effect/plasma flare/small"
+		"frame rate" 6
+	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates small exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Plasma medium"
+	category "Engine Modifications"
+	cost 35000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.02
+	"flare sprite" "effect/plasma flare/medium"
+		"frame rate" 7
+	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates medium exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Plasma large"
+	category "Engine Modifications"
+	cost 45000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.02
+	"flare sprite" "effect/plasma flare/large"
+		"frame rate" 8
+	description "Making pretty colors in the sky is not the main focus of the Delta V's engineering teams, but nonetheless some intern dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates large exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Ion small"
+	category "Engine Modifications"
+	cost 25000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.02
+	"flare sprite" "effect/plasma flare/small"
+		"frame rate" 1.1
+	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, but nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates small exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Ion medium"
+	category "Engine Modifications"
+	cost 35000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.02
+	"flare sprite" "effect/plasma flare/medium"
+		"frame rate" 1.0
+	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, but nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates medium exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Flare color Ion large"
+	category "Engine Modifications"
+	cost 45000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"acceleration multiplier" 0.02
+	"flare sprite" "effect/plasma flare/large"
+		"frame rate" 0.9
+	description "Making pretty colors in the sky is not the main focus of the Syndicate's production teams, but nonetheless some manager dreamed up a way to let people pay for the privilege of making their exhaust glow in such a way as to appear to be using plasma thrusters. This version creates large exhaust plumes."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+

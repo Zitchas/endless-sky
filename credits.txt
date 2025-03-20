@@ -306,6 +306,7 @@ contributed to Endless Sky:
   comnom
   corecontingency
   Corraban2
+  cresslank
   CyberShadow
   czartrak
   Daeridanii1
@@ -378,6 +379,7 @@ contributed to Endless Sky:
   Hyugat
   implicitfield
   ImprovisedUsername
+  imverybadatnames
   InfiniteDonuts
   infinitewarp
   ItsNickBarry
@@ -408,7 +410,6 @@ contributed to Endless Sky:
   Koranir
   kozbot
   Kryes-Omega
-  lantzk
   LazerLit
   leklachu
   leowongcanto

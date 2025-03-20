@@ -175,11 +175,11 @@ test "Spawn Limit Tests"
 
 		# store the conditions in test variables so we know which one fails
 		apply
-			"Test fleet count by name: Staying Scarab" == "test: fleet count by name Staying Scarab"
-			"Test fleet count by name: Disabled Shuttle" == "test: fleet count by name Disabled Shuttle"
-			"Test fleet count by name: Disabled Aphid" == "test: fleet count by name Disabled Aphid"
-			"Test fleet count by name: Disabled Star Barge" == "test: fleet count by name Disabled Star Barge"
-			"Test fleet count by name: Expensive Ship" == "test: fleet count by name Expensive Ship"
+			"Test fleet count by name: Staying Scarab" = "test: fleet count by name Staying Scarab"
+			"Test fleet count by name: Disabled Shuttle" = "test: fleet count by name Disabled Shuttle"
+			"Test fleet count by name: Disabled Aphid" = "test: fleet count by name Disabled Aphid"
+			"Test fleet count by name: Disabled Star Barge" = "test: fleet count by name Disabled Star Barge"
+			"Test fleet count by name: Expensive Ship" = "test: fleet count by name Expensive Ship"
 		assert
 			"test: fleet count by name Disabled Shuttle" == 0
 			"test: fleet count by name Expensive Ship" > 5

@@ -116,7 +116,7 @@ ship "Albatross" "Albatross (Sniper)"
 		"Inhibitor Cannon" 5
 		"EMP Torpedo Bay" 2
 		"Point Defense Turret" 3
-		"EMP Torpedo" 39
+		"EMP Torpedo" 18
 		"EMP Torpedo Storage Bay" 3
 
 		"Aeon Cell"
@@ -661,7 +661,7 @@ ship "Gull" "Gull (Support)"
 		"EMP Torpedo Bay"
 		"Inhibitor Cannon" 2
 		"Point Defense Turret"
-		"EMP Torpedo" 16
+		"EMP Torpedo" 8
 		"EMP Torpedo Storage Bay"
 
 		"Epoch Cell"
@@ -1451,7 +1451,7 @@ ship "Peregrine"
 		"EMP Torpedo Bay" 1
 		"Point Defense Turret"
 		"Thrasher Turret"
-		"EMP Torpedo" 9
+		"EMP Torpedo" 5
 		
 		"Aeon Cell"
 		"Crystal Capacitor" 2
@@ -1876,7 +1876,7 @@ ship "Starling" "Starling (Sniper)"
 	outfits
 		"EMP Torpedo Bay"
 		"Inhibitor Cannon" 4
-		"EMP Torpedo" 16
+		"EMP Torpedo" 8
 		"EMP Torpedo Storage Bay"
 
 		"Epoch Cell"

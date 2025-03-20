@@ -16,6 +16,8 @@
 
 outfit "Inhibitor Cannon"
 	category "Guns"
+	series "Guns"
+	index 03010
 	licenses
 		Remnant
 	cost 471000
@@ -58,6 +60,8 @@ effect "inhibitor impact"
 
 outfit "Inhibitor Turret"
 	category "Turrets"
+	series "Turrets"
+	index 03010
 	licenses
 		Remnant
 	cost 1371000
@@ -95,6 +99,8 @@ outfit "Inhibitor Turret"
 
 outfit "Thrasher Cannon"
 	category "Guns"
+	series "Guns"
+	index 03020
 	licenses
 		Remnant
 	cost 218000
@@ -133,6 +139,8 @@ effect "thrasher impact"
 
 outfit "Thrasher Turret"
 	category "Turrets"
+	series "Turrets"
+	index 03020
 	licenses
 		Remnant
 	cost 980000
@@ -165,6 +173,8 @@ outfit "Thrasher Turret"
 
 outfit "Point Defense Turret"
 	category "Turrets"
+	series "Anti-Missile"
+	index 03010
 	licenses
 		Remnant
 	cost 1120000
@@ -213,6 +223,8 @@ effect "point defense die"
 outfit "EMP Torpedo"
 	plural "EMP Torpedoes"
 	category "Ammunition"
+	series "Ammunition"
+	index 03010
 	licenses
 		Remnant
 	cost 4400
@@ -223,6 +235,8 @@ outfit "EMP Torpedo"
 
 outfit "EMP Torpedo Storage Bay"
 	category "Ammunition"
+	series "Ammunition"
+	index 03011
 	licenses
 		Remnant
 	cost 98000
@@ -237,6 +251,8 @@ outfit "EMP Torpedo Storage Bay"
 
 outfit "EMP Torpedo Bay"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 03010
 	licenses
 		Remnant
 	cost 583000
@@ -285,6 +301,8 @@ outfit "EMP Torpedo Bay"
 
 outfit "Teciimach Canister"
 	category "Ammunition"
+	series "Ammunition"
+	index 03020
 	licenses
 		Remnant
 	cost 35500
@@ -296,6 +314,8 @@ outfit "Teciimach Canister"
 
 outfit "Teciimach Canister Rack"
 	category "Ammunition"
+	series "Ammunition"
+	index 03021
 	licenses
 		Remnant
 	cost 295000
@@ -310,6 +330,8 @@ outfit "Teciimach Canister Rack"
 
 outfit "Teciimach Bay"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 03030
 	licenses
 		Remnant
 	cost 1525000
@@ -360,6 +382,8 @@ outfit "Teciimach Bay"
 
 outfit "Teciimach Pod"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 03020
 	licenses
 		Remnant
 	cost 762500
@@ -444,6 +468,8 @@ effect "emp spark"
 
 outfit "Ember Tear"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 03040
 	licenses
 		"Remnant Capital"
 	cost 270000000
@@ -531,6 +557,8 @@ effect "ember tear vortex"
 
 outfit "Crystal Capacitor"
 	category "Power"
+	series "Batteries"
+	index 03010
 	licenses
 		Remnant
 	cost 57000
@@ -547,6 +575,8 @@ outfit "Crystal Capacitor"
 
 outfit "Millennium Cell"
 	category "Power"
+	series "Generators"
+	index 03010
 	licenses
 		Remnant
 	cost 553000
@@ -562,6 +592,8 @@ outfit "Millennium Cell"
 
 outfit "Epoch Cell"
 	category "Power"
+	series "Generators"
+	index 03020
 	licenses
 		Remnant
 	cost 2123000
@@ -577,6 +609,8 @@ outfit "Epoch Cell"
 
 outfit "Aeon Cell"
 	category "Power"
+	series "Generators"
+	index 03030
 	licenses
 		Remnant
 	cost 4384000
@@ -592,6 +626,8 @@ outfit "Aeon Cell"
 
 outfit "Thermoelectric Cooler"
 	category "Systems"
+	series "Cooling"
+	index 03010
 	licenses
 		Remnant
 	cost 100000
@@ -604,6 +640,8 @@ outfit "Thermoelectric Cooler"
 
 outfit "Emergency Ramscoop"
 	category "Systems"
+	series "Ramscoops"
+	index 03010
 	licenses
 		Remnant
 	cost 72000
@@ -615,6 +653,8 @@ outfit "Emergency Ramscoop"
 
 outfit "NDR-114 Android"
 	category "Unique"
+	series "Functional Unique"
+	index 40
 	cost 120000
 	thumbnail "outfit/android"
 	"required crew" -1
@@ -626,6 +666,8 @@ outfit "NDR-114 Android"
 
 outfit "Research Laboratory"
 	category "Systems"
+	series "Scanners"
+	index 03020
 	licenses
 		Remnant
 	cost 500000
@@ -651,6 +693,8 @@ outfit "Research Laboratory"
 
 outfit "Quantum Key Stone"
 	category "Systems"
+	series "Drives"
+	index 60
 	licenses
 		Remnant
 	cost 240000
@@ -662,6 +706,8 @@ outfit "Quantum Key Stone"
 
 outfit "Salvage Scanner"
 	category "Systems"
+	series "Scanners"
+	index 03010
 	licenses
 		Remnant
 	cost 410000
@@ -682,6 +728,8 @@ outfit "Salvage Scanner"
 
 outfit "Bellows-Class Afterburner"
 	category "Engines"
+	series "Afterburners"
+	index 03010
 	"cost" 640000
 	thumbnail "outfit/remnant afterburner"
 	"engine mod space" -0.76
@@ -707,6 +755,8 @@ effect "remnant afterburner"
 
 outfit "Anvil-Class Engine"
 	category "Engines"
+	series "Engines"
+	index 03010
 	licenses
 		Remnant
 	"cost" 290000
@@ -746,6 +796,8 @@ outfit "Anvil-Class Engine"
 
 outfit "Crucible-Class Thruster"
 	category "Engines"
+	series "Engines"
+	index 03021
 	licenses
 		Remnant
 	"cost" 200000
@@ -772,6 +824,8 @@ outfit "Crucible-Class Thruster"
 
 outfit "Forge-Class Thruster"
 	category "Engines"
+	series "Engines"
+	index 03031
 	licenses
 		Remnant
 	"cost" 441000
@@ -798,6 +852,8 @@ outfit "Forge-Class Thruster"
 
 outfit "Smelter-Class Thruster"
 	category "Engines"
+	series "Engines"
+	index 03041
 	licenses
 		Remnant
 	"cost" 984000
@@ -824,6 +880,8 @@ outfit "Smelter-Class Thruster"
 
 outfit "Crucible-Class Steering"
 	category "Engines"
+	series "Engines"
+	index 03020
 	licenses
 		Remnant
 	"cost" 172000
@@ -843,6 +901,8 @@ outfit "Crucible-Class Steering"
 
 outfit "Forge-Class Steering"
 	category "Engines"
+	series "Engines"
+	index 03030
 	licenses
 		Remnant
 	"cost" 393000
@@ -862,6 +922,8 @@ outfit "Forge-Class Steering"
 
 outfit "Smelter-Class Steering"
 	category "Engines"
+	series "Engines"
+	index 03040
 	licenses
 		Remnant
 	"cost" 880000
@@ -945,10 +1007,204 @@ outfit "Smelter-Class LTC"
 
 
 
+# Engine Modifications
+
+
+
+outfit "Hammer-Class Engine Mod"
+	category "Engine Modifications"
+	cost 245000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.2
+	"mass" 1
+	"acceleration multiplier" 0.2
+	"thrusting energy" 2.1
+	"turn multiplier" 0.2
+	"turning energy" 2.1
+	description "The Remnant have long prioritized their ability to disengage, and have demonstrated a prodigious willingness to significantly increase their energy expenditure to do so. This mod caters to that preference, allowing a significant increase in engine output, but at significant cost..."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Tongs-Class Engine Mod"
+	category "Engine Modifications"
+	cost 295000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.2
+	"mass" 1
+	"slowing resistance" 0.02
+	"slowing resistance energy" -0.5
+	description "Some Remnant prefer to specialize in ensuring that their enemies cannot pin them down. For such captains, the Tongs-Class engine mod proves especially useful as it channels the energy of the slowing effects into its power stores, enabling slowing effects to be used to power the engines. This also results in slowing effects being dissipated much more quickly."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Crucible-Class Engine Mod"
+	category "Engine Modifications"
+	cost 105000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 1
+	"acceleration multiplier" 0.02
+	"turn multiplier" 0.02
+	"slowing resistance" 0.005
+	"flare sprite" "effect/remnant flare/small"
+		"frame rate" 5
+	description "While the Remnant put on a stiff exterior about being purely utilitarian, they do have a soft spot for art, so long as it does not unduly consume resources or space. And what better thing to beautify than their ships? This mod gives the thruster it is installed on an additional flare similar to that of a Crucible-Class thruster. Of course, given the chance to improve their performance, they will always take the opportunity..."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Forge-Class Engine Mod"
+	category "Engine Modifications"
+	cost 115000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 1
+	"acceleration multiplier" 0.02
+	"turn multiplier" 0.02
+	"slowing resistance" 0.005
+	"flare sprite" "effect/remnant flare/medium"
+		"frame rate" 4
+	description "While the Remnant put on a stiff exterior about being purely utilitarian, they do have a soft spot for art, so long as it does not unduly consume resources or space. And what better thing to beautify than their ships? This mod gives the thruster it is installed on an additional flare similar to that of a Forge-Class thruster. Of course, given the chance to improve their performance, they will always take the opportunity..."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Smelter-Class Engine Mod"
+	category "Engine Modifications"
+	cost 125000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 1
+	"acceleration multiplier" 0.02
+	"turn multiplier" 0.02
+	"slowing resistance" 0.005
+	"flare sprite" "effect/remnant flare/large"
+		"frame rate" 3
+	description "While the Remnant put on a stiff exterior about being purely utilitarian, they do have a soft spot for art, so long as it does not unduly consume resources or space. And what better thing to beautify than their ships? This mod gives the thruster it is installed on an additional flare similar to that of a Smelter-Class thruster. Of course, given the chance to improve their performance, they will always take the opportunity..."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Korath Flare Study mod (Asteroid)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/korath flare/tiny"
+		"frame rate" 8
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the tiniest of Korath engines, the Asteroid class thruster."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Korath Flare Study mod (Comet)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/korath flare/small"
+		"frame rate" 7.5
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the Comet class thruster."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Korath Flare Study mod (Lunar)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/korath flare/medium"
+		"frame rate" 7.0
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the Lunar class thruster."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Korath Flare Study mod (Planetary)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/korath flare/large"
+		"frame rate" 6.5
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the Planetary class thruster."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Korath Flare Study mod (Stellar)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/korath flare/huge"
+		"frame rate" 6.0
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the Stellar class thruster."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Ka'het Flare Study mod (small)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/ka'het flare/small"
+		"frame rate" 30
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the Ka'het small thrusters."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Ka'het Flare Study mod (Compact)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/ka'het flare/medium"
+		"frame rate" 30
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the Ka'het Compact thrusters."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Ka'het Flare Study mod (Tellis)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/ka'het flare/large"
+		"frame rate" 30
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the Ka'het Tellis thrusters."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
 # Hand to Hand
 
 outfit "Tuning Rifle"
 	category "Hand to Hand"
+	series "H2H"
+	index 03010
 	licenses
 		Remnant
 	cost 22000
@@ -964,6 +1220,8 @@ outfit "Tuning Rifle"
 
 outfit "Void Rifle"
 	category "Unique"
+	series "Functional Unique"
+	index 50
 	licenses
 		Remnant
 	cost 1000000
@@ -981,6 +1239,8 @@ outfit "Void Rifle"
 outfit "Void Sprite Parts"
 	plural "Void Sprite Parts"
 	category "Unique"
+	series "Non-Functional Unique"
+	index 20
 	cost 500
 	thumbnail "outfit/void sprite parts"
 	"flotsam sprite" "effect/void sprite parts/void sprite parts"
@@ -998,10 +1258,14 @@ outfit "Void Sprite Parts"
 
 outfit "Remnant License"
 	category "Licenses"
+	series "Licenses"
+	index 03010
 	thumbnail "outfit/remnant license"
 	description "The prefects have reached a consensus that you should be considered a valuable friend of the Remnant, and shall be given permission to purchase their ships and technology."
 
 outfit "Remnant Capital License"
 	category "Licenses"
+	series "Licenses"
+	index 03020
 	thumbnail "outfit/remnant capital license"
 	description "The prefects have decided that you should be trusted with their largest ships, and the valuable resources that go into making them."
