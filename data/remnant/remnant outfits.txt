@@ -1007,6 +1007,198 @@ outfit "Smelter-Class LTC"
 
 
 
+# Engine Modifications
+
+
+
+outfit "Hammer-Class Engine Mod"
+	category "Engine Modifications"
+	cost 245000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.2
+	"mass" 1
+	"acceleration multiplier" 0.2
+	"thrusting energy" 2.1
+	"turn multiplier" 0.2
+	"turning energy" 2.1
+	description "The Remnant have long prioritized their ability to disengage, and have demonstrated a prodigious willingness to significantly increase their energy expenditure to do so. This mod caters to that preference, allowing a significant increase in engine output, but at significant cost..."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Tongs-Class Engine Mod"
+	category "Engine Modifications"
+	cost 295000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.2
+	"mass" 1
+	"slowing resistance" 0.02
+	"slowing resistance energy" -0.5
+	description "Some Remnant prefer to specialize in ensuring that their enemies cannot pin them down. For such captains, the tongs-class engine mod proves especially useful as it channels the energy of the slowing effects into its power stores, enabling slowing effects to be used to power the engines. This also results in slowing effects being dissipated much more quickly."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Crucible-Class Engine Mod"
+	category "Engine Modifications"
+	cost 105000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 1
+	"acceleration multiplier" 0.02
+	"turn multiplier" 0.02
+	"slowing resistance" 0.005
+	"flare sprite" "effect/remnant flare/small"
+		"frame rate" 5
+	description "While the Remnant put on a stiff exterior about being purely utilitarian, they do have a soft spot for art, so long as it does not unduly consume resources or space. And what better thing to beautify than their ships? This mod gives thruster it is installed on an additional flare similar to that of a Crucible-Class thruster. Of course, given the chance to improve their performance, they will always take the opportunity..."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Forge-Class Engine Mod"
+	category "Engine Modifications"
+	cost 115000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 1
+	"acceleration multiplier" 0.02
+	"turn multiplier" 0.02
+	"slowing resistance" 0.005
+	"flare sprite" "effect/remnant flare/medium"
+		"frame rate" 4
+	description "While the Remnant put on a stiff exterior about being purely utilitarian, they do have a soft spot for art, so long as it does not unduly consume resources or space. And what better thing to beautify than their ships? This mod gives thruster it is installed on an additional flare similar to that of a Forge-Class thruster. Of course, given the chance to improve their performance, they will always take the opportunity..."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Smelter-Class Engine Mod"
+	category "Engine Modifications"
+	cost 125000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 1
+	"acceleration multiplier" 0.02
+	"turn multiplier" 0.02
+	"slowing resistance" 0.005
+	"flare sprite" "effect/remnant flare/large"
+		"frame rate" 3
+	description "While the Remnant put on a stiff exterior about being purely utilitarian, they do have a soft spot for art, so long as it does not unduly consume resources or space. And what better thing to beautify than their ships? This mod gives thruster it is installed on an additional flare similar to that of a Smelter-Class thruster. Of course, given the chance to improve their performance, they will always take the opportunity..."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Korath Flare Study mod (asteroid)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/korath flare/tiny"
+		"frame rate" 8
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the tiniest of Korath engines, the asteroid class thruster."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Korath Flare Study mod (comet)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/korath flare/small"
+		"frame rate" 7.5
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the comet class thruster."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Korath Flare Study mod (lunar)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/korath flare/medium"
+		"frame rate" 7.0
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the lunar class thruster."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Korath Flare Study mod (planetary)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/korath flare/large"
+		"frame rate" 6.5
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the planetary class thruster."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Korath Flare Study mod (stellar)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/korath flare/huge"
+		"frame rate" 6.0
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the stellar class thruster."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Ka'het Flare Study mod (small)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/ka'het flare/small"
+		"frame rate" 30
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the ka'het small thrusters."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Ka'het Flare Study mod (compact)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/ka'het flare/medium"
+		"frame rate" 30
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the ka'het compact thrusters."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
+outfit "Ka'het Flare Study mod (tellis)"
+	category "Engine Modifications"
+	cost 75000
+	thumbnail "outfit/blue screwdriver"
+	"engine mod space" -0.1
+	"mass" 0.1
+	"flare sprite" "effect/ka'het flare/large"
+		"frame rate" 30
+	description "In their eternal search to develop more effective propulsion systems, many Remnant researchers try to recreate the visual signature of the drive in question as a first step to understanding how they work. Others have discovered that these research engine mods can be used to disguise their ships on long range sensors, conveying a drive signature that has a sufficiently high degree of concordance with other factions to minimize knowledge of the Remnant's activities."
+	description "	This engine mod creates a flare similar to that of the ka'het tellis thrusters."
+	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
+
+
+
 # Hand to Hand
 
 outfit "Tuning Rifle"
