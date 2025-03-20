@@ -1034,7 +1034,7 @@ outfit "Tongs-Class Engine Mod"
 	"mass" 1
 	"slowing resistance" 0.02
 	"slowing resistance energy" -0.5
-	description "Some Remnant prefer to specialize in ensuring that their enemies cannot pin them down. For such captains, the tongs-class engine mod proves especially useful as it channels the energy of the slowing effects into its power stores, enabling slowing effects to be used to power the engines. This also results in slowing effects being dissipated much more quickly."
+	description "Some Remnant prefer to specialize in ensuring that their enemies cannot pin them down. For such captains, the Tongs-Class engine mod proves especially useful as it channels the energy of the slowing effects into its power stores, enabling slowing effects to be used to power the engines. This also results in slowing effects being dissipated much more quickly."
 	description "	Engine modifications can only be installed on an engine, and generally take up a number of connections that effectively limit any particular engine from having very many of them, regardless of its physical size."
 
 
