@@ -1105,7 +1105,7 @@ fleet "Small Free Worlds"
 	variant 2
 		"Sparrow"
 	variant 2
-		"Osprey"
+		"Eagle"
 	variant 4
 		"Hawk"
 		"Sparrow" 2
@@ -1139,13 +1139,13 @@ fleet "Large Free Worlds"
 	variant 5
 		"Bastion (Laser)"
 	variant 8
-		"Osprey"
+		"Eagle"
 		"Fury"
 	variant 4
-		"Osprey (Missile)"
+		"Eagle (Missile)"
 		"Fury (Missile)"
 	variant 4
-		"Osprey (Laser)"
+		"Eagle (Laser)"
 		"Fury (Laser)"
 	variant 4
 		"Argosy"
@@ -1159,13 +1159,13 @@ fleet "Large Free Worlds"
 		"Argosy (Turret)"
 	variant 6
 		"Bastion"
-		"Osprey"
+		"Eagle"
 	variant 3
 		"Bastion (Heavy)"
-		"Osprey (Missile)"
+		"Eagle (Missile)"
 	variant 3
 		"Bastion (Laser)"
-		"Osprey (Laser)"
+		"Eagle (Laser)"
 	variant 4
 		"Bastion"
 		"Sparrow" 2
@@ -1275,7 +1275,7 @@ fleet "Small Militia"
 	variant 2
 		"Sparrow"
 	variant 2
-		"Osprey"
+		"Eagle"
 	variant 4
 		"Hawk"
 		"Sparrow" 2
@@ -1304,13 +1304,13 @@ fleet "Large Militia"
 	variant 5
 		"Bastion (Laser)"
 	variant 8
-		"Osprey"
+		"Eagle"
 		"Fury"
 	variant 4
-		"Osprey (Missile)"
+		"Eagle (Missile)"
 		"Fury (Missile)"
 	variant 4
-		"Osprey (Laser)"
+		"Eagle (Laser)"
 		"Fury (Laser)"
 	variant 4
 		"Argosy"
@@ -1324,13 +1324,13 @@ fleet "Large Militia"
 		"Argosy (Turret)"
 	variant 6
 		"Bastion"
-		"Osprey"
+		"Eagle"
 	variant 3
 		"Bastion (Heavy)"
-		"Osprey (Missile)"
+		"Eagle (Missile)"
 	variant 3
 		"Bastion (Laser)"
-		"Osprey (Laser)"
+		"Eagle (Laser)"
 	variant 4
 		"Bastion"
 		"Sparrow" 2
@@ -2102,15 +2102,15 @@ fleet "Large Southern Pirates"
 	variant 2
 		"Clipper (Speedy)"
 	variant 1
-		"Osprey"
+		"Eagle"
 		"Fury"
 	variant 1
-		"Osprey"
+		"Eagle"
 		"Sparrow"
 	variant 1
-		"Osprey (Missile)"
+		"Eagle (Missile)"
 	variant 1
-		"Osprey (Laser)"
+		"Eagle (Laser)"
 	variant 2
 		"Clipper"
 		"Hawk"
@@ -2911,7 +2911,7 @@ fleet "Bounty Hunters"
 		"Corvette"
 		"Fury (Missile)"
 	variant 1
-		"Osprey"
+		"Eagle"
 		"Fury (Missile)"
 	variant 1
 		"Manta"
@@ -3259,19 +3259,19 @@ fleet "Marauder fleet VII"
 		disables plunders
 	variant 18
 		"Marauder Falcon"
-		"Osprey"
-		"Osprey (Missile)"
-		"Osprey (Laser)"
+		"Eagle"
+		"Eagle (Missile)"
+		"Eagle (Laser)"
 	variant 1
 		"Marauder Falcon (Weapons)"
-		"Osprey"
-		"Osprey (Missile)"
-		"Osprey (Laser)"
+		"Eagle"
+		"Eagle (Missile)"
+		"Eagle (Laser)"
 	variant 1
 		"Marauder Falcon (Engines)"
-		"Osprey"
-		"Osprey (Missile)"
-		"Osprey (Laser)"
+		"Eagle"
+		"Eagle (Missile)"
+		"Eagle (Laser)"
 	variant 18
 		"Marauder Leviathan"
 		"Firebird"
@@ -3299,19 +3299,19 @@ fleet "Marauder fleet VIII"
 		disables plunders
 	variant 8
 		"Marauder Falcon"
-		"Osprey"
-		"Osprey (Missile)"
-		"Osprey (Laser)"
+		"Eagle"
+		"Eagle (Missile)"
+		"Eagle (Laser)"
 	variant 1
 		"Marauder Falcon (Weapons)"
-		"Osprey"
-		"Osprey (Missile)"
-		"Osprey (Laser)"
+		"Eagle"
+		"Eagle (Missile)"
+		"Eagle (Laser)"
 	variant 1
 		"Marauder Falcon (Engines)"
-		"Osprey"
-		"Osprey (Missile)"
-		"Osprey (Laser)"
+		"Eagle"
+		"Eagle (Missile)"
+		"Eagle (Laser)"
 	variant 8
 		"Marauder Leviathan"
 		"Firebird"
@@ -3336,19 +3336,19 @@ fleet "Marauder fleet IX"
 		disables plunders
 	variant 3
 		"Marauder Falcon"
-		"Osprey"
-		"Osprey (Missile)"
-		"Osprey (Laser)"
+		"Eagle"
+		"Eagle (Missile)"
+		"Eagle (Laser)"
 	variant 1
 		"Marauder Falcon (Weapons)"
-		"Osprey"
-		"Osprey (Missile)"
-		"Osprey (Laser)"
+		"Eagle"
+		"Eagle (Missile)"
+		"Eagle (Laser)"
 	variant 1
 		"Marauder Falcon (Engines)"
-		"Osprey"
-		"Osprey (Missile)"
-		"Osprey (Laser)"
+		"Eagle"
+		"Eagle (Missile)"
+		"Eagle (Laser)"
 	variant 3
 		"Marauder Leviathan"
 		"Firebird"
@@ -3594,10 +3594,10 @@ fleet "Independent (Korath-Allied) Defense"
 		heroic frugal
 		confusion 20
 	variant 3
-		"Osprey (Missile)"
+		"Eagle (Missile)"
 		"Bastion"
 	variant 3
-		"Osprey (Laser)"
+		"Eagle (Laser)"
 		"Bastion (Heavy)"
 	variant 2
 		"Bastion (Laser)"

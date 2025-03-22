@@ -5695,7 +5695,7 @@ mission "Deal Change 2"
 		government "Bounty Hunter"
 		personality staying nemesis
 		system "Shaula"
-		ship "Osprey (Laser)" "Sellout"
+		ship "Eagle (Laser)" "Sellout"
 	on complete
 		fail "Deal Change 1"
 		payment 300000
@@ -8618,7 +8618,7 @@ mission "Timothy Radrickson 3b: Pirate Base"
 
 				"Marauder Raven"
 				"Modified Argosy (Gatling)" 2
-				"Osprey (Missile)"
+				"Eagle (Missile)"
 
 				"Hawk (Plasma)"
 				"Quicksilver" 2
@@ -8641,7 +8641,7 @@ mission "Timothy Radrickson 3b: Pirate Base"
 				"Firebird"
 
 				"Modified Argosy (Gatling)"
-				"Osprey (Missile)"
+				"Eagle (Missile)"
 
 				"Hawk (Plasma)"
 				"Fury (Gatling)"

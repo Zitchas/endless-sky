@@ -667,7 +667,7 @@ person "Power of the People"
 			"Does it sound like I'm ordering a pizza?"
 			"I've made a lot of special modifications myself."
 			"I take orders from just one person: me."
-			"You've never heard of the Modified Osprey?"
+			"You've never heard of the Modified Eagle?"
 			"You know, sometimes I amaze even myself."
 			"I expect the best and I give the best. Here's the beer. Here's the entertainment. Now have fun. That's an order!"
 			"Bugs? Why did it have to be bugs?"
@@ -740,11 +740,11 @@ person "Power of the People"
 			`"Negative. I am a meat popsicle."`
 			`"How 'bout a bumper sandwich, Boogerlips?"`
 			`"I recommend the lobster."`
-	ship "Modified Osprey" "Power of the People"
+	ship "Modified Eagle" "Power of the People"
 		"never disabled"
 
-ship "Modified Osprey"
-	sprite "ship/mosprey"
+ship "Modified Eagle"
+	sprite "ship/meagle"
 	"never disabled"
 	swizzle 3
 	attributes
