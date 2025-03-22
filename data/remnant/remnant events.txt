@@ -249,7 +249,7 @@ event "remnant: merganser fleet"
 		add variant 3
 			"Merganser" 4
 		add variant 1
-			"Starling"
+			"Kookaburra"
 			"Merganser" 2
 	fleet "Large Remnant"
 		add variant 5
@@ -1189,7 +1189,7 @@ event "remnant: teciimach deployment"
 		add variant 3
 			"Merganser (II)" 4
 		add variant 1
-			"Starling"
+			"Kookaburra"
 			"Merganser (II)" 2
 	fleet "Large Remnant"
 		add variant 5

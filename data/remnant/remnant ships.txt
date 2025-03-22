@@ -15,8 +15,8 @@
 
 ship "Albatross"
 	plural "Albatrosses"
-	sprite "ship/albatross"
-	thumbnail "thumbnail/albatross"
+	sprite "ship/remnant/albatross"
+	thumbnail "thumbnail/remnant/albatross"
 	attributes
 		category "Heavy Warship"
 		licenses
@@ -312,8 +312,8 @@ ship "Albatross" "Albatross (Sniper II)"
 
 ship "Modified Dromedary"
 	plural "Modified Dromedaries"
-	sprite "ship/modified dromedary"
-	thumbnail "thumbnail/modified dromedary"
+	sprite "ship/remnant/modified dromedary"
+	thumbnail "thumbnail/remnant/modified dromedary"
 	attributes
 		licenses
 			"Remnant Capital"
@@ -425,8 +425,8 @@ ship "Modified Dromedary"
 
 
 ship "Modified Dromedary" "Modified Dromedary Ghost"
-	sprite "ship/modified dromedary ghost"
-	thumbnail "thumbnail/modified dromedary wreck"
+	sprite "ship/remnant/modified dromedary ghost"
+	thumbnail "thumbnail/remnant/modified dromedary wreck"
 	"uncapturable"
 	"never disabled"
 	add attributes
@@ -466,8 +466,8 @@ ship "Modified Dromedary" "Modified Dromedary Ghost"
 		
 
 ship "Modified Dromedary" "Modified Dromedary Specter"
-	sprite "ship/modified dromedary specter"
-	thumbnail "thumbnail/modified dromedary wreck"
+	sprite "ship/remnant/modified dromedary specter"
+	thumbnail "thumbnail/remnant/modified dromedary wreck"
 	"uncapturable"
 	"never disabled"
 	add attributes
@@ -507,8 +507,8 @@ ship "Modified Dromedary" "Modified Dromedary Specter"
 
 
 ship "Modified Dromedary" "Modified Dromedary Wreck"
-	sprite "ship/modified dromedary wreck"
-	thumbnail "thumbnail/modified dromedary wreck"
+	sprite "ship/remnant/modified dromedary wreck"
+	thumbnail "thumbnail/remnant/modified dromedary wreck"
 	"uncapturable"
 	"never disabled"
 	attributes
@@ -552,8 +552,8 @@ ship "Modified Dromedary" "Modified Dromedary Wreck"
 
 
 ship "Gull"
-	sprite "ship/gull"
-	thumbnail "thumbnail/gull"
+	sprite "ship/remnant/gull"
+	thumbnail "thumbnail/remnant/gull"
 	attributes
 		category "Light Freighter"
 		licenses
@@ -633,8 +633,8 @@ ship "Gull"
 	explode "small explosion" 20
 	explode "medium explosion" 10
 	"final explode" "final explosion small" 1
-	description "While the Starling was the first successful ship to use technology derived from alien ruins, the Gull is the most recent. The current increase in Korath activities has caused foraging for resources to become a risky endeavor, forcing the Remnant to develop a specialized freighter for hauling cargo from remote sites without revealing their presence to hostile aliens."
-	description "	The Gull has quickly proven its worth, allowing the Starling fleets to return to riskier activities while the Gull takes over the hazardous convoy routes. It is now the primary element of the Remnant's extra-territorial resource operations."
+	description "While the Kookaburra was the first successful ship to use technology derived from alien ruins, the Gull is the most recent. The current increase in Korath activities has caused foraging for resources to become a risky endeavor, forcing the Remnant to develop a specialized freighter for hauling cargo from remote sites without revealing their presence to hostile aliens."
+	description "	The Gull has quickly proven its worth, allowing the Kookaburra fleets to return to riskier activities while the Gull takes over the hazardous convoy routes. It is now the primary element of the Remnant's extra-territorial resource operations."
 	description "	The cloaking technology is built into the Gull's hull; it cannot be removed or transferred to another ship."
 
 ship "Gull" "Gull (Sniper)"
@@ -735,7 +735,7 @@ ship "Gull" "Gull (Bunks)"
 
 
 ship "Heron"
-	sprite "ship/heron"
+	sprite "ship/remnant/heron"
 	attributes
 		category "Superheavy"
 		licenses
@@ -932,8 +932,8 @@ ship "Heron"
 
 ship "Ibis"
 	plural "Ibises"
-	sprite "ship/ibis"
-	thumbnail "thumbnail/ibis"
+	sprite "ship/remnant/ibis"
+	thumbnail "thumbnail/remnant/ibis"
 	attributes
 		category "Medium Warship"
 		licenses
@@ -1031,9 +1031,9 @@ ship "Ibis"
 
 
 ship "Merganser"
-	sprite "ship/merganser"
+	sprite "ship/remnant/merganser"
 		"scale" 0.60
-	thumbnail "thumbnail/merganser"
+	thumbnail "thumbnail/remnant/merganser"
 	attributes
 		category "Interceptor"
 		licenses
@@ -1159,8 +1159,8 @@ ship "Merganser" "Merganser (II)"
 
 
 ship "Pelican"
-	sprite "ship/pelican"
-	thumbnail "thumbnail/pelican"
+	sprite "ship/remnant/pelican"
+	thumbnail "thumbnail/remnant/pelican"
 	attributes
 		category "Heavy Freighter"
 		licenses
@@ -1258,10 +1258,10 @@ ship "Pelican" "Pelican (Heavy Lift)"
 
 
 ship "Penguin"
-	sprite "ship/penguin/penguin"
+	sprite "ship/remnant/penguin/penguin"
 		"scale" 0.6
 		"frame rate" 3
-	thumbnail "thumbnail/penguin"
+	thumbnail "thumbnail/remnant/penguin"
 	attributes
 		category "Transport"
 		licenses
@@ -1388,10 +1388,10 @@ ship "Penguin"
 	
 	
 ship "Peregrine"
-	sprite "ship/peregrine/peregrine"
+	sprite "ship/remnant/peregrine/peregrine"
 		"frame rate" 3
 		"rewind"
-	thumbnail "thumbnail/peregrine"
+	thumbnail "thumbnail/remnant/peregrine"
 	attributes
 		category "Medium Warship"
 		licenses
@@ -1528,9 +1528,9 @@ ship "Peregrine" "Peregrine (II)"
 
 
 ship "Petrel"
-	sprite "ship/petrel"
+	sprite "ship/remnant/petrel"
 		"scale" 0.5
-	thumbnail "thumbnail/petrel"
+	thumbnail "thumbnail/remnant/petrel"
 	attributes
 		category "Fighter"
 		licenses
@@ -1602,9 +1602,9 @@ ship "Petrel"
 
 
 ship "Puffin"
-	sprite "ship/puffin"
+	sprite "ship/remnant/puffin"
 		scale 0.5
-	thumbnail "thumbnail/puffin"
+	thumbnail "thumbnail/remnant/puffin"
 	attributes
 		category Transport
 		licenses
@@ -1668,9 +1668,9 @@ ship "Puffin"
 
 
 ship "Smew"
-	sprite "ship/smew"
+	sprite "ship/remnant/smew"
 		"scale" 0.5
-	thumbnail "thumbnail/smew"
+	thumbnail "thumbnail/remnant/smew"
 	attributes
 		category "Fighter"
 		licenses
@@ -1766,9 +1766,9 @@ ship "Smew" "Smew (Teciimach Ferry)"
 
 
 
-ship "Starling"
-	sprite "ship/starling"
-	thumbnail "thumbnail/starling"
+ship "Kookaburra"
+	sprite "ship/remnant/kookaburra"
+	thumbnail "thumbnail/remnant/kookaburra"
 	attributes
 		category "Light Warship"
 		licenses
@@ -1853,9 +1853,9 @@ ship "Starling"
 	explode "medium explosion" 10
 	"final explode" "final explosion small" 1
 	description "One of the strangest and most useful things that the Remnant have discovered in the abandoned worlds of the Ember Waste is alien cloaking technology. They have designed their scout ships to cloak when needed in order to explore alien territory without being seen... or to escape in a hurry after stealing something particularly valuable from those aliens."
-	description "	The cloaking technology is built into the Starling's hull; it cannot be removed or transferred to another ship."
+	description "	The cloaking technology is built into the Kookaburra's hull; it cannot be removed or transferred to another ship."
 
-ship "Starling" "Starling (Heavy)"
+ship "Kookaburra" "Kookaburra (Heavy)"
 	outfits
 		"Thrasher Cannon" 5
 		"Point Defense Turret"
@@ -1872,7 +1872,7 @@ ship "Starling" "Starling (Heavy)"
 		"Forge-Class Steering"
 		"Hyperdrive"
 
-ship "Starling" "Starling (Sniper)"
+ship "Kookaburra" "Kookaburra (Sniper)"
 	outfits
 		"EMP Torpedo Bay"
 		"Inhibitor Cannon" 4
@@ -1902,7 +1902,7 @@ ship "Starling" "Starling (Sniper)"
 	pylon
 	pylon
 
-ship "Starling" "Starling (Hunter)"
+ship "Kookaburra" "Kookaburra (Hunter)"
 	outfits
 		"Inhibitor Cannon" 2
 		"Thrasher Turret"
@@ -1926,7 +1926,7 @@ ship "Starling" "Starling (Hunter)"
 	gun
 	gun
 
-ship "Starling" "Starling (Thrasher)"
+ship "Kookaburra" "Kookaburra (Thrasher)"
 	outfits
 		"Thrasher Cannon" 3
 		"Thrasher Turret"
@@ -1952,9 +1952,9 @@ ship "Starling" "Starling (Thrasher)"
 
 
 ship "Tern"
-	sprite "ship/tern"
+	sprite "ship/remnant/tern"
 		"scale" 0.4
-	thumbnail "thumbnail/tern"
+	thumbnail "thumbnail/remnant/tern"
 	attributes
 		category "Drone"
 		licenses

@@ -20,17 +20,17 @@ fleet "Small Remnant"
 	personality
 		disables heroic plunders appeasing secretive
 	variant 8
-		"Starling"
+		"Kookaburra"
 	variant 6
-		"Starling (Heavy)"
+		"Kookaburra (Heavy)"
 	variant 5
-		"Starling (Sniper)"
+		"Kookaburra (Sniper)"
 	variant 4
-		"Starling (Hunter)"
+		"Kookaburra (Hunter)"
 	variant 3
-		"Starling (Thrasher)"
+		"Kookaburra (Thrasher)"
 	variant 1
-		"Starling (Sniper)" 2
+		"Kookaburra (Sniper)" 2
 	variant 1
 		"Albatross"
 	variant 1
@@ -58,22 +58,22 @@ fleet "Large Remnant"
 		disables heroic plunders appeasing secretive
 	variant 6
 		"Albatross"
-		"Starling" 2
+		"Kookaburra" 2
 	variant 6
 		"Albatross (Sniper)"
-		"Starling (Sniper)" 2
+		"Kookaburra (Sniper)" 2
 	variant 6
 		"Albatross (Turret)"
-		"Starling (Thrasher)" 2
+		"Kookaburra (Thrasher)" 2
 	variant 6
 		"Albatross (Heavy)"
-		"Starling (Heavy)" 2
+		"Kookaburra (Heavy)" 2
 	variant 3
 		"Albatross"
-		"Starling (Hunter)" 2
+		"Kookaburra (Hunter)" 2
 	variant 3
 		"Albatross (Sniper)"
-		"Starling (Hunter)" 2
+		"Kookaburra (Hunter)" 2
 	variant 2
 		"Albatross"
 		"Albatross (Sniper)"
@@ -82,7 +82,7 @@ fleet "Large Remnant"
 		"Albatross (Turret)"
 	variant 2
 		"Albatross"
-		"Starling"
+		"Kookaburra"
 		"Ibis"
 		"Petrel" 2
 		"Tern" 4
@@ -95,7 +95,7 @@ fleet "Large Remnant"
 		"Ibis"
 		"Petrel" 2
 		"Tern" 4
-		"Starling" 4
+		"Kookaburra" 4
 	variant 4
 		"Ibis" 3
 		"Petrel" 6
@@ -127,21 +127,21 @@ fleet "Remnant Transport"
 		"Gull" 2
 	variant 8
 		"Pelican"
-		"Starling" 2
+		"Kookaburra" 2
 	variant 6
 		"Pelican"
 		"Gull" 2
-		"Starling" 2
+		"Kookaburra" 2
 	variant 2
 		"Pelican" 3
 		"Albatross (Heavy)"
 	variant 2
 		"Pelican" 2
-		"Starling (Thrasher)" 2
-		"Starling (Sniper)"
+		"Kookaburra (Thrasher)" 2
+		"Kookaburra (Sniper)"
 	variant 2
 		"Pelican"
-		"Starling (Hunter)" 2
+		"Kookaburra (Hunter)" 2
 	variant 2
 		"Pelican"
 		"Ibis"
@@ -196,23 +196,23 @@ fleet "Light Remnant Defense"
 	personality
 		staying heroic unconstrained
 	variant 10
-		"Starling" 2
-		"Starling (Heavy)" 2
-		"Starling (Sniper)" 2
-		"Starling (Hunter)" 2
-		"Starling (Thrasher)" 2
+		"Kookaburra" 2
+		"Kookaburra (Heavy)" 2
+		"Kookaburra (Sniper)" 2
+		"Kookaburra (Hunter)" 2
+		"Kookaburra (Thrasher)" 2
 	variant 10
-		"Starling (Heavy)" 4
-		"Starling (Sniper)" 6
+		"Kookaburra (Heavy)" 4
+		"Kookaburra (Sniper)" 6
 	variant 10
-		"Starling" 10
+		"Kookaburra" 10
 	variant 10
-		"Starling (Heavy)" 10
+		"Kookaburra (Heavy)" 10
 	variant 10
-		"Starling (Sniper)" 10
+		"Kookaburra (Sniper)" 10
 	variant 10
-		"Starling (Heavy)" 5
-		"Starling (Hunter)" 5
+		"Kookaburra (Heavy)" 5
+		"Kookaburra (Hunter)" 5
 	variant 4
 		"Ibis" 5
 		"Tern" 20
@@ -226,23 +226,23 @@ fleet "Heavy Remnant Defense"
 	variant 6
 		"Albatross (Shield)"
 		"Albatross" 3
-		"Starling" 6
+		"Kookaburra" 6
 	variant 6
 		"Albatross (Shield)"
 		"Albatross (Sniper)" 3
-		"Starling (Sniper)" 6
+		"Kookaburra (Sniper)" 6
 	variant 6
 		"Albatross (Turret)" 3
-		"Starling (Thrasher)" 6
+		"Kookaburra (Thrasher)" 6
 	variant 6
 		"Albatross (Heavy)" 3
-		"Starling (Heavy)" 6
+		"Kookaburra (Heavy)" 6
 	variant 3
 		"Albatross" 3
-		"Starling (Hunter)" 6
+		"Kookaburra (Hunter)" 6
 	variant 3
 		"Albatross (Sniper)" 3
-		"Starling (Hunter)" 6
+		"Kookaburra (Hunter)" 6
 	variant 2
 		"Albatross" 3
 		"Albatross (Sniper)" 6

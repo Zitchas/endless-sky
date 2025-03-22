@@ -875,3 +875,188 @@ ship "Korath World-Ship" "Korath World-Ship C (Jump)"
 	turret -91 286 "Banisher Grav-Turret"
 	turret 91 286 "Warder Anti-Missile"
 
+
+
+ship "Starling"
+	sprite "ship/remnant/kookaburra"
+	thumbnail "thumbnail/remnant/kookaburra"
+	attributes
+		category "Light Warship"
+		licenses
+			Remnant
+		cost 8800000
+		"shields" 8800
+		"hull" 4900
+		"required crew" 6
+		"bunks" 15
+		"mass" 540
+		"drag" 4.4
+		"heat dissipation" 0.59
+		"fuel capacity" 925
+		"ramscoop" 1.75
+		"cargo space" 36
+		"outfit space" 339
+		"weapon capacity" 83
+		"engine capacity" 117
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
+		"shield generation" 1.8
+		"shield energy" 1.2
+		"hull repair rate" 0.8
+		"hull energy" 0.6
+		"cloak" .02
+		"cloaking energy" 5
+		"cloaking fuel" .1
+		"cloaked communication" 1
+		"cloaked scanning" 1
+		"outfit scan power" 12
+		"outfit scan efficiency" 20
+		"acceleration scan power" 30
+		"crew scan power" 30
+		"energy scan power" 30
+		"fuel scan power" 30
+		"maneuver scan power" 30
+		"range finder power" 30
+		"thermal scan power" 30
+		"velocity scan power" 30
+		"weapon scan power" 30
+		weapon
+			"blast radius" 80
+			"shield damage" 800
+			"hull damage" 400
+			"hit force" 1200
+	outfits
+		"Inhibitor Cannon" 3
+		"Point Defense Turret"
+		
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Emergency Ramscoop" 2
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Thermoelectric Cooler"
+		
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Forge-Class Steering"
+		# "Crucible-Class Steering" # Extra steering
+		"Hyperdrive"
+
+	engine -16 82 0.7
+	engine 16 82 0.7
+	engine 0 90 1
+	gun 0 -99 "Inhibitor Cannon"
+	gun -12 -72 "Inhibitor Cannon"
+	gun 12 -72 "Inhibitor Cannon"
+	gun -18 -49
+	gun 18 -49
+	pylon -6 -58
+	pylon 6 -58
+	pylon -13 -38
+	pylon 13 -38
+	turret 0 2 "Point Defense Turret"
+	leak "remnant leak" 30 4
+	leak "remnant leak sparkle" 30 10
+	explode "tiny explosion" 40
+	explode "small explosion" 20
+	explode "medium explosion" 10
+	"final explode" "final explosion small" 1
+	description "One of the strangest and most useful things that the Remnant have discovered in the abandoned worlds of the Ember Waste is alien cloaking technology. They have designed their scout ships to cloak when needed in order to explore alien territory without being seen... or to escape in a hurry after stealing something particularly valuable from those aliens."
+	description "	The cloaking technology is built into the Starling's hull; it cannot be removed or transferred to another ship."
+
+ship "Starling" "Starling (Heavy)"
+	outfits
+		"Thrasher Cannon" 5
+		"Point Defense Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 10
+
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+ship "Starling" "Starling (Sniper)"
+	outfits
+		"EMP Torpedo Bay"
+		"Inhibitor Cannon" 4
+		"EMP Torpedo" 8
+		"EMP Torpedo Storage Bay"
+
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Emergency Ramscoop" 2
+		"Quantum Key Stone"
+		"Outfits Expansion"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 9
+
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Smelter-Class Steering"
+		"Hyperdrive"
+
+	gun
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	pylon "EMP Torpedo Bay"
+	pylon
+	pylon
+	pylon
+
+ship "Starling" "Starling (Hunter)"
+	outfits
+		"Inhibitor Cannon" 2
+		"Thrasher Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Emergency Ramscoop"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 11
+
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+	gun
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun
+	gun
+
+ship "Starling" "Starling (Thrasher)"
+	outfits
+		"Thrasher Cannon" 3
+		"Thrasher Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 8
+
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+	gun "Thrasher Cannon"
+	gun "Thrasher Cannon"
+	gun "Thrasher Cannon"
+	gun
+	gun
+

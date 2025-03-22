@@ -15,7 +15,7 @@
 
 # This is the standard Remnant shipyard.
 shipyard "Remnant"
-	"Starling"
+	"Kookaburra"
 	"Gull"
 	"Albatross"
 	"Ibis"
