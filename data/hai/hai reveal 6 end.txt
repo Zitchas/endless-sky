@@ -531,20 +531,20 @@ fleet "Free Worlds Friendly Wormhole Guards"
 	variant 5
 		"Bastion (Laser)"
 	variant 8
-		"Osprey"
+		"Eagle"
 	variant 4
-		"Osprey (Missile)"
+		"Eagle (Missile)"
 	variant 4
-		"Osprey (Laser)"
+		"Eagle (Laser)"
 	variant 6
 		"Bastion"
-		"Osprey"
+		"Eagle"
 	variant 3
 		"Bastion (Heavy)"
-		"Osprey (Missile)"
+		"Eagle (Missile)"
 	variant 3
 		"Bastion (Laser)"
-		"Osprey (Laser)"
+		"Eagle (Laser)"
 	variant 2
 		"Falcon"
 	variant 1

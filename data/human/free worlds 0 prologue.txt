@@ -1211,7 +1211,7 @@ mission "FW Bounty 3"
 		government "Bounty"
 		personality heroic staying nemesis target
 		system "Shaula"
-		ship "Osprey (Alien Weapons)" "Silverhawk"
+		ship "Eagle (Alien Weapons)" "Silverhawk"
 		dialog phrase "generic hunted bounty eliminated dialog"
 	
 	on visit
@@ -2332,7 +2332,7 @@ mission "Defend Sabik"
 			names "free worlds capital"
 			variant
 				"Falcon"
-				"Osprey" 2
+				"Eagle" 2
 				"Hawk" 3
 				"Sparrow" 4
 	npc

@@ -53,8 +53,8 @@ mission "Liberate Kornephoros"
 			names "free worlds capital"
 			variant
 				"Falcon"
-				"Osprey"
-				"Osprey (Missile)"
+				"Eagle"
+				"Eagle (Missile)"
 	npc
 		government "Free Worlds"
 		personality heroic disables
@@ -62,7 +62,7 @@ mission "Liberate Kornephoros"
 		fleet
 			names "free worlds capital"
 			variant
-				"Osprey"
+				"Eagle"
 				"Falcon (Heavy)"
 				"Hawk" 2
 		fleet
@@ -79,7 +79,7 @@ mission "Liberate Kornephoros"
 			names "free worlds capital"
 			variant
 				"Falcon"
-				"Osprey (Laser)"
+				"Eagle (Laser)"
 				"Hawk"
 				"Hawk (Rocket)"
 				"Sparrow" 3
@@ -1333,8 +1333,8 @@ mission "FW Pirates: Attack 2"
 		fleet
 			names "free worlds capital"
 			variant
-				"Osprey"
-				"Osprey (Missile)"
+				"Eagle"
+				"Eagle (Missile)"
 		fleet
 			names "free worlds capital"
 			fighters
@@ -1919,7 +1919,7 @@ mission "FW Early Warning 3"
 			names "free worlds capital"
 			variant
 				"Falcon" 2
-				"Osprey" 2
+				"Eagle" 2
 		fleet
 			names "free worlds capital"
 			variant
@@ -1933,7 +1933,7 @@ mission "FW Early Warning 3"
 			names "free worlds capital"
 			variant
 				"Falcon"
-				"Osprey"
+				"Eagle"
 				"Sparrow" 3
 	npc evade
 		government "Republic"
@@ -1986,7 +1986,7 @@ mission "FW Early Warning 4"
 			names "free worlds capital"
 			variant
 				"Falcon"
-				"Osprey"
+				"Eagle"
 		fleet
 			names "free worlds capital"
 			variant
@@ -1998,13 +1998,13 @@ mission "FW Early Warning 4"
 		fleet
 			names "free worlds capital"
 			variant
-				"Osprey"
-				"Osprey (Missile)"
+				"Eagle"
+				"Eagle (Missile)"
 		fleet
 			names "free worlds capital"
 			variant
 				"Falcon"
-				"Osprey (Laser)"
+				"Eagle (Laser)"
 				"Hawk" 3
 				"Sparrow" 5
 		fleet
