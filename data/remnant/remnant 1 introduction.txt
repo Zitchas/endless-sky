@@ -271,11 +271,11 @@ mission "Remnant: Defense 1"
 	npc
 		government "Remnant"
 		personality staying uninterested disables plunders
-		fleet "Large Remnant"
+		fleet "Large Remnant" 3
 	npc evade
 		government "Kor Alaji"
 		personality staying heroic plunders harvests target
-		fleet "Kor Alaji Raid" 6
+		fleet "Kor Alaji Raid" 4
 	on visit
 		dialog "There are still Korath raiders circling overhead. You should take off and help the Remnant ships to fight them."
 	on complete
