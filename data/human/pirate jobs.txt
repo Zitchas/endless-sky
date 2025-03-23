@@ -3121,7 +3121,7 @@ mission "FW Assassination [1]"
 				"Hawk" 3
 			variant 1
 				"Blackbird"
-				"Osprey"
+				"Eagle"
 		dialog "The target has been destroyed. Return to <destination> for your payment."
 	on complete
 		payment 460000
@@ -3160,11 +3160,11 @@ mission "FW Assassination [2]"
 				"Falcon"
 			variant 3
 				"Blackbird"
-				"Osprey" 2
+				"Eagle" 2
 			variant 3
 				"Blackbird"
 				"Bastion"
-				"Osprey"
+				"Eagle"
 			variant 2
 				"Blackbird"
 				"Bastion"

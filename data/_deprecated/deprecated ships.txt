@@ -875,3 +875,345 @@ ship "Korath World-Ship" "Korath World-Ship C (Jump)"
 	turret -91 286 "Banisher Grav-Turret"
 	turret 91 286 "Warder Anti-Missile"
 
+
+
+ship "Starling"
+	sprite "ship/remnant/kookaburra"
+	thumbnail "thumbnail/remnant/kookaburra"
+	attributes
+		category "Light Warship"
+		licenses
+			Remnant
+		cost 8800000
+		"shields" 8800
+		"hull" 4900
+		"required crew" 6
+		"bunks" 15
+		"mass" 540
+		"drag" 4.4
+		"heat dissipation" 0.59
+		"fuel capacity" 925
+		"ramscoop" 1.75
+		"cargo space" 36
+		"outfit space" 339
+		"weapon capacity" 83
+		"engine capacity" 117
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
+		"shield generation" 1.8
+		"shield energy" 1.2
+		"hull repair rate" 0.8
+		"hull energy" 0.6
+		"cloak" .02
+		"cloaking energy" 5
+		"cloaking fuel" .1
+		"cloaked communication" 1
+		"cloaked scanning" 1
+		"outfit scan power" 12
+		"outfit scan efficiency" 20
+		"acceleration scan power" 30
+		"crew scan power" 30
+		"energy scan power" 30
+		"fuel scan power" 30
+		"maneuver scan power" 30
+		"range finder power" 30
+		"thermal scan power" 30
+		"velocity scan power" 30
+		"weapon scan power" 30
+		weapon
+			"blast radius" 80
+			"shield damage" 800
+			"hull damage" 400
+			"hit force" 1200
+	outfits
+		"Inhibitor Cannon" 3
+		"Point Defense Turret"
+		
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Emergency Ramscoop" 2
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Thermoelectric Cooler"
+		
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Forge-Class Steering"
+		# "Crucible-Class Steering" # Extra steering
+		"Hyperdrive"
+
+	engine -16 82 0.7
+	engine 16 82 0.7
+	engine 0 90 1
+	gun 0 -99 "Inhibitor Cannon"
+	gun -12 -72 "Inhibitor Cannon"
+	gun 12 -72 "Inhibitor Cannon"
+	gun -18 -49
+	gun 18 -49
+	pylon -6 -58
+	pylon 6 -58
+	pylon -13 -38
+	pylon 13 -38
+	turret 0 2 "Point Defense Turret"
+	leak "remnant leak" 30 4
+	leak "remnant leak sparkle" 30 10
+	explode "tiny explosion" 40
+	explode "small explosion" 20
+	explode "medium explosion" 10
+	"final explode" "final explosion small" 1
+	description "One of the strangest and most useful things that the Remnant have discovered in the abandoned worlds of the Ember Waste is alien cloaking technology. They have designed their scout ships to cloak when needed in order to explore alien territory without being seen... or to escape in a hurry after stealing something particularly valuable from those aliens."
+	description "	The cloaking technology is built into the Starling's hull; it cannot be removed or transferred to another ship."
+
+ship "Starling" "Starling (Heavy)"
+	outfits
+		"Thrasher Cannon" 5
+		"Point Defense Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 10
+
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+ship "Starling" "Starling (Sniper)"
+	outfits
+		"EMP Torpedo Bay"
+		"Inhibitor Cannon" 4
+		"EMP Torpedo" 8
+		"EMP Torpedo Storage Bay"
+
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Emergency Ramscoop" 2
+		"Quantum Key Stone"
+		"Outfits Expansion"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 9
+
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Smelter-Class Steering"
+		"Hyperdrive"
+
+	gun
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	pylon "EMP Torpedo Bay"
+	pylon
+	pylon
+	pylon
+
+ship "Starling" "Starling (Hunter)"
+	outfits
+		"Inhibitor Cannon" 2
+		"Thrasher Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Emergency Ramscoop"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 11
+
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+	gun
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun
+	gun
+
+ship "Starling" "Starling (Thrasher)"
+	outfits
+		"Thrasher Cannon" 3
+		"Thrasher Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 8
+
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+	gun "Thrasher Cannon"
+	gun "Thrasher Cannon"
+	gun "Thrasher Cannon"
+	gun
+	gun
+
+
+
+ship "Osprey"
+	sprite "ship/osprey"
+	thumbnail "thumbnail/osprey"
+	attributes
+		category "Medium Warship"
+		"cost" 4200000
+		"shields" 7200
+		"hull" 1600
+		"required crew" 9
+		"bunks" 24
+		"mass" 1080
+		"drag" 8.9
+		"heat dissipation" .54
+		"fuel capacity" 775
+		"cargo space" 40
+		"outfit space" 492
+		"weapon capacity" 180
+		"engine capacity" 169
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
+		weapon
+			"blast radius" 80
+			"shield damage" 800
+			"hull damage" 400
+			"hit force" 1200
+	outfits
+		"Plasma Cannon" 4
+		"Quad Blaster Turret"
+		"Heavy Anti-Missile Turret"
+		
+		"Breeder Reactor"
+		"LP036a Battery Pack"
+		"D23-QP Shield Generator"
+		"Large Radar Jammer"
+		"Liquid Helium Cooler"
+		"Laser Rifle" 3
+		
+		"RC37 Reaction Thruster"
+		"RC34 Reaction LTC"
+		"RC32 Reaction Steering"
+		"Hyperdrive"
+		
+	engine -42.5 62.5 .8
+	engine 42.5 62.5 .8
+	engine -16.5 105 .6
+	engine 16.5 105 .6
+	gun -9.5 -95.5 "Plasma Cannon"
+	gun 9.5 -95.5 "Plasma Cannon"
+	gun -25 -49.5 "Plasma Cannon"
+	gun 25 -49.5 "Plasma Cannon"
+	pylon -17 -12
+	pylon 17 -12
+	pylon -50 29
+	pylon 50 29
+	turret -15.5 -12 "Quad Blaster Turret"
+	turret 15.5 -12 "Heavy Anti-Missile Turret"
+	leak "leak" 40 50
+	leak "flame" 80 80
+	leak "big leak" 80 30
+	explode "medium explosion" 24
+	explode "large explosion" 16
+	explode "small explosion" 40
+	explode "tiny explosion" 28
+	"final explode" "final explosion medium"
+	description "After the Blackbird gained surprising popularity as an agile light warship despite its original design as a transport, Tarazed decided to produce a new design specifically intended as a warship. The Osprey was the result. Although it is considered overpriced by most savvy pilots, it is nevertheless a perennial favorite among those who have the extra cash to spend on it."
+
+
+
+ship "Osprey" "Osprey (Alien Weapons)"
+	outfits
+		"Ion Cannon" 2
+		"Pulse Cannon" 2
+		"Pulse Turret"
+		"Chameleon Anti-Missile"
+		"Boulder Reactor"
+		"Hai Fissure Batteries"
+		"Hai Corundum Regenerator"
+		"Liquid Nitrogen Cooler"
+		"Pulse Rifle" 3
+		`"Bondir" Atomic Thruster`
+		`"Bondir" Atomic LTC`
+		`"Bondir" Atomic Steering`
+		Hyperdrive
+
+
+ship "Osprey" "Osprey (Laser)"
+	outfits
+		"Heavy Laser" 4
+		"Heavy Laser Turret"
+		"Heavy Anti-Missile Turret"
+		"Breeder Reactor"
+		"LP036a Battery Pack"
+		"Supercapacitor" 4
+		"D94-YV Shield Generator"
+		"Water Coolant System"
+		"Tactical Scanner"
+		"Laser Rifle" 3
+		"Impala Plasma Thruster"
+		"Impala Plasma LTC"
+		"X4200 Ion Steering"
+		"Hyperdrive"
+
+
+ship "Osprey" "Osprey (Missile)"
+	outfits
+		"Torpedo Launcher" 2
+		"Torpedo" 30
+		"Heavy Rocket Launcher" 2
+		"Heavy Rocket" 40
+		"Heavy Laser Turret"
+		"Heavy Anti-Missile Turret"
+		"Breeder Reactor"
+		"LP036a Battery Pack"
+		"Supercapacitor" 3
+		"D41-HY Shield Generator"
+		"Water Coolant System"
+		"Tactical Scanner"
+		"Outfits Expansion"
+		"Laser Rifle" 3
+		"A520 Atomic Thruster"
+		"AL529 Atomic LTC"
+		"A375 Atomic Steering"
+		"Hyperdrive"
+	gun
+	gun
+	gun
+	gun
+	pylon "Heavy Rocket Launcher"
+	pylon "Heavy Rocket Launcher"
+	pylon "Torpedo Launcher"
+	pylon "Torpedo Launcher"
+
+
+# This variant uses outfits acquired in the post-war condition that were surplus or black market for diversity *after* the main campaign.
+ship "Osprey" "Osprey (Particle Anti-Missile)"
+	outfits
+		"Heavy Anti-Missile Turret"
+		"LP036a Battery Pack"
+		"S-970 Regenerator"
+		Hyperdrive
+		"LP072a Battery Pack"
+		"Volcano Afterburner"
+		"Outfits Expansion" 2
+		"Liquid Nitrogen Cooler"
+		"Particle Cannon" 4
+		"A370 Atomic Thruster"
+		"AL379 Atomic LTC"
+		"A375 Atomic Steering"
+		"Laser Rifle" 3
+		"Water Coolant System"
+		"Fusion Reactor"
+	
+

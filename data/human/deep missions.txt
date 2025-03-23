@@ -1616,7 +1616,7 @@ mission "Deep: Remnant 3: Revealed"
 			names "remnant"
 			variant
 				"Albatross"
-				"Starling"
+				"Kookaburra"
 		dialog `You have finished scanning the Remnant ships in the system, and they don't seem to have taken too kindly to that. You may now return to <destination> with the scanner logs.`
 	
 	on visit

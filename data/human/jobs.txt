@@ -3258,9 +3258,9 @@ mission "Bounty Hunting (Small)"
 			variant
 				"Splinter (Laser)"
 			variant
-				"Osprey"
+				"Eagle"
 			variant
-				"Osprey (Laser)"
+				"Eagle (Laser)"
 			variant
 				"Bastion"
 			variant
@@ -3300,9 +3300,9 @@ mission "Bounty Hunting (Small, Local)"
 			variant
 				"Splinter (Laser)"
 			variant
-				"Osprey"
+				"Eagle"
 			variant
-				"Osprey (Laser)"
+				"Eagle (Laser)"
 			variant
 				"Bastion"
 			variant
@@ -3340,7 +3340,7 @@ mission "Bounty Hunting (Medium)"
 			variant
 				"Protector (Laser)"
 			variant
-				"Osprey (Missile)"
+				"Eagle (Missile)"
 			variant
 				"Bastion (Heavy)"
 			variant
@@ -3376,7 +3376,7 @@ mission "Bounty Hunting (Medium, Local)"
 			variant
 				"Protector (Proton)"
 			variant
-				"Osprey (Missile)"
+				"Eagle (Missile)"
 			variant
 				"Bastion (Heavy)"
 			variant
@@ -3503,9 +3503,9 @@ mission "Bounty Hunting (Small, Hidden)"
 			variant
 				"Splinter (Laser)"
 			variant
-				"Osprey"
+				"Eagle"
 			variant
-				"Osprey (Laser)"
+				"Eagle (Laser)"
 			variant
 				"Bastion"
 			variant
@@ -3546,7 +3546,7 @@ mission "Bounty Hunting (Medium, Hidden)"
 			variant
 				"Protector (Laser)"
 			variant
-				"Osprey (Missile)"
+				"Eagle (Missile)"
 			variant
 				"Bastion (Heavy)"
 			variant
@@ -3669,7 +3669,7 @@ mission "Bounty Hunting (Medium, Boarding, Entering)"
 			variant
 				"Corvette (Speedy)"
 			variant
-				"Osprey (Missile)"
+				"Eagle (Missile)"
 			variant
 				"Argosy (Missile)"
 			variant

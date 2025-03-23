@@ -371,7 +371,7 @@ mission "Remnant: Rescue"
 		fleet
 			names "remnant"
 			variant
-				Starling
+				Kookaburra
 			variant
 				Gull
 	on complete
@@ -483,7 +483,7 @@ mission "Remnant: Rescue 2"
 			variant 7
 				Gull
 			variant 3
-				Starling
+				Kookaburra
 			variant 3
 				Pelican
 	on complete
@@ -671,7 +671,7 @@ mission "Remnant: Rescue 5"
 			variant 6
 				Gull
 			variant 3
-				Starling
+				Kookaburra
 	on complete
 		"remnant: rescue missions" ++
 		payment 500000

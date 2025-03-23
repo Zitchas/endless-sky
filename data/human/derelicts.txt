@@ -114,7 +114,7 @@ fleet "Derelict Southern"
 	variant 12
 		"Hauler (Derelict)"
 	variant 12
-		"Osprey (Derelict)"
+		"Eagle (Derelict)"
 	variant 3
 		"Firebird (Derelict)"
 	variant 2
@@ -409,7 +409,7 @@ ship "Leviathan" "Leviathan (Derelict)"
 		"Hyperdrive"
 
 
-ship "Osprey" "Osprey (Derelict)"
+ship "Eagle" "Eagle (Derelict)"
 	"uncapturable"
 	add attributes
 		"bunks" -24

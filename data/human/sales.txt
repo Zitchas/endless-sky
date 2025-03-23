@@ -22,7 +22,7 @@ shipyard "Tarazed Basics"
 	"Blackbird"
 
 shipyard "Tarazed Advanced"
-	"Osprey"
+	"Eagle"
 	"Falcon"
 
 shipyard "Southbound Basics"
@@ -124,7 +124,7 @@ shipyard "Southern Pirates"
 shipyard "Advanced Southern Pirates"
 	"Falcon"
 	"Modified Argosy"
-	"Osprey"
+	"Eagle"
 
 shipyard "Core Pirates"
 	"Manta"
@@ -147,7 +147,7 @@ shipyard "Luxury Ships"
 
 # For a few decades, New Tortuga has had advanced technology, Syndicate defectors, and a steady supply of poached employees. One of their top priorities has been technological advancement. They are only one planet though, so even with help from an advanced species, their success has been limited. Thus, this list is restricted low-to-mid-range tech from older companies. This is with the exception of the Syndicate, for which they already had access to top technology.
 shipyard "Independent (Korath-Allied)"
-	# Advanced Southern Pirates without the Osprey or Falcon:
+	# Advanced Southern Pirates without the Eagle or Falcon:
 	"Modified Argosy"
 
 	# Commonly available from multiple sellers:
