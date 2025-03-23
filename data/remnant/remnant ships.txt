@@ -2079,7 +2079,7 @@ ship "Swan"
 	explode "huge explosion" 10
 	"final explode" "final explosion large"
 	description "Historically, the Remnant have not needed to support remote fleet operations. It had, however, been anticipated as a part of their contingency plans to support large scale evacuations. The first Remnant survived by running, modern Remnant prosper through mobility, and it is expected that the Remnant of the future shall thrive by those same means."
-	description "	The Swan, thus, was designed first and foremost to be a refueler. Not only carrying a prodigous amount of fuel as well as massive arrays to collect more, but also ferrying a number of fighters and drones that can be used to deliver fuel to other ships in the fleet. It can also carry a significant amount of cargo"
+	description "	The Swan, thus, was designed first and foremost to be a refueler. Not only carrying a prodigous amount of fuel as well as massive arrays to collect more, but also ferrying a number of fighters and drones that can be used to deliver fuel to other ships in the fleet. It can also carry a significant amount of cargo."
 	description "	The cloaking technology is built into the Swan's hull; it cannot be removed or transferred to another ship. The Remnant engineers note that, due to its size, the Swan's cloak is both slower and consumes significantly more energy and fuel than other present-day designs."
 
 

@@ -904,7 +904,7 @@ outfit "Manifold-Class Thruster"
 	"reverse flare sprite" "effect/remnant flare/large"
 		"frame rate" 3
 	"reverse flare sound" "plasma medium"
-	description "Historically the Remnant had no need for thrusters this large or this powerful, however times have changed and the need to field larger ships as part of their evacuation efforts has led to this hitherto experimental design entering production."
+	description "Historically the Remnant had no need for thrusters this large or this powerful, but times have changed and the need to field larger ships as part of their evacuation efforts has led to this hitherto experimental design entering production."
 
 outfit "Crucible-Class Steering"
 	category "Engines"
