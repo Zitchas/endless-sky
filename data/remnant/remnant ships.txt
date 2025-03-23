@@ -1972,7 +1972,7 @@ ship "Swan"
 		"ramscoop" 8.75
 		"cargo space" 275
 		"outfit space" 772
-		"weapon capacity" 160
+		"weapon capacity" 180
 		"engine capacity" 252
 		"solar collection" 5
 		"lateral thruster slot" 1
