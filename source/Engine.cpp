@@ -1811,8 +1811,8 @@ void Engine::CalculateStep()
 		}
 		else if(flagship->IsLatThrusting() && !flagship->LateralEnginePoints().empty())
 		{
-			for(const auto &it : ship->Attributes().LateralFlareSounds())
-				Audio::Play(it.first, ship->Position(), SoundCategory::ENGINE);
+			for(const auto &it : flagship->Attributes().LateralFlareSounds())
+				Audio::Play(it.first, flagship->Position(), SoundCategory::ENGINE);
 		}
 		if(flagship->IsSteering() && !flagship->SteeringEnginePoints().empty())
 		{
