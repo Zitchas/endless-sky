@@ -18,6 +18,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 #include "text/alignment.hpp"
 #include "CategoryTypes.h"
 #include "Color.h"
+#include "CustomSaleManager.h"
 #include "Dialog.h"
 #include "text/DisplayText.h"
 #include "shader/FillShader.h"
@@ -65,7 +66,7 @@ namespace {
 		return ship.GetPlanet() == here;
 	}
 
-	const int HOVER_TIME = 60;
+	const int HOVER_TIME = 30;
 
 	void DrawTooltip(const string &text, const Point &hoverPoint, const Color &textColor, const Color &backColor)
 	{
@@ -109,6 +110,7 @@ ShopPanel::ShopPanel(PlayerInfo &player, bool isOutfitter)
 		playerShips.insert(playerShip);
 	SetIsFullScreen(true);
 	SetInterruptible(false);
+	CustomSaleManager::Refresh(planet, player.Conditions());
 }
 
 

@@ -882,7 +882,7 @@ outfit "Meteor Missile Launcher"
 	"mass" 8
 	"outfit space" -14
 	"weapon capacity" -14
-	"gun ports" -1
+	"missile pylons" -1
 	"meteor capacity" 30
 	weapon
 		sprite "projectile/meteor"
@@ -920,7 +920,7 @@ outfit "Meteor Missile Pod"
 	"mass" 1
 	"outfit space" -3
 	"weapon capacity" -3
-	"gun ports" -1
+	"missile pylons" -1
 	"meteor capacity" 7
 	weapon
 		sprite "projectile/meteor"
@@ -991,7 +991,7 @@ outfit "Sidewinder Missile Launcher"
 	"mass" 11
 	"outfit space" -20
 	"weapon capacity" -20
-	"gun ports" -1
+	"missile pylons" -1
 	"sidewinder capacity" 45
 	weapon
 		sprite "projectile/sidewinder"
@@ -1030,7 +1030,7 @@ outfit "Sidewinder Missile Pod"
 	"mass" 2
 	"outfit space" -4
 	"weapon capacity" -4
-	"gun ports" -1
+	"missile pylons" -1
 	"sidewinder capacity" 6
 	weapon
 		sprite "projectile/sidewinder"
@@ -1103,7 +1103,7 @@ outfit "Javelin Pod"
 	"mass" 4
 	"outfit space" -12
 	"weapon capacity" -12
-	"gun ports" -1
+	"missile pylons" -1
 	"javelin capacity" 200
 	weapon
 		sprite "projectile/javelin"
@@ -1133,7 +1133,7 @@ outfit "Javelin Mini Pod"
 	"mass" 1
 	"outfit space" -3
 	"weapon capacity" -3
-	"gun ports" -1
+	"missile pylons" -1
 	"javelin capacity" 30
 	weapon
 		sprite "projectile/javelin"
@@ -1223,7 +1223,7 @@ outfit "Torpedo Launcher"
 	"mass" 18
 	"outfit space" -30
 	"weapon capacity" -30
-	"gun ports" -1
+	"missile pylons" -1
 	"torpedo capacity" 30
 	weapon
 		sprite "projectile/torpedo"
@@ -1261,7 +1261,7 @@ outfit "Torpedo Pod"
 	"mass" 5
 	"outfit space" -8
 	"weapon capacity" -8
-	"gun ports" -1
+	"missile pylons" -1
 	"torpedo capacity" 3
 	weapon
 		sprite "projectile/torpedo"
@@ -1332,7 +1332,7 @@ outfit "Typhoon Launcher"
 	"mass" 25
 	"outfit space" -40
 	"weapon capacity" -40
-	"gun ports" -1
+	"missile pylons" -1
 	"typhoon capacity" 30
 	weapon
 		sprite "projectile/typhoon"
@@ -1370,7 +1370,7 @@ outfit "Typhoon Pod"
 	"mass" 6
 	"outfit space" -12
 	"weapon capacity" -12
-	"gun ports" -1
+	"missile pylons" -1
 	"typhoon capacity" 3
 	weapon
 		sprite "projectile/typhoon"
@@ -1440,7 +1440,7 @@ outfit "Heavy Rocket Launcher"
 	"mass" 15
 	"outfit space" -25
 	"weapon capacity" -25
-	"gun ports" -1
+	"missile pylons" -1
 	"rocket capacity" 20
 	weapon
 		sprite "projectile/rocket"
@@ -1475,7 +1475,7 @@ outfit "Heavy Rocket Pod"
 	"mass" 3
 	"outfit space" -6
 	"weapon capacity" -6
-	"gun ports" -1
+	"missile pylons" -1
 	"rocket capacity" 2
 	weapon
 		sprite "projectile/rocket"
@@ -1526,7 +1526,7 @@ outfit "Nuclear Missile"
 	"mass" 10
 	"outfit space" -10
 	"weapon capacity" -10
-	"gun ports" -1
+	"missile pylons" -1
 	weapon
 		sprite "projectile/missile"
 			"no repeat"

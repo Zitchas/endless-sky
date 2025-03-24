@@ -448,17 +448,17 @@ mission "FW Southern Battle 2"
 			names "free worlds capital"
 			variant
 				"Falcon (Plasma)"
-				"Osprey" 2
+				"Eagle" 2
 		fleet
 			names "free worlds capital"
 			variant
 				"Falcon (Plasma)"
-				"Osprey (Missile)" 2
+				"Eagle (Missile)" 2
 		fleet
 			names "free worlds capital"
 			variant
 				"Falcon (Heavy)"
-				"Osprey (Laser)" 2
+				"Eagle (Laser)" 2
 		fleet
 			names "free worlds capital"
 			variant
@@ -2286,7 +2286,7 @@ mission "FW Liberate Delta Sagittarii"
 			names "free worlds capital"
 			variant
 				"Falcon (Plasma)"
-				"Osprey"
+				"Eagle"
 		fleet
 			names "free worlds capital"
 			variant

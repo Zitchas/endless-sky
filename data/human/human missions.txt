@@ -1332,6 +1332,7 @@ ship "Hallucination"
 		"jump drive" 1
 		"automaton" 1
 		"thrust" 30
+		"lateral thrust" 15
 		"turn" 500
 		"energy generation" 1
 	outfits
@@ -2043,6 +2044,7 @@ ship "Asteroid"
 		"automaton" 1
 		"bunks" 0
 		"thrust" 10
+		"lateral thrust" 5
 		"turn" 100
 		"thrusting energy" 1
 		"turning energy" 1
@@ -2620,6 +2622,7 @@ mission "Terminus exploration"
 
 ship "Science Drone"
 	sprite "ship/science drone"
+		"scale" 0.75 # Not scaled as much because needs to be found by players, and science collection prioritizes antenna size over combat compactness.
 	attributes
 		category "Drone"
 		hull 200
@@ -3726,7 +3729,8 @@ ship "Vanguard" "Vanguard (Plasma Slow)"
 		"Interference Plating" 4
 		"Cargo Expansion" 3
 		"Laser Rifle" 11
-		"X3700 Ion Thruster"
+		"X2700 Ion Thruster"
+		"X3400 Ion LTC"
 		"X3200 Ion Steering"
 		"Scram Drive"
 
@@ -5691,7 +5695,7 @@ mission "Deal Change 2"
 		government "Bounty Hunter"
 		personality staying nemesis
 		system "Shaula"
-		ship "Osprey (Laser)" "Sellout"
+		ship "Eagle (Laser)" "Sellout"
 	on complete
 		fail "Deal Change 1"
 		payment 300000
@@ -7652,6 +7656,10 @@ ship "Emergency Shuttle"
 		"outfit space" 39
 		"weapon capacity" 0
 		"engine capacity" 20
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		weapon
 			"blast radius" 9
 			"shield damage" 90
@@ -8610,7 +8618,7 @@ mission "Timothy Radrickson 3b: Pirate Base"
 
 				"Marauder Raven"
 				"Modified Argosy (Gatling)" 2
-				"Osprey (Missile)"
+				"Eagle (Missile)"
 
 				"Hawk (Plasma)"
 				"Quicksilver" 2
@@ -8633,7 +8641,7 @@ mission "Timothy Radrickson 3b: Pirate Base"
 				"Firebird"
 
 				"Modified Argosy (Gatling)"
-				"Osprey (Missile)"
+				"Eagle (Missile)"
 
 				"Hawk (Plasma)"
 				"Fury (Gatling)"

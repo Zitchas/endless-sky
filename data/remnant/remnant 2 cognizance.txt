@@ -48,7 +48,7 @@ mission "Remnant: Cognizance 1"
 		personality staying heroic disables uninterested
 		ship "Archon (Cloaked)" "Lifted Lorax"
 	npc
-		government "Korath"
+		government "Kor Alaji"
 		system "Nenia"
 		personality entering forbearing timid uninterested surveillance staying
 		fleet
@@ -111,7 +111,7 @@ mission "Remnant: Cognizance 2"
 		dialog
 			`As you spot the Korath hunters, you recall Plume's request and tap the "Record" button as your ship prepares for combat.`
 	npc kill
-		government "Korath"
+		government "Kor Alaji"
 		system "Nenia"
 		personality forbearing timid uninterested surveillance staying
 		fleet
@@ -122,7 +122,6 @@ mission "Remnant: Cognizance 2"
 				"'olofez" 2
 		dialog "You have destroyed the Korath hunters. You can now return to <planet> to collect your payment."
 	on complete
-		event "korath hunting"
 		event "korath rescue: nenia small"
 		event "korath rescue: nenia small end" 18
 		conversation
@@ -173,7 +172,7 @@ mission "Remnant: Cognizance 4"
 	npc kill
 		to despawn
 			has "remnant: cognizance: found korath fleet"
-		government "Korath"
+		government "Kor Alaji"
 		personality staying surveillance
 		system "Aescolanus"
 		fleet
@@ -197,7 +196,7 @@ mission "Remnant: Cognizance 4"
 	on complete
 		payment 500000
 		conversation
-			`This time, as you complete your post-flight checks you spot Prefect Chilia exiting the Starling next to you and watch as he strides across the pad to your airlock. You hit the open button as he clambers up the ladder. Without a word you pull up the sensor logs from Aescolanus, highlighting the position of the various ships. His eyes flit over the display for a moment, then he nods.`
+			`This time, as you complete your post-flight checks you spot Prefect Chilia exiting the Kookaburra next to you and watch as he strides across the pad to your airlock. You hit the open button as he clambers up the ladder. Without a word you pull up the sensor logs from Aescolanus, highlighting the position of the various ships. His eyes flit over the display for a moment, then he nods.`
 			branch destroyed
 				has "remnant: cognizance: killed korath fleet"
 			`	"I will notify a task force. Meet me in the spaceport, and make sure your ship is ready to fight."`
@@ -230,11 +229,11 @@ mission "Remnant: Cognizance 5"
 			label fleetkilled
 			`When you arrive in the spaceport, you find Prefect Chilia in the middle of briefing a group of Remnant. He waves you forward as soon as you approach and introduces you to the briefing. "Everyone, this is Captain <last>, who has located the Korath hunters twice now and recently destroyed part of their fleet. The Captain will take the lead on tracking the rest for this mission." As you cross the room to join him, you take a good look at the group. One detail that stands out to you is that every one of the Remnant in this group is wearing a thick leather wrap around their necks, which extends up to their hairline. The leather has a scaly texture, and it appears to be pulsing faintly. Unfortunately, you do not have time to ask questions, as Chilia has not stopped issuing instructions.`
 			label next
-			`	He turns to you. "These are the captains who will be following your lead. They are flying two Albatrosses, two Ibises with full complements, and six Starlings. One of the Albatrosses is outfitted to act as a shield; let it take the brunt of attacks." He pauses, looking around at the group. "This task force would be overkill for the intended target, but we are not taking any chances: make sure every Korath there is killed. Salvage is secondary: priority is making sure there are no escapees."`
+			`	He turns to you. "These are the captains who will be following your lead. They are flying two Albatrosses, two Ibises with full complements, and six Kookaburras . One of the Albatrosses is outfitted to act as a shield; let it take the brunt of attacks." He pauses, looking around at the group. "This task force would be overkill for the intended target, but we are not taking any chances: make sure every Korath there is killed. Salvage is secondary: priority is making sure there are no escapees."`
 			`	He steps back and looks at the group. "May the Embers burn bright for you." With that, he gives the group a respectful nod and walks away. The captains all look around and make various signs you think are probably encouraging combat pilot slang and variations on Prefect Chilia's parting words. As they disperse to their ships, one gestures to you. "Lead on, Captain."`
 				accept
 	npc kill
-		government "Korath"
+		government "Kor Alaji"
 		personality staying target
 		system "Nenia"
 		fleet
@@ -255,7 +254,7 @@ mission "Remnant: Cognizance 5"
 				"Albatross (Shield)"
 				"Albatross"
 				"Ibis" 2
-				"Starling (Heavy)" 6
+				"Kookaburra (Heavy)" 6
 				"Petrel" 4
 				"Tern" 8
 	on enter "Aescolanus"
@@ -323,7 +322,7 @@ mission "Remnant: Cognizance 7"
 			`	With a respectful bow to Chilia (who returns it equally respectfully), Plume heads for your ship. "I will be waiting onboard for you, Captain."`
 				accept
 	npc
-		government "Korath"
+		government "Kor Alaji"
 		personality staying
 		system "Nenia"
 		fleet
@@ -354,7 +353,7 @@ mission "Remnant: Cognizance 8"
 			`	"It is wonderful to be here, watching them from a distance. A few did venture close, too. But I'm worried about them. Some of the void sprites out there have scorch marks similar to the scoring left by Korath weapons. And we already noticed that they are hiding much deeper in the atmosphere than normal." He glances down at his datapad then back up at you. "Once we are back into the chaos of the Ember Waste, I will send Chilia a signal. It looks like I will need to double-check my records and samples back on Aventine. Please take me there."`
 				accept
 	npc
-		government "Korath"
+		government "Kor Alaji"
 		personality staying
 		system "Nenia"
 		fleet
@@ -396,7 +395,7 @@ mission "Remnant: Cognizance 9"
 				`	"What do you mean?"`
 				`	"Let's get on with it."`
 					goto skipinfo
-			`	"Well, this place is fairly old. It was built shortly after we learned how to build Starlings - which is where we learned of the troubles of extending the cloaking field beyond small ships. I don't know the mechanics behind it, but it has taken close to two centuries of study and development for cloaks to be feasible on large ships. We had plenty of Puffins back then, and the techniques for building high-pressure systems were well understood. The Alphas hadn't shown any interest in gas giants or 'gaslined ships' as we call them, so having somewhere like this to hide in makes sense. Best place to hide is somewhere no one will look, right?" With that, they nod to themself, climb to their feet, and head towards the suit locker.`
+			`	"Well, this place is fairly old. It was built shortly after we learned how to build Kookaburras - which is where we learned of the troubles of extending the cloaking field beyond small ships. I don't know the mechanics behind it, but it has taken close to two centuries of study and development for cloaks to be feasible on large ships. We had plenty of Puffins back then, and the techniques for building high-pressure systems were well understood. The Alphas hadn't shown any interest in gas giants or 'gaslined ships' as we call them, so having somewhere like this to hide in makes sense. Best place to hide is somewhere no one will look, right?" With that, they nod to themself, climb to their feet, and head towards the suit locker.`
 			label skipinfo
 			`	"The station should be pressurized with a normal atmosphere, but it has been running on standby for ages with just yearly maintenance. It is time to get this place up and running again." With two of you operating your ship's loading equipment, everything is transferred in short order. You notice that the last crate includes a substantial amount of field rations and survival gear. It looks like Gavriil is planning on staying here for a while.`
 			`	As they head off deeper into the station, you receive a notification that "Remnant Logistics" has made a deposit of <payment> to your account.`
@@ -516,7 +515,7 @@ mission "Remnant: Cognizance 14"
 		has "Remnant: Cognizance 12: done"
 	on offer
 		conversation
-			`You land by the starport and are immediately accosted by a Remnant who informs you that Prefect Chilia is on his personal warship and escorts you to a nearby Starling. Inside you find Chilia and several other Remnant clustered around a holographic display and some display panels. "Ah, Captain. Join us, please." Chilia gestures for you to join them around the displays. As you approach, you note that the holographic display shows the Ember Waste, although there are a few details that do not match the star maps you're familiar with.`
+			`You land by the starport and are immediately accosted by a Remnant who informs you that Prefect Chilia is on his personal warship and escorts you to a nearby Kookaburra. Inside you find Chilia and several other Remnant clustered around a holographic display and some display panels. "Ah, Captain. Join us, please." Chilia gestures for you to join them around the displays. As you approach, you note that the holographic display shows the Ember Waste, although there are a few details that do not match the star maps you're familiar with.`
 			`	Chilia notices you eyeing the deviations. "Perceptive, Captain. Our sensors have reported some unusual energy signatures coming from this location. Scouts in the area say they are picking up signs of a new system. There were no immediately apparent hyperlinks or wormholes that connect to it, but there are still unusual energy fluctuations in the area. Unusual even for the Ember Waste." He looks up at you. "We are hoping that you might be able to figure out a way in."`
 			choice
 				`	"I could see if I can reach it with a jump drive."`
@@ -642,7 +641,7 @@ mission "Remnant: Cognizance 18"
 		personality launching escort disables plunders
 		fleet "Large Remnant" 3
 	npc evade
-		government "Korath"
+		government "Kor Alaji"
 		personality heroic disables plunders harvests entering staying
 		system "Nenia"
 		fleet
@@ -1045,7 +1044,7 @@ mission "Remnant: Cognizance 23"
 				`	"They are beautiful."`
 			`	Taely nods in agreement. "I am glad you can appreciate some of the things we have achieved here. It makes me think that you will appreciate some of my other projects too.`
 			label turndown
-			`	"Historically, we have relied on Starlings to fill multiple light combat roles here in the Ember Waste. Reconnaissance, sentry duty, escort, picket, patrol... they have filled so many roles." She pauses, glancing at a departing Starling. "Of course, we could just make more Starlings, but our pool of specialized crew is not infinite either. The solution I have is these Mergansers. They are sufficiently advanced that they only require a single person to operate and have significant range, enough to patrol large portions of the Ember Waste. This makes them ideal for escorting Gulls on resource gathering expeditions, patrolling for incursions, and other uses. Perhaps most importantly, though, is that they are fast enough to chase down anything we have encountered out here so far."`
+			`	"Historically, we have relied on Kookaburras to fill multiple light combat roles here in the Ember Waste. Reconnaissance, sentry duty, escort, picket, patrol... they have filled so many roles." She pauses, glancing at a departing Kookaburra. "Of course, we could just make more Kookaburras, but our pool of specialized crew is not infinite either. The solution I have is these Mergansers. They are sufficiently advanced that they only require a single person to operate and have significant range, enough to patrol large portions of the Ember Waste. This makes them ideal for escorting Gulls on resource gathering expeditions, patrolling for incursions, and other uses. Perhaps most importantly, though, is that they are fast enough to chase down anything we have encountered out here so far."`
 			`	She frowns a bit at that. "Unfortunately, the weapons program is not moving as quickly as I would like, so the Merganser does not have the tackling ability that I was originally envisioning for it. But at least it is an adept hunter we can use to pursue our enemies."`
 			choice
 				`	"Interesting."`
@@ -1067,7 +1066,7 @@ mission "Remnant: Cognizance 23"
 	on accept
 		give ship Merganser
 	npc kill
-		government "Korath"
+		government "Kor Alaji"
 		personality coward target uninterested staying
 		system "Farinus"
 		fleet
@@ -1201,7 +1200,7 @@ mission "Remnant: Cognizance 25"
 					accept
 				`	"No."`
 					decline
-	npc kill
+	npc disable
 		government "Korath"
 		personality target marked waiting
 		system "Egeria"
@@ -1283,7 +1282,7 @@ mission "Remnant: Cognizance 28"
 			`Your commlink springs to life as you enter final approach to Caelian, revealing Torza in a flurry of motion. He focuses momentarily on the camera. "Captain <first>, and flying a ship with a substantial lifting capacity, excellent! The Korath have discovered one of our forward operating bases, and we need help evacuating it now. It is located on Baianus in the Parca system. There are 20 people and 280 cubic meters of equipment to retrieve. The Korath have set up a blockade, so you will need something reasonably fast to get through it. You can fight them or not, as you wish, but the primary task is evacuating the outpost. Embers speed your flight, Captain."`
 				accept
 	npc
-		government "Korath"
+		government "Kor Isaha"
 		personality heroic plunders harvests waiting staying
 		system "Parca"
 		fleet
@@ -1318,14 +1317,14 @@ mission "Remnant: Cognizance 29"
 			`Punching through the Korath blockade finds you racing across the aurora-filled skies of Baianus. You quickly slide into the designated approach track and start to enter your IFF code as a barrage of anti-air fire erupts from the ground to lance over your shoulder. As you drop into evasive maneuvers you spot the wreckage of an 'olofez tumbling to the ice behind you, and a firelance beam sears the air where the <ship> had just been. Moments later you get the confirmation signal that they have accepted your ID and are tracking your position.`
 				goto landed
 			label "cleared orbit"
-			`Destroying the Korath ships blockading this system purchases some respite. However, it does not last long as some Korath ships were in the aurora-filled atmosphere and, having evaded your assault in space, now move to pursue you, intent on stopping you from reaching the Remnant base. As you transmit your IFF code, you are aided by an eruption of anti-air fire from below, which sends an 'olofez tumbling to the icy surface as its last breath of fire misses the <ship>. Along with confirmation of recognizing you, the Remnant at the base ahead inform you that their timetable has not changed despite the currently lessened Korath presence in the system; more ships are already on the way.`
+			`Destroying the Korath ships blockading this system purchases some respite. The peace does not last long as some Korath ships were in the aurora-filled atmosphere and, having evaded your assault in space, are now in position to pursue you in to the Remnant base. As you transmit your IFF code, you are aided by an eruption of anti-air fire from below, which sends an 'olofez tumbling to the icy surface as its last breath of fire misses the <ship>. Along with confirmation of recognizing you, the Remnant at the base ahead inform you that their timetable has moved up: The destruction of the ships in orbit has given time for the Korath already in atmosphere to penetrate farther through their defenses, and more ships are already on the way.`
 			label landed
 			`	As you approach the entrance to the hidden starport, directions appear on your comm panel guiding you to a spot where a large stack of equipment surrounds the landing pad. You ease inside and have barely touched down when a technician is dropping from the ceiling onto your hull with a refueling hose and repair equipment. Meanwhile, a swarm of Remnant are prepping and moving various equipment, many with lifts and loaders. You quickly open the cargo hold doors, and the Remnant rush to load and board the <ship>.`
 			`	The Remnant move fast, but you can hear the battle approaching. Even through the <ship>'s dampeners you can feel the heavy thud of anti-air artillery. The whine of generators being pushed to the limit fills the air as the shields crackle with incoming fire. Through the cacophony the Remnant move with purpose, gesturing instructions silently through the din. Finally the last load is packed onboard, and one of them comes up to the cockpit. "Thank you for your assistance, Captain <last>. As the explosive charges have been set, I recommend we leave promptly." They nod respectfully, then strap themselves into the nearest harness.`
 			`	The shield opens one final time to allow you to leave, and you practically leap into the teeth of a Korath attack. The anti-air artillery continues its rhythmic barrage against the incoming ships, but it is evident that both it and the shields around the base are failing under the assault. As you head for orbit, the last image you see is the artillery pieces sag and collapse as they melt into the ground. Your sensors record a sudden explosion from the cavern, to which the Remnant give a sad but satisfied nod. "Take us back to Caelian please, Captain."`
 				launch
 	npc
-		government "Korath"
+		government "Kor Isaha"
 		personality heroic plunders harvests waiting launching
 		system "Parca"
 		fleet
