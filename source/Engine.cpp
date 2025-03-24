@@ -1809,7 +1809,7 @@ void Engine::CalculateStep()
 			for(const auto &it : flagship->Attributes().ReverseFlareSounds())
 				Audio::Play(it.first, SoundCategory::ENGINE);
 		}
-		else if(ship->IsLatThrusting() && !ship->LateralEnginePoints().empty())
+		else if(flagship->IsLatThrusting() && !flagship->LateralEnginePoints().empty())
 		{
 			for(const auto &it : ship->Attributes().LateralFlareSounds())
 				Audio::Play(it.first, ship->Position(), SoundCategory::ENGINE);
