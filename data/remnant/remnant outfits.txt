@@ -878,6 +878,34 @@ outfit "Smelter-Class Thruster"
 	"reverse flare sound" "plasma medium"
 	description "It is not unheard of for a Remnant ship's engines to draw even more power than its weapon systems: an indication, perhaps, of their preference for avoiding battle when possible."
 
+outfit "Manifold-Class Thruster"
+	category "Engines"
+	series "Engines"
+	index 03051
+	licenses
+		Remnant
+	"cost" 1984000
+	thumbnail "outfit/large remnant thruster"
+	"thruster slot" -1
+	"engine mod space" 1.53
+	"mass" 144
+	"outfit space" -130
+	"engine capacity" -130
+	"thrust" 225
+	"thrusting energy" 19
+	"thrusting heat" 19
+	"reverse thrust" 168
+	"reverse thrusting energy" 14
+	"reverse thrusting heat" 14
+	"slowing resistance" 0.1
+	"flare sprite" "effect/remnant flare/large"
+		"frame rate" 3
+	"flare sound" "plasma medium"
+	"reverse flare sprite" "effect/remnant flare/large"
+		"frame rate" 3
+	"reverse flare sound" "plasma medium"
+	description "Historically the Remnant had no need for thrusters this large or this powerful, but times have changed and the need to field larger ships as part of their evacuation efforts has led to this hitherto experimental design entering production."
+
 outfit "Crucible-Class Steering"
 	category "Engines"
 	series "Engines"
@@ -941,6 +969,27 @@ outfit "Smelter-Class Steering"
 	"steering flare sound" "plasma medium"
 	description "It's unclear whether the Remnant's powerful engine systems are purely their own invention, or whether they are partly inspired by alien technology."
 
+outfit "Manifold-Class Steering"
+	category "Engines"
+	series "Engines"
+	index 03050
+	licenses
+		Remnant
+	"cost" 880000
+	thumbnail "outfit/large remnant steering"
+	"steering slot" -1
+	"mass" 100
+	"outfit space" -90
+	"engine capacity" -90
+	"turn" 6370
+	"turning energy" 10
+	"turning heat" 12
+	"slowing resistance" 0.1
+	"steering flare sprite" "effect/remnant flare/large"
+		"frame rate" 3
+	"steering flare sound" "plasma medium"
+	description "This understated yet powerful set of steering thrusters makes it clear that, whatever the origins of the Remnant's propulsion technology, it has clearly been meshed with science unknown to Human, Hai, or Wanderer researchers."
+
 
 # Note on Lateral Thrusters: My initial values here are to have each set of lateral thrusters be based on the thruster of the same "rank".
 # So the tiny lateral has values equivalent to about 90% of a tiny thruster. The small lateral thruster is roughly 80% of a small thruster, etc.
@@ -950,6 +999,8 @@ outfit "Smelter-Class Steering"
 
 outfit "Crucible-Class LTC"
 	category "Engines"
+	series "Engines"
+	index 03025
 	licenses
 		Remnant
 	"cost" 200000
@@ -969,6 +1020,8 @@ outfit "Crucible-Class LTC"
 
 outfit "Forge-Class LTC"
 	category "Engines"
+	series "Engines"
+	index 03035
 	licenses
 		Remnant
 	"cost" 441000
@@ -988,6 +1041,8 @@ outfit "Forge-Class LTC"
 
 outfit "Smelter-Class LTC"
 	category "Engines"
+	series "Engines"
+	index 03045
 	licenses
 		Remnant
 	"cost" 984000
@@ -1004,6 +1059,27 @@ outfit "Smelter-Class LTC"
 		"frame rate" 5
 	"lateral flare sound" "plasma medium"
 	description "These lateral thruster components, found on many of their largest ships, demonstrates the Remnant preference for mobility and avoiding damage instead of merely absorbing it."
+
+outfit "Manifold-Class LTC"
+	category "Engines"
+	series "Engines"
+	index 03055
+	licenses
+		Remnant
+	"cost" 1984000
+	thumbnail "outfit/large remnant thruster"
+	"lateral thruster slot" -1
+	"mass" 98
+	"outfit space" -90
+	"engine capacity" -90
+	"lateral thrust" 152 # 60%
+	"lateral thrusting energy" 12
+	"lateral thrusting heat" 13
+	"slowing resistance" 0.1
+	"lateral flare sprite" "effect/remnant flare/medium"
+		"frame rate" 5
+	"lateral flare sound" "plasma medium"
+	description "These arcane lateral thruster components were put into production purely for the next generation of ships examplified by the Swan."
 
 
 
