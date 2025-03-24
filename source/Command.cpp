@@ -75,18 +75,19 @@ const Command Command::MESSAGE_LOG(ONE << 24, "View message log");
 const Command Command::FULLSCREEN(ONE << 25, "Toggle fullscreen");
 const Command Command::FASTFORWARD(ONE << 26, "Toggle fast-forward");
 const Command Command::HELP(ONE << 27, "Show help");
-const Command Command::FIGHT(ONE << 28, "Fleet: Fight my target");
-const Command Command::GATHER(ONE << 29, "Fleet: Gather around me");
-const Command Command::HOLD(ONE << 30, "Fleet: Hold position");
-const Command Command::HARVEST(ONE << 31, "Fleet: Harvest flotsam");
-const Command Command::AMMO(ONE << 32, "Fleet: Toggle ammo usage");
-const Command Command::AUTOSTEER(ONE << 33, "Auto steer");
-const Command Command::LATERALLEFT(ONE << 34, "Lateral left thrust");
-const Command Command::LATERALRIGHT(ONE << 35, "Lateral right thrust");
-const Command Command::WAIT(ONE << 36, "");
-const Command Command::STOP(ONE << 37, "");
-const Command Command::SHIFT(ONE << 38, "");
-const Command Command::CTRL(ONE << 39, "");
+const Command Command::PAUSE(ONE << 28, "Pause");
+const Command Command::FIGHT(ONE << 29, "Fleet: Fight my target");
+const Command Command::GATHER(ONE << 30, "Fleet: Gather around me");
+const Command Command::HOLD(ONE << 31, "Fleet: Hold position");
+const Command Command::HARVEST(ONE << 32, "Fleet: Harvest flotsam");
+const Command Command::AMMO(ONE << 33, "Fleet: Toggle ammo usage");
+const Command Command::AUTOSTEER(ONE << 34, "Auto steer");
+const Command Command::LATERALLEFT(ONE << 35, "Lateral left thrust");
+const Command Command::LATERALRIGHT(ONE << 36, "Lateral right thrust");
+const Command Command::WAIT(ONE << 37, "");
+const Command Command::STOP(ONE << 38, "");
+const Command Command::SHIFT(ONE << 39, "");
+const Command Command::CTRL(ONE << 40, "");
 
 
 
