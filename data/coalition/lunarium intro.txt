@@ -1729,7 +1729,7 @@ mission "Lunarium: Combat Training 2"
 		government "Pirate"
 		system "Shaula"
 		ship "Falcon" "Leuschner"
-		ship "Osprey" "Abulfeda"
+		ship "Eagle" "Abulfeda"
 		ship "Modified Argosy" "Taruntius"
 		ship "Manta" "Necho"
 	on complete

@@ -24,14 +24,18 @@ ship "Korath Dredger"
 		"hull" 16500
 		"required crew" 137
 		"bunks" 357
-		"mass" 2636
-		"drag" 25.6
-		"heat dissipation" .3
-		"fuel capacity" 900
+		"mass" 12024
+		"drag" 17.1
+		"heat dissipation" .45
+		"fuel capacity" 5475
 		"cargo space" 675
-		"outfit space" 763
+		"outfit space" 803
 		"weapon capacity" 276
-		"engine capacity" 206
+		"engine capacity" 246
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		weapon
 			"blast radius" 300
 			"shield damage" 4600
@@ -53,6 +57,7 @@ ship "Korath Dredger"
 		"Reverser (Lunar Class)"
 		"Steering (Planetary Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Scram Drive"
 		"Jump Drive"
 		
@@ -101,14 +106,18 @@ ship "Korath Raider"
 		"hull" 9000
 		"required crew" 145
 		"bunks" 250
-		"mass" 1468
-		"drag" 18
-		"heat dissipation" .33
-		"fuel capacity" 600
+		"mass" 2880
+		"drag" 12
+		"heat dissipation" .5
+		"fuel capacity" 1325
 		"cargo space" 175
-		"outfit space" 777
+		"outfit space" 817
 		"weapon capacity" 339
-		"engine capacity" 159
+		"engine capacity" 199
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		weapon
 			"blast radius" 250
 			"shield damage" 3600
@@ -131,6 +140,7 @@ ship "Korath Raider"
 		"Thermal Repeater Rifle" 196
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Bow Drive (Meteor Class)"
 		"Jump Drive"
@@ -141,9 +151,9 @@ ship "Korath Raider"
 		zoom 0.7
 	"reverse engine" 9 -154
 		zoom 0.7
-	gun 32.5 -1 "Firelight Missile Bank"
+	pylon 32.5 -1 "Firelight Missile Bank"
 		angle 60
-	gun -32.5 -1 "Firelight Missile Bank"
+	pylon -32.5 -1 "Firelight Missile Bank"
 		angle 300
 	turret -10 -143 "Grab-Strike Turret"
 	turret 10 -143 "Grab-Strike Turret"
@@ -165,6 +175,7 @@ ship "Korath Raider"
 
 ship "Korath Chaser"
 	sprite "ship/chaser"
+		"scale" 0.6
 	thumbnail "thumbnail/chaser"
 	attributes
 		category "Fighter"
@@ -176,9 +187,13 @@ ship "Korath Chaser"
 		"mass" 106
 		"drag" 1.35
 		"heat dissipation" .6
-		"outfit space" 92
+		"outfit space" 104
 		"weapon capacity" 25
-		"engine capacity" 30
+		"engine capacity" 41
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		weapon
 			"blast radius" 48
 			"shield damage" 320
@@ -192,6 +207,7 @@ ship "Korath Chaser"
 		"Thermal Repeater Rifle"
 		
 		"Thruster (Asteroid Class)"
+		"Lateral (Asteroid Class)"
 		"Steering (Asteroid Class)"
 	
 	engine -7 23
@@ -212,14 +228,18 @@ ship "Korath World-Ship"
 		hull 34000
 		"required crew" 794
 		"bunks" 1492
-		"mass" 3022
-		"drag" 31.5
-		"heat dissipation" .27
-		"fuel capacity" 1000
+		"mass" 13880
+		"drag" 21
+		"heat dissipation" .4
+		"fuel capacity" 6700
 		"cargo space" 264
-		"outfit space" 839
+		"outfit space" 879
 		"weapon capacity" 314
-		"engine capacity" 165
+		"engine capacity" 205
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
 		weapon
 			"blast radius" 400
 			"shield damage" 8000
@@ -238,6 +258,7 @@ ship "Korath World-Ship"
 		"Microbot Defense Station" 19
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Hyperdrive"
 	
@@ -307,6 +328,7 @@ ship "Korath Dredger" "Korath Dredger (Civilian)"
 		"Steering (Planetary Class)"
 		"Reverser (Lunar Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Scram Drive"
 	
 	turret "Digger Mining Turret"
@@ -333,9 +355,10 @@ ship "Korath Dredger" "Korath Dredger (Crippled)"
 		
 		"Reverser (Lunar Class)"
 		"Steering (Lunar Class)"
-		"Steering (Asteroid Class)"
+		# "Steering (Asteroid Class)" # Extra steering
 		"Thruster (Lunar Class)"
-		"Thruster (Asteroid Class)"
+		"Lateral (Lunar Class)"
+		# "Thruster (Asteroid Class)" # Extra thruster
 		"Hyperdrive"
 		"Jump Drive (Broken)"
 		
@@ -365,6 +388,7 @@ ship "Korath Dredger" "Korath Dredger (Digger)"
 		"Reverser (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Thruster (Stellar Class)"
+		"Lateral (Planetary Class)"
 		"Jump Drive"
 		"Scram Drive"
 	
@@ -392,6 +416,7 @@ ship "Korath Dredger" "Korath Dredger (Shunt)"
 		"Reverser (Asteroid Class)"
 		"Steering (Planetary Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Jump Drive"
 		"Scram Drive"
 	
@@ -420,6 +445,7 @@ ship "Korath Dredger" "Korath Dredger (Ground Assault)"
 		"Reverser (Asteroid Class)"
 		"Steering (Lunar Class)"
 		"Thruster (Lunar Class)"
+		"Lateral (Lunar Class)"
 		"Hyperdrive"
 		"Jump Drive"
 
@@ -446,6 +472,7 @@ ship "Korath Dredger" "Korath Dredger (Heaver)"
 
 		"Reverser (Asteroid Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Jump Drive"
 
@@ -476,10 +503,11 @@ ship "Korath Raider" "Korath Raider (Blaze)"
 		"Reverser (Asteroid Class)"
 		"Steering (Planetary Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Jump Drive"
 	
-	gun "Firelight Missile Bank"
-	gun "Firelight Missile Bank"
+	pylon "Firelight Missile Bank"
+	pylon "Firelight Missile Bank"
 	turret "Blaze-Pike Turret"
 	turret "Blaze-Pike Turret"
 	turret "Blaze-Pike Turret"
@@ -502,16 +530,17 @@ ship "Korath Raider" "Korath Raider (Crippled)"
 		"Outfits Expansion"
 		
 		"Bow Drive (Meteor Class)"
-		"Thruster (Asteroid Class)"
+		# "Thruster (Asteroid Class)" # Extra thruster
 		"Thruster (Lunar Class)"
-		"Steering (Asteroid Class)"
+		"Lateral (Lunar Class)"
+		# "Steering (Asteroid Class)" # Extra steering
 		"Steering (Lunar Class)"
 		"Afterburner (Asteroid Class)"
 		"Jump Drive (Broken)"
 		"Hyperdrive"
 	
-	gun
-	gun "Firelight Missile Bank"
+	pylon
+	pylon "Firelight Missile Bank"
 	turret
 	turret
 	turret "Grab-Strike Turret"
@@ -539,13 +568,14 @@ ship "Korath Raider" "Korath Raider (Ember)"
 		
 		"Bow Drive (Meteor Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Afterburner (Asteroid Class)"
 		"Jump Drive"
 		"Hyperdrive"
 	
-	gun "Firelight Missile Bank"
-	gun "Firelight Missile Bank"
+	pylon "Firelight Missile Bank"
+	pylon "Firelight Missile Bank"
 	turret "Grab-Strike Turret"
 	turret "Grab-Strike Turret"
 	turret "Grab-Strike Turret"
@@ -573,11 +603,12 @@ ship "Korath Raider" "Korath Raider (Ember Blaze)"
 		"Reverser (Asteroid Class)"
 		"Steering (Planetary Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Jump Drive"
 		"Hyperdrive"
 	
-	gun "Firelight Missile Bank"
-	gun "Firelight Missile Bank"
+	pylon "Firelight Missile Bank"
+	pylon "Firelight Missile Bank"
 	turret "Blaze-Pike Turret"
 	turret "Blaze-Pike Turret"
 	turret "Blaze-Pike Turret"
@@ -606,12 +637,13 @@ ship "Korath Raider" "Korath Raider (Ember Shunt)"
 		
 		"Reverser (Comet Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Jump Drive"
 		"Hyperdrive"
 	
-	gun "Firelight Missile Bank"
-	gun "Firelight Missile Bank"
+	pylon "Firelight Missile Bank"
+	pylon "Firelight Missile Bank"
 	turret "Shunt-Strike Turret"
 	turret "Shunt-Strike Turret"
 	turret "Shunt-Strike Turret"
@@ -638,12 +670,13 @@ ship "Korath Raider" "Korath Raider (Hyperdrive)"
 		
 		"Bow Drive (Meteor Class)"
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Jump Drive (Broken)"
 		"Hyperdrive"
 	
-	gun "Firelight Missile Bank"
-	gun "Firelight Missile Bank"
+	pylon "Firelight Missile Bank"
+	pylon "Firelight Missile Bank"
 	turret "Grab-Strike Turret"
 	turret "Grab-Strike Turret"
 	turret "Grab-Strike Turret"
@@ -662,6 +695,7 @@ ship "Korath Chaser" "Korath Chaser (Expeller)"
 		"Korath Repeater Rifle"
 		
 		"Thruster (Asteroid Class)"
+		"Lateral (Asteroid Class)"
 		"Bow Drive (Meteor Class)"
 
 
@@ -683,11 +717,13 @@ ship "Korath Chaser" "Korath Chaser (World-Ship)"
 		"atmosphere scan" 1
 	outfits
 		"Generator (Candle Class)"
-		"Systems Core (Tiny)"
+		# "Systems Core (Tiny)" # To make space for a thruster
 		"Small Bunk Room"
 		"Korath Repeater Rifle" 3
 		
 		"Steering (Asteroid Class)"
+		"Thruster (Asteroid Class)"
+		"Lateral (Asteroid Class)"
 		"Afterburner (Asteroid Class)"
 		"Hyperdrive"
 
@@ -707,6 +743,7 @@ ship "Korath World-Ship" "Korath World-Ship A (Jump)"
 		"Microbot Defense Station" 20
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Jump Drive"
 	
@@ -734,6 +771,7 @@ ship "Korath World-Ship" "Korath World-Ship B (Crippled)"
 		"Outfits Expansion"
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Jump Drive (Broken)"
 		"Hyperdrive"
@@ -764,6 +802,7 @@ ship "Korath World-Ship" "Korath World-Ship B (Ember)"
 		"Outfits Expansion"
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Jump Drive"
 		"Hyperdrive"
@@ -793,6 +832,7 @@ ship "Korath World-Ship" "Korath World-Ship B (Jump)"
 		"Microbot Defense Station" 20
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Jump Drive"
 	
@@ -822,6 +862,7 @@ ship "Korath World-Ship" "Korath World-Ship C (Jump)"
 		"Microbot Defense Station" 20
 		
 		"Thruster (Planetary Class)"
+		"Lateral (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Jump Drive"
 	
@@ -836,55 +877,343 @@ ship "Korath World-Ship" "Korath World-Ship C (Jump)"
 
 
 
-ship "Quarg Skylark"
-	sprite "ship/skylark"
-	thumbnail "thumbnail/skylark"
+ship "Starling"
+	sprite "ship/remnant/kookaburra"
+	thumbnail "thumbnail/remnant/kookaburra"
 	attributes
-		category "Heavy Warship"
-		"cost" 5900000
-		"shields" 120000
-		"hull" 70000
-		"required crew" 120
-		"bunks" 210
-		"mass" 990
-		"drag" 18.5
-		"heat dissipation" .47
-		"fuel capacity" 1000
-		"cargo space" 200
-		"outfit space" 600
-		"weapon capacity" 200
-		"engine capacity" 120
-		"hull repair rate" 5
-		"hull energy" 5
-		"ramscoop" 10
+		category "Light Warship"
+		licenses
+			Remnant
+		cost 8800000
+		"shields" 8800
+		"hull" 4900
+		"required crew" 6
+		"bunks" 15
+		"mass" 540
+		"drag" 4.4
+		"heat dissipation" 0.59
+		"fuel capacity" 925
+		"ramscoop" 1.75
+		"cargo space" 36
+		"outfit space" 339
+		"weapon capacity" 83
+		"engine capacity" 117
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
+		"shield generation" 1.8
+		"shield energy" 1.2
+		"hull repair rate" 0.8
+		"hull energy" 0.6
+		"cloak" .02
+		"cloaking energy" 5
+		"cloaking fuel" .1
+		"cloaked communication" 1
+		"cloaked scanning" 1
+		"outfit scan power" 12
+		"outfit scan efficiency" 20
+		"acceleration scan power" 30
+		"crew scan power" 30
+		"energy scan power" 30
+		"fuel scan power" 30
+		"maneuver scan power" 30
+		"range finder power" 30
+		"thermal scan power" 30
+		"velocity scan power" 30
+		"weapon scan power" 30
 		weapon
-			"blast radius" 250
-			"shield damage" 1000
-			"hull damage" 500
-			"hit force" 1500
+			"blast radius" 80
+			"shield damage" 800
+			"hull damage" 400
+			"hit force" 1200
 	outfits
-		"Quarg Skylance" 2
-		"Quarg Anti-Missile" 2
+		"Inhibitor Cannon" 3
+		"Point Defense Turret"
 		
-		"Antimatter Core"
-		"Nanotech Battery"
-		"Quantum Shield Generator"
-		"Intrusion Countermeasures" 120
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Emergency Ramscoop" 2
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Thermoelectric Cooler"
 		
-		"Medium Graviton Thruster"
-		"Medium Graviton Steering"
-		"Jump Drive"
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Forge-Class Steering"
+		# "Crucible-Class Steering" # Extra steering
+		"Hyperdrive"
+
+	engine -16 82 0.7
+	engine 16 82 0.7
+	engine 0 90 1
+	gun 0 -99 "Inhibitor Cannon"
+	gun -12 -72 "Inhibitor Cannon"
+	gun 12 -72 "Inhibitor Cannon"
+	gun -18 -49
+	gun 18 -49
+	pylon -6 -58
+	pylon 6 -58
+	pylon -13 -38
+	pylon 13 -38
+	turret 0 2 "Point Defense Turret"
+	leak "remnant leak" 30 4
+	leak "remnant leak sparkle" 30 10
+	explode "tiny explosion" 40
+	explode "small explosion" 20
+	explode "medium explosion" 10
+	"final explode" "final explosion small" 1
+	description "One of the strangest and most useful things that the Remnant have discovered in the abandoned worlds of the Ember Waste is alien cloaking technology. They have designed their scout ships to cloak when needed in order to explore alien territory without being seen... or to escape in a hurry after stealing something particularly valuable from those aliens."
+	description "	The cloaking technology is built into the Starling's hull; it cannot be removed or transferred to another ship."
+
+ship "Starling" "Starling (Heavy)"
+	outfits
+		"Thrasher Cannon" 5
+		"Point Defense Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 10
+
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+ship "Starling" "Starling (Sniper)"
+	outfits
+		"EMP Torpedo Bay"
+		"Inhibitor Cannon" 4
+		"EMP Torpedo" 8
+		"EMP Torpedo Storage Bay"
+
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Emergency Ramscoop" 2
+		"Quantum Key Stone"
+		"Outfits Expansion"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 9
+
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Smelter-Class Steering"
+		"Hyperdrive"
+
+	gun
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	pylon "EMP Torpedo Bay"
+	pylon
+	pylon
+	pylon
+
+ship "Starling" "Starling (Hunter)"
+	outfits
+		"Inhibitor Cannon" 2
+		"Thrasher Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Emergency Ramscoop"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 11
+
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+	gun
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun
+	gun
+
+ship "Starling" "Starling (Thrasher)"
+	outfits
+		"Thrasher Cannon" 3
+		"Thrasher Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 8
+
+		"Forge-Class Thruster"
+		"Forge-Class LTC"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+	gun "Thrasher Cannon"
+	gun "Thrasher Cannon"
+	gun "Thrasher Cannon"
+	gun
+	gun
+
+
+
+ship "Osprey"
+	sprite "ship/osprey"
+	thumbnail "thumbnail/osprey"
+	attributes
+		category "Medium Warship"
+		"cost" 4200000
+		"shields" 7200
+		"hull" 1600
+		"required crew" 9
+		"bunks" 24
+		"mass" 1080
+		"drag" 8.9
+		"heat dissipation" .54
+		"fuel capacity" 775
+		"cargo space" 40
+		"outfit space" 492
+		"weapon capacity" 180
+		"engine capacity" 169
+		"lateral thruster slot" 1
+		"reverse thruster slot" 1
+		"steering slot" 1
+		"thruster slot" 1
+		weapon
+			"blast radius" 80
+			"shield damage" 800
+			"hull damage" 400
+			"hit force" 1200
+	outfits
+		"Plasma Cannon" 4
+		"Quad Blaster Turret"
+		"Heavy Anti-Missile Turret"
 		
-	engine -15 117
-	engine 15 117
-	turret -12 -80 "Quarg Skylance"
-	turret 12 -80 "Quarg Skylance"
-	turret -34 24 "Quarg Anti-Missile"
-	turret 34 24 "Quarg Anti-Missile"
-	explode "tiny explosion" 12
-	explode "small explosion" 16
-	explode "medium explosion" 30
-	explode "large explosion" 40
-	explode "huge explosion" 20
+		"Breeder Reactor"
+		"LP036a Battery Pack"
+		"D23-QP Shield Generator"
+		"Large Radar Jammer"
+		"Liquid Helium Cooler"
+		"Laser Rifle" 3
+		
+		"RC37 Reaction Thruster"
+		"RC34 Reaction LTC"
+		"RC32 Reaction Steering"
+		"Hyperdrive"
+		
+	engine -42.5 62.5 .8
+	engine 42.5 62.5 .8
+	engine -16.5 105 .6
+	engine 16.5 105 .6
+	gun -9.5 -95.5 "Plasma Cannon"
+	gun 9.5 -95.5 "Plasma Cannon"
+	gun -25 -49.5 "Plasma Cannon"
+	gun 25 -49.5 "Plasma Cannon"
+	pylon -17 -12
+	pylon 17 -12
+	pylon -50 29
+	pylon 50 29
+	turret -15.5 -12 "Quad Blaster Turret"
+	turret 15.5 -12 "Heavy Anti-Missile Turret"
+	leak "leak" 40 50
+	leak "flame" 80 80
+	leak "big leak" 80 30
+	explode "medium explosion" 24
+	explode "large explosion" 16
+	explode "small explosion" 40
+	explode "tiny explosion" 28
 	"final explode" "final explosion medium"
-	description "The Skylark is used by the Quarg as a freighter and warship."
+	description "After the Blackbird gained surprising popularity as an agile light warship despite its original design as a transport, Tarazed decided to produce a new design specifically intended as a warship. The Osprey was the result. Although it is considered overpriced by most savvy pilots, it is nevertheless a perennial favorite among those who have the extra cash to spend on it."
+
+
+
+ship "Osprey" "Osprey (Alien Weapons)"
+	outfits
+		"Ion Cannon" 2
+		"Pulse Cannon" 2
+		"Pulse Turret"
+		"Chameleon Anti-Missile"
+		"Boulder Reactor"
+		"Hai Fissure Batteries"
+		"Hai Corundum Regenerator"
+		"Liquid Nitrogen Cooler"
+		"Pulse Rifle" 3
+		`"Bondir" Atomic Thruster`
+		`"Bondir" Atomic LTC`
+		`"Bondir" Atomic Steering`
+		Hyperdrive
+
+
+ship "Osprey" "Osprey (Laser)"
+	outfits
+		"Heavy Laser" 4
+		"Heavy Laser Turret"
+		"Heavy Anti-Missile Turret"
+		"Breeder Reactor"
+		"LP036a Battery Pack"
+		"Supercapacitor" 4
+		"D94-YV Shield Generator"
+		"Water Coolant System"
+		"Tactical Scanner"
+		"Laser Rifle" 3
+		"Impala Plasma Thruster"
+		"Impala Plasma LTC"
+		"X4200 Ion Steering"
+		"Hyperdrive"
+
+
+ship "Osprey" "Osprey (Missile)"
+	outfits
+		"Torpedo Launcher" 2
+		"Torpedo" 30
+		"Heavy Rocket Launcher" 2
+		"Heavy Rocket" 40
+		"Heavy Laser Turret"
+		"Heavy Anti-Missile Turret"
+		"Breeder Reactor"
+		"LP036a Battery Pack"
+		"Supercapacitor" 3
+		"D41-HY Shield Generator"
+		"Water Coolant System"
+		"Tactical Scanner"
+		"Outfits Expansion"
+		"Laser Rifle" 3
+		"A520 Atomic Thruster"
+		"AL529 Atomic LTC"
+		"A375 Atomic Steering"
+		"Hyperdrive"
+	gun
+	gun
+	gun
+	gun
+	pylon "Heavy Rocket Launcher"
+	pylon "Heavy Rocket Launcher"
+	pylon "Torpedo Launcher"
+	pylon "Torpedo Launcher"
+
+
+# This variant uses outfits acquired in the post-war condition that were surplus or black market for diversity *after* the main campaign.
+ship "Osprey" "Osprey (Particle Anti-Missile)"
+	outfits
+		"Heavy Anti-Missile Turret"
+		"LP036a Battery Pack"
+		"S-970 Regenerator"
+		Hyperdrive
+		"LP072a Battery Pack"
+		"Volcano Afterburner"
+		"Outfits Expansion" 2
+		"Liquid Nitrogen Cooler"
+		"Particle Cannon" 4
+		"A370 Atomic Thruster"
+		"AL379 Atomic LTC"
+		"A375 Atomic Steering"
+		"Laser Rifle" 3
+		"Water Coolant System"
+		"Fusion Reactor"
+	
+

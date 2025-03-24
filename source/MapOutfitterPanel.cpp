@@ -17,6 +17,7 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 
 #include "comparators/ByName.h"
 #include "CoreStartData.h"
+#include "CustomSaleManager.h"
 #include "text/Format.h"
 #include "GameData.h"
 #include "Outfit.h"
@@ -217,6 +218,8 @@ void MapOutfitterPanel::DrawItems()
 				if(space && -outfit->Get("weapon capacity") == space)
 					info += " of weapon space";
 				else if(space && -outfit->Get("engine capacity") == space)
+					info += " of engine space";
+				else if(space && -outfit->Get("engine mod space") == space)
 					info += " of engine space";
 				else
 					info += " of outfit space";

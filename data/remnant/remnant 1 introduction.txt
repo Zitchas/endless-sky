@@ -273,9 +273,9 @@ mission "Remnant: Defense 1"
 		personality staying uninterested disables plunders
 		fleet "Large Remnant"
 	npc evade
-		government "Korath"
+		government "Kor Alaji"
 		personality staying heroic plunders harvests target
-		fleet "Korath Ember Waste Raid" 6
+		fleet "Kor Alaji Raid" 6
 	on visit
 		dialog "There are still Korath raiders circling overhead. You should take off and help the Remnant ships to fight them."
 	on complete
@@ -316,7 +316,7 @@ mission "Remnant: Defense 2"
 			`	"Thank you," she sings. "It keeps jumping between systems in our territory. Maybe its jump drive was damaged or something, and it cannot escape. I will spread the information that you've taken on the bounty for hunting it, so others will not risk their lives fighting it."`
 				accept
 	npc kill
-		government "Korath"
+		government "Kor Alaji"
 		personality coward target uninterested marked waiting
 		system
 			distance 1 2
@@ -361,7 +361,7 @@ mission "Remnant: Defense 3"
 	on accept
 		event "remnant: surveillance begin"
 	npc kill
-		government "Korath"
+		government "Kor Isaha"
 		personality heroic nemesis staying
 		system "Parca"
 		fleet
@@ -1725,7 +1725,7 @@ mission "Remnant: Heavy Laser"
 				`	(Yes.)`
 			branch familiar
 				has "Remnant: Tech Retrieval: done"
-			`	After asking a few people, you finally get directed to a bay in the shipyard where you find Taely just finishing the installation of a Thrasher Cannon in a Starling. "Greetings, <first>. I will be down in a minute." She does a few more things inside a panel, reseals the hatch, and slides down a fin to land next to you. "So, do you have something for me?"`
+			`	After asking a few people, you finally get directed to a bay in the shipyard where you find Taely just finishing the installation of a Thrasher Cannon in a Kookaburra. "Greetings, <first>. I will be down in a minute." She does a few more things inside a panel, reseals the hatch, and slides down a fin to land next to you. "So, do you have something for me?"`
 				goto next
 			label familiar
 			`	You recall that Taely is responsible for the shipyards, so you head straight there and ask the nearest mechanic. They direct you to a large hangar tucked into a cliff face, where you find her working at a terminal filled with schematics. Behind her, the room fades quickly into darkness where you can faintly make out what appears to be a large tank and a lot of whirring machinery. As you approach she looks up from her work and turns to face you. "Ah, you have returned. Do you have something new for me?"`
@@ -1768,7 +1768,7 @@ mission "Remnant: Plasma Cannon"
 				`	(Yes.)`
 			branch familiar
 				has "Remnant: Tech Retrieval: done"
-			`	After asking a few people, you finally get directed to a bay in the shipyard where you find Taely just finishing the installation of a Thrasher Cannon in a Starling. "Greetings, <first>. I will be down in a minute." She does a few more things inside a panel, reseals the hatch, and slides down a fin to land next to you. "So, do you have something for me?"`
+			`	After asking a few people, you finally get directed to a bay in the shipyard where you find Taely just finishing the installation of a Thrasher Cannon in a Kookaburra. "Greetings, <first>. I will be down in a minute." She does a few more things inside a panel, reseals the hatch, and slides down a fin to land next to you. "So, do you have something for me?"`
 				goto next
 			label familiar
 			`	Aware that Taely's main area of responsibility is in the shipyards, you head straight there and have almost arrived when you are approached by another Remnant who introduces herself as one of Taely's aides. "Greetings, Captain" she trills. "Our scans picked up indications of uncatalogued human weaponry. Were you bringing it to show us?"`
@@ -2190,7 +2190,7 @@ conversation "taely cultural data"
 	`	Before you have even taken the time to shut down the engines Taely is halfway up the side of your ship securing a refueling hose and charging cable. As you reach for the commlink she scrambles up to the bridge windows and quickly rattles off a series of signs at you. All you can make out is "Keep it hot, incoming!" Before you can frame a reply she has raced across your wing and leapt to the Albatross parked next to you.`
 	
 	label launch
-	`	Looking around more carefully, you note that every ship in the port is idling with fuel lines still connected. If this were some Republic port the safety inspectors would be having a nightmare. One Starling is getting holes in its wings patched even as the crew appear to be running prep-for-flight checklists. It also looks like every ship has a guard. Something tells you that right now would be a bad time to take a walk around town.`
+	`	Looking around more carefully, you note that every ship in the port is idling with fuel lines still connected. If this were some Republic port the safety inspectors would be having a nightmare. One Kookaburra is getting holes in its wings patched even as the crew appear to be running prep-for-flight checklists. It also looks like every ship has a guard. Something tells you that right now would be a bad time to take a walk around town.`
 	`	After some tense minutes of waiting, the planetary defense sirens start and the idling ships begin to ascend one by one. You quickly figure out where you are in the launch sequence and follow the stream of craft heading for orbit.`
 		launch
 
@@ -2254,9 +2254,9 @@ mission "Remnant: Salvage 2"
 		personality staying uninterested disables plunders
 		fleet "Large Remnant" 2
 	npc evade
-		government "Korath"
+		government "Kor Alaji"
 		personality heroic plunders harvests target
-		fleet "Korath Ember Waste Raid" 7
+		fleet "Kor Alaji Raid" 7
 		fleet
 			names "korath"
 			cargo 3
@@ -2339,7 +2339,7 @@ mission "Remnant: Salvage 4"
 			`	"Thank you," he signs. "It is acting oddly, jumping around destroying ships instead of looting and running. If it simply looted and left we would be pleased, but now it is learning about us instead, so it has reached the end of its usefulness. Please disable it so that we can salvage parts from it." He pauses, then continues, "I doubt we'll be able to salvage the ship itself - they pack those things with soldiers - and we do not want it to be captured, even if that is possible for you. The ship and crew should remain intact, and we will salvage what we can after you have it disabled. If you salvage anything we will happily compensate you for it in the outfitter, but do not feel obliged to do so. Destroying the ship should be a last resort."`
 				accept
 	npc save disable
-		government "Korath"
+		government "Kor Alaji"
 		personality heroic vindictive target uninterested waiting marked
 		system
 			distance 1 2
@@ -3260,12 +3260,12 @@ mission "Remnant: Keystone Research 4"
 		payment 2000000
 		conversation
 			`As you descend through the clouds to Viminal, you get the feeling someone is watching you, but your sensors show nothing more than a smattering of Gulls and a patrol squad in the distance. Looking down, you spot an extra battery of anti-air artillery next to the main entrance to the spaceport. You note the weapons tracking you and quickly tap your recognition code into the IFF system. Within seconds, the large guns are swinging back to cover the initial approach.`
-			`	Passing through a cavernous opening into the great spaceport dome, there is a shimmer in the air next to you as a Starling fades into view, settling onto the adjacent platform. The pilot signs a quick, "Greetings, anticipating talking with you," before heading back toward their lock. Behind them, the Starling continues its shutdown checks without any supervision at all.`
+			`	Passing through a cavernous opening into the great spaceport dome, there is a shimmer in the air next to you as a Kookaburra fades into view, settling onto the adjacent platform. The pilot signs a quick, "Greetings, anticipating talking with you," before heading back toward their lock. Behind them, the Kookaburra continues its shutdown checks without any supervision at all.`
 			`	As you finish your own shutdown routine, your commlink informs you that your account has been updated with <payment>.`
 
 
 
-ship "Starling" "Starling (Keystone)"
+ship "Kookaburra" "Kookaburra (Keystone)"
 	outfits
 		"Inhibitor Cannon" 3
 		"Point Defense Turret"
@@ -3277,8 +3277,9 @@ ship "Starling" "Starling (Keystone)"
 		"Salvage Scanner"
 		
 		"Forge-Class Thruster"
+		"Forge-Class LTC"
 		"Forge-Class Steering"
-		"Crucible-Class Steering"
+		# "Crucible-Class Steering" # Extra steering
 		"Hyperdrive"
 
 
@@ -3315,11 +3316,11 @@ mission "Remnant: Keystone Research 5"
 		government "Remnant (Research)"
 		personality coward decloaked disables mining plunders staying surveillance target
 		system "Peragenor"
-		ship "Starling (Keystone)" "Winds of Light"
+		ship "Kookaburra (Keystone)" "Winds of Light"
 		dialog
 			`The scanner chimes softly, informing you that it has completed scanning the Winds of Light and has successfully archived the data.`
 	on visit
-		dialog `You land on <planet>, but you have not scanned the Starling in <waypoints>. Make sure you scan the ship before returning.`
+		dialog `You land on <planet>, but you have not scanned the Kookaburra in <waypoints>. Make sure you scan the ship before returning.`
 	on complete
 		payment 150000
 
@@ -3335,14 +3336,14 @@ mission "Remnant: Keystone Research 6"
 		government "Remnant (Research)"
 		personality coward decloaked disables mining plunders staying surveillance target
 		system "Peragenor"
-		ship "Starling" "Winds of Light"
+		ship "Kookaburra" "Winds of Light"
 		dialog
 			`The scanner chimes softly once again, informing you that it has completed scanning the Winds of Light and has successfully archived the data from this second scanning.`
 	to offer
 		has "Remnant: Keystone Research 5: done"
 	on offer
 		conversation
-			`When you and the <npc> settle back onto the landing pad, there is already a dockworker waiting with a Key Stone. Once the Starling is settled, the dockworker climbs up the outside of the ship, hooks the keystone to a lift and disconnects it from the ship. As the keystone is hauled up to the roof another lift lowers the replacement Key Stone. The dockworker quickly installs it and jumps down, landing gracefully from the several-meter drop.`
+			`When you and the <npc> settle back onto the landing pad, there is already a dockworker waiting with a Key Stone. Once the Kookaburra is settled, the dockworker climbs up the outside of the ship, hooks the keystone to a lift and disconnects it from the ship. As the keystone is hauled up to the roof another lift lowers the replacement Key Stone. The dockworker quickly installs it and jumps down, landing gracefully from the several-meter drop.`
 			`	"Ready? Let's go!" Aeolus signs as he fires up his systems and gestures an acknowledgment to the dockworker. You check your cameras and see the worker nimbly step clear of the engine exhausts as the two ships head back out of the dome.`
 				launch
 	on visit
@@ -3696,6 +3697,7 @@ ship "_Ion Timer Ship"
 		"automaton" 1
 		"energy generation" 1
 		"thrust" 10
+		"lateral thrust" 10
 		"turn" 600
 	outfits
 		"Timer Weapon"

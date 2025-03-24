@@ -189,10 +189,10 @@ mission "FW Convoy Defense [0]"
 				"Bastion" 2
 			variant
 				"Hauler II" 2
-				"Osprey"
+				"Eagle"
 			variant
 				"Argosy" 2
-				"Osprey"
+				"Eagle"
 	on complete
 		payment 270000
 		dialog phrase "free worlds convoy supplies payment"
@@ -253,10 +253,10 @@ mission "FW Convoy Defense [1]"
 				"Bastion" 2
 			variant
 				"Hauler II" 2
-				"Osprey"
+				"Eagle"
 			variant
 				"Argosy" 2
-				"Osprey"
+				"Eagle"
 	on complete
 		payment 270000
 		dialog phrase "free worlds convoy supplies payment"
@@ -317,10 +317,10 @@ mission "FW Convoy Defense [2]"
 				"Bastion" 2
 			variant
 				"Hauler II" 2
-				"Osprey"
+				"Eagle"
 			variant
 				"Argosy" 2
-				"Osprey"
+				"Eagle"
 	on complete
 		payment 270000
 		dialog phrase "free worlds convoy supplies payment"

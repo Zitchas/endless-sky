@@ -830,6 +830,27 @@ void Interface::BarElement::Draw(const Rectangle &rect, const Information &info,
 
 			LineShader::DrawGradient(from, to, twidth, nFromColor, nToColor);
 		}
+		// draw in the opposite direction.
+		if(value < 0)
+			while(v > value)
+			{
+				Color nFromColor = Color::Combine(1 - v, *fromColor, v, *toColor);
+				Point from = start + v * dimensions;
+				v -= filled;
+
+				double lim = max(v, value);
+				Point to = start + lim * dimensions;
+				Color nToColor = Color::Combine(1 - lim, *fromColor, lim, *toColor);
+				v -= empty;
+
+				// Rounded lines have a bit of padding, so account for that here.
+				float d = (to - from).Length() / 2.;
+				float twidth = d < width ? width * d / 2. : width;
+				from += unit * twidth;
+				to -= unit * twidth;
+
+				LineShader::DrawGradient(from, to, twidth, nFromColor, nToColor);
+			}
 	}
 }
 
