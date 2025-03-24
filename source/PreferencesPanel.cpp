@@ -559,6 +559,8 @@ void PreferencesPanel::DrawControls()
 		Command::SELECT,
 		Command::SECONDARY,
 		Command::CLOAK,
+		Command::MOUSE_TURNING_HOLD,
+		Command::AIM_TURRET_HOLD,
 		Command::NONE,
 		Command::NONE,
 		Command::MENU,
@@ -566,6 +568,7 @@ void PreferencesPanel::DrawControls()
 		Command::INFO,
 		Command::FULLSCREEN,
 		Command::FASTFORWARD,
+		Command::PAUSE,
 		Command::HELP,
 		Command::MESSAGE_LOG
 	};
@@ -732,6 +735,7 @@ void PreferencesPanel::DrawSettings()
 		"\n",
 		"Gameplay",
 		"Control ship with mouse",
+		"Aim turrets with mouse",
 		AUTO_AIM_SETTING,
 		AUTO_FIRE_SETTING,
 		TURRET_TRACKING,

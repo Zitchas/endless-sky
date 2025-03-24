@@ -40,6 +40,7 @@ public:
 	static const Command AUTOSTEER;
 	static const Command BACK;
 	static const Command MOUSE_TURNING_HOLD;
+	static const Command AIM_TURRET_HOLD;
 	static const Command LATERALLEFT;
 	static const Command LATERALRIGHT;
 	static const Command PRIMARY;
@@ -65,6 +66,7 @@ public:
 	static const Command FULLSCREEN;
 	static const Command FASTFORWARD;
 	static const Command HELP;
+	static const Command PAUSE;
 	// Escort commands:
 	static const Command FIGHT;
 	static const Command GATHER;

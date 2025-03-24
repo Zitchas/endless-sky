@@ -1261,9 +1261,9 @@ ship "Sea Scorpion" "Sea Scorpion (Ionic Blasters)"
 		"Hai Diamond Regenerator"
 		"Hai Valley Batteries"
 		"Hyperdrive"
-		"Value Detector"
-		"Ionic Blaster Prototype" 4
-		"Pulse Turret" 2
+		"Ion Cannon"
+		"Ionic Blaster Prototype" 2
+		"Ionic Turret Prototype"
 		"Pulse Rifle" 36
 		`"Biroo" Atomic Thruster`
 		`"Biroo" Atomic LTC`
@@ -1279,7 +1279,7 @@ ship "Sea Scorpion" "Sea Scorpion (Shredder)"
 		"Hai Gorge Batteries"
 		"Hai Williwaw Cooling" 4
 		"Pulse Cannon" 2
-		"Pulse Rifle" 15
+		"Pulse Rifle" 36
 		"Pulse Turret"
 		"Quantum Keystone"
 		"Tripulse Shredder" 2
